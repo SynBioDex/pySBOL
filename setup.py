@@ -24,14 +24,13 @@ print(platform.system())
 if platform.system() == 'Windows':
     package_data={
         'sbol': ['examples/*'],
-        'bin/Win_32': ['_libsbol.pyd']
+        'bin/Win_32': ['_libsbol.pyd', 'libsbol.py']
     }
 elif platform.system() == 'Darwin':
    package_data={
        'sbol': ['examples/*'],
-       'bin/Mac_OSX': ['_libsbol.so']
+       'sbol': ['_libsbol.so', 'libsbol.py']
     }
-print(package_data)
 setup(
     name='pySBOL',
 
@@ -117,4 +116,6 @@ setup(
     #        'sample=sample:main',
     #    ],
    # },
+      zip_safe = False,
+      #include_package_data = True
 )
