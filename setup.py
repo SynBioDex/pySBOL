@@ -10,7 +10,7 @@ https://github.com/pypa/sampleproject
 from setuptools import setup, find_packages
 # To use a consistent encoding
 from codecs import open
-from os import path
+from os import path, chdir
 # Determine if Windows or Mac
 import platform
 
@@ -22,11 +22,13 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 print(platform.system())
 if platform.system() == 'Windows':
+    chdir(path.join(here,'Win_32'))
     package_data={
         'sbol': ['examples/*'],
-        'bin/Win_32': ['_libsbol.pyd', 'libsbol.py']
+        'sbol': ['_libsbol.pyd', 'libsbol.py']
     }
 elif platform.system() == 'Darwin':
+    chdir(path.join(here,'Mac_OSX'))
    package_data={
        'sbol': ['examples/*'],
        'sbol': ['_libsbol.so', 'libsbol.py']
