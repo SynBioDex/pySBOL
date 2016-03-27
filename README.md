@@ -30,7 +30,6 @@ TargetProtein = ComponentDefinition(ns, "TargetProtein", v, BIOPAX_PROTEIN)
 
 # Start the CRPb Characterization Module
 # For simplicity, only components that interface with the CRISPRTemplate Module are defined here.  For now, the rest of the module is treated like a black box
-# Components in the CRPb Characterization Module
 Cas9mBFP = ComponentDefinition(ns, "Cas9-mBFP", v, BIOPAX_PROTEIN)  # This is an output of the Module
 GuideRNAb = ComponentDefinition(ns, "GuideRNAb", v, BIOPAX_RNA)  # This is an output of the Module
 Cas9mBFPGuideRNAComplex = ComponentDefinition(ns, "Cas9mBFPGuideRNAComplex", v, BIOPAX_RNA)
