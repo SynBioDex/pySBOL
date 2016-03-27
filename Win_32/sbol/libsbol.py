@@ -502,6 +502,10 @@ def getCompliantURI(*args):
   return _libsbol.getCompliantURI(*args)
 getCompliantURI = _libsbol.getCompliantURI
 
+def getClassName(*args):
+  return _libsbol.getClassName(*args)
+getClassName = _libsbol.getClassName
+
 def sbol_rule_10202(*args):
   return _libsbol.sbol_rule_10202(*args)
 sbol_rule_10202 = _libsbol.sbol_rule_10202
@@ -528,6 +532,10 @@ class _StringProperty(_object):
     def set(self, *args): return _libsbol._StringProperty_set(self, *args)
     def write(self): return _libsbol._StringProperty_write(self)
     def validate(self, arg=None): return _libsbol._StringProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol._StringProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol._StringProperty___iter__(self)
+    def next(self): return _libsbol._StringProperty_next(self)
+    def __len__(self): return _libsbol._StringProperty___len__(self)
 _StringProperty_swigregister = _libsbol._StringProperty_swigregister
 _StringProperty_swigregister(_StringProperty)
 
@@ -550,6 +558,10 @@ class _IntProperty(_object):
     def set(self, *args): return _libsbol._IntProperty_set(self, *args)
     def write(self): return _libsbol._IntProperty_write(self)
     def validate(self, arg=None): return _libsbol._IntProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol._IntProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol._IntProperty___iter__(self)
+    def next(self): return _libsbol._IntProperty_next(self)
+    def __len__(self): return _libsbol._IntProperty___len__(self)
 _IntProperty_swigregister = _libsbol._IntProperty_swigregister
 _IntProperty_swigregister(_IntProperty)
 
@@ -787,6 +799,10 @@ class locationProperty(_object):
     def set(self, *args): return _libsbol.locationProperty_set(self, *args)
     def write(self): return _libsbol.locationProperty_write(self)
     def validate(self, arg=None): return _libsbol.locationProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.locationProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.locationProperty___iter__(self)
+    def next(self): return _libsbol.locationProperty_next(self)
+    def __len__(self): return _libsbol.locationProperty___len__(self)
 locationProperty_swigregister = _libsbol.locationProperty_swigregister
 locationProperty_swigregister(locationProperty)
 
@@ -853,8 +869,7 @@ class _ownedLocation(locationProperty):
     def set(self, *args): return _libsbol._ownedLocation_set(self, *args)
     def get(self, *args): return _libsbol._ownedLocation_get(self, *args)
     def copy(self): return _libsbol._ownedLocation_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol._ownedLocation_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol._ownedLocation_create(self, *args)
     def begin(self): return _libsbol._ownedLocation_begin(self)
     def end(self): return _libsbol._ownedLocation_end(self)
     def size(self): return _libsbol._ownedLocation_size(self)
@@ -1002,6 +1017,10 @@ class mapsToProperty(_object):
     def set(self, *args): return _libsbol.mapsToProperty_set(self, *args)
     def write(self): return _libsbol.mapsToProperty_write(self)
     def validate(self, arg=None): return _libsbol.mapsToProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.mapsToProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.mapsToProperty___iter__(self)
+    def next(self): return _libsbol.mapsToProperty_next(self)
+    def __len__(self): return _libsbol.mapsToProperty___len__(self)
 mapsToProperty_swigregister = _libsbol.mapsToProperty_swigregister
 mapsToProperty_swigregister(mapsToProperty)
 
@@ -1021,8 +1040,7 @@ class ownedMapsTo(mapsToProperty):
     def set(self, *args): return _libsbol.ownedMapsTo_set(self, *args)
     def get(self, *args): return _libsbol.ownedMapsTo_get(self, *args)
     def copy(self): return _libsbol.ownedMapsTo_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedMapsTo_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedMapsTo_create(self, *args)
     def begin(self): return _libsbol.ownedMapsTo_begin(self)
     def end(self): return _libsbol.ownedMapsTo_end(self)
     def size(self): return _libsbol.ownedMapsTo_size(self)
@@ -1210,6 +1228,10 @@ class sequenceConstraintProperty(_object):
     def set(self, *args): return _libsbol.sequenceConstraintProperty_set(self, *args)
     def write(self): return _libsbol.sequenceConstraintProperty_write(self)
     def validate(self, arg=None): return _libsbol.sequenceConstraintProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.sequenceConstraintProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.sequenceConstraintProperty___iter__(self)
+    def next(self): return _libsbol.sequenceConstraintProperty_next(self)
+    def __len__(self): return _libsbol.sequenceConstraintProperty___len__(self)
 sequenceConstraintProperty_swigregister = _libsbol.sequenceConstraintProperty_swigregister
 sequenceConstraintProperty_swigregister(sequenceConstraintProperty)
 
@@ -1229,8 +1251,7 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
     def set(self, *args): return _libsbol.ownedSequenceConstraint_set(self, *args)
     def get(self, *args): return _libsbol.ownedSequenceConstraint_get(self, *args)
     def copy(self): return _libsbol.ownedSequenceConstraint_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedSequenceConstraint_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedSequenceConstraint_create(self, *args)
     def begin(self): return _libsbol.ownedSequenceConstraint_begin(self)
     def end(self): return _libsbol.ownedSequenceConstraint_end(self)
     def size(self): return _libsbol.ownedSequenceConstraint_size(self)
@@ -1332,6 +1353,10 @@ class sequenceAnnotationProperty(_object):
     def set(self, *args): return _libsbol.sequenceAnnotationProperty_set(self, *args)
     def write(self): return _libsbol.sequenceAnnotationProperty_write(self)
     def validate(self, arg=None): return _libsbol.sequenceAnnotationProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.sequenceAnnotationProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.sequenceAnnotationProperty___iter__(self)
+    def next(self): return _libsbol.sequenceAnnotationProperty_next(self)
+    def __len__(self): return _libsbol.sequenceAnnotationProperty___len__(self)
 sequenceAnnotationProperty_swigregister = _libsbol.sequenceAnnotationProperty_swigregister
 sequenceAnnotationProperty_swigregister(sequenceAnnotationProperty)
 
@@ -1351,8 +1376,7 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
     def set(self, *args): return _libsbol.ownedSequenceAnnotation_set(self, *args)
     def get(self, *args): return _libsbol.ownedSequenceAnnotation_get(self, *args)
     def copy(self): return _libsbol.ownedSequenceAnnotation_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedSequenceAnnotation_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedSequenceAnnotation_create(self, *args)
     def begin(self): return _libsbol.ownedSequenceAnnotation_begin(self)
     def end(self): return _libsbol.ownedSequenceAnnotation_end(self)
     def size(self): return _libsbol.ownedSequenceAnnotation_size(self)
@@ -1506,6 +1530,10 @@ class participationProperty(_object):
     def set(self, *args): return _libsbol.participationProperty_set(self, *args)
     def write(self): return _libsbol.participationProperty_write(self)
     def validate(self, arg=None): return _libsbol.participationProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.participationProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.participationProperty___iter__(self)
+    def next(self): return _libsbol.participationProperty_next(self)
+    def __len__(self): return _libsbol.participationProperty___len__(self)
 participationProperty_swigregister = _libsbol.participationProperty_swigregister
 participationProperty_swigregister(participationProperty)
 
@@ -1525,8 +1553,7 @@ class ownedParticipation(participationProperty):
     def set(self, *args): return _libsbol.ownedParticipation_set(self, *args)
     def get(self, *args): return _libsbol.ownedParticipation_get(self, *args)
     def copy(self): return _libsbol.ownedParticipation_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedParticipation_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedParticipation_create(self, *args)
     def begin(self): return _libsbol.ownedParticipation_begin(self)
     def end(self): return _libsbol.ownedParticipation_end(self)
     def size(self): return _libsbol.ownedParticipation_size(self)
@@ -1653,6 +1680,10 @@ class moduleProperty(_object):
     def set(self, *args): return _libsbol.moduleProperty_set(self, *args)
     def write(self): return _libsbol.moduleProperty_write(self)
     def validate(self, arg=None): return _libsbol.moduleProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.moduleProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.moduleProperty___iter__(self)
+    def next(self): return _libsbol.moduleProperty_next(self)
+    def __len__(self): return _libsbol.moduleProperty___len__(self)
 moduleProperty_swigregister = _libsbol.moduleProperty_swigregister
 moduleProperty_swigregister(moduleProperty)
 
@@ -1672,8 +1703,7 @@ class ownedModule(moduleProperty):
     def set(self, *args): return _libsbol.ownedModule_set(self, *args)
     def get(self, *args): return _libsbol.ownedModule_get(self, *args)
     def copy(self): return _libsbol.ownedModule_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedModule_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedModule_create(self, *args)
     def begin(self): return _libsbol.ownedModule_begin(self)
     def end(self): return _libsbol.ownedModule_end(self)
     def size(self): return _libsbol.ownedModule_size(self)
@@ -1728,6 +1758,10 @@ class interactionProperty(_object):
     def set(self, *args): return _libsbol.interactionProperty_set(self, *args)
     def write(self): return _libsbol.interactionProperty_write(self)
     def validate(self, arg=None): return _libsbol.interactionProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.interactionProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.interactionProperty___iter__(self)
+    def next(self): return _libsbol.interactionProperty_next(self)
+    def __len__(self): return _libsbol.interactionProperty___len__(self)
 interactionProperty_swigregister = _libsbol.interactionProperty_swigregister
 interactionProperty_swigregister(interactionProperty)
 
@@ -1747,8 +1781,7 @@ class ownedInteraction(interactionProperty):
     def set(self, *args): return _libsbol.ownedInteraction_set(self, *args)
     def get(self, *args): return _libsbol.ownedInteraction_get(self, *args)
     def copy(self): return _libsbol.ownedInteraction_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedInteraction_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedInteraction_create(self, *args)
     def begin(self): return _libsbol.ownedInteraction_begin(self)
     def end(self): return _libsbol.ownedInteraction_end(self)
     def size(self): return _libsbol.ownedInteraction_size(self)
@@ -1803,6 +1836,10 @@ class functionalComponentProperty(_object):
     def set(self, *args): return _libsbol.functionalComponentProperty_set(self, *args)
     def write(self): return _libsbol.functionalComponentProperty_write(self)
     def validate(self, arg=None): return _libsbol.functionalComponentProperty_validate(self, arg)
+    def __getitem__(self, *args): return _libsbol.functionalComponentProperty___getitem__(self, *args)
+    def __iter__(self): return _libsbol.functionalComponentProperty___iter__(self)
+    def next(self): return _libsbol.functionalComponentProperty_next(self)
+    def __len__(self): return _libsbol.functionalComponentProperty___len__(self)
 functionalComponentProperty_swigregister = _libsbol.functionalComponentProperty_swigregister
 functionalComponentProperty_swigregister(functionalComponentProperty)
 
@@ -1822,8 +1859,7 @@ class ownedFunctionalComponent(functionalComponentProperty):
     def set(self, *args): return _libsbol.ownedFunctionalComponent_set(self, *args)
     def get(self, *args): return _libsbol.ownedFunctionalComponent_get(self, *args)
     def copy(self): return _libsbol.ownedFunctionalComponent_copy(self)
-    def create(self, prefix="http://sbols.org/v2/OwnedObject", display_id="example", name="", description="", 
-    version="1.0.0"): return _libsbol.ownedFunctionalComponent_create(self, prefix, display_id, name, description, version)
+    def create(self, *args): return _libsbol.ownedFunctionalComponent_create(self, *args)
     def begin(self): return _libsbol.ownedFunctionalComponent_begin(self)
     def end(self): return _libsbol.ownedFunctionalComponent_end(self)
     def size(self): return _libsbol.ownedFunctionalComponent_size(self)
