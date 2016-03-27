@@ -1176,6 +1176,10 @@ def getCompliantURI(uri_prefix, display_id, sbol_class_name, version):
     return _libsbol.getCompliantURI(uri_prefix, display_id, sbol_class_name, version)
 getCompliantURI = _libsbol.getCompliantURI
 
+def getClassName(type):
+    return _libsbol.getClassName(type)
+getClassName = _libsbol.getClassName
+
 def sbol_rule_10202(sbol_obj, arg):
     return _libsbol.sbol_rule_10202(sbol_obj, arg)
 sbol_rule_10202 = _libsbol.sbol_rule_10202
@@ -1219,6 +1223,18 @@ class _StringProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol._StringProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol._StringProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol._StringProperty___iter__(self)
+
+    def next(self):
+        return _libsbol._StringProperty_next(self)
+
+    def __len__(self):
+        return _libsbol._StringProperty___len__(self)
 _StringProperty_swigregister = _libsbol._StringProperty_swigregister
 _StringProperty_swigregister(_StringProperty)
 
@@ -1258,6 +1274,18 @@ class _IntProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol._IntProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol._IntProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol._IntProperty___iter__(self)
+
+    def next(self):
+        return _libsbol._IntProperty_next(self)
+
+    def __len__(self):
+        return _libsbol._IntProperty___len__(self)
 _IntProperty_swigregister = _libsbol._IntProperty_swigregister
 _IntProperty_swigregister(_IntProperty)
 
@@ -1407,11 +1435,11 @@ class ReferencedObject(URIProperty):
     def set(self, uri):
         return _libsbol.ReferencedObject_set(self, uri)
 
-    def addReference(self, uri):
-        return _libsbol.ReferencedObject_addReference(self, uri)
+    def addReference(self, *args):
+        return _libsbol.ReferencedObject_addReference(self, *args)
 
-    def setReference(self, uri):
-        return _libsbol.ReferencedObject_setReference(self, uri)
+    def setReference(self, *args):
+        return _libsbol.ReferencedObject_setReference(self, *args)
 
     def begin(self):
         return _libsbol.ReferencedObject_begin(self)
@@ -1605,6 +1633,18 @@ class locationProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.locationProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.locationProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.locationProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.locationProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.locationProperty___len__(self)
 locationProperty_swigregister = _libsbol.locationProperty_swigregister
 locationProperty_swigregister(locationProperty)
 
@@ -2023,6 +2063,18 @@ class mapsToProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.mapsToProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.mapsToProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.mapsToProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.mapsToProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.mapsToProperty___len__(self)
 mapsToProperty_swigregister = _libsbol.mapsToProperty_swigregister
 mapsToProperty_swigregister(mapsToProperty)
 
@@ -2380,6 +2432,18 @@ class sequenceConstraintProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.sequenceConstraintProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.sequenceConstraintProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.sequenceConstraintProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.sequenceConstraintProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.sequenceConstraintProperty___len__(self)
 sequenceConstraintProperty_swigregister = _libsbol.sequenceConstraintProperty_swigregister
 sequenceConstraintProperty_swigregister(sequenceConstraintProperty)
 
@@ -2625,6 +2689,18 @@ class sequenceAnnotationProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.sequenceAnnotationProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.sequenceAnnotationProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.sequenceAnnotationProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.sequenceAnnotationProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.sequenceAnnotationProperty___len__(self)
 sequenceAnnotationProperty_swigregister = _libsbol.sequenceAnnotationProperty_swigregister
 sequenceAnnotationProperty_swigregister(sequenceAnnotationProperty)
 
@@ -2888,6 +2964,18 @@ class participationProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.participationProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.participationProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.participationProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.participationProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.participationProperty___len__(self)
 participationProperty_swigregister = _libsbol.participationProperty_swigregister
 participationProperty_swigregister(participationProperty)
 
@@ -3114,6 +3202,18 @@ class moduleProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.moduleProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.moduleProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.moduleProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.moduleProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.moduleProperty___len__(self)
 moduleProperty_swigregister = _libsbol.moduleProperty_swigregister
 moduleProperty_swigregister(moduleProperty)
 
@@ -3246,6 +3346,18 @@ class interactionProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.interactionProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.interactionProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.interactionProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.interactionProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.interactionProperty___len__(self)
 interactionProperty_swigregister = _libsbol.interactionProperty_swigregister
 interactionProperty_swigregister(interactionProperty)
 
@@ -3378,6 +3490,18 @@ class functionalComponentProperty(_object):
 
     def validate(self, arg=None):
         return _libsbol.functionalComponentProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.functionalComponentProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.functionalComponentProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.functionalComponentProperty_next(self)
+
+    def __len__(self):
+        return _libsbol.functionalComponentProperty___len__(self)
 functionalComponentProperty_swigregister = _libsbol.functionalComponentProperty_swigregister
 functionalComponentProperty_swigregister(functionalComponentProperty)
 

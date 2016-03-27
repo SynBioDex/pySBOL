@@ -28,7 +28,7 @@ if platform.system() == 'Windows':
         'sbol': ['_libsbol.pyd', 'libsbol.py']
     }
 elif platform.system() == 'Darwin':
-    chdir(path.join(here,'Mac_OSX'))
+   chdir(path.join(here,'Mac_OSX'))
    package_data={
        'sbol': ['examples/*'],
        'sbol': ['_libsbol.so', 'libsbol.py']
@@ -39,7 +39,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0.0b1',
+    version='2.0.1b',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,
