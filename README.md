@@ -13,7 +13,7 @@ CODE EXAMPLE
 ============
 For the full code, see CRISPR_example.py
 
-```
+```python
 from sbol import *
 
 # Define the two modules, denoted by the black boxes in the figure.  Note the use of CamelCase for displayId's, to distinguish ModuleDefinitions from Modules
