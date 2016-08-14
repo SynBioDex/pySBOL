@@ -5,9 +5,9 @@ pySBOL 2.0.1
 
 EXAMPLE CODE
 ============
-![](gene_cassette.png)
 The example code below can be used to construct the biological design in the figure. 
- 
+
+![](gene_cassette.png) 
 **A diagram of a gene cassette, consisting of a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOLVisual symbols. The design was programmatically generated with the code below, and then visualized with the SBOLDesigner tool.**
  
 ```python
