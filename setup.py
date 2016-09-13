@@ -11,6 +11,8 @@ from setuptools import setup, find_packages
 # To use a consistent encoding
 from codecs import open
 from os import path, chdir
+from sys import maxsize
+from sys import version, version_info
 # Determine if Windows or Mac
 import platform
 
@@ -20,18 +22,37 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-print(platform.system())
-if platform.system() == 'Windows':
-    chdir(path.join(here,'Win_32'))
+def get_config():
+    if maxsize == 2147483647:
+        python_interpreter_architecture = 32
+    elif maxsize == 9223372036854775807:
+        # May not detect Windows x64 (maxsize = 2147483647)!
+        python_interpreter_architecture = 64
+    if version_info[0] == 2:
+        python_version = 2
+    elif version_info[0] == 3:
+        python_version = 3
+    if platform.system() == 'Darwin':
+        platform_system = 'Mac'
+    elif platform.system() == 'Windows':
+        platform_system = 'Win'
+    return (platform_system, python_interpreter_architecture, python_version)
+
+config = get_config()
+print("Installing libSBOL binaries for %s %d-bit %s" %(config[0], config[1], version))
+# Reconstruct path to binaries based on the system and Python interpreter architecture
+package_dir = "%s_%d_%d" %(config[0], config[1], config[2])
+print(package_dir)
+chdir(path.join(here,package_dir))
+if config[0] == 'Win':
+      package_data={
+      'sbol': ['examples/*'],
+      'sbol': ['_libsbol.pyd', 'libsbol.py']
+      }
+elif config[0] == 'Mac':
     package_data={
-        'sbol': ['examples/*'],
-        'sbol': ['_libsbol.pyd', 'libsbol.py']
-    }
-elif platform.system() == 'Darwin':
-   chdir(path.join(here,'Mac_OSX'))
-   package_data={
-       'sbol': ['examples/*'],
-       'sbol': ['_libsbol.so', 'libsbol.py']
+      'sbol': ['examples/*'],
+      'sbol': ['_libsbol.so', 'libsbol.py']
     }
 setup(
     name='pySBOL',
