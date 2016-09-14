@@ -5,6 +5,10 @@ pySBOL 2.0.1
 
 EXAMPLE CODE
 ============
+To import pySBOL classes and methods:
+```
+from sbol import *
+```
 The example code below can be used to construct the biological design in the figure. 
 
 ![](gene_cassette.png) 
