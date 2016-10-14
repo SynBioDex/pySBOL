@@ -1340,6 +1340,9 @@ class _StringProperty(_object):
     def next(self):
         return _libsbol._StringProperty_next(self)
 
+    def __next__(self):
+        return _libsbol._StringProperty___next__(self)
+
     def __len__(self):
         return _libsbol._StringProperty___len__(self)
 _StringProperty_swigregister = _libsbol._StringProperty_swigregister
@@ -1390,6 +1393,9 @@ class _IntProperty(_object):
 
     def next(self):
         return _libsbol._IntProperty_next(self)
+
+    def __next__(self):
+        return _libsbol._IntProperty___next__(self)
 
     def __len__(self):
         return _libsbol._IntProperty___len__(self)
@@ -1628,6 +1634,9 @@ class ReferencedObject(URIProperty):
     def next(self):
         return _libsbol.ReferencedObject_next(self)
 
+    def __next__(self):
+        return _libsbol.ReferencedObject___next__(self)
+
     def __len__(self):
         return _libsbol.ReferencedObject___len__(self)
     __swig_destroy__ = _libsbol.delete_ReferencedObject
@@ -1799,6 +1808,9 @@ class locationProperty(_object):
 
     def next(self):
         return _libsbol.locationProperty_next(self)
+
+    def __next__(self):
+        return _libsbol.locationProperty___next__(self)
 
     def __len__(self):
         return _libsbol.locationProperty___len__(self)
@@ -1972,6 +1984,9 @@ class _ownedLocation(locationProperty):
 
     def next(self):
         return _libsbol._ownedLocation_next(self)
+
+    def __next__(self):
+        return _libsbol._ownedLocation___next__(self)
 
     def __len__(self):
         return _libsbol._ownedLocation___len__(self)
@@ -2230,6 +2245,9 @@ class mapsToProperty(_object):
     def next(self):
         return _libsbol.mapsToProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.mapsToProperty___next__(self)
+
     def __len__(self):
         return _libsbol.mapsToProperty___len__(self)
 mapsToProperty_swigregister = _libsbol.mapsToProperty_swigregister
@@ -2289,6 +2307,9 @@ class ownedMapsTo(mapsToProperty):
 
     def next(self):
         return _libsbol.ownedMapsTo_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedMapsTo___next__(self)
 
     def __len__(self):
         return _libsbol.ownedMapsTo___len__(self)
@@ -2608,6 +2629,9 @@ class sequenceConstraintProperty(_object):
     def next(self):
         return _libsbol.sequenceConstraintProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.sequenceConstraintProperty___next__(self)
+
     def __len__(self):
         return _libsbol.sequenceConstraintProperty___len__(self)
 sequenceConstraintProperty_swigregister = _libsbol.sequenceConstraintProperty_swigregister
@@ -2667,6 +2691,9 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def next(self):
         return _libsbol.ownedSequenceConstraint_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedSequenceConstraint___next__(self)
 
     def __len__(self):
         return _libsbol.ownedSequenceConstraint___len__(self)
@@ -2865,6 +2892,9 @@ class sequenceAnnotationProperty(_object):
     def next(self):
         return _libsbol.sequenceAnnotationProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.sequenceAnnotationProperty___next__(self)
+
     def __len__(self):
         return _libsbol.sequenceAnnotationProperty___len__(self)
 sequenceAnnotationProperty_swigregister = _libsbol.sequenceAnnotationProperty_swigregister
@@ -2924,6 +2954,9 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def next(self):
         return _libsbol.ownedSequenceAnnotation_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedSequenceAnnotation___next__(self)
 
     def __len__(self):
         return _libsbol.ownedSequenceAnnotation___len__(self)
@@ -3122,6 +3155,9 @@ class componentsProperty(_object):
     def next(self):
         return _libsbol.componentsProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.componentsProperty___next__(self)
+
     def __len__(self):
         return _libsbol.componentsProperty___len__(self)
 componentsProperty_swigregister = _libsbol.componentsProperty_swigregister
@@ -3181,6 +3217,9 @@ class ownedComponents(componentsProperty):
 
     def next(self):
         return _libsbol.ownedComponents_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedComponents___next__(self)
 
     def __len__(self):
         return _libsbol.ownedComponents___len__(self)
@@ -3433,6 +3472,9 @@ class participationProperty(_object):
     def next(self):
         return _libsbol.participationProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.participationProperty___next__(self)
+
     def __len__(self):
         return _libsbol.participationProperty___len__(self)
 participationProperty_swigregister = _libsbol.participationProperty_swigregister
@@ -3492,6 +3534,9 @@ class ownedParticipation(participationProperty):
 
     def next(self):
         return _libsbol.ownedParticipation_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedParticipation___next__(self)
 
     def __len__(self):
         return _libsbol.ownedParticipation___len__(self)
@@ -3671,6 +3716,9 @@ class moduleProperty(_object):
     def next(self):
         return _libsbol.moduleProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.moduleProperty___next__(self)
+
     def __len__(self):
         return _libsbol.moduleProperty___len__(self)
 moduleProperty_swigregister = _libsbol.moduleProperty_swigregister
@@ -3730,6 +3778,9 @@ class ownedModule(moduleProperty):
 
     def next(self):
         return _libsbol.ownedModule_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedModule___next__(self)
 
     def __len__(self):
         return _libsbol.ownedModule___len__(self)
@@ -3815,6 +3866,9 @@ class interactionProperty(_object):
     def next(self):
         return _libsbol.interactionProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.interactionProperty___next__(self)
+
     def __len__(self):
         return _libsbol.interactionProperty___len__(self)
 interactionProperty_swigregister = _libsbol.interactionProperty_swigregister
@@ -3874,6 +3928,9 @@ class ownedInteraction(interactionProperty):
 
     def next(self):
         return _libsbol.ownedInteraction_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedInteraction___next__(self)
 
     def __len__(self):
         return _libsbol.ownedInteraction___len__(self)
@@ -3959,6 +4016,9 @@ class functionalComponentProperty(_object):
     def next(self):
         return _libsbol.functionalComponentProperty_next(self)
 
+    def __next__(self):
+        return _libsbol.functionalComponentProperty___next__(self)
+
     def __len__(self):
         return _libsbol.functionalComponentProperty___len__(self)
 functionalComponentProperty_swigregister = _libsbol.functionalComponentProperty_swigregister
@@ -4018,6 +4078,9 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def next(self):
         return _libsbol.ownedFunctionalComponent_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedFunctionalComponent___next__(self)
 
     def __len__(self):
         return _libsbol.ownedFunctionalComponent___len__(self)
@@ -4108,14 +4171,618 @@ class ModuleDefinition(TopLevel):
 ModuleDefinition_swigregister = _libsbol.ModuleDefinition_swigregister
 ModuleDefinition_swigregister(ModuleDefinition)
 
+class componentDefinitionProperty(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, componentDefinitionProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, componentDefinitionProperty, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_componentDefinitionProperty(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_componentDefinitionProperty
+    __del__ = lambda self: None
+
+    def getTypeURI(self):
+        return _libsbol.componentDefinitionProperty_getTypeURI(self)
+
+    def getOwner(self):
+        return _libsbol.componentDefinitionProperty_getOwner(self)
+
+    def get(self):
+        return _libsbol.componentDefinitionProperty_get(self)
+
+    def set(self, *args):
+        return _libsbol.componentDefinitionProperty_set(self, *args)
+
+    def add(self, new_value):
+        return _libsbol.componentDefinitionProperty_add(self, new_value)
+
+    def write(self):
+        return _libsbol.componentDefinitionProperty_write(self)
+
+    def validate(self, arg=None):
+        return _libsbol.componentDefinitionProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.componentDefinitionProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.componentDefinitionProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.componentDefinitionProperty_next(self)
+
+    def __next__(self):
+        return _libsbol.componentDefinitionProperty___next__(self)
+
+    def __len__(self):
+        return _libsbol.componentDefinitionProperty___len__(self)
+componentDefinitionProperty_swigregister = _libsbol.componentDefinitionProperty_swigregister
+componentDefinitionProperty_swigregister(componentDefinitionProperty)
+
+class ownedComponentDefinition(componentDefinitionProperty):
+    __swig_setmethods__ = {}
+    for _s in [componentDefinitionProperty]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ownedComponentDefinition, name, value)
+    __swig_getmethods__ = {}
+    for _s in [componentDefinitionProperty]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, ownedComponentDefinition, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_ownedComponentDefinition(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def set(self, sbol_obj):
+        return _libsbol.ownedComponentDefinition_set(self, sbol_obj)
+
+    def get(self, object_id):
+        return _libsbol.ownedComponentDefinition_get(self, object_id)
+
+    def add(self, sbol_obj):
+        return _libsbol.ownedComponentDefinition_add(self, sbol_obj)
+
+    def copy(self):
+        return _libsbol.ownedComponentDefinition_copy(self)
+
+    def create(self, *args):
+        return _libsbol.ownedComponentDefinition_create(self, *args)
+
+    def begin(self):
+        return _libsbol.ownedComponentDefinition_begin(self)
+
+    def end(self):
+        return _libsbol.ownedComponentDefinition_end(self)
+
+    def size(self):
+        return _libsbol.ownedComponentDefinition_size(self)
+    __swig_setmethods__["python_iter"] = _libsbol.ownedComponentDefinition_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.ownedComponentDefinition_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.ownedComponentDefinition_python_iter_get, _libsbol.ownedComponentDefinition_python_iter_set)
+
+    def __getitem__(self, *args):
+        return _libsbol.ownedComponentDefinition___getitem__(self, *args)
+
+    def __iter__(self):
+        return _libsbol.ownedComponentDefinition___iter__(self)
+
+    def next(self):
+        return _libsbol.ownedComponentDefinition_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedComponentDefinition___next__(self)
+
+    def __len__(self):
+        return _libsbol.ownedComponentDefinition___len__(self)
+
+    def addRange(self, sbol_obj):
+        return _libsbol.ownedComponentDefinition_addRange(self, sbol_obj)
+
+    def getRange(self):
+        return _libsbol.ownedComponentDefinition_getRange(self)
+    __swig_destroy__ = _libsbol.delete_ownedComponentDefinition
+    __del__ = lambda self: None
+ownedComponentDefinition_swigregister = _libsbol.ownedComponentDefinition_swigregister
+ownedComponentDefinition_swigregister(ownedComponentDefinition)
+
+class listOfOwnedComponentDefinitions(ownedComponentDefinition):
+    __swig_setmethods__ = {}
+    for _s in [ownedComponentDefinition]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, listOfOwnedComponentDefinitions, name, value)
+    __swig_getmethods__ = {}
+    for _s in [ownedComponentDefinition]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, listOfOwnedComponentDefinitions, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_listOfOwnedComponentDefinitions(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def remove(self, index):
+        return _libsbol.listOfOwnedComponentDefinitions_remove(self, index)
+    __swig_destroy__ = _libsbol.delete_listOfOwnedComponentDefinitions
+    __del__ = lambda self: None
+listOfOwnedComponentDefinitions_swigregister = _libsbol.listOfOwnedComponentDefinitions_swigregister
+listOfOwnedComponentDefinitions_swigregister(listOfOwnedComponentDefinitions)
+
+class moduleDefinitionProperty(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, moduleDefinitionProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, moduleDefinitionProperty, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_moduleDefinitionProperty(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_moduleDefinitionProperty
+    __del__ = lambda self: None
+
+    def getTypeURI(self):
+        return _libsbol.moduleDefinitionProperty_getTypeURI(self)
+
+    def getOwner(self):
+        return _libsbol.moduleDefinitionProperty_getOwner(self)
+
+    def get(self):
+        return _libsbol.moduleDefinitionProperty_get(self)
+
+    def set(self, *args):
+        return _libsbol.moduleDefinitionProperty_set(self, *args)
+
+    def add(self, new_value):
+        return _libsbol.moduleDefinitionProperty_add(self, new_value)
+
+    def write(self):
+        return _libsbol.moduleDefinitionProperty_write(self)
+
+    def validate(self, arg=None):
+        return _libsbol.moduleDefinitionProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.moduleDefinitionProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.moduleDefinitionProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.moduleDefinitionProperty_next(self)
+
+    def __next__(self):
+        return _libsbol.moduleDefinitionProperty___next__(self)
+
+    def __len__(self):
+        return _libsbol.moduleDefinitionProperty___len__(self)
+moduleDefinitionProperty_swigregister = _libsbol.moduleDefinitionProperty_swigregister
+moduleDefinitionProperty_swigregister(moduleDefinitionProperty)
+
+class ownedModuleDefinition(moduleDefinitionProperty):
+    __swig_setmethods__ = {}
+    for _s in [moduleDefinitionProperty]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ownedModuleDefinition, name, value)
+    __swig_getmethods__ = {}
+    for _s in [moduleDefinitionProperty]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, ownedModuleDefinition, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_ownedModuleDefinition(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def set(self, sbol_obj):
+        return _libsbol.ownedModuleDefinition_set(self, sbol_obj)
+
+    def get(self, object_id):
+        return _libsbol.ownedModuleDefinition_get(self, object_id)
+
+    def add(self, sbol_obj):
+        return _libsbol.ownedModuleDefinition_add(self, sbol_obj)
+
+    def copy(self):
+        return _libsbol.ownedModuleDefinition_copy(self)
+
+    def create(self, *args):
+        return _libsbol.ownedModuleDefinition_create(self, *args)
+
+    def begin(self):
+        return _libsbol.ownedModuleDefinition_begin(self)
+
+    def end(self):
+        return _libsbol.ownedModuleDefinition_end(self)
+
+    def size(self):
+        return _libsbol.ownedModuleDefinition_size(self)
+    __swig_setmethods__["python_iter"] = _libsbol.ownedModuleDefinition_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.ownedModuleDefinition_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.ownedModuleDefinition_python_iter_get, _libsbol.ownedModuleDefinition_python_iter_set)
+
+    def __getitem__(self, *args):
+        return _libsbol.ownedModuleDefinition___getitem__(self, *args)
+
+    def __iter__(self):
+        return _libsbol.ownedModuleDefinition___iter__(self)
+
+    def next(self):
+        return _libsbol.ownedModuleDefinition_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedModuleDefinition___next__(self)
+
+    def __len__(self):
+        return _libsbol.ownedModuleDefinition___len__(self)
+
+    def addRange(self, sbol_obj):
+        return _libsbol.ownedModuleDefinition_addRange(self, sbol_obj)
+
+    def getRange(self):
+        return _libsbol.ownedModuleDefinition_getRange(self)
+    __swig_destroy__ = _libsbol.delete_ownedModuleDefinition
+    __del__ = lambda self: None
+ownedModuleDefinition_swigregister = _libsbol.ownedModuleDefinition_swigregister
+ownedModuleDefinition_swigregister(ownedModuleDefinition)
+
+class listOfOwnedModuleDefinitions(ownedModuleDefinition):
+    __swig_setmethods__ = {}
+    for _s in [ownedModuleDefinition]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, listOfOwnedModuleDefinitions, name, value)
+    __swig_getmethods__ = {}
+    for _s in [ownedModuleDefinition]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, listOfOwnedModuleDefinitions, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_listOfOwnedModuleDefinitions(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def remove(self, index):
+        return _libsbol.listOfOwnedModuleDefinitions_remove(self, index)
+    __swig_destroy__ = _libsbol.delete_listOfOwnedModuleDefinitions
+    __del__ = lambda self: None
+listOfOwnedModuleDefinitions_swigregister = _libsbol.listOfOwnedModuleDefinitions_swigregister
+listOfOwnedModuleDefinitions_swigregister(listOfOwnedModuleDefinitions)
+
+class sequenceProperty(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, sequenceProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, sequenceProperty, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_sequenceProperty(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_sequenceProperty
+    __del__ = lambda self: None
+
+    def getTypeURI(self):
+        return _libsbol.sequenceProperty_getTypeURI(self)
+
+    def getOwner(self):
+        return _libsbol.sequenceProperty_getOwner(self)
+
+    def get(self):
+        return _libsbol.sequenceProperty_get(self)
+
+    def set(self, *args):
+        return _libsbol.sequenceProperty_set(self, *args)
+
+    def add(self, new_value):
+        return _libsbol.sequenceProperty_add(self, new_value)
+
+    def write(self):
+        return _libsbol.sequenceProperty_write(self)
+
+    def validate(self, arg=None):
+        return _libsbol.sequenceProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.sequenceProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.sequenceProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.sequenceProperty_next(self)
+
+    def __next__(self):
+        return _libsbol.sequenceProperty___next__(self)
+
+    def __len__(self):
+        return _libsbol.sequenceProperty___len__(self)
+sequenceProperty_swigregister = _libsbol.sequenceProperty_swigregister
+sequenceProperty_swigregister(sequenceProperty)
+
+class ownedSequence(sequenceProperty):
+    __swig_setmethods__ = {}
+    for _s in [sequenceProperty]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ownedSequence, name, value)
+    __swig_getmethods__ = {}
+    for _s in [sequenceProperty]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, ownedSequence, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_ownedSequence(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def set(self, sbol_obj):
+        return _libsbol.ownedSequence_set(self, sbol_obj)
+
+    def get(self, object_id):
+        return _libsbol.ownedSequence_get(self, object_id)
+
+    def add(self, sbol_obj):
+        return _libsbol.ownedSequence_add(self, sbol_obj)
+
+    def copy(self):
+        return _libsbol.ownedSequence_copy(self)
+
+    def create(self, *args):
+        return _libsbol.ownedSequence_create(self, *args)
+
+    def begin(self):
+        return _libsbol.ownedSequence_begin(self)
+
+    def end(self):
+        return _libsbol.ownedSequence_end(self)
+
+    def size(self):
+        return _libsbol.ownedSequence_size(self)
+    __swig_setmethods__["python_iter"] = _libsbol.ownedSequence_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.ownedSequence_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.ownedSequence_python_iter_get, _libsbol.ownedSequence_python_iter_set)
+
+    def __getitem__(self, *args):
+        return _libsbol.ownedSequence___getitem__(self, *args)
+
+    def __iter__(self):
+        return _libsbol.ownedSequence___iter__(self)
+
+    def next(self):
+        return _libsbol.ownedSequence_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedSequence___next__(self)
+
+    def __len__(self):
+        return _libsbol.ownedSequence___len__(self)
+
+    def addRange(self, sbol_obj):
+        return _libsbol.ownedSequence_addRange(self, sbol_obj)
+
+    def getRange(self):
+        return _libsbol.ownedSequence_getRange(self)
+    __swig_destroy__ = _libsbol.delete_ownedSequence
+    __del__ = lambda self: None
+ownedSequence_swigregister = _libsbol.ownedSequence_swigregister
+ownedSequence_swigregister(ownedSequence)
+
+class listOfOwnedSequences(ownedSequence):
+    __swig_setmethods__ = {}
+    for _s in [ownedSequence]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, listOfOwnedSequences, name, value)
+    __swig_getmethods__ = {}
+    for _s in [ownedSequence]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, listOfOwnedSequences, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_listOfOwnedSequences(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def remove(self, index):
+        return _libsbol.listOfOwnedSequences_remove(self, index)
+    __swig_destroy__ = _libsbol.delete_listOfOwnedSequences
+    __del__ = lambda self: None
+listOfOwnedSequences_swigregister = _libsbol.listOfOwnedSequences_swigregister
+listOfOwnedSequences_swigregister(listOfOwnedSequences)
+
+class modelProperty(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, modelProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, modelProperty, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_modelProperty(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_modelProperty
+    __del__ = lambda self: None
+
+    def getTypeURI(self):
+        return _libsbol.modelProperty_getTypeURI(self)
+
+    def getOwner(self):
+        return _libsbol.modelProperty_getOwner(self)
+
+    def get(self):
+        return _libsbol.modelProperty_get(self)
+
+    def set(self, *args):
+        return _libsbol.modelProperty_set(self, *args)
+
+    def add(self, new_value):
+        return _libsbol.modelProperty_add(self, new_value)
+
+    def write(self):
+        return _libsbol.modelProperty_write(self)
+
+    def validate(self, arg=None):
+        return _libsbol.modelProperty_validate(self, arg)
+
+    def __getitem__(self, nIndex):
+        return _libsbol.modelProperty___getitem__(self, nIndex)
+
+    def __iter__(self):
+        return _libsbol.modelProperty___iter__(self)
+
+    def next(self):
+        return _libsbol.modelProperty_next(self)
+
+    def __next__(self):
+        return _libsbol.modelProperty___next__(self)
+
+    def __len__(self):
+        return _libsbol.modelProperty___len__(self)
+modelProperty_swigregister = _libsbol.modelProperty_swigregister
+modelProperty_swigregister(modelProperty)
+
+class ownedModel(modelProperty):
+    __swig_setmethods__ = {}
+    for _s in [modelProperty]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ownedModel, name, value)
+    __swig_getmethods__ = {}
+    for _s in [modelProperty]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, ownedModel, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_ownedModel(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def set(self, sbol_obj):
+        return _libsbol.ownedModel_set(self, sbol_obj)
+
+    def get(self, object_id):
+        return _libsbol.ownedModel_get(self, object_id)
+
+    def add(self, sbol_obj):
+        return _libsbol.ownedModel_add(self, sbol_obj)
+
+    def copy(self):
+        return _libsbol.ownedModel_copy(self)
+
+    def create(self, *args):
+        return _libsbol.ownedModel_create(self, *args)
+
+    def begin(self):
+        return _libsbol.ownedModel_begin(self)
+
+    def end(self):
+        return _libsbol.ownedModel_end(self)
+
+    def size(self):
+        return _libsbol.ownedModel_size(self)
+    __swig_setmethods__["python_iter"] = _libsbol.ownedModel_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.ownedModel_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.ownedModel_python_iter_get, _libsbol.ownedModel_python_iter_set)
+
+    def __getitem__(self, *args):
+        return _libsbol.ownedModel___getitem__(self, *args)
+
+    def __iter__(self):
+        return _libsbol.ownedModel___iter__(self)
+
+    def next(self):
+        return _libsbol.ownedModel_next(self)
+
+    def __next__(self):
+        return _libsbol.ownedModel___next__(self)
+
+    def __len__(self):
+        return _libsbol.ownedModel___len__(self)
+
+    def addRange(self, sbol_obj):
+        return _libsbol.ownedModel_addRange(self, sbol_obj)
+
+    def getRange(self):
+        return _libsbol.ownedModel_getRange(self)
+    __swig_destroy__ = _libsbol.delete_ownedModel
+    __del__ = lambda self: None
+ownedModel_swigregister = _libsbol.ownedModel_swigregister
+ownedModel_swigregister(ownedModel)
+
+class listOfOwnedModels(ownedModel):
+    __swig_setmethods__ = {}
+    for _s in [ownedModel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, listOfOwnedModels, name, value)
+    __swig_getmethods__ = {}
+    for _s in [ownedModel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, listOfOwnedModels, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_listOfOwnedModels(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
+    def remove(self, index):
+        return _libsbol.listOfOwnedModels_remove(self, index)
+    __swig_destroy__ = _libsbol.delete_listOfOwnedModels
+    __del__ = lambda self: None
+listOfOwnedModels_swigregister = _libsbol.listOfOwnedModels_swigregister
+listOfOwnedModels_swigregister(listOfOwnedModels)
+
 
 def raptor_error_handler(user_data, message):
     return _libsbol.raptor_error_handler(user_data, message)
 raptor_error_handler = _libsbol.raptor_error_handler
-class Document(_object):
+class Document(SBOLObject):
     __swig_setmethods__ = {}
+    for _s in [SBOLObject]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Document, name, value)
     __swig_getmethods__ = {}
+    for _s in [SBOLObject]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Document, name)
     __repr__ = _swig_repr
 
@@ -4133,18 +4800,22 @@ class Document(_object):
     __swig_getmethods__["componentDefinitions"] = _libsbol.Document_componentDefinitions_get
     if _newclass:
         componentDefinitions = _swig_property(_libsbol.Document_componentDefinitions_get, _libsbol.Document_componentDefinitions_set)
-    __swig_setmethods__["models"] = _libsbol.Document_models_set
-    __swig_getmethods__["models"] = _libsbol.Document_models_get
-    if _newclass:
-        models = _swig_property(_libsbol.Document_models_get, _libsbol.Document_models_set)
     __swig_setmethods__["moduleDefinitions"] = _libsbol.Document_moduleDefinitions_set
     __swig_getmethods__["moduleDefinitions"] = _libsbol.Document_moduleDefinitions_get
     if _newclass:
         moduleDefinitions = _swig_property(_libsbol.Document_moduleDefinitions_get, _libsbol.Document_moduleDefinitions_set)
+    __swig_setmethods__["models"] = _libsbol.Document_models_set
+    __swig_getmethods__["models"] = _libsbol.Document_models_get
+    if _newclass:
+        models = _swig_property(_libsbol.Document_models_get, _libsbol.Document_models_set)
     __swig_setmethods__["sequences"] = _libsbol.Document_sequences_set
     __swig_getmethods__["sequences"] = _libsbol.Document_sequences_get
     if _newclass:
         sequences = _swig_property(_libsbol.Document_sequences_get, _libsbol.Document_sequences_set)
+    __swig_setmethods__["sequenceAnnotations"] = _libsbol.Document_sequenceAnnotations_set
+    __swig_getmethods__["sequenceAnnotations"] = _libsbol.Document_sequenceAnnotations_get
+    if _newclass:
+        sequenceAnnotations = _swig_property(_libsbol.Document_sequenceAnnotations_get, _libsbol.Document_sequenceAnnotations_set)
 
     def getTopLevel(self, arg2):
         return _libsbol.Document_getTopLevel(self, arg2)
@@ -4224,17 +4895,8 @@ class Document(_object):
     def close(self, *args):
         return _libsbol.Document_close(self, *args)
 
-    def addComponentDefinition(self, *args):
-        return _libsbol.Document_addComponentDefinition(self, *args)
-
-    def addSequence(self, *args):
-        return _libsbol.Document_addSequence(self, *args)
-
     def addModel(self, *args):
         return _libsbol.Document_addModel(self, *args)
-
-    def addModuleDefinition(self, *args):
-        return _libsbol.Document_addModuleDefinition(self, *args)
 
     def getComponentDefinition(self, uri):
         return _libsbol.Document_getComponentDefinition(self, uri)
@@ -4247,6 +4909,15 @@ class Document(_object):
 
     def getModuleDefinition(self, uri):
         return _libsbol.Document_getModuleDefinition(self, uri)
+
+    def addComponentDefinition(self, *args):
+        return _libsbol.Document_addComponentDefinition(self, *args)
+
+    def addSequence(self, *args):
+        return _libsbol.Document_addSequence(self, *args)
+
+    def addModuleDefinition(self, *args):
+        return _libsbol.Document_addModuleDefinition(self, *args)
     __swig_destroy__ = _libsbol.delete_Document
     __del__ = lambda self: None
 Document_swigregister = _libsbol.Document_swigregister
