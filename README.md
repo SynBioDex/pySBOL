@@ -65,20 +65,22 @@ doc.write("gene_cassette.xml")
 
 INSTALLATION
 ============
-Package installation requires setuptools, available here https://pypi.python.org/pypi/setuptools#downloads. (Setuptools is a stable and well-supported library that makes distributing Python projects easier)
 
-1 - Git the package.
+1 - [Download the latest release](https://github.com/SynBioDex/pysbol2/releases/tag/2.0.1b)
+    If you want the latest snapshot instead, use [git](https://git-scm.com/) and type following command in the console or terminal.
+```
+git clone https://github.com/SynBioDex/pysbol2.git
+```
 
-2 - After setuptools is installed, run the installer script using the following command line in the package's root directory :
+2 - Run the installer script by using the following command line in the package's root directory :
 ```
-$ python setup.py bdist
-$ python setup.py install
+python setup.py install
 ```
-3 - Test import of the modules in your python environment. 
+3 - Test the module in your python environment by importing it. 
 ```
 >>> import sbol
 ```
-(Caution!  If you have trouble importing the module with the setup script, check to see if there are multiple Python installations on your machine and also check the output of the setup script to see which version of Python is the install target.  You can also test the module locally from inside the Mac_OSX/sbol or Win_32/sbol folders.)
+(Caution!  If you have trouble importing the module with the setup script, check to see if there are multiple Python installations on your machine and also check the output of the setup script to see which version of Python is the install target. You can also test the module locally from inside the Mac_OSX/sbol or Win_32/sbol folders.)
 
 PLATFORMS
 =========
@@ -86,7 +88,7 @@ Tested on Mac OSX Version 10.9.5 and Windows 7 Enterprise with Python 2.7.9 32 b
 
 DEPENDENCIES
 ============
-pySBOL is packaged with precompiled binaries for libSBOL.
+pySBOL is packaged with precompiled dependencies for libSBOL.
 
 
 ACKNOWLEDGEMENTS
