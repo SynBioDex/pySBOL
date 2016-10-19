@@ -66,8 +66,9 @@ doc.write("gene_cassette.xml")
 INSTALLATION
 ============
 
-1 - [Download the latest release](https://github.com/SynBioDex/pysbol2/releases/tag/2.0.1b)
-    If you want the latest snapshot instead, use [git](https://git-scm.com/) and type following command in the console or terminal.
+1 - [Download the latest release.](https://github.com/SynBioDex/pysbol2/releases/tag/2.0.1b)
+
+If you want the latest snapshot instead, use [git](https://git-scm.com/) and type following command in the console or terminal.
 ```
 git clone https://github.com/SynBioDex/pysbol2.git
 ```
