@@ -903,6 +903,12 @@ class Config(_object):
         return _libsbol.Config_isSBOLCompliant(self)
 
 
+    def toggleSBOLCompliantTypes(self):
+        return _libsbol.Config_toggleSBOLCompliantTypes(self)
+
+    def compliantTypesEnabled(self):
+        return _libsbol.Config_compliantTypesEnabled(self)
+
     def toggleExceptions(self):
         """
         void
@@ -918,6 +924,12 @@ class Config(_object):
         """
         return _libsbol.Config_exceptionsEnabled(self)
 
+
+    def setFileFormat(self, file_format):
+        return _libsbol.Config_setFileFormat(self, file_format)
+
+    def getFileFormat(self):
+        return _libsbol.Config_getFileFormat(self)
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
@@ -970,6 +982,22 @@ def isSBOLCompliant():
     Checks if SBOLCompliance is enabled. 
     """
     return _libsbol.isSBOLCompliant()
+
+def toggleSBOLCompliantTypes():
+    return _libsbol.toggleSBOLCompliantTypes()
+toggleSBOLCompliantTypes = _libsbol.toggleSBOLCompliantTypes
+
+def compliantTypesEnabled():
+    return _libsbol.compliantTypesEnabled()
+compliantTypesEnabled = _libsbol.compliantTypesEnabled
+
+def setFileFormat(file_format):
+    return _libsbol.setFileFormat(file_format)
+setFileFormat = _libsbol.setFileFormat
+
+def getFileFormat():
+    return _libsbol.getFileFormat()
+getFileFormat = _libsbol.getFileFormat
 
 def toggleExceptions():
     """
@@ -1828,6 +1856,9 @@ class VersionProperty(TextProperty):
     __getattr__ = lambda self, name: _swig_getattr(self, VersionProperty, name)
     __repr__ = _swig_repr
 
+    def split(self):
+        return _libsbol.VersionProperty_split(self)
+
     def incrementMajor(self):
         """
         void
@@ -2206,6 +2237,9 @@ class Identified(SBOLObject):
         description = _swig_property(_libsbol.Identified_description_get, _libsbol.Identified_description_set)
     __swig_destroy__ = _libsbol.delete_Identified
     __del__ = lambda self: None
+
+    def copy(self, *args):
+        return _libsbol.Identified_copy(self, *args)
 Identified_swigregister = _libsbol.Identified_swigregister
 Identified_swigregister(Identified)
 
@@ -2727,12 +2761,23 @@ class _ownedLocation(locationProperty):
         return _libsbol._ownedLocation_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol._ownedLocation_getRange(self)
+        return _libsbol._ownedLocation_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol._ownedLocation_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete__ownedLocation
     __del__ = lambda self: None
@@ -3283,12 +3328,23 @@ class ownedMapsTo(mapsToProperty):
         return _libsbol.ownedMapsTo_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedMapsTo_getRange(self)
+        return _libsbol.ownedMapsTo_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedMapsTo_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedMapsTo
     __del__ = lambda self: None
@@ -3366,14 +3422,6 @@ class ComponentInstance(Identified):
     __swig_getmethods__["mapsTos"] = _libsbol.ComponentInstance_mapsTos_get
     if _newclass:
         mapsTos = _swig_property(_libsbol.ComponentInstance_mapsTos_get, _libsbol.ComponentInstance_mapsTos_set)
-    __swig_setmethods__["roles"] = _libsbol.ComponentInstance_roles_set
-    __swig_getmethods__["roles"] = _libsbol.ComponentInstance_roles_get
-    if _newclass:
-        roles = _swig_property(_libsbol.ComponentInstance_roles_get, _libsbol.ComponentInstance_roles_set)
-    __swig_setmethods__["roleIntegration"] = _libsbol.ComponentInstance_roleIntegration_set
-    __swig_getmethods__["roleIntegration"] = _libsbol.ComponentInstance_roleIntegration_get
-    if _newclass:
-        roleIntegration = _swig_property(_libsbol.ComponentInstance_roleIntegration_get, _libsbol.ComponentInstance_roleIntegration_set)
     __swig_destroy__ = _libsbol.delete_ComponentInstance
     __del__ = lambda self: None
 ComponentInstance_swigregister = _libsbol.ComponentInstance_swigregister
@@ -3401,6 +3449,14 @@ class Component(ComponentInstance):
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Component, name)
     __repr__ = _swig_repr
+    __swig_setmethods__["roles"] = _libsbol.Component_roles_set
+    __swig_getmethods__["roles"] = _libsbol.Component_roles_get
+    if _newclass:
+        roles = _swig_property(_libsbol.Component_roles_get, _libsbol.Component_roles_set)
+    __swig_setmethods__["roleIntegration"] = _libsbol.Component_roleIntegration_set
+    __swig_getmethods__["roleIntegration"] = _libsbol.Component_roleIntegration_get
+    if _newclass:
+        roleIntegration = _swig_property(_libsbol.Component_roleIntegration_get, _libsbol.Component_roleIntegration_set)
 
     def __init__(self, *args):
         """
@@ -3966,12 +4022,23 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         return _libsbol.ownedSequenceConstraint_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedSequenceConstraint_getRange(self)
+        return _libsbol.ownedSequenceConstraint_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedSequenceConstraint_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequenceConstraint
     __del__ = lambda self: None
@@ -4419,12 +4486,23 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         return _libsbol.ownedSequenceAnnotation_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedSequenceAnnotation_getRange(self)
+        return _libsbol.ownedSequenceAnnotation_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedSequenceAnnotation_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequenceAnnotation
     __del__ = lambda self: None
@@ -4872,12 +4950,23 @@ class ownedComponents(componentsProperty):
         return _libsbol.ownedComponents_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedComponents_getRange(self)
+        return _libsbol.ownedComponents_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedComponents_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedComponents
     __del__ = lambda self: None
@@ -5587,12 +5676,23 @@ class ownedParticipation(participationProperty):
         return _libsbol.ownedParticipation_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedParticipation_getRange(self)
+        return _libsbol.ownedParticipation_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedParticipation_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedParticipation
     __del__ = lambda self: None
@@ -6086,12 +6186,23 @@ class ownedModule(moduleProperty):
         return _libsbol.ownedModule_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedModule_getRange(self)
+        return _libsbol.ownedModule_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedModule_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModule
     __del__ = lambda self: None
@@ -6426,12 +6537,23 @@ class ownedInteraction(interactionProperty):
         return _libsbol.ownedInteraction_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedInteraction_getRange(self)
+        return _libsbol.ownedInteraction_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedInteraction_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedInteraction
     __del__ = lambda self: None
@@ -6766,12 +6888,23 @@ class ownedFunctionalComponent(functionalComponentProperty):
         return _libsbol.ownedFunctionalComponent_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedFunctionalComponent_getRange(self)
+        return _libsbol.ownedFunctionalComponent_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedFunctionalComponent_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedFunctionalComponent
     __del__ = lambda self: None
@@ -7182,12 +7315,23 @@ class ownedComponentDefinition(componentDefinitionProperty):
         return _libsbol.ownedComponentDefinition_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedComponentDefinition_getRange(self)
+        return _libsbol.ownedComponentDefinition_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedComponentDefinition_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedComponentDefinition
     __del__ = lambda self: None
@@ -7522,12 +7666,23 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         return _libsbol.ownedModuleDefinition_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedModuleDefinition_getRange(self)
+        return _libsbol.ownedModuleDefinition_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedModuleDefinition_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModuleDefinition
     __del__ = lambda self: None
@@ -7862,12 +8017,23 @@ class ownedSequence(sequenceProperty):
         return _libsbol.ownedSequence_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedSequence_getRange(self)
+        return _libsbol.ownedSequence_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedSequence_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequence
     __del__ = lambda self: None
@@ -8202,12 +8368,23 @@ class ownedModel(modelProperty):
         return _libsbol.ownedModel_addRange(self, sbol_obj)
 
 
-    def getRange(self):
+    def getRange(self, *args):
         """
         SBOLSubClass & get()
 
         """
-        return _libsbol.ownedModel_getRange(self)
+        return _libsbol.ownedModel_getRange(self, *args)
+
+
+    def createRange(self, uri):
+        """
+        void
+        create(std::string uri_prefix, std::string display_id, std::string
+        version)
+
+        Deprecate this 
+        """
+        return _libsbol.ownedModel_createRange(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModel
     __del__ = lambda self: None
