@@ -55,18 +55,18 @@ elif config[0] == 'Mac':
       'sbol': ['_libsbol.so', 'libsbol.py']
     }
 setup(
-    name='pySBOL',
+    name='pySBOL2',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.0.1b',
+    version='2.1.0b',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/SynBioDex/pySBOL',
+    url='https://github.com/SynBioDex/pySBOL2',
 
     # Author details
     author='Bryan Bartley',
