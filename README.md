@@ -86,6 +86,7 @@ python setup.py install
 ACKNOWLEDGEMENTS
 ================
 libSBOL is brought to you by Bryan Bartley, Kiri Choi, and SBOL Developers.
+
 Current support for the development of libSBOL is generously provided by the NSF through the [Synthetic Biology Open Language Resource](http://www.nsf.gov/awardsearch/showAward?AWD_ID=1355909) collaborative award.
 
 <p align="center">
