@@ -1,7 +1,7 @@
-pySBOL 2.0.1
+pySBOL 2.1.0
 ======================================
 
-**pySBOL** is a SWIG-Python wrapper around [libSBOL](https://github.com/SynBioDex/libSBOL), a module for reading, writing, and constructing genetic designs according to the standardized specifications of the [Synthetic Biology Open Language (SBOL)](http://www.sbolstandard.org/).  
+**pySBOL2** is a SWIG-Python wrapper around [libSBOL](https://github.com/SynBioDex/libSBOL), a module for reading, writing, and constructing genetic designs according to the standardized specifications of the [Synthetic Biology Open Language (SBOL)](http://www.sbolstandard.org/).  
 
 EXAMPLE CODE
 ============
@@ -66,7 +66,7 @@ doc.write("gene_cassette.xml")
 INSTALLATION
 ============
 
-1 - [Download the latest release.](https://github.com/SynBioDex/pysbol2/releases/tag/2.0.1b)
+1 - [Download the latest release.](https://github.com/SynBioDex/pysbol2/releases/latest)
 
 If you want the latest snapshot instead, use [git](https://git-scm.com/) and type following command in the console or terminal.
 ```
@@ -83,16 +83,11 @@ python setup.py install
 ```
 (Caution!  If you have trouble importing the module with the setup script, check to see if there are multiple Python installations on your machine and also check the output of the setup script to see which version of Python is the install target. You can also test the module locally from inside the Mac_OSX/sbol or Win_32/sbol folders.)
 
-PLATFORMS
-=========
-Tested on Mac OSX Version 10.9.5 and Windows 7 Enterprise with Python 2.7.9 32 bit. Python 3 not currently supported.
-
-DEPENDENCIES
-============
-pySBOL is packaged with precompiled dependencies for libSBOL.
-
-
 ACKNOWLEDGEMENTS
 ================
-
+libSBOL is brought to you by Bryan Bartley, Kiri Choi, and SBOL Developers.
 Current support for the development of libSBOL is generously provided by the NSF through the [Synthetic Biology Open Language Resource](http://www.nsf.gov/awardsearch/showAward?AWD_ID=1355909) collaborative award.
+
+<p align="center">
+  <img src="./logo.jpg" height="100" />
+</p>
