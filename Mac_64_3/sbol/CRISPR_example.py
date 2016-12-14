@@ -182,13 +182,13 @@ cas9m_BFP = ComponentDefinition("cas9m_BFP", BIOPAX_PROTEIN, version)
 doc.addComponentDefinition(cas9m_BFP)
 
 CRa_U6 = ComponentDefinition("CRa_U6", BIOPAX_DNA, version)
-CRa_U6.sequence.add(CRa_U6_seq.persistentIdentity.get())
+CRa_U6.sequences.add(CRa_U6_seq.persistentIdentity.get())
 CRa_U6.roles.set(SO_PROMOTER)
 doc.addComponentDefinition(CRa_U6)
 
 gRNA_b_nc = ComponentDefinition("gRNA_b_nc", BIOPAX_DNA, version)
 gRNA_b_nc.roles.set(SO_CDS)
-gRNA_b_nc.sequence.add(gRNA_b_seq.persistentIdentity.get())
+gRNA_b_nc.sequences.add(gRNA_b_seq.persistentIdentity.get())
 doc.addComponentDefinition(gRNA_b_nc)
 
 gRNA_b_terminator = ComponentDefinition("gRNA_b_terminator", BIOPAX_DNA, version)
@@ -233,7 +233,7 @@ doc.addComponentDefinition(cas9m_BFP_gRNA_b)
 
 mKate_cds = ComponentDefinition("mKate_cds", BIOPAX_DNA, version)
 mKate_cds.roles.set(SO_CDS)
-mKate_cds.sequence.add(mKate_seq.persistentIdentity.get())
+mKate_cds.sequences.add(mKate_seq.persistentIdentity.get())
 doc.addComponentDefinition(mKate_cds)
 
 mKate_gene = ComponentDefinition("mKate_gene", BIOPAX_DNA, version)
@@ -286,7 +286,7 @@ doc.addComponentDefinition(Gal4VP16)
 
 CRP_b = ComponentDefinition("CRP_b", BIOPAX_DNA, version)
 CRP_b.roles.set(SO_PROMOTER)
-CRP_b.sequence.add(CRP_b_seq.persistentIdentity.get())
+CRP_b.sequences.add(CRP_b_seq.persistentIdentity.get())
 doc.addComponentDefinition(CRP_b)
 
 EYFP_cds = ComponentDefinition("EYFP_cds", BIOPAX_DNA, version)
