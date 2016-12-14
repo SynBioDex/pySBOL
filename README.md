@@ -5,7 +5,7 @@
 ## INSTALLATION
 
 ### Using Python
-Python by default comes with package installer. Follow the steps below to install pySBOL2. If you have Windows, and would like to try our Windows binary installers, check [Using Installer for Windows](https://github.com/SynBioDex/pysbol2#Using-Installer-for-Windows) section.
+Python by default comes with package installer. Follow the steps below to install pySBOL2. If you have Windows, and would like to try our Windows binary installers, check [Using Installer for Windows](https://github.com/SynBioDex/pysbol2#using-installer-for-windows) section.
 
 1 - [Download the source code of latest release here](https://github.com/SynBioDex/pysbol2/releases/latest) and extract it.
 If you would like to try out our latest snapshot, use [git](https://git-scm.com/) and type following command in the console or terminal which will clone the source under pysbol2 folder.
