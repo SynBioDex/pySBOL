@@ -1,3 +1,3 @@
-__version__ = '2.1.0b'
+__version__ = '2.1.0'
 
 from sbol import *
