@@ -32,7 +32,7 @@ sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 # Set Win 32bit Python 2 file as the default source.
-sys.path.append(os.path.join(os.path.dirname(__name__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__name__), '../Win_32_2'))
 
 # -- General configuration ------------------------------------------------
 
