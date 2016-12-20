@@ -1,7 +1,7 @@
 Installation
 ======================
 
-Python by default comes with package installer. Follow the steps below to install pySBOL. If you have Windows, and would like to try our Windows binary installers, check `Using Installer for Windows <https://synbiodex.github.io/pySBOL2/installation.html#id1>`_ section.
+Python by default comes with package installer. Follow the steps below to install pySBOL. If you have Windows, and would like to try our Windows binary installers, check `Using Installer for Windows <https://pysbol2.readthedocs.io/en/latest/installation.html#id1>`_ section.
 
 ----------------------
 Using Python
