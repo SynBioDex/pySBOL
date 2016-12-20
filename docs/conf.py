@@ -16,12 +16,13 @@ import sys
 import os
 
 import sphinx_rtd_theme
-from unittest.mock import MagicMock
+from mock import Mock as MagicMock
 
+# Mock things for readthedoc build
 class Mock(MagicMock):
     @classmethod
     def __getattr__(cls, name):
-            return MagicMock()
+            return Mock()
 
 MOCK_MODULES = ['_libsbol']
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
