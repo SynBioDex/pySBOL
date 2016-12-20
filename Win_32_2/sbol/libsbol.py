@@ -851,10 +851,9 @@ class Config(_object):
 
 
     A class which contains global configuration variables for the libSBOL
-    environment. Intended to be used like a static class, configuration
-    variables are accessed through the `config' object.
+    environment. Intended to be used like a static class, configuration variables
+    are accessed through the `config' object.  
 
-    C++ includes: config.h 
     """
 
     __swig_setmethods__ = {}
@@ -864,7 +863,10 @@ class Config(_object):
     __repr__ = _swig_repr
 
     def __init__(self):
-        """Config() """
+        """
+
+
+        """
         this = _libsbol.new_Config()
         try:
             self.this.append(this)
@@ -873,23 +875,23 @@ class Config(_object):
 
     def setHomespace(self, ns):
         """
-        void
-        setHomespace(std::string ns) 
+
+
         """
         return _libsbol.Config_setHomespace(self, ns)
 
 
     def getHomespace(self):
         """
-        std::string
-        getHomespace() 
+
+
         """
         return _libsbol.Config_getHomespace(self)
 
 
     def hasHomespace(self):
         """
-        int hasHomespace()
+
 
         """
         return _libsbol.Config_hasHomespace(self)
@@ -897,47 +899,67 @@ class Config(_object):
 
     def toggleSBOLCompliance(self):
         """
-        void
-        toggleSBOLCompliance() 
+
+
         """
         return _libsbol.Config_toggleSBOLCompliance(self)
 
 
     def isSBOLCompliant(self):
         """
-        int
-        isSBOLCompliant() 
+
+
         """
         return _libsbol.Config_isSBOLCompliant(self)
 
 
     def toggleSBOLCompliantTypes(self):
+        """
+
+
+        """
         return _libsbol.Config_toggleSBOLCompliantTypes(self)
 
+
     def compliantTypesEnabled(self):
+        """
+
+
+        """
         return _libsbol.Config_compliantTypesEnabled(self)
+
 
     def toggleExceptions(self):
         """
-        void
-        toggleExceptions() 
+
+
         """
         return _libsbol.Config_toggleExceptions(self)
 
 
     def exceptionsEnabled(self):
         """
-        int
-        exceptionsEnabled() 
+
+
         """
         return _libsbol.Config_exceptionsEnabled(self)
 
 
     def setFileFormat(self, file_format):
+        """
+
+
+        """
         return _libsbol.Config_setFileFormat(self, file_format)
 
+
     def getFileFormat(self):
+        """
+
+
+        """
         return _libsbol.Config_getFileFormat(self)
+
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
@@ -946,129 +968,159 @@ Config_swigregister(Config)
 
 def setHomespace(ns):
     """
-    void
-    sbol::setHomespace(std::string ns)
 
-    Set the default namespace for autocreation of URIs when a new SBOL
-    object is created. 
+
+    Set the default namespace for autocreation of URIs when a new SBOL object is
+    created.  
+
     """
     return _libsbol.setHomespace(ns)
 
 def getHomespace():
     """
-    std::string
-    sbol::getHomespace()
 
-    Get the current default namespace for autocreation of URIs when a new
-    SBOL object is created. 
+
+    Get the current default namespace for autocreation of URIs when a new SBOL
+    object is created.  
+
     """
     return _libsbol.getHomespace()
 
 def hasHomespace():
     """
-    int sbol::hasHomespace()
 
-    Checks if a valid default namespace has been defined. 
+
+    Checks if a valid default namespace has been defined.  
+
     """
     return _libsbol.hasHomespace()
 
 def toggleSBOLCompliance():
     """
-    void
-    sbol::toggleSBOLCompliance()
 
-    Enables SBOLCompliance, which simplifies creation of URIs in
-    constructor calls. 
+
+    Enables SBOLCompliance, which simplifies creation of URIs in constructor calls.  
+
     """
     return _libsbol.toggleSBOLCompliance()
 
 def isSBOLCompliant():
     """
-    int
-    sbol::isSBOLCompliant()
 
-    Checks if SBOLCompliance is enabled. 
+
+    Checks if SBOLCompliance is enabled.  
+
     """
     return _libsbol.isSBOLCompliant()
 
 def toggleSBOLCompliantTypes():
+    """
+
+
+    Turns option to include types in SBOL-compliant URIs on or off.  
+
+    """
     return _libsbol.toggleSBOLCompliantTypes()
-toggleSBOLCompliantTypes = _libsbol.toggleSBOLCompliantTypes
 
 def compliantTypesEnabled():
+    """
+
+
+    Checks if an object's type is included in SBOL-compliant URIs.  
+
+    """
     return _libsbol.compliantTypesEnabled()
-compliantTypesEnabled = _libsbol.compliantTypesEnabled
 
 def setFileFormat(file_format):
+    """
+
+
+    """
     return _libsbol.setFileFormat(file_format)
-setFileFormat = _libsbol.setFileFormat
 
 def getFileFormat():
+    """
+
+
+    """
     return _libsbol.getFileFormat()
-getFileFormat = _libsbol.getFileFormat
 
 def toggleExceptions():
     """
-    void
-    sbol::toggleExceptions() 
+
+
     """
     return _libsbol.toggleExceptions()
 
 def exceptionsEnabled():
     """
-    int
-    sbol::exceptionsEnabled() 
+
+
     """
     return _libsbol.exceptionsEnabled()
 
 def randomIdentifier():
     """
-    std::string
-    sbol::randomIdentifier() 
+
+
     """
     return _libsbol.randomIdentifier()
 
 def autoconstructURI():
     """
-    std::string
-    sbol::autoconstructURI() 
+
+
     """
     return _libsbol.autoconstructURI()
 
 def constructNonCompliantURI(uri):
     """
-    std::string
-    sbol::constructNonCompliantURI(std::string uri) 
+
+
     """
     return _libsbol.constructNonCompliantURI(uri)
 
 def constructCompliantURI(*args):
     """
-    std::string
-    sbol::constructCompliantURI(std::string parent_type, std::string
-    child_type, std::string display_id, std::string version) 
+
+
     """
     return _libsbol.constructCompliantURI(*args)
 
 def getCompliantURI(uri_prefix, sbol_class_name, display_id, version):
     """
-    std::string
-    sbol::getCompliantURI(std::string uri_prefix, std::string
-    sbol_class_name, std::string display_id, std::string version) 
+
+
     """
     return _libsbol.getCompliantURI(uri_prefix, sbol_class_name, display_id, version)
 
 def parseClassName(uri):
+    """
+
+
+    Parse a class name from a URI.  
+
+    Parameters
+    ----------
+    * `uri` :  
+        A URI  
+
+    """
     return _libsbol.parseClassName(uri)
-parseClassName = _libsbol.parseClassName
 
 def parsePropertyName(uri):
+    """
+
+
+    """
     return _libsbol.parsePropertyName(uri)
-parsePropertyName = _libsbol.parsePropertyName
 
 def parseNamespace(uri):
+    """
+
+
+    """
     return _libsbol.parseNamespace(uri)
-parseNamespace = _libsbol.parseNamespace
 DEFAULT_NS = _libsbol.DEFAULT_NS
 SBOL_URI = _libsbol.SBOL_URI
 RDF_URI = _libsbol.RDF_URI
@@ -1195,50 +1247,38 @@ SBO_CONTINUOUS = _libsbol.SBO_CONTINUOUS
 SBO_DISCRETE = _libsbol.SBO_DISCRETE
 
 def sbolRule10101(sbol_obj, arg):
-    """
-    void
-    sbol::sbolRule10101(void *sbol_obj, void *arg) 
-    """
     return _libsbol.sbolRule10101(sbol_obj, arg)
+sbolRule10101 = _libsbol.sbolRule10101
 
 def sbolRule10102(sbol_obj, arg):
-    """
-    void
-    sbol::sbolRule10102(void *sbol_obj, void *arg) 
-    """
     return _libsbol.sbolRule10102(sbol_obj, arg)
+sbolRule10102 = _libsbol.sbolRule10102
 
 def sbol_rule_10202(sbol_obj, arg):
-    """
-    void
-    sbol::sbol_rule_10202(void *sbol_obj, void *arg) 
-    """
     return _libsbol.sbol_rule_10202(sbol_obj, arg)
+sbol_rule_10202 = _libsbol.sbol_rule_10202
 
 def libsbol_rule_1(sbol_obj, arg):
     """
-    void
-    sbol::libsbol_rule_1(void *sbol_obj, void *arg) 
+
+
     """
     return _libsbol.libsbol_rule_1(sbol_obj, arg)
 class _StringProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -1249,9 +1289,8 @@ class _StringProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new__StringProperty(*args)
         try:
@@ -1263,73 +1302,78 @@ class _StringProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol._StringProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol._StringProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol._StringProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol._StringProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol._StringProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol._StringProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol._StringProperty_validate(self, arg)
 
@@ -1355,20 +1399,17 @@ class _IntProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -1379,9 +1420,8 @@ class _IntProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new__IntProperty(*args)
         try:
@@ -1393,73 +1433,78 @@ class _IntProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol._IntProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol._IntProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol._IntProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol._IntProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol._IntProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol._IntProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol._IntProperty_validate(self, arg)
 
@@ -1485,14 +1530,13 @@ class URIProperty(_StringProperty):
     """
 
 
-    A URIProperty may contain a restricted type of string that conforms to
-    the specification for a Uniform Resource Identifier (URI), typically
-    consisting of a namespace authority followed by an identifier.
+    A URIProperty may contain a restricted type of string that conforms to the
+    specification for a Uniform Resource Identifier (URI), typically consisting of a
+    namespace authority followed by an identifier.  
 
-    A URIProperty often contains a reference to an SBOL object or may
-    contain an ontology term.
+    A URIProperty often contains a reference to an SBOL object or may contain an
+    ontology term.  
 
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -1507,8 +1551,7 @@ class URIProperty(_StringProperty):
 
     def __init__(self, *args):
         """
-        URIProperty(sbol_type type_uri=UNDEFINED, void *property_owner=NULL,
-        std::string initial_value="", ValidationRules validation_rules={})
+
 
         """
         this = _libsbol.new_URIProperty(*args)
@@ -1525,12 +1568,10 @@ class TextProperty(_StringProperty):
     """
 
 
-    TextProperty objects are used to contain string literals.
+    TextProperty objects are used to contain string literals.  
 
-    They can be used as member objects inside custom SBOL Extension
-    classes.
+    They can be used as member objects inside custom SBOL Extension classes.  
 
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -1545,8 +1586,8 @@ class TextProperty(_StringProperty):
 
     def __init__(self, *args):
         """
-        TextProperty(sbol_type type_uri, void *property_owner, std::string
-        initial_value="") 
+
+
         """
         this = _libsbol.new_TextProperty(*args)
         try:
@@ -1562,12 +1603,10 @@ class IntProperty(_IntProperty):
     """
 
 
-    IntProperty objects are used to contain integers.
+    IntProperty objects are used to contain integers.  
 
-    They can be used as member objects inside custom SBOL Extension
-    classes.
+    They can be used as member objects inside custom SBOL Extension classes.  
 
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -1582,8 +1621,8 @@ class IntProperty(_IntProperty):
 
     def __init__(self, type_uri, property_owner, initial_value=0):
         """
-        IntProperty(sbol_type type_uri, void *property_owner, int
-        initial_value=0) 
+
+
         """
         this = _libsbol.new_IntProperty(type_uri, property_owner, initial_value)
         try:
@@ -1599,15 +1638,13 @@ class VersionProperty(TextProperty):
     """
 
 
-    Contains a version number for an SBOL object.
+    Contains a version number for an SBOL object.  
 
-    The VersionProperty follows Maven versioning semantics and includes a
-    major, minor, and patch version number. Specifically, libSBOL
-    currently only supports using '.' as a delimiter. Ex: v2.0.1. If the
-    user does not want to follow Maven versioning, they can specify an
-    arbitrary version string using the set() method.
+    The VersionProperty follows Maven versioning semantics and includes a major,
+    minor, and patch version number. Specifically, libSBOL currently only supports
+    using '.' as a delimiter. Ex: v2.0.1. If the user does not want to follow Maven
+    versioning, they can specify an arbitrary version string using the set() method.  
 
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -1621,99 +1658,122 @@ class VersionProperty(TextProperty):
     __repr__ = _swig_repr
 
     def split(self):
+        """
+
+
+        """
         return _libsbol.VersionProperty_split(self)
+
 
     def incrementMajor(self):
         """
-        void
-        incrementMajor()
 
-        Increment major version. 
+
+        Increment major version.  
+
         """
         return _libsbol.VersionProperty_incrementMajor(self)
 
 
     def incrementMinor(self):
         """
-        void
-        incrementMinor()
 
-        Increment minor version. 
+
+        Increment minor version.  
+
         """
         return _libsbol.VersionProperty_incrementMinor(self)
 
 
     def incrementPatch(self):
         """
-        void
-        incrementPatch()
 
-        Increment patch version. 
+
+        Increment patch version.  
+
         """
         return _libsbol.VersionProperty_incrementPatch(self)
 
 
     def decrementMinor(self):
         """
-        void
-        decrementMinor()
 
-        Decrement major version. 
+
+        Decrement major version.  
+
         """
         return _libsbol.VersionProperty_decrementMinor(self)
 
 
     def decrementMajor(self):
         """
-        void
-        decrementMajor()
 
-        Decrement major version. 
+
+        Decrement major version.  
+
         """
         return _libsbol.VersionProperty_decrementMajor(self)
 
 
     def decrementPatch(self):
         """
-        void
-        decrementPatch()
 
-        Decrement major version. 
+
+        Decrement major version.  
+
         """
         return _libsbol.VersionProperty_decrementPatch(self)
 
 
     def major(self):
         """
-        int major()
 
-        Get major version. 
+
+        Get major version.  
+
+        Returns
+        -------
+        The major version as an integer Splits the version string by a delimiter and
+        returns the major version number  
+
         """
         return _libsbol.VersionProperty_major(self)
 
 
     def minor(self):
         """
-        int minor()
 
-        Get minor version. 
+
+        Get minor version.  
+
+        Returns
+        -------
+        The minor version as an integer Splits the version string by a delimiter and
+        returns the minor version number  
+
         """
         return _libsbol.VersionProperty_minor(self)
 
 
     def patch(self):
         """
-        int patch()
 
-        Get patch version. 
+
+        Get patch version.  
+
+        Returns
+        -------
+        The patch version as an integer Splits the version string by a delimiter and
+        returns the patch version  
+
         """
         return _libsbol.VersionProperty_patch(self)
 
 
     def __init__(self, *args):
         """
-        VersionProperty(sbol_type type_uri, void *property_owner, std::string
-        initial_value="") 
+
+
         """
         this = _libsbol.new_VersionProperty(*args)
         try:
@@ -1729,10 +1789,9 @@ class SBOLObject(_object):
     """
 
 
-    An SBOLObject converts a C++ class data structure into an RDF triple
-    store and contains methods for serializing and parsing RDF triples.
+    An SBOLObject converts a C++ class data structure into an RDF triple store and
+    contains methods for serializing and parsing RDF triples.  
 
-    C++ includes: object.h 
     """
 
     __swig_setmethods__ = {}
@@ -1758,8 +1817,8 @@ class SBOLObject(_object):
 
     def __init__(self, *args):
         """
-        SBOLObject(std::string uri_prefix, std::string display_id, std::string
-        version) 
+
+
         """
         this = _libsbol.new_SBOLObject(*args)
         try:
@@ -1781,61 +1840,121 @@ class SBOLObject(_object):
 
     def getTypeURI(self):
         """
-        virtual
-        sbol_type getTypeURI() 
+
+
         """
         return _libsbol.SBOLObject_getTypeURI(self)
 
 
     def serialize(self, sbol_serializer, sbol_world=None):
         """
-        void
-        serialize(raptor_serializer *sbol_serializer, raptor_world
-        *sbol_world=NULL) 
+
+
         """
         return _libsbol.SBOLObject_serialize(self, sbol_serializer, sbol_world)
 
 
     def nest(self, rdfxml_buffer):
         """
-        std::string
-        nest(std::string &rdfxml_buffer) 
+
+
         """
         return _libsbol.SBOLObject_nest(self, rdfxml_buffer)
 
 
     def find(self, uri):
         """
-        int find(std::string
-        uri) 
+
+
         """
         return _libsbol.SBOLObject_find(self, uri)
 
 
     def isEqual(self, obj):
+        """
+
+
+        """
         return _libsbol.SBOLObject_isEqual(self, obj)
+
 
     def getClassName(self, type):
         """
-        std::string
-        getClassName(std::string type) 
+
+
         """
         return _libsbol.SBOLObject_getClassName(self, type)
 
 
     def getPropertyValue(self, property_uri):
+        """
+
+
+        Get the value of a custom annotation property by its URI.  
+
+        Parameters
+        ----------
+        * `property_uri` :  
+            The URI for the property  
+
+        Returns
+        -------
+        The value of the property or SBOL_ERROR_NOT_FOUND  
+
+        """
         return _libsbol.SBOLObject_getPropertyValue(self, property_uri)
 
+
     def getPropertyValues(self, property_uri):
+        """
+
+
+        Get all values of a custom annotation property by its URI.  
+
+        Parameters
+        ----------
+        * `property_uri` :  
+            The URI for the property  
+
+        Returns
+        -------
+        A vector of property values or SBOL_ERROR_NOT_FOUND  
+
+        """
         return _libsbol.SBOLObject_getPropertyValues(self, property_uri)
 
+
     def getProperties(self):
+        """
+
+
+        Gets URIs for all properties contained by this object.  
+
+        This includes SBOL core properties as well as custom annotations. Use this to
+        find custom extension data in an SBOL file.  
+
+        Returns
+        -------
+        A vector of URIs that identify the properties contained in this object  
+
+        """
         return _libsbol.SBOLObject_getProperties(self)
+
     __swig_destroy__ = _libsbol.delete_SBOLObject
     __del__ = lambda self: None
 
     def close(self):
-        """void close() """
+        """
+
+
+        Use this method to destroy an SBOL object that is not contained by a parent
+        Document.  
+
+        If the object does have a parent Document, instead use doc.close() with the
+        object's URI identity as an argument.  Recurse through child objects and delete
+        them.  
+
+        """
         return _libsbol.SBOLObject_close(self)
 
 
@@ -1851,15 +1970,14 @@ class ReferencedObject(URIProperty):
     """
 
 
-    A reference to another SBOL object Contains a Uniform Resource
-    Identifier (URI) that refers to an an associated object.
+    A reference to another SBOL object Contains a Uniform Resource Identifier (URI)
+    that refers to an an associated object.  
 
-    The object it points to may be another resource in this Document or an
-    external reference, for example to an object in an external
-    repository. In the SBOL specification, association by reference is
-    indicated in class diagrams by arrows with open (white) diamonds.
+    The object it points to may be another resource in this Document or an external
+    reference, for example to an object in an external repository. In the SBOL
+    specification, association by reference is indicated in class diagrams by arrows
+    with open (white) diamonds.  
 
-    C++ includes: object.h 
     """
 
     __swig_setmethods__ = {}
@@ -1874,8 +1992,8 @@ class ReferencedObject(URIProperty):
 
     def __init__(self, *args):
         """
-        ReferencedObject(sbol_type type_uri=UNDEFINED, SBOLObject
-        *property_owner=NULL, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_ReferencedObject(*args)
         try:
@@ -1885,60 +2003,80 @@ class ReferencedObject(URIProperty):
 
     def create(self, uri):
         """
-        std::string
-        create(std::string uri) 
+
+
+        Creates another SBOL object derived from TopLevel and adds it to the Document.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            In "open world" mode, this is a full URI and the same as the returned URI.
+            If the default namespace for libSBOL has been configured, then this argument
+            should simply be a local identifier. If SBOL-compliance is enabled, this
+            argument should be the intended displayId of the new object. A full URI is
+            automatically generated and returned.  
+
+        Returns
+        -------
+        The full URI of the created object.  
+
         """
         return _libsbol.ReferencedObject_create(self, uri)
 
 
     def set(self, uri):
         """
-        virtual void
-        set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ReferencedObject_set(self, uri)
 
 
     def addReference(self, uri):
         """
-        void
-        addReference(const std::string uri) 
+
+
         """
         return _libsbol.ReferencedObject_addReference(self, uri)
 
 
     def setReference(self, uri):
         """
-        void
-        setReference(const std::string uri) 
+
+
         """
         return _libsbol.ReferencedObject_setReference(self, uri)
 
 
     def begin(self):
         """
-        iterator
-        begin() 
+
+
         """
         return _libsbol.ReferencedObject_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ReferencedObject_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ReferencedObject_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ReferencedObject_python_iter_set
@@ -1969,14 +2107,13 @@ class Identified(SBOLObject):
     """
 
 
-    All SBOL-defined classes are directly or indirectly derived from the
-    Identified abstract class.
+    All SBOL-defined classes are directly or indirectly derived from the Identified
+    abstract class.  
 
-    An Identified object is identified using a Uniform Resource Identifier
-    (URI), a unique string that identifies and refers to a specific object
-    in an SBOL document or in an online resource such as a DNA repository.
+    An Identified object is identified using a Uniform Resource Identifier (URI), a
+    unique string that identifies and refers to a specific object in an SBOL
+    document or in an online resource such as a DNA repository.  
 
-    C++ includes: identified.h 
     """
 
     __swig_setmethods__ = {}
@@ -2024,10 +2161,9 @@ class TopLevel(Identified):
     """
 
 
-    All SBOL classes derived from TopLevel appear as top level nodes in
-    the RDF/XML document tree and SBOL files. An abstract class.
+    All SBOL classes derived from TopLevel appear as top level nodes in the RDF/XML
+    document tree and SBOL files. An abstract class.  
 
-    C++ includes: toplevel.h 
     """
 
     __swig_setmethods__ = {}
@@ -2041,6 +2177,10 @@ class TopLevel(Identified):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+
+        """
         this = _libsbol.new_TopLevel(*args)
         try:
             self.this.append(this)
@@ -2049,8 +2189,8 @@ class TopLevel(Identified):
 
     def addToDocument(self, arg2):
         """
-        void
-        addToDocument(sbol::Document &) 
+
+
         """
         return _libsbol.TopLevel_addToDocument(self, arg2)
 
@@ -2063,11 +2203,9 @@ class Location(Identified):
     """
 
 
-    The Location class specifies the strand orientation of a Component and
-    can be further extended by the Range, Cut, and GenericLocation
-    classes.
+    The Location class specifies the strand orientation of a Component and can be
+    further extended by the Range, Cut, and GenericLocation classes.  
 
-    C++ includes: location.h 
     """
 
     __swig_setmethods__ = {}
@@ -2086,8 +2224,7 @@ class Location(Identified):
 
     def __init__(self, *args):
         """
-        Location(sbol_type,
-        std::string uri_prefix, std::string display_id, std::string version)
+
 
         """
         this = _libsbol.new_Location(*args)
@@ -2104,13 +2241,11 @@ class Range(Location):
     """
 
 
-    A Range object specifies a region via discrete, inclusive start and
-    end positions that correspond to indices for characters in the
-    elements String of a Sequence. Note that the index of the first
-    location is 1, as is typical practice in biology, rather than 0, as is
-    typical practice in computer science.
+    A Range object specifies a region via discrete, inclusive start and end
+    positions that correspond to indices for characters in the elements String of a
+    Sequence. Note that the index of the first location is 1, as is typical practice
+    in biology, rather than 0, as is typical practice in computer science.  
 
-    C++ includes: location.h 
     """
 
     __swig_setmethods__ = {}
@@ -2133,9 +2268,25 @@ class Range(Location):
 
     def __init__(self, *args):
         """
-        Range(std::string
-        uri_prefix, std::string display_id, std::string version, int start,
-        int end) 
+
+
+        Construct a Range.  
+
+        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
+        Range > instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+        * `start` :  
+            An integer of 1 or greater  
+        * `end` :  
+            An integer equal to or greater than the start  
+
         """
         this = _libsbol.new_Range(*args)
         try:
@@ -2148,6 +2299,14 @@ Range_swigregister = _libsbol.Range_swigregister
 Range_swigregister(Range)
 
 class Cut(Location):
+    """
+
+
+    The Cut class specifies a location between two coordinates of a Sequence's
+    elements. class Cut : public Location.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Location]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -2163,6 +2322,25 @@ class Cut(Location):
         at = _swig_property(_libsbol.Cut_at_get, _libsbol.Cut_at_set)
 
     def __init__(self, *args):
+        """
+
+
+        Construct a Cut.  
+
+        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
+        Cut > instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+        * `at` :  
+            An integer of 0 or greater  
+
+        """
         this = _libsbol.new_Cut(*args)
         try:
             self.this.append(this)
@@ -2177,20 +2355,17 @@ class locationProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -2201,9 +2376,8 @@ class locationProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_locationProperty(*args)
         try:
@@ -2215,73 +2389,78 @@ class locationProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.locationProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.locationProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.locationProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.locationProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.locationProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.locationProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.locationProperty_validate(self, arg)
 
@@ -2420,21 +2599,19 @@ class _ownedLocation(locationProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -2449,8 +2626,8 @@ class _ownedLocation(locationProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new__ownedLocation(*args)
         try:
@@ -2460,24 +2637,30 @@ class _ownedLocation(locationProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol._ownedLocation_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol._ownedLocation_get(self, object_id)
@@ -2485,51 +2668,58 @@ class _ownedLocation(locationProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol._ownedLocation_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol._ownedLocation_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol._ownedLocation_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol._ownedLocation_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol._ownedLocation_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol._ownedLocation_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol._ownedLocation_python_iter_set
@@ -2554,23 +2744,29 @@ class _ownedLocation(locationProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol._ownedLocation_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol._ownedLocation_getRange(self, *args)
@@ -2578,11 +2774,10 @@ class _ownedLocation(locationProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol._ownedLocation_createRange(self, uri)
 
@@ -2595,16 +2790,14 @@ class listOfOwnedLocations(_ownedLocation):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -2619,8 +2812,8 @@ class listOfOwnedLocations(_ownedLocation):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedLocations(*args)
         try:
@@ -2629,7 +2822,10 @@ class listOfOwnedLocations(_ownedLocation):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedLocations_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedLocations
@@ -2641,13 +2837,12 @@ class SequenceAnnotation(Identified):
     """
 
 
-    The SequenceAnnotation class describes one or more regions of interest
-    on the Sequence objects referred to by its parent ComponentDefinition.
-    In addition, SequenceAnnotation objects can describe the substructure
-    of their parent ComponentDefinition through association with the
-    Component objects contained by this ComponentDefinition.
+    The SequenceAnnotation class describes one or more regions of interest on the
+    Sequence objects referred to by its parent ComponentDefinition. In addition,
+    SequenceAnnotation objects can describe the substructure of their parent
+    ComponentDefinition through association with the Component objects contained by
+    this ComponentDefinition.  
 
-    C++ includes: sequenceannotation.h 
     """
 
     __swig_setmethods__ = {}
@@ -2678,9 +2873,20 @@ class SequenceAnnotation(Identified):
 
     def __init__(self, *args):
         """
-        SequenceAnnotation(std::string
-        uri=DEFAULT_NS"/SequenceAnnotation/example", std::string
-        version="1.0.0") 
+
+
+        Construct a ComponentDefinition.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
         """
         this = _libsbol.new_SequenceAnnotation(*args)
         try:
@@ -2696,10 +2902,15 @@ class MapsTo(Identified):
     """
 
 
-    MapsTo objects provide a means to connect outputs and inputs of
-    ModuleDefinitions.
+    The purpose of the MapsTo class is to make identity relationships between
+    different ComponentInstances in functional and structural hierarchies more
+    clear. For example, a MapsTo object may be used to connect outputs and inputs
+    between different low-level ModuleDefinitions contained in a higher level Module
+    Definition. A MapsTo object may also be used to override a generic Component in
+    a low-level ModuleDefinition with an explicit Component in a high-level
+    ModuleDefinition, for example mapping a generic gene to an explicit component
+    with a name and sequence.  
 
-    C++ includes: mapsto.h 
     """
 
     __swig_setmethods__ = {}
@@ -2726,9 +2937,29 @@ class MapsTo(Identified):
 
     def __init__(self, *args):
         """
-        MapsTo(std::string
-        uri_prefix, std::string display_id, std::string version, std::string
-        local, std::string remote, std::string refinement) 
+
+
+        Construct a MapsTo.  
+
+        If operating in SBOL-compliant mode, use ModuleDefinition::mapsTos::create
+        instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+        * `local` :  
+            The identity of the lower level ComponentInstance  
+        * `remote` :  
+            The identity of the higher level ComponentInstance  
+        * `restriction` :  
+            Flag indicating the relationship between high- and low-level
+            ComponentInstances. By default, this is set to
+            SBOL_REFINEMENT_VERIFY_IDENTICAL  
+
         """
         this = _libsbol.new_MapsTo(*args)
         try:
@@ -2857,20 +3088,17 @@ class mapsToProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -2881,9 +3109,8 @@ class mapsToProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_mapsToProperty(*args)
         try:
@@ -2895,73 +3122,78 @@ class mapsToProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.mapsToProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.mapsToProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.mapsToProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.mapsToProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.mapsToProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.mapsToProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.mapsToProperty_validate(self, arg)
 
@@ -2987,21 +3219,19 @@ class ownedMapsTo(mapsToProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -3016,8 +3246,8 @@ class ownedMapsTo(mapsToProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedMapsTo(*args)
         try:
@@ -3027,24 +3257,30 @@ class ownedMapsTo(mapsToProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedMapsTo_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedMapsTo_get(self, object_id)
@@ -3052,51 +3288,58 @@ class ownedMapsTo(mapsToProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedMapsTo_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedMapsTo_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedMapsTo_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedMapsTo_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedMapsTo_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedMapsTo_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedMapsTo_python_iter_set
@@ -3121,23 +3364,29 @@ class ownedMapsTo(mapsToProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedMapsTo_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedMapsTo_getRange(self, *args)
@@ -3145,11 +3394,10 @@ class ownedMapsTo(mapsToProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedMapsTo_createRange(self, uri)
 
@@ -3162,16 +3410,14 @@ class listOfOwnedMapsTos(ownedMapsTo):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -3186,8 +3432,8 @@ class listOfOwnedMapsTos(ownedMapsTo):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedMapsTos(*args)
         try:
@@ -3196,7 +3442,10 @@ class listOfOwnedMapsTos(ownedMapsTo):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedMapsTos_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedMapsTos
@@ -3205,6 +3454,11 @@ listOfOwnedMapsTos_swigregister = _libsbol.listOfOwnedMapsTos_swigregister
 listOfOwnedMapsTos_swigregister(listOfOwnedMapsTos)
 
 class ComponentInstance(Identified):
+    """
+
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Identified]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -3238,13 +3492,12 @@ class Component(ComponentInstance):
     """
 
 
-    The Component class is used to compose ComponentDefinition objects
-    into a structural hierarchy. For example, the ComponentDefinition of a
-    gene could contain four Component objects: a promoter, RBS, CDS, and
-    terminator. In turn, the ComponentDefinition of the promoter Component
-    could contain Component objects defined as various operator sites.
+    The Component class is used to compose ComponentDefinition objects into a
+    structural hierarchy. For example, the ComponentDefinition of a gene could
+    contain four Component objects: a promoter, RBS, CDS, and terminator. In turn,
+    the ComponentDefinition of the promoter Component could contain Component
+    objects defined as various operator sites.  
 
-    C++ includes: component.h 
     """
 
     __swig_setmethods__ = {}
@@ -3267,9 +3520,28 @@ class Component(ComponentInstance):
 
     def __init__(self, *args):
         """
-        Component(std::string uri=DEFAULT_NS"/Component/example",
-        std::string definition="", std::string access=SBOL_ACCESS_PUBLIC,
-        std::string version="1.0.0") 
+
+
+        Construct a Component.  
+
+        If operating in SBOL-compliant mode, use ComponentDefinition::components::create
+        instead.  
+
+        Parameters
+        ----------
+        * `A` :  
+            full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `definition` :  
+            A URI referring to the ComponentDefinition that defines this instance  
+        * `access` :  
+            Flag indicating whether the Component can be referred to remotely by a
+            MapsTo  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
         """
         this = _libsbol.new_Component(*args)
         try:
@@ -3285,13 +3557,11 @@ class FunctionalComponent(ComponentInstance):
     """
 
 
-    The FunctionalComponent class is used to specify the functional usage
-    of a ComponentDefinition inside a ModuleDefinition. The
-    ModuleDefinition describes how the that describes how the
-    FunctionalComponent interacts with others and summarizes their
-    aggregate function.
+    The FunctionalComponent class is used to specify the functional usage of a
+    ComponentDefinition inside a ModuleDefinition. The ModuleDefinition describes
+    how the that describes how the FunctionalComponent interacts with others and
+    summarizes their aggregate function.  
 
-    C++ includes: component.h 
     """
 
     __swig_setmethods__ = {}
@@ -3310,32 +3580,31 @@ class FunctionalComponent(ComponentInstance):
 
     def __init__(self, *args):
         """
-        FunctionalComponent(std::string
-        uri=DEFAULT_NS"/FunctionalComponent/example", std::string
-        definition="", std::string access=SBOL_ACCESS_PUBLIC, std::string
-        direction=SBOL_DIRECTION_NONE, std::string version="1.0.0")
 
-        Construct a FunctionalComponent.
 
-        Parameters:
-        -----------
+        Construct a FunctionalComponent.  
 
-        A:  full URI including a scheme, namespace, and identifier. If
-        SBOLCompliance configuration is enabled, then this argument is simply
-        the displayId for the new object and a full URI will automatically be
-        constructed.
+        If operating in SBOL-compliant mode, use
+        ModuleDefinition::functionalComponents::create instead.  
 
-        definition:
+        Parameters
+        ----------
+        * `A` :  
+            full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `definition` :  
+            A URI referring to the ComponentDefinition that defines this instance  
+        * `access` :  
+            Flag indicating whether the FunctionalComponent can be referred to remotely
+            by a MapsTo  
+        * `direction` :  
+            The direction property specifies whether a FunctionalComponent serves as an
+            input, output, both, or neither for its parent ModuleDefinition object  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
 
-        access:
-
-        direction:  The direction property specifies whether a
-        FunctionalComponent serves as an input, output, both, or neither for
-        its parent ModuleDefinition object
-
-        version:  An arbitrary version string. If SBOLCompliance is enabled,
-        this should be a Maven version string of the form
-        "major.minor.patch". 
         """
         this = _libsbol.new_FunctionalComponent(*args)
         try:
@@ -3345,32 +3614,56 @@ class FunctionalComponent(ComponentInstance):
 
     def connect(self, interface_component):
         """
-        void
-        connect(FunctionalComponent &interface_component)
 
-        This method connects module inputs and outputs.
 
-        Parameters:
-        -----------
+        This method connects module inputs and outputs.  
 
-        interface_component:  An input or output component from another
-        ModuleDefinition that corresponds with this component. 
+        This convenience method auto-constructs a MapsTo object. See Biosystem Design
+        for an example  
+
+        Parameters
+        ----------
+        * `interface_component` :  
+            An input or output component from another ModuleDefinition that corresponds
+            with this component.  
+
         """
         return _libsbol.FunctionalComponent_connect(self, interface_component)
 
 
     def mask(self, masked_component):
         """
-        void
-        mask(FunctionalComponent &masked_component) 
+
+
+        This method is used to state that FunctionalComponents in separate
+        ModuleDefinitions are functionally equivalent.  
+
+        Using this method will override the FunctionalComponent in the argument with the
+        FunctionalComponent calling the method. This is useful for overriding a generic,
+        template component with an explicitly defined component. This convenience method
+        auto-constructs a MapsTo object. See Biosystem Design for an example  
+
+        Parameters
+        ----------
+        * `masked_component` :  
+            The FunctionalComponent that is being masked (over-ridden)  
+
         """
         return _libsbol.FunctionalComponent_mask(self, masked_component)
 
 
     def isMasked(self):
         """
-        int
-        isMasked() 
+
+
+        Used to tell if a FunctionalComponent is linked to an equivalent
+        FunctionalComponent in another ModuleDefinition.  
+
+        Returns
+        -------
+        1 if the FunctionalComponent has been over-rided by another FunctionalComponent,
+        0 if it hasn't.  
+
         """
         return _libsbol.FunctionalComponent_isMasked(self)
 
@@ -3383,15 +3676,13 @@ class SequenceConstraint(Identified):
     """
 
 
-    The SequenceConstraint class can be used to assert restrictions on the
-    relative, sequence- based positions of pairs of Component objects
-    contained by the same parent ComponentDefinition. The primary purpose
-    of this class is to enable the specification of partially designed
-    ComponentDefinition objects, for which the precise positions or
-    orientations of their contained Component objects are not yet fully
-    determined.
+    The SequenceConstraint class can be used to assert restrictions on the relative,
+    sequence-based positions of pairs of Component objects contained by the same
+    parent ComponentDefinition. The primary purpose of this class is to enable the
+    specification of partially designed ComponentDefinition objects, for which the
+    precise positions or orientations of their contained Component objects are not
+    yet fully determined.  
 
-    C++ includes: sequenceconstraint.h 
     """
 
     __swig_setmethods__ = {}
@@ -3418,10 +3709,27 @@ class SequenceConstraint(Identified):
 
     def __init__(self, *args):
         """
-        SequenceConstraint(std::string
-        uri=DEFAULT_NS"/SequenceConstraint/example", std::string
-        subject="", std::string object="", std::string
-        restriction=SBOL_RESTRICTION_PRECEDES, std::string version="1.0.0")
+
+
+        Construct a SequenceConstraint.  
+
+        If operating in SBOL-compliant mode, use
+        ComponentDefinition::sequenceConstraints::create instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+        * `subject` :  
+            Identity of the Component with this structural constraint  
+        * `object` :  
+            Identity of the other Component with this structural constraint  
+        * `restriction` :  
+            Flag indicating the type of structual constraint between the subject and
+            object Components. By default, this is set to SBOL_RESTRICTION_PRECEDES  
 
         """
         this = _libsbol.new_SequenceConstraint(*args)
@@ -3551,20 +3859,17 @@ class sequenceConstraintProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -3575,9 +3880,8 @@ class sequenceConstraintProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_sequenceConstraintProperty(*args)
         try:
@@ -3589,73 +3893,78 @@ class sequenceConstraintProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.sequenceConstraintProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.sequenceConstraintProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.sequenceConstraintProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.sequenceConstraintProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.sequenceConstraintProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.sequenceConstraintProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.sequenceConstraintProperty_validate(self, arg)
 
@@ -3681,21 +3990,19 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -3710,8 +4017,8 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedSequenceConstraint(*args)
         try:
@@ -3721,24 +4028,30 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedSequenceConstraint_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequenceConstraint_get(self, object_id)
@@ -3746,51 +4059,58 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequenceConstraint_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedSequenceConstraint_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequenceConstraint_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceConstraint_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceConstraint_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceConstraint_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedSequenceConstraint_python_iter_set
@@ -3815,23 +4135,29 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequenceConstraint_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequenceConstraint_getRange(self, *args)
@@ -3839,11 +4165,10 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequenceConstraint_createRange(self, uri)
 
@@ -3856,16 +4181,14 @@ class listOfOwnedSequenceConstraints(ownedSequenceConstraint):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -3880,8 +4203,8 @@ class listOfOwnedSequenceConstraints(ownedSequenceConstraint):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedSequenceConstraints(*args)
         try:
@@ -3890,7 +4213,10 @@ class listOfOwnedSequenceConstraints(ownedSequenceConstraint):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedSequenceConstraints_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequenceConstraints
@@ -4015,20 +4341,17 @@ class sequenceAnnotationProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -4039,9 +4362,8 @@ class sequenceAnnotationProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_sequenceAnnotationProperty(*args)
         try:
@@ -4053,73 +4375,78 @@ class sequenceAnnotationProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.sequenceAnnotationProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.sequenceAnnotationProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.sequenceAnnotationProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.sequenceAnnotationProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.sequenceAnnotationProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.sequenceAnnotationProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.sequenceAnnotationProperty_validate(self, arg)
 
@@ -4145,21 +4472,19 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -4174,8 +4499,8 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedSequenceAnnotation(*args)
         try:
@@ -4185,24 +4510,30 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedSequenceAnnotation_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequenceAnnotation_get(self, object_id)
@@ -4210,51 +4541,58 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequenceAnnotation_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedSequenceAnnotation_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequenceAnnotation_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceAnnotation_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceAnnotation_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedSequenceAnnotation_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedSequenceAnnotation_python_iter_set
@@ -4279,23 +4617,29 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequenceAnnotation_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequenceAnnotation_getRange(self, *args)
@@ -4303,11 +4647,10 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequenceAnnotation_createRange(self, uri)
 
@@ -4320,16 +4663,14 @@ class listOfOwnedSequenceAnnotations(ownedSequenceAnnotation):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -4344,8 +4685,8 @@ class listOfOwnedSequenceAnnotations(ownedSequenceAnnotation):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedSequenceAnnotations(*args)
         try:
@@ -4354,7 +4695,10 @@ class listOfOwnedSequenceAnnotations(ownedSequenceAnnotation):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedSequenceAnnotations_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequenceAnnotations
@@ -4479,20 +4823,17 @@ class componentsProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -4503,9 +4844,8 @@ class componentsProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_componentsProperty(*args)
         try:
@@ -4517,73 +4857,78 @@ class componentsProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.componentsProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.componentsProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.componentsProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.componentsProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.componentsProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.componentsProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.componentsProperty_validate(self, arg)
 
@@ -4609,21 +4954,19 @@ class ownedComponents(componentsProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -4638,8 +4981,8 @@ class ownedComponents(componentsProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedComponents(*args)
         try:
@@ -4649,24 +4992,30 @@ class ownedComponents(componentsProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedComponents_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedComponents_get(self, object_id)
@@ -4674,51 +5023,58 @@ class ownedComponents(componentsProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedComponents_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedComponents_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedComponents_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedComponents_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedComponents_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedComponents_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedComponents_python_iter_set
@@ -4743,23 +5099,29 @@ class ownedComponents(componentsProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedComponents_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedComponents_getRange(self, *args)
@@ -4767,11 +5129,10 @@ class ownedComponents(componentsProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedComponents_createRange(self, uri)
 
@@ -4784,16 +5145,14 @@ class listOfOwnedComponents(ownedComponents):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -4808,8 +5167,8 @@ class listOfOwnedComponents(ownedComponents):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedComponents(*args)
         try:
@@ -4818,7 +5177,10 @@ class listOfOwnedComponents(ownedComponents):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedComponents_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedComponents
@@ -4830,15 +5192,14 @@ class ComponentDefinition(TopLevel):
     """
 
 
-    The ComponentDefinition class represents the structural entities of a
-    biological design.
+    The ComponentDefinition class represents the structural entities of a biological
+    design.  
 
-    The primary usage of this class is to represent structural entities
-    with designed sequences, such as DNA, RNA, and proteins, but it can
-    also be used to represent any other entity that is part of a design,
-    such as small molecules, proteins, and complexes
+    The primary usage of this class is to represent structural entities with
+    designed sequences, such as DNA, RNA, and proteins, but it can also be used to
+    represent any other entity that is part of a design, such as small molecules,
+    proteins, and complexes  
 
-    C++ includes: componentdefinition.h 
     """
 
     __swig_setmethods__ = {}
@@ -4877,26 +5238,23 @@ class ComponentDefinition(TopLevel):
 
     def __init__(self, *args):
         """
-        ComponentDefinition(std::string
-        uri=DEFAULT_NS"/ComponentDefinition/example", std::string
-        type=BIOPAX_DNA, std::string version="1.0.0")
 
-        Construct a ComponentDefinition.
 
-        Parameters:
-        -----------
+        Construct a ComponentDefinition.  
 
-        uri:  A full URI including a scheme, namespace, and identifier. If
-        SBOLCompliance configuration is enabled, then this argument is simply
-        the displayId for the new object and a full URI will automatically be
-        constructed.
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `type` :  
+            A BioPAX ontology term that indicates whether the ComponentDefinition is
+            DNA, RNA, protein, or some other molecule type.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
 
-        type:  A BioPAX ontology term that indicates whether the
-        ComponentDefinition is DNA, RNA, protein, or some other molecule type.
-
-        version:  An arbitrary version string. If SBOLCompliance is enabled,
-        this should be a Maven version string of the form
-        "major.minor.patch". 
         """
         this = _libsbol.new_ComponentDefinition(*args)
         try:
@@ -4905,122 +5263,144 @@ class ComponentDefinition(TopLevel):
             self.this = this
 
     def updateSequence(self, *args):
-        """std::string updateSequence(std::string composite_sequence="") """
+        """
+
+
+        """
         return _libsbol.ComponentDefinition_updateSequence(self, *args)
 
 
     def getInSequentialOrder(self):
         """
-        std::vector<Component*> getInSequentialOrder()
 
-        Orders this ComponentDefinition's member Components into a linear
-        arrangement based on Sequence Constraints.
 
-        Primary sequence structure 
+        Orders this ComponentDefinition's member Components into a linear arrangement
+        based on Sequence Constraints.  
+
+        Returns
+        -------
+        Primary sequence structure  
+
         """
         return _libsbol.ComponentDefinition_getInSequentialOrder(self)
 
 
     def hasUpstreamComponent(self, current_component):
         """
-        int hasUpstreamComponent(Component &current_component)
 
-        Checks if the specified Component has a Component upstream in linear
-        arrangement on the DNA strand.
 
-        Checks that the appropriate SequenceConstraint exists.
+        Checks if the specified Component has a Component upstream in linear arrangement
+        on the DNA strand.  
 
-        Parameters:
-        -----------
+        Checks that the appropriate SequenceConstraint exists.  
 
-        current_component:  A Component in this ComponentDefinition
+        Parameters
+        ----------
+        * `current_component` :  
+            A Component in this ComponentDefinition  
 
-        1 if found, 0 if not 
+        Returns
+        -------
+        1 if found, 0 if not  
+
         """
         return _libsbol.ComponentDefinition_hasUpstreamComponent(self, current_component)
 
 
     def getUpstreamComponent(self, current_component):
         """
-        Component& getUpstreamComponent(Component &current_component)
 
-        Get the upstream Component.
 
-        The upstream component 
+        Get the upstream Component.  
+
+        Returns
+        -------
+        The upstream component  
+
         """
         return _libsbol.ComponentDefinition_getUpstreamComponent(self, current_component)
 
 
     def hasDownstreamComponent(self, current_component):
         """
-        int
-        hasDownstreamComponent(Component &current_component)
+
 
         Checks if the specified Component has a Component downstream in linear
-        arrangement on the DNA strand.
+        arrangement on the DNA strand.  
 
-        Checks that the appropriate SequenceConstraint exists.
+        Checks that the appropriate SequenceConstraint exists.  
 
-        Parameters:
-        -----------
+        Parameters
+        ----------
+        * `current_component` :  
+            A Component in this ComponentDefinition  
 
-        current_component:  A Component in this ComponentDefinition
+        Returns
+        -------
+        1 if found, 0 if not  
 
-        1 if found, 0 if not 
         """
         return _libsbol.ComponentDefinition_hasDownstreamComponent(self, current_component)
 
 
     def getDownstreamComponent(self, current_component):
         """
-        Component&
-        getDownstreamComponent(Component &current_component)
 
-        Get the downstream Component.
 
-        The downstream component 
+        Get the downstream Component.  
+
+        Returns
+        -------
+        The downstream component  
+
         """
         return _libsbol.ComponentDefinition_getDownstreamComponent(self, current_component)
 
 
     def getFirstComponent(self):
         """
-        Component& getFirstComponent()
 
-        Gets the first Component in a linear sequence.
 
-        The first component in sequential order 
+        Gets the first Component in a linear sequence.  
+
+        Returns
+        -------
+        The first component in sequential order  
+
         """
         return _libsbol.ComponentDefinition_getFirstComponent(self)
 
 
     def getLastComponent(self):
         """
-        Component& getLastComponent()
 
-        Gets the last Component in a linear sequence.
 
-        The last component in sequential order 
+        Gets the last Component in a linear sequence.  
+
+        Returns
+        -------
+        The last component in sequential order  
+
         """
         return _libsbol.ComponentDefinition_getLastComponent(self)
 
 
     def participate(self, species):
         """
-        void
-        participate(Participation &species)
 
-        A convenience method that assigns a component to participate in a
-        biochemical reaction.
+
+        A convenience method that assigns a component to participate in a biochemical
+        reaction.  
 
         Behind the scenes, it auto-constructs a FunctionalComponent for this
-        ComponentDefinition and assigns it to a Participation
+        ComponentDefinition and assigns it to a Participation  
 
-        Parameters:
-        -----------
+        Parameters
+        ----------
+        * `species` :  
+            A Participation object (ie, participant species in a biochemical
+            Interaction).  
 
-        species:  A Participation object (ie, participant species in a
-        biochemical Interaction). 
         """
         return _libsbol.ComponentDefinition_participate(self, species)
 
@@ -5029,22 +5409,21 @@ class ComponentDefinition(TopLevel):
 
     def assemble(self, *args):
         """
-        void
-        assemble(std::vector< ComponentDefinition * > list_of_components)
 
-        Assembles the provided vector of Components into a structural
-        hierarchy.
 
-        Autoconstructs the required Components and SequenceConstraints. The
-        resulting data structure is a partial design, still lacking a specific
-        DNA (or other) sequence. To fully realize a design, use
-        Sequence::assemble().
+        Assembles the provided vector of Components into a structural hierarchy.  
 
-        Parameters:
-        -----------
+        update SequenceAnnotation starts and ends  
 
-        list_of_components:  A list of subcomponents that will compose this
-        ComponentDefinition 
+        Autoconstructs the required Components and SequenceConstraints. The resulting
+        data structure is a partial design, still lacking a specific DNA (or other)
+        sequence. To fully realize a design, use Sequence::assemble().  
+
+        Parameters
+        ----------
+        * `list_of_components` :  
+            A list of subcomponents that will compose this ComponentDefinition  
+
         """
         return _libsbol.ComponentDefinition_assemble(self, *args)
 
@@ -5056,9 +5435,8 @@ class Sequence(TopLevel):
 
 
     The primary structure (eg, nucleotide or amino acid sequence) of a
-    ComponentDefinition object.
+    ComponentDefinition object.  
 
-    C++ includes: sequence.h 
     """
 
     __swig_setmethods__ = {}
@@ -5081,10 +5459,8 @@ class Sequence(TopLevel):
 
     def __init__(self, *args):
         """
-        Sequence(std::string
-        uri=DEFAULT_NS"/Sequence/example", std::string elements="",
-        std::string encoding=SBOL_ENCODING_IUPAC, std::string
-        version="1.0.0") 
+
+
         """
         this = _libsbol.new_Sequence(*args)
         try:
@@ -5094,8 +5470,8 @@ class Sequence(TopLevel):
 
     def assemble(self, *args):
         """
-        std::string
-        assemble(std::string composite_sequence="") 
+
+
         """
         return _libsbol.Sequence_assemble(self, *args)
 
@@ -5108,16 +5484,14 @@ class listOfURIs(URIProperty):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -5132,8 +5506,8 @@ class listOfURIs(URIProperty):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfURIs(*args)
         try:
@@ -5142,7 +5516,10 @@ class listOfURIs(URIProperty):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfURIs_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfURIs
@@ -5154,10 +5531,9 @@ class Participation(Identified):
     """
 
 
-    Each Participation represents how a particular FunctionalComponent
-    behaves in its parent Interaction.
+    Each Participation represents how a particular FunctionalComponent behaves in
+    its parent Interaction.  
 
-    C++ includes: participation.h 
     """
 
     __swig_setmethods__ = {}
@@ -5180,8 +5556,8 @@ class Participation(Identified):
 
     def __init__(self, *args):
         """
-        Participation(std::string uri, ComponentDefinition &species,
-        std::string version="1.0.0") 
+
+
         """
         this = _libsbol.new_Participation(*args)
         try:
@@ -5191,8 +5567,8 @@ class Participation(Identified):
 
     def define(self, *args):
         """
-        void
-        define(ComponentDefinition &species, std::string role="") 
+
+
         """
         return _libsbol.Participation_define(self, *args)
 
@@ -5205,20 +5581,17 @@ class participationProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -5229,9 +5602,8 @@ class participationProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_participationProperty(*args)
         try:
@@ -5243,73 +5615,78 @@ class participationProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.participationProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.participationProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.participationProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.participationProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.participationProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.participationProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.participationProperty_validate(self, arg)
 
@@ -5335,21 +5712,19 @@ class ownedParticipation(participationProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -5364,8 +5739,8 @@ class ownedParticipation(participationProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedParticipation(*args)
         try:
@@ -5375,24 +5750,30 @@ class ownedParticipation(participationProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedParticipation_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedParticipation_get(self, object_id)
@@ -5400,51 +5781,58 @@ class ownedParticipation(participationProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedParticipation_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedParticipation_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedParticipation_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedParticipation_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedParticipation_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedParticipation_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedParticipation_python_iter_set
@@ -5469,23 +5857,29 @@ class ownedParticipation(participationProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedParticipation_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedParticipation_getRange(self, *args)
@@ -5493,11 +5887,10 @@ class ownedParticipation(participationProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedParticipation_createRange(self, uri)
 
@@ -5510,16 +5903,14 @@ class listOfOwnedParticipations(ownedParticipation):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -5534,8 +5925,8 @@ class listOfOwnedParticipations(ownedParticipation):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedParticipations(*args)
         try:
@@ -5544,7 +5935,10 @@ class listOfOwnedParticipations(ownedParticipation):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedParticipations_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedParticipations
@@ -5557,14 +5951,12 @@ class Interaction(Identified):
 
 
     The Interaction class provides more detailed descriptionof how the
-    FunctionalComponents are intended to work together. For example, this
-    class can be used to represent different forms of genetic regulation
-    (e.g., transcriptional activation or repression), processes from the
-    central dogma of biology (e.g. transcription and translation), and
-    other basic molecular interactions (e.g., non-covalent binding or
-    enzymatic phosphorylation).
+    FunctionalComponents are intended to work together. For example, this class can
+    be used to represent different forms of genetic regulation (e.g.,
+    transcriptional activation or repression), processes from the central dogma of
+    biology (e.g. transcription and translation), and other basic molecular
+    interactions (e.g., non-covalent binding or enzymatic phosphorylation).  
 
-    C++ includes: interaction.h 
     """
 
     __swig_setmethods__ = {}
@@ -5587,21 +5979,19 @@ class Interaction(Identified):
 
     def __init__(self, *args):
         """
-        Interaction(std::string uri=DEFAULT_NS"/Interaction/example",
-        std::string interaction_type=SBO_INTERACTION)
 
-        Construct an Interaction.
 
-        Parameters:
-        -----------
+        Construct an Interaction.  
 
-        uri:  A full URI including a scheme, namespace, and identifier. If
-        SBOLCompliance configuration is enabled, then this argument is simply
-        the displayId for the new object and a full URI will automatically be
-        constructed.
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `interaction_type` :  
+            A Systems Biology Ontology term that describes a biochemical interaction  
 
-        interaction_type:  A Systems Biology Ontology term that describes a
-        biochemical interaction 
         """
         this = _libsbol.new_Interaction(*args)
         try:
@@ -5618,9 +6008,8 @@ class Module(Identified):
 
 
     The Module class represents a submodule of a ModuleDefinition within a
-    hierarchical design.
+    hierarchical design.  
 
-    C++ includes: module.h 
     """
 
     __swig_setmethods__ = {}
@@ -5643,9 +6032,26 @@ class Module(Identified):
 
     def __init__(self, *args):
         """
-        Module(std::string
-        uri=DEFAULT_NS"/Module/example", std::string definition="",
-        std::string version="1.0.0") 
+
+
+        Construct a Module.  
+
+        If operating in SBOL-compliant mode, use ModuleDefinition::modules::create
+        instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+        * `definition` :  
+            The identity of the Component with this structural constraint  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
         """
         this = _libsbol.new_Module(*args)
         try:
@@ -5661,15 +6067,14 @@ class Model(TopLevel):
     """
 
 
-    The purpose of the Model class is to serve as a placeholder for an
-    external computational model and provide additional meta-data to
-    enable better reasoning about the contents of this model.
+    The purpose of the Model class is to serve as a placeholder for an external
+    computational model and provide additional meta-data to enable better reasoning
+    about the contents of this model.  
 
-    In this way, there is minimal duplication of standardization efforts
-    and users of SBOL can formalize the function of a ModuleDefinition in
-    the language of their choice.
+    In this way, there is minimal duplication of standardization efforts and users
+    of SBOL can formalize the function of a ModuleDefinition in the language of
+    their choice.  
 
-    C++ includes: model.h 
     """
 
     __swig_setmethods__ = {}
@@ -5696,10 +6101,8 @@ class Model(TopLevel):
 
     def __init__(self, *args):
         """
-        Model(std::string
-        uri=DEFAULT_NS"/Model/example", std::string source="", std::string
-        language=EDAM_SBML, std::string framework=SBO_CONTINUOUS, std::string
-        version="1.0.0") 
+
+
         """
         this = _libsbol.new_Model(*args)
         try:
@@ -5715,20 +6118,17 @@ class moduleProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -5739,9 +6139,8 @@ class moduleProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_moduleProperty(*args)
         try:
@@ -5753,73 +6152,78 @@ class moduleProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.moduleProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.moduleProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.moduleProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.moduleProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.moduleProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.moduleProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.moduleProperty_validate(self, arg)
 
@@ -5845,21 +6249,19 @@ class ownedModule(moduleProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -5874,8 +6276,8 @@ class ownedModule(moduleProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedModule(*args)
         try:
@@ -5885,24 +6287,30 @@ class ownedModule(moduleProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedModule_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModule_get(self, object_id)
@@ -5910,51 +6318,58 @@ class ownedModule(moduleProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModule_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedModule_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModule_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedModule_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedModule_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedModule_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedModule_python_iter_set
@@ -5979,23 +6394,29 @@ class ownedModule(moduleProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModule_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModule_getRange(self, *args)
@@ -6003,11 +6424,10 @@ class ownedModule(moduleProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModule_createRange(self, uri)
 
@@ -6020,16 +6440,14 @@ class listOfOwnedModules(ownedModule):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -6044,8 +6462,8 @@ class listOfOwnedModules(ownedModule):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedModules(*args)
         try:
@@ -6054,7 +6472,10 @@ class listOfOwnedModules(ownedModule):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedModules_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedModules
@@ -6066,20 +6487,17 @@ class interactionProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -6090,9 +6508,8 @@ class interactionProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_interactionProperty(*args)
         try:
@@ -6104,73 +6521,78 @@ class interactionProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.interactionProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.interactionProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.interactionProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.interactionProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.interactionProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.interactionProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.interactionProperty_validate(self, arg)
 
@@ -6196,21 +6618,19 @@ class ownedInteraction(interactionProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -6225,8 +6645,8 @@ class ownedInteraction(interactionProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedInteraction(*args)
         try:
@@ -6236,24 +6656,30 @@ class ownedInteraction(interactionProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedInteraction_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedInteraction_get(self, object_id)
@@ -6261,51 +6687,58 @@ class ownedInteraction(interactionProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedInteraction_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedInteraction_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedInteraction_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedInteraction_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedInteraction_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedInteraction_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedInteraction_python_iter_set
@@ -6330,23 +6763,29 @@ class ownedInteraction(interactionProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedInteraction_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedInteraction_getRange(self, *args)
@@ -6354,11 +6793,10 @@ class ownedInteraction(interactionProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedInteraction_createRange(self, uri)
 
@@ -6371,16 +6809,14 @@ class listOfOwnedInteractions(ownedInteraction):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -6395,8 +6831,8 @@ class listOfOwnedInteractions(ownedInteraction):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedInteractions(*args)
         try:
@@ -6405,7 +6841,10 @@ class listOfOwnedInteractions(ownedInteraction):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedInteractions_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedInteractions
@@ -6417,20 +6856,17 @@ class functionalComponentProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -6441,9 +6877,8 @@ class functionalComponentProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_functionalComponentProperty(*args)
         try:
@@ -6455,73 +6890,78 @@ class functionalComponentProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.functionalComponentProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.functionalComponentProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.functionalComponentProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.functionalComponentProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.functionalComponentProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.functionalComponentProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.functionalComponentProperty_validate(self, arg)
 
@@ -6547,21 +6987,19 @@ class ownedFunctionalComponent(functionalComponentProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -6576,8 +7014,8 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedFunctionalComponent(*args)
         try:
@@ -6587,24 +7025,30 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedFunctionalComponent_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedFunctionalComponent_get(self, object_id)
@@ -6612,51 +7056,58 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedFunctionalComponent_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedFunctionalComponent_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedFunctionalComponent_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedFunctionalComponent_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedFunctionalComponent_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedFunctionalComponent_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedFunctionalComponent_python_iter_set
@@ -6681,23 +7132,29 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedFunctionalComponent_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedFunctionalComponent_getRange(self, *args)
@@ -6705,11 +7162,10 @@ class ownedFunctionalComponent(functionalComponentProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedFunctionalComponent_createRange(self, uri)
 
@@ -6722,16 +7178,14 @@ class listOfOwnedFunctionalComponents(ownedFunctionalComponent):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -6746,8 +7200,8 @@ class listOfOwnedFunctionalComponents(ownedFunctionalComponent):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedFunctionalComponents(*args)
         try:
@@ -6756,7 +7210,10 @@ class listOfOwnedFunctionalComponents(ownedFunctionalComponent):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedFunctionalComponents_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedFunctionalComponents
@@ -6768,12 +7225,10 @@ class ModuleDefinition(TopLevel):
     """
 
 
-    The ModuleDefinition class represents a grouping of structural and
-    functional entities in a biological design. The primary usage of this
-    class is to assert the molecular interactions and abstract function of
-    its child entities.
+    The ModuleDefinition class represents a grouping of structural and functional
+    entities in a biological design. The primary usage of this class is to assert
+    the molecular interactions and abstract function of its child entities.  
 
-    C++ includes: moduledefinition.h 
     """
 
     __swig_setmethods__ = {}
@@ -6808,9 +7263,8 @@ class ModuleDefinition(TopLevel):
 
     def __init__(self, *args):
         """
-        ModuleDefinition(std::string
-        uri=DEFAULT_NS"/ModuleDefinition/example", std::string
-        version="1.0.0") 
+
+
         """
         this = _libsbol.new_ModuleDefinition(*args)
         try:
@@ -6819,12 +7273,18 @@ class ModuleDefinition(TopLevel):
             self.this = this
 
     def setOutput(self, output):
-        """FunctionalComponent& setOutput(ComponentDefinition &output) """
+        """
+
+
+        """
         return _libsbol.ModuleDefinition_setOutput(self, output)
 
 
     def setInput(self, input):
-        """FunctionalComponent& setInput(ComponentDefinition &input) """
+        """
+
+
+        """
         return _libsbol.ModuleDefinition_setInput(self, input)
 
     __swig_destroy__ = _libsbol.delete_ModuleDefinition
@@ -6832,8 +7292,8 @@ class ModuleDefinition(TopLevel):
 
     def assemble(self, *args):
         """
-        void
-        assemble(std::vector< ModuleDefinition * > list_of_modules) 
+
+
         """
         return _libsbol.ModuleDefinition_assemble(self, *args)
 
@@ -6844,20 +7304,17 @@ class componentDefinitionProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -6868,9 +7325,8 @@ class componentDefinitionProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_componentDefinitionProperty(*args)
         try:
@@ -6882,73 +7338,78 @@ class componentDefinitionProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.componentDefinitionProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.componentDefinitionProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.componentDefinitionProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.componentDefinitionProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.componentDefinitionProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.componentDefinitionProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.componentDefinitionProperty_validate(self, arg)
 
@@ -6974,21 +7435,19 @@ class ownedComponentDefinition(componentDefinitionProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7003,8 +7462,8 @@ class ownedComponentDefinition(componentDefinitionProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedComponentDefinition(*args)
         try:
@@ -7014,24 +7473,30 @@ class ownedComponentDefinition(componentDefinitionProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedComponentDefinition_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedComponentDefinition_get(self, object_id)
@@ -7039,51 +7504,58 @@ class ownedComponentDefinition(componentDefinitionProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedComponentDefinition_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedComponentDefinition_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedComponentDefinition_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedComponentDefinition_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedComponentDefinition_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedComponentDefinition_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedComponentDefinition_python_iter_set
@@ -7108,23 +7580,29 @@ class ownedComponentDefinition(componentDefinitionProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedComponentDefinition_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedComponentDefinition_getRange(self, *args)
@@ -7132,11 +7610,10 @@ class ownedComponentDefinition(componentDefinitionProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedComponentDefinition_createRange(self, uri)
 
@@ -7149,16 +7626,14 @@ class listOfOwnedComponentDefinitions(ownedComponentDefinition):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7173,8 +7648,8 @@ class listOfOwnedComponentDefinitions(ownedComponentDefinition):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedComponentDefinitions(*args)
         try:
@@ -7183,7 +7658,10 @@ class listOfOwnedComponentDefinitions(ownedComponentDefinition):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedComponentDefinitions_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedComponentDefinitions
@@ -7195,20 +7673,17 @@ class moduleDefinitionProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -7219,9 +7694,8 @@ class moduleDefinitionProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_moduleDefinitionProperty(*args)
         try:
@@ -7233,73 +7707,78 @@ class moduleDefinitionProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.moduleDefinitionProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.moduleDefinitionProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.moduleDefinitionProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.moduleDefinitionProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.moduleDefinitionProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.moduleDefinitionProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.moduleDefinitionProperty_validate(self, arg)
 
@@ -7325,21 +7804,19 @@ class ownedModuleDefinition(moduleDefinitionProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7354,8 +7831,8 @@ class ownedModuleDefinition(moduleDefinitionProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedModuleDefinition(*args)
         try:
@@ -7365,24 +7842,30 @@ class ownedModuleDefinition(moduleDefinitionProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedModuleDefinition_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModuleDefinition_get(self, object_id)
@@ -7390,51 +7873,58 @@ class ownedModuleDefinition(moduleDefinitionProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModuleDefinition_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedModuleDefinition_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModuleDefinition_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedModuleDefinition_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedModuleDefinition_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedModuleDefinition_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedModuleDefinition_python_iter_set
@@ -7459,23 +7949,29 @@ class ownedModuleDefinition(moduleDefinitionProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModuleDefinition_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModuleDefinition_getRange(self, *args)
@@ -7483,11 +7979,10 @@ class ownedModuleDefinition(moduleDefinitionProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModuleDefinition_createRange(self, uri)
 
@@ -7500,16 +7995,14 @@ class listOfOwnedModuleDefinitions(ownedModuleDefinition):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7524,8 +8017,8 @@ class listOfOwnedModuleDefinitions(ownedModuleDefinition):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedModuleDefinitions(*args)
         try:
@@ -7534,7 +8027,10 @@ class listOfOwnedModuleDefinitions(ownedModuleDefinition):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedModuleDefinitions_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedModuleDefinitions
@@ -7546,20 +8042,17 @@ class sequenceProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -7570,9 +8063,8 @@ class sequenceProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_sequenceProperty(*args)
         try:
@@ -7584,73 +8076,78 @@ class sequenceProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.sequenceProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.sequenceProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.sequenceProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.sequenceProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.sequenceProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.sequenceProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.sequenceProperty_validate(self, arg)
 
@@ -7676,21 +8173,19 @@ class ownedSequence(sequenceProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7705,8 +8200,8 @@ class ownedSequence(sequenceProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedSequence(*args)
         try:
@@ -7716,24 +8211,30 @@ class ownedSequence(sequenceProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedSequence_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequence_get(self, object_id)
@@ -7741,51 +8242,58 @@ class ownedSequence(sequenceProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequence_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedSequence_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequence_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedSequence_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedSequence_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedSequence_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedSequence_python_iter_set
@@ -7810,23 +8318,29 @@ class ownedSequence(sequenceProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedSequence_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedSequence_getRange(self, *args)
@@ -7834,11 +8348,10 @@ class ownedSequence(sequenceProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedSequence_createRange(self, uri)
 
@@ -7851,16 +8364,14 @@ class listOfOwnedSequences(ownedSequence):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -7875,8 +8386,8 @@ class listOfOwnedSequences(ownedSequence):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedSequences(*args)
         try:
@@ -7885,7 +8396,10 @@ class listOfOwnedSequences(ownedSequence):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedSequences_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequences
@@ -7897,20 +8411,17 @@ class modelProperty(_object):
     """
 
 
-    Member properties of all SBOL objects are defined using a Property
-    object.
+    Member properties of all SBOL objects are defined using a Property object.  
 
-    The Property class provides a generic interface for accessing SBOL
-    objects. At a low level, the Property class converts SBOL data
-    structures into RDF triples.
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
 
-    The:  SBOL specification currently supports string, URI, and integer
-    literal values.
-
-    C++ includes: property.h 
     """
 
     __swig_setmethods__ = {}
@@ -7921,9 +8432,8 @@ class modelProperty(_object):
 
     def __init__(self, *args):
         """
-        Property(sbol_type
-        type_uri=UNDEFINED, void *property_owner=NULL, ValidationRules
-        validation_rules={}) 
+
+
         """
         this = _libsbol.new_modelProperty(*args)
         try:
@@ -7935,73 +8445,78 @@ class modelProperty(_object):
 
     def getTypeURI(self):
         """
-        sbol_type
-        getTypeURI() 
+
+
         """
         return _libsbol.modelProperty_getTypeURI(self)
 
 
     def getOwner(self):
         """
-        SBOLObject &
-        getOwner() 
+
+
         """
         return _libsbol.modelProperty_getOwner(self)
 
 
     def get(self):
         """
-        std::string get()
 
-        Basic getter for all SBOL literal properties.
 
-        All properties are initially read from an SBOL file as a raw string
-        containing the property value. 
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
+
         """
         return _libsbol.modelProperty_get(self)
 
 
     def set(self, *args):
         """
-        void set(int new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.modelProperty_set(self, *args)
 
 
     def add(self, new_value):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.modelProperty_add(self, new_value)
 
 
     def write(self):
-        """void write() """
+        """
+
+
+        """
         return _libsbol.modelProperty_write(self)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL) 
+
+
         """
         return _libsbol.modelProperty_validate(self, arg)
 
@@ -8027,21 +8542,19 @@ class ownedModel(modelProperty):
     """
 
 
-    A container property that contains child objects.
+    A container property that contains child objects.  
 
-    Creates a composition out of two or more classes. In the SBOL
-    specification, compositional relationships are indicated in class
-    diagrams by arrows with black diamonds. A compositional relationship
-    means that deleting the parent object will delete the child objects,
-    and adding the parent object to a Document will also add the child
-    object. Owned objects are stored in arbitrary order.
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
 
-    SBOLClass:  The type of child SBOL object contained by this Property
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -8056,8 +8569,8 @@ class ownedModel(modelProperty):
 
     def __init__(self, *args):
         """
-        OwnedObject(sbol_type type_uri, void *property_owner, SBOLObject
-        &first_object) 
+
+
         """
         this = _libsbol.new_ownedModel(*args)
         try:
@@ -8067,24 +8580,30 @@ class ownedModel(modelProperty):
 
     def set(self, sbol_obj):
         """
-        virtual void set(int
-        new_value)
 
-        Basic setter for SBOL IntProperty, but can be used with TextProperty
-        as well.
 
-        Parameters:
-        -----------
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
-        new_value:  A new integer value for the property, which is converted
-        to a raw string during serialization. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
         """
         return _libsbol.ownedModel_set(self, sbol_obj)
 
 
     def get(self, object_id):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModel_get(self, object_id)
@@ -8092,51 +8611,58 @@ class ownedModel(modelProperty):
 
     def add(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModel_add(self, sbol_obj)
 
 
     def copy(self):
         """
-        std::vector<
-        SBOLClass * > copy() 
+
+
         """
         return _libsbol.ownedModel_copy(self)
 
 
     def create(self, *args):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModel_create(self, *args)
 
 
     def begin(self):
-        """iterator begin() """
+        """
+
+
+        """
         return _libsbol.ownedModel_begin(self)
 
 
     def end(self):
-        """iterator end() """
+        """
+
+
+        """
         return _libsbol.ownedModel_end(self)
 
 
     def size(self):
-        """int size() """
+        """
+
+
+        """
         return _libsbol.ownedModel_size(self)
 
     __swig_setmethods__["python_iter"] = _libsbol.ownedModel_python_iter_set
@@ -8161,23 +8687,29 @@ class ownedModel(modelProperty):
 
     def addRange(self, sbol_obj):
         """
-        void add(std::string
-        new_value)
 
-        Appends the new value to a list of values, for properties that allow
-        it.
 
-        Parameters:
-        -----------
+        Appends the new value to a list of values, for properties that allow it.  
 
-        new_value:  A new string which will be added to a list of values. 
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
         """
         return _libsbol.ownedModel_addRange(self, sbol_obj)
 
 
     def getRange(self, *args):
         """
-        SBOLSubClass & get()
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        All properties are initially read from an SBOL file as a raw string containing
+        the property value.  
 
         """
         return _libsbol.ownedModel_getRange(self, *args)
@@ -8185,11 +8717,10 @@ class ownedModel(modelProperty):
 
     def createRange(self, uri):
         """
-        void
-        create(std::string uri_prefix, std::string display_id, std::string
-        version)
 
-        Deprecate this 
+
+        Deprecate this  
+
         """
         return _libsbol.ownedModel_createRange(self, uri)
 
@@ -8202,16 +8733,14 @@ class listOfOwnedModels(ownedModel):
     """
 
 
-    Provides interface for an SBOL container Property that is allowed to
-    have more than one object or value.
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
 
-    Parameters:
-    -----------
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
 
-    PropertyType:  The type of SBOL Property, eg, Text, Int, OwnedObject,
-    etc
-
-    C++ includes: properties.h 
     """
 
     __swig_setmethods__ = {}
@@ -8226,8 +8755,8 @@ class listOfOwnedModels(ownedModel):
 
     def __init__(self, *args):
         """
-        List(sbol_type type_uri,
-        SBOLObject *property_owner, std::string initial_value="") 
+
+
         """
         this = _libsbol.new_listOfOwnedModels(*args)
         try:
@@ -8236,7 +8765,10 @@ class listOfOwnedModels(ownedModel):
             self.this = this
 
     def remove(self, *args):
-        """void remove(int index) """
+        """
+
+
+        """
         return _libsbol.listOfOwnedModels_remove(self, *args)
 
     __swig_destroy__ = _libsbol.delete_listOfOwnedModels
@@ -8247,19 +8779,17 @@ listOfOwnedModels_swigregister(listOfOwnedModels)
 
 def raptor_error_handler(user_data, message):
     """
-    void
-    sbol::raptor_error_handler(void *user_data, raptor_log_message
-    *message) 
+
+
     """
     return _libsbol.raptor_error_handler(user_data, message)
 class Document(SBOLObject):
     """
 
 
-    Read and write SBOL using a Document class. The Document is a
-    container for Components, Modules, and all other SBOLObjects.
+    Read and write SBOL using a Document class. The Document is a container for
+    Components, Modules, and all other SBOLObjects.  
 
-    C++ includes: document.h 
     """
 
     __swig_setmethods__ = {}
@@ -8274,10 +8804,11 @@ class Document(SBOLObject):
 
     def __init__(self):
         """
-        Document()
 
-        Construct a Document. The Document is a container for Components,
-        Modules, and all other SBOLObjects. 
+
+        Construct a Document. The Document is a container for Components, Modules, and
+        all other SBOLObjects.  
+
         """
         this = _libsbol.new_Document()
         try:
@@ -8311,32 +8842,31 @@ class Document(SBOLObject):
 
     def getTopLevel(self, arg2):
         """
-        TopLevel&
-        getTopLevel(std::string) 
+
+
         """
         return _libsbol.Document_getTopLevel(self, arg2)
 
 
     def getWorld(self):
         """
-        raptor_world*
-        getWorld() 
+
+
         """
         return _libsbol.Document_getWorld(self)
 
 
     def write(self, filename):
         """
-        void write(std::string
-        filename)
 
-        Serialize all objects in this Document to an RDF/XML file.
 
-        Parameters:
-        -----------
+        Serialize all objects in this Document to an RDF/XML file.  
 
-        filename:  The full name of the file you want to write (including file
-        extension) 
+        Parameters
+        ----------
+        * `filename` :  
+            The full name of the file you want to write (including file extension)  
+
         """
         val = _libsbol.Document_write(self, filename)
 
@@ -8378,191 +8908,219 @@ class Document(SBOLObject):
 
     def read(self, filename):
         """
-        void read(std::string
-        filename)
 
-        Read an RDF/XML file and attach the SBOL objects to this Document.
 
-        Existing contents of the Document will be wiped.
+        Read an RDF/XML file and attach the SBOL objects to this Document.  
 
-        Parameters:
-        -----------
+        Existing contents of the Document will be wiped.  
 
-        filename:  The full name of the file you want to read (including file
-        extension) 
+        Parameters
+        ----------
+        * `filename` :  
+            The full name of the file you want to read (including file extension)  
+
         """
         return _libsbol.Document_read(self, filename)
 
 
     def append(self, filename):
         """
-        void
-        append(std::string filename)
 
-        Read an RDF/XML file and attach the SBOL objects to this Document.
 
-        New objects will be added to the existing contents of the Document
+        Read an RDF/XML file and attach the SBOL objects to this Document.  
 
-        Parameters:
-        -----------
+        New objects will be added to the existing contents of the Document  
 
-        filename:  The full name of the file you want to read (including file
-        extension) 
+        Parameters
+        ----------
+        * `filename` :  
+            The full name of the file you want to read (including file extension)  
+
         """
         return _libsbol.Document_append(self, filename)
 
 
     def validate(self, arg=None):
         """
-        void validate(void
-        *arg=NULL)
 
-        Run validation rules on this Document. Validation rules are called
-        automatically during parsing and serialization. 
+
+        Run validation rules on this Document. Validation rules are called automatically
+        during parsing and serialization.  
+
         """
         return _libsbol.Document_validate(self, arg)
 
 
     def find(self, uri):
         """
-        int find(std::string
-        uri) 
+
+
         """
         return _libsbol.Document_find(self, uri)
 
-    if _newclass:
-        parse_objects = staticmethod(_libsbol.Document_parse_objects)
-    else:
-        parse_objects = _libsbol.Document_parse_objects
-    if _newclass:
-        parse_properties = staticmethod(_libsbol.Document_parse_properties)
-    else:
-        parse_properties = _libsbol.Document_parse_properties
-    if _newclass:
-        namespaceHandler = staticmethod(_libsbol.Document_namespaceHandler)
-    else:
-        namespaceHandler = _libsbol.Document_namespaceHandler
+
+    def parse_objects(user_data, triple):
+        """
+
+
+        """
+        return _libsbol.Document_parse_objects(user_data, triple)
+
+    parse_objects = staticmethod(parse_objects)
+
+    def parse_properties(user_data, triple):
+        """
+
+
+        """
+        return _libsbol.Document_parse_properties(user_data, triple)
+
+    parse_properties = staticmethod(parse_properties)
+
+    def namespaceHandler(user_data, nspace):
+        """
+
+
+        """
+        return _libsbol.Document_namespaceHandler(user_data, nspace)
+
+    namespaceHandler = staticmethod(namespaceHandler)
 
     def getNamespaces(self):
-        """std::vector<std::string> getNamespaces() """
+        """
+
+
+        """
         return _libsbol.Document_getNamespaces(self)
 
 
     def addNamespace(self, *args):
         """
-        void
-        addNamespace(std::string ns, std::string prefix) 
+
+
         """
         return _libsbol.Document_addNamespace(self, *args)
 
 
     def flatten(self):
-        """std::vector<SBOLObject*> flatten() """
+        """
+
+
+        """
         return _libsbol.Document_flatten(self)
 
 
     def close(self, *args):
-        """void close() """
+        """
+
+
+        Use this method to destroy an SBOL object that is not contained by a parent
+        Document.  
+
+        If the object does have a parent Document, instead use doc.close() with the
+        object's URI identity as an argument.  Recurse through child objects and delete
+        them.  
+
+        """
         return _libsbol.Document_close(self, *args)
 
 
     def addModel(self, *args):
         """
-        void add(std::vector<
-        SBOLClass * > sbol_objects)
 
-        Register an object in the Document.
 
-        Parameters:
-        -----------
+        Register an object in the Document.  
 
-        sbol_objects:  A list of pointers to the SBOL objects you want to
-        serialize
+        Parameters
+        ----------
+        * `sbol_objects` :  
+            A list of pointers to the SBOL objects you want to serialize  
 
-        Parameters:
-        -----------
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
 
-        SBOLClass:  The type of SBOL object 
         """
         return _libsbol.Document_addModel(self, *args)
 
 
     def getComponentDefinition(self, uri):
         """
-        SBOLClass &
-        get(std::string uri)
 
-        Retrieve an object from the Document.
 
-        Parameters:
-        -----------
+        Retrieve an object from the Document.  
 
-        uri:  The identity of the SBOL object you want to retrieve
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the SBOL object you want to retrieve  
 
-        Parameters:
-        -----------
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
 
-        SBOLClass:  The type of SBOL object 
         """
         return _libsbol.Document_getComponentDefinition(self, uri)
 
 
     def getSequence(self, uri):
         """
-        SBOLClass &
-        get(std::string uri)
 
-        Retrieve an object from the Document.
 
-        Parameters:
-        -----------
+        Retrieve an object from the Document.  
 
-        uri:  The identity of the SBOL object you want to retrieve
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the SBOL object you want to retrieve  
 
-        Parameters:
-        -----------
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
 
-        SBOLClass:  The type of SBOL object 
         """
         return _libsbol.Document_getSequence(self, uri)
 
 
     def getModel(self, uri):
         """
-        SBOLClass &
-        get(std::string uri)
 
-        Retrieve an object from the Document.
 
-        Parameters:
-        -----------
+        Retrieve an object from the Document.  
 
-        uri:  The identity of the SBOL object you want to retrieve
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the SBOL object you want to retrieve  
 
-        Parameters:
-        -----------
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
 
-        SBOLClass:  The type of SBOL object 
         """
         return _libsbol.Document_getModel(self, uri)
 
 
     def getModuleDefinition(self, uri):
         """
-        SBOLClass &
-        get(std::string uri)
 
-        Retrieve an object from the Document.
 
-        Parameters:
-        -----------
+        Retrieve an object from the Document.  
 
-        uri:  The identity of the SBOL object you want to retrieve
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the SBOL object you want to retrieve  
 
-        Parameters:
-        -----------
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
 
-        SBOLClass:  The type of SBOL object 
         """
         return _libsbol.Document_getModuleDefinition(self, uri)
 
@@ -8582,133 +9140,136 @@ Document_swigregister(Document)
 cvar = _libsbol.cvar
 
 def Document_parse_objects(user_data, triple):
+    """
+
+
+    """
     return _libsbol.Document_parse_objects(user_data, triple)
-Document_parse_objects = _libsbol.Document_parse_objects
 
 def Document_parse_properties(user_data, triple):
+    """
+
+
+    """
     return _libsbol.Document_parse_properties(user_data, triple)
-Document_parse_properties = _libsbol.Document_parse_properties
 
 def Document_namespaceHandler(user_data, nspace):
+    """
+
+
+    """
     return _libsbol.Document_namespaceHandler(user_data, nspace)
-Document_namespaceHandler = _libsbol.Document_namespaceHandler
 
 
 def cut_sbol_resource(xml_string, resource_id):
     """
-    std::string
-    sbol::cut_sbol_resource(std::string &xml_string, const std::string
-    resource_id) 
+
+
     """
     return _libsbol.cut_sbol_resource(xml_string, resource_id)
 
 def replace_reference_to_resource(xml_string, property_name, resource_id, replacement_text):
     """
-    void
-    sbol::replace_reference_to_resource(std::string &xml_string, const
-    std::string property_name, const std::string resource_id, std::string
-    &replacement_text) 
+
+
     """
     return _libsbol.replace_reference_to_resource(xml_string, property_name, resource_id, replacement_text)
 
 def seek_element(xml_buffer, uri):
     """
-    void
-    sbol::seek_element(std::istringstream &xml_buffer, std::string uri) 
+
+
     """
     return _libsbol.seek_element(xml_buffer, uri)
 
 def seek_property_element(xml_buffer, property_name):
     """
-    void
-    sbol::seek_property_element(std::istringstream &xml_buffer,
-    std::string property_name) 
+
+
     """
     return _libsbol.seek_property_element(xml_buffer, property_name)
 
 def seek_next_element(xml_buffer):
     """
-    void
-    sbol::seek_next_element(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.seek_next_element(xml_buffer)
 
 def seek_new_line(xml_buffer):
     """
-    void
-    sbol::seek_new_line(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.seek_new_line(xml_buffer)
 
 def seek_end_of_line(xml_buffer):
     """
-    void
-    sbol::seek_end_of_line(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.seek_end_of_line(xml_buffer)
 
 def seek_end_of_element(xml_buffer):
     """
-    void
-    sbol::seek_end_of_element(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.seek_end_of_element(xml_buffer)
 
 def seek_end_of_node(xml_buffer, uri):
     """
-    void
-    sbol::seek_end_of_node(std::istringstream &xml_buffer, std::string
-    uri) 
+
+
     """
     return _libsbol.seek_end_of_node(xml_buffer, uri)
 
 def seek_resource(xml_buffer, property_name, uri):
     """
-    void
-    sbol::seek_resource(std::istringstream &xml_buffer, std::string
-    property_name, std::string uri) 
+
+
     """
     return _libsbol.seek_resource(xml_buffer, property_name, uri)
 
 def is_open_node(xml_buffer):
     """
-    bool
-    sbol::is_open_node(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.is_open_node(xml_buffer)
 
 def indent(text, indentation):
     """
-    void sbol::indent(std::string
-    &text, int indentation) 
+
+
     """
     return _libsbol.indent(text, indentation)
 
 def get_qname(xml_buffer):
     """
-    std::string
-    sbol::get_qname(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.get_qname(xml_buffer)
 
 def get_local_part(qname):
     """
-    std::string
-    sbol::get_local_part(std::string qname) 
+
+
     """
     return _libsbol.get_local_part(qname)
 
 def get_prefix(qname):
     """
-    std::string
-    sbol::get_prefix(std::string qname) 
+
+
     """
     return _libsbol.get_prefix(qname)
 
 def parse_element(xml_buffer):
     """
-    std::vector<std::string>
-    sbol::parse_element(std::istringstream &xml_buffer) 
+
+
     """
     return _libsbol.parse_element(xml_buffer)
 # This file is compatible with both classic and new-style classes.
