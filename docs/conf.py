@@ -16,12 +16,22 @@ import sys
 import os
 
 import sphinx_rtd_theme
+from unittest.mock import MagicMock
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+            return MagicMock()
+
+MOCK_MODULES = ['_libsbol']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+				
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 # Set Win 32bit Python 2 file as the default source.
-sys.path.append(os.path.join(os.path.dirname(__name__), '../Win_32_2/sbol'))
+sys.path.append(os.path.join(os.path.dirname(__name__), '..'))
 
 # -- General configuration ------------------------------------------------
 
