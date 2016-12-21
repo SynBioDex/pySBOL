@@ -24,9 +24,9 @@ If you would like to try out our latest snapshot, use `git <https://git-scm.com/
 
 **If you have trouble importing the module with the setup script, check to see if there are multiple Python installations on your machine and also check the output of the setup script to see which version of Python is the install target. You can also test the module locally from inside the Mac_OSX/sbol or Win_32/sbol folders.**
 
----------------------------
+-------------------------------
 Using Installer for Windows
----------------------------
+-------------------------------
 
 We provide binary installers for Windows users only. Currently, we support Python 2.7 and Python 3.5 for both 32 bit and 64 bit architecture.
 Simply `download the installers <https://github.com/SynBioDex/pysbol2/releases/latest>`_ and execute it to install it. Installer will look for your local Python distributions.
