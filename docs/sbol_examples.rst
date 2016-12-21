@@ -1,7 +1,7 @@
 Sequence Assembly
 ======================
 
-See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id1>`_ for full example code.
+See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id2>`_ for full example code.
 
 -------------------------------
 Template Designs
