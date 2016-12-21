@@ -103,7 +103,11 @@ Full example code is provided below, which will create a file called
 	terminator_seq = Sequence("B0012", "attcga")
 	gene_seq = Sequence("BB0001")
 	
-	doc.addSequence([ promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq ])
+	doc.addSequence(promoter_seq)
+	doc.addSequence(CDS_seq)
+	doc.addSequence(RBS_seq)
+	doc.addSequence(terminator_seq)
+	doc.addSequence(gene_seq)
 	
 	promoter.sequences.set(promoter_seq.identity.get())
 	CDS.sequences.set(CDS_seq.identity.get())
