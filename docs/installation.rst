@@ -33,6 +33,10 @@ Simply `download the installers <https://github.com/SynBioDex/pysbol2/releases/l
 
 **Be sure to use the installers with the same Python version and architecture with the one installed in your local machine!**
 
+-------------------------------
+For Linux Users
+-------------------------------
 
+Currently, Linux users should build pySBOL from source through libSBOL. Go to `libSBOL installation page <https://synbiodex.github.io/libSBOL/installation.html#build_from_source>`_ and follow the instructions for Debian/Ubuntu.
 
 
