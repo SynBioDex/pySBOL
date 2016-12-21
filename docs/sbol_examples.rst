@@ -17,7 +17,7 @@ Above is a diagram of a gene cassette, consisting of a promoter, ribosome bindin
 
 .. code:: python
 
-    gene = ComponentDefinition("BB0001")
+	gene = ComponentDefinition("BB0001")
 	promoter = ComponentDefinition("R0010")
 	CDS = ComponentDefinition("B0032")
 	RBS = ComponentDefinition("E0040")
@@ -46,7 +46,7 @@ A complete design adds explicit sequence information to the components in a temp
 
 .. code:: python 
 
-    promoter_seq = Sequence("R0010", "ggctgca")
+	promoter_seq = Sequence("R0010", "ggctgca")
 	RBS_seq = Sequence("B0032", "aattatataaa")
 	CDS_seq = Sequence("E0040", "atgtaa")
 	terminator_seq = Sequence("B0012", "attcga")
@@ -103,7 +103,7 @@ Full example code is provided below, which will create a file called
 	terminator_seq = Sequence("B0012", "attcga")
 	gene_seq = Sequence("BB0001")
 	
-    doc.addSequence([ promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq ])
+	doc.addSequence([ promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq ])
 	
 	promoter.sequences.set(promoter_seq.identity.get())
 	CDS.sequences.set(CDS_seq.identity.get())
