@@ -9,11 +9,12 @@ pySBOL is a SWIG-Python wrapper around libSBOL, a module for reading, writing,
 and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 5
 
    introduction
    installation
    sbol_examples
+   testing_instructions
    API
 
 
