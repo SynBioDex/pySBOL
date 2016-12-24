@@ -960,10 +960,26 @@ class Config(_object):
         """
         return _libsbol.Config_getFileFormat(self)
 
+    if _newclass:
+        setOption = staticmethod(_libsbol.Config_setOption)
+    else:
+        setOption = _libsbol.Config_setOption
+    if _newclass:
+        getOption = staticmethod(_libsbol.Config_getOption)
+    else:
+        getOption = _libsbol.Config_getOption
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
 Config_swigregister(Config)
+
+def Config_setOption(option, value):
+    return _libsbol.Config_setOption(option, value)
+Config_setOption = _libsbol.Config_setOption
+
+def Config_getOption(option):
+    return _libsbol.Config_getOption(option)
+Config_getOption = _libsbol.Config_getOption
 
 
 def setHomespace(ns):
@@ -1129,6 +1145,7 @@ PROV_URI = _libsbol.PROV_URI
 NODENAME_ABOUT = _libsbol.NODENAME_ABOUT
 NODENAME_RESOURCE = _libsbol.NODENAME_RESOURCE
 VERSION_STRING = _libsbol.VERSION_STRING
+SBOL_DOCUMENT = _libsbol.SBOL_DOCUMENT
 SBOL_IDENTIFIED = _libsbol.SBOL_IDENTIFIED
 SBOL_DOCUMENTED = _libsbol.SBOL_DOCUMENTED
 SBOL_TOP_LEVEL = _libsbol.SBOL_TOP_LEVEL
@@ -1146,7 +1163,6 @@ SBOL_INTERACTION = _libsbol.SBOL_INTERACTION
 SBOL_PARTICIPATION = _libsbol.SBOL_PARTICIPATION
 SBOL_SEQUENCE_CONSTRAINT = _libsbol.SBOL_SEQUENCE_CONSTRAINT
 SBOL_LOCATION = _libsbol.SBOL_LOCATION
-SBOL_DOCUMENT = _libsbol.SBOL_DOCUMENT
 SBOL_RANGE = _libsbol.SBOL_RANGE
 UNDEFINED = _libsbol.UNDEFINED
 SBOL_IDENTITY = _libsbol.SBOL_IDENTITY
@@ -1331,6 +1347,9 @@ class _StringProperty(_object):
         return _libsbol._StringProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol._StringProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -1361,6 +1380,12 @@ class _StringProperty(_object):
         """
         return _libsbol._StringProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol._StringProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol._StringProperty_clear(self)
 
     def write(self):
         """
@@ -1462,6 +1487,9 @@ class _IntProperty(_object):
         return _libsbol._IntProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol._IntProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -1492,6 +1520,12 @@ class _IntProperty(_object):
         """
         return _libsbol._IntProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol._IntProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol._IntProperty_clear(self)
 
     def write(self):
         """
@@ -1802,18 +1836,10 @@ class SBOLObject(_object):
     __swig_getmethods__["doc"] = _libsbol.SBOLObject_doc_get
     if _newclass:
         doc = _swig_property(_libsbol.SBOLObject_doc_get, _libsbol.SBOLObject_doc_set)
-    __swig_setmethods__["properties"] = _libsbol.SBOLObject_properties_set
-    __swig_getmethods__["properties"] = _libsbol.SBOLObject_properties_get
+    __swig_setmethods__["identity"] = _libsbol.SBOLObject_identity_set
+    __swig_getmethods__["identity"] = _libsbol.SBOLObject_identity_get
     if _newclass:
-        properties = _swig_property(_libsbol.SBOLObject_properties_get, _libsbol.SBOLObject_properties_set)
-    __swig_setmethods__["list_properties"] = _libsbol.SBOLObject_list_properties_set
-    __swig_getmethods__["list_properties"] = _libsbol.SBOLObject_list_properties_get
-    if _newclass:
-        list_properties = _swig_property(_libsbol.SBOLObject_list_properties_get, _libsbol.SBOLObject_list_properties_set)
-    __swig_setmethods__["owned_objects"] = _libsbol.SBOLObject_owned_objects_set
-    __swig_getmethods__["owned_objects"] = _libsbol.SBOLObject_owned_objects_get
-    if _newclass:
-        owned_objects = _swig_property(_libsbol.SBOLObject_owned_objects_get, _libsbol.SBOLObject_owned_objects_set)
+        identity = _swig_property(_libsbol.SBOLObject_identity_get, _libsbol.SBOLObject_identity_set)
 
     def __init__(self, *args):
         """
@@ -1825,6 +1851,8 @@ class SBOLObject(_object):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
+    __swig_destroy__ = _libsbol.delete_SBOLObject
+    __del__ = lambda self: None
     __swig_setmethods__["type"] = _libsbol.SBOLObject_type_set
     __swig_getmethods__["type"] = _libsbol.SBOLObject_type_get
     if _newclass:
@@ -1833,10 +1861,6 @@ class SBOLObject(_object):
     __swig_getmethods__["parent"] = _libsbol.SBOLObject_parent_get
     if _newclass:
         parent = _swig_property(_libsbol.SBOLObject_parent_get, _libsbol.SBOLObject_parent_set)
-    __swig_setmethods__["identity"] = _libsbol.SBOLObject_identity_set
-    __swig_getmethods__["identity"] = _libsbol.SBOLObject_identity_get
-    if _newclass:
-        identity = _swig_property(_libsbol.SBOLObject_identity_get, _libsbol.SBOLObject_identity_set)
 
     def getTypeURI(self):
         """
@@ -1846,20 +1870,12 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_getTypeURI(self)
 
 
-    def serialize(self, sbol_serializer, sbol_world=None):
+    def getClassName(self, type):
         """
 
 
         """
-        return _libsbol.SBOLObject_serialize(self, sbol_serializer, sbol_world)
-
-
-    def nest(self, rdfxml_buffer):
-        """
-
-
-        """
-        return _libsbol.SBOLObject_nest(self, rdfxml_buffer)
+        return _libsbol.SBOLObject_getClassName(self, type)
 
 
     def find(self, uri):
@@ -1870,21 +1886,8 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_find(self, uri)
 
 
-    def isEqual(self, obj):
-        """
-
-
-        """
-        return _libsbol.SBOLObject_isEqual(self, obj)
-
-
-    def getClassName(self, type):
-        """
-
-
-        """
-        return _libsbol.SBOLObject_getClassName(self, type)
-
+    def compare(self, comparand):
+        return _libsbol.SBOLObject_compare(self, comparand)
 
     def getPropertyValue(self, property_uri):
         """
@@ -1939,23 +1942,6 @@ class SBOLObject(_object):
 
         """
         return _libsbol.SBOLObject_getProperties(self)
-
-    __swig_destroy__ = _libsbol.delete_SBOLObject
-    __del__ = lambda self: None
-
-    def close(self):
-        """
-
-
-        Use this method to destroy an SBOL object that is not contained by a parent
-        Document.  
-
-        If the object does have a parent Document, instead use doc.close() with the
-        object's URI identity as an argument.  Recurse through child objects and delete
-        them.  
-
-        """
-        return _libsbol.SBOLObject_close(self)
 
 
     def __repr__(self):
@@ -2418,6 +2404,9 @@ class locationProperty(_object):
         return _libsbol.locationProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.locationProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -2448,6 +2437,12 @@ class locationProperty(_object):
         """
         return _libsbol.locationProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.locationProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.locationProperty_clear(self)
 
     def write(self):
         """
@@ -2681,13 +2676,14 @@ class _ownedLocation(locationProperty):
         return _libsbol._ownedLocation_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol._ownedLocation_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol._ownedLocation_remove(self, *args)
 
-        """
-        return _libsbol._ownedLocation_copy(self)
-
+    def clear(self):
+        return _libsbol._ownedLocation_clear(self)
 
     def create(self, *args):
         """
@@ -2820,14 +2816,6 @@ class listOfOwnedLocations(_ownedLocation):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedLocations_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedLocations
     __del__ = lambda self: None
 listOfOwnedLocations_swigregister = _libsbol.listOfOwnedLocations_swigregister
@@ -3151,6 +3139,9 @@ class mapsToProperty(_object):
         return _libsbol.mapsToProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.mapsToProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -3181,6 +3172,12 @@ class mapsToProperty(_object):
         """
         return _libsbol.mapsToProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.mapsToProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.mapsToProperty_clear(self)
 
     def write(self):
         """
@@ -3301,13 +3298,14 @@ class ownedMapsTo(mapsToProperty):
         return _libsbol.ownedMapsTo_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedMapsTo_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedMapsTo_remove(self, *args)
 
-        """
-        return _libsbol.ownedMapsTo_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedMapsTo_clear(self)
 
     def create(self, *args):
         """
@@ -3440,14 +3438,6 @@ class listOfOwnedMapsTos(ownedMapsTo):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedMapsTos_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedMapsTos
     __del__ = lambda self: None
 listOfOwnedMapsTos_swigregister = _libsbol.listOfOwnedMapsTos_swigregister
@@ -3922,6 +3912,9 @@ class sequenceConstraintProperty(_object):
         return _libsbol.sequenceConstraintProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.sequenceConstraintProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -3952,6 +3945,12 @@ class sequenceConstraintProperty(_object):
         """
         return _libsbol.sequenceConstraintProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.sequenceConstraintProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.sequenceConstraintProperty_clear(self)
 
     def write(self):
         """
@@ -4072,13 +4071,14 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         return _libsbol.ownedSequenceConstraint_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedSequenceConstraint_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedSequenceConstraint_remove(self, *args)
 
-        """
-        return _libsbol.ownedSequenceConstraint_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedSequenceConstraint_clear(self)
 
     def create(self, *args):
         """
@@ -4211,14 +4211,6 @@ class listOfOwnedSequenceConstraints(ownedSequenceConstraint):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedSequenceConstraints_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequenceConstraints
     __del__ = lambda self: None
 listOfOwnedSequenceConstraints_swigregister = _libsbol.listOfOwnedSequenceConstraints_swigregister
@@ -4404,6 +4396,9 @@ class sequenceAnnotationProperty(_object):
         return _libsbol.sequenceAnnotationProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.sequenceAnnotationProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -4434,6 +4429,12 @@ class sequenceAnnotationProperty(_object):
         """
         return _libsbol.sequenceAnnotationProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.sequenceAnnotationProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.sequenceAnnotationProperty_clear(self)
 
     def write(self):
         """
@@ -4554,13 +4555,14 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         return _libsbol.ownedSequenceAnnotation_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedSequenceAnnotation_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedSequenceAnnotation_remove(self, *args)
 
-        """
-        return _libsbol.ownedSequenceAnnotation_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedSequenceAnnotation_clear(self)
 
     def create(self, *args):
         """
@@ -4693,14 +4695,6 @@ class listOfOwnedSequenceAnnotations(ownedSequenceAnnotation):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedSequenceAnnotations_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequenceAnnotations
     __del__ = lambda self: None
 listOfOwnedSequenceAnnotations_swigregister = _libsbol.listOfOwnedSequenceAnnotations_swigregister
@@ -4886,6 +4880,9 @@ class componentsProperty(_object):
         return _libsbol.componentsProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.componentsProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -4916,6 +4913,12 @@ class componentsProperty(_object):
         """
         return _libsbol.componentsProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.componentsProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.componentsProperty_clear(self)
 
     def write(self):
         """
@@ -5036,13 +5039,14 @@ class ownedComponents(componentsProperty):
         return _libsbol.ownedComponents_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedComponents_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedComponents_remove(self, *args)
 
-        """
-        return _libsbol.ownedComponents_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedComponents_clear(self)
 
     def create(self, *args):
         """
@@ -5175,14 +5179,6 @@ class listOfOwnedComponents(ownedComponents):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedComponents_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedComponents
     __del__ = lambda self: None
 listOfOwnedComponents_swigregister = _libsbol.listOfOwnedComponents_swigregister
@@ -5514,14 +5510,6 @@ class listOfURIs(URIProperty):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfURIs_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfURIs
     __del__ = lambda self: None
 listOfURIs_swigregister = _libsbol.listOfURIs_swigregister
@@ -5644,6 +5632,9 @@ class participationProperty(_object):
         return _libsbol.participationProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.participationProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -5674,6 +5665,12 @@ class participationProperty(_object):
         """
         return _libsbol.participationProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.participationProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.participationProperty_clear(self)
 
     def write(self):
         """
@@ -5794,13 +5791,14 @@ class ownedParticipation(participationProperty):
         return _libsbol.ownedParticipation_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedParticipation_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedParticipation_remove(self, *args)
 
-        """
-        return _libsbol.ownedParticipation_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedParticipation_clear(self)
 
     def create(self, *args):
         """
@@ -5933,14 +5931,6 @@ class listOfOwnedParticipations(ownedParticipation):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedParticipations_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedParticipations
     __del__ = lambda self: None
 listOfOwnedParticipations_swigregister = _libsbol.listOfOwnedParticipations_swigregister
@@ -6181,6 +6171,9 @@ class moduleProperty(_object):
         return _libsbol.moduleProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.moduleProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -6211,6 +6204,12 @@ class moduleProperty(_object):
         """
         return _libsbol.moduleProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.moduleProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.moduleProperty_clear(self)
 
     def write(self):
         """
@@ -6331,13 +6330,14 @@ class ownedModule(moduleProperty):
         return _libsbol.ownedModule_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedModule_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedModule_remove(self, *args)
 
-        """
-        return _libsbol.ownedModule_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedModule_clear(self)
 
     def create(self, *args):
         """
@@ -6470,14 +6470,6 @@ class listOfOwnedModules(ownedModule):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedModules_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedModules
     __del__ = lambda self: None
 listOfOwnedModules_swigregister = _libsbol.listOfOwnedModules_swigregister
@@ -6550,6 +6542,9 @@ class interactionProperty(_object):
         return _libsbol.interactionProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.interactionProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -6580,6 +6575,12 @@ class interactionProperty(_object):
         """
         return _libsbol.interactionProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.interactionProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.interactionProperty_clear(self)
 
     def write(self):
         """
@@ -6700,13 +6701,14 @@ class ownedInteraction(interactionProperty):
         return _libsbol.ownedInteraction_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedInteraction_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedInteraction_remove(self, *args)
 
-        """
-        return _libsbol.ownedInteraction_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedInteraction_clear(self)
 
     def create(self, *args):
         """
@@ -6839,14 +6841,6 @@ class listOfOwnedInteractions(ownedInteraction):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedInteractions_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedInteractions
     __del__ = lambda self: None
 listOfOwnedInteractions_swigregister = _libsbol.listOfOwnedInteractions_swigregister
@@ -6919,6 +6913,9 @@ class functionalComponentProperty(_object):
         return _libsbol.functionalComponentProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.functionalComponentProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -6949,6 +6946,12 @@ class functionalComponentProperty(_object):
         """
         return _libsbol.functionalComponentProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.functionalComponentProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.functionalComponentProperty_clear(self)
 
     def write(self):
         """
@@ -7069,13 +7072,14 @@ class ownedFunctionalComponent(functionalComponentProperty):
         return _libsbol.ownedFunctionalComponent_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedFunctionalComponent_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedFunctionalComponent_remove(self, *args)
 
-        """
-        return _libsbol.ownedFunctionalComponent_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedFunctionalComponent_clear(self)
 
     def create(self, *args):
         """
@@ -7208,14 +7212,6 @@ class listOfOwnedFunctionalComponents(ownedFunctionalComponent):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedFunctionalComponents_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedFunctionalComponents
     __del__ = lambda self: None
 listOfOwnedFunctionalComponents_swigregister = _libsbol.listOfOwnedFunctionalComponents_swigregister
@@ -7300,6 +7296,14 @@ class ModuleDefinition(TopLevel):
 ModuleDefinition_swigregister = _libsbol.ModuleDefinition_swigregister
 ModuleDefinition_swigregister(ModuleDefinition)
 
+
+def testSBOL():
+   import unittest
+   import unit_tests
+   import sys
+   suite = unittest.TestLoader().loadTestsFromTestCase(unit_tests.TestRoundTrip)
+   unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(suite)
+
 class componentDefinitionProperty(_object):
     """
 
@@ -7367,6 +7371,9 @@ class componentDefinitionProperty(_object):
         return _libsbol.componentDefinitionProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.componentDefinitionProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -7397,6 +7404,12 @@ class componentDefinitionProperty(_object):
         """
         return _libsbol.componentDefinitionProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.componentDefinitionProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.componentDefinitionProperty_clear(self)
 
     def write(self):
         """
@@ -7517,13 +7530,14 @@ class ownedComponentDefinition(componentDefinitionProperty):
         return _libsbol.ownedComponentDefinition_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedComponentDefinition_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedComponentDefinition_remove(self, *args)
 
-        """
-        return _libsbol.ownedComponentDefinition_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedComponentDefinition_clear(self)
 
     def create(self, *args):
         """
@@ -7656,14 +7670,6 @@ class listOfOwnedComponentDefinitions(ownedComponentDefinition):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedComponentDefinitions_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedComponentDefinitions
     __del__ = lambda self: None
 listOfOwnedComponentDefinitions_swigregister = _libsbol.listOfOwnedComponentDefinitions_swigregister
@@ -7736,6 +7742,9 @@ class moduleDefinitionProperty(_object):
         return _libsbol.moduleDefinitionProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.moduleDefinitionProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -7766,6 +7775,12 @@ class moduleDefinitionProperty(_object):
         """
         return _libsbol.moduleDefinitionProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.moduleDefinitionProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.moduleDefinitionProperty_clear(self)
 
     def write(self):
         """
@@ -7886,13 +7901,14 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         return _libsbol.ownedModuleDefinition_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedModuleDefinition_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedModuleDefinition_remove(self, *args)
 
-        """
-        return _libsbol.ownedModuleDefinition_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedModuleDefinition_clear(self)
 
     def create(self, *args):
         """
@@ -8025,14 +8041,6 @@ class listOfOwnedModuleDefinitions(ownedModuleDefinition):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedModuleDefinitions_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedModuleDefinitions
     __del__ = lambda self: None
 listOfOwnedModuleDefinitions_swigregister = _libsbol.listOfOwnedModuleDefinitions_swigregister
@@ -8105,6 +8113,9 @@ class sequenceProperty(_object):
         return _libsbol.sequenceProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.sequenceProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -8135,6 +8146,12 @@ class sequenceProperty(_object):
         """
         return _libsbol.sequenceProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.sequenceProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.sequenceProperty_clear(self)
 
     def write(self):
         """
@@ -8255,13 +8272,14 @@ class ownedSequence(sequenceProperty):
         return _libsbol.ownedSequence_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedSequence_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedSequence_remove(self, *args)
 
-        """
-        return _libsbol.ownedSequence_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedSequence_clear(self)
 
     def create(self, *args):
         """
@@ -8394,14 +8412,6 @@ class listOfOwnedSequences(ownedSequence):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedSequences_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedSequences
     __del__ = lambda self: None
 listOfOwnedSequences_swigregister = _libsbol.listOfOwnedSequences_swigregister
@@ -8474,6 +8484,9 @@ class modelProperty(_object):
         return _libsbol.modelProperty_get(self)
 
 
+    def getAll(self):
+        return _libsbol.modelProperty_getAll(self)
+
     def set(self, *args):
         """
 
@@ -8504,6 +8517,12 @@ class modelProperty(_object):
         """
         return _libsbol.modelProperty_add(self, new_value)
 
+
+    def remove(self, index=0):
+        return _libsbol.modelProperty_remove(self, index)
+
+    def clear(self):
+        return _libsbol.modelProperty_clear(self)
 
     def write(self):
         """
@@ -8624,13 +8643,14 @@ class ownedModel(modelProperty):
         return _libsbol.ownedModel_add(self, sbol_obj)
 
 
-    def copy(self):
-        """
+    def getObjects(self):
+        return _libsbol.ownedModel_getObjects(self)
 
+    def remove(self, *args):
+        return _libsbol.ownedModel_remove(self, *args)
 
-        """
-        return _libsbol.ownedModel_copy(self)
-
+    def clear(self):
+        return _libsbol.ownedModel_clear(self)
 
     def create(self, *args):
         """
@@ -8763,14 +8783,6 @@ class listOfOwnedModels(ownedModel):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def remove(self, *args):
-        """
-
-
-        """
-        return _libsbol.listOfOwnedModels_remove(self, *args)
-
     __swig_destroy__ = _libsbol.delete_listOfOwnedModels
     __del__ = lambda self: None
 listOfOwnedModels_swigregister = _libsbol.listOfOwnedModels_swigregister
@@ -8868,42 +8880,7 @@ class Document(SBOLObject):
             The full name of the file you want to write (including file extension)  
 
         """
-        val = _libsbol.Document_write(self, filename)
-
-        import json
-        import urllib2
-
-        sbol = open(filename, 'r')
-        data = {"validationOptions": {"output" : "SBOL2",
-                "diff": False,
-                "noncompliantUrisAllowed": False,
-                "incompleteDocumentsAllowed": False,
-                "bestPracticesCheck": False,
-                "failOnFirstError": False,
-                "displayFullErrorStackTrace": False,
-                "topLevelToConvert": "",
-                "uriPrefix": "",
-                "version": ""},
-                "wantFileBack": False,
-                "mainFile": sbol.read()
-            }
-        sbol.close()
-        data = json.dumps(data)
-        url = 'http://www.async.ece.utah.edu/sbol-validator/endpoint.php'
-        headers = {'content-type': 'application/json'}
-
-        req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
-        f = urllib2.urlopen(req)
-        response = json.loads(f.read(), strict=False)
-        if not response['result'] == '':
-            print (response['result'])
-        else:
-            print ('Validation successful. No errors found')
-        f.close()
-
-
-
-        return val
+        return _libsbol.Document_write(self, filename)
 
 
     def read(self, filename):
@@ -8940,6 +8917,9 @@ class Document(SBOLObject):
         return _libsbol.Document_append(self, filename)
 
 
+    def request_validation(self, sbol):
+        return _libsbol.Document_request_validation(self, sbol)
+
     def validate(self, arg=None):
         """
 
@@ -8959,70 +8939,12 @@ class Document(SBOLObject):
         return _libsbol.Document_find(self, uri)
 
 
-    def parse_objects(user_data, triple):
-        """
-
-
-        """
-        return _libsbol.Document_parse_objects(user_data, triple)
-
-    parse_objects = staticmethod(parse_objects)
-
-    def parse_properties(user_data, triple):
-        """
-
-
-        """
-        return _libsbol.Document_parse_properties(user_data, triple)
-
-    parse_properties = staticmethod(parse_properties)
-
-    def namespaceHandler(user_data, nspace):
-        """
-
-
-        """
-        return _libsbol.Document_namespaceHandler(user_data, nspace)
-
-    namespaceHandler = staticmethod(namespaceHandler)
-
     def getNamespaces(self):
         """
 
 
         """
         return _libsbol.Document_getNamespaces(self)
-
-
-    def addNamespace(self, *args):
-        """
-
-
-        """
-        return _libsbol.Document_addNamespace(self, *args)
-
-
-    def flatten(self):
-        """
-
-
-        """
-        return _libsbol.Document_flatten(self)
-
-
-    def close(self, *args):
-        """
-
-
-        Use this method to destroy an SBOL object that is not contained by a parent
-        Document.  
-
-        If the object does have a parent Document, instead use doc.close() with the
-        object's URI identity as an argument.  Recurse through child objects and delete
-        them.  
-
-        """
-        return _libsbol.Document_close(self, *args)
 
 
     def addModel(self, *args):
@@ -9138,27 +9060,6 @@ class Document(SBOLObject):
 Document_swigregister = _libsbol.Document_swigregister
 Document_swigregister(Document)
 cvar = _libsbol.cvar
-
-def Document_parse_objects(user_data, triple):
-    """
-
-
-    """
-    return _libsbol.Document_parse_objects(user_data, triple)
-
-def Document_parse_properties(user_data, triple):
-    """
-
-
-    """
-    return _libsbol.Document_parse_properties(user_data, triple)
-
-def Document_namespaceHandler(user_data, nspace):
-    """
-
-
-    """
-    return _libsbol.Document_namespaceHandler(user_data, nspace)
 
 
 def cut_sbol_resource(xml_string, resource_id):
