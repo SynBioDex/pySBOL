@@ -57,7 +57,7 @@ elif config[0] == 'Mac':
       'sbol': ['_libsbol.so', 'libsbol.py']
     }
 setup(
-    name='pySBOL2',
+    name='pySBOL',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
