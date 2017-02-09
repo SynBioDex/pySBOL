@@ -47,11 +47,13 @@ chdir(path.join(here,package_dir))
 if config[0] == 'Win':
       package_data={
       'sbol': ['examples/*'],
+      'sbol.test': ['*.*'],
       'sbol': ['_libsbol.pyd', 'libsbol.py']
       }
 elif config[0] == 'Mac':
     package_data={
       'sbol': ['examples/*'],
+      'sbol.test': ['*.*'],
       'sbol': ['_libsbol.so', 'libsbol.py']
     }
 setup(
@@ -105,7 +107,7 @@ setup(
     # simple. Or you can use find_packages().
     #packages = ['examples'],
     #packages = ['sbol']  # No subdirectory named sbol
-    packages=find_packages(),
+    packages=['sbol', 'sbol.test'],
     #packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
     # List run-time dependencies here.  These will be installed by pip when
