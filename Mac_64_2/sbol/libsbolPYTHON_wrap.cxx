@@ -3013,139 +3013,151 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_char swig_types[1]
 #define SWIGTYPE_p_const_reference swig_types[2]
 #define SWIGTYPE_p_difference_type swig_types[3]
-#define SWIGTYPE_p_key_type swig_types[4]
-#define SWIGTYPE_p_mapped_type swig_types[5]
-#define SWIGTYPE_p_p_PyObject swig_types[6]
-#define SWIGTYPE_p_raptor_log_message swig_types[7]
-#define SWIGTYPE_p_raptor_world swig_types[8]
-#define SWIGTYPE_p_reference swig_types[9]
-#define SWIGTYPE_p_sbol__Component swig_types[10]
-#define SWIGTYPE_p_sbol__ComponentDefinition swig_types[11]
-#define SWIGTYPE_p_sbol__ComponentInstance swig_types[12]
-#define SWIGTYPE_p_sbol__Config swig_types[13]
-#define SWIGTYPE_p_sbol__Cut swig_types[14]
-#define SWIGTYPE_p_sbol__Document swig_types[15]
-#define SWIGTYPE_p_sbol__FunctionalComponent swig_types[16]
-#define SWIGTYPE_p_sbol__Identified swig_types[17]
-#define SWIGTYPE_p_sbol__IntProperty swig_types[18]
-#define SWIGTYPE_p_sbol__Interaction swig_types[19]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__ComponentDefinition_t_t swig_types[20]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Component_t_t swig_types[21]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__FunctionalComponent_t_t swig_types[22]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Interaction_t_t swig_types[23]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Location_t_t swig_types[24]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__MapsTo_t_t swig_types[25]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Model_t_t swig_types[26]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__ModuleDefinition_t_t swig_types[27]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Module_t_t swig_types[28]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Participation_t_t swig_types[29]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceAnnotation_t_t swig_types[30]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceConstraint_t_t swig_types[31]
-#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Sequence_t_t swig_types[32]
-#define SWIGTYPE_p_sbol__ListT_sbol__URIProperty_t swig_types[33]
-#define SWIGTYPE_p_sbol__Location swig_types[34]
-#define SWIGTYPE_p_sbol__MapsTo swig_types[35]
-#define SWIGTYPE_p_sbol__Model swig_types[36]
-#define SWIGTYPE_p_sbol__Module swig_types[37]
-#define SWIGTYPE_p_sbol__ModuleDefinition swig_types[38]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t swig_types[39]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t__iterator swig_types[40]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t swig_types[41]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t__iterator swig_types[42]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t swig_types[43]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t__iterator swig_types[44]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t swig_types[45]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t__iterator swig_types[46]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t swig_types[47]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t__iterator swig_types[48]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t swig_types[49]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t__iterator swig_types[50]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t swig_types[51]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t__iterator swig_types[52]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t swig_types[53]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t__iterator swig_types[54]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t swig_types[55]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t__iterator swig_types[56]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t swig_types[57]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t__iterator swig_types[58]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t swig_types[59]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t__iterator swig_types[60]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t swig_types[61]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t__iterator swig_types[62]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t swig_types[63]
-#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t__iterator swig_types[64]
-#define SWIGTYPE_p_sbol__Participation swig_types[65]
-#define SWIGTYPE_p_sbol__PropertyT_int_t swig_types[66]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__ComponentDefinition_t swig_types[67]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Component_t swig_types[68]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__FunctionalComponent_t swig_types[69]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Interaction_t swig_types[70]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Location_t swig_types[71]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__MapsTo_t swig_types[72]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Model_t swig_types[73]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__ModuleDefinition_t swig_types[74]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Module_t swig_types[75]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Participation_t swig_types[76]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__SequenceAnnotation_t swig_types[77]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__SequenceConstraint_t swig_types[78]
-#define SWIGTYPE_p_sbol__PropertyT_sbol__Sequence_t swig_types[79]
-#define SWIGTYPE_p_sbol__PropertyT_std__string_t swig_types[80]
-#define SWIGTYPE_p_sbol__Range swig_types[81]
-#define SWIGTYPE_p_sbol__ReferencedObject swig_types[82]
-#define SWIGTYPE_p_sbol__ReferencedObject__iterator swig_types[83]
-#define SWIGTYPE_p_sbol__SBOLObject swig_types[84]
-#define SWIGTYPE_p_sbol__Sequence swig_types[85]
-#define SWIGTYPE_p_sbol__SequenceAnnotation swig_types[86]
-#define SWIGTYPE_p_sbol__SequenceConstraint swig_types[87]
-#define SWIGTYPE_p_sbol__TextProperty swig_types[88]
-#define SWIGTYPE_p_sbol__TopLevel swig_types[89]
-#define SWIGTYPE_p_sbol__URIProperty swig_types[90]
-#define SWIGTYPE_p_sbol__VersionProperty swig_types[91]
-#define SWIGTYPE_p_sbol__mapsTo swig_types[92]
-#define SWIGTYPE_p_size_type swig_types[93]
-#define SWIGTYPE_p_std__allocatorT_int_t swig_types[94]
-#define SWIGTYPE_p_std__allocatorT_sbol__Component_t swig_types[95]
-#define SWIGTYPE_p_std__allocatorT_sbol__Location_t swig_types[96]
-#define SWIGTYPE_p_std__allocatorT_sbol__MapsTo_t swig_types[97]
-#define SWIGTYPE_p_std__allocatorT_sbol__SBOLObject_p_t swig_types[98]
-#define SWIGTYPE_p_std__allocatorT_sbol__SequenceAnnotation_t swig_types[99]
-#define SWIGTYPE_p_std__allocatorT_sbol__SequenceConstraint_t swig_types[100]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__string_t_t swig_types[101]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t swig_types[102]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t swig_types[103]
-#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[104]
-#define SWIGTYPE_p_std__invalid_argument swig_types[105]
-#define SWIGTYPE_p_std__istringstream swig_types[106]
-#define SWIGTYPE_p_std__lessT_std__string_t swig_types[107]
-#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t swig_types[108]
-#define SWIGTYPE_p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t swig_types[109]
-#define SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t swig_types[110]
-#define SWIGTYPE_p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t swig_types[111]
-#define SWIGTYPE_p_std__string swig_types[112]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t swig_types[113]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_p_t swig_types[114]
-#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[115]
-#define SWIGTYPE_p_std__vectorT_sbol__ComponentDefinition_p_std__allocatorT_sbol__ComponentDefinition_p_t_t swig_types[116]
-#define SWIGTYPE_p_std__vectorT_sbol__Component_p_std__allocatorT_sbol__Component_p_t_t swig_types[117]
-#define SWIGTYPE_p_std__vectorT_sbol__Component_std__allocatorT_sbol__Component_t_t swig_types[118]
-#define SWIGTYPE_p_std__vectorT_sbol__FunctionalComponent_p_std__allocatorT_sbol__FunctionalComponent_p_t_t swig_types[119]
-#define SWIGTYPE_p_std__vectorT_sbol__Location_std__allocatorT_sbol__Location_t_t swig_types[120]
-#define SWIGTYPE_p_std__vectorT_sbol__MapsTo_p_std__allocatorT_sbol__MapsTo_p_t_t swig_types[121]
-#define SWIGTYPE_p_std__vectorT_sbol__MapsTo_std__allocatorT_sbol__MapsTo_t_t swig_types[122]
-#define SWIGTYPE_p_std__vectorT_sbol__Model_p_std__allocatorT_sbol__Model_p_t_t swig_types[123]
-#define SWIGTYPE_p_std__vectorT_sbol__ModuleDefinition_p_std__allocatorT_sbol__ModuleDefinition_p_t_t swig_types[124]
-#define SWIGTYPE_p_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t swig_types[125]
-#define SWIGTYPE_p_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t__iterator swig_types[126]
-#define SWIGTYPE_p_std__vectorT_sbol__SequenceAnnotation_std__allocatorT_sbol__SequenceAnnotation_t_t swig_types[127]
-#define SWIGTYPE_p_std__vectorT_sbol__SequenceConstraint_std__allocatorT_sbol__SequenceConstraint_t_t swig_types[128]
-#define SWIGTYPE_p_std__vectorT_sbol__Sequence_p_std__allocatorT_sbol__Sequence_p_t_t swig_types[129]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[130]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t__iterator swig_types[131]
-#define SWIGTYPE_p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t swig_types[132]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[133]
-#define SWIGTYPE_p_value_type swig_types[134]
-static swig_type_info *swig_types[136];
-static swig_module_info swig_module = {swig_types, 135, 0, 0, 0, 0};
+#define SWIGTYPE_p_f_p_sbol__ComponentDefinition_p_void__void swig_types[4]
+#define SWIGTYPE_p_key_type swig_types[5]
+#define SWIGTYPE_p_mapped_type swig_types[6]
+#define SWIGTYPE_p_p_PyObject swig_types[7]
+#define SWIGTYPE_p_p_char swig_types[8]
+#define SWIGTYPE_p_p_raptor_iostream swig_types[9]
+#define SWIGTYPE_p_p_raptor_serializer swig_types[10]
+#define SWIGTYPE_p_p_raptor_uri swig_types[11]
+#define SWIGTYPE_p_p_raptor_world swig_types[12]
+#define SWIGTYPE_p_raptor_log_message swig_types[13]
+#define SWIGTYPE_p_raptor_serializer swig_types[14]
+#define SWIGTYPE_p_raptor_world swig_types[15]
+#define SWIGTYPE_p_reference swig_types[16]
+#define SWIGTYPE_p_sbol__Collection swig_types[17]
+#define SWIGTYPE_p_sbol__Component swig_types[18]
+#define SWIGTYPE_p_sbol__ComponentDefinition swig_types[19]
+#define SWIGTYPE_p_sbol__ComponentInstance swig_types[20]
+#define SWIGTYPE_p_sbol__Config swig_types[21]
+#define SWIGTYPE_p_sbol__Cut swig_types[22]
+#define SWIGTYPE_p_sbol__Document swig_types[23]
+#define SWIGTYPE_p_sbol__FunctionalComponent swig_types[24]
+#define SWIGTYPE_p_sbol__GenericLocation swig_types[25]
+#define SWIGTYPE_p_sbol__Identified swig_types[26]
+#define SWIGTYPE_p_sbol__IntProperty swig_types[27]
+#define SWIGTYPE_p_sbol__Interaction swig_types[28]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__ComponentDefinition_t_t swig_types[29]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Component_t_t swig_types[30]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__FunctionalComponent_t_t swig_types[31]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Interaction_t_t swig_types[32]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Location_t_t swig_types[33]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__MapsTo_t_t swig_types[34]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Model_t_t swig_types[35]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__ModuleDefinition_t_t swig_types[36]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Module_t_t swig_types[37]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Participation_t_t swig_types[38]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceAnnotation_t_t swig_types[39]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceConstraint_t_t swig_types[40]
+#define SWIGTYPE_p_sbol__ListT_sbol__OwnedObjectT_sbol__Sequence_t_t swig_types[41]
+#define SWIGTYPE_p_sbol__ListT_sbol__URIProperty_t swig_types[42]
+#define SWIGTYPE_p_sbol__Location swig_types[43]
+#define SWIGTYPE_p_sbol__MapsTo swig_types[44]
+#define SWIGTYPE_p_sbol__Model swig_types[45]
+#define SWIGTYPE_p_sbol__Module swig_types[46]
+#define SWIGTYPE_p_sbol__ModuleDefinition swig_types[47]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t swig_types[48]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t__iterator swig_types[49]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t swig_types[50]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t__iterator swig_types[51]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t swig_types[52]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t__iterator swig_types[53]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t swig_types[54]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t__iterator swig_types[55]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t swig_types[56]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t__iterator swig_types[57]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t swig_types[58]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t__iterator swig_types[59]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t swig_types[60]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t__iterator swig_types[61]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t swig_types[62]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t__iterator swig_types[63]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t swig_types[64]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t__iterator swig_types[65]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t swig_types[66]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t__iterator swig_types[67]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t swig_types[68]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t__iterator swig_types[69]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t swig_types[70]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t__iterator swig_types[71]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t swig_types[72]
+#define SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t__iterator swig_types[73]
+#define SWIGTYPE_p_sbol__Participation swig_types[74]
+#define SWIGTYPE_p_sbol__PropertyT_int_t swig_types[75]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__ComponentDefinition_t swig_types[76]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Component_t swig_types[77]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__FunctionalComponent_t swig_types[78]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Interaction_t swig_types[79]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Location_t swig_types[80]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__MapsTo_t swig_types[81]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Model_t swig_types[82]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__ModuleDefinition_t swig_types[83]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Module_t swig_types[84]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Participation_t swig_types[85]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__SequenceAnnotation_t swig_types[86]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__SequenceConstraint_t swig_types[87]
+#define SWIGTYPE_p_sbol__PropertyT_sbol__Sequence_t swig_types[88]
+#define SWIGTYPE_p_sbol__PropertyT_std__string_t swig_types[89]
+#define SWIGTYPE_p_sbol__Range swig_types[90]
+#define SWIGTYPE_p_sbol__ReferencedObject swig_types[91]
+#define SWIGTYPE_p_sbol__ReferencedObject__iterator swig_types[92]
+#define SWIGTYPE_p_sbol__SBOLObject swig_types[93]
+#define SWIGTYPE_p_sbol__Sequence swig_types[94]
+#define SWIGTYPE_p_sbol__SequenceAnnotation swig_types[95]
+#define SWIGTYPE_p_sbol__SequenceConstraint swig_types[96]
+#define SWIGTYPE_p_sbol__TextProperty swig_types[97]
+#define SWIGTYPE_p_sbol__TopLevel swig_types[98]
+#define SWIGTYPE_p_sbol__URIProperty swig_types[99]
+#define SWIGTYPE_p_sbol__VersionProperty swig_types[100]
+#define SWIGTYPE_p_sbol__mapsTo swig_types[101]
+#define SWIGTYPE_p_size_t swig_types[102]
+#define SWIGTYPE_p_size_type swig_types[103]
+#define SWIGTYPE_p_std__allocatorT_int_t swig_types[104]
+#define SWIGTYPE_p_std__allocatorT_sbol__Component_t swig_types[105]
+#define SWIGTYPE_p_std__allocatorT_sbol__Location_t swig_types[106]
+#define SWIGTYPE_p_std__allocatorT_sbol__MapsTo_t swig_types[107]
+#define SWIGTYPE_p_std__allocatorT_sbol__SBOLObject_p_t swig_types[108]
+#define SWIGTYPE_p_std__allocatorT_sbol__SequenceAnnotation_t swig_types[109]
+#define SWIGTYPE_p_std__allocatorT_sbol__SequenceConstraint_t swig_types[110]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__string_t_t swig_types[111]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t swig_types[112]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t swig_types[113]
+#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[114]
+#define SWIGTYPE_p_std__invalid_argument swig_types[115]
+#define SWIGTYPE_p_std__istringstream swig_types[116]
+#define SWIGTYPE_p_std__lessT_std__string_t swig_types[117]
+#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t swig_types[118]
+#define SWIGTYPE_p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t swig_types[119]
+#define SWIGTYPE_p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t swig_types[120]
+#define SWIGTYPE_p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t swig_types[121]
+#define SWIGTYPE_p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t swig_types[122]
+#define SWIGTYPE_p_std__string swig_types[123]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t swig_types[124]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_p_t swig_types[125]
+#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[126]
+#define SWIGTYPE_p_std__vectorT_sbol__ComponentDefinition_p_std__allocatorT_sbol__ComponentDefinition_p_t_t swig_types[127]
+#define SWIGTYPE_p_std__vectorT_sbol__Component_p_std__allocatorT_sbol__Component_p_t_t swig_types[128]
+#define SWIGTYPE_p_std__vectorT_sbol__Component_std__allocatorT_sbol__Component_t_t swig_types[129]
+#define SWIGTYPE_p_std__vectorT_sbol__FunctionalComponent_p_std__allocatorT_sbol__FunctionalComponent_p_t_t swig_types[130]
+#define SWIGTYPE_p_std__vectorT_sbol__Location_std__allocatorT_sbol__Location_t_t swig_types[131]
+#define SWIGTYPE_p_std__vectorT_sbol__MapsTo_p_std__allocatorT_sbol__MapsTo_p_t_t swig_types[132]
+#define SWIGTYPE_p_std__vectorT_sbol__MapsTo_std__allocatorT_sbol__MapsTo_t_t swig_types[133]
+#define SWIGTYPE_p_std__vectorT_sbol__Model_p_std__allocatorT_sbol__Model_p_t_t swig_types[134]
+#define SWIGTYPE_p_std__vectorT_sbol__ModuleDefinition_p_std__allocatorT_sbol__ModuleDefinition_p_t_t swig_types[135]
+#define SWIGTYPE_p_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t swig_types[136]
+#define SWIGTYPE_p_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t__iterator swig_types[137]
+#define SWIGTYPE_p_std__vectorT_sbol__SequenceAnnotation_std__allocatorT_sbol__SequenceAnnotation_t_t swig_types[138]
+#define SWIGTYPE_p_std__vectorT_sbol__SequenceConstraint_std__allocatorT_sbol__SequenceConstraint_t_t swig_types[139]
+#define SWIGTYPE_p_std__vectorT_sbol__Sequence_p_std__allocatorT_sbol__Sequence_p_t_t swig_types[140]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[141]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t__iterator swig_types[142]
+#define SWIGTYPE_p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t swig_types[143]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[144]
+#define SWIGTYPE_p_value_type swig_types[145]
+#define SWIGTYPE_p_void swig_types[146]
+static swig_type_info *swig_types[148];
+static swig_module_info swig_module = {swig_types, 147, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3276,6 +3288,7 @@ namespace swig {
 
     #include "mapsto.h"
     #include "model.h"
+    #include "collection.h"
     #include "assembly.h"
     #include "sbol.h"
 
@@ -6021,6 +6034,20 @@ SWIGINTERN PyObject *std_map_Sl_std_string_Sc_std_vector_Sl_sbol_SBOLObject_Sm__
 SWIGINTERN void std_map_Sl_std_string_Sc_std_vector_Sl_sbol_SBOLObject_Sm__Sg__Sg__erase__SWIG_1(std::map< std::string,std::vector< sbol::SBOLObject * > > *self,std::map< std::string,std::vector< sbol::SBOLObject * > >::iterator position){ self->erase(position); }
 SWIGINTERN void std_map_Sl_std_string_Sc_std_vector_Sl_sbol_SBOLObject_Sm__Sg__Sg__erase__SWIG_2(std::map< std::string,std::vector< sbol::SBOLObject * > > *self,std::map< std::string,std::vector< sbol::SBOLObject * > >::iterator first,std::map< std::string,std::vector< sbol::SBOLObject * > >::iterator last){ self->erase(first, last); }
 
+SWIGINTERN int
+SWIG_AsVal_bool (PyObject *obj, bool *val)
+{
+  int r;
+  if (!PyBool_Check(obj))
+    return SWIG_ERROR;
+  r = PyObject_IsTrue(obj);
+  if (r == -1)
+    return SWIG_ERROR;
+  if (val) *val = r ? true : false;
+  return SWIG_OK;
+}
+
+
 SWIGINTERNINLINE PyObject * 
 SWIG_FromCharPtr(const char *cptr)
 { 
@@ -7735,13 +7762,46 @@ SWIGINTERN int sbol_OwnedObject_Sl_sbol_Model_Sg____len__(sbol::OwnedObject< sbo
         return self->size();
     }
 SWIGINTERN void sbol_Document_addComponentDefinition__SWIG_2(sbol::Document *self,PyObject *list){
-        
+        std::vector<sbol::ComponentDefinition*> list_of_cds = {};
+        if (PyList_Check(list))
+        {
+            for (int i = 0; i < PyList_Size(list); ++i)
+            {
+                PyObject *obj = PyList_GetItem(list, i);
+                sbol::ComponentDefinition* cd;
+                if ((SWIG_ConvertPtr(obj,(void **) &cd, SWIGTYPE_p_sbol__ComponentDefinition,1)) == -1) throw;
+                list_of_cds.push_back(cd);
+            }
+			self->add(list_of_cds);
+        };        
     }
 SWIGINTERN void sbol_Document_addSequence__SWIG_2(sbol::Document *self,PyObject *list){
-        
+        std::vector<sbol::Sequence*> list_of_seqs = {};
+        if (PyList_Check(list))
+        {
+            for (int i = 0; i < PyList_Size(list); ++i)
+            {
+                PyObject *obj = PyList_GetItem(list, i);
+                sbol::Sequence* seq;
+                if ((SWIG_ConvertPtr(obj,(void **) &seq, SWIGTYPE_p_sbol__Sequence,1)) == -1) throw;
+                list_of_seqs.push_back(seq);
+            }
+			self->add(list_of_seqs);
+        };
     }
 SWIGINTERN void sbol_Document_addModuleDefinition__SWIG_2(sbol::Document *self,PyObject *list){
-        
+        std::vector<sbol::ModuleDefinition*> list_of_mds = {};
+        if (PyList_Check(list))
+        {
+            for (int i = 0; i < PyList_Size(list); ++i)
+            {
+                PyObject *obj = PyList_GetItem(list, i);
+                sbol::ModuleDefinition* md;
+                if ((SWIG_ConvertPtr(obj,(void **) &md, SWIGTYPE_p_sbol__ModuleDefinition,1)) == -1) throw;
+                list_of_mds.push_back(md);
+            }
+			self->add(list_of_mds);
+        };                
     }
 #ifdef __cplusplus
 extern "C" {
@@ -18328,23 +18388,32 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliantTypes__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Config *arg1 = (sbol::Config *) 0 ;
+  bool arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Config_toggleSBOLCompliance",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:Config_toggleSBOLCompliantTypes",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Config, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_toggleSBOLCompliance" "', argument " "1"" of type '" "sbol::Config *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_toggleSBOLCompliantTypes" "', argument " "1"" of type '" "sbol::Config *""'"); 
   }
   arg1 = reinterpret_cast< sbol::Config * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Config_toggleSBOLCompliantTypes" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
   {
     try
     {
-      (arg1)->toggleSBOLCompliance();
+      (arg1)->toggleSBOLCompliantTypes(arg2);
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -18368,48 +18437,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Config_isSBOLCompliant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Config *arg1 = (sbol::Config *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Config_isSBOLCompliant",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Config, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_isSBOLCompliant" "', argument " "1"" of type '" "sbol::Config *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Config * >(argp1);
-  {
-    try
-    {
-      result = (int)(arg1)->isSBOLCompliant();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliantTypes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliantTypes__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Config *arg1 = (sbol::Config *) 0 ;
   void *argp1 = 0 ;
@@ -18446,6 +18474,52 @@ SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliantTypes(PyObject *SWIGUNUSEDP
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_toggleSBOLCompliantTypes(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Config, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Config_toggleSBOLCompliantTypes__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Config, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Config_toggleSBOLCompliantTypes__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Config_toggleSBOLCompliantTypes'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::Config::toggleSBOLCompliantTypes(bool)\n"
+    "    sbol::Config::toggleSBOLCompliantTypes()\n");
+  return 0;
 }
 
 
@@ -18490,7 +18564,56 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Config_toggleExceptions(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Config_toggleExceptions__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Config *arg1 = (sbol::Config *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Config_toggleExceptions",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Config, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_toggleExceptions" "', argument " "1"" of type '" "sbol::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Config * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Config_toggleExceptions" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try
+    {
+      (arg1)->toggleExceptions(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_toggleExceptions__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Config *arg1 = (sbol::Config *) 0 ;
   void *argp1 = 0 ;
@@ -18527,6 +18650,52 @@ SWIGINTERN PyObject *_wrap_Config_toggleExceptions(PyObject *SWIGUNUSEDPARM(self
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_toggleExceptions(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Config, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Config_toggleExceptions__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Config, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Config_toggleExceptions__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Config_toggleExceptions'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::Config::toggleExceptions(bool)\n"
+    "    sbol::Config::toggleExceptions()\n");
+  return 0;
 }
 
 
@@ -18759,6 +18928,37 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Config_parse_extension_objects(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  
+  if (!PyArg_ParseTuple(args,(char *)":Config_parse_extension_objects")) SWIG_fail;
+  {
+    try
+    {
+      sbol::Config::parse_extension_objects();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_Config(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Config *arg1 = (sbol::Config *) 0 ;
@@ -18912,14 +19112,23 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_toggleSBOLCompliance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_toggleSBOLCompliantTypes__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
+  bool arg1 ;
+  bool val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":toggleSBOLCompliance")) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:toggleSBOLCompliantTypes",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_bool(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "toggleSBOLCompliantTypes" "', argument " "1"" of type '" "bool""'");
+  } 
+  arg1 = static_cast< bool >(val1);
   {
     try
     {
-      sbol::toggleSBOLCompliance();
+      sbol::toggleSBOLCompliantTypes(arg1);
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -18943,39 +19152,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_isSBOLCompliant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)":isSBOLCompliant")) SWIG_fail;
-  {
-    try
-    {
-      result = (int)sbol::isSBOLCompliant();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_toggleSBOLCompliantTypes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_toggleSBOLCompliantTypes__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   
   if (!PyArg_ParseTuple(args,(char *)":toggleSBOLCompliantTypes")) SWIG_fail;
@@ -19003,6 +19180,41 @@ SWIGINTERN PyObject *_wrap_toggleSBOLCompliantTypes(PyObject *SWIGUNUSEDPARM(sel
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_toggleSBOLCompliantTypes(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[2] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_toggleSBOLCompliantTypes__SWIG_1(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      int res = SWIG_AsVal_bool(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      return _wrap_toggleSBOLCompliantTypes__SWIG_0(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'toggleSBOLCompliantTypes'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::toggleSBOLCompliantTypes(bool)\n"
+    "    sbol::toggleSBOLCompliantTypes()\n");
+  return 0;
 }
 
 
@@ -19112,7 +19324,47 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_toggleExceptions(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_toggleExceptions__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  bool arg1 ;
+  bool val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:toggleExceptions",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_bool(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "toggleExceptions" "', argument " "1"" of type '" "bool""'");
+  } 
+  arg1 = static_cast< bool >(val1);
+  {
+    try
+    {
+      sbol::toggleExceptions(arg1);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_toggleExceptions__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   
   if (!PyArg_ParseTuple(args,(char *)":toggleExceptions")) SWIG_fail;
@@ -19140,6 +19392,41 @@ SWIGINTERN PyObject *_wrap_toggleExceptions(PyObject *SWIGUNUSEDPARM(self), PyOb
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_toggleExceptions(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[2] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_toggleExceptions__SWIG_1(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      int res = SWIG_AsVal_bool(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      return _wrap_toggleExceptions__SWIG_0(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'toggleExceptions'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::toggleExceptions(bool)\n"
+    "    sbol::toggleExceptions()\n");
+  return 0;
 }
 
 
@@ -19983,6 +20270,39 @@ SWIGINTERN PyObject *SBOL_RANGE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyO
 }
 
 
+SWIGINTERN PyObject *SBOL_CUT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SBOL_CUT",SWIG_FromCharPtr("http://sbols.org/v2#Cut"));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SBOL_COLLECTION_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SBOL_COLLECTION",SWIG_FromCharPtr("http://sbols.org/v2#Collection"));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SBOL_GENERIC_LOCATION_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SBOL_GENERIC_LOCATION",SWIG_FromCharPtr("http://sbols.org/v2#GenericLocation"));
+  return SWIG_Py_Void();
+}
+
+
 SWIGINTERN PyObject *UNDEFINED_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *module;
   PyObject *d;
@@ -20430,6 +20750,17 @@ SWIGINTERN PyObject *SBOL_ROLE_INTEGRATION_swigconstant(PyObject *SWIGUNUSEDPARM
   d = PyModule_GetDict(module);
   if (!d) return NULL;
   SWIG_Python_SetConstant(d, "SBOL_ROLE_INTEGRATION",SWIG_FromCharPtr("http://sbols.org/v2#roleIntegration"));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SBOL_MEMBERS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SBOL_MEMBERS",SWIG_FromCharPtr("http://sbols.org/v2#member"));
   return SWIG_Py_Void();
 }
 
@@ -21961,47 +22292,6 @@ SWIGINTERN PyObject *_wrap__StringProperty_getOwner(PyObject *SWIGUNUSEDPARM(sel
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap__StringProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< std::string > *arg1 = (sbol::Property< std::string > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:_StringProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_std__string_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_StringProperty_get" "', argument " "1"" of type '" "sbol::Property< std::string > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< std::string > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -23540,47 +23830,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap__IntProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< int > *arg1 = (sbol::Property< int > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:_IntProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_IntProperty_get" "', argument " "1"" of type '" "sbol::Property< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< int > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap__IntProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< int > *arg1 = (sbol::Property< int > *) 0 ;
@@ -24376,6 +24625,47 @@ SWIGINTERN PyObject *_IntProperty_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_URIProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::URIProperty *arg1 = (sbol::URIProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:URIProperty_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__URIProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "URIProperty_get" "', argument " "1"" of type '" "sbol::URIProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::URIProperty * >(argp1);
+  {
+    try
+    {
+      result = (arg1)->get();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_URIProperty__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::sbol_type arg1 ;
@@ -24774,6 +25064,47 @@ SWIGINTERN PyObject *URIProperty_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_TextProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::TextProperty *arg1 = (sbol::TextProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TextProperty_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__TextProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextProperty_get" "', argument " "1"" of type '" "sbol::TextProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::TextProperty * >(argp1);
+  {
+    try
+    {
+      result = (arg1)->get();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_TextProperty__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::sbol_type arg1 ;
@@ -24983,6 +25314,47 @@ SWIGINTERN PyObject *TextProperty_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   SWIG_TypeNewClientData(SWIGTYPE_p_sbol__TextProperty, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
+
+SWIGINTERN PyObject *_wrap_IntProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::IntProperty *arg1 = (sbol::IntProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:IntProperty_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__IntProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntProperty_get" "', argument " "1"" of type '" "sbol::IntProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::IntProperty * >(argp1);
+  {
+    try
+    {
+      result = (int)(arg1)->get();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
 
 SWIGINTERN PyObject *_wrap_new_IntProperty__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
@@ -25860,6 +26232,271 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_SBOLObject_type_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  sbol::sbol_type *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_type_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_type_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_type_set" "', argument " "2"" of type '" "sbol::sbol_type const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SBOLObject_type_set" "', argument " "2"" of type '" "sbol::sbol_type const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->type = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_type_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::sbol_type *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_type_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_type_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  result = (sbol::sbol_type *) & ((arg1)->type);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_parent_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  sbol::SBOLObject *arg2 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_parent_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_parent_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_sbol__SBOLObject, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_parent_set" "', argument " "2"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SBOLObject * >(argp2);
+  if (arg1) (arg1)->parent = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_parent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::SBOLObject *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_parent_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_parent_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  result = (sbol::SBOLObject *) ((arg1)->parent);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_proxy_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_proxy_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_proxy_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_proxy_set" "', argument " "2"" of type '" "void *""'"); 
+  }
+  if (arg1) (arg1)->proxy = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_proxy_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  void *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_proxy_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_proxy_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  result = (void *) ((arg1)->proxy);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_thisown_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_thisown_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_thisown_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SBOLObject_thisown_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->thisown = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_thisown_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_thisown_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_thisown_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  result = (bool) ((arg1)->thisown);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_extension_objects_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *arg2 = (std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_extension_objects_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_extension_objects_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_extension_objects_set" "', argument " "2"" of type '" "std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *""'"); 
+  }
+  arg2 = reinterpret_cast< std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > * >(argp2);
+  if (arg1) (arg1)->extension_objects = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_extension_objects_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_extension_objects_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_extension_objects_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  result = (std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *)& ((arg1)->extension_objects);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_SBOLObject_identity_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
@@ -26142,117 +26779,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_SBOLObject_type_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
-  sbol::sbol_type *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 = SWIG_OLDOBJ ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_type_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_type_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_type_set" "', argument " "2"" of type '" "sbol::sbol_type const &""'"); 
-    }
-    if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SBOLObject_type_set" "', argument " "2"" of type '" "sbol::sbol_type const &""'"); 
-    }
-    arg2 = ptr;
-  }
-  if (arg1) (arg1)->type = *arg2;
-  resultobj = SWIG_Py_Void();
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return resultobj;
-fail:
-  if (SWIG_IsNewObj(res2)) delete arg2;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SBOLObject_type_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  sbol::sbol_type *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_type_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_type_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
-  result = (sbol::sbol_type *) & ((arg1)->type);
-  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SBOLObject_parent_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
-  sbol::SBOLObject *arg2 = (sbol::SBOLObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_parent_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_parent_set" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_sbol__SBOLObject, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SBOLObject_parent_set" "', argument " "2"" of type '" "sbol::SBOLObject *""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::SBOLObject * >(argp2);
-  if (arg1) (arg1)->parent = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SBOLObject_parent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  sbol::SBOLObject *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:SBOLObject_parent_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_parent_get" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
-  result = (sbol::SBOLObject *) ((arg1)->parent);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_SBOLObject_getTypeURI(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
@@ -26354,7 +26880,7 @@ SWIGINTERN PyObject *_wrap_SBOLObject_find(PyObject *SWIGUNUSEDPARM(self), PyObj
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  int result;
+  sbol::SBOLObject *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_find",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
@@ -26374,7 +26900,7 @@ SWIGINTERN PyObject *_wrap_SBOLObject_find(PyObject *SWIGUNUSEDPARM(self), PyObj
   {
     try
     {
-      result = (int)(arg1)->find(arg2);
+      result = (sbol::SBOLObject *)(arg1)->find(arg2);
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -26391,7 +26917,111 @@ SWIGINTERN PyObject *_wrap_SBOLObject_find(PyObject *SWIGUNUSEDPARM(self), PyObj
       
     }
   }
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_find_property(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::SBOLObject *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_find_property",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_find_property" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "SBOLObject_find_property" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::SBOLObject *)(arg1)->find_property(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SBOLObject_find_reference(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SBOLObject *arg1 = (sbol::SBOLObject *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< sbol::SBOLObject *,std::allocator< sbol::SBOLObject * > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SBOLObject_find_reference",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SBOLObject_find_reference" "', argument " "1"" of type '" "sbol::SBOLObject *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SBOLObject * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "SBOLObject_find_reference" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (arg1)->find_reference(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = swig::from(static_cast< std::vector< sbol::SBOLObject*,std::allocator< sbol::SBOLObject * > > >(result));
   return resultobj;
 fail:
   return NULL;
@@ -29176,6 +29806,161 @@ SWIGINTERN PyObject *Cut_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_GenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string arg1 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_GenericLocation",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_GenericLocation" "', argument " "1"" of type '" "std::string""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *)new sbol::GenericLocation(arg1);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_GenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_GenericLocation")) SWIG_fail;
+  {
+    try
+    {
+      result = (sbol::GenericLocation *)new sbol::GenericLocation();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_GenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[2] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_GenericLocation__SWIG_1(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_GenericLocation__SWIG_0(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_GenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::GenericLocation::GenericLocation(std::string)\n"
+    "    sbol::GenericLocation::GenericLocation()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_GenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::GenericLocation *arg1 = (sbol::GenericLocation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_GenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__GenericLocation, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_GenericLocation" "', argument " "1"" of type '" "sbol::GenericLocation *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::GenericLocation * >(argp1);
+  {
+    try
+    {
+      delete arg1;
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *GenericLocation_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_sbol__GenericLocation, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_locationProperty__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::sbol_type arg1 ;
@@ -29907,47 +30692,6 @@ SWIGINTERN PyObject *_wrap_locationProperty_getOwner(PyObject *SWIGUNUSEDPARM(se
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_locationProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Location > *arg1 = (sbol::Property< sbol::Location > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:locationProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Location_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "locationProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Location > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Location > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -33889,7 +34633,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap__ownedLocation_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap__ownedLocation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  sbol::Location *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Location,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_ownedLocation_add" "', argument " "2"" of type '" "sbol::Location &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "_ownedLocation_add" "', argument " "2"" of type '" "sbol::Location &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Location * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
   std::string arg2 ;
@@ -33941,35 +34737,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap__ownedLocation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap__ownedLocation_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
-  sbol::Location *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Location *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:_ownedLocation_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Location,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_ownedLocation_add" "', argument " "2"" of type '" "sbol::Location &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "_ownedLocation_add" "', argument " "2"" of type '" "sbol::Location &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Location * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Location *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -33986,10 +34771,54 @@ SWIGINTERN PyObject *_wrap__ownedLocation_add(PyObject *SWIGUNUSEDPARM(self), Py
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Location, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap__ownedLocation_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap__ownedLocation_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function '_ownedLocation_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Location >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Location >::get()\n");
+  return 0;
 }
 
 
@@ -34284,7 +35113,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap__ownedLocation_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap__ownedLocation_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
   std::string arg2 ;
@@ -34333,135 +35162,6 @@ SWIGINTERN PyObject *_wrap__ownedLocation_create__SWIG_0(PyObject *SWIGUNUSEDPAR
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap__ownedLocation_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:_ownedLocation_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap__ownedLocation_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap__ownedLocation_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap__ownedLocation_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function '_ownedLocation_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Location >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Location >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -35182,6 +35882,488 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap__ownedLocation_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_ownedLocation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "_ownedLocation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:_ownedLocation_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap__ownedLocation_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap__ownedLocation_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function '_ownedLocation_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Location >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Location >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_ownedLocation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "_ownedLocation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:_ownedLocation_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap__ownedLocation_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap__ownedLocation_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function '_ownedLocation_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Location >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Location >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap__ownedLocation_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:_ownedLocation_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Location_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_ownedLocation_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Location > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Location > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "_ownedLocation_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete__ownedLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Location > *arg1 = (sbol::OwnedObject< sbol::Location > *) 0 ;
@@ -35823,6 +37005,218 @@ fail:
     "    sbol::SequenceAnnotation::SequenceAnnotation(std::string)\n"
     "    sbol::SequenceAnnotation::SequenceAnnotation()\n");
   return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_SequenceAnnotation_precedes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SequenceAnnotation *arg1 = (sbol::SequenceAnnotation *) 0 ;
+  sbol::SequenceAnnotation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SequenceAnnotation_precedes",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SequenceAnnotation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SequenceAnnotation_precedes" "', argument " "1"" of type '" "sbol::SequenceAnnotation *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SequenceAnnotation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SequenceAnnotation_precedes" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SequenceAnnotation_precedes" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
+  {
+    try
+    {
+      result = (bool)(arg1)->precedes(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SequenceAnnotation_follows(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SequenceAnnotation *arg1 = (sbol::SequenceAnnotation *) 0 ;
+  sbol::SequenceAnnotation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SequenceAnnotation_follows",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SequenceAnnotation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SequenceAnnotation_follows" "', argument " "1"" of type '" "sbol::SequenceAnnotation *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SequenceAnnotation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SequenceAnnotation_follows" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SequenceAnnotation_follows" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
+  {
+    try
+    {
+      result = (bool)(arg1)->follows(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SequenceAnnotation_contains(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SequenceAnnotation *arg1 = (sbol::SequenceAnnotation *) 0 ;
+  sbol::SequenceAnnotation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SequenceAnnotation_contains",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SequenceAnnotation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SequenceAnnotation_contains" "', argument " "1"" of type '" "sbol::SequenceAnnotation *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SequenceAnnotation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SequenceAnnotation_contains" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SequenceAnnotation_contains" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
+  {
+    try
+    {
+      result = (bool)(arg1)->contains(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SequenceAnnotation_overlaps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::SequenceAnnotation *arg1 = (sbol::SequenceAnnotation *) 0 ;
+  sbol::SequenceAnnotation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SequenceAnnotation_overlaps",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__SequenceAnnotation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SequenceAnnotation_overlaps" "', argument " "1"" of type '" "sbol::SequenceAnnotation *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::SequenceAnnotation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SequenceAnnotation_overlaps" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SequenceAnnotation_overlaps" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
+  {
+    try
+    {
+      result = (bool)(arg1)->overlaps(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -39919,47 +41313,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_mapsToProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::MapsTo > *arg1 = (sbol::Property< sbol::MapsTo > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:mapsToProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__MapsTo_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "mapsToProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::MapsTo > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::MapsTo > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_mapsToProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< sbol::MapsTo > *arg1 = (sbol::Property< sbol::MapsTo > *) 0 ;
@@ -41143,7 +42496,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedMapsTo_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedMapsTo_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  sbol::MapsTo *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__MapsTo,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedMapsTo_add" "', argument " "2"" of type '" "sbol::MapsTo &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedMapsTo_add" "', argument " "2"" of type '" "sbol::MapsTo &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::MapsTo * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
   std::string arg2 ;
@@ -41195,35 +42600,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedMapsTo_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedMapsTo_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
-  sbol::MapsTo *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::MapsTo *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedMapsTo_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__MapsTo,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedMapsTo_add" "', argument " "2"" of type '" "sbol::MapsTo &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedMapsTo_add" "', argument " "2"" of type '" "sbol::MapsTo &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::MapsTo * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::MapsTo *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -41240,10 +42634,54 @@ SWIGINTERN PyObject *_wrap_ownedMapsTo_add(PyObject *SWIGUNUSEDPARM(self), PyObj
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__MapsTo, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedMapsTo_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedMapsTo_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedMapsTo_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get()\n");
+  return 0;
 }
 
 
@@ -41528,7 +42966,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedMapsTo_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedMapsTo_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
   std::string arg2 ;
@@ -41577,135 +43015,6 @@ SWIGINTERN PyObject *_wrap_ownedMapsTo_create__SWIG_0(PyObject *SWIGUNUSEDPARM(s
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedMapsTo_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedMapsTo_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedMapsTo_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedMapsTo_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedMapsTo_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedMapsTo_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::MapsTo >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::MapsTo >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -42420,6 +43729,488 @@ SWIGINTERN PyObject *_wrap_ownedMapsTo_createRange(PyObject *SWIGUNUSEDPARM(self
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedMapsTo_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedMapsTo_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedMapsTo_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedMapsTo_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedMapsTo_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedMapsTo_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedMapsTo_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedMapsTo_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedMapsTo_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedMapsTo_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedMapsTo_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedMapsTo_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::MapsTo >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedMapsTo_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::MapsTo > *arg1 = (sbol::OwnedObject< sbol::MapsTo > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedMapsTo_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__MapsTo_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedMapsTo_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::MapsTo > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::MapsTo > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedMapsTo_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -48263,47 +50054,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_sequenceConstraintProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::SequenceConstraint > *arg1 = (sbol::Property< sbol::SequenceConstraint > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:sequenceConstraintProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__SequenceConstraint_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sequenceConstraintProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::SequenceConstraint > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::SequenceConstraint > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_sequenceConstraintProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< sbol::SequenceConstraint > *arg1 = (sbol::Property< sbol::SequenceConstraint > *) 0 ;
@@ -49487,7 +51237,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  sbol::SequenceConstraint *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceConstraint,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceConstraint_add" "', argument " "2"" of type '" "sbol::SequenceConstraint &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceConstraint_add" "', argument " "2"" of type '" "sbol::SequenceConstraint &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceConstraint * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
   std::string arg2 ;
@@ -49539,35 +51341,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
-  sbol::SequenceConstraint *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::SequenceConstraint *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceConstraint_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceConstraint,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceConstraint_add" "', argument " "2"" of type '" "sbol::SequenceConstraint &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceConstraint_add" "', argument " "2"" of type '" "sbol::SequenceConstraint &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::SequenceConstraint * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::SequenceConstraint *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -49584,10 +51375,54 @@ SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_add(PyObject *SWIGUNUSEDPARM(
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SequenceConstraint, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceConstraint_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceConstraint_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceConstraint_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get()\n");
+  return 0;
 }
 
 
@@ -49882,7 +51717,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
   std::string arg2 ;
@@ -49931,135 +51766,6 @@ SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_create__SWIG_0(PyObject *SWIG
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedSequenceConstraint_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedSequenceConstraint_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedSequenceConstraint_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceConstraint_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::SequenceConstraint >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::SequenceConstraint >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -50774,6 +52480,488 @@ SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_createRange(PyObject *SWIGUNU
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceConstraint_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceConstraint_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceConstraint_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceConstraint_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceConstraint_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceConstraint_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceConstraint_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceConstraint_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceConstraint_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceConstraint_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceConstraint_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceConstraint_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::SequenceConstraint >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceConstraint_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceConstraint > *arg1 = (sbol::OwnedObject< sbol::SequenceConstraint > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceConstraint_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceConstraint_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceConstraint_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceConstraint > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceConstraint > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceConstraint_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -54530,47 +56718,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_sequenceAnnotationProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::SequenceAnnotation > *arg1 = (sbol::Property< sbol::SequenceAnnotation > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:sequenceAnnotationProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__SequenceAnnotation_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sequenceAnnotationProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::SequenceAnnotation > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::SequenceAnnotation > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_sequenceAnnotationProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< sbol::SequenceAnnotation > *arg1 = (sbol::Property< sbol::SequenceAnnotation > *) 0 ;
@@ -55754,7 +57901,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  sbol::SequenceAnnotation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceAnnotation_add" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceAnnotation_add" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
   std::string arg2 ;
@@ -55806,35 +58005,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
-  sbol::SequenceAnnotation *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::SequenceAnnotation *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceAnnotation_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__SequenceAnnotation,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceAnnotation_add" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceAnnotation_add" "', argument " "2"" of type '" "sbol::SequenceAnnotation &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::SequenceAnnotation * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::SequenceAnnotation *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -55851,10 +58039,54 @@ SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_add(PyObject *SWIGUNUSEDPARM(
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SequenceAnnotation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceAnnotation_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceAnnotation_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceAnnotation_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get()\n");
+  return 0;
 }
 
 
@@ -56149,7 +58381,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
   std::string arg2 ;
@@ -56198,135 +58430,6 @@ SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_create__SWIG_0(PyObject *SWIG
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedSequenceAnnotation_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedSequenceAnnotation_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedSequenceAnnotation_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceAnnotation_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::SequenceAnnotation >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::SequenceAnnotation >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -57041,6 +59144,488 @@ SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_createRange(PyObject *SWIGUNU
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceAnnotation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceAnnotation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceAnnotation_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceAnnotation_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceAnnotation_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceAnnotation_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequenceAnnotation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequenceAnnotation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequenceAnnotation_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequenceAnnotation_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequenceAnnotation_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequenceAnnotation_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::SequenceAnnotation >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequenceAnnotation_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::SequenceAnnotation > *arg1 = (sbol::OwnedObject< sbol::SequenceAnnotation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequenceAnnotation_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__SequenceAnnotation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequenceAnnotation_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::SequenceAnnotation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::SequenceAnnotation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequenceAnnotation_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -60797,47 +63382,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_componentsProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Component > *arg1 = (sbol::Property< sbol::Component > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:componentsProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Component_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "componentsProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Component > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Component > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_componentsProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< sbol::Component > *arg1 = (sbol::Property< sbol::Component > *) 0 ;
@@ -62021,7 +64565,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponents_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponents_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  sbol::Component *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Component,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponents_add" "', argument " "2"" of type '" "sbol::Component &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponents_add" "', argument " "2"" of type '" "sbol::Component &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Component * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
   std::string arg2 ;
@@ -62073,35 +64669,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponents_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponents_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
-  sbol::Component *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Component *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponents_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Component,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponents_add" "', argument " "2"" of type '" "sbol::Component &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponents_add" "', argument " "2"" of type '" "sbol::Component &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Component * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Component *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -62118,10 +64703,54 @@ SWIGINTERN PyObject *_wrap_ownedComponents_add(PyObject *SWIGUNUSEDPARM(self), P
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Component, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponents_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponents_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponents_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Component >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Component >::get()\n");
+  return 0;
 }
 
 
@@ -62406,7 +65035,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponents_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponents_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
   std::string arg2 ;
@@ -62455,135 +65084,6 @@ SWIGINTERN PyObject *_wrap_ownedComponents_create__SWIG_0(PyObject *SWIGUNUSEDPA
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedComponents_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedComponents_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedComponents_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedComponents_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedComponents_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponents_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Component >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Component >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -63298,6 +65798,488 @@ SWIGINTERN PyObject *_wrap_ownedComponents_createRange(PyObject *SWIGUNUSEDPARM(
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponents_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponents_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponents_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponents_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponents_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponents_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Component >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Component >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponents_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponents_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponents_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponents_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponents_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponents_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Component >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Component >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponents_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Component > *arg1 = (sbol::OwnedObject< sbol::Component > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponents_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Component_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponents_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Component > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Component > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponents_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -64071,69 +67053,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_ComponentDefinition(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[4] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_ComponentDefinition__SWIG_3(self, args);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_ComponentDefinition__SWIG_2(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_new_ComponentDefinition__SWIG_1(self, args);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_new_ComponentDefinition__SWIG_0(self, args);
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ComponentDefinition'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::ComponentDefinition::ComponentDefinition(std::string,std::string,std::string)\n"
-    "    sbol::ComponentDefinition::ComponentDefinition(std::string,std::string)\n"
-    "    sbol::ComponentDefinition::ComponentDefinition(std::string)\n"
-    "    sbol::ComponentDefinition::ComponentDefinition()\n");
-  return 0;
-}
-
-
 SWIGINTERN PyObject *_wrap_ComponentDefinition_assemble__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::ComponentDefinition *arg1 = (sbol::ComponentDefinition *) 0 ;
@@ -64663,6 +67582,217 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::ComponentDefinition *arg1 = (sbol::ComponentDefinition *) 0 ;
+  void (*arg2)(sbol::ComponentDefinition *,void *) = (void (*)(sbol::ComponentDefinition *,void *)) 0 ;
+  void *arg3 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res3 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  SwigValueWrapper< std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:ComponentDefinition_applyToComponentHierarchy",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__ComponentDefinition, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "1"" of type '" "sbol::ComponentDefinition *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::ComponentDefinition * >(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(obj1, (void**)(&arg2), SWIGTYPE_p_f_p_sbol__ComponentDefinition_p_void__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "2"" of type '" "void (*)(sbol::ComponentDefinition *,void *)""'"); 
+    }
+  }
+  res3 = SWIG_ConvertPtr(obj2,SWIG_as_voidptrptr(&arg3), 0, 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "3"" of type '" "void *""'"); 
+  }
+  {
+    try
+    {
+      result = (arg1)->applyToComponentHierarchy(arg2,arg3);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >(static_cast< const std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >& >(result))), SWIGTYPE_p_std__vectorT_sbol__ComponentDefinition_p_std__allocatorT_sbol__ComponentDefinition_p_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::ComponentDefinition *arg1 = (sbol::ComponentDefinition *) 0 ;
+  void (*arg2)(sbol::ComponentDefinition *,void *) = (void (*)(sbol::ComponentDefinition *,void *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ComponentDefinition_applyToComponentHierarchy",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__ComponentDefinition, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "1"" of type '" "sbol::ComponentDefinition *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::ComponentDefinition * >(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(obj1, (void**)(&arg2), SWIGTYPE_p_f_p_sbol__ComponentDefinition_p_void__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "2"" of type '" "void (*)(sbol::ComponentDefinition *,void *)""'"); 
+    }
+  }
+  {
+    try
+    {
+      result = (arg1)->applyToComponentHierarchy(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >(static_cast< const std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >& >(result))), SWIGTYPE_p_std__vectorT_sbol__ComponentDefinition_p_std__allocatorT_sbol__ComponentDefinition_p_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::ComponentDefinition *arg1 = (sbol::ComponentDefinition *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ComponentDefinition_applyToComponentHierarchy",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__ComponentDefinition, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComponentDefinition_applyToComponentHierarchy" "', argument " "1"" of type '" "sbol::ComponentDefinition *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::ComponentDefinition * >(argp1);
+  {
+    try
+    {
+      result = (arg1)->applyToComponentHierarchy();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >(static_cast< const std::vector< sbol::ComponentDefinition *,std::allocator< sbol::ComponentDefinition * > >& >(result))), SWIGTYPE_p_std__vectorT_sbol__ComponentDefinition_p_std__allocatorT_sbol__ComponentDefinition_p_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ComponentDefinition_applyToComponentHierarchy(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[4] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__ComponentDefinition, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_2(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__ComponentDefinition, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *ptr = 0;
+      int res = SWIG_ConvertFunctionPtr(argv[1], &ptr, SWIGTYPE_p_f_p_sbol__ComponentDefinition_p_void__void);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__ComponentDefinition, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *ptr = 0;
+      int res = SWIG_ConvertFunctionPtr(argv[1], &ptr, SWIGTYPE_p_f_p_sbol__ComponentDefinition_p_void__void);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        void *ptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &ptr, 0, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_ComponentDefinition_applyToComponentHierarchy__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ComponentDefinition_applyToComponentHierarchy'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::ComponentDefinition::applyToComponentHierarchy(void (*)(sbol::ComponentDefinition *,void *),void *)\n"
+    "    sbol::ComponentDefinition::applyToComponentHierarchy(void (*)(sbol::ComponentDefinition *,void *))\n"
+    "    sbol::ComponentDefinition::applyToComponentHierarchy()\n");
+  return 0;
+}
+
+
 SWIGINTERN PyObject *_wrap_ComponentDefinition_participate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::ComponentDefinition *arg1 = (sbol::ComponentDefinition *) 0 ;
@@ -64752,6 +67882,166 @@ SWIGINTERN PyObject *_wrap_delete_ComponentDefinition(PyObject *SWIGUNUSEDPARM(s
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ComponentDefinition__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::sbol_type arg1 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  std::string arg4 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  sbol::ComponentDefinition *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_ComponentDefinition",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ComponentDefinition" "', argument " "1"" of type '" "sbol::sbol_type""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ComponentDefinition" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ComponentDefinition" "', argument " "3"" of type '" "std::string""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ComponentDefinition" "', argument " "4"" of type '" "std::string""'"); 
+    }
+    arg4 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::ComponentDefinition *)new sbol::ComponentDefinition(arg1,arg2,arg3,arg4);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__ComponentDefinition, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ComponentDefinition(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[5] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_ComponentDefinition__SWIG_3(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_ComponentDefinition__SWIG_2(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_ComponentDefinition__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_ComponentDefinition__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_new_ComponentDefinition__SWIG_4(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ComponentDefinition'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::ComponentDefinition::ComponentDefinition(std::string,std::string,std::string)\n"
+    "    sbol::ComponentDefinition::ComponentDefinition(std::string,std::string)\n"
+    "    sbol::ComponentDefinition::ComponentDefinition(std::string)\n"
+    "    sbol::ComponentDefinition::ComponentDefinition()\n"
+    "    sbol::ComponentDefinition::ComponentDefinition(sbol::sbol_type,std::string,std::string,std::string)\n");
+  return 0;
 }
 
 
@@ -64953,6 +68243,143 @@ SWIGINTERN PyObject *_wrap_Sequence_encoding_get(PyObject *SWIGUNUSEDPARM(self),
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Sequence_assemble__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Sequence *arg1 = (sbol::Sequence *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Sequence_assemble",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Sequence, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Sequence_assemble" "', argument " "1"" of type '" "sbol::Sequence *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Sequence * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Sequence_assemble" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (arg1)->assemble(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Sequence_assemble__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Sequence *arg1 = (sbol::Sequence *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Sequence_assemble",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Sequence, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Sequence_assemble" "', argument " "1"" of type '" "sbol::Sequence *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Sequence * >(argp1);
+  {
+    try
+    {
+      result = (arg1)->assemble();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Sequence_assemble(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Sequence, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Sequence_assemble__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Sequence, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Sequence_assemble__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Sequence_assemble'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::Sequence::assemble(std::string)\n"
+    "    sbol::Sequence::assemble()\n");
+  return 0;
 }
 
 
@@ -65306,143 +68733,6 @@ fail:
     "    sbol::Sequence::Sequence(std::string,std::string)\n"
     "    sbol::Sequence::Sequence(std::string)\n"
     "    sbol::Sequence::Sequence()\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_Sequence_assemble__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Sequence *arg1 = (sbol::Sequence *) 0 ;
-  std::string arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Sequence_assemble",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Sequence, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Sequence_assemble" "', argument " "1"" of type '" "sbol::Sequence *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Sequence * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Sequence_assemble" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      result = (arg1)->assemble(arg2);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Sequence_assemble__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Sequence *arg1 = (sbol::Sequence *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Sequence_assemble",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Sequence, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Sequence_assemble" "', argument " "1"" of type '" "sbol::Sequence *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Sequence * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->assemble();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Sequence_assemble(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Sequence, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Sequence_assemble__SWIG_1(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Sequence, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Sequence_assemble__SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Sequence_assemble'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::Sequence::assemble(std::string)\n"
-    "    sbol::Sequence::assemble()\n");
   return 0;
 }
 
@@ -67175,47 +70465,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_participationProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Participation > *arg1 = (sbol::Property< sbol::Participation > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:participationProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Participation_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "participationProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Participation > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Participation > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_participationProperty_getAll(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Property< sbol::Participation > *arg1 = (sbol::Property< sbol::Participation > *) 0 ;
@@ -68399,7 +71648,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedParticipation_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedParticipation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  sbol::Participation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Participation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedParticipation_add" "', argument " "2"" of type '" "sbol::Participation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedParticipation_add" "', argument " "2"" of type '" "sbol::Participation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Participation * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
   std::string arg2 ;
@@ -68451,35 +71752,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedParticipation_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedParticipation_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
-  sbol::Participation *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Participation *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedParticipation_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Participation,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedParticipation_add" "', argument " "2"" of type '" "sbol::Participation &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedParticipation_add" "', argument " "2"" of type '" "sbol::Participation &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Participation * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Participation *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -68496,10 +71786,54 @@ SWIGINTERN PyObject *_wrap_ownedParticipation_add(PyObject *SWIGUNUSEDPARM(self)
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Participation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedParticipation_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedParticipation_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedParticipation_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Participation >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Participation >::get()\n");
+  return 0;
 }
 
 
@@ -68795,7 +72129,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedParticipation_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedParticipation_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
   std::string arg2 ;
@@ -68844,135 +72178,6 @@ SWIGINTERN PyObject *_wrap_ownedParticipation_create__SWIG_0(PyObject *SWIGUNUSE
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedParticipation_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedParticipation_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedParticipation_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedParticipation_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedParticipation_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedParticipation_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Participation >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Participation >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -69687,6 +72892,488 @@ SWIGINTERN PyObject *_wrap_ownedParticipation_createRange(PyObject *SWIGUNUSEDPA
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedParticipation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedParticipation_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedParticipation_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedParticipation_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedParticipation_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedParticipation_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Participation >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Participation >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedParticipation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedParticipation_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedParticipation_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedParticipation_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedParticipation_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedParticipation_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Participation >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Participation >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedParticipation_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Participation > *arg1 = (sbol::OwnedObject< sbol::Participation > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedParticipation_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Participation_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedParticipation_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Participation > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Participation > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedParticipation_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -71357,6 +75044,280 @@ SWIGINTERN PyObject *Model_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_Collection_members_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Collection *arg1 = (sbol::Collection *) 0 ;
+  sbol::List< sbol::URIProperty > *arg2 = (sbol::List< sbol::URIProperty > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Collection_members_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Collection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Collection_members_set" "', argument " "1"" of type '" "sbol::Collection *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Collection * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_sbol__ListT_sbol__URIProperty_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Collection_members_set" "', argument " "2"" of type '" "sbol::List< sbol::URIProperty > *""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::List< sbol::URIProperty > * >(argp2);
+  if (arg1) (arg1)->members = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Collection_members_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Collection *arg1 = (sbol::Collection *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::List< sbol::URIProperty > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Collection_members_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Collection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Collection_members_get" "', argument " "1"" of type '" "sbol::Collection *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Collection * >(argp1);
+  result = (sbol::List< sbol::URIProperty > *)& ((arg1)->members);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__ListT_sbol__URIProperty_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Collection__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string arg1 ;
+  std::string arg2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Collection *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Collection",&obj0,&obj1)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Collection" "', argument " "1"" of type '" "std::string""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Collection" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Collection *)new sbol::Collection(arg1,arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Collection, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Collection__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string arg1 ;
+  PyObject * obj0 = 0 ;
+  sbol::Collection *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Collection",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Collection" "', argument " "1"" of type '" "std::string""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Collection *)new sbol::Collection(arg1);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Collection, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Collection__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Collection *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Collection")) SWIG_fail;
+  {
+    try
+    {
+      result = (sbol::Collection *)new sbol::Collection();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Collection, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Collection(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_Collection__SWIG_2(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Collection__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Collection__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Collection'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::Collection::Collection(std::string,std::string)\n"
+    "    sbol::Collection::Collection(std::string)\n"
+    "    sbol::Collection::Collection()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Collection(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Collection *arg1 = (sbol::Collection *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Collection",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Collection, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Collection" "', argument " "1"" of type '" "sbol::Collection *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Collection * >(argp1);
+  {
+    try
+    {
+      delete arg1;
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Collection_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_sbol__Collection, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_moduleProperty__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::sbol_type arg1 ;
@@ -72088,47 +76049,6 @@ SWIGINTERN PyObject *_wrap_moduleProperty_getOwner(PyObject *SWIGUNUSEDPARM(self
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_moduleProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Module > *arg1 = (sbol::Property< sbol::Module > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:moduleProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Module_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "moduleProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Module > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Module > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -73318,7 +77238,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModule_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModule_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  sbol::Module *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Module,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModule_add" "', argument " "2"" of type '" "sbol::Module &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModule_add" "', argument " "2"" of type '" "sbol::Module &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Module * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
   std::string arg2 ;
@@ -73370,35 +77342,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModule_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModule_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
-  sbol::Module *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Module *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModule_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Module,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModule_add" "', argument " "2"" of type '" "sbol::Module &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModule_add" "', argument " "2"" of type '" "sbol::Module &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Module * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Module *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -73415,10 +77376,54 @@ SWIGINTERN PyObject *_wrap_ownedModule_add(PyObject *SWIGUNUSEDPARM(self), PyObj
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Module, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModule_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModule_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModule_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Module >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Module >::get()\n");
+  return 0;
 }
 
 
@@ -73713,7 +77718,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModule_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModule_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
   std::string arg2 ;
@@ -73762,135 +77767,6 @@ SWIGINTERN PyObject *_wrap_ownedModule_create__SWIG_0(PyObject *SWIGUNUSEDPARM(s
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModule_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedModule_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModule_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedModule_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedModule_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModule_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Module >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Module >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -74605,6 +78481,488 @@ SWIGINTERN PyObject *_wrap_ownedModule_createRange(PyObject *SWIGUNUSEDPARM(self
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModule_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModule_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModule_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModule_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModule_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModule_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Module >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Module >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModule_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModule_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModule_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModule_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModule_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModule_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Module >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Module >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModule_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Module > *arg1 = (sbol::OwnedObject< sbol::Module > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModule_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Module_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModule_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Module > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Module > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModule_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -75603,47 +79961,6 @@ SWIGINTERN PyObject *_wrap_interactionProperty_getOwner(PyObject *SWIGUNUSEDPARM
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_interactionProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Interaction > *arg1 = (sbol::Property< sbol::Interaction > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:interactionProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Interaction_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "interactionProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Interaction > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Interaction > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -76833,7 +81150,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedInteraction_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedInteraction_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  sbol::Interaction *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Interaction,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedInteraction_add" "', argument " "2"" of type '" "sbol::Interaction &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedInteraction_add" "', argument " "2"" of type '" "sbol::Interaction &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Interaction * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
   std::string arg2 ;
@@ -76885,35 +81254,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedInteraction_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedInteraction_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
-  sbol::Interaction *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Interaction *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedInteraction_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Interaction,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedInteraction_add" "', argument " "2"" of type '" "sbol::Interaction &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedInteraction_add" "', argument " "2"" of type '" "sbol::Interaction &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Interaction * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Interaction *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -76930,10 +81288,54 @@ SWIGINTERN PyObject *_wrap_ownedInteraction_add(PyObject *SWIGUNUSEDPARM(self), 
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Interaction, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedInteraction_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedInteraction_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedInteraction_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get()\n");
+  return 0;
 }
 
 
@@ -77227,7 +81629,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedInteraction_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedInteraction_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
   std::string arg2 ;
@@ -77276,135 +81678,6 @@ SWIGINTERN PyObject *_wrap_ownedInteraction_create__SWIG_0(PyObject *SWIGUNUSEDP
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedInteraction_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedInteraction_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedInteraction_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedInteraction_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedInteraction_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedInteraction_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Interaction >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Interaction >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -78119,6 +82392,488 @@ SWIGINTERN PyObject *_wrap_ownedInteraction_createRange(PyObject *SWIGUNUSEDPARM
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedInteraction_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedInteraction_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedInteraction_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedInteraction_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedInteraction_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedInteraction_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedInteraction_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedInteraction_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedInteraction_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedInteraction_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedInteraction_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedInteraction_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Interaction >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedInteraction_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Interaction > *arg1 = (sbol::OwnedObject< sbol::Interaction > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedInteraction_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Interaction_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedInteraction_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Interaction > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Interaction > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedInteraction_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -79117,47 +83872,6 @@ SWIGINTERN PyObject *_wrap_functionalComponentProperty_getOwner(PyObject *SWIGUN
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_functionalComponentProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::FunctionalComponent > *arg1 = (sbol::Property< sbol::FunctionalComponent > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:functionalComponentProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__FunctionalComponent_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "functionalComponentProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::FunctionalComponent > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::FunctionalComponent > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -80347,7 +85061,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  sbol::FunctionalComponent *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__FunctionalComponent,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedFunctionalComponent_add" "', argument " "2"" of type '" "sbol::FunctionalComponent &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedFunctionalComponent_add" "', argument " "2"" of type '" "sbol::FunctionalComponent &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::FunctionalComponent * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
   std::string arg2 ;
@@ -80399,35 +85165,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
-  sbol::FunctionalComponent *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::FunctionalComponent *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedFunctionalComponent_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__FunctionalComponent,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedFunctionalComponent_add" "', argument " "2"" of type '" "sbol::FunctionalComponent &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedFunctionalComponent_add" "', argument " "2"" of type '" "sbol::FunctionalComponent &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::FunctionalComponent * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::FunctionalComponent *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -80444,10 +85199,54 @@ SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_add(PyObject *SWIGUNUSEDPARM
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__FunctionalComponent, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedFunctionalComponent_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedFunctionalComponent_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedFunctionalComponent_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get()\n");
+  return 0;
 }
 
 
@@ -80732,7 +85531,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
   std::string arg2 ;
@@ -80781,135 +85580,6 @@ SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_create__SWIG_0(PyObject *SWI
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedFunctionalComponent_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedFunctionalComponent_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedFunctionalComponent_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedFunctionalComponent_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::FunctionalComponent >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::FunctionalComponent >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -81630,6 +86300,488 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedFunctionalComponent_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedFunctionalComponent_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedFunctionalComponent_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedFunctionalComponent_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedFunctionalComponent_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedFunctionalComponent_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedFunctionalComponent_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedFunctionalComponent_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedFunctionalComponent_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedFunctionalComponent_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedFunctionalComponent_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedFunctionalComponent_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::FunctionalComponent >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedFunctionalComponent_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedFunctionalComponent_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__FunctionalComponent_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedFunctionalComponent_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::FunctionalComponent > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::FunctionalComponent > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedFunctionalComponent_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_ownedFunctionalComponent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::FunctionalComponent > *arg1 = (sbol::OwnedObject< sbol::FunctionalComponent > *) 0 ;
@@ -82280,52 +87432,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_ModuleDefinition(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_ModuleDefinition__SWIG_2(self, args);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_new_ModuleDefinition__SWIG_1(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_new_ModuleDefinition__SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ModuleDefinition'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::ModuleDefinition::ModuleDefinition(std::string,std::string)\n"
-    "    sbol::ModuleDefinition::ModuleDefinition(std::string)\n"
-    "    sbol::ModuleDefinition::ModuleDefinition()\n");
-  return 0;
-}
-
-
 SWIGINTERN PyObject *_wrap_ModuleDefinition_setOutput(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::ModuleDefinition *arg1 = (sbol::ModuleDefinition *) 0 ;
@@ -82526,6 +87632,134 @@ SWIGINTERN PyObject *_wrap_ModuleDefinition_assemble__SWIG_0(PyObject *SWIGUNUSE
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ModuleDefinition__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::sbol_type arg1 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  sbol::ModuleDefinition *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_ModuleDefinition",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ModuleDefinition" "', argument " "1"" of type '" "sbol::sbol_type""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ModuleDefinition" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_ModuleDefinition" "', argument " "3"" of type '" "std::string""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::ModuleDefinition *)new sbol::ModuleDefinition(arg1,arg2,arg3);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__ModuleDefinition, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ModuleDefinition(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[4] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_ModuleDefinition__SWIG_2(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_ModuleDefinition__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_ModuleDefinition__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_ModuleDefinition__SWIG_3(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ModuleDefinition'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::ModuleDefinition::ModuleDefinition(std::string,std::string)\n"
+    "    sbol::ModuleDefinition::ModuleDefinition(std::string)\n"
+    "    sbol::ModuleDefinition::ModuleDefinition()\n"
+    "    sbol::ModuleDefinition::ModuleDefinition(sbol::sbol_type,std::string,std::string)\n");
+  return 0;
 }
 
 
@@ -83357,47 +88591,6 @@ SWIGINTERN PyObject *_wrap_componentDefinitionProperty_getOwner(PyObject *SWIGUN
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_componentDefinitionProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::ComponentDefinition > *arg1 = (sbol::Property< sbol::ComponentDefinition > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:componentDefinitionProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__ComponentDefinition_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "componentDefinitionProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::ComponentDefinition > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::ComponentDefinition > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -84587,7 +89780,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponentDefinition_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  sbol::ComponentDefinition *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__ComponentDefinition,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponentDefinition_add" "', argument " "2"" of type '" "sbol::ComponentDefinition &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponentDefinition_add" "', argument " "2"" of type '" "sbol::ComponentDefinition &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::ComponentDefinition * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
   std::string arg2 ;
@@ -84639,35 +89884,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponentDefinition_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
-  sbol::ComponentDefinition *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::ComponentDefinition *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponentDefinition_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__ComponentDefinition,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponentDefinition_add" "', argument " "2"" of type '" "sbol::ComponentDefinition &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponentDefinition_add" "', argument " "2"" of type '" "sbol::ComponentDefinition &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::ComponentDefinition * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::ComponentDefinition *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -84684,10 +89918,54 @@ SWIGINTERN PyObject *_wrap_ownedComponentDefinition_add(PyObject *SWIGUNUSEDPARM
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__ComponentDefinition, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponentDefinition_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponentDefinition_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponentDefinition_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get()\n");
+  return 0;
 }
 
 
@@ -84972,7 +90250,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedComponentDefinition_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
   std::string arg2 ;
@@ -85021,135 +90299,6 @@ SWIGINTERN PyObject *_wrap_ownedComponentDefinition_create__SWIG_0(PyObject *SWI
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedComponentDefinition_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedComponentDefinition_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedComponentDefinition_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedComponentDefinition_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedComponentDefinition_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponentDefinition_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::ComponentDefinition >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::ComponentDefinition >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -85864,6 +91013,488 @@ SWIGINTERN PyObject *_wrap_ownedComponentDefinition_createRange(PyObject *SWIGUN
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponentDefinition_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponentDefinition_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponentDefinition_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponentDefinition_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponentDefinition_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponentDefinition_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedComponentDefinition_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedComponentDefinition_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedComponentDefinition_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedComponentDefinition_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedComponentDefinition_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedComponentDefinition_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::ComponentDefinition >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedComponentDefinition_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ComponentDefinition > *arg1 = (sbol::OwnedObject< sbol::ComponentDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedComponentDefinition_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ComponentDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedComponentDefinition_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ComponentDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ComponentDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedComponentDefinition_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -86862,47 +92493,6 @@ SWIGINTERN PyObject *_wrap_moduleDefinitionProperty_getOwner(PyObject *SWIGUNUSE
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_moduleDefinitionProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::ModuleDefinition > *arg1 = (sbol::Property< sbol::ModuleDefinition > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:moduleDefinitionProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__ModuleDefinition_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "moduleDefinitionProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::ModuleDefinition > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::ModuleDefinition > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -88092,7 +93682,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModuleDefinition_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  sbol::ModuleDefinition *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__ModuleDefinition,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModuleDefinition_add" "', argument " "2"" of type '" "sbol::ModuleDefinition &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModuleDefinition_add" "', argument " "2"" of type '" "sbol::ModuleDefinition &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::ModuleDefinition * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
   std::string arg2 ;
@@ -88144,35 +93786,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModuleDefinition_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
-  sbol::ModuleDefinition *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::ModuleDefinition *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModuleDefinition_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__ModuleDefinition,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModuleDefinition_add" "', argument " "2"" of type '" "sbol::ModuleDefinition &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModuleDefinition_add" "', argument " "2"" of type '" "sbol::ModuleDefinition &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::ModuleDefinition * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::ModuleDefinition *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -88189,10 +93820,54 @@ SWIGINTERN PyObject *_wrap_ownedModuleDefinition_add(PyObject *SWIGUNUSEDPARM(se
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__ModuleDefinition, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModuleDefinition_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModuleDefinition_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModuleDefinition_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get()\n");
+  return 0;
 }
 
 
@@ -88477,7 +94152,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModuleDefinition_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
   std::string arg2 ;
@@ -88526,135 +94201,6 @@ SWIGINTERN PyObject *_wrap_ownedModuleDefinition_create__SWIG_0(PyObject *SWIGUN
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModuleDefinition_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedModuleDefinition_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModuleDefinition_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedModuleDefinition_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedModuleDefinition_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModuleDefinition_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::ModuleDefinition >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::ModuleDefinition >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -89369,6 +94915,488 @@ SWIGINTERN PyObject *_wrap_ownedModuleDefinition_createRange(PyObject *SWIGUNUSE
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModuleDefinition_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModuleDefinition_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModuleDefinition_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModuleDefinition_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModuleDefinition_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModuleDefinition_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModuleDefinition_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModuleDefinition_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModuleDefinition_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModuleDefinition_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModuleDefinition_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModuleDefinition_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::ModuleDefinition >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModuleDefinition_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::ModuleDefinition > *arg1 = (sbol::OwnedObject< sbol::ModuleDefinition > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModuleDefinition_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__ModuleDefinition_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModuleDefinition_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::ModuleDefinition > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::ModuleDefinition > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModuleDefinition_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -90367,47 +96395,6 @@ SWIGINTERN PyObject *_wrap_sequenceProperty_getOwner(PyObject *SWIGUNUSEDPARM(se
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_sequenceProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Sequence > *arg1 = (sbol::Property< sbol::Sequence > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:sequenceProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Sequence_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sequenceProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Sequence > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Sequence > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -91597,7 +97584,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequence_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequence_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  sbol::Sequence *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Sequence,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequence_add" "', argument " "2"" of type '" "sbol::Sequence &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequence_add" "', argument " "2"" of type '" "sbol::Sequence &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Sequence * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
   std::string arg2 ;
@@ -91649,35 +97688,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequence_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequence_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
-  sbol::Sequence *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Sequence *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequence_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Sequence,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequence_add" "', argument " "2"" of type '" "sbol::Sequence &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequence_add" "', argument " "2"" of type '" "sbol::Sequence &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Sequence * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Sequence *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -91694,10 +97722,54 @@ SWIGINTERN PyObject *_wrap_ownedSequence_add(PyObject *SWIGUNUSEDPARM(self), PyO
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Sequence, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequence_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequence_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequence_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get()\n");
+  return 0;
 }
 
 
@@ -91991,7 +98063,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedSequence_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedSequence_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
   std::string arg2 ;
@@ -92040,135 +98112,6 @@ SWIGINTERN PyObject *_wrap_ownedSequence_create__SWIG_0(PyObject *SWIGUNUSEDPARM
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequence_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedSequence_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedSequence_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedSequence_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedSequence_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequence_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Sequence >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Sequence >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -92883,6 +98826,488 @@ SWIGINTERN PyObject *_wrap_ownedSequence_createRange(PyObject *SWIGUNUSEDPARM(se
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Range, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequence_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequence_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequence_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequence_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequence_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequence_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedSequence_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedSequence_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedSequence_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedSequence_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedSequence_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedSequence_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Sequence >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedSequence_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Sequence > *arg1 = (sbol::OwnedObject< sbol::Sequence > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedSequence_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Sequence_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedSequence_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Sequence > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Sequence > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedSequence_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -93881,47 +100306,6 @@ SWIGINTERN PyObject *_wrap_modelProperty_getOwner(PyObject *SWIGUNUSEDPARM(self)
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_modelProperty_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Property< sbol::Model > *arg1 = (sbol::Property< sbol::Model > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:modelProperty_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__PropertyT_sbol__Model_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "modelProperty_get" "', argument " "1"" of type '" "sbol::Property< sbol::Model > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Property< sbol::Model > * >(argp1);
-  {
-    try
-    {
-      result = (arg1)->get();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -95111,7 +101495,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModel_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModel_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  sbol::Model *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Model,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModel_add" "', argument " "2"" of type '" "sbol::Model &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModel_add" "', argument " "2"" of type '" "sbol::Model &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Model * >(argp2);
+  {
+    try
+    {
+      (arg1)->add(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_get__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
   std::string arg2 ;
@@ -95163,35 +101599,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModel_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModel_get__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
-  sbol::Model *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
+  sbol::Model *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_add",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModel_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_add" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_get" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
   }
   arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Model,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModel_add" "', argument " "2"" of type '" "sbol::Model &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModel_add" "', argument " "2"" of type '" "sbol::Model &""'"); 
-  }
-  arg2 = reinterpret_cast< sbol::Model * >(argp2);
   {
     try
     {
-      (arg1)->add(*arg2);
+      result = (sbol::Model *) &(arg1)->get();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -95208,10 +101633,54 @@ SWIGINTERN PyObject *_wrap_ownedModel_add(PyObject *SWIGUNUSEDPARM(self), PyObje
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Model, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_get(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModel_get__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModel_get__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModel_get'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Model >::get(std::string const)\n"
+    "    sbol::OwnedObject< sbol::Model >::get()\n");
+  return 0;
 }
 
 
@@ -95496,7 +101965,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ownedModel_create__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ownedModel_create(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
   std::string arg2 ;
@@ -95545,135 +102014,6 @@ SWIGINTERN PyObject *_wrap_ownedModel_create__SWIG_0(PyObject *SWIGUNUSEDPARM(se
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModel_create__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
-  std::string arg2 ;
-  std::string arg3 ;
-  std::string arg4 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:ownedModel_create",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_create" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_create" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_create" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj3, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_create" "', argument " "4"" of type '" "std::string""'"); 
-    }
-    arg4 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      (arg1)->create(arg2,arg3,arg4);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ownedModel_create(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[5] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_ownedModel_create__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 4) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_ownedModel_create__SWIG_2(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModel_create'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::OwnedObject< sbol::Model >::create(std::string)\n"
-    "    sbol::OwnedObject< sbol::Model >::create(std::string,std::string,std::string)\n");
-  return 0;
 }
 
 
@@ -96394,6 +102734,488 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ownedModel_addCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  sbol::Cut *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_addCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_addCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__Cut,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModel_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModel_addCut" "', argument " "2"" of type '" "sbol::Cut &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::Cut * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< Cut >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getCut__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_getCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_getCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getCut__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModel_getCut",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_getCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< Cut >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getCut(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModel_getCut__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModel_getCut__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModel_getCut'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Model >::get< Cut >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Model >::get< Cut >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_createCut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::Cut *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_createCut",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_createCut" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_createCut" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::Cut *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< Cut >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__Cut, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_addGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  sbol::GenericLocation *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_addGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_addGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_sbol__GenericLocation,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ownedModel_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ownedModel_addGenericLocation" "', argument " "2"" of type '" "sbol::GenericLocation &""'"); 
+  }
+  arg2 = reinterpret_cast< sbol::GenericLocation * >(argp2);
+  {
+    try
+    {
+      (arg1)->SWIGTEMPLATEDISAMBIGUATOR add< GenericLocation >(*arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getGenericLocation__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_getGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_getGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getGenericLocation__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ownedModel_getGenericLocation",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_getGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR get< GenericLocation >();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_getGenericLocation(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ownedModel_getGenericLocation__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ownedModel_getGenericLocation__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ownedModel_getGenericLocation'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::OwnedObject< sbol::Model >::get< GenericLocation >(std::string)\n"
+    "    sbol::OwnedObject< sbol::Model >::get< GenericLocation >()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ownedModel_createGenericLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::GenericLocation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ownedModel_createGenericLocation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__OwnedObjectT_sbol__Model_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ownedModel_createGenericLocation" "', argument " "1"" of type '" "sbol::OwnedObject< sbol::Model > *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::OwnedObject< sbol::Model > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ownedModel_createGenericLocation" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::GenericLocation *) &(arg1)->SWIGTEMPLATEDISAMBIGUATOR create< GenericLocation >(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__GenericLocation, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_ownedModel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::OwnedObject< sbol::Model > *arg1 = (sbol::OwnedObject< sbol::Model > *) 0 ;
@@ -96655,83 +103477,6 @@ SWIGINTERN PyObject *listOfOwnedModels_swigregister(PyObject *SWIGUNUSEDPARM(sel
   return SWIG_Py_Void();
 }
 
-SWIGINTERN int Swig_var_SBOL_DATA_MODEL_REGISTER_set(PyObject *_val) {
-  {
-    void *argp = 0;
-    int res = SWIG_ConvertPtr(_val, &argp, SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,  0  | 0);
-    if (!SWIG_IsOK(res)) {
-      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""sbol::SBOL_DATA_MODEL_REGISTER""' of type '""std::unordered_map< std::string,sbol::SBOLObject &(*)() >""'");
-    }
-    if (!argp) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""sbol::SBOL_DATA_MODEL_REGISTER""' of type '""std::unordered_map< std::string,sbol::SBOLObject &(*)() >""'");
-    } else {
-      std::unordered_map< std::string,sbol::SBOLObject &(*)() > * temp;
-      temp  = reinterpret_cast< std::unordered_map< std::string,sbol::SBOLObject &(*)() > * >(argp);
-      sbol::SBOL_DATA_MODEL_REGISTER = *temp;
-      if (SWIG_IsNewObj(res)) delete temp;
-    }
-  }
-  return 0;
-fail:
-  return 1;
-}
-
-
-SWIGINTERN PyObject *Swig_var_SBOL_DATA_MODEL_REGISTER_get(void) {
-  PyObject *pyobj = 0;
-  
-  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&sbol::SBOL_DATA_MODEL_REGISTER), SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,  0 );
-  return pyobj;
-}
-
-
-SWIGINTERN PyObject *_wrap_raptor_error_handler(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  void *arg1 = (void *) 0 ;
-  raptor_log_message *arg2 = (raptor_log_message *) 0 ;
-  int res1 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:raptor_error_handler",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0,SWIG_as_voidptrptr(&arg1), 0, 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "raptor_error_handler" "', argument " "1"" of type '" "void *""'"); 
-  }
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_raptor_log_message, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "raptor_error_handler" "', argument " "2"" of type '" "raptor_log_message *""'"); 
-  }
-  arg2 = reinterpret_cast< raptor_log_message * >(argp2);
-  {
-    try
-    {
-      sbol::raptor_error_handler(arg1,arg2);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_new_Document(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Document *result = 0 ;
@@ -96810,6 +103555,99 @@ SWIGINTERN PyObject *_wrap_Document_SBOLObjects_get(PyObject *SWIGUNUSEDPARM(sel
   arg1 = reinterpret_cast< sbol::Document * >(argp1);
   result = (std::unordered_map< std::string,sbol::SBOLObject * > *)& ((arg1)->SBOLObjects);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_p_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_getTopLevel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::TopLevel *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Document_getTopLevel",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_getTopLevel" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_getTopLevel" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::TopLevel *) &(arg1)->getTopLevel(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__TopLevel, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_getWorld(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  raptor_world *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Document_getWorld",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_getWorld" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    try
+    {
+      result = (raptor_world *)(arg1)->getWorld();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_raptor_world, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -97076,99 +103914,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Document_getTopLevel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Document *arg1 = (sbol::Document *) 0 ;
-  std::string arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  sbol::TopLevel *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Document_getTopLevel",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_getTopLevel" "', argument " "1"" of type '" "sbol::Document *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Document * >(argp1);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj1, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_getTopLevel" "', argument " "2"" of type '" "std::string""'"); 
-    }
-    arg2 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
-  {
-    try
-    {
-      result = (sbol::TopLevel *) &(arg1)->getTopLevel(arg2);
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sbol__TopLevel, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Document_getWorld(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  sbol::Document *arg1 = (sbol::Document *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  raptor_world *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Document_getWorld",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_getWorld" "', argument " "1"" of type '" "sbol::Document *""'"); 
-  }
-  arg1 = reinterpret_cast< sbol::Document * >(argp1);
-  {
-    try
-    {
-      result = (raptor_world *)(arg1)->getWorld();
-    }
-    //    catch(SBOLErrorCode e)
-    //    {
-    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
-    //        return NULL;
-    //    }
-    catch(SBOLError e)
-    {
-      PyErr_SetString(PyExc_RuntimeError, e.what());
-      return NULL;
-    }
-    catch(...)
-    {
-      
-    }
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_raptor_world, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_Document_write(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Document *arg1 = (sbol::Document *) 0 ;
@@ -97376,30 +104121,77 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Document_validate__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Document_generate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Document *arg1 = (sbol::Document *) 0 ;
-  void *arg2 = (void *) 0 ;
+  raptor_world **arg2 = (raptor_world **) 0 ;
+  raptor_serializer **arg3 = (raptor_serializer **) 0 ;
+  char **arg4 = (char **) 0 ;
+  size_t *arg5 = (size_t *) 0 ;
+  raptor_iostream **arg6 = (raptor_iostream **) 0 ;
+  raptor_uri **arg7 = (raptor_uri **) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  int res2 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  void *argp7 = 0 ;
+  int res7 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:Document_validate",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:Document_generate",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_validate" "', argument " "1"" of type '" "sbol::Document *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_generate" "', argument " "1"" of type '" "sbol::Document *""'"); 
   }
   arg1 = reinterpret_cast< sbol::Document * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, 0);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_p_raptor_world, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Document_validate" "', argument " "2"" of type '" "void *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Document_generate" "', argument " "2"" of type '" "raptor_world **""'"); 
   }
+  arg2 = reinterpret_cast< raptor_world ** >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_p_raptor_serializer, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Document_generate" "', argument " "3"" of type '" "raptor_serializer **""'"); 
+  }
+  arg3 = reinterpret_cast< raptor_serializer ** >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4,SWIGTYPE_p_p_char, 0 |  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Document_generate" "', argument " "4"" of type '" "char **""'"); 
+  }
+  arg4 = reinterpret_cast< char ** >(argp4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5,SWIGTYPE_p_size_t, 0 |  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "Document_generate" "', argument " "5"" of type '" "size_t *""'"); 
+  }
+  arg5 = reinterpret_cast< size_t * >(argp5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6,SWIGTYPE_p_p_raptor_iostream, 0 |  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "Document_generate" "', argument " "6"" of type '" "raptor_iostream **""'"); 
+  }
+  arg6 = reinterpret_cast< raptor_iostream ** >(argp6);
+  res7 = SWIG_ConvertPtr(obj6, &argp7,SWIGTYPE_p_p_raptor_uri, 0 |  0 );
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "Document_generate" "', argument " "7"" of type '" "raptor_uri **""'"); 
+  }
+  arg7 = reinterpret_cast< raptor_uri ** >(argp7);
   {
     try
     {
-      (arg1)->validate(arg2);
+      (arg1)->generate(arg2,arg3,arg4,arg5,arg6,arg7);
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -97423,12 +104215,13 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Document_validate__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Document_validate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   sbol::Document *arg1 = (sbol::Document *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
+  std::string result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Document_validate",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
@@ -97439,7 +104232,7 @@ SWIGINTERN PyObject *_wrap_Document_validate__SWIG_1(PyObject *SWIGUNUSEDPARM(se
   {
     try
     {
-      (arg1)->validate();
+      result = (arg1)->validate();
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -97456,55 +104249,10 @@ SWIGINTERN PyObject *_wrap_Document_validate__SWIG_1(PyObject *SWIGUNUSEDPARM(se
       
     }
   }
-  resultobj = SWIG_Py_Void();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Document_validate(PyObject *self, PyObject *args) {
-  Py_ssize_t argc;
-  PyObject *argv[3] = {
-    0
-  };
-  Py_ssize_t ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Document, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Document_validate__SWIG_1(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Document, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      void *ptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &ptr, 0, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Document_validate__SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Document_validate'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    sbol::Document::validate(void *)\n"
-    "    sbol::Document::validate()\n");
-  return 0;
 }
 
 
@@ -97516,7 +104264,7 @@ SWIGINTERN PyObject *_wrap_Document_find(PyObject *SWIGUNUSEDPARM(self), PyObjec
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  int result;
+  sbol::SBOLObject *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:Document_find",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
@@ -97536,7 +104284,7 @@ SWIGINTERN PyObject *_wrap_Document_find(PyObject *SWIGUNUSEDPARM(self), PyObjec
   {
     try
     {
-      result = (int)(arg1)->find(arg2);
+      result = (sbol::SBOLObject *)(arg1)->find(arg2);
     }
     //    catch(SBOLErrorCode e)
     //    {
@@ -97553,7 +104301,232 @@ SWIGINTERN PyObject *_wrap_Document_find(PyObject *SWIGUNUSEDPARM(self), PyObjec
       
     }
   }
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  {
+    sbol::SBOLObject* obj = result;
+    obj->thisown = false;
+    PyObject *pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(pyobj), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+    resultobj  = pyobj;
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_addNamespace__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  raptor_serializer *arg4 = (raptor_serializer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Document_addNamespace",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_addNamespace" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_addNamespace" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_addNamespace" "', argument " "3"" of type '" "std::string""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  res4 = SWIG_ConvertPtr(obj3, &argp4,SWIGTYPE_p_raptor_serializer, 0 |  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Document_addNamespace" "', argument " "4"" of type '" "raptor_serializer *""'"); 
+  }
+  arg4 = reinterpret_cast< raptor_serializer * >(argp4);
+  {
+    try
+    {
+      (arg1)->addNamespace(arg2,arg3,arg4);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_parse_annotation_objects(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Document_parse_annotation_objects",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_parse_annotation_objects" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    try
+    {
+      (arg1)->parse_annotation_objects();
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_find_property(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  sbol::SBOLObject *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Document_find_property",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_find_property" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_find_property" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (sbol::SBOLObject *)(arg1)->find_property(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  {
+    sbol::SBOLObject* obj = result;
+    obj->thisown = false;
+    PyObject *pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(pyobj), SWIGTYPE_p_sbol__SBOLObject, 0 |  0 );
+    resultobj  = pyobj;
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_find_reference(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< sbol::SBOLObject *,std::allocator< sbol::SBOLObject * > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Document_find_reference",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_find_reference" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_find_reference" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = (arg1)->find_reference(arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = swig::from(static_cast< std::vector< sbol::SBOLObject*,std::allocator< sbol::SBOLObject * > > >(result));
   return resultobj;
 fail:
   return NULL;
@@ -97598,6 +104571,129 @@ SWIGINTERN PyObject *_wrap_Document_getNamespaces(PyObject *SWIGUNUSEDPARM(self)
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_addNamespace__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  sbol::Document *arg1 = (sbol::Document *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Document_addNamespace",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_sbol__Document, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Document_addNamespace" "', argument " "1"" of type '" "sbol::Document *""'"); 
+  }
+  arg1 = reinterpret_cast< sbol::Document * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_addNamespace" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Document_addNamespace" "', argument " "3"" of type '" "std::string""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      (arg1)->addNamespace(arg2,arg3);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Document_addNamespace(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[5] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Document, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_Document_addNamespace__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_sbol__Document, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_raptor_serializer, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_Document_addNamespace__SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Document_addNamespace'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    sbol::Document::addNamespace(std::string,std::string,raptor_serializer *)\n"
+    "    sbol::Document::addNamespace(std::string,std::string)\n");
+  return 0;
 }
 
 
@@ -98656,6 +105752,126 @@ SWIGINTERN PyObject *Document_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
   return SWIG_Py_Void();
 }
 
+SWIGINTERN int Swig_var_SBOL_DATA_MODEL_REGISTER_set(PyObject *_val) {
+  {
+    void *argp = 0;
+    int res = SWIG_ConvertPtr(_val, &argp, SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,  0  | 0);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""sbol::SBOL_DATA_MODEL_REGISTER""' of type '""std::unordered_map< std::string,sbol::SBOLObject &(*)() >""'");
+    }
+    if (!argp) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""sbol::SBOL_DATA_MODEL_REGISTER""' of type '""std::unordered_map< std::string,sbol::SBOLObject &(*)() >""'");
+    } else {
+      std::unordered_map< std::string,sbol::SBOLObject &(*)() > * temp;
+      temp  = reinterpret_cast< std::unordered_map< std::string,sbol::SBOLObject &(*)() > * >(argp);
+      sbol::SBOL_DATA_MODEL_REGISTER = *temp;
+      if (SWIG_IsNewObj(res)) delete temp;
+    }
+  }
+  return 0;
+fail:
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_SBOL_DATA_MODEL_REGISTER_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&sbol::SBOL_DATA_MODEL_REGISTER), SWIGTYPE_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_raptor_error_handler(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  void *arg1 = (void *) 0 ;
+  raptor_log_message *arg2 = (raptor_log_message *) 0 ;
+  int res1 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:raptor_error_handler",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0,SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "raptor_error_handler" "', argument " "1"" of type '" "void *""'"); 
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_raptor_log_message, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "raptor_error_handler" "', argument " "2"" of type '" "raptor_log_message *""'"); 
+  }
+  arg2 = reinterpret_cast< raptor_log_message * >(argp2);
+  {
+    try
+    {
+      sbol::raptor_error_handler(arg1,arg2);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_convert_ntriples_encoding_to_ascii(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string arg1 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:convert_ntriples_encoding_to_ascii",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "convert_ntriples_encoding_to_ascii" "', argument " "1"" of type '" "std::string""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try
+    {
+      result = sbol::convert_ntriples_encoding_to_ascii(arg1);
+    }
+    //    catch(SBOLErrorCode e)
+    //    {
+    //        PyErr_SetObject(PyExc_RuntimeError, PyInt_FromLong(e));
+    //        return NULL;
+    //    }
+    catch(SBOLError e)
+    {
+      PyErr_SetString(PyExc_RuntimeError, e.what());
+      return NULL;
+    }
+    catch(...)
+    {
+      
+    }
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_cut_sbol_resource(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::string *arg1 = 0 ;
@@ -99679,65 +106895,140 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"Config_setHomespace", _wrap_Config_setHomespace, METH_VARARGS, (char *)"\n"
+	 { (char *)"Config_setHomespace", _wrap_Config_setHomespace, METH_VARARGS, NULL},
+	 { (char *)"Config_getHomespace", _wrap_Config_getHomespace, METH_VARARGS, NULL},
+	 { (char *)"Config_hasHomespace", _wrap_Config_hasHomespace, METH_VARARGS, NULL},
+	 { (char *)"Config_toggleSBOLCompliantTypes", _wrap_Config_toggleSBOLCompliantTypes, METH_VARARGS, NULL},
+	 { (char *)"Config_compliantTypesEnabled", _wrap_Config_compliantTypesEnabled, METH_VARARGS, NULL},
+	 { (char *)"Config_toggleExceptions", _wrap_Config_toggleExceptions, METH_VARARGS, NULL},
+	 { (char *)"Config_exceptionsEnabled", _wrap_Config_exceptionsEnabled, METH_VARARGS, NULL},
+	 { (char *)"Config_setFileFormat", _wrap_Config_setFileFormat, METH_VARARGS, NULL},
+	 { (char *)"Config_getFileFormat", _wrap_Config_getFileFormat, METH_VARARGS, NULL},
+	 { (char *)"Config_setOption", _wrap_Config_setOption, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Configure options for online validation and conversion\n"
+		"Option  \n"
+		"\n"
+		"Description  \n"
+		"\n"
+		"Values  \n"
+		"\n"
+		"validate  \n"
+		"\n"
+		"Enable validation and conversion requests through the online validator  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"validatorURL  \n"
+		"\n"
+		"The http request endpoint for validation  \n"
+		"\n"
+		"A valid URL, set to  http://www.async.ece.utah.edu/sbol-validator/endpoint.php\n"
+		"by default  \n"
+		"\n"
+		"output  \n"
+		"\n"
+		"File format for conversion  \n"
+		"\n"
+		"SBOL2, SBOL1, FASTA, GenBank  \n"
+		"\n"
+		"diff  \n"
+		"\n"
+		"Report differences between two files  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"noncompliantUrisAllowed  \n"
+		"\n"
+		"If set to false, URIs in the file will not be checked for compliance  \n"
+		"with the SBOL specification  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"incompleteDocumentsAllowed  \n"
+		"\n"
+		"If set to false, not all referenced objects must be described within  \n"
+		"the given main_file  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"bestPracticesCheck  \n"
+		"\n"
+		"If set to true, the file is checked for the best practice rules set  \n"
+		"in the SBOL specification  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"failOnFirstError  \n"
+		"\n"
+		"If set to true, the validator will fail at the first error  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"displayFullErrorStackTrace  \n"
+		"\n"
+		"If set to true (and failOnFirstError is true) the validator will  \n"
+		"provide a stack trace for the first validation error  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"topLevelToConvert  \n"
+		"\n"
+		"\n"
+		"\n"
+		"uriPrefix  \n"
+		"\n"
+		"Required for conversion from FASTA and GenBank to SBOL1 or SBOL2,  \n"
+		"used to generate URIs  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"version  \n"
+		"\n"
+		"Adds the version to all URIs and to the document  \n"
+		"\n"
+		"A valid Maven version string  \n"
+		"\n"
+		"wantFileBack  \n"
+		"\n"
+		"Whether or not to return the file contents as a string  \n"
+		"\n"
+		"True or False  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `option` :  \n"
+		"    The option key  \n"
+		"* `value` :  \n"
+		"    The option value  \n"
 		"\n"
 		""},
-	 { (char *)"Config_getHomespace", _wrap_Config_getHomespace, METH_VARARGS, (char *)"\n"
+	 { (char *)"Config_getOption", _wrap_Config_getOption, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		""},
-	 { (char *)"Config_hasHomespace", _wrap_Config_hasHomespace, METH_VARARGS, (char *)"\n"
+		"Get current option value for online validation and conversion.  \n"
 		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_toggleSBOLCompliance", _wrap_Config_toggleSBOLCompliance, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_isSBOLCompliant", _wrap_Config_isSBOLCompliant, METH_VARARGS, (char *)"\n"
-		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `option` :  \n"
+		"    The option key  \n"
 		"\n"
 		""},
-	 { (char *)"Config_toggleSBOLCompliantTypes", _wrap_Config_toggleSBOLCompliantTypes, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_compliantTypesEnabled", _wrap_Config_compliantTypesEnabled, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_toggleExceptions", _wrap_Config_toggleExceptions, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_exceptionsEnabled", _wrap_Config_exceptionsEnabled, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_setFileFormat", _wrap_Config_setFileFormat, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_getFileFormat", _wrap_Config_getFileFormat, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Config_setOption", _wrap_Config_setOption, METH_VARARGS, NULL},
-	 { (char *)"Config_getOption", _wrap_Config_getOption, METH_VARARGS, NULL},
+	 { (char *)"Config_parse_extension_objects", _wrap_Config_parse_extension_objects, METH_VARARGS, NULL},
 	 { (char *)"delete_Config", _wrap_delete_Config, METH_VARARGS, NULL},
 	 { (char *)"Config_swigregister", Config_swigregister, METH_VARARGS, NULL},
 	 { (char *)"setHomespace", _wrap_setHomespace, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Set the default namespace for autocreation of URIs when a new SBOL object is\n"
+		"Sets the default namespace for autocreation of URIs when a new SBOL object is\n"
 		"created.  \n"
 		"\n"
 		""},
 	 { (char *)"getHomespace", _wrap_getHomespace, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Get the current default namespace for autocreation of URIs when a new SBOL\n"
+		"Returns the current default namespace for autocreation of URIs when a new SBOL\n"
 		"object is created.  \n"
 		"\n"
 		""},
@@ -99747,22 +107038,10 @@ static PyMethodDef SwigMethods[] = {
 		"Checks if a valid default namespace has been defined.  \n"
 		"\n"
 		""},
-	 { (char *)"toggleSBOLCompliance", _wrap_toggleSBOLCompliance, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Enables SBOLCompliance, which simplifies creation of URIs in constructor calls.  \n"
-		"\n"
-		""},
-	 { (char *)"isSBOLCompliant", _wrap_isSBOLCompliant, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Checks if SBOLCompliance is enabled.  \n"
-		"\n"
-		""},
 	 { (char *)"toggleSBOLCompliantTypes", _wrap_toggleSBOLCompliantTypes, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Turns option to include types in SBOL-compliant URIs on or off.  \n"
+		"Allows SBOL-compliant URIs. Accepts boolean. The default value is false.  \n"
 		"\n"
 		""},
 	 { (char *)"compliantTypesEnabled", _wrap_compliantTypesEnabled, METH_VARARGS, (char *)"\n"
@@ -99774,58 +107053,36 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"setFileFormat", _wrap_setFileFormat, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
+		"Sets file format to use.  \n"
+		"\n"
 		""},
 	 { (char *)"getFileFormat", _wrap_getFileFormat, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Returns currently accepted file format.  \n"
 		"\n"
 		""},
 	 { (char *)"toggleExceptions", _wrap_toggleExceptions, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
+		"Function to toggle exception handling. Accepts boolean. The default value is\n"
+		"false.  \n"
+		"\n"
 		""},
 	 { (char *)"exceptionsEnabled", _wrap_exceptionsEnabled, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		""},
-	 { (char *)"randomIdentifier", _wrap_randomIdentifier, METH_VARARGS, (char *)"\n"
-		"\n"
+		"Checks if exception is enabled.  \n"
 		"\n"
 		""},
-	 { (char *)"autoconstructURI", _wrap_autoconstructURI, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"constructNonCompliantURI", _wrap_constructNonCompliantURI, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"constructCompliantURI", _wrap_constructCompliantURI, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"getCompliantURI", _wrap_getCompliantURI, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"parseClassName", _wrap_parseClassName, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Parse a class name from a URI.  \n"
-		"\n"
-		"Parameters\n"
-		"----------\n"
-		"* `uri` :  \n"
-		"    A URI  \n"
-		"\n"
-		""},
-	 { (char *)"parsePropertyName", _wrap_parsePropertyName, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"parseNamespace", _wrap_parseNamespace, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
+	 { (char *)"randomIdentifier", _wrap_randomIdentifier, METH_VARARGS, NULL},
+	 { (char *)"autoconstructURI", _wrap_autoconstructURI, METH_VARARGS, NULL},
+	 { (char *)"constructNonCompliantURI", _wrap_constructNonCompliantURI, METH_VARARGS, NULL},
+	 { (char *)"constructCompliantURI", _wrap_constructCompliantURI, METH_VARARGS, NULL},
+	 { (char *)"getCompliantURI", _wrap_getCompliantURI, METH_VARARGS, NULL},
+	 { (char *)"parseClassName", _wrap_parseClassName, METH_VARARGS, NULL},
+	 { (char *)"parsePropertyName", _wrap_parsePropertyName, METH_VARARGS, NULL},
+	 { (char *)"parseNamespace", _wrap_parseNamespace, METH_VARARGS, NULL},
 	 { (char *)"DEFAULT_NS_swigconstant", DEFAULT_NS_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_URI_swigconstant", SBOL_URI_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"RDF_URI_swigconstant", RDF_URI_swigconstant, METH_VARARGS, NULL},
@@ -99853,6 +107110,9 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SBOL_SEQUENCE_CONSTRAINT_swigconstant", SBOL_SEQUENCE_CONSTRAINT_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_LOCATION_swigconstant", SBOL_LOCATION_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_RANGE_swigconstant", SBOL_RANGE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SBOL_CUT_swigconstant", SBOL_CUT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SBOL_COLLECTION_swigconstant", SBOL_COLLECTION_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SBOL_GENERIC_LOCATION_swigconstant", SBOL_GENERIC_LOCATION_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"UNDEFINED_swigconstant", UNDEFINED_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_IDENTITY_swigconstant", SBOL_IDENTITY_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_PERSISTENT_IDENTITY_swigconstant", SBOL_PERSISTENT_IDENTITY_swigconstant, METH_VARARGS, NULL},
@@ -99894,6 +107154,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SBOL_ORIENTATION_swigconstant", SBOL_ORIENTATION_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_LOCATIONS_swigconstant", SBOL_LOCATIONS_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_ROLE_INTEGRATION_swigconstant", SBOL_ROLE_INTEGRATION_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SBOL_MEMBERS_swigconstant", SBOL_MEMBERS_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_AT_swigconstant", SBOL_AT_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_ACCESS_PRIVATE_swigconstant", SBOL_ACCESS_PRIVATE_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBOL_ACCESS_PUBLIC_swigconstant", SBOL_ACCESS_PUBLIC_swigconstant, METH_VARARGS, NULL},
@@ -99950,9 +107211,18 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EDAM_BIOPAX_swigconstant", EDAM_BIOPAX_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBO_CONTINUOUS_swigconstant", SBO_CONTINUOUS_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SBO_DISCRETE_swigconstant", SBO_DISCRETE_swigconstant, METH_VARARGS, NULL},
-	 { (char *)"sbolRule10101", _wrap_sbolRule10101, METH_VARARGS, NULL},
-	 { (char *)"sbolRule10102", _wrap_sbolRule10102, METH_VARARGS, NULL},
-	 { (char *)"sbol_rule_10202", _wrap_sbol_rule_10202, METH_VARARGS, NULL},
+	 { (char *)"sbolRule10101", _wrap_sbolRule10101, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"sbolRule10102", _wrap_sbolRule10102, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"sbol_rule_10202", _wrap_sbol_rule_10202, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"libsbol_rule_1", _wrap_libsbol_rule_1, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -99973,18 +107243,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"_StringProperty_get", _wrap__StringProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"_StringProperty_getAll", _wrap__StringProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"_StringProperty_getAll", _wrap__StringProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"_StringProperty_set", _wrap__StringProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100008,8 +107270,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"_StringProperty_remove", _wrap__StringProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"_StringProperty_clear", _wrap__StringProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"_StringProperty_remove", _wrap__StringProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"_StringProperty_clear", _wrap__StringProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"_StringProperty_write", _wrap__StringProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100040,18 +107308,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"_IntProperty_get", _wrap__IntProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"_IntProperty_getAll", _wrap__IntProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"_IntProperty_getAll", _wrap__IntProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"_IntProperty_set", _wrap__IntProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100075,8 +107335,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"_IntProperty_remove", _wrap__IntProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"_IntProperty_clear", _wrap__IntProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"_IntProperty_remove", _wrap__IntProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"_IntProperty_clear", _wrap__IntProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"_IntProperty_write", _wrap__IntProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100091,28 +107357,55 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"_IntProperty___next__", _wrap__IntProperty___next__, METH_VARARGS, NULL},
 	 { (char *)"_IntProperty___len__", _wrap__IntProperty___len__, METH_VARARGS, NULL},
 	 { (char *)"_IntProperty_swigregister", _IntProperty_swigregister, METH_VARARGS, NULL},
+	 { (char *)"URIProperty_get", _wrap_URIProperty_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Basic getter for all SBOL literal properties.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A string of characters used to identify a resource  \n"
+		"\n"
+		""},
 	 { (char *)"new_URIProperty", _wrap_new_URIProperty, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
 		""},
 	 { (char *)"delete_URIProperty", _wrap_delete_URIProperty, METH_VARARGS, NULL},
 	 { (char *)"URIProperty_swigregister", URIProperty_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TextProperty_get", _wrap_TextProperty_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Basic getter for all SBOL literal properties.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A string literal  \n"
+		"\n"
+		""},
 	 { (char *)"new_TextProperty", _wrap_new_TextProperty, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
 		""},
 	 { (char *)"delete_TextProperty", _wrap_delete_TextProperty, METH_VARARGS, NULL},
 	 { (char *)"TextProperty_swigregister", TextProperty_swigregister, METH_VARARGS, NULL},
+	 { (char *)"IntProperty_get", _wrap_IntProperty_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Basic getter for all SBOL literal properties.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"An integer  \n"
+		"\n"
+		""},
 	 { (char *)"new_IntProperty", _wrap_new_IntProperty, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
 		""},
 	 { (char *)"delete_IntProperty", _wrap_delete_IntProperty, METH_VARARGS, NULL},
 	 { (char *)"IntProperty_swigregister", IntProperty_swigregister, METH_VARARGS, NULL},
-	 { (char *)"VersionProperty_split", _wrap_VersionProperty_split, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
+	 { (char *)"VersionProperty_split", _wrap_VersionProperty_split, METH_VARARGS, NULL},
 	 { (char *)"VersionProperty_incrementMajor", _wrap_VersionProperty_incrementMajor, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100190,6 +107483,16 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"VersionProperty_swigregister", VersionProperty_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SBOLObject_doc_set", _wrap_SBOLObject_doc_set, METH_VARARGS, NULL},
 	 { (char *)"SBOLObject_doc_get", _wrap_SBOLObject_doc_get, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_type_set", _wrap_SBOLObject_type_set, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_type_get", _wrap_SBOLObject_type_get, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_parent_set", _wrap_SBOLObject_parent_set, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_parent_get", _wrap_SBOLObject_parent_get, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_proxy_set", _wrap_SBOLObject_proxy_set, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_proxy_get", _wrap_SBOLObject_proxy_get, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_thisown_set", _wrap_SBOLObject_thisown_set, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_thisown_get", _wrap_SBOLObject_thisown_get, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_extension_objects_set", _wrap_SBOLObject_extension_objects_set, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_extension_objects_get", _wrap_SBOLObject_extension_objects_get, METH_VARARGS, NULL},
 	 { (char *)"SBOLObject_identity_set", _wrap_SBOLObject_identity_set, METH_VARARGS, NULL},
 	 { (char *)"SBOLObject_identity_get", _wrap_SBOLObject_identity_get, METH_VARARGS, NULL},
 	 { (char *)"new_SBOLObject", _wrap_new_SBOLObject, METH_VARARGS, (char *)"\n"
@@ -100200,23 +107503,76 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"SBOLObject_type_set", _wrap_SBOLObject_type_set, METH_VARARGS, NULL},
-	 { (char *)"SBOLObject_type_get", _wrap_SBOLObject_type_get, METH_VARARGS, NULL},
-	 { (char *)"SBOLObject_parent_set", _wrap_SBOLObject_parent_set, METH_VARARGS, NULL},
-	 { (char *)"SBOLObject_parent_get", _wrap_SBOLObject_parent_get, METH_VARARGS, NULL},
 	 { (char *)"SBOLObject_getTypeURI", _wrap_SBOLObject_getTypeURI, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"The uniform resource identifier that describes the RDF-type of this SBOL Object  \n"
 		"\n"
 		""},
 	 { (char *)"SBOLObject_getClassName", _wrap_SBOLObject_getClassName, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
+		"Returns\n"
+		"-------\n"
+		"Parses a local class name from the RDF-type of this SBOL Object  \n"
+		"\n"
 		""},
 	 { (char *)"SBOLObject_find", _wrap_SBOLObject_find, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
+		"Search this object recursively to see if an object with the URI already exists.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The URI to search for.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A pointer to theobject with this URI if it exists, NULL otherwise  \n"
+		"\n"
 		""},
-	 { (char *)"SBOLObject_compare", _wrap_SBOLObject_compare, METH_VARARGS, NULL},
+	 { (char *)"SBOLObject_find_property", _wrap_SBOLObject_find_property, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Search this object recursively to see if it contains a member property with the\n"
+		"given RDF type.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The RDF type of the property to search for.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A pointer to the object that contains a member property with the specified RDF\n"
+		"type, NULL otherwise  \n"
+		"\n"
+		""},
+	 { (char *)"SBOLObject_find_reference", _wrap_SBOLObject_find_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"SBOLObject_compare", _wrap_SBOLObject_compare, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Compare two SBOL objects or Documents.  \n"
+		"\n"
+		"The behavior is currently undefined for objects with custom annotations or\n"
+		"extension classes.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `comparand` :  \n"
+		"    A pointer to the object being compared to this one.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"1 if the objects are identical, 0 if they are different  \n"
+		"\n"
+		""},
 	 { (char *)"SBOLObject_getPropertyValue", _wrap_SBOLObject_getPropertyValue, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100377,8 +107733,7 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"Construct a Range.  \n"
 		"\n"
-		"If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <\n"
-		"Range > instead.  \n"
+		"If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  \n"
 		"\n"
 		"Parameters\n"
 		"----------\n"
@@ -100405,8 +107760,7 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"Construct a Cut.  \n"
 		"\n"
-		"If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <\n"
-		"Cut > instead.  \n"
+		"If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  \n"
 		"\n"
 		"Parameters\n"
 		"----------\n"
@@ -100424,6 +107778,27 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"Cut_swigregister", Cut_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_GenericLocation", _wrap_new_GenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Construct a GenericLocation.  \n"
+		"\n"
+		"If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If operating in open-world mode, this should be a full URI including a\n"
+		"    scheme, namespace, and identifier. If SBOLCompliance configuration is\n"
+		"    enabled, then this argument is simply the displayId for the new object and a\n"
+		"    full URI will automatically be constructed.  \n"
+		"\n"
+		""},
+	 { (char *)"delete_GenericLocation", _wrap_delete_GenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"GenericLocation_swigregister", GenericLocation_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_locationProperty", _wrap_new_locationProperty, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100440,18 +107815,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"locationProperty_get", _wrap_locationProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"locationProperty_getAll", _wrap_locationProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"locationProperty_getAll", _wrap_locationProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"locationProperty_set", _wrap_locationProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100475,8 +107842,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"locationProperty_remove", _wrap_locationProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"locationProperty_clear", _wrap_locationProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"locationProperty_remove", _wrap_locationProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"locationProperty_clear", _wrap_locationProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"locationProperty_write", _wrap_locationProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100541,17 +107914,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"_ownedLocation_get", _wrap__ownedLocation_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"_ownedLocation_add", _wrap__ownedLocation_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100563,13 +107925,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"_ownedLocation_getObjects", _wrap__ownedLocation_getObjects, METH_VARARGS, NULL},
-	 { (char *)"_ownedLocation_remove", _wrap__ownedLocation_remove, METH_VARARGS, NULL},
-	 { (char *)"_ownedLocation_clear", _wrap__ownedLocation_clear, METH_VARARGS, NULL},
+	 { (char *)"_ownedLocation_get", _wrap__ownedLocation_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_getObjects", _wrap__ownedLocation_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_remove", _wrap__ownedLocation_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_clear", _wrap__ownedLocation_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"_ownedLocation_create", _wrap__ownedLocation_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"_ownedLocation_begin", _wrap__ownedLocation_begin, METH_VARARGS, (char *)"\n"
@@ -100605,18 +108038,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"_ownedLocation_getRange", _wrap__ownedLocation_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"_ownedLocation_createRange", _wrap__ownedLocation_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_addCut", _wrap__ownedLocation_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_getCut", _wrap__ownedLocation_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_createCut", _wrap__ownedLocation_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_addGenericLocation", _wrap__ownedLocation_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_getGenericLocation", _wrap__ownedLocation_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"_ownedLocation_createGenericLocation", _wrap__ownedLocation_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete__ownedLocation", _wrap_delete__ownedLocation, METH_VARARGS, NULL},
@@ -100651,6 +108248,10 @@ static PyMethodDef SwigMethods[] = {
 		"    Maven version string of the form \"major.minor.patch\".  \n"
 		"\n"
 		""},
+	 { (char *)"SequenceAnnotation_precedes", _wrap_SequenceAnnotation_precedes, METH_VARARGS, NULL},
+	 { (char *)"SequenceAnnotation_follows", _wrap_SequenceAnnotation_follows, METH_VARARGS, NULL},
+	 { (char *)"SequenceAnnotation_contains", _wrap_SequenceAnnotation_contains, METH_VARARGS, NULL},
+	 { (char *)"SequenceAnnotation_overlaps", _wrap_SequenceAnnotation_overlaps, METH_VARARGS, NULL},
 	 { (char *)"delete_SequenceAnnotation", _wrap_delete_SequenceAnnotation, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100742,18 +108343,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"mapsToProperty_get", _wrap_mapsToProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"mapsToProperty_getAll", _wrap_mapsToProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"mapsToProperty_getAll", _wrap_mapsToProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"mapsToProperty_set", _wrap_mapsToProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100777,8 +108370,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"mapsToProperty_remove", _wrap_mapsToProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"mapsToProperty_clear", _wrap_mapsToProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"mapsToProperty_remove", _wrap_mapsToProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"mapsToProperty_clear", _wrap_mapsToProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"mapsToProperty_write", _wrap_mapsToProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100809,17 +108408,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedMapsTo_get", _wrap_ownedMapsTo_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedMapsTo_add", _wrap_ownedMapsTo_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -100831,13 +108419,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedMapsTo_getObjects", _wrap_ownedMapsTo_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedMapsTo_remove", _wrap_ownedMapsTo_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedMapsTo_clear", _wrap_ownedMapsTo_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedMapsTo_get", _wrap_ownedMapsTo_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_getObjects", _wrap_ownedMapsTo_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_remove", _wrap_ownedMapsTo_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_clear", _wrap_ownedMapsTo_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedMapsTo_create", _wrap_ownedMapsTo_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedMapsTo_begin", _wrap_ownedMapsTo_begin, METH_VARARGS, (char *)"\n"
@@ -100873,18 +108532,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedMapsTo_getRange", _wrap_ownedMapsTo_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedMapsTo_createRange", _wrap_ownedMapsTo_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_addCut", _wrap_ownedMapsTo_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_getCut", _wrap_ownedMapsTo_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_createCut", _wrap_ownedMapsTo_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_addGenericLocation", _wrap_ownedMapsTo_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_getGenericLocation", _wrap_ownedMapsTo_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedMapsTo_createGenericLocation", _wrap_ownedMapsTo_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedMapsTo", _wrap_delete_ownedMapsTo, METH_VARARGS, NULL},
@@ -101102,18 +108925,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"sequenceConstraintProperty_get", _wrap_sequenceConstraintProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"sequenceConstraintProperty_getAll", _wrap_sequenceConstraintProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceConstraintProperty_getAll", _wrap_sequenceConstraintProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"sequenceConstraintProperty_set", _wrap_sequenceConstraintProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101137,8 +108952,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceConstraintProperty_remove", _wrap_sequenceConstraintProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"sequenceConstraintProperty_clear", _wrap_sequenceConstraintProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"sequenceConstraintProperty_remove", _wrap_sequenceConstraintProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"sequenceConstraintProperty_clear", _wrap_sequenceConstraintProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"sequenceConstraintProperty_write", _wrap_sequenceConstraintProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101169,17 +108990,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequenceConstraint_get", _wrap_ownedSequenceConstraint_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedSequenceConstraint_add", _wrap_ownedSequenceConstraint_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101191,13 +109001,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequenceConstraint_getObjects", _wrap_ownedSequenceConstraint_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedSequenceConstraint_remove", _wrap_ownedSequenceConstraint_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedSequenceConstraint_clear", _wrap_ownedSequenceConstraint_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedSequenceConstraint_get", _wrap_ownedSequenceConstraint_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_getObjects", _wrap_ownedSequenceConstraint_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_remove", _wrap_ownedSequenceConstraint_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_clear", _wrap_ownedSequenceConstraint_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedSequenceConstraint_create", _wrap_ownedSequenceConstraint_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequenceConstraint_begin", _wrap_ownedSequenceConstraint_begin, METH_VARARGS, (char *)"\n"
@@ -101233,18 +109114,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedSequenceConstraint_getRange", _wrap_ownedSequenceConstraint_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequenceConstraint_createRange", _wrap_ownedSequenceConstraint_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_addCut", _wrap_ownedSequenceConstraint_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_getCut", _wrap_ownedSequenceConstraint_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_createCut", _wrap_ownedSequenceConstraint_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_addGenericLocation", _wrap_ownedSequenceConstraint_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_getGenericLocation", _wrap_ownedSequenceConstraint_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceConstraint_createGenericLocation", _wrap_ownedSequenceConstraint_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedSequenceConstraint", _wrap_delete_ownedSequenceConstraint, METH_VARARGS, NULL},
@@ -101305,18 +109350,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"sequenceAnnotationProperty_get", _wrap_sequenceAnnotationProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"sequenceAnnotationProperty_getAll", _wrap_sequenceAnnotationProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceAnnotationProperty_getAll", _wrap_sequenceAnnotationProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"sequenceAnnotationProperty_set", _wrap_sequenceAnnotationProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101340,8 +109377,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceAnnotationProperty_remove", _wrap_sequenceAnnotationProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"sequenceAnnotationProperty_clear", _wrap_sequenceAnnotationProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"sequenceAnnotationProperty_remove", _wrap_sequenceAnnotationProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"sequenceAnnotationProperty_clear", _wrap_sequenceAnnotationProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"sequenceAnnotationProperty_write", _wrap_sequenceAnnotationProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101372,17 +109415,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequenceAnnotation_get", _wrap_ownedSequenceAnnotation_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedSequenceAnnotation_add", _wrap_ownedSequenceAnnotation_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101394,13 +109426,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequenceAnnotation_getObjects", _wrap_ownedSequenceAnnotation_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedSequenceAnnotation_remove", _wrap_ownedSequenceAnnotation_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedSequenceAnnotation_clear", _wrap_ownedSequenceAnnotation_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedSequenceAnnotation_get", _wrap_ownedSequenceAnnotation_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_getObjects", _wrap_ownedSequenceAnnotation_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_remove", _wrap_ownedSequenceAnnotation_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_clear", _wrap_ownedSequenceAnnotation_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedSequenceAnnotation_create", _wrap_ownedSequenceAnnotation_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequenceAnnotation_begin", _wrap_ownedSequenceAnnotation_begin, METH_VARARGS, (char *)"\n"
@@ -101436,18 +109539,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedSequenceAnnotation_getRange", _wrap_ownedSequenceAnnotation_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequenceAnnotation_createRange", _wrap_ownedSequenceAnnotation_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_addCut", _wrap_ownedSequenceAnnotation_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_getCut", _wrap_ownedSequenceAnnotation_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_createCut", _wrap_ownedSequenceAnnotation_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_addGenericLocation", _wrap_ownedSequenceAnnotation_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_getGenericLocation", _wrap_ownedSequenceAnnotation_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequenceAnnotation_createGenericLocation", _wrap_ownedSequenceAnnotation_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedSequenceAnnotation", _wrap_delete_ownedSequenceAnnotation, METH_VARARGS, NULL},
@@ -101508,18 +109775,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"componentsProperty_get", _wrap_componentsProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"componentsProperty_getAll", _wrap_componentsProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"componentsProperty_getAll", _wrap_componentsProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"componentsProperty_set", _wrap_componentsProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101543,8 +109802,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"componentsProperty_remove", _wrap_componentsProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"componentsProperty_clear", _wrap_componentsProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"componentsProperty_remove", _wrap_componentsProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"componentsProperty_clear", _wrap_componentsProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"componentsProperty_write", _wrap_componentsProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101575,17 +109840,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedComponents_get", _wrap_ownedComponents_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedComponents_add", _wrap_ownedComponents_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101597,13 +109851,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedComponents_getObjects", _wrap_ownedComponents_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedComponents_remove", _wrap_ownedComponents_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedComponents_clear", _wrap_ownedComponents_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedComponents_get", _wrap_ownedComponents_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_getObjects", _wrap_ownedComponents_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_remove", _wrap_ownedComponents_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_clear", _wrap_ownedComponents_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedComponents_create", _wrap_ownedComponents_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedComponents_begin", _wrap_ownedComponents_begin, METH_VARARGS, (char *)"\n"
@@ -101639,18 +109964,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedComponents_getRange", _wrap_ownedComponents_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedComponents_createRange", _wrap_ownedComponents_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_addCut", _wrap_ownedComponents_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_getCut", _wrap_ownedComponents_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_createCut", _wrap_ownedComponents_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_addGenericLocation", _wrap_ownedComponents_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_getGenericLocation", _wrap_ownedComponents_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponents_createGenericLocation", _wrap_ownedComponents_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedComponents", _wrap_delete_ownedComponents, METH_VARARGS, NULL},
@@ -101673,27 +110162,20 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ComponentDefinition_sequenceAnnotations_get", _wrap_ComponentDefinition_sequenceAnnotations_get, METH_VARARGS, NULL},
 	 { (char *)"ComponentDefinition_sequenceConstraints_set", _wrap_ComponentDefinition_sequenceConstraints_set, METH_VARARGS, NULL},
 	 { (char *)"ComponentDefinition_sequenceConstraints_get", _wrap_ComponentDefinition_sequenceConstraints_get, METH_VARARGS, NULL},
-	 { (char *)"new_ComponentDefinition", _wrap_new_ComponentDefinition, METH_VARARGS, (char *)"\n"
+	 { (char *)"ComponentDefinition_updateSequence", _wrap_ComponentDefinition_updateSequence, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Construct a ComponentDefinition.  \n"
+		"Assemble a parent ComponentDefinition's Sequence from its subcomponent\n"
+		"Sequences.  \n"
 		"\n"
 		"Parameters\n"
 		"----------\n"
-		"* `uri` :  \n"
-		"    A full URI including a scheme, namespace, and identifier. If SBOLCompliance\n"
-		"    configuration is enabled, then this argument is simply the displayId for the\n"
-		"    new object and a full URI will automatically be constructed.  \n"
-		"* `type` :  \n"
-		"    A BioPAX ontology term that indicates whether the ComponentDefinition is\n"
-		"    DNA, RNA, protein, or some other molecule type.  \n"
-		"* `version` :  \n"
-		"    An arbitrary version string. If SBOLCompliance is enabled, this should be a\n"
-		"    Maven version string of the form \"major.minor.patch\".  \n"
+		"* `composite_sequence` :  \n"
+		"    A recursive parameter, use default value  \n"
 		"\n"
-		""},
-	 { (char *)"ComponentDefinition_updateSequence", _wrap_ComponentDefinition_updateSequence, METH_VARARGS, (char *)"\n"
-		"\n"
+		"Returns\n"
+		"-------\n"
+		"The assembled parent sequence  \n"
 		"\n"
 		""},
 	 { (char *)"ComponentDefinition_getInSequentialOrder", _wrap_ComponentDefinition_getInSequentialOrder, METH_VARARGS, (char *)"\n"
@@ -101783,6 +110265,7 @@ static PyMethodDef SwigMethods[] = {
 		"The last component in sequential order  \n"
 		"\n"
 		""},
+	 { (char *)"ComponentDefinition_applyToComponentHierarchy", _wrap_ComponentDefinition_applyToComponentHierarchy, METH_VARARGS, NULL},
 	 { (char *)"ComponentDefinition_participate", _wrap_ComponentDefinition_participate, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101801,6 +110284,25 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"delete_ComponentDefinition", _wrap_delete_ComponentDefinition, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		""},
+	 { (char *)"new_ComponentDefinition", _wrap_new_ComponentDefinition, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Construct a ComponentDefinition.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    A full URI including a scheme, namespace, and identifier. If SBOLCompliance\n"
+		"    configuration is enabled, then this argument is simply the displayId for the\n"
+		"    new object and a full URI will automatically be constructed.  \n"
+		"* `type` :  \n"
+		"    A BioPAX ontology term that indicates whether the ComponentDefinition is\n"
+		"    DNA, RNA, protein, or some other molecule type.  \n"
+		"* `version` :  \n"
+		"    An arbitrary version string. If SBOLCompliance is enabled, this should be a\n"
+		"    Maven version string of the form \"major.minor.patch\".  \n"
 		"\n"
 		""},
 	 { (char *)"ComponentDefinition_assemble", _wrap_ComponentDefinition_assemble, METH_VARARGS, (char *)"\n"
@@ -101825,12 +110327,44 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Sequence_elements_get", _wrap_Sequence_elements_get, METH_VARARGS, NULL},
 	 { (char *)"Sequence_encoding_set", _wrap_Sequence_encoding_set, METH_VARARGS, NULL},
 	 { (char *)"Sequence_encoding_get", _wrap_Sequence_encoding_get, METH_VARARGS, NULL},
+	 { (char *)"Sequence_assemble", _wrap_Sequence_assemble, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Calculates the complete sequence of a high-level Component from the sequence of\n"
+		"its subcomponents.  \n"
+		"\n"
+		"{rior to assembling the the complete sequence, you must assemble a template\n"
+		"design by calling ComponentDefinition::assemble for the ComponentDefinition that\n"
+		"references this Sequence.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `composite_sequence` :  \n"
+		"    Typically no value for the composite sequence should be specified by the\n"
+		"    user. This parameter is used to hold the composite sequence as it is passed\n"
+		"    to function calls at a higher-level of the recursion stack.  \n"
+		"\n"
+		""},
 	 { (char *)"new_Sequence", _wrap_new_Sequence, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		""},
-	 { (char *)"Sequence_assemble", _wrap_Sequence_assemble, METH_VARARGS, (char *)"\n"
+		"Construct a ComponentDefinition.  \n"
 		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    A full URI including a scheme, namespace, and identifier. If SBOLCompliance\n"
+		"    configuration is enabled, then this argument is simply the displayId for the\n"
+		"    new object and a full URI will automatically be constructed.  \n"
+		"* `elements` :  \n"
+		"    A string representation of the primary structure of DNA, RNA, protein, or a\n"
+		"    SMILES string for small molecules.  \n"
+		"* `encoding` :  \n"
+		"    A URI that describes the representation format used for the elements\n"
+		"    property. Set to SBOL_ENCODING_IUPAC by default  \n"
+		"* `version` :  \n"
+		"    An arbitrary version string. If SBOLCompliance is enabled, this should be a\n"
+		"    Maven version string.  \n"
 		"\n"
 		""},
 	 { (char *)"delete_Sequence", _wrap_delete_Sequence, METH_VARARGS, (char *)"\n"
@@ -101877,18 +110411,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"participationProperty_get", _wrap_participationProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"participationProperty_getAll", _wrap_participationProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"participationProperty_getAll", _wrap_participationProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"participationProperty_set", _wrap_participationProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101912,8 +110438,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"participationProperty_remove", _wrap_participationProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"participationProperty_clear", _wrap_participationProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"participationProperty_remove", _wrap_participationProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"participationProperty_clear", _wrap_participationProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"participationProperty_write", _wrap_participationProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101944,17 +110476,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedParticipation_get", _wrap_ownedParticipation_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedParticipation_add", _wrap_ownedParticipation_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -101966,13 +110487,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedParticipation_getObjects", _wrap_ownedParticipation_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedParticipation_remove", _wrap_ownedParticipation_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedParticipation_clear", _wrap_ownedParticipation_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedParticipation_get", _wrap_ownedParticipation_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_getObjects", _wrap_ownedParticipation_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_remove", _wrap_ownedParticipation_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_clear", _wrap_ownedParticipation_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedParticipation_create", _wrap_ownedParticipation_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedParticipation_begin", _wrap_ownedParticipation_begin, METH_VARARGS, (char *)"\n"
@@ -102008,18 +110600,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedParticipation_getRange", _wrap_ownedParticipation_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedParticipation_createRange", _wrap_ownedParticipation_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_addCut", _wrap_ownedParticipation_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_getCut", _wrap_ownedParticipation_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_createCut", _wrap_ownedParticipation_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_addGenericLocation", _wrap_ownedParticipation_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_getGenericLocation", _wrap_ownedParticipation_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedParticipation_createGenericLocation", _wrap_ownedParticipation_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedParticipation", _wrap_delete_ownedParticipation, METH_VARARGS, NULL},
@@ -102100,6 +110856,27 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"Model_swigregister", Model_swigregister, METH_VARARGS, NULL},
+	 { (char *)"Collection_members_set", _wrap_Collection_members_set, METH_VARARGS, NULL},
+	 { (char *)"Collection_members_get", _wrap_Collection_members_get, METH_VARARGS, NULL},
+	 { (char *)"new_Collection", _wrap_new_Collection, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Construct a Collection.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If operating in open-world mode, this should be a full URI including a\n"
+		"    scheme, namespace, and identifier. If SBOLCompliance configuration is\n"
+		"    enabled, then this argument is simply the displayId for the new object and a\n"
+		"    full URI will automatically be constructed.  \n"
+		"\n"
+		""},
+	 { (char *)"delete_Collection", _wrap_delete_Collection, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"Collection_swigregister", Collection_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_moduleProperty", _wrap_new_moduleProperty, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102116,18 +110893,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"moduleProperty_get", _wrap_moduleProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"moduleProperty_getAll", _wrap_moduleProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"moduleProperty_getAll", _wrap_moduleProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"moduleProperty_set", _wrap_moduleProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102151,8 +110920,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"moduleProperty_remove", _wrap_moduleProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"moduleProperty_clear", _wrap_moduleProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"moduleProperty_remove", _wrap_moduleProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"moduleProperty_clear", _wrap_moduleProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"moduleProperty_write", _wrap_moduleProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102183,17 +110958,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModule_get", _wrap_ownedModule_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedModule_add", _wrap_ownedModule_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102205,13 +110969,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModule_getObjects", _wrap_ownedModule_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedModule_remove", _wrap_ownedModule_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedModule_clear", _wrap_ownedModule_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedModule_get", _wrap_ownedModule_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_getObjects", _wrap_ownedModule_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_remove", _wrap_ownedModule_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_clear", _wrap_ownedModule_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedModule_create", _wrap_ownedModule_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModule_begin", _wrap_ownedModule_begin, METH_VARARGS, (char *)"\n"
@@ -102247,18 +111082,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedModule_getRange", _wrap_ownedModule_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModule_createRange", _wrap_ownedModule_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_addCut", _wrap_ownedModule_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_getCut", _wrap_ownedModule_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_createCut", _wrap_ownedModule_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_addGenericLocation", _wrap_ownedModule_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_getGenericLocation", _wrap_ownedModule_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModule_createGenericLocation", _wrap_ownedModule_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedModule", _wrap_delete_ownedModule, METH_VARARGS, NULL},
@@ -102285,18 +111284,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"interactionProperty_get", _wrap_interactionProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"interactionProperty_getAll", _wrap_interactionProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"interactionProperty_getAll", _wrap_interactionProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"interactionProperty_set", _wrap_interactionProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102320,8 +111311,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"interactionProperty_remove", _wrap_interactionProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"interactionProperty_clear", _wrap_interactionProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"interactionProperty_remove", _wrap_interactionProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"interactionProperty_clear", _wrap_interactionProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"interactionProperty_write", _wrap_interactionProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102352,17 +111349,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedInteraction_get", _wrap_ownedInteraction_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedInteraction_add", _wrap_ownedInteraction_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102374,13 +111360,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedInteraction_getObjects", _wrap_ownedInteraction_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedInteraction_remove", _wrap_ownedInteraction_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedInteraction_clear", _wrap_ownedInteraction_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedInteraction_get", _wrap_ownedInteraction_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_getObjects", _wrap_ownedInteraction_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_remove", _wrap_ownedInteraction_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_clear", _wrap_ownedInteraction_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedInteraction_create", _wrap_ownedInteraction_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedInteraction_begin", _wrap_ownedInteraction_begin, METH_VARARGS, (char *)"\n"
@@ -102416,18 +111473,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedInteraction_getRange", _wrap_ownedInteraction_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedInteraction_createRange", _wrap_ownedInteraction_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_addCut", _wrap_ownedInteraction_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_getCut", _wrap_ownedInteraction_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_createCut", _wrap_ownedInteraction_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_addGenericLocation", _wrap_ownedInteraction_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_getGenericLocation", _wrap_ownedInteraction_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedInteraction_createGenericLocation", _wrap_ownedInteraction_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedInteraction", _wrap_delete_ownedInteraction, METH_VARARGS, NULL},
@@ -102454,18 +111675,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"functionalComponentProperty_get", _wrap_functionalComponentProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"functionalComponentProperty_getAll", _wrap_functionalComponentProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"functionalComponentProperty_getAll", _wrap_functionalComponentProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"functionalComponentProperty_set", _wrap_functionalComponentProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102489,8 +111702,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"functionalComponentProperty_remove", _wrap_functionalComponentProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"functionalComponentProperty_clear", _wrap_functionalComponentProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"functionalComponentProperty_remove", _wrap_functionalComponentProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"functionalComponentProperty_clear", _wrap_functionalComponentProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"functionalComponentProperty_write", _wrap_functionalComponentProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102521,17 +111740,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedFunctionalComponent_get", _wrap_ownedFunctionalComponent_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedFunctionalComponent_add", _wrap_ownedFunctionalComponent_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102543,13 +111751,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedFunctionalComponent_getObjects", _wrap_ownedFunctionalComponent_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedFunctionalComponent_remove", _wrap_ownedFunctionalComponent_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedFunctionalComponent_clear", _wrap_ownedFunctionalComponent_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedFunctionalComponent_get", _wrap_ownedFunctionalComponent_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_getObjects", _wrap_ownedFunctionalComponent_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_remove", _wrap_ownedFunctionalComponent_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_clear", _wrap_ownedFunctionalComponent_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedFunctionalComponent_create", _wrap_ownedFunctionalComponent_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedFunctionalComponent_begin", _wrap_ownedFunctionalComponent_begin, METH_VARARGS, (char *)"\n"
@@ -102585,18 +111864,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedFunctionalComponent_getRange", _wrap_ownedFunctionalComponent_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedFunctionalComponent_createRange", _wrap_ownedFunctionalComponent_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_addCut", _wrap_ownedFunctionalComponent_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_getCut", _wrap_ownedFunctionalComponent_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_createCut", _wrap_ownedFunctionalComponent_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_addGenericLocation", _wrap_ownedFunctionalComponent_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_getGenericLocation", _wrap_ownedFunctionalComponent_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedFunctionalComponent_createGenericLocation", _wrap_ownedFunctionalComponent_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedFunctionalComponent", _wrap_delete_ownedFunctionalComponent, METH_VARARGS, NULL},
@@ -102617,24 +112060,71 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ModuleDefinition_functionalComponents_get", _wrap_ModuleDefinition_functionalComponents_get, METH_VARARGS, NULL},
 	 { (char *)"ModuleDefinition_models_set", _wrap_ModuleDefinition_models_set, METH_VARARGS, NULL},
 	 { (char *)"ModuleDefinition_models_get", _wrap_ModuleDefinition_models_get, METH_VARARGS, NULL},
-	 { (char *)"new_ModuleDefinition", _wrap_new_ModuleDefinition, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
 	 { (char *)"ModuleDefinition_setOutput", _wrap_ModuleDefinition_setOutput, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Defines an output for a system module.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `output` :  \n"
+		"    A ComponentDefinition that defines the output  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A FunctionalComponent that is derived from the argument ComponentDefinition and\n"
+		"configured as this ModuleDefinition's output (it's direction property is set to\n"
+		"SBOL_DIRECTION_OUT)  \n"
 		"\n"
 		""},
 	 { (char *)"ModuleDefinition_setInput", _wrap_ModuleDefinition_setInput, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Defines an input for a system module.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `input` :  \n"
+		"    A ComponentDefinition that defines the input  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A FunctionalComponent that is derived from the argument ComponentDefinition and\n"
+		"configured as this ModuleDefinition's input (it's direction property is set to\n"
+		"SBOL_DIRECTION_IN)  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ModuleDefinition", _wrap_delete_ModuleDefinition, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
 		""},
+	 { (char *)"new_ModuleDefinition", _wrap_new_ModuleDefinition, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Construct a ModuleDefinition.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    A full URI including a scheme, namespace, and identifier. If SBOLCompliance\n"
+		"    configuration is enabled, then this argument is simply the displayId for the\n"
+		"    new object and a full URI will automatically be constructed.  \n"
+		"* `version` :  \n"
+		"    An arbitrary version string. If SBOLCompliance is enabled, this should be a\n"
+		"    valid Maven version string.  \n"
+		"\n"
+		""},
 	 { (char *)"ModuleDefinition_assemble", _wrap_ModuleDefinition_assemble, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Assemble a high-level ModuleDefinition from lower-level submodules.  \n"
+		"\n"
+		"Autoconstructs Module objects in the process.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `list_of_modules` :  \n"
+		"    A list of pointers to the submodule ModuleDefinitions  \n"
 		"\n"
 		""},
 	 { (char *)"ModuleDefinition_swigregister", ModuleDefinition_swigregister, METH_VARARGS, NULL},
@@ -102654,18 +112144,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"componentDefinitionProperty_get", _wrap_componentDefinitionProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"componentDefinitionProperty_getAll", _wrap_componentDefinitionProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"componentDefinitionProperty_getAll", _wrap_componentDefinitionProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"componentDefinitionProperty_set", _wrap_componentDefinitionProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102689,8 +112171,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"componentDefinitionProperty_remove", _wrap_componentDefinitionProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"componentDefinitionProperty_clear", _wrap_componentDefinitionProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"componentDefinitionProperty_remove", _wrap_componentDefinitionProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"componentDefinitionProperty_clear", _wrap_componentDefinitionProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"componentDefinitionProperty_write", _wrap_componentDefinitionProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102721,17 +112209,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedComponentDefinition_get", _wrap_ownedComponentDefinition_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedComponentDefinition_add", _wrap_ownedComponentDefinition_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102743,13 +112220,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedComponentDefinition_getObjects", _wrap_ownedComponentDefinition_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedComponentDefinition_remove", _wrap_ownedComponentDefinition_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedComponentDefinition_clear", _wrap_ownedComponentDefinition_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedComponentDefinition_get", _wrap_ownedComponentDefinition_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_getObjects", _wrap_ownedComponentDefinition_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_remove", _wrap_ownedComponentDefinition_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_clear", _wrap_ownedComponentDefinition_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedComponentDefinition_create", _wrap_ownedComponentDefinition_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedComponentDefinition_begin", _wrap_ownedComponentDefinition_begin, METH_VARARGS, (char *)"\n"
@@ -102785,18 +112333,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedComponentDefinition_getRange", _wrap_ownedComponentDefinition_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedComponentDefinition_createRange", _wrap_ownedComponentDefinition_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_addCut", _wrap_ownedComponentDefinition_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_getCut", _wrap_ownedComponentDefinition_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_createCut", _wrap_ownedComponentDefinition_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_addGenericLocation", _wrap_ownedComponentDefinition_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_getGenericLocation", _wrap_ownedComponentDefinition_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedComponentDefinition_createGenericLocation", _wrap_ownedComponentDefinition_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedComponentDefinition", _wrap_delete_ownedComponentDefinition, METH_VARARGS, NULL},
@@ -102823,18 +112535,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"moduleDefinitionProperty_get", _wrap_moduleDefinitionProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"moduleDefinitionProperty_getAll", _wrap_moduleDefinitionProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"moduleDefinitionProperty_getAll", _wrap_moduleDefinitionProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"moduleDefinitionProperty_set", _wrap_moduleDefinitionProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102858,8 +112562,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"moduleDefinitionProperty_remove", _wrap_moduleDefinitionProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"moduleDefinitionProperty_clear", _wrap_moduleDefinitionProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"moduleDefinitionProperty_remove", _wrap_moduleDefinitionProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"moduleDefinitionProperty_clear", _wrap_moduleDefinitionProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"moduleDefinitionProperty_write", _wrap_moduleDefinitionProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102890,17 +112600,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModuleDefinition_get", _wrap_ownedModuleDefinition_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedModuleDefinition_add", _wrap_ownedModuleDefinition_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -102912,13 +112611,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModuleDefinition_getObjects", _wrap_ownedModuleDefinition_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedModuleDefinition_remove", _wrap_ownedModuleDefinition_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedModuleDefinition_clear", _wrap_ownedModuleDefinition_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedModuleDefinition_get", _wrap_ownedModuleDefinition_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_getObjects", _wrap_ownedModuleDefinition_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_remove", _wrap_ownedModuleDefinition_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_clear", _wrap_ownedModuleDefinition_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedModuleDefinition_create", _wrap_ownedModuleDefinition_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModuleDefinition_begin", _wrap_ownedModuleDefinition_begin, METH_VARARGS, (char *)"\n"
@@ -102954,18 +112724,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedModuleDefinition_getRange", _wrap_ownedModuleDefinition_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModuleDefinition_createRange", _wrap_ownedModuleDefinition_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_addCut", _wrap_ownedModuleDefinition_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_getCut", _wrap_ownedModuleDefinition_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_createCut", _wrap_ownedModuleDefinition_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_addGenericLocation", _wrap_ownedModuleDefinition_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_getGenericLocation", _wrap_ownedModuleDefinition_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModuleDefinition_createGenericLocation", _wrap_ownedModuleDefinition_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedModuleDefinition", _wrap_delete_ownedModuleDefinition, METH_VARARGS, NULL},
@@ -102992,18 +112926,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"sequenceProperty_get", _wrap_sequenceProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"sequenceProperty_getAll", _wrap_sequenceProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceProperty_getAll", _wrap_sequenceProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"sequenceProperty_set", _wrap_sequenceProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103027,8 +112953,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"sequenceProperty_remove", _wrap_sequenceProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"sequenceProperty_clear", _wrap_sequenceProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"sequenceProperty_remove", _wrap_sequenceProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"sequenceProperty_clear", _wrap_sequenceProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"sequenceProperty_write", _wrap_sequenceProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103059,17 +112991,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequence_get", _wrap_ownedSequence_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedSequence_add", _wrap_ownedSequence_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103081,13 +113002,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedSequence_getObjects", _wrap_ownedSequence_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedSequence_remove", _wrap_ownedSequence_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedSequence_clear", _wrap_ownedSequence_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedSequence_get", _wrap_ownedSequence_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_getObjects", _wrap_ownedSequence_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_remove", _wrap_ownedSequence_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_clear", _wrap_ownedSequence_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedSequence_create", _wrap_ownedSequence_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequence_begin", _wrap_ownedSequence_begin, METH_VARARGS, (char *)"\n"
@@ -103123,18 +113115,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedSequence_getRange", _wrap_ownedSequence_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedSequence_createRange", _wrap_ownedSequence_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_addCut", _wrap_ownedSequence_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_getCut", _wrap_ownedSequence_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_createCut", _wrap_ownedSequence_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_addGenericLocation", _wrap_ownedSequence_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_getGenericLocation", _wrap_ownedSequence_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedSequence_createGenericLocation", _wrap_ownedSequence_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedSequence", _wrap_delete_ownedSequence, METH_VARARGS, NULL},
@@ -103161,18 +113317,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"modelProperty_get", _wrap_modelProperty_get, METH_VARARGS, (char *)"\n"
+	 { (char *)"modelProperty_getAll", _wrap_modelProperty_getAll, METH_VARARGS, (char *)"\n"
 		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
 		"\n"
 		""},
-	 { (char *)"modelProperty_getAll", _wrap_modelProperty_getAll, METH_VARARGS, NULL},
 	 { (char *)"modelProperty_set", _wrap_modelProperty_set, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103196,8 +113344,14 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"modelProperty_remove", _wrap_modelProperty_remove, METH_VARARGS, NULL},
-	 { (char *)"modelProperty_clear", _wrap_modelProperty_clear, METH_VARARGS, NULL},
+	 { (char *)"modelProperty_remove", _wrap_modelProperty_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
+	 { (char *)"modelProperty_clear", _wrap_modelProperty_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		""},
 	 { (char *)"modelProperty_write", _wrap_modelProperty_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103228,17 +113382,6 @@ static PyMethodDef SwigMethods[] = {
 		"    during serialization.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModel_get", _wrap_ownedModel_get, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
-		"\n"
-		"Returns\n"
-		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
-		"\n"
-		""},
 	 { (char *)"ownedModel_add", _wrap_ownedModel_add, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103250,13 +113393,84 @@ static PyMethodDef SwigMethods[] = {
 		"    A new string which will be added to a list of values.  \n"
 		"\n"
 		""},
-	 { (char *)"ownedModel_getObjects", _wrap_ownedModel_getObjects, METH_VARARGS, NULL},
-	 { (char *)"ownedModel_remove", _wrap_ownedModel_remove, METH_VARARGS, NULL},
-	 { (char *)"ownedModel_clear", _wrap_ownedModel_clear, METH_VARARGS, NULL},
+	 { (char *)"ownedModel_get", _wrap_ownedModel_get, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_getObjects", _wrap_ownedModel_getObjects, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get all the objects contained in the property.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of pointers to the objects  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_remove", _wrap_ownedModel_remove, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove an object from the list of objects and destroy it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `index` :  \n"
+		"    A numerical index for the object.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_clear", _wrap_ownedModel_clear, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Remove all children objects from the parent and destroy them.  \n"
+		"\n"
+		""},
 	 { (char *)"ownedModel_create", _wrap_ownedModel_create, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModel_begin", _wrap_ownedModel_begin, METH_VARARGS, (char *)"\n"
@@ -103292,18 +113506,182 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ownedModel_getRange", _wrap_ownedModel_getRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Basic getter for all SBOL literal properties.  \n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
 		"\n"
 		"Returns\n"
 		"-------\n"
-		"All properties are initially read from an SBOL file as a raw string containing\n"
-		"the property value.  \n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
 		"\n"
 		""},
 	 { (char *)"ownedModel_createRange", _wrap_ownedModel_createRange, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Deprecate this  \n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_addCut", _wrap_ownedModel_addCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_getCut", _wrap_ownedModel_getCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_createCut", _wrap_ownedModel_createCut, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_addGenericLocation", _wrap_ownedModel_addGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Appends the new value to a list of values, for properties that allow it.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `new_value` :  \n"
+		"    A new string which will be added to a list of values.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_getGenericLocation", _wrap_ownedModel_getGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Get the child object.  \n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of the child object  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this type specialization when adding\n"
+		"    multiple types of SBOLObjects to a container.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The specific URI for a child object if this OwnedObject property contains\n"
+		"    multiple objects,  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Returns a child object from the OwnedObject\n"
+		"property. If no URI is specified, the first object in this OwnedObject property\n"
+		"is returned.  \n"
+		"\n"
+		""},
+	 { (char *)"ownedModel_createGenericLocation", _wrap_ownedModel_createGenericLocation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"templateparam\n"
+		"-------------\n"
+		"* `SBOLClass` :  \n"
+		"    The type of SBOL object contained in this OwnedObject property  \n"
+		"* `SBOLSubClass` :  \n"
+		"    A derived class of SBOLClass. Use this specialization for OwnedObject\n"
+		"    properties which contain multiple types of SBOLObjects.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    If SBOLCompliance is enabled, this should be the displayId for the new child\n"
+		"    object. If not enabled, this should be a full raw URI.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A reference to the child object Autoconstructs a child object and attaches it to\n"
+		"the parent object. The new object will be constructed with default values\n"
+		"specified in the constructor for this type of object. If SBOLCompliance is\n"
+		"enabled, the child object's identity will be constructed using the supplied\n"
+		"displayId argument. Otherwise, the user should supply a full URI.  check\n"
+		"uniqueness of URI in Document  \n"
 		"\n"
 		""},
 	 { (char *)"delete_ownedModel", _wrap_delete_ownedModel, METH_VARARGS, NULL},
@@ -103314,10 +113692,6 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"delete_listOfOwnedModels", _wrap_delete_listOfOwnedModels, METH_VARARGS, NULL},
 	 { (char *)"listOfOwnedModels_swigregister", listOfOwnedModels_swigregister, METH_VARARGS, NULL},
-	 { (char *)"raptor_error_handler", _wrap_raptor_error_handler, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
 	 { (char *)"new_Document", _wrap_new_Document, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103327,6 +113701,8 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"Document_SBOLObjects_set", _wrap_Document_SBOLObjects_set, METH_VARARGS, NULL},
 	 { (char *)"Document_SBOLObjects_get", _wrap_Document_SBOLObjects_get, METH_VARARGS, NULL},
+	 { (char *)"Document_getTopLevel", _wrap_Document_getTopLevel, METH_VARARGS, NULL},
+	 { (char *)"Document_getWorld", _wrap_Document_getWorld, METH_VARARGS, NULL},
 	 { (char *)"Document_componentDefinitions_set", _wrap_Document_componentDefinitions_set, METH_VARARGS, NULL},
 	 { (char *)"Document_componentDefinitions_get", _wrap_Document_componentDefinitions_get, METH_VARARGS, NULL},
 	 { (char *)"Document_moduleDefinitions_set", _wrap_Document_moduleDefinitions_set, METH_VARARGS, NULL},
@@ -103337,14 +113713,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Document_sequences_get", _wrap_Document_sequences_get, METH_VARARGS, NULL},
 	 { (char *)"Document_sequenceAnnotations_set", _wrap_Document_sequenceAnnotations_set, METH_VARARGS, NULL},
 	 { (char *)"Document_sequenceAnnotations_get", _wrap_Document_sequenceAnnotations_get, METH_VARARGS, NULL},
-	 { (char *)"Document_getTopLevel", _wrap_Document_getTopLevel, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"Document_getWorld", _wrap_Document_getWorld, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
 	 { (char *)"Document_write", _wrap_Document_write, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
@@ -103354,6 +113722,10 @@ static PyMethodDef SwigMethods[] = {
 		"----------\n"
 		"* `filename` :  \n"
 		"    The full name of the file you want to write (including file extension)  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A string with the validation results, or empty string if validation is disabled  \n"
 		"\n"
 		""},
 	 { (char *)"Document_read", _wrap_Document_read, METH_VARARGS, (char *)"\n"
@@ -103382,20 +113754,93 @@ static PyMethodDef SwigMethods[] = {
 		"    The full name of the file you want to read (including file extension)  \n"
 		"\n"
 		""},
-	 { (char *)"Document_request_validation", _wrap_Document_request_validation, METH_VARARGS, NULL},
+	 { (char *)"Document_request_validation", _wrap_Document_request_validation, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Submit this Document to the online validator.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"The validation results  \n"
+		"\n"
+		""},
+	 { (char *)"Document_generate", _wrap_Document_generate, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Generates rdf/xml.  \n"
+		"\n"
+		"author: KC generates rdf/xml  \n"
+		"\n"
+		""},
 	 { (char *)"Document_validate", _wrap_Document_validate, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
-		"Run validation rules on this Document. Validation rules are called automatically\n"
-		"during parsing and serialization.  \n"
+		"Run validation on this Document.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"The validation results  \n"
+		"\n"
+		"author: KC  \n"
 		"\n"
 		""},
 	 { (char *)"Document_find", _wrap_Document_find, METH_VARARGS, (char *)"\n"
 		"\n"
 		"\n"
+		"Search recursively for an SBOLObject in this Document that matches the uri.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The identity of the object to search for  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A pointer to the SBOLObject, or NULL if an object with this identity doesn't\n"
+		"exist  \n"
+		"\n"
+		""},
+	 { (char *)"Document_parse_annotation_objects", _wrap_Document_parse_annotation_objects, METH_VARARGS, NULL},
+	 { (char *)"Document_find_property", _wrap_Document_find_property, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Search this object recursively to see if it contains a member property with the\n"
+		"given RDF type.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `uri` :  \n"
+		"    The RDF type of the property to search for.  \n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A pointer to the object that contains a member property with the specified RDF\n"
+		"type, NULL otherwise  \n"
+		"\n"
+		""},
+	 { (char *)"Document_find_reference", _wrap_Document_find_reference, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
 		""},
 	 { (char *)"Document_getNamespaces", _wrap_Document_getNamespaces, METH_VARARGS, (char *)"\n"
 		"\n"
+		"\n"
+		"Returns\n"
+		"-------\n"
+		"A vector of namespaces Get namespaces contained in this Document  \n"
+		"\n"
+		""},
+	 { (char *)"Document_addNamespace", _wrap_Document_addNamespace, METH_VARARGS, (char *)"\n"
+		"\n"
+		"\n"
+		"Add a new namespace to this Document.  \n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"* `ns` :  \n"
+		"    The namespace, eg. http://sbols.org/v2#  \n"
+		"* `prefix` :  \n"
+		"    The namespace prefix, eg. sbol  \n"
 		"\n"
 		""},
 	 { (char *)"Document_addModel", _wrap_Document_addModel, METH_VARARGS, (char *)"\n"
@@ -103528,70 +113973,24 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"delete_Document", _wrap_delete_Document, METH_VARARGS, NULL},
 	 { (char *)"Document_swigregister", Document_swigregister, METH_VARARGS, NULL},
-	 { (char *)"cut_sbol_resource", _wrap_cut_sbol_resource, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"replace_reference_to_resource", _wrap_replace_reference_to_resource, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_element", _wrap_seek_element, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_property_element", _wrap_seek_property_element, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_next_element", _wrap_seek_next_element, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_new_line", _wrap_seek_new_line, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_end_of_line", _wrap_seek_end_of_line, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_end_of_element", _wrap_seek_end_of_element, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_end_of_node", _wrap_seek_end_of_node, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"seek_resource", _wrap_seek_resource, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"is_open_node", _wrap_is_open_node, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"indent", _wrap_indent, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"get_qname", _wrap_get_qname, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"get_local_part", _wrap_get_local_part, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"get_prefix", _wrap_get_prefix, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
-	 { (char *)"parse_element", _wrap_parse_element, METH_VARARGS, (char *)"\n"
-		"\n"
-		"\n"
-		""},
+	 { (char *)"raptor_error_handler", _wrap_raptor_error_handler, METH_VARARGS, NULL},
+	 { (char *)"convert_ntriples_encoding_to_ascii", _wrap_convert_ntriples_encoding_to_ascii, METH_VARARGS, NULL},
+	 { (char *)"cut_sbol_resource", _wrap_cut_sbol_resource, METH_VARARGS, NULL},
+	 { (char *)"replace_reference_to_resource", _wrap_replace_reference_to_resource, METH_VARARGS, NULL},
+	 { (char *)"seek_element", _wrap_seek_element, METH_VARARGS, NULL},
+	 { (char *)"seek_property_element", _wrap_seek_property_element, METH_VARARGS, NULL},
+	 { (char *)"seek_next_element", _wrap_seek_next_element, METH_VARARGS, NULL},
+	 { (char *)"seek_new_line", _wrap_seek_new_line, METH_VARARGS, NULL},
+	 { (char *)"seek_end_of_line", _wrap_seek_end_of_line, METH_VARARGS, NULL},
+	 { (char *)"seek_end_of_element", _wrap_seek_end_of_element, METH_VARARGS, NULL},
+	 { (char *)"seek_end_of_node", _wrap_seek_end_of_node, METH_VARARGS, NULL},
+	 { (char *)"seek_resource", _wrap_seek_resource, METH_VARARGS, NULL},
+	 { (char *)"is_open_node", _wrap_is_open_node, METH_VARARGS, NULL},
+	 { (char *)"indent", _wrap_indent, METH_VARARGS, NULL},
+	 { (char *)"get_qname", _wrap_get_qname, METH_VARARGS, NULL},
+	 { (char *)"get_local_part", _wrap_get_local_part, METH_VARARGS, NULL},
+	 { (char *)"get_prefix", _wrap_get_prefix, METH_VARARGS, NULL},
+	 { (char *)"parse_element", _wrap_parse_element, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -103631,8 +114030,14 @@ static void *_p_sbol__ComponentDefinitionTo_p_sbol__TopLevel(void *x, int *SWIGU
 static void *_p_sbol__ModuleDefinitionTo_p_sbol__TopLevel(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::TopLevel *)  ((sbol::ModuleDefinition *) x));
 }
+static void *_p_sbol__CollectionTo_p_sbol__TopLevel(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::TopLevel *)  ((sbol::Collection *) x));
+}
 static void *_p_sbol__RangeTo_p_sbol__Location(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Location *)  ((sbol::Range *) x));
+}
+static void *_p_sbol__GenericLocationTo_p_sbol__Location(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::Location *)  ((sbol::GenericLocation *) x));
 }
 static void *_p_sbol__CutTo_p_sbol__Location(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Location *)  ((sbol::Cut *) x));
@@ -103712,11 +114117,17 @@ static void *_p_sbol__RangeTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(ne
 static void *_p_sbol__ModelTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *)(sbol::TopLevel *) ((sbol::Model *) x));
 }
+static void *_p_sbol__CollectionTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::SBOLObject *) (sbol::Identified *)(sbol::TopLevel *) ((sbol::Collection *) x));
+}
 static void *_p_sbol__TopLevelTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::TopLevel *) x));
 }
 static void *_p_sbol__SequenceAnnotationTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::SequenceAnnotation *) x));
+}
+static void *_p_sbol__GenericLocationTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::SBOLObject *) (sbol::Identified *)(sbol::Location *) ((sbol::GenericLocation *) x));
 }
 static void *_p_sbol__LocationTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::Location *) x));
@@ -103739,11 +114150,11 @@ static void *_p_sbol__InteractionTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDP
 static void *_p_sbol__IdentifiedTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *)  ((sbol::Identified *) x));
 }
-static void *_p_sbol__ParticipationTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::Participation *) x));
-}
 static void *_p_sbol__ComponentInstanceTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::ComponentInstance *) x));
+}
+static void *_p_sbol__ParticipationTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::Participation *) x));
 }
 static void *_p_sbol__ModuleTo_p_sbol__SBOLObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::SBOLObject *) (sbol::Identified *) ((sbol::Module *) x));
@@ -103811,11 +114222,17 @@ static void *_p_sbol__RangeTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(ne
 static void *_p_sbol__ModelTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *) (sbol::TopLevel *) ((sbol::Model *) x));
 }
+static void *_p_sbol__CollectionTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::Identified *) (sbol::TopLevel *) ((sbol::Collection *) x));
+}
 static void *_p_sbol__TopLevelTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *)  ((sbol::TopLevel *) x));
 }
 static void *_p_sbol__SequenceAnnotationTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *)  ((sbol::SequenceAnnotation *) x));
+}
+static void *_p_sbol__GenericLocationTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::Identified *) (sbol::Location *) ((sbol::GenericLocation *) x));
 }
 static void *_p_sbol__LocationTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *)  ((sbol::Location *) x));
@@ -103829,11 +114246,11 @@ static void *_p_sbol__ComponentTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPAR
 static void *_p_sbol__CutTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *) (sbol::Location *) ((sbol::Cut *) x));
 }
-static void *_p_sbol__InteractionTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((sbol::Identified *)  ((sbol::Interaction *) x));
-}
 static void *_p_sbol__SequenceConstraintTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *)  ((sbol::SequenceConstraint *) x));
+}
+static void *_p_sbol__InteractionTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((sbol::Identified *)  ((sbol::Interaction *) x));
 }
 static void *_p_sbol__ParticipationTo_p_sbol__Identified(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((sbol::Identified *)  ((sbol::Participation *) x));
@@ -103878,12 +114295,20 @@ static swig_type_info _swigt__p_allocator_type = {"_p_allocator_type", "allocato
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_const_reference = {"_p_const_reference", "const_reference *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_sbol__ComponentDefinition_p_void__void = {"_p_f_p_sbol__ComponentDefinition_p_void__void", "void (*)(sbol::ComponentDefinition *,void *)", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_key_type = {"_p_key_type", "key_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_mapped_type = {"_p_mapped_type", "mapped_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_raptor_iostream = {"_p_p_raptor_iostream", "raptor_iostream **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_raptor_serializer = {"_p_p_raptor_serializer", "raptor_serializer **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_raptor_uri = {"_p_p_raptor_uri", "raptor_uri **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_raptor_world = {"_p_p_raptor_world", "raptor_world **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_raptor_log_message = {"_p_raptor_log_message", "raptor_log_message *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_raptor_serializer = {"_p_raptor_serializer", "raptor_serializer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_raptor_world = {"_p_raptor_world", "raptor_world *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_reference = {"_p_reference", "reference *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sbol__Collection = {"_p_sbol__Collection", "sbol::Collection *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__Component = {"_p_sbol__Component", "std::vector< sbol::Component >::value_type *|sbol::Component *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__ComponentDefinition = {"_p_sbol__ComponentDefinition", "sbol::ComponentDefinition *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__ComponentInstance = {"_p_sbol__ComponentInstance", "sbol::ComponentInstance *", 0, 0, (void*)0, 0};
@@ -103891,6 +114316,7 @@ static swig_type_info _swigt__p_sbol__Config = {"_p_sbol__Config", "sbol::Config
 static swig_type_info _swigt__p_sbol__Cut = {"_p_sbol__Cut", "sbol::Cut *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__Document = {"_p_sbol__Document", "sbol::Document *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__FunctionalComponent = {"_p_sbol__FunctionalComponent", "sbol::FunctionalComponent *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sbol__GenericLocation = {"_p_sbol__GenericLocation", "sbol::GenericLocation *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__Identified = {"_p_sbol__Identified", "sbol::Identified *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__IntProperty = {"_p_sbol__IntProperty", "sbol::IntProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__Interaction = {"_p_sbol__Interaction", "sbol::Interaction *", 0, 0, (void*)0, 0};
@@ -103967,6 +114393,7 @@ static swig_type_info _swigt__p_sbol__TopLevel = {"_p_sbol__TopLevel", "sbol::To
 static swig_type_info _swigt__p_sbol__URIProperty = {"_p_sbol__URIProperty", "sbol::URIProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__VersionProperty = {"_p_sbol__VersionProperty", "sbol::VersionProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sbol__mapsTo = {"_p_sbol__mapsTo", "sbol::mapsTo *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_size_t = {"_p_size_t", "size_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_int_t = {"_p_std__allocatorT_int_t", "std::vector< int >::allocator_type *|std::allocator< int > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_sbol__Component_t = {"_p_std__allocatorT_sbol__Component_t", "std::vector< sbol::Component >::allocator_type *|std::allocator< sbol::Component > *", 0, 0, (void*)0, 0};
@@ -103985,6 +114412,7 @@ static swig_type_info _swigt__p_std__lessT_std__string_t = {"_p_std__lessT_std__
 static swig_type_info _swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t = {"_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t", "std::map< std::string,std::string > *|std::map< std::string,std::string,std::less< std::string >,std::allocator< std::pair< std::string const,std::string > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t = {"_p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t", "std::map< std::string,std::vector< sbol::SBOLObject * > > *|std::map< std::string,std::vector< sbol::SBOLObject *,std::allocator< sbol::SBOLObject * > >,std::less< std::string >,std::allocator< std::pair< std::string const,std::vector< sbol::SBOLObject *,std::allocator< sbol::SBOLObject * > > > > > *|std::map< std::string,std::vector< sbol::SBOLObject *,std::allocator< sbol::SBOLObject * > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t = {"_p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t", "std::map< std::string,std::vector< std::string > > *|std::map< std::string,std::vector< std::string,std::allocator< std::string > > > *|std::map< std::string,std::vector< std::string,std::allocator< std::string > >,std::less< std::string >,std::allocator< std::pair< std::string const,std::vector< std::string,std::allocator< std::string > > > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t = {"_p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t", "std::map< sbol::sbol_type,std::vector< void *,std::allocator< void * > >,std::less< sbol::sbol_type >,std::allocator< std::pair< sbol::sbol_type const,std::vector< void *,std::allocator< void * > > > > > *|std::map< std::string,std::vector< void *,std::allocator< void * > >,std::less< std::string >,std::allocator< std::pair< std::string const,std::vector< void *,std::allocator< void * > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t = {"_p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t", "std::pair< std::vector< std::string,std::allocator< std::string > >,std::vector< std::string,std::allocator< std::string > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__string = {"_p_std__string", "sbol::sbol_type *|std::string *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t = {"_p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t", "std::unordered_map< std::string,sbol::SBOLObject &(*)() > *", 0, 0, (void*)0, 0};
@@ -104009,18 +114437,27 @@ static swig_type_info _swigt__p_std__vectorT_std__string_std__allocatorT_std__st
 static swig_type_info _swigt__p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t = {"_p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t", "std::vector< void (*)(void *,void *),std::allocator< void (*)(void *,void *) > > *|ValidationRules *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_allocator_type,
   &_swigt__p_char,
   &_swigt__p_const_reference,
   &_swigt__p_difference_type,
+  &_swigt__p_f_p_sbol__ComponentDefinition_p_void__void,
   &_swigt__p_key_type,
   &_swigt__p_mapped_type,
   &_swigt__p_p_PyObject,
+  &_swigt__p_p_char,
+  &_swigt__p_p_raptor_iostream,
+  &_swigt__p_p_raptor_serializer,
+  &_swigt__p_p_raptor_uri,
+  &_swigt__p_p_raptor_world,
   &_swigt__p_raptor_log_message,
+  &_swigt__p_raptor_serializer,
   &_swigt__p_raptor_world,
   &_swigt__p_reference,
+  &_swigt__p_sbol__Collection,
   &_swigt__p_sbol__Component,
   &_swigt__p_sbol__ComponentDefinition,
   &_swigt__p_sbol__ComponentInstance,
@@ -104028,6 +114465,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_sbol__Cut,
   &_swigt__p_sbol__Document,
   &_swigt__p_sbol__FunctionalComponent,
+  &_swigt__p_sbol__GenericLocation,
   &_swigt__p_sbol__Identified,
   &_swigt__p_sbol__IntProperty,
   &_swigt__p_sbol__Interaction,
@@ -104104,6 +114542,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_sbol__URIProperty,
   &_swigt__p_sbol__VersionProperty,
   &_swigt__p_sbol__mapsTo,
+  &_swigt__p_size_t,
   &_swigt__p_size_type,
   &_swigt__p_std__allocatorT_int_t,
   &_swigt__p_std__allocatorT_sbol__Component_t,
@@ -104122,6 +114561,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t,
   &_swigt__p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t,
   &_swigt__p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t,
+  &_swigt__p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t,
   &_swigt__p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t,
   &_swigt__p_std__string,
   &_swigt__p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,
@@ -104146,18 +114586,27 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t,
   &_swigt__p_swig__SwigPyIterator,
   &_swigt__p_value_type,
+  &_swigt__p_void,
 };
 
 static swig_cast_info _swigc__p_allocator_type[] = {  {&_swigt__p_allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_const_reference[] = {  {&_swigt__p_const_reference, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_sbol__ComponentDefinition_p_void__void[] = {  {&_swigt__p_f_p_sbol__ComponentDefinition_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_key_type[] = {  {&_swigt__p_key_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_mapped_type[] = {  {&_swigt__p_mapped_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_raptor_iostream[] = {  {&_swigt__p_p_raptor_iostream, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_raptor_serializer[] = {  {&_swigt__p_p_raptor_serializer, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_raptor_uri[] = {  {&_swigt__p_p_raptor_uri, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_raptor_world[] = {  {&_swigt__p_p_raptor_world, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_raptor_log_message[] = {  {&_swigt__p_raptor_log_message, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_raptor_serializer[] = {  {&_swigt__p_raptor_serializer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_raptor_world[] = {  {&_swigt__p_raptor_world, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_reference[] = {  {&_swigt__p_reference, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__Collection[] = {  {&_swigt__p_sbol__Collection, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Component[] = {  {&_swigt__p_sbol__Component, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ComponentDefinition[] = {  {&_swigt__p_sbol__ComponentDefinition, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ComponentInstance[] = {  {&_swigt__p_sbol__Component, _p_sbol__ComponentTo_p_sbol__ComponentInstance, 0, 0},  {&_swigt__p_sbol__FunctionalComponent, _p_sbol__FunctionalComponentTo_p_sbol__ComponentInstance, 0, 0},  {&_swigt__p_sbol__ComponentInstance, 0, 0, 0},{0, 0, 0, 0}};
@@ -104165,7 +114614,8 @@ static swig_cast_info _swigc__p_sbol__Config[] = {  {&_swigt__p_sbol__Config, 0,
 static swig_cast_info _swigc__p_sbol__Cut[] = {  {&_swigt__p_sbol__Cut, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Document[] = {  {&_swigt__p_sbol__Document, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__FunctionalComponent[] = {  {&_swigt__p_sbol__FunctionalComponent, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_sbol__Identified[] = {  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__TopLevel, _p_sbol__TopLevelTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__SequenceAnnotation, _p_sbol__SequenceAnnotationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Location, _p_sbol__LocationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__FunctionalComponent, _p_sbol__FunctionalComponentTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Component, _p_sbol__ComponentTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Module, _p_sbol__ModuleTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Interaction, _p_sbol__InteractionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__SequenceConstraint, _p_sbol__SequenceConstraintTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__MapsTo, _p_sbol__MapsToTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Identified, 0, 0, 0},  {&_swigt__p_sbol__Participation, _p_sbol__ParticipationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__ComponentInstance, _p_sbol__ComponentInstanceTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__Identified, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__GenericLocation[] = {  {&_swigt__p_sbol__GenericLocation, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__Identified[] = {  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Collection, _p_sbol__CollectionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__TopLevel, _p_sbol__TopLevelTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__SequenceAnnotation, _p_sbol__SequenceAnnotationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__GenericLocation, _p_sbol__GenericLocationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Location, _p_sbol__LocationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__FunctionalComponent, _p_sbol__FunctionalComponentTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Component, _p_sbol__ComponentTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Module, _p_sbol__ModuleTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__SequenceConstraint, _p_sbol__SequenceConstraintTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Interaction, _p_sbol__InteractionTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__MapsTo, _p_sbol__MapsToTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Identified, 0, 0, 0},  {&_swigt__p_sbol__Participation, _p_sbol__ParticipationTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__ComponentInstance, _p_sbol__ComponentInstanceTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__Identified, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__Identified, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__IntProperty[] = {  {&_swigt__p_sbol__IntProperty, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Interaction[] = {  {&_swigt__p_sbol__Interaction, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ListT_sbol__OwnedObjectT_sbol__ComponentDefinition_t_t[] = {  {&_swigt__p_sbol__ListT_sbol__OwnedObjectT_sbol__ComponentDefinition_t_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -104182,7 +114632,7 @@ static swig_cast_info _swigc__p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceAnn
 static swig_cast_info _swigc__p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceConstraint_t_t[] = {  {&_swigt__p_sbol__ListT_sbol__OwnedObjectT_sbol__SequenceConstraint_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ListT_sbol__OwnedObjectT_sbol__Sequence_t_t[] = {  {&_swigt__p_sbol__ListT_sbol__OwnedObjectT_sbol__Sequence_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ListT_sbol__URIProperty_t[] = {  {&_swigt__p_sbol__ListT_sbol__URIProperty_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_sbol__Location[] = {  {&_swigt__p_sbol__Location, 0, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__Location, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__Location, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__Location[] = {  {&_swigt__p_sbol__Location, 0, 0, 0},  {&_swigt__p_sbol__GenericLocation, _p_sbol__GenericLocationTo_p_sbol__Location, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__Location, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__Location, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__MapsTo[] = {  {&_swigt__p_sbol__MapsTo, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Model[] = {  {&_swigt__p_sbol__Model, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Module[] = {  {&_swigt__p_sbol__Module, 0, 0, 0},{0, 0, 0, 0}};
@@ -104232,15 +114682,16 @@ static swig_cast_info _swigc__p_sbol__PropertyT_std__string_t[] = {  {&_swigt__p
 static swig_cast_info _swigc__p_sbol__Range[] = {  {&_swigt__p_sbol__Range, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ReferencedObject[] = {  {&_swigt__p_sbol__ReferencedObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__ReferencedObject__iterator[] = {  {&_swigt__p_sbol__ReferencedObject__iterator, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_sbol__SBOLObject[] = {  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SBOLObject, 0, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__TopLevel, _p_sbol__TopLevelTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SequenceAnnotation, _p_sbol__SequenceAnnotationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Location, _p_sbol__LocationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__FunctionalComponent, _p_sbol__FunctionalComponentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Component, _p_sbol__ComponentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Module, _p_sbol__ModuleTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Interaction, _p_sbol__InteractionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SequenceConstraint, _p_sbol__SequenceConstraintTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__MapsTo, _p_sbol__MapsToTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Identified, _p_sbol__IdentifiedTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Participation, _p_sbol__ParticipationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__ComponentInstance, _p_sbol__ComponentInstanceTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Document, _p_sbol__DocumentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__SBOLObject, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__SBOLObject[] = {  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Collection, _p_sbol__CollectionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SBOLObject, 0, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__TopLevel, _p_sbol__TopLevelTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Range, _p_sbol__RangeTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SequenceAnnotation, _p_sbol__SequenceAnnotationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__GenericLocation, _p_sbol__GenericLocationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Location, _p_sbol__LocationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__FunctionalComponent, _p_sbol__FunctionalComponentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Component, _p_sbol__ComponentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Module, _p_sbol__ModuleTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__SequenceConstraint, _p_sbol__SequenceConstraintTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Interaction, _p_sbol__InteractionTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__MapsTo, _p_sbol__MapsToTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Identified, _p_sbol__IdentifiedTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Participation, _p_sbol__ParticipationTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__ComponentInstance, _p_sbol__ComponentInstanceTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Document, _p_sbol__DocumentTo_p_sbol__SBOLObject, 0, 0},  {&_swigt__p_sbol__Cut, _p_sbol__CutTo_p_sbol__SBOLObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__Sequence[] = {  {&_swigt__p_sbol__Sequence, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__SequenceAnnotation[] = {  {&_swigt__p_sbol__SequenceAnnotation, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__SequenceConstraint[] = {  {&_swigt__p_sbol__SequenceConstraint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__TextProperty[] = {  {&_swigt__p_sbol__TextProperty, 0, 0, 0},  {&_swigt__p_sbol__VersionProperty, _p_sbol__VersionPropertyTo_p_sbol__TextProperty, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_sbol__TopLevel[] = {  {&_swigt__p_sbol__TopLevel, 0, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__TopLevel, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sbol__TopLevel[] = {  {&_swigt__p_sbol__TopLevel, 0, 0, 0},  {&_swigt__p_sbol__Model, _p_sbol__ModelTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__Sequence, _p_sbol__SequenceTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__ComponentDefinition, _p_sbol__ComponentDefinitionTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__ModuleDefinition, _p_sbol__ModuleDefinitionTo_p_sbol__TopLevel, 0, 0},  {&_swigt__p_sbol__Collection, _p_sbol__CollectionTo_p_sbol__TopLevel, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__URIProperty[] = {  {&_swigt__p_sbol__URIProperty, 0, 0, 0},  {&_swigt__p_sbol__ReferencedObject, _p_sbol__ReferencedObjectTo_p_sbol__URIProperty, 0, 0},  {&_swigt__p_sbol__ListT_sbol__URIProperty_t, _p_sbol__ListT_sbol__URIProperty_tTo_p_sbol__URIProperty, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__VersionProperty[] = {  {&_swigt__p_sbol__VersionProperty, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sbol__mapsTo[] = {  {&_swigt__p_sbol__mapsTo, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_size_t[] = {  {&_swigt__p_size_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_int_t[] = {  {&_swigt__p_std__allocatorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_sbol__Component_t[] = {  {&_swigt__p_std__allocatorT_sbol__Component_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -104259,6 +114710,7 @@ static swig_cast_info _swigc__p_std__lessT_std__string_t[] = {  {&_swigt__p_std_
 static swig_cast_info _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t[] = {  {&_swigt__p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t[] = {  {&_swigt__p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -104283,18 +114735,27 @@ static swig_cast_info _swigc__p_std__vectorT_std__string_std__allocatorT_std__st
 static swig_cast_info _swigc__p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t[] = {  {&_swigt__p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_allocator_type,
   _swigc__p_char,
   _swigc__p_const_reference,
   _swigc__p_difference_type,
+  _swigc__p_f_p_sbol__ComponentDefinition_p_void__void,
   _swigc__p_key_type,
   _swigc__p_mapped_type,
   _swigc__p_p_PyObject,
+  _swigc__p_p_char,
+  _swigc__p_p_raptor_iostream,
+  _swigc__p_p_raptor_serializer,
+  _swigc__p_p_raptor_uri,
+  _swigc__p_p_raptor_world,
   _swigc__p_raptor_log_message,
+  _swigc__p_raptor_serializer,
   _swigc__p_raptor_world,
   _swigc__p_reference,
+  _swigc__p_sbol__Collection,
   _swigc__p_sbol__Component,
   _swigc__p_sbol__ComponentDefinition,
   _swigc__p_sbol__ComponentInstance,
@@ -104302,6 +114763,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_sbol__Cut,
   _swigc__p_sbol__Document,
   _swigc__p_sbol__FunctionalComponent,
+  _swigc__p_sbol__GenericLocation,
   _swigc__p_sbol__Identified,
   _swigc__p_sbol__IntProperty,
   _swigc__p_sbol__Interaction,
@@ -104378,6 +114840,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_sbol__URIProperty,
   _swigc__p_sbol__VersionProperty,
   _swigc__p_sbol__mapsTo,
+  _swigc__p_size_t,
   _swigc__p_size_type,
   _swigc__p_std__allocatorT_int_t,
   _swigc__p_std__allocatorT_sbol__Component_t,
@@ -104396,6 +114859,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t,
   _swigc__p_std__mapT_std__string_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_sbol__SBOLObject_p_std__allocatorT_sbol__SBOLObject_p_t_t_t_t_t,
   _swigc__p_std__mapT_std__string_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_std__string_std__allocatorT_std__string_t_t_t_t_t,
+  _swigc__p_std__mapT_std__string_std__vectorT_void_p_std__allocatorT_void_p_t_t_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__vectorT_void_p_std__allocatorT_void_p_t_t_t_t_t,
   _swigc__p_std__pairT_std__vectorT_std__string_std__allocatorT_std__string_t_t_std__vectorT_std__string_std__allocatorT_std__string_t_t_t,
   _swigc__p_std__string,
   _swigc__p_std__unordered_mapT_std__string_sbol__SBOLObject_RfpFfF_t,
@@ -104420,6 +114884,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_void_fpFfvoid_p_void_pF_std__allocatorT_void_fpFfvoid_p_void_pF_t_t,
   _swigc__p_swig__SwigPyIterator,
   _swigc__p_value_type,
+  _swigc__p_void,
 };
 
 

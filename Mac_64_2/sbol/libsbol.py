@@ -844,7 +844,7 @@ class Config(_object):
 
     A class which contains global configuration variables for the libSBOL
     environment. Intended to be used like a static class, configuration variables
-    are accessed through the `config' object.  
+    are accessed through the `Config' object.
 
     """
 
@@ -866,117 +866,302 @@ class Config(_object):
             self.this = this
 
     def setHomespace(self, ns):
-        """
-
-
-        """
         return _libsbol.Config_setHomespace(self, ns)
 
-
     def getHomespace(self):
-        """
-
-
-        """
         return _libsbol.Config_getHomespace(self)
 
-
     def hasHomespace(self):
-        """
-
-
-        """
         return _libsbol.Config_hasHomespace(self)
 
-
-    def toggleSBOLCompliance(self):
-        """
-
-
-        """
-        return _libsbol.Config_toggleSBOLCompliance(self)
-
-
-    def isSBOLCompliant(self):
-        """
-
-
-        """
-        return _libsbol.Config_isSBOLCompliant(self)
-
-
-    def toggleSBOLCompliantTypes(self):
-        """
-
-
-        """
-        return _libsbol.Config_toggleSBOLCompliantTypes(self)
-
+    def toggleSBOLCompliantTypes(self, is_toggled=False):
+        return _libsbol.Config_toggleSBOLCompliantTypes(self, is_toggled)
 
     def compliantTypesEnabled(self):
-        """
-
-
-        """
         return _libsbol.Config_compliantTypesEnabled(self)
 
-
-    def toggleExceptions(self):
-        """
-
-
-        """
-        return _libsbol.Config_toggleExceptions(self)
-
+    def toggleExceptions(self, is_toggled=False):
+        return _libsbol.Config_toggleExceptions(self, is_toggled)
 
     def exceptionsEnabled(self):
-        """
-
-
-        """
         return _libsbol.Config_exceptionsEnabled(self)
 
-
     def setFileFormat(self, file_format):
-        """
-
-
-        """
         return _libsbol.Config_setFileFormat(self, file_format)
 
-
     def getFileFormat(self):
-        """
-
-
-        """
         return _libsbol.Config_getFileFormat(self)
 
-    __swig_getmethods__["setOption"] = lambda x: _libsbol.Config_setOption
+    def setOption(option, value):
+        """
+
+
+        Configure options for online validation and conversion
+        Option  
+
+        Description  
+
+        Values  
+
+        validate  
+
+        Enable validation and conversion requests through the online validator  
+
+        True or False  
+
+        validatorURL  
+
+        The http request endpoint for validation  
+
+        A valid URL, set to  http://www.async.ece.utah.edu/sbol-validator/endpoint.php
+        by default  
+
+        output  
+
+        File format for conversion  
+
+        SBOL2, SBOL1, FASTA, GenBank  
+
+        diff  
+
+        Report differences between two files  
+
+        True or False  
+
+        noncompliantUrisAllowed  
+
+        If set to false, URIs in the file will not be checked for compliance  
+        with the SBOL specification  
+
+        True or False  
+
+        incompleteDocumentsAllowed  
+
+        If set to false, not all referenced objects must be described within  
+        the given main_file  
+
+        True or False  
+
+        bestPracticesCheck  
+
+        If set to true, the file is checked for the best practice rules set  
+        in the SBOL specification  
+
+        True or False  
+
+        failOnFirstError  
+
+        If set to true, the validator will fail at the first error  
+
+        True or False  
+
+        displayFullErrorStackTrace  
+
+        If set to true (and failOnFirstError is true) the validator will  
+        provide a stack trace for the first validation error  
+
+        True or False  
+
+        topLevelToConvert  
+
+
+
+        uriPrefix  
+
+        Required for conversion from FASTA and GenBank to SBOL1 or SBOL2,  
+        used to generate URIs  
+
+        True or False  
+
+        version  
+
+        Adds the version to all URIs and to the document  
+
+        A valid Maven version string  
+
+        wantFileBack  
+
+        Whether or not to return the file contents as a string  
+
+        True or False  
+
+        Parameters
+        ----------
+        * `option` :  
+            The option key  
+        * `value` :  
+            The option value  
+
+        """
+        return _libsbol.Config_setOption(option, value)
+
     if _newclass:
-        setOption = staticmethod(_libsbol.Config_setOption)
-    __swig_getmethods__["getOption"] = lambda x: _libsbol.Config_getOption
+        setOption = staticmethod(setOption)
+    __swig_getmethods__["setOption"] = lambda x: setOption
+
+    def getOption(option):
+        """
+
+
+        Get current option value for online validation and conversion.  
+
+        Parameters
+        ----------
+        * `option` :  
+            The option key  
+
+        """
+        return _libsbol.Config_getOption(option)
+
     if _newclass:
-        getOption = staticmethod(_libsbol.Config_getOption)
+        getOption = staticmethod(getOption)
+    __swig_getmethods__["getOption"] = lambda x: getOption
+
+    def parse_extension_objects():
+        val = _libsbol.Config_parse_extension_objects()
+
+
+
+        return val
+
+    if _newclass:
+        parse_extension_objects = staticmethod(parse_extension_objects)
+    __swig_getmethods__["parse_extension_objects"] = lambda x: parse_extension_objects
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
 Config_swigregister(Config)
 
 def Config_setOption(option, value):
+    """
+
+
+    Configure options for online validation and conversion
+    Option  
+
+    Description  
+
+    Values  
+
+    validate  
+
+    Enable validation and conversion requests through the online validator  
+
+    True or False  
+
+    validatorURL  
+
+    The http request endpoint for validation  
+
+    A valid URL, set to  http://www.async.ece.utah.edu/sbol-validator/endpoint.php
+    by default  
+
+    output  
+
+    File format for conversion  
+
+    SBOL2, SBOL1, FASTA, GenBank  
+
+    diff  
+
+    Report differences between two files  
+
+    True or False  
+
+    noncompliantUrisAllowed  
+
+    If set to false, URIs in the file will not be checked for compliance  
+    with the SBOL specification  
+
+    True or False  
+
+    incompleteDocumentsAllowed  
+
+    If set to false, not all referenced objects must be described within  
+    the given main_file  
+
+    True or False  
+
+    bestPracticesCheck  
+
+    If set to true, the file is checked for the best practice rules set  
+    in the SBOL specification  
+
+    True or False  
+
+    failOnFirstError  
+
+    If set to true, the validator will fail at the first error  
+
+    True or False  
+
+    displayFullErrorStackTrace  
+
+    If set to true (and failOnFirstError is true) the validator will  
+    provide a stack trace for the first validation error  
+
+    True or False  
+
+    topLevelToConvert  
+
+
+
+    uriPrefix  
+
+    Required for conversion from FASTA and GenBank to SBOL1 or SBOL2,  
+    used to generate URIs  
+
+    True or False  
+
+    version  
+
+    Adds the version to all URIs and to the document  
+
+    A valid Maven version string  
+
+    wantFileBack  
+
+    Whether or not to return the file contents as a string  
+
+    True or False  
+
+    Parameters
+    ----------
+    * `option` :  
+        The option key  
+    * `value` :  
+        The option value  
+
+    """
     return _libsbol.Config_setOption(option, value)
-Config_setOption = _libsbol.Config_setOption
 
 def Config_getOption(option):
+    """
+
+
+    Get current option value for online validation and conversion.  
+
+    Parameters
+    ----------
+    * `option` :  
+        The option key  
+
+    """
     return _libsbol.Config_getOption(option)
-Config_getOption = _libsbol.Config_getOption
+
+def Config_parse_extension_objects():
+    val = _libsbol.Config_parse_extension_objects()
+
+
+
+    return val
 
 
 def setHomespace(ns):
     """
 
 
-    Set the default namespace for autocreation of URIs when a new SBOL object is
+    Sets the default namespace for autocreation of URIs when a new SBOL object is
     created.  
 
     """
@@ -986,7 +1171,7 @@ def getHomespace():
     """
 
 
-    Get the current default namespace for autocreation of URIs when a new SBOL
+    Returns the current default namespace for autocreation of URIs when a new SBOL
     object is created.  
 
     """
@@ -1001,32 +1186,14 @@ def hasHomespace():
     """
     return _libsbol.hasHomespace()
 
-def toggleSBOLCompliance():
+def toggleSBOLCompliantTypes(is_toggled=False):
     """
 
 
-    Enables SBOLCompliance, which simplifies creation of URIs in constructor calls.  
+    Allows SBOL-compliant URIs. Accepts boolean. The default value is false.  
 
     """
-    return _libsbol.toggleSBOLCompliance()
-
-def isSBOLCompliant():
-    """
-
-
-    Checks if SBOLCompliance is enabled.  
-
-    """
-    return _libsbol.isSBOLCompliant()
-
-def toggleSBOLCompliantTypes():
-    """
-
-
-    Turns option to include types in SBOL-compliant URIs on or off.  
-
-    """
-    return _libsbol.toggleSBOLCompliantTypes()
+    return _libsbol.toggleSBOLCompliantTypes(is_toggled)
 
 def compliantTypesEnabled():
     """
@@ -1041,6 +1208,8 @@ def setFileFormat(file_format):
     """
 
 
+    Sets file format to use.  
+
     """
     return _libsbol.setFileFormat(file_format)
 
@@ -1048,85 +1217,64 @@ def getFileFormat():
     """
 
 
+    Returns currently accepted file format.  
+
     """
     return _libsbol.getFileFormat()
 
-def toggleExceptions():
+def toggleExceptions(is_toggled=False):
     """
 
 
+    Function to toggle exception handling. Accepts boolean. The default value is
+    false.  
+
     """
-    return _libsbol.toggleExceptions()
+    return _libsbol.toggleExceptions(is_toggled)
 
 def exceptionsEnabled():
     """
 
 
+    Checks if exception is enabled.  
+
     """
     return _libsbol.exceptionsEnabled()
 
 def randomIdentifier():
-    """
-
-
-    """
     return _libsbol.randomIdentifier()
+randomIdentifier = _libsbol.randomIdentifier
 
 def autoconstructURI():
-    """
-
-
-    """
     return _libsbol.autoconstructURI()
+autoconstructURI = _libsbol.autoconstructURI
 
 def constructNonCompliantURI(uri):
-    """
-
-
-    """
     return _libsbol.constructNonCompliantURI(uri)
+constructNonCompliantURI = _libsbol.constructNonCompliantURI
 
 def constructCompliantURI(*args):
-    """
-
-
-    """
     return _libsbol.constructCompliantURI(*args)
+constructCompliantURI = _libsbol.constructCompliantURI
 
 def getCompliantURI(uri_prefix, sbol_class_name, display_id, version):
-    """
-
-
-    """
     return _libsbol.getCompliantURI(uri_prefix, sbol_class_name, display_id, version)
+getCompliantURI = _libsbol.getCompliantURI
 
 def parseClassName(uri):
-    """
-
-
-    Parse a class name from a URI.  
-
-    Parameters
-    ----------
-    * `uri` :  
-        A URI  
-
-    """
     return _libsbol.parseClassName(uri)
+parseClassName = _libsbol.parseClassName
 
 def parsePropertyName(uri):
-    """
-
-
-    """
     return _libsbol.parsePropertyName(uri)
+parsePropertyName = _libsbol.parsePropertyName
 
 def parseNamespace(uri):
-    """
-
-
-    """
     return _libsbol.parseNamespace(uri)
+parseNamespace = _libsbol.parseNamespace
+
+Config.__extensionclass__ = {}
+
 
 _libsbol.DEFAULT_NS_swigconstant(_libsbol)
 DEFAULT_NS = _libsbol.DEFAULT_NS
@@ -1208,6 +1356,15 @@ SBOL_LOCATION = _libsbol.SBOL_LOCATION
 
 _libsbol.SBOL_RANGE_swigconstant(_libsbol)
 SBOL_RANGE = _libsbol.SBOL_RANGE
+
+_libsbol.SBOL_CUT_swigconstant(_libsbol)
+SBOL_CUT = _libsbol.SBOL_CUT
+
+_libsbol.SBOL_COLLECTION_swigconstant(_libsbol)
+SBOL_COLLECTION = _libsbol.SBOL_COLLECTION
+
+_libsbol.SBOL_GENERIC_LOCATION_swigconstant(_libsbol)
+SBOL_GENERIC_LOCATION = _libsbol.SBOL_GENERIC_LOCATION
 
 _libsbol.UNDEFINED_swigconstant(_libsbol)
 UNDEFINED = _libsbol.UNDEFINED
@@ -1331,6 +1488,9 @@ SBOL_LOCATIONS = _libsbol.SBOL_LOCATIONS
 
 _libsbol.SBOL_ROLE_INTEGRATION_swigconstant(_libsbol)
 SBOL_ROLE_INTEGRATION = _libsbol.SBOL_ROLE_INTEGRATION
+
+_libsbol.SBOL_MEMBERS_swigconstant(_libsbol)
+SBOL_MEMBERS = _libsbol.SBOL_MEMBERS
 
 _libsbol.SBOL_AT_swigconstant(_libsbol)
 SBOL_AT = _libsbol.SBOL_AT
@@ -1501,16 +1661,25 @@ _libsbol.SBO_DISCRETE_swigconstant(_libsbol)
 SBO_DISCRETE = _libsbol.SBO_DISCRETE
 
 def sbolRule10101(sbol_obj, arg):
+    """
+
+
+    """
     return _libsbol.sbolRule10101(sbol_obj, arg)
-sbolRule10101 = _libsbol.sbolRule10101
 
 def sbolRule10102(sbol_obj, arg):
+    """
+
+
+    """
     return _libsbol.sbolRule10102(sbol_obj, arg)
-sbolRule10102 = _libsbol.sbolRule10102
 
 def sbol_rule_10202(sbol_obj, arg):
+    """
+
+
+    """
     return _libsbol.sbol_rule_10202(sbol_obj, arg)
-sbol_rule_10202 = _libsbol.sbol_rule_10202
 
 def libsbol_rule_1(sbol_obj, arg):
     """
@@ -1570,23 +1739,13 @@ class _StringProperty(_object):
         return _libsbol._StringProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol._StringProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol._StringProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -1620,10 +1779,20 @@ class _StringProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol._StringProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol._StringProperty_clear(self)
+
 
     def write(self):
         """
@@ -1710,23 +1879,13 @@ class _IntProperty(_object):
         return _libsbol._IntProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol._IntProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol._IntProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -1760,10 +1919,20 @@ class _IntProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol._IntProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol._IntProperty_clear(self)
+
 
     def write(self):
         """
@@ -1821,6 +1990,20 @@ class URIProperty(_StringProperty):
     __getattr__ = lambda self, name: _swig_getattr(self, URIProperty, name)
     __repr__ = _swig_repr
 
+    def get(self):
+        """
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        A string of characters used to identify a resource  
+
+        """
+        return _libsbol.URIProperty_get(self)
+
+
     def __init__(self, *args):
         """
 
@@ -1855,6 +2038,20 @@ class TextProperty(_StringProperty):
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, TextProperty, name)
     __repr__ = _swig_repr
+
+    def get(self):
+        """
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        A string literal  
+
+        """
+        return _libsbol.TextProperty_get(self)
+
 
     def __init__(self, *args):
         """
@@ -1891,6 +2088,20 @@ class IntProperty(_IntProperty):
     __getattr__ = lambda self, name: _swig_getattr(self, IntProperty, name)
     __repr__ = _swig_repr
 
+    def get(self):
+        """
+
+
+        Basic getter for all SBOL literal properties.  
+
+        Returns
+        -------
+        An integer  
+
+        """
+        return _libsbol.IntProperty_get(self)
+
+
     def __init__(self, type_uri, property_owner, initial_value=0):
         """
 
@@ -1914,7 +2125,7 @@ class VersionProperty(TextProperty):
 
     The VersionProperty follows Maven versioning semantics and includes a major,
     minor, and patch version number. Specifically, libSBOL currently only supports
-    using '.' as a delimiter. Ex: v2.0.1. If the user does not want to follow Maven
+    using '.' as a delimiter (e.g.: v2.0.1). If the user does not want to follow Maven
     versioning, they can specify an arbitrary version string using the set() method.  
 
     """
@@ -1930,12 +2141,7 @@ class VersionProperty(TextProperty):
     __repr__ = _swig_repr
 
     def split(self):
-        """
-
-
-        """
         return _libsbol.VersionProperty_split(self)
-
 
     def incrementMajor(self):
         """
@@ -2061,7 +2267,7 @@ class SBOLObject(_object):
     """
 
 
-    An SBOLObject converts a C++ class data structure into an RDF triple store and
+    An SBOLObject converts a class data structure into an RDF triple store and
     contains methods for serializing and parsing RDF triples.  
 
     """
@@ -2074,6 +2280,26 @@ class SBOLObject(_object):
     __swig_getmethods__["doc"] = _libsbol.SBOLObject_doc_get
     if _newclass:
         doc = _swig_property(_libsbol.SBOLObject_doc_get, _libsbol.SBOLObject_doc_set)
+    __swig_setmethods__["type"] = _libsbol.SBOLObject_type_set
+    __swig_getmethods__["type"] = _libsbol.SBOLObject_type_get
+    if _newclass:
+        type = _swig_property(_libsbol.SBOLObject_type_get, _libsbol.SBOLObject_type_set)
+    __swig_setmethods__["parent"] = _libsbol.SBOLObject_parent_set
+    __swig_getmethods__["parent"] = _libsbol.SBOLObject_parent_get
+    if _newclass:
+        parent = _swig_property(_libsbol.SBOLObject_parent_get, _libsbol.SBOLObject_parent_set)
+    __swig_setmethods__["proxy"] = _libsbol.SBOLObject_proxy_set
+    __swig_getmethods__["proxy"] = _libsbol.SBOLObject_proxy_get
+    if _newclass:
+        proxy = _swig_property(_libsbol.SBOLObject_proxy_get, _libsbol.SBOLObject_proxy_set)
+    __swig_setmethods__["thisown"] = _libsbol.SBOLObject_thisown_set
+    __swig_getmethods__["thisown"] = _libsbol.SBOLObject_thisown_get
+    if _newclass:
+        thisown = _swig_property(_libsbol.SBOLObject_thisown_get, _libsbol.SBOLObject_thisown_set)
+    __swig_setmethods__["extension_objects"] = _libsbol.SBOLObject_extension_objects_set
+    __swig_getmethods__["extension_objects"] = _libsbol.SBOLObject_extension_objects_get
+    if _newclass:
+        extension_objects = _swig_property(_libsbol.SBOLObject_extension_objects_get, _libsbol.SBOLObject_extension_objects_set)
     __swig_setmethods__["identity"] = _libsbol.SBOLObject_identity_set
     __swig_getmethods__["identity"] = _libsbol.SBOLObject_identity_get
     if _newclass:
@@ -2091,18 +2317,14 @@ class SBOLObject(_object):
             self.this = this
     __swig_destroy__ = _libsbol.delete_SBOLObject
     __del__ = lambda self: None
-    __swig_setmethods__["type"] = _libsbol.SBOLObject_type_set
-    __swig_getmethods__["type"] = _libsbol.SBOLObject_type_get
-    if _newclass:
-        type = _swig_property(_libsbol.SBOLObject_type_get, _libsbol.SBOLObject_type_set)
-    __swig_setmethods__["parent"] = _libsbol.SBOLObject_parent_set
-    __swig_getmethods__["parent"] = _libsbol.SBOLObject_parent_get
-    if _newclass:
-        parent = _swig_property(_libsbol.SBOLObject_parent_get, _libsbol.SBOLObject_parent_set)
 
     def getTypeURI(self):
         """
 
+
+        Returns
+        -------
+        The uniform resource identifier that describes the RDF-type of this SBOL Object  
 
         """
         return _libsbol.SBOLObject_getTypeURI(self)
@@ -2112,6 +2334,10 @@ class SBOLObject(_object):
         """
 
 
+        Returns
+        -------
+        Parses a local class name from the RDF-type of this SBOL Object  
+
         """
         return _libsbol.SBOLObject_getClassName(self, type)
 
@@ -2120,12 +2346,71 @@ class SBOLObject(_object):
         """
 
 
+        Search this object recursively to see if an object with the URI already exists.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The URI to search for.  
+
+        Returns
+        -------
+        A pointer to theobject with this URI if it exists, NULL otherwise  
+
         """
         return _libsbol.SBOLObject_find(self, uri)
 
 
+    def find_property(self, uri):
+        """
+
+
+        Search this object recursively to see if it contains a member property with the
+        given RDF type.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The RDF type of the property to search for.  
+
+        Returns
+        -------
+        A pointer to the object that contains a member property with the specified RDF
+        type, NULL otherwise  
+
+        """
+        return _libsbol.SBOLObject_find_property(self, uri)
+
+
+    def find_reference(self, uri):
+        """
+
+
+        """
+        return _libsbol.SBOLObject_find_reference(self, uri)
+
+
     def compare(self, comparand):
+        """
+
+
+        Compare two SBOL objects or Documents.  
+
+        The behavior is currently undefined for objects with custom annotations or
+        extension classes.  
+
+        Parameters
+        ----------
+        * `comparand` :  
+            A pointer to the object being compared to this one.  
+
+        Returns
+        -------
+        1 if the objects are identical, 0 if they are different  
+
+        """
         return _libsbol.SBOLObject_compare(self, comparand)
+
 
     def getPropertyValue(self, property_uri):
         """
@@ -2496,8 +2781,7 @@ class Range(Location):
 
         Construct a Range.  
 
-        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
-        Range > instead.  
+        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
 
         Parameters
         ----------
@@ -2527,7 +2811,7 @@ class Cut(Location):
 
 
     The Cut class specifies a location between two coordinates of a Sequence's
-    elements. class Cut : public Location.  
+    elements. 
 
     """
 
@@ -2551,8 +2835,7 @@ class Cut(Location):
 
         Construct a Cut.  
 
-        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
-        Cut > instead.  
+        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
 
         Parameters
         ----------
@@ -2574,6 +2857,55 @@ class Cut(Location):
     __del__ = lambda self: None
 Cut_swigregister = _libsbol.Cut_swigregister
 Cut_swigregister(Cut)
+
+class GenericLocation(Location):
+    """
+
+
+    the GenericLocation class is included as a starting point for specifying regions
+    on Sequence objects with encoding properties other than IUPAC and potentially
+    nonlinear structure. This class can also be used to set the orientation of a
+    SequenceAnnotation and any associated Component when their parent
+    ComponentDefinition is a partial design that lacks a Sequence.  
+
+    """
+
+    __swig_setmethods__ = {}
+    for _s in [Location]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, GenericLocation, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Location]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, GenericLocation, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        """
+
+
+        Construct a GenericLocation.  
+
+        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+
+        """
+        this = _libsbol.new_GenericLocation(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_GenericLocation
+    __del__ = lambda self: None
+GenericLocation_swigregister = _libsbol.GenericLocation_swigregister
+GenericLocation_swigregister(GenericLocation)
 
 class locationProperty(_object):
     """
@@ -2627,23 +2959,13 @@ class locationProperty(_object):
         return _libsbol.locationProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.locationProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.locationProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -2677,10 +2999,20 @@ class locationProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.locationProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.locationProperty_clear(self)
+
 
     def write(self):
         """
@@ -2884,21 +3216,6 @@ class _ownedLocation(locationProperty):
         return _libsbol._ownedLocation_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol._ownedLocation_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -2914,23 +3231,104 @@ class _ownedLocation(locationProperty):
         return _libsbol._ownedLocation_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol._ownedLocation_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol._ownedLocation_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol._ownedLocation_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol._ownedLocation_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol._ownedLocation_create(self, *args)
+        return _libsbol._ownedLocation_create(self, uri)
 
 
     def begin(self):
@@ -2995,12 +3393,27 @@ class _ownedLocation(locationProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol._ownedLocation_getRange(self, *args)
@@ -3010,10 +3423,183 @@ class _ownedLocation(locationProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol._ownedLocation_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol._ownedLocation_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol._ownedLocation_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol._ownedLocation_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol._ownedLocation_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol._ownedLocation_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol._ownedLocation_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete__ownedLocation
     __del__ = lambda self: None
@@ -3119,6 +3705,18 @@ class SequenceAnnotation(Identified):
             self.this.append(this)
         except Exception:
             self.this = this
+
+    def precedes(self, comparand):
+        return _libsbol.SequenceAnnotation_precedes(self, comparand)
+
+    def follows(self, comparand):
+        return _libsbol.SequenceAnnotation_follows(self, comparand)
+
+    def contains(self, comparand):
+        return _libsbol.SequenceAnnotation_contains(self, comparand)
+
+    def overlaps(self, comparand):
+        return _libsbol.SequenceAnnotation_overlaps(self, comparand)
     __swig_destroy__ = _libsbol.delete_SequenceAnnotation
     __del__ = lambda self: None
 SequenceAnnotation_swigregister = _libsbol.SequenceAnnotation_swigregister
@@ -3362,23 +3960,13 @@ class mapsToProperty(_object):
         return _libsbol.mapsToProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.mapsToProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.mapsToProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -3412,10 +4000,20 @@ class mapsToProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.mapsToProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.mapsToProperty_clear(self)
+
 
     def write(self):
         """
@@ -3506,21 +4104,6 @@ class ownedMapsTo(mapsToProperty):
         return _libsbol.ownedMapsTo_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedMapsTo_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -3536,23 +4119,104 @@ class ownedMapsTo(mapsToProperty):
         return _libsbol.ownedMapsTo_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedMapsTo_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedMapsTo_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedMapsTo_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedMapsTo_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedMapsTo_create(self, *args)
+        return _libsbol.ownedMapsTo_create(self, uri)
 
 
     def begin(self):
@@ -3617,12 +4281,27 @@ class ownedMapsTo(mapsToProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedMapsTo_getRange(self, *args)
@@ -3632,10 +4311,183 @@ class ownedMapsTo(mapsToProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedMapsTo_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedMapsTo_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedMapsTo_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedMapsTo_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedMapsTo_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedMapsTo_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedMapsTo_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedMapsTo
     __del__ = lambda self: None
@@ -4135,23 +4987,13 @@ class sequenceConstraintProperty(_object):
         return _libsbol.sequenceConstraintProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.sequenceConstraintProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.sequenceConstraintProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -4185,10 +5027,20 @@ class sequenceConstraintProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.sequenceConstraintProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.sequenceConstraintProperty_clear(self)
+
 
     def write(self):
         """
@@ -4279,21 +5131,6 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         return _libsbol.ownedSequenceConstraint_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedSequenceConstraint_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -4309,23 +5146,104 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         return _libsbol.ownedSequenceConstraint_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceConstraint_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedSequenceConstraint_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedSequenceConstraint_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedSequenceConstraint_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedSequenceConstraint_create(self, *args)
+        return _libsbol.ownedSequenceConstraint_create(self, uri)
 
 
     def begin(self):
@@ -4390,12 +5308,27 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedSequenceConstraint_getRange(self, *args)
@@ -4405,10 +5338,183 @@ class ownedSequenceConstraint(sequenceConstraintProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedSequenceConstraint_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequenceConstraint_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceConstraint_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequenceConstraint_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequenceConstraint_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceConstraint_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequenceConstraint_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequenceConstraint
     __del__ = lambda self: None
@@ -4619,23 +5725,13 @@ class sequenceAnnotationProperty(_object):
         return _libsbol.sequenceAnnotationProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.sequenceAnnotationProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.sequenceAnnotationProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -4669,10 +5765,20 @@ class sequenceAnnotationProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.sequenceAnnotationProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.sequenceAnnotationProperty_clear(self)
+
 
     def write(self):
         """
@@ -4763,21 +5869,6 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         return _libsbol.ownedSequenceAnnotation_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedSequenceAnnotation_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -4793,23 +5884,104 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         return _libsbol.ownedSequenceAnnotation_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedSequenceAnnotation_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedSequenceAnnotation_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedSequenceAnnotation_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedSequenceAnnotation_create(self, *args)
+        return _libsbol.ownedSequenceAnnotation_create(self, uri)
 
 
     def begin(self):
@@ -4874,12 +6046,27 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedSequenceAnnotation_getRange(self, *args)
@@ -4889,10 +6076,183 @@ class ownedSequenceAnnotation(sequenceAnnotationProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedSequenceAnnotation_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequenceAnnotation_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequenceAnnotation
     __del__ = lambda self: None
@@ -5103,23 +6463,13 @@ class componentsProperty(_object):
         return _libsbol.componentsProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.componentsProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.componentsProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -5153,10 +6503,20 @@ class componentsProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.componentsProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.componentsProperty_clear(self)
+
 
     def write(self):
         """
@@ -5247,21 +6607,6 @@ class ownedComponents(componentsProperty):
         return _libsbol.ownedComponents_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedComponents_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -5277,23 +6622,104 @@ class ownedComponents(componentsProperty):
         return _libsbol.ownedComponents_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponents_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedComponents_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedComponents_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedComponents_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedComponents_create(self, *args)
+        return _libsbol.ownedComponents_create(self, uri)
 
 
     def begin(self):
@@ -5358,12 +6784,27 @@ class ownedComponents(componentsProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedComponents_getRange(self, *args)
@@ -5373,10 +6814,183 @@ class ownedComponents(componentsProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedComponents_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedComponents_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponents_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedComponents_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedComponents_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponents_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedComponents_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedComponents
     __del__ = lambda self: None
@@ -5432,7 +7046,7 @@ class ComponentDefinition(TopLevel):
     The primary usage of this class is to represent structural entities with
     designed sequences, such as DNA, RNA, and proteins, but it can also be used to
     represent any other entity that is part of a design, such as small molecules,
-    proteins, and complexes  
+    proteins, and complexes
 
     """
 
@@ -5470,35 +7084,21 @@ class ComponentDefinition(TopLevel):
     if _newclass:
         sequenceConstraints = _swig_property(_libsbol.ComponentDefinition_sequenceConstraints_get, _libsbol.ComponentDefinition_sequenceConstraints_set)
 
-    def __init__(self, *args):
-        """
-
-
-        Construct a ComponentDefinition.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
-            configuration is enabled, then this argument is simply the displayId for the
-            new object and a full URI will automatically be constructed.  
-        * `type` :  
-            A BioPAX ontology term that indicates whether the ComponentDefinition is
-            DNA, RNA, protein, or some other molecule type.  
-        * `version` :  
-            An arbitrary version string. If SBOLCompliance is enabled, this should be a
-            Maven version string of the form "major.minor.patch".  
-
-        """
-        this = _libsbol.new_ComponentDefinition(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
     def updateSequence(self, *args):
         """
 
+
+        Assemble a parent ComponentDefinition's Sequence from its subcomponent
+        Sequences.  
+
+        Parameters
+        ----------
+        * `composite_sequence` :  
+            A recursive parameter, use default value  
+
+        Returns
+        -------
+        The assembled parent sequence  
 
         """
         return _libsbol.ComponentDefinition_updateSequence(self, *args)
@@ -5619,6 +7219,9 @@ class ComponentDefinition(TopLevel):
         return _libsbol.ComponentDefinition_getLastComponent(self)
 
 
+    def applyToComponentHierarchy(self, callback_fn=None, user_data=None):
+        return _libsbol.ComponentDefinition_applyToComponentHierarchy(self, callback_fn, user_data)
+
     def participate(self, species):
         """
 
@@ -5640,6 +7243,32 @@ class ComponentDefinition(TopLevel):
 
     __swig_destroy__ = _libsbol.delete_ComponentDefinition
     __del__ = lambda self: None
+
+    def __init__(self, *args):
+        """
+
+
+        Construct a ComponentDefinition.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `type` :  
+            A BioPAX ontology term that indicates whether the ComponentDefinition is
+            DNA, RNA, protein, or some other molecule type.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
+        this = _libsbol.new_ComponentDefinition(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
 
     def assemble(self, *args):
         """
@@ -5691,9 +7320,49 @@ class Sequence(TopLevel):
     if _newclass:
         encoding = _swig_property(_libsbol.Sequence_encoding_get, _libsbol.Sequence_encoding_set)
 
+    def assemble(self, *args):
+        """
+
+
+        Calculates the complete sequence of a high-level Component from the sequence of
+        its subcomponents.  
+
+        {rior to assembling the the complete sequence, you must assemble a template
+        design by calling ComponentDefinition::assemble for the ComponentDefinition that
+        references this Sequence.  
+
+        Parameters
+        ----------
+        * `composite_sequence` :  
+            Typically no value for the composite sequence should be specified by the
+            user. This parameter is used to hold the composite sequence as it is passed
+            to function calls at a higher-level of the recursion stack.  
+
+        """
+        return _libsbol.Sequence_assemble(self, *args)
+
+
     def __init__(self, *args):
         """
 
+
+        Construct a ComponentDefinition.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `elements` :  
+            A string representation of the primary structure of DNA, RNA, protein, or a
+            SMILES string for small molecules.  
+        * `encoding` :  
+            A URI that describes the representation format used for the elements
+            property. Set to SBOL_ENCODING_IUPAC by default  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string.  
 
         """
         this = _libsbol.new_Sequence(*args)
@@ -5701,14 +7370,6 @@ class Sequence(TopLevel):
             self.this.append(this)
         except Exception:
             self.this = this
-
-    def assemble(self, *args):
-        """
-
-
-        """
-        return _libsbol.Sequence_assemble(self, *args)
-
     __swig_destroy__ = _libsbol.delete_Sequence
     __del__ = lambda self: None
 Sequence_swigregister = _libsbol.Sequence_swigregister
@@ -5855,23 +7516,13 @@ class participationProperty(_object):
         return _libsbol.participationProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.participationProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.participationProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -5905,10 +7556,20 @@ class participationProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.participationProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.participationProperty_clear(self)
+
 
     def write(self):
         """
@@ -5999,21 +7660,6 @@ class ownedParticipation(participationProperty):
         return _libsbol.ownedParticipation_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedParticipation_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -6029,23 +7675,104 @@ class ownedParticipation(participationProperty):
         return _libsbol.ownedParticipation_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedParticipation_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedParticipation_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedParticipation_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedParticipation_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedParticipation_create(self, *args)
+        return _libsbol.ownedParticipation_create(self, uri)
 
 
     def begin(self):
@@ -6110,12 +7837,27 @@ class ownedParticipation(participationProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedParticipation_getRange(self, *args)
@@ -6125,10 +7867,183 @@ class ownedParticipation(participationProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedParticipation_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedParticipation_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedParticipation_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedParticipation_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedParticipation_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedParticipation_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedParticipation_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedParticipation
     __del__ = lambda self: None
@@ -6342,6 +8257,61 @@ class Model(TopLevel):
 Model_swigregister = _libsbol.Model_swigregister
 Model_swigregister(Model)
 
+class Collection(TopLevel):
+    """
+
+
+    The Collection class is a class that groups together a set of TopLevel objects
+    that have something in common.  
+
+    Some examples of Collection objects: . Results of a query to find all
+    ComponentDefinition objects in a repository that function as promoters . A set
+    of ModuleDefinition objects representing a library of genetic logic gates. . A
+    ModuleDefinition for a complexdesign, and all of the ModuleDefinition,
+    ComponentDefinition, Sequence, and Model objects used to provide its full
+    specification.  
+
+    """
+
+    __swig_setmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Collection, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Collection, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["members"] = _libsbol.Collection_members_set
+    __swig_getmethods__["members"] = _libsbol.Collection_members_get
+    if _newclass:
+        members = _swig_property(_libsbol.Collection_members_get, _libsbol.Collection_members_set)
+
+    def __init__(self, *args):
+        """
+
+
+        Construct a Collection.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If operating in open-world mode, this should be a full URI including a
+            scheme, namespace, and identifier. If SBOLCompliance configuration is
+            enabled, then this argument is simply the displayId for the new object and a
+            full URI will automatically be constructed.  
+
+        """
+        this = _libsbol.new_Collection(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Collection
+    __del__ = lambda self: None
+Collection_swigregister = _libsbol.Collection_swigregister
+Collection_swigregister(Collection)
+
 class moduleProperty(_object):
     """
 
@@ -6394,23 +8364,13 @@ class moduleProperty(_object):
         return _libsbol.moduleProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.moduleProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.moduleProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -6444,10 +8404,20 @@ class moduleProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.moduleProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.moduleProperty_clear(self)
+
 
     def write(self):
         """
@@ -6538,21 +8508,6 @@ class ownedModule(moduleProperty):
         return _libsbol.ownedModule_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedModule_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -6568,23 +8523,104 @@ class ownedModule(moduleProperty):
         return _libsbol.ownedModule_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModule_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedModule_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedModule_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedModule_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedModule_create(self, *args)
+        return _libsbol.ownedModule_create(self, uri)
 
 
     def begin(self):
@@ -6649,12 +8685,27 @@ class ownedModule(moduleProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedModule_getRange(self, *args)
@@ -6664,10 +8715,183 @@ class ownedModule(moduleProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedModule_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModule_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModule_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModule_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModule_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModule_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModule_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModule
     __del__ = lambda self: None
@@ -6765,23 +8989,13 @@ class interactionProperty(_object):
         return _libsbol.interactionProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.interactionProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.interactionProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -6815,10 +9029,20 @@ class interactionProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.interactionProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.interactionProperty_clear(self)
+
 
     def write(self):
         """
@@ -6909,21 +9133,6 @@ class ownedInteraction(interactionProperty):
         return _libsbol.ownedInteraction_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedInteraction_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -6939,23 +9148,104 @@ class ownedInteraction(interactionProperty):
         return _libsbol.ownedInteraction_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedInteraction_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedInteraction_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedInteraction_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedInteraction_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedInteraction_create(self, *args)
+        return _libsbol.ownedInteraction_create(self, uri)
 
 
     def begin(self):
@@ -7020,12 +9310,27 @@ class ownedInteraction(interactionProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedInteraction_getRange(self, *args)
@@ -7035,10 +9340,183 @@ class ownedInteraction(interactionProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedInteraction_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedInteraction_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedInteraction_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedInteraction_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedInteraction_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedInteraction_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedInteraction_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedInteraction
     __del__ = lambda self: None
@@ -7136,23 +9614,13 @@ class functionalComponentProperty(_object):
         return _libsbol.functionalComponentProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.functionalComponentProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.functionalComponentProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -7186,10 +9654,20 @@ class functionalComponentProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.functionalComponentProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.functionalComponentProperty_clear(self)
+
 
     def write(self):
         """
@@ -7280,21 +9758,6 @@ class ownedFunctionalComponent(functionalComponentProperty):
         return _libsbol.ownedFunctionalComponent_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedFunctionalComponent_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -7310,23 +9773,104 @@ class ownedFunctionalComponent(functionalComponentProperty):
         return _libsbol.ownedFunctionalComponent_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedFunctionalComponent_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedFunctionalComponent_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedFunctionalComponent_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedFunctionalComponent_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedFunctionalComponent_create(self, *args)
+        return _libsbol.ownedFunctionalComponent_create(self, uri)
 
 
     def begin(self):
@@ -7391,12 +9935,27 @@ class ownedFunctionalComponent(functionalComponentProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedFunctionalComponent_getRange(self, *args)
@@ -7406,10 +9965,183 @@ class ownedFunctionalComponent(functionalComponentProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedFunctionalComponent_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedFunctionalComponent_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedFunctionalComponent_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedFunctionalComponent_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedFunctionalComponent_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedFunctionalComponent_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedFunctionalComponent_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedFunctionalComponent
     __del__ = lambda self: None
@@ -7495,20 +10227,22 @@ class ModuleDefinition(TopLevel):
     if _newclass:
         models = _swig_property(_libsbol.ModuleDefinition_models_get, _libsbol.ModuleDefinition_models_set)
 
-    def __init__(self, *args):
-        """
-
-
-        """
-        this = _libsbol.new_ModuleDefinition(*args)
-        try:
-            self.this.append(this)
-        except Exception:
-            self.this = this
-
     def setOutput(self, output):
         """
 
+
+        Defines an output for a system module.  
+
+        Parameters
+        ----------
+        * `output` :  
+            A ComponentDefinition that defines the output  
+
+        Returns
+        -------
+        A FunctionalComponent that is derived from the argument ComponentDefinition and
+        configured as this ModuleDefinition's output (it's direction property is set to
+        SBOL_DIRECTION_OUT)  
 
         """
         return _libsbol.ModuleDefinition_setOutput(self, output)
@@ -7518,15 +10252,60 @@ class ModuleDefinition(TopLevel):
         """
 
 
+        Defines an input for a system module.  
+
+        Parameters
+        ----------
+        * `input` :  
+            A ComponentDefinition that defines the input  
+
+        Returns
+        -------
+        A FunctionalComponent that is derived from the argument ComponentDefinition and
+        configured as this ModuleDefinition's input (it's direction property is set to
+        SBOL_DIRECTION_IN)  
+
         """
         return _libsbol.ModuleDefinition_setInput(self, input)
 
     __swig_destroy__ = _libsbol.delete_ModuleDefinition
     __del__ = lambda self: None
 
+    def __init__(self, *args):
+        """
+
+
+        Construct a ModuleDefinition.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            valid Maven version string.  
+
+        """
+        this = _libsbol.new_ModuleDefinition(*args)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+
     def assemble(self, *args):
         """
 
+
+        Assemble a high-level ModuleDefinition from lower-level submodules.  
+
+        Autoconstructs Module objects in the process.  
+
+        Parameters
+        ----------
+        * `list_of_modules` :  
+            A list of pointers to the submodule ModuleDefinitions  
 
         """
         return _libsbol.ModuleDefinition_assemble(self, *args)
@@ -7536,11 +10315,11 @@ ModuleDefinition_swigregister(ModuleDefinition)
 
 
 def testSBOL():
-   import unittest
-   import unit_tests
-   import sys
-   suite = unittest.TestLoader().loadTestsFromTestCase(unit_tests.TestRoundTrip)
-   unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(suite)
+    """
+    Function to run test suite for pySBOL
+    """
+    import unit_tests
+    unit_tests.runTests()
 
 class componentDefinitionProperty(_object):
     """
@@ -7594,23 +10373,13 @@ class componentDefinitionProperty(_object):
         return _libsbol.componentDefinitionProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.componentDefinitionProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.componentDefinitionProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -7644,10 +10413,20 @@ class componentDefinitionProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.componentDefinitionProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.componentDefinitionProperty_clear(self)
+
 
     def write(self):
         """
@@ -7738,21 +10517,6 @@ class ownedComponentDefinition(componentDefinitionProperty):
         return _libsbol.ownedComponentDefinition_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedComponentDefinition_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -7768,23 +10532,104 @@ class ownedComponentDefinition(componentDefinitionProperty):
         return _libsbol.ownedComponentDefinition_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponentDefinition_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedComponentDefinition_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedComponentDefinition_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedComponentDefinition_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedComponentDefinition_create(self, *args)
+        return _libsbol.ownedComponentDefinition_create(self, uri)
 
 
     def begin(self):
@@ -7849,12 +10694,27 @@ class ownedComponentDefinition(componentDefinitionProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedComponentDefinition_getRange(self, *args)
@@ -7864,10 +10724,183 @@ class ownedComponentDefinition(componentDefinitionProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedComponentDefinition_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedComponentDefinition_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponentDefinition_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedComponentDefinition_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedComponentDefinition_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedComponentDefinition_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedComponentDefinition_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedComponentDefinition
     __del__ = lambda self: None
@@ -7965,23 +10998,13 @@ class moduleDefinitionProperty(_object):
         return _libsbol.moduleDefinitionProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.moduleDefinitionProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.moduleDefinitionProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -8015,10 +11038,20 @@ class moduleDefinitionProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.moduleDefinitionProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.moduleDefinitionProperty_clear(self)
+
 
     def write(self):
         """
@@ -8109,21 +11142,6 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         return _libsbol.ownedModuleDefinition_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedModuleDefinition_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -8139,23 +11157,104 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         return _libsbol.ownedModuleDefinition_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModuleDefinition_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedModuleDefinition_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedModuleDefinition_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedModuleDefinition_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedModuleDefinition_create(self, *args)
+        return _libsbol.ownedModuleDefinition_create(self, uri)
 
 
     def begin(self):
@@ -8220,12 +11319,27 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedModuleDefinition_getRange(self, *args)
@@ -8235,10 +11349,183 @@ class ownedModuleDefinition(moduleDefinitionProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedModuleDefinition_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModuleDefinition_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModuleDefinition_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModuleDefinition_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModuleDefinition_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModuleDefinition_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModuleDefinition_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModuleDefinition
     __del__ = lambda self: None
@@ -8336,23 +11623,13 @@ class sequenceProperty(_object):
         return _libsbol.sequenceProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.sequenceProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.sequenceProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -8386,10 +11663,20 @@ class sequenceProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.sequenceProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.sequenceProperty_clear(self)
+
 
     def write(self):
         """
@@ -8480,21 +11767,6 @@ class ownedSequence(sequenceProperty):
         return _libsbol.ownedSequence_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedSequence_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -8510,23 +11782,104 @@ class ownedSequence(sequenceProperty):
         return _libsbol.ownedSequence_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequence_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedSequence_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedSequence_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedSequence_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedSequence_create(self, *args)
+        return _libsbol.ownedSequence_create(self, uri)
 
 
     def begin(self):
@@ -8591,12 +11944,27 @@ class ownedSequence(sequenceProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedSequence_getRange(self, *args)
@@ -8606,10 +11974,183 @@ class ownedSequence(sequenceProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedSequence_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequence_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequence_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequence_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedSequence_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedSequence_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedSequence_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedSequence
     __del__ = lambda self: None
@@ -8707,23 +12248,13 @@ class modelProperty(_object):
         return _libsbol.modelProperty_getOwner(self)
 
 
-    def get(self):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.modelProperty_get(self)
-
-
     def getAll(self):
+        """
+
+
+        """
         return _libsbol.modelProperty_getAll(self)
+
 
     def set(self, *args):
         """
@@ -8757,10 +12288,20 @@ class modelProperty(_object):
 
 
     def remove(self, index=0):
+        """
+
+
+        """
         return _libsbol.modelProperty_remove(self, index)
 
+
     def clear(self):
+        """
+
+
+        """
         return _libsbol.modelProperty_clear(self)
+
 
     def write(self):
         """
@@ -8851,21 +12392,6 @@ class ownedModel(modelProperty):
         return _libsbol.ownedModel_set(self, sbol_obj)
 
 
-    def get(self, object_id):
-        """
-
-
-        Basic getter for all SBOL literal properties.  
-
-        Returns
-        -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
-
-        """
-        return _libsbol.ownedModel_get(self, object_id)
-
-
     def add(self, sbol_obj):
         """
 
@@ -8881,23 +12407,104 @@ class ownedModel(modelProperty):
         return _libsbol.ownedModel_add(self, sbol_obj)
 
 
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModel_get(self, *args)
+
+
     def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
         return _libsbol.ownedModel_getObjects(self)
 
+
     def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `index` :  
+            A numerical index for the object.  
+
+        """
         return _libsbol.ownedModel_remove(self, *args)
 
+
     def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
         return _libsbol.ownedModel_clear(self)
 
-    def create(self, *args):
+
+    def create(self, uri):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
-        return _libsbol.ownedModel_create(self, *args)
+        return _libsbol.ownedModel_create(self, uri)
 
 
     def begin(self):
@@ -8962,12 +12569,27 @@ class ownedModel(modelProperty):
         """
 
 
-        Basic getter for all SBOL literal properties.  
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
 
         Returns
         -------
-        All properties are initially read from an SBOL file as a raw string containing
-        the property value.  
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
 
         """
         return _libsbol.ownedModel_getRange(self, *args)
@@ -8977,10 +12599,183 @@ class ownedModel(modelProperty):
         """
 
 
-        Deprecate this  
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
 
         """
         return _libsbol.ownedModel_createRange(self, uri)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModel_addCut(self, sbol_obj)
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModel_getCut(self, *args)
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModel_createCut(self, uri)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        return _libsbol.ownedModel_addGenericLocation(self, sbol_obj)
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.ownedModel_getGenericLocation(self, *args)
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        return _libsbol.ownedModel_createGenericLocation(self, uri)
 
     __swig_destroy__ = _libsbol.delete_ownedModel
     __del__ = lambda self: None
@@ -9026,13 +12821,6 @@ class listOfOwnedModels(ownedModel):
 listOfOwnedModels_swigregister = _libsbol.listOfOwnedModels_swigregister
 listOfOwnedModels_swigregister(listOfOwnedModels)
 
-
-def raptor_error_handler(user_data, message):
-    """
-
-
-    """
-    return _libsbol.raptor_error_handler(user_data, message)
 class Document(SBOLObject):
     """
 
@@ -9069,6 +12857,12 @@ class Document(SBOLObject):
     __swig_getmethods__["SBOLObjects"] = _libsbol.Document_SBOLObjects_get
     if _newclass:
         SBOLObjects = _swig_property(_libsbol.Document_SBOLObjects_get, _libsbol.Document_SBOLObjects_set)
+
+    def getTopLevel(self, arg2):
+        return _libsbol.Document_getTopLevel(self, arg2)
+
+    def getWorld(self):
+        return _libsbol.Document_getWorld(self)
     __swig_setmethods__["componentDefinitions"] = _libsbol.Document_componentDefinitions_set
     __swig_getmethods__["componentDefinitions"] = _libsbol.Document_componentDefinitions_get
     if _newclass:
@@ -9090,22 +12884,6 @@ class Document(SBOLObject):
     if _newclass:
         sequenceAnnotations = _swig_property(_libsbol.Document_sequenceAnnotations_get, _libsbol.Document_sequenceAnnotations_set)
 
-    def getTopLevel(self, arg2):
-        """
-
-
-        """
-        return _libsbol.Document_getTopLevel(self, arg2)
-
-
-    def getWorld(self):
-        """
-
-
-        """
-        return _libsbol.Document_getWorld(self)
-
-
     def write(self, filename):
         """
 
@@ -9116,6 +12894,10 @@ class Document(SBOLObject):
         ----------
         * `filename` :  
             The full name of the file you want to write (including file extension)  
+
+        Returns
+        -------
+        A string with the validation results, or empty string if validation is disabled  
 
         """
         return _libsbol.Document_write(self, filename)
@@ -9156,33 +12938,126 @@ class Document(SBOLObject):
 
 
     def request_validation(self, sbol):
+        """
+
+
+        Submit this Document to the online validator.  
+
+        Returns
+        -------
+        The validation results  
+
+        """
         return _libsbol.Document_request_validation(self, sbol)
 
-    def validate(self, arg=None):
+
+    def generate(self, world, sbol_serializer, sbol_buffer, sbol_buffer_len, ios, base_uri):
         """
 
 
-        Run validation rules on this Document. Validation rules are called automatically
-        during parsing and serialization.  
+        Generates rdf/xml.  
+
+        author: KC generates rdf/xml  
 
         """
-        return _libsbol.Document_validate(self, arg)
+        return _libsbol.Document_generate(self, world, sbol_serializer, sbol_buffer, sbol_buffer_len, ios, base_uri)
+
+
+    def validate(self):
+        """
+
+
+        Run validation on this Document.  
+
+        Returns
+        -------
+        The validation results  
+
+        author: KC  
+
+        """
+        return _libsbol.Document_validate(self)
 
 
     def find(self, uri):
         """
 
 
+        Search recursively for an SBOLObject in this Document that matches the uri.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the object to search for  
+
+        Returns
+        -------
+        A pointer to the SBOLObject, or NULL if an object with this identity doesn't
+        exist  
+
         """
         return _libsbol.Document_find(self, uri)
+
+
+    def parse_annotation_objects(self):
+        return _libsbol.Document_parse_annotation_objects(self)
+
+    def find_property(self, uri):
+        """
+
+
+        Search this object recursively to see if it contains a member property with the
+        given RDF type.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The RDF type of the property to search for.  
+
+        Returns
+        -------
+        A pointer to the object that contains a member property with the specified RDF
+        type, NULL otherwise  
+
+        """
+        return _libsbol.Document_find_property(self, uri)
+
+
+    def find_reference(self, uri):
+        """
+
+
+        """
+        return _libsbol.Document_find_reference(self, uri)
 
 
     def getNamespaces(self):
         """
 
 
+        Returns
+        -------
+        A vector of namespaces Get namespaces contained in this Document  
+
         """
         return _libsbol.Document_getNamespaces(self)
+
+
+    def addNamespace(self, *args):
+        """
+
+
+        Add a new namespace to this Document.  
+
+        Parameters
+        ----------
+        * `ns` :  
+            The namespace, eg. http://sbols.org/v2#  
+        * `prefix` :  
+            The namespace prefix, eg. sbol  
+
+        """
+        return _libsbol.Document_addNamespace(self, *args)
 
 
     def addModel(self, *args):
@@ -9286,131 +13161,132 @@ class Document(SBOLObject):
 
 
     def addComponentDefinition(self, *args):
+        """
+
+        Document.addComponentDefinition(componentDefinition)
+        Adds a component definition or a list of component definitions to a sbol::Document object.
+
+        Parameters
+        ----------
+        * `componentDefinition` : 
+            ComponentDefinition object or a list of ComponentDefinition objects
+
+        """
         return _libsbol.Document_addComponentDefinition(self, *args)
 
+
     def addSequence(self, *args):
+        """
+
+        Document.addSequence(sequence)
+        Adds a sequence or a list of sequences to a sbol::Document object.
+
+        Parameters
+        ----------
+        * `sequence` : 
+            Sequence object or a list of Sequence objects
+
+        """
         return _libsbol.Document_addSequence(self, *args)
 
+
     def addModuleDefinition(self, *args):
+        """
+
+        Document.addModuleDefinition(moduleDefinition)
+        Adds a module definition or a list of module definitions to a sbol::Document object.
+
+        Parameters
+        ----------
+        * `moduleDefinition` : 
+            ModuleDefinition object or a list of ModuleDefinition objects
+
+        """
         return _libsbol.Document_addModuleDefinition(self, *args)
+
     __swig_destroy__ = _libsbol.delete_Document
     __del__ = lambda self: None
 Document_swigregister = _libsbol.Document_swigregister
 Document_swigregister(Document)
-cvar = _libsbol.cvar
 
+
+def raptor_error_handler(user_data, message):
+    return _libsbol.raptor_error_handler(user_data, message)
+raptor_error_handler = _libsbol.raptor_error_handler
+
+def convert_ntriples_encoding_to_ascii(s):
+    return _libsbol.convert_ntriples_encoding_to_ascii(s)
+convert_ntriples_encoding_to_ascii = _libsbol.convert_ntriples_encoding_to_ascii
 
 def cut_sbol_resource(xml_string, resource_id):
-    """
-
-
-    """
     return _libsbol.cut_sbol_resource(xml_string, resource_id)
+cut_sbol_resource = _libsbol.cut_sbol_resource
 
 def replace_reference_to_resource(xml_string, property_name, resource_id, replacement_text):
-    """
-
-
-    """
     return _libsbol.replace_reference_to_resource(xml_string, property_name, resource_id, replacement_text)
+replace_reference_to_resource = _libsbol.replace_reference_to_resource
 
 def seek_element(xml_buffer, uri):
-    """
-
-
-    """
     return _libsbol.seek_element(xml_buffer, uri)
+seek_element = _libsbol.seek_element
 
 def seek_property_element(xml_buffer, property_name):
-    """
-
-
-    """
     return _libsbol.seek_property_element(xml_buffer, property_name)
+seek_property_element = _libsbol.seek_property_element
 
 def seek_next_element(xml_buffer):
-    """
-
-
-    """
     return _libsbol.seek_next_element(xml_buffer)
+seek_next_element = _libsbol.seek_next_element
 
 def seek_new_line(xml_buffer):
-    """
-
-
-    """
     return _libsbol.seek_new_line(xml_buffer)
+seek_new_line = _libsbol.seek_new_line
 
 def seek_end_of_line(xml_buffer):
-    """
-
-
-    """
     return _libsbol.seek_end_of_line(xml_buffer)
+seek_end_of_line = _libsbol.seek_end_of_line
 
 def seek_end_of_element(xml_buffer):
-    """
-
-
-    """
     return _libsbol.seek_end_of_element(xml_buffer)
+seek_end_of_element = _libsbol.seek_end_of_element
 
 def seek_end_of_node(xml_buffer, uri):
-    """
-
-
-    """
     return _libsbol.seek_end_of_node(xml_buffer, uri)
+seek_end_of_node = _libsbol.seek_end_of_node
 
-def seek_resource(xml_buffer, property_name, uri):
-    """
-
-
-    """
-    return _libsbol.seek_resource(xml_buffer, property_name, uri)
+def seek_resource(xml_buffer, qname, resource_uri):
+    return _libsbol.seek_resource(xml_buffer, qname, resource_uri)
+seek_resource = _libsbol.seek_resource
 
 def is_open_node(xml_buffer):
-    """
-
-
-    """
     return _libsbol.is_open_node(xml_buffer)
+is_open_node = _libsbol.is_open_node
 
 def indent(text, indentation):
-    """
-
-
-    """
     return _libsbol.indent(text, indentation)
+indent = _libsbol.indent
 
 def get_qname(xml_buffer):
-    """
-
-
-    """
     return _libsbol.get_qname(xml_buffer)
+get_qname = _libsbol.get_qname
 
 def get_local_part(qname):
-    """
-
-
-    """
     return _libsbol.get_local_part(qname)
+get_local_part = _libsbol.get_local_part
 
 def get_prefix(qname):
-    """
-
-
-    """
     return _libsbol.get_prefix(qname)
+get_prefix = _libsbol.get_prefix
 
 def parse_element(xml_buffer):
-    """
-
-
-    """
     return _libsbol.parse_element(xml_buffer)
+parse_element = _libsbol.parse_element
+
+def register_extension_class(ns, ns_prefix, class_name, constructor ):
+    uri = ns + class_name
+    Config.__extensionclass__[uri] = constructor
+
 # This file is compatible with both classic and new-style classes.
 
+cvar = _libsbol.cvar
 
