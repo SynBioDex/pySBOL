@@ -66,10 +66,12 @@ A complete design adds explicit sequence information to the components in a temp
 Full Example Code
 -------------------------------
 
-Full example code is provided below, which will create a file called
+Full example code is provided below, which will create a file called "gene_cassette.xml"
 
 .. code:: python
 
+    from sbol import *
+    
 	setHomespace("http://sys-bio.org")
 	doc = Document()
 
@@ -103,11 +105,7 @@ Full example code is provided below, which will create a file called
 	terminator_seq = Sequence("B0012", "attcga")
 	gene_seq = Sequence("BB0001")
 	
-	doc.addSequence(promoter_seq)
-	doc.addSequence(CDS_seq)
-	doc.addSequence(RBS_seq)
-	doc.addSequence(terminator_seq)
-	doc.addSequence(gene_seq)
+    doc.addSequence([promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq])
 	
 	promoter.sequences.set(promoter_seq.identity.get())
 	CDS.sequences.set(CDS_seq.identity.get())
@@ -122,3 +120,6 @@ Full example code is provided below, which will create a file called
 	print(CDS_seq.elements.get())
 	print(terminator_seq.elements.get())
 	print(gene_seq.elements.get())
+    
+    result = doc.write("gene_cassette.xml")
+    print(result)
