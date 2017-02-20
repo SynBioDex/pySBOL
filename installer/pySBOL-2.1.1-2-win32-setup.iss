@@ -2,13 +2,13 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "pySBOL"
-#define MyAppVersion "2.1.0"
+#define MyAppVersion "2.1.1"
 #define MyAppSubVersion ""
-#define MyArchitecture "x64"
+#define MyArchitecture "x86"
 #define MyAppPublisher "SBOL Team"
-#define PythonSubVer = "3.5"
-#define PythonSubVerWithoutDots = "35"
-#define PythonVer = "3"
+#define PythonSubVer = "2.7"
+#define PythonSubVerWithoutDots = "27"
+#define PythonVer = "2"
 #define MyAppURL "http://sbolstandard.org/"
 
 [Setup]
@@ -38,12 +38,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 ;Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/libsbol.py"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.exp"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.lib"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./wrapper/__init__.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./wrapper/sbol.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "./install_{#PythonVer}_{#MyArchitecture}/wrapper/Win_32_2/sbol/*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.pyd"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.exp"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.lib"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./wrapper/__init__.py"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./wrapper/sbol.py"; DestDir: "{app}"; Flags: ignoreversion
 Source: "./LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion 
 
 ;[Registry]
@@ -84,22 +84,22 @@ var
 begin
   Result := 0;
   ArchStr := '{#MyArchitecture}';
-  if RegQueryStringValue(HKLM64, 'SOFTWARE\Python\PythonCore\{#PythonSubVer}\InstallPath', '', InstallDirLM) then
+  if RegQueryStringValue(HKLM32, 'SOFTWARE\Python\PythonCore\{#PythonSubVer}\InstallPath', '', InstallDirLM) then
     begin
       if not PathList.Find(InstallDirLM, temp_ind) then
         PathList.Add(InstallDirLM + '\Lib\site-packages\sbol\');
     end;
-  if RegQueryStringValue(HKCU64, 'SOFTWARE\Python\PythonCore\{#PythonSubVer}\InstallPath', '', InstallDirCU) then 
+  if RegQueryStringValue(HKCU32, 'SOFTWARE\Python\PythonCore\{#PythonSubVer}\InstallPath', '', InstallDirCU) then 
     begin
       if not PathList.Find(InstallDirCU, temp_ind) then
         PathList.Add(InstallDirCU + '\Lib\site-packages\sbol\');
     end;
-  if RegQueryStringValue(HKLM, 'SOFTWARE\Python\ContinuumAnalytics\Anaconda{#PythonSubVerWithoutDots}-64\InstallPath', '', InstallDirCondaLM) then
+  if RegQueryStringValue(HKLM, 'SOFTWARE\Python\ContinuumAnalytics\Anaconda{#PythonSubVerWithoutDots}-32\InstallPath', '', InstallDirCondaLM) then
     begin
       if not PathList.Find(InstallDirCondaLM, temp_ind) then
         PathList.Add(InstallDirCondaLM + '\Lib\site-packages\sbol\');
     end;
-  if RegQueryStringValue(HKCU, 'SOFTWARE\Python\ContinuumAnalytics\Anaconda{#PythonSubVerWithoutDots}-64\InstallPath', '', InstallDirCondaCU) then
+  if RegQueryStringValue(HKCU, 'SOFTWARE\Python\ContinuumAnalytics\Anaconda{#PythonSubVerWithoutDots}-32\InstallPath', '', InstallDirCondaCU) then
     begin
       if not PathList.Find(InstallDirCondaCU, temp_ind) then
         PathList.Add(InstallDirCondaCU + '\Lib\site-packages\sbol\');

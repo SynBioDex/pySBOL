@@ -2,13 +2,13 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "pySBOL"
-#define MyAppVersion "2.1.0"
+#define MyAppVersion "2.1.1"
 #define MyAppSubVersion ""
 #define MyArchitecture "x86"
 #define MyAppPublisher "SBOL Team"
-#define PythonSubVer = "2.7"
-#define PythonSubVerWithoutDots = "27"
-#define PythonVer = "2"
+#define PythonSubVer = "3.6"
+#define PythonSubVerWithoutDots = "36"
+#define PythonVer = "3"
 #define MyAppURL "http://sbolstandard.org/"
 
 [Setup]
@@ -38,12 +38,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 ;Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/libsbol.py"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.exp"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.lib"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./wrapper/__init__.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "./wrapper/sbol.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "./install_{#PythonVer}_{#MyArchitecture}/wrapper/Win_32_3/sbol/*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.pyd"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.exp"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./release_{#PythonVer}_{#MyArchitecture}/wrapper/Release/_libsbol.lib"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./wrapper/__init__.py"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "./wrapper/sbol.py"; DestDir: "{app}"; Flags: ignoreversion
 Source: "./LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion 
 
 ;[Registry]
