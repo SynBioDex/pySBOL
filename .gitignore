@@ -1,3 +1,6 @@
 # auto-generated html docs
 docs/_build
 ~/.pypirc
+*/build/
+*/dist/
+*/pySBOL.egg-info/
