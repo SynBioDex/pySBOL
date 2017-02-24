@@ -8,14 +8,10 @@ Python by default comes with package manager. Follow the steps below to install 
 Using Pip
 ----------------------
 
-PySBOL is available for Windows and Mac OSX via pip installation, which is the simplest method to obtain pySBOL.
-To install pySBOL using pip, run:
+pySBOL is available for Windows and Mac OSX via PyPI, which is the simplest method to obtain pySBOL.
+To install pySBOL using pip, run following line on console:
 
-pip install pysbol
-
-On Mac OSX, run:
-
-pip install pysbol --prefix=/usr/local
+``pip install pysbol``
 
 ----------------------
 Using Python
