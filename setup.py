@@ -47,7 +47,7 @@ chdir(path.join(here,package_dir))
 if config[0] == 'Win':
       package_data={
       'sbol': ['examples/*'],
-      'sbol/test': ['*.*', 'SBOL2/*.*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*'],
       'sbol': ['_libsbol.pyd', 'libsbol.py']
       }
 elif config[0] == 'Mac':
