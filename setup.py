@@ -47,7 +47,7 @@ chdir(path.join(here,package_dir))
 if config[0] == 'Win':
       package_data={
       'sbol': ['examples/*'],
-      'sbol/test': ['*.*', 'SBOL2/*.*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*'],
       'sbol': ['_libsbol.pyd', 'libsbol.py']
       }
 elif config[0] == 'Mac':
@@ -62,7 +62,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.1.1-0',
+    version='2.1.1.post1',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,
