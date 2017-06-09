@@ -1,66 +1,60 @@
-Sequence Assembly
-======================
-
 See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id2>`_ for full example code.
 
 -------------------------------
-Template Designs
+Design Abstraction
 -------------------------------
 
-One advantage of the SBOL standard over GenBank is the ability to represent DNA as components without knowing their exact sequence. A template design contains a component whose general function is known (represented by a Sequence Ontology type) while its sequence is currently either unknown or unspecified. This feature of SBOL allows the synthetic biologist to design the functional characteristics of a biological system independently of its structural characteristics. This enables a computer-aided design (CAD) approach similar to electronics, in which the functional or schematic representation of an electronic circuit can be represented separately from the physical dimensions of the electronic components.
+Design abstraction enables the synthetic biologist to think about the high-level, functional characteristics of a biological system independently of its structural characteristics. This enables a computer-aided design (CAD) approach similar to electronics, in which the functional or schematic representation of an electronic circuit can be represented separately from the physical dimensions of the electronic components. One advantage of the SBOL standard over GenBank is the ability to represent DNA as abstract components without knowing their exact sequence. An abstract design can be used as a template, with sequence information filled in later.
+A ComponentDefinition represents a biological component whose general function is known while its sequence is currently unknown or unspecified. The intended function of a component is specified using a term from the Sequence Ontology (SO), a standard vocabulary for describing genetic parts. The following example shows how to construct a simple abstract component. As the following example shows, some common SO terms are built in to libSBOL as pre-defined constants (see @file constants.h ). This code example defines the new component as a gene. Other terms may be found by browsing the [Sequence Ontology](http://www.sequenceontology.org/browser/obob.cgi) online.
+Below is a diagram of a gene cassette. It is composed of genetic subcomponents including a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOLVisual symbols. The next example will demonstrate how an abstract design for this gene is assembled from its subcomponents.
 
 .. figure:: ../gene_cassette.png
     :align: center
     :figclass: align-center
 
-Above is a diagram of a gene cassette, consisting of a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOLVisual symbols. The following code creates genetic components corresponding to parts in the `iGEM registry <http://parts.igem.org/Main_Page>`_: a promoter, coding sequence (CDS), ribosome binding site (RBS), and transcriptional terminator.
-
 .. code:: python
 
-	gene = ComponentDefinition("BB0001")
-	promoter = ComponentDefinition("R0010")
-	CDS = ComponentDefinition("B0032")
-	RBS = ComponentDefinition("E0040")
-	terminator = ComponentDefinition("B0012")
+    # Construct an abstract design for a gene
+    gene_example = ComponentDefinition("gene_example");
+    gene_example.roles.set(SO_GENE);
 
-	promoter.roles.set(SO_PROMOTER)
-	CDS.roles.set(SO_CDS)
-	RBS.roles.set(SO_RBS)
-	terminator.roles.set(SO_TERMINATOR)
+    # Fetch the subcomponents for this design from an online repository
+    igem = PartShop("https://synbiohub.org")
+    igem.pull("https://synbiohub.org/public/igem/BBa_R0010/1", doc)
+    igem.pull("https://synbiohub.org/public/igem/BBa_B0032/1", doc)
+    igem.pull("https://synbiohub.org/public/igem/BBa_E0040/1", doc)
+    igem.pull("https://synbiohub.org/public/igem/BBa_B0012/1", doc)
+
+    r0010 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_R0010/1')
+    b0032 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_B0032/1')
+    e0040 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_E0040/1')
+    b0012 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_B0012/1')
 
 -------------------------------
 Hierarchical DNA Assembly
 -------------------------------
-	
-pySBOL includes methods for common high-level design tasks for synthetic biology such as assembly of components into functional hierarchies. This is another important advantage of the SBOL standard over GenBank. DNA sequences and biological structures in general exhibit hierarchical organization, from the genome, to operons, to genes, to lower level genetic operators. The following code example generates a hierarchical description of a gene which contains as subcomponents the previously created components. Note that these objects must be added to a Document before assembly.
+
+DNA sequences and biological structures in general exhibit hierarchical organization, from the genome, to operons, to genes, to lower level genetic operators. An important advantage of SBOL over GenBank is the ability to represent DNA as an abstraction hierarchy. LibSBOL includes methods that assemble components into hierarchical compositions. The following code example generates a hierarchical description of the gene  created previously. Note that the subcomponents must be added to a Document for assembly, so a Document is passed as a parameter.
+
 
 .. code:: python
 
-    gene.assemble([ promoter, RBS, CDS, terminator ])
-	
+    gene_example.assemble([ r0010, b0032, e0040, b0012 ], doc)
+
+
 -------------------------------
 Sequence Assembly
 -------------------------------
 
-A complete design adds explicit sequence information to the components in a template design. In order to assemble a complete design, Sequence objects must first be created and associated with the promoter, CDS, RBS, terminator subcomponents. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition.assemble>`_ method, which assembles a template design, the `Sequence.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Sequence.assemble>`_ method calculates the complete sequence of a design from the sequence of its subcomponents. You must assemble the template design prior to assembling the the complete sequence.
+
+A complete design adds explicit sequence information to the components in a template design. In order to complete the DNA sequence for a design, Sequence objects must be created and associated with the template design previously created. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition.assemble>`_ method, which assembles a template design, the `Sequence.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Sequence.assemble>`_ method calculates the complete sequence of a design from the sequence of its subcomponents. You must assemble the template design prior to assembling the the complete sequence.
 
 .. code:: python 
 
-	promoter_seq = Sequence("R0010", "ggctgca")
-	RBS_seq = Sequence("B0032", "aattatataaa")
-	CDS_seq = Sequence("E0040", "atgtaa")
-	terminator_seq = Sequence("B0012", "attcga")
-	gene_seq = Sequence("BB0001")
-
-	promoter.sequences.set(promoter_seq.identity.get())
-	CDS.sequences.set(CDS_seq.identity.get())
-	RBS.sequences.set(RBS_seq.identity.get())
-	terminator.sequences.set(terminator_seq.identity.get())
-	gene.sequences.set(gene_seq.identity.get())
-
-	gene_seq.assemble()
-	print(gene_seq.elements.get())
-	
+    gene_seq = Sequence("gene_seq")
+    gene_seq.sequences.set(gene_seq.identity.get())
+    gene_seq.assemble()
+    print (gene_seq.elements.get())
 
 -------------------------------
 Full Example Code
@@ -75,9 +69,9 @@ Full example code is provided below, which will create a file called "gene_casse
     setHomespace("http://sys-bio.org")
     doc = Document()
     
-    gene = ComponentDefinition("BB0001")
+    gene_example = ComponentDefinition("gene_example")
     promoter = ComponentDefinition("R0010")
-    CDS = ComponentDefinition("B0032")
+    cds = ComponentDefinition("B0032")
     RBS = ComponentDefinition("E0040")
     terminator = ComponentDefinition("B0012")
     
