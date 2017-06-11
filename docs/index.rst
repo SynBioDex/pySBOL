@@ -13,6 +13,7 @@ and constructing genetic designs according to the standardized specifications of
 
    introduction
    installation
+   getting_started
    repositories
    sbol_examples
    testing_instructions

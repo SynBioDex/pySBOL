@@ -1,8 +1,9 @@
 See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id2>`_ for full example code.
 
--------------------------------
-Design Abstraction
--------------------------------
+.. _cad:
+---------------------------------
+Computer-aided Design with PySBOL
+---------------------------------
 
 Design abstraction enables the synthetic biologist to think about the high-level, functional characteristics of a biological system independently of its structural characteristics. This enables a computer-aided design (CAD) approach similar to electronics, in which the functional or schematic representation of an electronic circuit can be represented separately from the physical dimensions of the electronic components. One advantage of the SBOL standard over GenBank is the ability to represent DNA as abstract components without knowing their exact sequence. An abstract design can be used as a template, with sequence information filled in later.
 A ComponentDefinition represents a biological component whose general function is known while its sequence is currently unknown or unspecified. The intended function of a component is specified using a term from the Sequence Ontology (SO), a standard vocabulary for describing genetic parts. The following example shows how to construct a simple abstract component. As the following example shows, some common SO terms are built in to libSBOL as pre-defined constants (see @file constants.h ). This code example defines the new component as a gene. Other terms may be found by browsing the [Sequence Ontology](http://www.sequenceontology.org/browser/obob.cgi) online.
@@ -29,6 +30,7 @@ Below is a diagram of a gene cassette. It is composed of genetic subcomponents i
     b0032 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_B0032/1')
     e0040 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_E0040/1')
     b0012 = doc.getComponentDefinition('https://synbiohub.org/public/igem/BBa_B0012/1')
+.. end
 
 -------------------------------
 Hierarchical DNA Assembly
@@ -40,7 +42,7 @@ DNA sequences and biological structures in general exhibit hierarchical organiza
 .. code:: python
 
     gene_example.assemble([ r0010, b0032, e0040, b0012 ], doc)
-
+.. end
 
 -------------------------------
 Sequence Assembly
@@ -55,6 +57,7 @@ A complete design adds explicit sequence information to the components in a temp
     gene_seq.sequences.set(gene_seq.identity.get())
     gene_seq.assemble()
     print (gene_seq.elements.get())
+.. end
 
 -------------------------------
 Full Example Code
@@ -117,3 +120,4 @@ Full example code is provided below, which will create a file called "gene_casse
     
     result = doc.write("gene_cassette.xml")
     print(result)
+.. end

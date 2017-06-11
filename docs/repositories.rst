@@ -20,6 +20,8 @@ b0032 = doc.getComponentDefinition('http://synbiohub.org/public/igem/BBa_B0032/1
 e0040 = doc.getComponentDefinition('http://synbiohub.org/public/igem/BBa_E0040/1')
 b0012 = doc.getComponentDefinition('http://synbiohub.org/public/igem/BBa_B0012/1')
 
+.. end
+
 --------------------
 Searching Part Repos
 --------------------
@@ -42,6 +44,8 @@ while len(records) > 0 :
     offset += len(records)
     all_records.extend(records)
 
+.. end
+
 ----------------------------
 Submitting Designs to a Repo
 ----------------------------
@@ -52,3 +56,5 @@ Users can submit their SBOL data directly to a PartShop using the PySBOL API. Th
 
 login("bbartley@sys-bio.org", password)
 submit(doc)
+
+.. end
