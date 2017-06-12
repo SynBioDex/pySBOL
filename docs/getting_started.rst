@@ -2,6 +2,7 @@ Getting Started with SBOL
 =============================
 
 This beginner’s guide introduces the basic principles of pySBOL for new users. For more comprehensive documentation about the API, refer to documentation about specific classes and methods for detailed information about the API. For more detail about the SBOL standard, visit [sbolstandard.org](http://sbolstandard.org) or'refer to the [specification document](http://sbolstandard.org/downloads/specifications/specification-data-model-2-0-1/).
+
 -------------------------
 Creating an SBOL Document
 -------------------------
@@ -28,10 +29,10 @@ for cd in doc.componentDefinitions:
 
 This will print the unique identity of each object (see creating_objects_ next). Similarly, you can iterate through ``doc.moduleDefinitions, doc.sequences, doc.sequenceAnnotations, and doc.models``.
 
-.. _creating_objects:
 --------------------------
 Creating SBOL Data Objects
 --------------------------
+
 Both structural and functional details of biological designs can be described with SBOL data objects.  The principle classes for describing the structure and primary sequence of a design are ComponentDefinitions, Components, and Sequences, SequenceAnnotations.  The principle classes for describing the function of a design are ModuleDefinitions, Modules, and Interactions. In the official SBOL specification document, these classes and their properties are represented as a special kind of box diagram. Each box represents a record of data thats describe a particular kind of SBOL object. For example, following is the diagram for a ComponentDefinition which will be referred to in later sections.
 ![](component_definition_uml.png)
 When a new object is created, it must be assigned a unique identity, or uniform resource identifier (URI). A typical URI consists of a scheme, a namespace, and an identifier, although other forms of URI's are allowed.  In this tutorial, we use URI's of the type ``http://sys-bio.org/my_design``, where the scheme is indicated by ``http://``, the namespace is ``sys-bio.org`` and the identifier is ``my_design``.

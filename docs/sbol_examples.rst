@@ -3,7 +3,6 @@ SBOL Examples
 
 See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id2>`_ for full example code.
 
-.. _cad:
 ---------------------------------
 Computer-aided Design with PySBOL
 ---------------------------------
@@ -50,7 +49,6 @@ DNA sequences and biological structures in general exhibit hierarchical organiza
 -------------------------------
 Sequence Assembly
 -------------------------------
-
 
 A complete design adds explicit sequence information to the components in a template design. In order to complete the DNA sequence for a design, Sequence objects must be created and associated with the template design previously created. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition.assemble>`_ method, which assembles a template design, the `Sequence.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Sequence.assemble>`_ method calculates the complete sequence of a design from the sequence of its subcomponents. You must assemble the template design prior to assembling the the complete sequence.
 
