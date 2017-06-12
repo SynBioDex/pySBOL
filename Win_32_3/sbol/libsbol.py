@@ -1852,21 +1852,6 @@ class URIProperty(_StringProperty):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
-
-    def __getitem__(self, nIndex):
-        return _libsbol.URIProperty___getitem__(self, nIndex)
-
-    def __iter__(self):
-        return _libsbol.URIProperty___iter__(self)
-
-    def next(self):
-        return _libsbol.URIProperty_next(self)
-
-    def __next__(self):
-        return _libsbol.URIProperty___next__(self)
-
-    def __len__(self):
-        return _libsbol.URIProperty___len__(self)
     __swig_destroy__ = _libsbol.delete_URIProperty
     __del__ = lambda self: None
 URIProperty_swigregister = _libsbol.URIProperty_swigregister
@@ -1905,21 +1890,6 @@ class TextProperty(_StringProperty):
         """
         return _libsbol.TextProperty_get(self)
 
-
-    def __getitem__(self, nIndex):
-        return _libsbol.TextProperty___getitem__(self, nIndex)
-
-    def __iter__(self):
-        return _libsbol.TextProperty___iter__(self)
-
-    def next(self):
-        return _libsbol.TextProperty_next(self)
-
-    def __next__(self):
-        return _libsbol.TextProperty___next__(self)
-
-    def __len__(self):
-        return _libsbol.TextProperty___len__(self)
 
     def __init__(self, *args):
         """
@@ -1969,21 +1939,6 @@ class IntProperty(_IntProperty):
         """
         return _libsbol.IntProperty_get(self)
 
-
-    def __getitem__(self, nIndex):
-        return _libsbol.IntProperty___getitem__(self, nIndex)
-
-    def __iter__(self):
-        return _libsbol.IntProperty___iter__(self)
-
-    def next(self):
-        return _libsbol.IntProperty_next(self)
-
-    def __next__(self):
-        return _libsbol.IntProperty___next__(self)
-
-    def __len__(self):
-        return _libsbol.IntProperty___len__(self)
 
     def __init__(self, type_uri, property_owner, initial_value=0):
         """
@@ -2472,21 +2427,6 @@ class ReferencedObject(URIProperty):
     __swig_getmethods__["python_iter"] = _libsbol.ReferencedObject_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ReferencedObject_python_iter_get, _libsbol.ReferencedObject_python_iter_set)
-
-    def __getitem__(self, nIndex):
-        return _libsbol.ReferencedObject___getitem__(self, nIndex)
-
-    def __iter__(self):
-        return _libsbol.ReferencedObject___iter__(self)
-
-    def next(self):
-        return _libsbol.ReferencedObject_next(self)
-
-    def __next__(self):
-        return _libsbol.ReferencedObject___next__(self)
-
-    def __len__(self):
-        return _libsbol.ReferencedObject___len__(self)
     __swig_destroy__ = _libsbol.delete_ReferencedObject
     __del__ = lambda self: None
 ReferencedObject_swigregister = _libsbol.ReferencedObject_swigregister
