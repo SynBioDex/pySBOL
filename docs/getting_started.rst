@@ -69,7 +69,7 @@ Some constructors have required fields. In the specification document, required 
     cas9 = ComponentDefinition("Cas9", BIOPAX_PROTEIN)
 .. end
 
-Notice the type is specified using a predefined constant. The `ComponentDefinition.types` property is one of many SBOL properties that use standard ontology terms as property values.  The `ComponentDefinition.types` property uses the Sequence Ontology to be specific.  Many commonly used ontological terms are provided by libSBOL as predefined constants in the `constants.h <https://github.com/SynBioDex/libSBOL/blob/develop/source/constants.h>`_ header.  See the help page for the `sbol.ComponentDefinition <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition>`_ class or other specific class to find a table that lists the available terms.
+Notice the type is specified using a predefined constant. The ``ComponentDefinition.types`` property is one of many SBOL properties that use standard ontology terms as property values.  The ``ComponentDefinition.types`` property uses the Sequence Ontology to be specific.  Many commonly used ontological terms are provided by libSBOL as predefined constants in the `constants.h <https://github.com/SynBioDex/libSBOL/blob/develop/source/constants.h>`_ header.  See the help page for the `sbol.ComponentDefinition <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition>`_ class or other specific class to find a table that lists the available terms.
 
 ----------------------------
 Adding Objects to a Document
@@ -104,7 +104,7 @@ All properties have a set and a get method. To view the value of a property:
     print(target_promoter.roles.get())
 .. end
 
-This returns the string `http://identifiers.org/so/SO:0000167` which is the Sequence Ontology term for a promoter.
+This returns the string ``http://identifiers.org/so/SO:0000167`` which is the Sequence Ontology term for a promoter.
 
 Note also that some properties support a list of values.  A property with a cardinality indicated by an asterisk symbol indicates that the property may hold an arbitrary number of values.  For example, a ComponentDefinition may be assigned multiple roles.  Calling ``set`` on a method always overwrites the first value of a property, while the ``add`` method always appends a value to the end of a list.
 
