@@ -1,6 +1,5 @@
--------------------------
 Getting Started with SBOL
--------------------------
+=============================
 
 This beginner’s guide introduces the basic principles of pySBOL for new users. For more comprehensive documentation about the API, refer to documentation about specific classes and methods for detailed information about the API. For more detail about the SBOL standard, visit [sbolstandard.org](http://sbolstandard.org) or'refer to the [specification document](http://sbolstandard.org/downloads/specifications/specification-data-model-2-0-1/).
 -------------------------
