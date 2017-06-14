@@ -13,6 +13,10 @@ To install pySBOL using pip, run following line on console:
 
 ``pip install pysbol``
 
+Or if you prefer Python 3
+
+``pip3 install pysbol``
+
 ----------------------
 Using Python
 ----------------------
