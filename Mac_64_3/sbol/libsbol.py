@@ -4,6 +4,11 @@
 # Do not make changes to this file unless you know what you are doing--modify
 # the SWIG interface file instead.
 
+
+from __future__ import absolute_import
+
+
+
 from sys import version_info as _swig_python_version_info
 if _swig_python_version_info >= (2, 7, 0):
     def swig_import_helper():
@@ -897,7 +902,7 @@ class Config(_object):
     def getFileFormat(self):
         return _libsbol.Config_getFileFormat(self)
 
-    def setOption(option, value):
+    def setOption(*args):
         """
 
 
@@ -998,7 +1003,7 @@ class Config(_object):
             The option value  
 
         """
-        return _libsbol.Config_setOption(option, value)
+        return _libsbol.Config_setOption(*args)
 
     setOption = staticmethod(setOption)
 
@@ -1017,16 +1022,12 @@ class Config(_object):
         return _libsbol.Config_getOption(option)
 
     getOption = staticmethod(getOption)
-    if _newclass:
-        parse_extension_objects = staticmethod(_libsbol.Config_parse_extension_objects)
-    else:
-        parse_extension_objects = _libsbol.Config_parse_extension_objects
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
 Config_swigregister(Config)
 
-def Config_setOption(option, value):
+def Config_setOption(*args):
     """
 
 
@@ -1127,7 +1128,7 @@ def Config_setOption(option, value):
         The option value  
 
     """
-    return _libsbol.Config_setOption(option, value)
+    return _libsbol.Config_setOption(*args)
 
 def Config_getOption(option):
     """
@@ -1142,10 +1143,6 @@ def Config_getOption(option):
 
     """
     return _libsbol.Config_getOption(option)
-
-def Config_parse_extension_objects():
-    return _libsbol.Config_parse_extension_objects()
-Config_parse_extension_objects = _libsbol.Config_parse_extension_objects
 
 
 def setHomespace(ns):
@@ -1312,6 +1309,8 @@ SBOL_RANGE = _libsbol.SBOL_RANGE
 SBOL_CUT = _libsbol.SBOL_CUT
 SBOL_COLLECTION = _libsbol.SBOL_COLLECTION
 SBOL_GENERIC_LOCATION = _libsbol.SBOL_GENERIC_LOCATION
+SBOL_VARIABLE_COMPONENT = _libsbol.SBOL_VARIABLE_COMPONENT
+SBOL_COMBINATORIAL_DERIVATION = _libsbol.SBOL_COMBINATORIAL_DERIVATION
 UNDEFINED = _libsbol.UNDEFINED
 SBOL_IDENTITY = _libsbol.SBOL_IDENTITY
 SBOL_PERSISTENT_IDENTITY = _libsbol.SBOL_PERSISTENT_IDENTITY
@@ -1355,6 +1354,14 @@ SBOL_LOCATIONS = _libsbol.SBOL_LOCATIONS
 SBOL_ROLE_INTEGRATION = _libsbol.SBOL_ROLE_INTEGRATION
 SBOL_MEMBERS = _libsbol.SBOL_MEMBERS
 SBOL_AT = _libsbol.SBOL_AT
+SBOL_OPERATOR = _libsbol.SBOL_OPERATOR
+SBOL_VARIABLE_COMPONENTS = _libsbol.SBOL_VARIABLE_COMPONENTS
+SBOL_VARIABLE = _libsbol.SBOL_VARIABLE
+SBOL_VARIANTS = _libsbol.SBOL_VARIANTS
+SBOL_VARIANT_COLLECTIONS = _libsbol.SBOL_VARIANT_COLLECTIONS
+SBOL_VARIANT_DERIVATIONS = _libsbol.SBOL_VARIANT_DERIVATIONS
+SBOL_STRATEGY = _libsbol.SBOL_STRATEGY
+SBOL_TEMPLATE = _libsbol.SBOL_TEMPLATE
 SBOL_ACCESS_PRIVATE = _libsbol.SBOL_ACCESS_PRIVATE
 SBOL_ACCESS_PUBLIC = _libsbol.SBOL_ACCESS_PUBLIC
 SBOL_DIRECTION_IN = _libsbol.SBOL_DIRECTION_IN
@@ -2181,6 +2188,7 @@ class SBOLObject(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, SBOLObject, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, SBOLObject, name)
+    __repr__ = _swig_repr
     __swig_setmethods__["doc"] = _libsbol.SBOLObject_doc_set
     __swig_getmethods__["doc"] = _libsbol.SBOLObject_doc_get
     if _newclass:
@@ -2363,11 +2371,20 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_getProperties(self)
 
 
-    def __repr__(self):
-        return _libsbol.SBOLObject___repr__(self)
+    def setPropertyValue(self, property_uri, val):
+        return _libsbol.SBOLObject_setPropertyValue(self, property_uri, val)
+
+    def setAnnotation(self, property_uri, val):
+        return _libsbol.SBOLObject_setAnnotation(self, property_uri, val)
+
+    def getAnnotation(self, property_uri):
+        return _libsbol.SBOLObject_getAnnotation(self, property_uri)
 
     def __str__(self):
         return _libsbol.SBOLObject___str__(self)
+
+    def register_extension(self, ns, ns_prefix, class_name, constructor):
+        return _libsbol.SBOLObject_register_extension(self, ns, ns_prefix, class_name, constructor)
 SBOLObject_swigregister = _libsbol.SBOLObject_swigregister
 SBOLObject_swigregister(SBOLObject)
 
@@ -2589,10 +2606,48 @@ class TopLevel(Identified):
 
 
         """
-        return _libsbol.TopLevel_addToDocument(self, arg2)
+        val = _libsbol.TopLevel_addToDocument(self, arg2)
+
+        arg2.thisown = False
+
+
+        return val
 
     __swig_destroy__ = _libsbol.delete_TopLevel
     __del__ = lambda self: None
+
+    def copyComponentDefinition(self, *args):
+        """
+
+
+        Copy an object and automatically increment its version.  
+
+        If the optional version argument is specified, it will be used instead of
+        incrementing the copied object's version. An object may also be copied into a
+        new document and a new namespace, assuming compliant URIs.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object being copied  
+
+        Parameters
+        ----------
+        * `new_doc` :  
+            The new copies will be attached to this Document. NULL by default.  
+        * `ns` :  
+            This namespace will be substituted for the current namespace (as configured
+            by setHomespace) in all SBOL-compliat URIs.  
+        * `version` :  
+            A new version  
+
+        Returns
+        -------
+        The full URI of the created object.  
+
+        """
+        return _libsbol.TopLevel_copyComponentDefinition(self, *args)
+
 TopLevel_swigregister = _libsbol.TopLevel_swigregister
 TopLevel_swigregister(TopLevel)
 
@@ -2658,6 +2713,10 @@ class Range(Location):
     __swig_getmethods__["start"] = _libsbol.Range_start_get
     if _newclass:
         start = _swig_property(_libsbol.Range_start_get, _libsbol.Range_start_set)
+    __swig_setmethods__["end"] = _libsbol.Range_end_set
+    __swig_getmethods__["end"] = _libsbol.Range_end_get
+    if _newclass:
+        end = _swig_property(_libsbol.Range_end_get, _libsbol.Range_end_set)
 
     def precedes(self, comparand):
         return _libsbol.Range_precedes(self, comparand)
@@ -3572,6 +3631,12 @@ class Sequence(TopLevel):
         return _libsbol.Sequence_assemble(self, *args)
 
 
+    def compile(self):
+        return _libsbol.Sequence_compile(self)
+
+    def synthesize(self, clone_id):
+        return _libsbol.Sequence_synthesize(self, clone_id)
+
     def __init__(self, *args):
         """
 
@@ -4013,14 +4078,14 @@ class SearchQuery(TopLevel):
     __swig_getmethods__["objectType"] = _libsbol.SearchQuery_objectType_get
     if _newclass:
         objectType = _swig_property(_libsbol.SearchQuery_objectType_get, _libsbol.SearchQuery_objectType_set)
-    __swig_setmethods__["offset"] = _libsbol.SearchQuery_offset_set
-    __swig_getmethods__["offset"] = _libsbol.SearchQuery_offset_get
-    if _newclass:
-        offset = _swig_property(_libsbol.SearchQuery_offset_get, _libsbol.SearchQuery_offset_set)
     __swig_setmethods__["limit"] = _libsbol.SearchQuery_limit_set
     __swig_getmethods__["limit"] = _libsbol.SearchQuery_limit_get
     if _newclass:
         limit = _swig_property(_libsbol.SearchQuery_limit_get, _libsbol.SearchQuery_limit_set)
+    __swig_setmethods__["offset"] = _libsbol.SearchQuery_offset_set
+    __swig_getmethods__["offset"] = _libsbol.SearchQuery_offset_get
+    if _newclass:
+        offset = _swig_property(_libsbol.SearchQuery_offset_get, _libsbol.SearchQuery_offset_set)
 
     def __init__(self, *args):
         this = _libsbol.new_SearchQuery(*args)
@@ -4030,33 +4095,29 @@ class SearchQuery(TopLevel):
             self.this = this
     __swig_destroy__ = _libsbol.delete_SearchQuery
     __del__ = lambda self: None
+
+    def __getitem__(self, uri):
+        return _libsbol.SearchQuery___getitem__(self, uri)
 SearchQuery_swigregister = _libsbol.SearchQuery_swigregister
 SearchQuery_swigregister(SearchQuery)
 
-class SearchResponse_(TopLevel):
+class SearchResponse(TopLevel):
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, SearchResponse_, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SearchResponse, name, value)
     __swig_getmethods__ = {}
     for _s in [TopLevel]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
-    __getattr__ = lambda self, name: _swig_getattr(self, SearchResponse_, name)
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined")
-    __repr__ = _swig_repr
-    __swig_destroy__ = _libsbol.delete_SearchResponse_
-    __del__ = lambda self: None
-SearchResponse__swigregister = _libsbol.SearchResponse__swigregister
-SearchResponse__swigregister(SearchResponse_)
-
-class SearchResponse(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, SearchResponse, name, value)
-    __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, SearchResponse, name)
     __repr__ = _swig_repr
+    __swig_setmethods__["records"] = _libsbol.SearchResponse_records_set
+    __swig_getmethods__["records"] = _libsbol.SearchResponse_records_get
+    if _newclass:
+        records = _swig_property(_libsbol.SearchResponse_records_get, _libsbol.SearchResponse_records_set)
+
+    def extend(self, response):
+        return _libsbol.SearchResponse_extend(self, response)
 
     def __init__(self):
         this = _libsbol.new_SearchResponse()
@@ -4066,6 +4127,28 @@ class SearchResponse(_object):
             self.this = this
     __swig_destroy__ = _libsbol.delete_SearchResponse
     __del__ = lambda self: None
+
+    def end(self):
+        return _libsbol.SearchResponse_end(self)
+    __swig_setmethods__["python_iter"] = _libsbol.SearchResponse_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.SearchResponse_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.SearchResponse_python_iter_get, _libsbol.SearchResponse_python_iter_set)
+
+    def __getitem__(self, i):
+        return _libsbol.SearchResponse___getitem__(self, i)
+
+    def __len__(self):
+        return _libsbol.SearchResponse___len__(self)
+
+    def __iter__(self):
+        return _libsbol.SearchResponse___iter__(self)
+
+    def next(self):
+        return _libsbol.SearchResponse_next(self)
+
+    def __next__(self):
+        return _libsbol.SearchResponse___next__(self)
 SearchResponse_swigregister = _libsbol.SearchResponse_swigregister
 SearchResponse_swigregister(SearchResponse)
 
@@ -4077,12 +4160,56 @@ class PartShop(_object):
     __repr__ = _swig_repr
 
     def pull(self, uri, doc):
+        """
+
+        Retrieve an object from an online resource
+
+        Parameters
+        ----------
+        * `uri` : 
+            The identity of the SBOL object you want to retrieve  
+        * `doc` :
+        	The Document to which SBOL data will be added
+
+        """
         return _libsbol.PartShop_pull(self, uri, doc)
 
-    def pullRootCollections(self):
-        return _libsbol.PartShop_pullRootCollections(self)
+
+    def searchRootCollections(self):
+        val = _libsbol.PartShop_searchRootCollections(self)
+
+        true = True
+        false = False
+        exec('val = ' + val)
+        return val
+
+
+        return val
+
+
+    def searchSubCollections(self, uri):
+        val = _libsbol.PartShop_searchSubCollections(self, uri)
+
+        true = True
+        false = False
+        exec('val = ' + val)
+        return val
+
+
+        return val
+
 
     def search(self, *args):
+        """
+
+        An advanced search that allows the user to specify an arbitrary number of search criteria as key/value pairs. Metadata is return as a list of object metadata in dictionary format.
+
+        Parameters
+        ----------
+        * `q` :
+        	A SearchQuery object populated with search fields and values specified as key/value pairs
+
+        """
         val = _libsbol.PartShop_search(self, *args)
 
         if val[0] == '[' :
@@ -4095,7 +4222,19 @@ class PartShop(_object):
         return val
 
 
+    def searchCount(self, *args):
+        return _libsbol.PartShop_searchCount(self, *args)
+
     def submit(self, doc, overwrite=0):
+        """
+
+        Submit your SBOL data to a SynBioHub instance. In order to submit to a PartShop, you must login first. Register on [SynBioHub](http://synbiohub.org) to obtain account credentials.
+        * `doc` :
+        	The Document to submit
+        * `overwrite` :
+        	An integer code: 0(default) - do not overwrite, 1 - overwrite, 2 - merge
+
+        """
         val = _libsbol.PartShop_submit(self, doc, overwrite)
 
         if val[0] == '[' :
@@ -4109,7 +4248,23 @@ class PartShop(_object):
 
 
     def login(self, email, password):
+        """
+
+        In order to submit to a PartShop, you must login first. Register on [SynBioHub](http://synbiohub.org) to obtain account credentials.
+
+        Parameters
+        ----------
+        * `email` :
+        	The email associated with the user's SynBioHub account
+        * `password` :
+        	The user's password
+
+        """
         return _libsbol.PartShop_login(self, email, password)
+
+
+    def getURL(self):
+        return _libsbol.PartShop_getURL(self)
 
     def __init__(self, url):
         this = _libsbol.new_PartShop(url)
@@ -4119,10 +4274,22 @@ class PartShop(_object):
             self.this = this
 
     def countComponentDefinition(self):
+        """
+
+        Return the count of objects contained in a PartShop
+
+        """
         return _libsbol.PartShop_countComponentDefinition(self)
 
+
     def countCollection(self):
+        """
+
+        Return the count of objects contained in a PartShop
+
+        """
         return _libsbol.PartShop_countCollection(self)
+
     __swig_destroy__ = _libsbol.delete_PartShop
     __del__ = lambda self: None
 PartShop_swigregister = _libsbol.PartShop_swigregister
@@ -4147,7 +4314,7 @@ class Document(Identified):
     __getattr__ = lambda self, name: _swig_getattr(self, Document, name)
     __repr__ = _swig_repr
 
-    def __init__(self):
+    def __init__(self, *args):
         """
 
 
@@ -4155,7 +4322,7 @@ class Document(Identified):
         all other SBOLObjects.  
 
         """
-        this = _libsbol.new_Document()
+        this = _libsbol.new_Document(*args)
         try:
             self.this.append(this)
         except __builtin__.Exception:
@@ -4192,6 +4359,10 @@ class Document(Identified):
     __swig_getmethods__["sequenceAnnotations"] = _libsbol.Document_sequenceAnnotations_get
     if _newclass:
         sequenceAnnotations = _swig_property(_libsbol.Document_sequenceAnnotations_get, _libsbol.Document_sequenceAnnotations_set)
+    __swig_setmethods__["collections"] = _libsbol.Document_collections_set
+    __swig_getmethods__["collections"] = _libsbol.Document_collections_get
+    if _newclass:
+        collections = _swig_property(_libsbol.Document_collections_get, _libsbol.Document_collections_set)
     __swig_setmethods__["citations"] = _libsbol.Document_citations_set
     __swig_getmethods__["citations"] = _libsbol.Document_citations_get
     if _newclass:
@@ -4322,6 +4493,9 @@ class Document(Identified):
 
     def parse_annotation_objects(self):
         return _libsbol.Document_parse_annotation_objects(self)
+
+    def parse_extension_objects(self):
+        return _libsbol.Document_parse_extension_objects(self)
 
     def find_property(self, uri):
         """
@@ -4470,6 +4644,26 @@ class Document(Identified):
         return _libsbol.Document_getModel(self, uri)
 
 
+    def getCollection(self, uri):
+        """
+
+
+        Retrieve an object from the Document.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the SBOL object you want to retrieve  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object  
+
+        """
+        return _libsbol.Document_getCollection(self, uri)
+
+
     def addComponentDefinition(self, *args):
         """
 
@@ -4546,6 +4740,7 @@ class Document(Identified):
 
 Document_swigregister = _libsbol.Document_swigregister
 Document_swigregister(Document)
+cvar = _libsbol.cvar
 
 
 def raptor_error_handler(user_data, message):
@@ -4731,7 +4926,6 @@ class LocationVector(_object):
     __del__ = lambda self: None
 LocationVector_swigregister = _libsbol.LocationVector_swigregister
 LocationVector_swigregister(LocationVector)
-cvar = _libsbol.cvar
 
 class LocationProperty(_object):
     """
@@ -4872,7 +5066,12 @@ class LocationProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.LocationProperty_remove(self, index)
+        val = _libsbol.LocationProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -5072,7 +5271,12 @@ class OwnedLocation(LocationProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedLocation_remove(self, *args)
+        val = _libsbol.OwnedLocation_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -5120,6 +5324,9 @@ class OwnedLocation(LocationProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedLocation_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedLocation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedLocation_python_iter_get
     if _newclass:
@@ -5726,7 +5933,12 @@ class MapsToProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.MapsToProperty_remove(self, index)
+        val = _libsbol.MapsToProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -5926,7 +6138,12 @@ class OwnedMapsTo(MapsToProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedMapsTo_remove(self, *args)
+        val = _libsbol.OwnedMapsTo_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -5974,6 +6191,9 @@ class OwnedMapsTo(MapsToProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedMapsTo_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedMapsTo_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedMapsTo_python_iter_get
     if _newclass:
@@ -6580,7 +6800,12 @@ class SequenceConstraintProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.SequenceConstraintProperty_remove(self, index)
+        val = _libsbol.SequenceConstraintProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -6780,7 +7005,12 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedSequenceConstraint_remove(self, *args)
+        val = _libsbol.OwnedSequenceConstraint_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -6828,6 +7058,9 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedSequenceConstraint_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequenceConstraint_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequenceConstraint_python_iter_get
     if _newclass:
@@ -7434,7 +7667,12 @@ class SequenceAnnotationProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.SequenceAnnotationProperty_remove(self, index)
+        val = _libsbol.SequenceAnnotationProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -7634,7 +7872,12 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedSequenceAnnotation_remove(self, *args)
+        val = _libsbol.OwnedSequenceAnnotation_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -7682,6 +7925,9 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedSequenceAnnotation_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequenceAnnotation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequenceAnnotation_python_iter_get
     if _newclass:
@@ -8288,7 +8534,12 @@ class ComponentProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ComponentProperty_remove(self, index)
+        val = _libsbol.ComponentProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -8488,7 +8739,12 @@ class OwnedComponent(ComponentProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedComponent_remove(self, *args)
+        val = _libsbol.OwnedComponent_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -8536,6 +8792,9 @@ class OwnedComponent(ComponentProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedComponent_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedComponent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedComponent_python_iter_get
     if _newclass:
@@ -9181,7 +9440,12 @@ class ParticipationProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ParticipationProperty_remove(self, index)
+        val = _libsbol.ParticipationProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -9381,7 +9645,12 @@ class OwnedParticipation(ParticipationProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedParticipation_remove(self, *args)
+        val = _libsbol.OwnedParticipation_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -9429,6 +9698,9 @@ class OwnedParticipation(ParticipationProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedParticipation_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedParticipation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedParticipation_python_iter_get
     if _newclass:
@@ -10035,7 +10307,12 @@ class ModuleProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ModuleProperty_remove(self, index)
+        val = _libsbol.ModuleProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -10235,7 +10512,12 @@ class OwnedModule(ModuleProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedModule_remove(self, *args)
+        val = _libsbol.OwnedModule_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -10283,6 +10565,9 @@ class OwnedModule(ModuleProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedModule_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModule_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModule_python_iter_get
     if _newclass:
@@ -10889,7 +11174,12 @@ class InteractionProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.InteractionProperty_remove(self, index)
+        val = _libsbol.InteractionProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -11089,7 +11379,12 @@ class OwnedInteraction(InteractionProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedInteraction_remove(self, *args)
+        val = _libsbol.OwnedInteraction_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -11137,6 +11432,9 @@ class OwnedInteraction(InteractionProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedInteraction_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedInteraction_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedInteraction_python_iter_get
     if _newclass:
@@ -11743,7 +12041,12 @@ class FunctionalComponentProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.FunctionalComponentProperty_remove(self, index)
+        val = _libsbol.FunctionalComponentProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -11943,7 +12246,12 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedFunctionalComponent_remove(self, *args)
+        val = _libsbol.OwnedFunctionalComponent_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -11991,6 +12299,9 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedFunctionalComponent_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedFunctionalComponent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedFunctionalComponent_python_iter_get
     if _newclass:
@@ -12597,7 +12908,12 @@ class ComponentDefinitionProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ComponentDefinitionProperty_remove(self, index)
+        val = _libsbol.ComponentDefinitionProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -12797,7 +13113,12 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedComponentDefinition_remove(self, *args)
+        val = _libsbol.OwnedComponentDefinition_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -12845,6 +13166,9 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedComponentDefinition_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedComponentDefinition_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedComponentDefinition_python_iter_get
     if _newclass:
@@ -13451,7 +13775,12 @@ class ModuleDefinitionProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ModuleDefinitionProperty_remove(self, index)
+        val = _libsbol.ModuleDefinitionProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -13651,7 +13980,12 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedModuleDefinition_remove(self, *args)
+        val = _libsbol.OwnedModuleDefinition_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -13699,6 +14033,9 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedModuleDefinition_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModuleDefinition_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModuleDefinition_python_iter_get
     if _newclass:
@@ -14305,7 +14642,12 @@ class SequenceProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.SequenceProperty_remove(self, index)
+        val = _libsbol.SequenceProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -14505,7 +14847,12 @@ class OwnedSequence(SequenceProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedSequence_remove(self, *args)
+        val = _libsbol.OwnedSequence_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -14553,6 +14900,9 @@ class OwnedSequence(SequenceProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedSequence_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequence_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequence_python_iter_get
     if _newclass:
@@ -15159,7 +15509,12 @@ class ModelProperty(_object):
             A numerical index for the object. 
 
         """
-        return _libsbol.ModelProperty_remove(self, index)
+        val = _libsbol.ModelProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -15359,7 +15714,12 @@ class OwnedModel(ModelProperty):
             A numerical index for the object. 
 
         """
-        return _libsbol.OwnedModel_remove(self, *args)
+        val = _libsbol.OwnedModel_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
 
 
     def clear(self):
@@ -15407,6 +15767,9 @@ class OwnedModel(ModelProperty):
 
         return val
 
+
+    def end(self):
+        return _libsbol.OwnedModel_end(self)
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModel_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModel_python_iter_get
     if _newclass:
@@ -15761,20 +16124,1087 @@ class ListOfOwnedModel(OwnedModel):
 ListOfOwnedModel_swigregister = _libsbol.ListOfOwnedModel_swigregister
 ListOfOwnedModel_swigregister(ListOfOwnedModel)
 
+class CollectionVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, CollectionVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, CollectionVector, name)
+    __repr__ = _swig_repr
 
-def register_extension_class(ns, ns_prefix, class_name, constructor ):
-    uri = ns + class_name
-    Config.__extensionclass__[uri] = constructor
+    def iterator(self):
+        return _libsbol.CollectionVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _libsbol.CollectionVector___nonzero__(self)
+
+    def __bool__(self):
+        return _libsbol.CollectionVector___bool__(self)
+
+    def __len__(self):
+        return _libsbol.CollectionVector___len__(self)
+
+    def __getslice__(self, i, j):
+        return _libsbol.CollectionVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _libsbol.CollectionVector___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _libsbol.CollectionVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _libsbol.CollectionVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _libsbol.CollectionVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _libsbol.CollectionVector___setitem__(self, *args)
+
+    def pop(self):
+        return _libsbol.CollectionVector_pop(self)
+
+    def append(self, x):
+        return _libsbol.CollectionVector_append(self, x)
+
+    def empty(self):
+        return _libsbol.CollectionVector_empty(self)
+
+    def size(self):
+        return _libsbol.CollectionVector_size(self)
+
+    def swap(self, v):
+        return _libsbol.CollectionVector_swap(self, v)
+
+    def begin(self):
+        return _libsbol.CollectionVector_begin(self)
+
+    def end(self):
+        return _libsbol.CollectionVector_end(self)
+
+    def rbegin(self):
+        return _libsbol.CollectionVector_rbegin(self)
+
+    def rend(self):
+        return _libsbol.CollectionVector_rend(self)
+
+    def clear(self):
+        return _libsbol.CollectionVector_clear(self)
+
+    def get_allocator(self):
+        return _libsbol.CollectionVector_get_allocator(self)
+
+    def pop_back(self):
+        return _libsbol.CollectionVector_pop_back(self)
+
+    def erase(self, *args):
+        return _libsbol.CollectionVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _libsbol.new_CollectionVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x):
+        return _libsbol.CollectionVector_push_back(self, x)
+
+    def front(self):
+        return _libsbol.CollectionVector_front(self)
+
+    def back(self):
+        return _libsbol.CollectionVector_back(self)
+
+    def assign(self, n, x):
+        return _libsbol.CollectionVector_assign(self, n, x)
+
+    def resize(self, *args):
+        return _libsbol.CollectionVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _libsbol.CollectionVector_insert(self, *args)
+
+    def reserve(self, n):
+        return _libsbol.CollectionVector_reserve(self, n)
+
+    def capacity(self):
+        return _libsbol.CollectionVector_capacity(self)
+    __swig_destroy__ = _libsbol.delete_CollectionVector
+    __del__ = lambda self: None
+CollectionVector_swigregister = _libsbol.CollectionVector_swigregister
+CollectionVector_swigregister(CollectionVector)
+
+class CollectionProperty(_object):
+    """
+
+
+    Member properties of all SBOL objects are defined using a Property object.  
+
+    The Property class provides a generic interface for accessing SBOL objects. At a
+    low level, the Property class converts SBOL data structures into RDF triples.  
+
+    templateparam
+    -------------
+    * `The` :  
+        SBOL specification currently supports string, URI, and integer literal
+        values.  
+
+    """
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, CollectionProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, CollectionProperty, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        """
+
+
+        Parameters
+        ----------
+        * `type_uri` :  
+            An RDF hash URI for this property, consisting of a namespace followed by an
+            identifier. For example, Properties of SBOLObjects use URIs of the form
+            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
+            determines the appearance of XML nodes in an SBOL file. Alternatively,
+            annotations in a custom namespace can be provided using a similarly formed
+            hash URI in another namespace.  
+        * `property_owner` :  
+            All Property objects must have a pointer back to its parent SBOLObject of
+            which it is a member  
+        * `initial_value` :  
+            The initial value of the Property  
+        * `validation_rules` :  
+            A vector of externally defined ValidationRules. The vector contains pointers
+            to functions which correspond to the validation rules listed in the appendix
+            of the formal SBOL specification document. ValidationRules are automatically
+            checked every time a setter or adder method is called and when Documents are
+            read and written.  
+
+        """
+        this = _libsbol.new_CollectionProperty(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_CollectionProperty
+    __del__ = lambda self: None
+
+    def getTypeURI(self):
+        """
+
+
+        Returns
+        -------
+        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+
+        """
+        return _libsbol.CollectionProperty_getTypeURI(self)
+
+
+    def getOwner(self):
+        """
+
+
+        """
+        return _libsbol.CollectionProperty_getOwner(self)
+
+
+    def getAll(self):
+        """
+
+
+        Retrieve a vector of objects from the Property.
+
+
+        """
+        return _libsbol.CollectionProperty_getAll(self)
+
+
+    def set(self, *args):
+        """
+
+
+        Basic setter for SBOL Property.
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
+
+        """
+        return _libsbol.CollectionProperty_set(self, *args)
+
+
+    def add(self, new_value):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        Parameters
+        ----------
+        * `new_value` :  
+            A new string which will be added to a list of values.  
+
+        """
+        val = _libsbol.CollectionProperty_add(self, new_value)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def remove(self, index=0):
+        """
+
+
+        Remove a Property from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the object to be destroyed. This can be a displayId of the
+            object or a full URI may be provided.  
+        * `index` :  
+            A numerical index for the object. 
+
+        """
+        val = _libsbol.CollectionProperty_remove(self, index)
+
+        self.thisown = True
+
+
+        return val
+
+
+    def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
+        return _libsbol.CollectionProperty_clear(self)
+
+
+    def write(self):
+        """
+
+
+        """
+        return _libsbol.CollectionProperty_write(self)
+
+
+    def validate(self, arg=None):
+        """
+
+
+        """
+        return _libsbol.CollectionProperty_validate(self, arg)
+
+
+    def begin(self):
+        return _libsbol.CollectionProperty_begin(self)
+
+    def end(self):
+        return _libsbol.CollectionProperty_end(self)
+
+    def size(self):
+        return _libsbol.CollectionProperty_size(self)
+    __swig_setmethods__["python_iter"] = _libsbol.CollectionProperty_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.CollectionProperty_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.CollectionProperty_python_iter_get, _libsbol.CollectionProperty_python_iter_set)
+CollectionProperty_swigregister = _libsbol.CollectionProperty_swigregister
+CollectionProperty_swigregister(CollectionProperty)
+
+class OwnedCollection(CollectionProperty):
+    """
+
+
+    A container property that contains child objects.  
+
+    Creates a composition out of two or more classes. In the SBOL specification,
+    compositional relationships are indicated in class diagrams by arrows with black
+    diamonds. A compositional relationship means that deleting the parent object
+    will delete the child objects, and adding the parent object to a Document will
+    also add the child object. Owned objects are stored in arbitrary order.  
+
+    templateparam
+    -------------
+    * `SBOLClass` :  
+        The type of child SBOL object contained by this Property  
+
+    """
+
+    __swig_setmethods__ = {}
+    for _s in [CollectionProperty]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, OwnedCollection, name, value)
+    __swig_getmethods__ = {}
+    for _s in [CollectionProperty]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, OwnedCollection, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        """
+
+
+        """
+        this = _libsbol.new_OwnedCollection(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def set(self, sbol_obj):
+        """
+
+
+        Basic setter for OwnedObject SBOL IntProperty.
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+
+        Parameters
+        ----------
+        * `sbol_obj` :  
+            A child object to add to this container property. Assigns a child object to
+            this OwnedObject container property. This method always overwrites the first
+            SBOLObject in the container. appends another object to those already
+            contained in this OwnedObject property. In SBOLCompliant mode, the create
+            method is preferred  
+        * `sbol_obj` :  
+            The child object Sets the first object in the container  
+
+        """
+        return _libsbol.OwnedCollection_set(self, sbol_obj)
+
+
+    def add(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `sbol_obj` :  
+            A child object to add to this container property. Adds a child object to the
+            parent object. This method always appends another object to those already
+            contained in this OwnedObject property. In SBOLCompliant mode, the create
+            method is preferred  
+
+        """
+        val = _libsbol.OwnedCollection_add(self, sbol_obj)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def get(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.OwnedCollection_get(self, *args)
+
+
+    def getObjects(self):
+        """
+
+
+        Get all the objects contained in the property.  
+
+        Returns
+        -------
+        A vector of pointers to the objects  
+
+        """
+        return _libsbol.OwnedCollection_getObjects(self)
+
+
+    def remove(self, *args):
+        """
+
+
+        Remove an object from the list of objects and destroy it.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The identity of the object to be destroyed. This can be a displayId of the
+            object or a full URI may be provided.  
+        * `index` :  
+            A numerical index for the object. 
+
+        """
+        val = _libsbol.OwnedCollection_remove(self, *args)
+
+        self.thisown = True
+
+
+        return val
+
+
+    def clear(self):
+        """
+
+
+        Remove all children objects from the parent and destroy them.  
+
+        """
+        return _libsbol.OwnedCollection_clear(self)
+
+
+    def create(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        val = _libsbol.OwnedCollection_create(self, uri)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def end(self):
+        return _libsbol.OwnedCollection_end(self)
+    __swig_setmethods__["python_iter"] = _libsbol.OwnedCollection_python_iter_set
+    __swig_getmethods__["python_iter"] = _libsbol.OwnedCollection_python_iter_get
+    if _newclass:
+        python_iter = _swig_property(_libsbol.OwnedCollection_python_iter_get, _libsbol.OwnedCollection_python_iter_set)
+
+    def __getitem__(self, *args):
+        return _libsbol.OwnedCollection___getitem__(self, *args)
+
+    def __iter__(self):
+        return _libsbol.OwnedCollection___iter__(self)
+
+    def next(self):
+        return _libsbol.OwnedCollection_next(self)
+
+    def __next__(self):
+        return _libsbol.OwnedCollection___next__(self)
+
+    def __len__(self):
+        return _libsbol.OwnedCollection___len__(self)
+
+    def addRange(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `sbol_obj` :  
+            A child object to add to this container property. Adds a child object to the
+            parent object. This method always appends another object to those already
+            contained in this OwnedObject property. In SBOLCompliant mode, the create
+            method is preferred  
+
+        """
+        val = _libsbol.OwnedCollection_addRange(self, sbol_obj)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def createRange(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        val = _libsbol.OwnedCollection_createRange(self, uri)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def getRange(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.OwnedCollection_getRange(self, *args)
+
+
+    def addCut(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `sbol_obj` :  
+            A child object to add to this container property. Adds a child object to the
+            parent object. This method always appends another object to those already
+            contained in this OwnedObject property. In SBOLCompliant mode, the create
+            method is preferred  
+
+        """
+        val = _libsbol.OwnedCollection_addCut(self, sbol_obj)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def createCut(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        val = _libsbol.OwnedCollection_createCut(self, uri)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def getCut(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.OwnedCollection_getCut(self, *args)
+
+
+    def addGenericLocation(self, sbol_obj):
+        """
+
+
+        Appends the new value to a list of values, for properties that allow it.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `sbol_obj` :  
+            A child object to add to this container property. Adds a child object to the
+            parent object. This method always appends another object to those already
+            contained in this OwnedObject property. In SBOLCompliant mode, the create
+            method is preferred  
+
+        """
+        val = _libsbol.OwnedCollection_addGenericLocation(self, sbol_obj)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def createGenericLocation(self, uri):
+        """
+
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object contained in this OwnedObject property  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this specialization for OwnedObject
+            properties which contain multiple types of SBOLObjects.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            If SBOLCompliance is enabled, this should be the displayId for the new child
+            object. If not enabled, this should be a full raw URI.  
+
+        Returns
+        -------
+        A reference to the child object Autoconstructs a child object and attaches it to
+        the parent object. The new object will be constructed with default values
+        specified in the constructor for this type of object. If SBOLCompliance is
+        enabled, the child object's identity will be constructed using the supplied
+        displayId argument. Otherwise, the user should supply a full URI.  check
+        uniqueness of URI in Document  
+
+        """
+        val = _libsbol.OwnedCollection_createGenericLocation(self, uri)
+
+        self.thisown = False
+
+
+        return val
+
+
+    def getGenericLocation(self, *args):
+        """
+
+
+        Get the child object.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of the child object  
+        * `SBOLSubClass` :  
+            A derived class of SBOLClass. Use this type specialization when adding
+            multiple types of SBOLObjects to a container.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The specific URI for a child object if this OwnedObject property contains
+            multiple objects,  
+
+        Returns
+        -------
+        A reference to the child object Returns a child object from the OwnedObject
+        property. If no URI is specified, the first object in this OwnedObject property
+        is returned.  
+
+        """
+        return _libsbol.OwnedCollection_getGenericLocation(self, *args)
+
+    __swig_destroy__ = _libsbol.delete_OwnedCollection
+    __del__ = lambda self: None
+OwnedCollection_swigregister = _libsbol.OwnedCollection_swigregister
+OwnedCollection_swigregister(OwnedCollection)
+
+class ListOfOwnedCollection(OwnedCollection):
+    """
+
+
+    Provides interface for an SBOL container Property that is allowed to have more
+    than one object or value.  
+
+    templateparam
+    -------------
+    * `PropertyType` :  
+        The type of SBOL Property, eg, Text, Int, OwnedObject, etc  
+
+    """
+
+    __swig_setmethods__ = {}
+    for _s in [OwnedCollection]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ListOfOwnedCollection, name, value)
+    __swig_getmethods__ = {}
+    for _s in [OwnedCollection]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, ListOfOwnedCollection, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        """
+
+
+        """
+        this = _libsbol.new_ListOfOwnedCollection(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_ListOfOwnedCollection
+    __del__ = lambda self: None
+ListOfOwnedCollection_swigregister = _libsbol.ListOfOwnedCollection_swigregister
+ListOfOwnedCollection_swigregister(ListOfOwnedCollection)
+
+class Association(Identified):
+    __swig_setmethods__ = {}
+    for _s in [Identified]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Association, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Identified]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Association, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["agent"] = _libsbol.Association_agent_set
+    __swig_getmethods__["agent"] = _libsbol.Association_agent_get
+    if _newclass:
+        agent = _swig_property(_libsbol.Association_agent_get, _libsbol.Association_agent_set)
+    __swig_setmethods__["hadRole"] = _libsbol.Association_hadRole_set
+    __swig_getmethods__["hadRole"] = _libsbol.Association_hadRole_get
+    if _newclass:
+        hadRole = _swig_property(_libsbol.Association_hadRole_get, _libsbol.Association_hadRole_set)
+    __swig_setmethods__["hadPlan"] = _libsbol.Association_hadPlan_set
+    __swig_getmethods__["hadPlan"] = _libsbol.Association_hadPlan_get
+    if _newclass:
+        hadPlan = _swig_property(_libsbol.Association_hadPlan_get, _libsbol.Association_hadPlan_set)
+
+    def __init__(self, *args):
+        this = _libsbol.new_Association(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Association
+    __del__ = lambda self: None
+Association_swigregister = _libsbol.Association_swigregister
+Association_swigregister(Association)
+
+class Usage(Identified):
+    __swig_setmethods__ = {}
+    for _s in [Identified]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Usage, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Identified]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Usage, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["entity"] = _libsbol.Usage_entity_set
+    __swig_getmethods__["entity"] = _libsbol.Usage_entity_get
+    if _newclass:
+        entity = _swig_property(_libsbol.Usage_entity_get, _libsbol.Usage_entity_set)
+    __swig_setmethods__["hadRole"] = _libsbol.Usage_hadRole_set
+    __swig_getmethods__["hadRole"] = _libsbol.Usage_hadRole_get
+    if _newclass:
+        hadRole = _swig_property(_libsbol.Usage_hadRole_get, _libsbol.Usage_hadRole_set)
+
+    def __init__(self, *args):
+        this = _libsbol.new_Usage(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Usage
+    __del__ = lambda self: None
+Usage_swigregister = _libsbol.Usage_swigregister
+Usage_swigregister(Usage)
+
+class Agent(TopLevel):
+    __swig_setmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Agent, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Agent, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_Agent(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Agent
+    __del__ = lambda self: None
+Agent_swigregister = _libsbol.Agent_swigregister
+Agent_swigregister(Agent)
+
+class Plan(TopLevel):
+    __swig_setmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Plan, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Plan, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _libsbol.new_Plan(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Plan
+    __del__ = lambda self: None
+Plan_swigregister = _libsbol.Plan_swigregister
+Plan_swigregister(Plan)
+
+class Activity(TopLevel):
+    __swig_setmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Activity, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Activity, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["startedAtTime"] = _libsbol.Activity_startedAtTime_set
+    __swig_getmethods__["startedAtTime"] = _libsbol.Activity_startedAtTime_get
+    if _newclass:
+        startedAtTime = _swig_property(_libsbol.Activity_startedAtTime_get, _libsbol.Activity_startedAtTime_set)
+    __swig_setmethods__["endedAtTime"] = _libsbol.Activity_endedAtTime_set
+    __swig_getmethods__["endedAtTime"] = _libsbol.Activity_endedAtTime_get
+    if _newclass:
+        endedAtTime = _swig_property(_libsbol.Activity_endedAtTime_get, _libsbol.Activity_endedAtTime_set)
+    __swig_setmethods__["wasInformedBy"] = _libsbol.Activity_wasInformedBy_set
+    __swig_getmethods__["wasInformedBy"] = _libsbol.Activity_wasInformedBy_get
+    if _newclass:
+        wasInformedBy = _swig_property(_libsbol.Activity_wasInformedBy_get, _libsbol.Activity_wasInformedBy_set)
+    __swig_setmethods__["qualifiedAssociation"] = _libsbol.Activity_qualifiedAssociation_set
+    __swig_getmethods__["qualifiedAssociation"] = _libsbol.Activity_qualifiedAssociation_get
+    if _newclass:
+        qualifiedAssociation = _swig_property(_libsbol.Activity_qualifiedAssociation_get, _libsbol.Activity_qualifiedAssociation_set)
+    __swig_setmethods__["qualifiedUsage"] = _libsbol.Activity_qualifiedUsage_set
+    __swig_getmethods__["qualifiedUsage"] = _libsbol.Activity_qualifiedUsage_get
+    if _newclass:
+        qualifiedUsage = _swig_property(_libsbol.Activity_qualifiedUsage_get, _libsbol.Activity_qualifiedUsage_set)
+    __swig_setmethods__["type"] = _libsbol.Activity_type_set
+    __swig_getmethods__["type"] = _libsbol.Activity_type_get
+    if _newclass:
+        type = _swig_property(_libsbol.Activity_type_get, _libsbol.Activity_type_set)
+
+    def __init__(self, *args):
+        this = _libsbol.new_Activity(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_Activity
+    __del__ = lambda self: None
+Activity_swigregister = _libsbol.Activity_swigregister
+Activity_swigregister(Activity)
+
+class VariableComponent(Identified):
+    __swig_setmethods__ = {}
+    for _s in [Identified]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, VariableComponent, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Identified]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, VariableComponent, name)
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _libsbol.delete_VariableComponent
+    __del__ = lambda self: None
+VariableComponent_swigregister = _libsbol.VariableComponent_swigregister
+VariableComponent_swigregister(VariableComponent)
+
+class CombinatorialDerivation(TopLevel):
+    __swig_setmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, CombinatorialDerivation, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TopLevel]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, CombinatorialDerivation, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["strategy"] = _libsbol.CombinatorialDerivation_strategy_set
+    __swig_getmethods__["strategy"] = _libsbol.CombinatorialDerivation_strategy_get
+    if _newclass:
+        strategy = _swig_property(_libsbol.CombinatorialDerivation_strategy_get, _libsbol.CombinatorialDerivation_strategy_set)
+    __swig_setmethods__["masterTemplate"] = _libsbol.CombinatorialDerivation_masterTemplate_set
+    __swig_getmethods__["masterTemplate"] = _libsbol.CombinatorialDerivation_masterTemplate_get
+    if _newclass:
+        masterTemplate = _swig_property(_libsbol.CombinatorialDerivation_masterTemplate_get, _libsbol.CombinatorialDerivation_masterTemplate_set)
+    __swig_setmethods__["variableComponents"] = _libsbol.CombinatorialDerivation_variableComponents_set
+    __swig_getmethods__["variableComponents"] = _libsbol.CombinatorialDerivation_variableComponents_get
+    if _newclass:
+        variableComponents = _swig_property(_libsbol.CombinatorialDerivation_variableComponents_get, _libsbol.CombinatorialDerivation_variableComponents_set)
+
+    def __init__(self, *args):
+        this = _libsbol.new_CombinatorialDerivation(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _libsbol.delete_CombinatorialDerivation
+    __del__ = lambda self: None
+CombinatorialDerivation_swigregister = _libsbol.CombinatorialDerivation_swigregister
+CombinatorialDerivation_swigregister(CombinatorialDerivation)
+
+
 
 def testSBOL():
     """
     Function to run test suite for pySBOL
     """
-    import unit_tests
+    import sbol.unit_tests as unit_tests
     unit_tests.runTests()
-
-### Add PYTHON_DATA_MODEL_REGISTER as a static variable in Config. This dictionary contains key : value pairs consisting of a Python extension class URI and the corresponding constructor callbacks for Python extension classes
-Config.__extensionclass__ = {}
 
 # This file is compatible with both classic and new-style classes.
 

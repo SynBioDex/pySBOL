@@ -2,8 +2,8 @@ import unittest
 from sbol import *
 import random
 import string
-import os
-import sys
+import os, sys
+import tempfile, shutil
 
 #####################
 # utility functions
@@ -19,7 +19,14 @@ TEST_LOC_SBOL2 = os.path.join(TEST_LOCATION, 'SBOL2')
 TEST_LOC_RDF = os.path.join(TEST_LOCATION, 'RDF')
 TEST_LOC_Invalid = os.path.join(TEST_LOCATION, 'InvalidFiles')
 TEST_LOC_GB = os.path.join(TEST_LOCATION, 'GenBank')
-TEST_FILES_SBOL2 = os.listdir(TEST_LOC_SBOL2)
+FILES_SBOL2 = os.listdir(TEST_LOC_SBOL2)
+FILES_SBOL2.sort()
+TEST_FILES_SBOL2 = []
+for i in FILES_SBOL2:
+    if i.endswith('rdf'):
+        TEST_FILES_SBOL2.append(i)
+    if i.endswith('xml'):
+        TEST_FILES_SBOL2.append(i)
 
 def random_string(limit=10):
     length = random.randint(0, limit)
@@ -53,24 +60,22 @@ def random_invalid_position(limit=1000):
 
 class TestRoundTripSBOL2(unittest.TestCase):
     def setUp(self):
-        pass
+        # Create temp directory
+        self.temp_out_dir = tempfile.mkdtemp()
 
     def tearDown(self):
-        pass
+        # Remove directory after the test
+        shutil.rmtree(self.temp_out_dir)
 
     def run_round_trip(self, test_file):
-        if test_file.endswith('xml'):
-            file_format = '.xml'
-        elif test_file.endswith('rdf'):
-            file_format = '.rdf'
+        split_path = os.path.splitext(test_file)
         self.doc = Document()   # Document for read and write
-        self.doc.read(os.path.join(TEST_LOC_SBOL2, os.path.splitext(test_file)[0] + file_format))
-        self.doc.write(os.path.join(TEST_LOC_SBOL2, os.path.splitext(test_file)[0] + '_out' + file_format))
+        self.doc.read(os.path.join(TEST_LOC_SBOL2, split_path[0] + split_path[1]))
+        self.doc.write(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
 
         self.doc2 = Document()  # Document to compare for equality
-        self.doc2.read(os.path.join(TEST_LOC_SBOL2, os.path.splitext(test_file)[0] + '_out' + file_format))
+        self.doc2.read(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
         self.assertEqual(self.doc.compare(self.doc2), 1)
-        os.remove(os.path.join(TEST_LOC_SBOL2, os.path.splitext(test_file)[0] + '_out' + file_format))
     
     def test_case00(self):
         print(str(TEST_FILES_SBOL2[0]))
@@ -132,7 +137,7 @@ class TestRoundTripSBOL2(unittest.TestCase):
         print(str(TEST_FILES_SBOL2[14]))
         self.run_round_trip(str(TEST_FILES_SBOL2[14]))
 
-#emptyJSONFile.json
+#    SBOL1and2Test
 #    def test_case15(self):
 #        print(str(TEST_FILES_SBOL2[15]))
 #        self.run_round_trip(str(TEST_FILES_SBOL2[15]))
@@ -369,111 +374,6 @@ class TestRoundTripSBOL2(unittest.TestCase):
         print(str(TEST_FILES_SBOL2[73]))
         self.run_round_trip(str(TEST_FILES_SBOL2[73]))
 
-    #SBOL1and2Test
-    #def test_case74(self):
-    #    print(str(TEST_FILES_SBOL2[74]))
-    #    self.run_round_trip(str(TEST_FILES_SBOL2[74]))
-
-    def test_case75(self):
-        print(str(TEST_FILES_SBOL2[75]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[75]))
-
-    def test_case76(self):
-        print(str(TEST_FILES_SBOL2[76]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[76]))
-
-    def test_case77(self):
-        print(str(TEST_FILES_SBOL2[77]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[77]))
-
-    def test_case78(self):
-        print(str(TEST_FILES_SBOL2[78]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[78]))
-
-    def test_case79(self):
-        print(str(TEST_FILES_SBOL2[79]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[79]))
-
-    def test_case80(self):
-        print(str(TEST_FILES_SBOL2[80]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[80]))
-
-    def test_case81(self):
-        print(str(TEST_FILES_SBOL2[81]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[81]))
-
-    def test_case82(self):
-        print(str(TEST_FILES_SBOL2[82]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[82]))
-
-    def test_case83(self):
-        print(str(TEST_FILES_SBOL2[83]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[83]))
-
-    def test_case84(self):
-        print(str(TEST_FILES_SBOL2[84]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[84]))
-
-    def test_case85(self):
-        print(str(TEST_FILES_SBOL2[85]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[85]))
-
-    def test_case86(self):
-        print(str(TEST_FILES_SBOL2[86]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[86]))
-
-    def test_case87(self):
-        print(str(TEST_FILES_SBOL2[87]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[87]))
-
-    def test_case88(self):
-        print(str(TEST_FILES_SBOL2[88]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[88]))
-
-    def test_case89(self):
-        print(str(TEST_FILES_SBOL2[89]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[89]))
-
-    def test_case90(self):
-        print(str(TEST_FILES_SBOL2[90]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[90]))
-
-    def test_case91(self):
-        print(str(TEST_FILES_SBOL2[91]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[91]))
-
-    def test_case92(self):
-        print(str(TEST_FILES_SBOL2[92]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[92]))
-
-    def test_case93(self):
-        print(str(TEST_FILES_SBOL2[93]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[93]))
-
-    def test_case94(self):
-        print(str(TEST_FILES_SBOL2[94]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[94]))
-
-    def test_case95(self):
-        print(str(TEST_FILES_SBOL2[95]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[95]))
-
-    def test_case96(self):
-        print(str(TEST_FILES_SBOL2[96]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[96]))
-
-    def test_case97(self):
-        print(str(TEST_FILES_SBOL2[97]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[97]))
-
-    def test_case98(self):
-        print(str(TEST_FILES_SBOL2[98]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[98]))
-
-    def test_case99(self):
-        print(str(TEST_FILES_SBOL2[99]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[99]))
-
 class TestComponentDefinitions(unittest.TestCase):
     
     def setUp(self):
@@ -484,9 +384,9 @@ class TestComponentDefinitions(unittest.TestCase):
         doc = Document()
         doc.addComponentDefinition(test_CD)
         
-        self.assertIsNotNone(doc.getComponentDefinition("BB0001"))
+        self.assertIsNotNone(doc.componentDefinitions.get("BB0001"))
         
-        displayId = doc.getComponentDefinition("BB0001").displayId.get()
+        displayId = doc.componentDefinitions.get("BB0001").displayId.get()
         
         self.assertEqual(displayId, "BB0001")
         
@@ -500,7 +400,7 @@ class TestComponentDefinitions(unittest.TestCase):
     def testCDDisplayId(self):
         listCD_read = []
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, str(TEST_FILES_SBOL2[72])))
+        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
 
         # List of displayIds        
         listCD = ['CRP_b', 'CRa_U6', 'EYFP', 'EYFP_cds', 'EYFP_gene', 'Gal4VP16',
@@ -513,7 +413,11 @@ class TestComponentDefinitions(unittest.TestCase):
         for CD in doc.componentDefinitions:
             listCD_read.append(CD.displayId.get())
             
-        self.assertItemsEqual(listCD_read, listCD)
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(listCD_read, listCD)
+        else:
+            self.assertCountEqual(listCD_read, listCD)
              
     #def testCDSeq(self):
     #    doc = Document()
@@ -680,7 +584,7 @@ class TestComponentDefinitions(unittest.TestCase):
 #            self.assertFalse(ann in self.testees[0].precedes)
 #            self.testees[0].precedes += ann
 #            self.assertTrue(ann in self.testees[0].precedes)
-#
+
 class TestSequences(unittest.TestCase):
     
     def setUp(self):
@@ -704,19 +608,23 @@ class TestSequences(unittest.TestCase):
     def testSeqDisplayId(self):
         listseq_read = []
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, str(TEST_FILES_SBOL2[72])))
+        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
 
         # List of displayIds        
         listseq = ['CRP_b_seq', 'CRa_U6_seq', 'gRNA_b_seq', 'mKate_seq']
         
         for seq in doc.sequences:
             listseq_read.append(seq.displayId.get())
-            
-        self.assertItemsEqual(listseq_read, listseq)
+        
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(listseq_read, listseq)
+        else:
+            self.assertCountEqual(listseq_read, listseq)
             
     def testSequenceElement(self):
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, str(TEST_FILES_SBOL2[72])))
+        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
         # Sequence to test against
         seq = ('GCTCCGAATTTCTCGACAGATCTCATGTGATTACGCCAAGCTACGGGCGGAGTACTGTCCTC'
                'CGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGC'
@@ -724,12 +632,11 @@ class TestSequences(unittest.TestCase):
                'CGTGTACGGTGGGAGGCCTATATAAGCAGAGCTCGTTTAGTGAACCGTCAGATCGCCTCGAG'
                'TACCTCATCAGGAACATGTTGGATCCAATTCGACC')
                
-        seq_read = doc.getSequence('CRP_b_seq').elements.get()
+        seq_read = doc.sequences.get('CRP_b_seq').elements.get()
         self.assertEquals(seq_read, seq)
 
 #class TestPythonMethods(unittest.TestCase):
 
-    
 #    def testAnnotations(self):
 #        for n in range(NUM_SLOW_TESTS):
 #            self.assertEqual(len(self.testees[0].annotations), n)
@@ -758,8 +665,30 @@ class TestSequences(unittest.TestCase):
 #            self.assertTrue(com in col.components)
 #            self.assertEqual(len(col.components), n+1)
 
+class TestMemory(unittest.TestCase):
+    
+    def setUp(self):
+        pass
+    
+    def testDiscard(self):
+        doc = Document()
+        cd = ComponentDefinition()
+        bool1 = cd.thisown
+        doc.addComponentDefinition(cd)
+        bool2 = cd.thisown
+        self.assertNotEquals(bool1, bool2)
+
 # List of tests
-test_list = [TestRoundTripSBOL2, TestComponentDefinitions, TestSequences]
+test_list = [TestRoundTripSBOL2, TestComponentDefinitions, TestSequences, TestMemory]
+
+def delete_files():
+    TEST_FILES_SBOL2_OUT = os.listdir(TEST_LOC_SBOL2)
+    for i in range(len(TEST_FILES_SBOL2_OUT)):
+        split_path = os.path.splitext(TEST_FILES_SBOL2_OUT[i])
+        if os.path.exists(os.path.join(TEST_LOC_SBOL2, split_path[0] + '_out' + split_path[1])):
+            os.remove(os.path.join(TEST_LOC_SBOL2, split_path[0] + '_out' + split_path[1]))
+        else:
+            pass
 
 def runTests():
     print("Setting up")
@@ -771,7 +700,9 @@ def runTests():
    
     full_test_suite = unittest.TestSuite(suite_list)
     unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(full_test_suite)
-
+    delete_files()
+    
 if __name__ == '__main__':
-    unittest.main()
+    runTests()
 
+   
