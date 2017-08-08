@@ -13,6 +13,14 @@ To install pySBOL using pip, run following line on console:
 
 ``pip install pysbol``
 
+If you encounter permission errors on Mac OSX, you may install pysbol to your user site-packages directory as follows:
+
+``pip install pysbol --user``
+
+Or alternatively, you may install as a super-user:
+
+``sudo -H pip install pysbol``
+
 ----------------------
 Using Python
 ----------------------
@@ -26,7 +34,7 @@ If you would like to try out our latest snapshot, use `git <https://git-scm.com/
 
 ``python setup.py install``
 
-**If you are having problems, make sure your console/terminal is associated and associated with the right Python environment you wish to use.**
+**If you are having problems, make sure your console/terminal is associated with the right Python environment you wish to use.**
 
 3 - Test the pySBOL by importing it in Python.
 
