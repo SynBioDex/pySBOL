@@ -1,4 +1,6 @@
-__version__ = '2.2.0'
+from __future__ import absolute_import
 
-from libsbol import *
-import unit_tests
+__version__ = '2.3.0b'
+
+from sbol.libsbol import *
+import sbol.unit_tests
