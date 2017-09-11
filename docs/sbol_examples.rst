@@ -61,6 +61,38 @@ A **complete design** adds explicit sequence information to the components in a 
     print (gene_seq.elements.get())
 .. end
 
+--------------------------------------------------------------
+Iterating through a Primary Sequence of Components
+--------------------------------------------------------------
+
+Sometimes it is desired to iterate through individual components inside a sequence of components. One application of this is to check the order of a sequence of components. To do so, one can simply implement typical forloop used in Python. The example below shows how one would iterate through a primary sequence of components to validate the correct order.
+
+.. code:: python
+    doc = Document()
+
+    gene = ComponentDefinition("BB0001")
+    promoter = ComponentDefinition("R0010")
+    CDS = ComponentDefinition("B0032")
+    RBS = ComponentDefinition("E0040")
+    terminator = ComponentDefinition("B0012")
+
+    doc.addComponentDefinition([gene, promoter, CDS, RBS, terminator])
+
+    gene.assemble([ promoter, RBS, CDS, terminator ])
+    primary_sequence = gene.getPrimaryStructure()
+    for component in primary_sequence:
+        print(component.displayId.get())
+.. end
+
+The output is shown below, which captures the correct order.
+
+.. code:: python        
+    R0010
+    E0040
+    B0032
+    B0012
+.. end
+    
 -------------------------------
 Full Example Code
 -------------------------------
