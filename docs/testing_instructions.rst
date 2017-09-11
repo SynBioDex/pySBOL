@@ -13,5 +13,13 @@ The output tells you whether certain test has been passed or not.
 
 .. code:: python
 
-    test_round_trip (sbol.unit_tests.TestRoundTrip) ... Setting up
-    ok
+    testAddComponentDefinition (sbol.unit_tests.TestComponentDefinitions) ... ok
+    testCDDisplayId (sbol.unit_tests.TestComponentDefinitions) ... ok
+    testRemoveComponentDefinition (sbol.unit_tests.TestComponentDefinitions) ... ok
+    testAddSeqence (sbol.unit_tests.TestSequences) ... ok
+    testRemoveSequence (sbol.unit_tests.TestSequences) ... ok
+    testSeqDisplayId (sbol.unit_tests.TestSequences) ... ok
+    testSequenceElement (sbol.unit_tests.TestSequences) ... ok
+    testDiscard (sbol.unit_tests.TestMemory) ... ok
+
+    
