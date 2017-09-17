@@ -56,6 +56,13 @@ elif config[0] == 'Mac':
       'sbol.test': ['*.*', 'SBOL2/*.*'],
       'sbol': ['_libsbol.so', 'libsbol.py']
     }
+else:
+    package_data={
+      'sbol': ['examples/*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*'],
+      'sbol': ['_libsbol.so', 'libsbol.py']
+    }
+	
 setup(
     name='pySBOL',
 
