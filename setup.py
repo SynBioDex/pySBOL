@@ -28,14 +28,20 @@ def get_config():
     elif maxsize == 9223372036854775807:
         # May not detect Windows x64 (maxsize = 2147483647)!
         python_interpreter_architecture = 64
+    else:
+        python_interpreter_architecture = 0
     if version_info[0] == 2:
         python_version = 2
     elif version_info[0] == 3:
         python_version = 3
+    else:
+        python_version = 0
     if platform.system() == 'Darwin':
         platform_system = 'Mac'
     elif platform.system() == 'Windows':
         platform_system = 'Win'
+    else:
+	    platform_system = 'Linux'
     return (platform_system, python_interpreter_architecture, python_version)
 
 config = get_config()
