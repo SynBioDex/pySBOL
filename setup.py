@@ -43,14 +43,15 @@ print("Installing libSBOL binaries for %s %d-bit %s" %(config[0], config[1], ver
 # Reconstruct path to binaries based on the system and Python interpreter architecture
 package_dir = "%s_%d_%d" %(config[0], config[1], config[2])
 print(package_dir)
-chdir(path.join(here,package_dir))
 if config[0] == 'Win':
-      package_data={
-      'sbol': ['examples/*'],
-      'sbol.test': ['*.*', 'SBOL2/*.*'],
-      'sbol': ['_libsbol.pyd', 'libsbol.py']
-      }
+    chdir(path.join(here,package_dir))
+    package_data={
+    'sbol': ['examples/*'],
+    'sbol.test': ['*.*', 'SBOL2/*.*'],
+    'sbol': ['_libsbol.pyd', 'libsbol.py']
+    }
 elif config[0] == 'Mac':
+    chdir(path.join(here,package_dir))
     package_data={
       'sbol': ['examples/*'],
       'sbol.test': ['*.*', 'SBOL2/*.*'],
