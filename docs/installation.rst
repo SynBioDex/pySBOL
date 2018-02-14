@@ -21,6 +21,10 @@ Or alternatively, you may install as a super-user:
 
 ``sudo -H pip install pysbol``
 
+To update pySBOL using pip, run:
+
+``pip install -U pysbol``
+
 ----------------------
 Using Python
 ----------------------

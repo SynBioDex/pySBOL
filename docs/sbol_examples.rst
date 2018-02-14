@@ -12,8 +12,8 @@ An advantage of the SBOL data format over GenBank is the ability to represent DN
 .. code:: python
 
     # Construct an abstract design for a gene
-    gene_example = ComponentDefinition("gene_example");
-    gene_example.roles.set(SO_GENE);
+    gene = ComponentDefinition("gene_example");
+    gene.roles.set(SO_GENE);
 .. end
 
 **Design abstraction** is an important engineering principle for synthetic biology. Abstraction enables the engineer to think at a high-level about functional characteristics of a system while hiding low-level physical details. For example, in electronics, abstract schematics are used to describe the function of a circuit, while hiding the physical details of how a printed circuit board is laid out. Computer-aided design (CAD) programs allow the engineer to easily switch back and forth between abstract and physical representations of a circuit. In the same spirit, PySBOL enables a CAD approach for designing genetic constructs and other forms of synthetic biology.
@@ -24,18 +24,18 @@ Hierarchical DNA Assembly
 
 PySBOL also includes methods for assembling biological components into **abstraction hierarchies**. This is important rom a biological perspective, because DNA sequences and biological structures in general exhibit hierarchical organization, from the genome, to operons, to genes, to lower level genetic operators. The following code assembles an abstraction hierarchy that describes a gene cassete. Note that subcomponents must belong to a `Document` in order to be assembled, so a `Document` is passed as a parameter.
 
-The gene cassette below is composed of genetic subcomponents including a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOL Visual schematic glyphs. The next example demonstrates how an abstract designfor this gene is assembled from its subcomponents.
+The gene cassette below is composed of genetic subcomponents including a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOL Visual schematic glyphs. The next example demonstrates how an abstract design for this gene is assembled from its subcomponents.
 
 .. code:: python
 
-    gene_example.assemble([ r0010, b0032, e0040, b0012 ], doc)
+    gene.assemble([ r0010, b0032, e0040, b0012 ], doc)
 .. end
 
 After creating an abstraction hierarchy, it is then possible to iterate through an object's primary structure of components:
 
 .. code:: python
 
-    for component_definition in gene_example.getPrimaryStructure()):
+    for component_definition in gene.getPrimaryStructure()):
         print (component_definition.identity.get())
 .. end
 
@@ -43,8 +43,8 @@ This returns a list of `ComponentDefinitions` arranged in their primary sequence
 
 .. code:: python
 
-for component in gene_example.components:
-    print (component.definition.get())
+    for component in gene.components:
+        print (component.definition.get())
 .. end
 
 -------------------------------
@@ -61,6 +61,38 @@ A **complete design** adds explicit sequence information to the components in a 
     print (gene_seq.elements.get())
 .. end
 
+--------------------------------------------------------------
+Iterating through a Primary Sequence of Components
+--------------------------------------------------------------
+
+Sometimes it is desired to iterate through individual components inside a sequence of components. One application of this is to check the order of a sequence of components. To do so, one can simply implement typical forloop used in Python. The example below shows how one would iterate through a primary sequence of components to validate the correct order.
+
+.. code:: python
+    doc = Document()
+
+    gene = ComponentDefinition("BB0001")
+    promoter = ComponentDefinition("R0010")
+    CDS = ComponentDefinition("B0032")
+    RBS = ComponentDefinition("E0040")
+    terminator = ComponentDefinition("B0012")
+
+    doc.addComponentDefinition([gene, promoter, CDS, RBS, terminator])
+
+    gene.assemble([ promoter, RBS, CDS, terminator ])
+    primary_sequence = gene.getPrimaryStructure()
+    for component in primary_sequence:
+        print(component.displayId.get())
+.. end
+
+The output is shown below, which captures the correct order.
+
+.. code:: python        
+    R0010
+    E0040
+    B0032
+    B0012
+.. end
+    
 -------------------------------
 Full Example Code
 -------------------------------
@@ -74,9 +106,9 @@ Full example code is provided below, which will create a file called "gene_casse
     setHomespace("http://sys-bio.org")
     doc = Document()
     
-    gene_example = ComponentDefinition("gene_example")
+    gene = ComponentDefinition("gene_example")
     promoter = ComponentDefinition("R0010")
-    cds = ComponentDefinition("B0032")
+    CDS = ComponentDefinition("B0032")
     RBS = ComponentDefinition("E0040")
     terminator = ComponentDefinition("B0012")
     
