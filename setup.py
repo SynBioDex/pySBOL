@@ -54,20 +54,20 @@ if config[0] == 'Win':
     package_data={
     'sbol': ['examples/*'],
     'sbol.test': ['*.*', 'SBOL2/*.*'],
-    'sbol': ['_libsbol.pyd', 'libsbol.py']
+    'sbol': ['_libsbol.pyd', 'libsbol.py', 'crispr_example.xml']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
     package_data={
       'sbol': ['examples/*'],
       'sbol.test': ['*.*', 'SBOL2/*.*'],
-      'sbol': ['_libsbol.so', 'libsbol.py']
+      'sbol': ['_libsbol.so', 'libsbol.py', 'crispr_example.xml']
     }
 else:
     package_data={
       'sbol': ['examples/*'],
       'sbol.test': ['*.*', 'SBOL2/*.*'],
-      'sbol': ['_libsbol.so', 'libsbol.py']
+      'sbol': ['_libsbol.so', 'libsbol.py', 'crispr_example.xml']
     }
 	
 setup(
@@ -76,7 +76,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.3.0.post8',
+    version='2.3.0.post10',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,
@@ -97,7 +97,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
