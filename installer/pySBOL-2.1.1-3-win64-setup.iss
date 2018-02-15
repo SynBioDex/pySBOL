@@ -2,12 +2,12 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "pySBOL"
-#define MyAppVersion "2.1.1"
+#define MyAppVersion "2.3.0"
 #define MyAppSubVersion ""
 #define MyArchitecture "x64"
 #define MyAppPublisher "SBOL Team"
-#define PythonSubVer = "3.5"
-#define PythonSubVerWithoutDots = "35"
+#define PythonSubVer = "3.6"
+#define PythonSubVerWithoutDots = "36"
 #define PythonVer = "3"
 #define MyAppURL "http://sbolstandard.org/"
 
