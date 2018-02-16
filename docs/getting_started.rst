@@ -7,24 +7,53 @@ This beginner’s guide introduces the basic principles of pySBOL for new users.
 Creating an SBOL Document
 -------------------------
 
-In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in LibSBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects. All file I/O operations are performed on the Document to populate it with SBOL objects representing design elements. Usually the first step is to create an SBOLDocument in which to put your objects. This can be done by calling the Document constructor.  The read and write methods are used for reading and writing files in SBOL format.
+In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in LibSBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects which represent elements of a biological design. Usually the first step is to create an SBOLDocument in which to put your objects by calling the Document constructor. All file I/O operations are performed on the Document. The read and write methods are used for reading and writing files in SBOL format.
 
 .. code:: python
 
-    doc = Document()
-    doc.read("CRISPR_example.xml")
-    print (len(Document))
-    doc.write("CRISPR_example.xml")
+    >>> doc = Document()
+    >>> doc.read('crispr_example.xml')
+    >>> doc.write('crispr_example.xml')
 .. end
 
-Reading a Document will wipe any existing contents clean before import. However, you can import objects from multiple files into a single Document object using `Document.append() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.append>`_. This can be advantageous when you want to integrate multiple ComponentDefinitions from multiple files into a single design, for example.
+Reading a Document will wipe any existing contents clean before import. However, you can import objects from multiple files into a single Document object using `Document.append() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.append>`_. This can be advantageous when you want to integrate multiple ComponentDefinitions from multiple files into a single design, for example. This kind of data integration is an important and useful feature of SBOL.
 
-A Document may contain different types of SBOL objects, including ComponentDefinitions, ModuleDefinitions, Sequences, SequenceAnnotations, and Models. These objects are collectively referred to as Top Level objects because they can be referenced directly from a Document. The total count of objects contained in a Document is determined using the ``len`` function.
-
-In order to review the ComponentDefinitions contained in a Document, use a Python iterator:
+A Document may contain different types of SBOL objects, including ComponentDefinitions, ModuleDefinitions, Sequences, and Models. These objects are collectively referred to as Top Level objects because they can be referenced directly from a Document. The total count of objects contained in a Document is determined using the ``len`` function. To view an inventory of objects contained in the Document, simply ``print`` it.
 
 .. code:: python
+    >>> len(doc)
+    31
+    >>> print(doc)
+    Attachment....................0
+    Collection....................0
+    CombinatorialDerivation.......0
+    ComponentDefinition...........25
+    Implementation................0
+    Model.........................0
+    ModuleDefinition..............2
+    Sequence......................4
+    Analysis......................0
+    Build.........................0
+    Design........................0
+    SampleRoster..................0
+    Test..........................0
+    Activity......................0
+    Agent.........................0
+    Plan..........................0
+    Annotation Objects............0
+    ---
+    Total.........................31
 
+.. end
+
+Each SBOL object in a Document is uniquely identified by a special string of characters called a Uniform Resource Identifier. The identity of each object in a Document can be reviewed by using a Python iterator pattern.
+.. code:: python
+>>> for obj in doc:
+...     print(obj)
+...
+http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
+http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
+http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
     for cd in doc.componentDefinitions:
        print cd
 .. end
