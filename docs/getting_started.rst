@@ -12,8 +12,8 @@ In a previous era, engineers might sit at a drafting board and draft a design by
 .. code:: python
 
     >>> doc = Document()
-    >>> doc.read('crispr_example.xml')
-    >>> doc.write('crispr_example.xml')
+    >>> doc.read('CRISPR_example.xml')
+    >>> doc.write('CRISPR_example.xml')
 .. end
 
 Reading a Document will wipe any existing contents clean before import. However, you can import objects from multiple files into a single Document object using `Document.append() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.append>`_. This can be advantageous when you want to integrate multiple ComponentDefinitions from multiple files into a single design, for example. This kind of data integration is an important and useful feature of SBOL.
@@ -48,18 +48,22 @@ A Document may contain different types of SBOL objects, including ComponentDefin
 
 Each SBOL object in a Document is uniquely identified by a special string of characters called a Uniform Resource Identifier. The identity of each object in a Document can be reviewed by using a Python iterator pattern.
 .. code:: python
->>> for obj in doc:
-...     print(obj)
-...
-http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
-http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
-http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
-    for cd in doc.componentDefinitions:
-       print cd
+	>>> for obj in doc:
+	...     print(obj)
+	...
+	http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
+	http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
+	http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
+	.
+	.
 .. end
-
-This will print the unique identity of each object (see the next section). Similarly, you can iterate through `Document.moduleDefinitions() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, 
-`Document.sequenceAnnotations() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.SequenceAnnotation>`_, and `Document.models() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_.
+These objects are sorted into object stores based on the type of object. For example to view ``ComponentDefinition`` objects specifically, iterate through the `Document.componentDefinitions` store:
+.. code:: python
+	>>> for cd in doc.componentDefinitions:
+	...     print(cd)
+	...
+.. end
+Similarly, you can iterate through `Document.moduleDefinitions() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, `Document.models() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_, or any top level object. The last type of object, Annotation Objects is a special case which will be discussed later.
 
 --------------------------
 Creating SBOL Data Objects
@@ -80,7 +84,7 @@ Objects can be created by calling their respective constructors. The following c
     crispr_template = ModuleDefinition('http://sys-bio.org/CRISPRTemplate')
 .. end
 
-LibSBOL provides a few global configuration options that make URI construction easy. The first configuration option allows you to specify a default namespace for new object creation. If the default namespace is set, then only an identifier needs to be passed to the constructor.  This identifier will be automatically appended to the default namespace. Setting the default namespace is like signing your homework and claims ownership of an object.
+LibSBOL provides a few global configuration options that make URI construction easy. The first configuration option allows you to specify a default namespace for new object creation. If the default namespace is set, then only a local identifier needs to be passed to the constructor.  This identifier will be automatically appended to the default namespace. Setting the default namespace is like signing your homework and claims ownership of an object. A URI is required to be universally unique. 
 
 .. code:: python
 
@@ -98,7 +102,7 @@ Some constructors have required fields. In the specification document, required 
     cas9 = ComponentDefinition("Cas9", BIOPAX_PROTEIN)
 .. end
 
-Notice the type is specified using a predefined constant. The ``ComponentDefinition.types`` property is one of many SBOL properties that use standard ontology terms as property values.  The ``ComponentDefinition.types`` property uses the Sequence Ontology to be specific.  Many commonly used ontological terms are provided by libSBOL as predefined constants in the `constants.h <https://github.com/SynBioDex/libSBOL/blob/develop/source/constants.h>`_ header.  See the help page for the `sbol.ComponentDefinition <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition>`_ class or other specific class to find a table that lists the available terms.
+Notice the type is specified using a predefined constant. The ``ComponentDefinition.types`` property is one of many SBOL properties that use standard ontology terms as property values.  The ``ComponentDefinition.types`` property uses the Sequence Ontology to be specific.  Many commonly used ontological terms are built-in to pySBOL as predefined constants..  See the help page for the `sbol.ComponentDefinition <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.ComponentDefinition>`_ class or other specific class to find a table that lists the available terms.
 
 ----------------------------
 Adding Objects to a Document
@@ -118,20 +122,24 @@ Only TopLevel objects need to be added to a Document. These top level objects in
 Getting, Setting, and Editing Optional Fields
 ---------------------------------------------
 
+The attributes of an SBOL object can be accessed like other Python class objects, with a few special considerations. For example, to get the values of the ``displayId`` and ``identity`` properties of any object :
+
+.. code:: python
+    >>> print(cas9.displayId)
+	
+	>>> print(cas9.identity)
+.. end
+Note that ``displayId`` gives only the shorthand, local identifier for the object, while the ``identity`` property gives the full URI.
+
 Objects may also include optional fields.  These are indicated in UML as properties having a cardinality of 0 or more. Except for the molecular type field, all properties of a ComponentDefinition are optional.  Optional properties can only be set after the object is created. The following code creates a DNA component which is designated as a promoter:
 
 .. code:: python
 
     target_promoter = ComponentDefinition('TargetPromoter', BIOPAX_DNA, '1.0.0')
-    target_promoter.roles.set(SO_PROMOTER)
+    target_promoter.roles = [ SO_PROMOTER ]
 .. end
 
-All properties have a set and a get method. To view the value of a property:
 
-.. code:: python
-
-    print(target_promoter.roles.get())
-.. end
 
 This returns the string ``http://identifiers.org/so/SO:0000167`` which is the Sequence Ontology term for a promoter.
 
