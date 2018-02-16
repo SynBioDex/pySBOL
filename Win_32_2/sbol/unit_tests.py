@@ -11,9 +11,8 @@ import tempfile, shutil
 
 URIS_USED = set()
 RANDOM_CHARS = string.ascii_letters
-NUM_FAST_TESTS = 10000
-NUM_SLOW_TESTS =   100
-TEST_LOCATION = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'test')
+MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
+TEST_LOCATION = os.path.join(MODULE_LOCATION, 'test')
 TEST_LOC_SBOL1 = os.path.join(TEST_LOCATION, 'SBOL1')
 TEST_LOC_SBOL2 = os.path.join(TEST_LOCATION, 'SBOL2')
 TEST_LOC_RDF = os.path.join(TEST_LOCATION, 'RDF')
@@ -22,6 +21,7 @@ TEST_LOC_GB = os.path.join(TEST_LOCATION, 'GenBank')
 FILES_SBOL2 = os.listdir(TEST_LOC_SBOL2)
 FILES_SBOL2.sort()
 TEST_FILES_SBOL2 = []
+
 for i in FILES_SBOL2:
     if i.endswith('rdf'):
         TEST_FILES_SBOL2.append(i)
@@ -68,6 +68,7 @@ class TestRoundTripSBOL2(unittest.TestCase):
         shutil.rmtree(self.temp_out_dir)
 
     def run_round_trip(self, test_file):
+        print(str(test_file))
         split_path = os.path.splitext(test_file)
         self.doc = Document()   # Document for read and write
         self.doc.read(os.path.join(TEST_LOC_SBOL2, split_path[0] + split_path[1]))
@@ -77,317 +78,385 @@ class TestRoundTripSBOL2(unittest.TestCase):
         self.doc2.read(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
         self.assertEqual(self.doc.compare(self.doc2), 1)
     
-    def test_case00(self):
-        print(str(TEST_FILES_SBOL2[0]))
+    def test_case000(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[0]))
 
-    def test_case01(self):
-        print(str(TEST_FILES_SBOL2[1]))
+    def test_case001(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[1]))
 
-    def test_case02(self):
-        print(str(TEST_FILES_SBOL2[2]))
+    def test_case002(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[2]))
 
-    def test_case03(self):
-        print(str(TEST_FILES_SBOL2[3]))
+    def test_case003(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[3]))
 
-    def test_case04(self):
-        print(str(TEST_FILES_SBOL2[4]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[4]))
-
-    def test_case05(self):
-        print(str(TEST_FILES_SBOL2[5]))
+    def test_case005(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[5]))
 
-    def test_case06(self):
-        print(str(TEST_FILES_SBOL2[6]))
+    def test_case006(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[6]))
 
-    def test_case07(self):
-        print(str(TEST_FILES_SBOL2[7]))
+    def test_case007(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[7]))
 
-    def test_case08(self):
-        print(str(TEST_FILES_SBOL2[8]))
+    def test_case008(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[8]))
 
-    def test_case09(self):
-        print(str(TEST_FILES_SBOL2[9]))
+    def test_case009(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[9]))
 
-    def test_case10(self):
-        print(str(TEST_FILES_SBOL2[10]))
+    def test_case010(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[10]))
 
-    def test_case11(self):
-        print(str(TEST_FILES_SBOL2[11]))
+    def test_case011(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[11]))
 
-    def test_case12(self):
-        print(str(TEST_FILES_SBOL2[12]))
+    def test_case012(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[12]))
 
-    def test_case13(self):
-        print(str(TEST_FILES_SBOL2[13]))
+    def test_case013(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[13]))
 
-    def test_case14(self):
-        print(str(TEST_FILES_SBOL2[14]))
+    def test_case014(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[14]))
 
-#    SBOL1and2Test
-#    def test_case15(self):
-#        print(str(TEST_FILES_SBOL2[15]))
-#        self.run_round_trip(str(TEST_FILES_SBOL2[15]))
+    def test_case015(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[15]))
 
-    def test_case16(self):
-        print(str(TEST_FILES_SBOL2[16]))
+    def test_case016(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[16]))
 
-    def test_case17(self):
-        print(str(TEST_FILES_SBOL2[17]))
+    def test_case017(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[17]))
 
-    def test_case18(self):
-        print(str(TEST_FILES_SBOL2[18]))
+    def test_case018(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[18]))
 
-    def test_case19(self):
-        print(str(TEST_FILES_SBOL2[19]))
+    def test_case019(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[19]))
 
-    def test_case20(self):
-        print(str(TEST_FILES_SBOL2[20]))
+    def test_case020(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[20]))
 
-    def test_case21(self):
-        print(str(TEST_FILES_SBOL2[21]))
+    def test_case021(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[21]))
 
-    def test_case22(self):
-        print(str(TEST_FILES_SBOL2[22]))
-        self.run_round_trip(str(TEST_FILES_SBOL2[22]))
-
-    def test_case23(self):
-        print(str(TEST_FILES_SBOL2[23]))
+    def test_case023(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[23]))
 
-    def test_case24(self):
-        print(str(TEST_FILES_SBOL2[24]))
+    def test_case024(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[24]))
 
-    def test_case25(self):
-        print(str(TEST_FILES_SBOL2[25]))
+    def test_case025(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[25]))
 
-    def test_case26(self):
-        print(str(TEST_FILES_SBOL2[26]))
+    def test_case026(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[26]))
 
-    def test_case27(self):
-        print(str(TEST_FILES_SBOL2[27]))
+    def test_case027(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[27]))
 
-    def test_case28(self):
-        print(str(TEST_FILES_SBOL2[28]))
+    def test_case028(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[28]))
 
-    def test_case29(self):
-        print(str(TEST_FILES_SBOL2[29]))
+    def test_case029(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[29]))
 
-    def test_case30(self):
-        print(str(TEST_FILES_SBOL2[30]))
+    def test_case030(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[30]))
 
-    def test_case31(self):
-        print(str(TEST_FILES_SBOL2[31]))
+    def test_case031(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[31]))
 
-    def test_case32(self):
-        print(str(TEST_FILES_SBOL2[32]))
+    def test_case032(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[32]))
 
-    def test_case33(self):
-        print(str(TEST_FILES_SBOL2[33]))
+    def test_case033(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[33]))
 
-    def test_case34(self):
-        print(str(TEST_FILES_SBOL2[34]))
+    def test_case034(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[34]))
 
-    def test_case35(self):
-        print(str(TEST_FILES_SBOL2[35]))
+    def test_case035(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[35]))
 
-    def test_case36(self):
-        print(str(TEST_FILES_SBOL2[36]))
+    def test_case036(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[36]))
 
-    def test_case37(self):
-        print(str(TEST_FILES_SBOL2[37]))
+    def test_case037(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[37]))
 
-    def test_case38(self):
-        print(str(TEST_FILES_SBOL2[38]))
+    def test_case038(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[38]))
 
-    def test_case39(self):
-        print(str(TEST_FILES_SBOL2[39]))
+    def test_case039(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[39]))
 
-    def test_case40(self):
-        print(str(TEST_FILES_SBOL2[40]))
+    def test_case040(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[40]))
 
-    def test_case41(self):
-        print(str(TEST_FILES_SBOL2[41]))
+    def test_case041(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[41]))
 
-    def test_case42(self):
-        print(str(TEST_FILES_SBOL2[42]))
+    def test_case042(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[42]))
 
-    def test_case43(self):
-        print(str(TEST_FILES_SBOL2[43]))
+    def test_case043(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[43]))
 
-    def test_case44(self):
-        print(str(TEST_FILES_SBOL2[44]))
+    def test_case044(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[44]))
 
-    def test_case45(self):
-        print(str(TEST_FILES_SBOL2[45]))
+    def test_case045(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[45]))
 
-    def test_case46(self):
-        print(str(TEST_FILES_SBOL2[46]))
+    def test_case046(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[46]))
 
-    def test_case47(self):
-        print(str(TEST_FILES_SBOL2[47]))
+    def test_case047(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[47]))
 
-    def test_case48(self):
-        print(str(TEST_FILES_SBOL2[48]))
+    def test_case048(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[48]))
 
-    def test_case49(self):
-        print(str(TEST_FILES_SBOL2[49]))
+    def test_case049(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[49]))
 
-    def test_case50(self):
-        print(str(TEST_FILES_SBOL2[50]))
+    def test_case050(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[50]))
 
-    def test_case51(self):
-        print(str(TEST_FILES_SBOL2[51]))
+    def test_case051(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[51]))
 
-    def test_case52(self):
-        print(str(TEST_FILES_SBOL2[52]))
+    def test_case052(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[52]))
 
-    def test_case53(self):
-        print(str(TEST_FILES_SBOL2[53]))
+    def test_case053(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[53]))
 
-    def test_case54(self):
-        print(str(TEST_FILES_SBOL2[54]))
+    def test_case054(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[54]))
 
-    def test_case55(self):
-        print(str(TEST_FILES_SBOL2[55]))
+    def test_case055(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[55]))
 
-    def test_case56(self):
-        print(str(TEST_FILES_SBOL2[56]))
+    def test_case056(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[56]))
 
-    def test_case57(self):
-        print(str(TEST_FILES_SBOL2[57]))
+    def test_case057(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[57]))
 
-    def test_case58(self):
-        print(str(TEST_FILES_SBOL2[58]))
+    def test_case058(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[58]))
 
-    def test_case59(self):
-        print(str(TEST_FILES_SBOL2[59]))
+    def test_case059(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[59]))
 
-    def test_case60(self):
-        print(str(TEST_FILES_SBOL2[60]))
+    def test_case060(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[60]))
 
-    def test_case61(self):
-        print(str(TEST_FILES_SBOL2[61]))
+    def test_case061(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[61]))
 
-    def test_case62(self):
-        print(str(TEST_FILES_SBOL2[62]))
+    def test_case062(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[62]))
 
-    def test_case63(self):
-        print(str(TEST_FILES_SBOL2[63]))
+    def test_case063(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[63]))
 
-    def test_case64(self):
-        print(str(TEST_FILES_SBOL2[64]))
+    def test_case064(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[64]))
-
-    def test_case65(self):
-        print(str(TEST_FILES_SBOL2[65]))
+       
+    def test_case065(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[65]))
 
-    def test_case66(self):
-        print(str(TEST_FILES_SBOL2[66]))
+    def test_case066(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[66]))
-
-    def test_case67(self):
-        print(str(TEST_FILES_SBOL2[67]))
+        
+    def test_case067(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[67]))
 
-    def test_case68(self):
-        print(str(TEST_FILES_SBOL2[68]))
+    def test_case068(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[68]))
-
-    def test_case69(self):
-        print(str(TEST_FILES_SBOL2[69]))
+        
+    def test_case069(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[69]))
 
-    def test_case70(self):
-        print(str(TEST_FILES_SBOL2[70]))
+    def test_case070(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[70]))
-
-    def test_case71(self):
-        print(str(TEST_FILES_SBOL2[71]))
+        
+    def test_case071(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[71]))
 
-    def test_case72(self):
-        print(str(TEST_FILES_SBOL2[72]))
+    def test_case072(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[72]))
-
-    def test_case73(self):
-        print(str(TEST_FILES_SBOL2[73]))
+   
+    def test_case073(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[73]))
 
+    def test_case074(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[74]))
+
+    def test_case075(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[75]))
+
+    def test_case076(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[76]))
+
+    def test_case077(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[77]))
+
+    def test_case078(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[78]))
+
+    def test_case079(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[79]))
+
+    def test_case080(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[80]))
+
+    def test_case081(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[81]))
+
+    def test_case083(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[83]))
+
+    def test_case085(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[85]))
+
+    def test_case087(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[87]))
+
+    def test_case089(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[89]))
+
+    def test_case091(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[91]))
+
+    def test_case093(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[93]))
+
+    def test_case094(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[94]))
+
+    def test_case095(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[95]))
+
+    def test_case096(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[96]))
+
+    def test_case097(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[97]))
+
+    def test_case098(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[98]))
+
+    def test_case099(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[99]))
+
+    def test_case100(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[100]))
+
+    def test_case101(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[101]))
+
+    def test_case102(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[102]))
+
+    def test_case103(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[103]))
+
+    def test_case104(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[104]))
+
+    def test_case105(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[105]))
+
+    def test_case106(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[106]))
+
+    def test_case107(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[107]))
+
+    def test_case108(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[108]))
+
+    def test_case109(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[109]))
+
+    def test_case110(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[110]))
+
+    def test_case111(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[111]))
+
+    def test_case112(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[112]))
+
+    def test_case113(self):
+        self.run_round_trip(str(TEST_FILES_SBOL2[113]))
+
+        
+    
+class TestRoundTripFailSBOL2(unittest.TestCase):
+    def setUp(self):
+        # Create temp directory
+        self.temp_out_dir = tempfile.mkdtemp()
+
+    def tearDown(self):
+        # Remove directory after the test
+        shutil.rmtree(self.temp_out_dir)
+
+    def run_round_trip_assert_fail(self, test_file):
+        print(str(test_file))
+        split_path = os.path.splitext(test_file)
+        self.doc = Document()   # Document for read and write
+        self.doc.read(os.path.join(TEST_LOC_SBOL2, split_path[0] + split_path[1]))
+        self.doc.write(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
+
+        self.doc2 = Document()  # Document to compare for equality
+        self.doc2.read(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
+        # Expected to fail
+        self.assertRaises(AssertionError, lambda: self.assertEqual(self.doc.compare(self.doc2), 1))
+        
+    def test_case04(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[4]))
+        
+# Disabled because it raises RuntimeError
+#    def test_case22(self):
+#        self.run_round_trip_runtime_fail(str(TEST_FILES_SBOL2[22]))
+
+    def test_case82(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[82]))
+        
+    def test_case84(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[84]))
+        
+    def test_case86(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[86]))
+        
+    def test_case88(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[88]))
+
+    def test_case90(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[90]))
+        
+    def test_case92(self):
+        self.run_round_trip_assert_fail(str(TEST_FILES_SBOL2[92]))
+      
+        
+        
 class TestComponentDefinitions(unittest.TestCase):
     
     def setUp(self):
         pass
-        
+    
     def testAddComponentDefinition(self):
         test_CD = ComponentDefinition("BB0001")
         doc = Document()
         doc.addComponentDefinition(test_CD)
-        
         self.assertIsNotNone(doc.componentDefinitions.get("BB0001"))
-        
-        displayId = doc.componentDefinitions.get("BB0001").displayId.get()
-        
+        displayId = doc.componentDefinitions.get("BB0001").displayId
         self.assertEqual(displayId, "BB0001")
         
     def testRemoveComponentDefinition(self):
@@ -400,7 +469,7 @@ class TestComponentDefinitions(unittest.TestCase):
     def testCDDisplayId(self):
         listCD_read = []
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
+        doc.read(os.path.join(MODULE_LOCATION, 'crispr_example.xml'))
 
         # List of displayIds        
         listCD = ['CRP_b', 'CRa_U6', 'EYFP', 'EYFP_cds', 'EYFP_gene', 'Gal4VP16',
@@ -411,179 +480,37 @@ class TestComponentDefinitions(unittest.TestCase):
                   'target', 'target_gene']
         
         for CD in doc.componentDefinitions:
-            listCD_read.append(CD.displayId.get())
+            listCD_read.append(CD.displayId)
             
         # Python 3 compatability
         if sys.version_info[0] < 3:
             self.assertItemsEqual(listCD_read, listCD)
         else:
             self.assertCountEqual(listCD_read, listCD)
-             
-    #def testCDSeq(self):
-    #    doc = Document()
-    #    doc.read(os.path.join(TEST_LOCATION, str(TEST_LOC_SBOL2[72])))
+            
+    def testPrimarySequenceIteration(self):
+        listCD = []
+        listCD_true = ["R0010", "E0040", "B0032", "B0012"]
+        doc = Document()
+        gene = ComponentDefinition("BB0001")
+        promoter = ComponentDefinition("R0010")
+        CDS = ComponentDefinition("B0032")
+        RBS = ComponentDefinition("E0040")
+        terminator = ComponentDefinition("B0012")
         
-    #def testCDpersistentIdentity(self):
-    #def testCDrole(self):
-    #def testCDtype(self):
-    #def testCDcomponent(self):
-    #def testCDsequenceConstraint(self):
+        doc.addComponentDefinition([gene, promoter, CDS, RBS, terminator])
         
+        gene.assemblePrimaryStructure([ promoter, RBS, CDS, terminator ])
+        primary_sequence = gene.getPrimaryStructure()
+        for component in primary_sequence:
+            listCD.append(component.displayId)
         
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(listCD, listCD_true)
+        else:
+            self.assertCountEqual(listCD, listCD_true)    
 
-        
-#    def testComponentDefinitionElement(self):
-#        doc = Document()
-#        doc.read(os.path.join(TEST_LOCATION, str(TEST_FILES[4])))
-#        # Sequence to test against
-#        seq = ('GCTCCGAATTTCTCGACAGATCTCATGTGATTACGCCAAGCTACGGGCGGAGTACTGTCCTC'
-#               'CGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGC'
-#               'GGAGTTCTGTCCTCCGAGCGGAGACTCTAGATACCTCATCAGGAACATGTTGGAATTCTAGG'
-#               'CGTGTACGGTGGGAGGCCTATATAAGCAGAGCTCGTTTAGTGAACCGTCAGATCGCCTCGAG'
-#               'TACCTCATCAGGAACATGTTGGATCCAATTCGACC')
-#               
-#        seq_read = doc.getSequence('CRP_b_seq').elements.get()
-#        self.assertEquals(seq_read, seq)
-
-#class TestSBOLObject(unittest.TestCase):
-#    def assertReadOnly(self, obj, attr):
-#        try:
-#            obj.__getattribute__(attr)
-#            obj.__setattr__(attr, None)
-#            raise AssertionError
-#        except AttributeError:
-#            pass
-
-#def assertReadWrite(self, obj, attr, content=None):
-#    if not content:
-#        content = random_string()
-#        self.assertEqual(obj.__getattribute__(attr), None)
-#        obj.__setattr__(attr, content)
-#        self.assertEqual(obj.__getattribute__(attr), content)
-#        obj.__setattr__(attr, None)
-#        self.assertEqual(obj.__getattribute__(attr), None)
-#
-#    def setUp(self):
-#        self.doc = sbol.Document()
-#        self.assertEqual(self.doc.num_sbol_objects, 0)
-#        self.uris    = []
-#        self.testees = []
-#        self.createTestees()
-#        self.assertEqual(len(self.uris), len(self.testees))
-#        self.assertEqual(len(self.uris), self.doc.num_sbol_objects)
-#        self.assertEqual(len(self.uris), sbol.libsbol.getNumSBOLObjects(self.doc.ptr))
-#
-#def tearDown(self):
-#    self.assertEqual(len(self.uris), self.doc.num_sbol_objects)
-#        self.assertEqual(len(self.uris), sbol.libsbol.getNumSBOLObjects(self.doc.ptr))
-#        del self.doc
-#    # todo check that everything was deleted?
-#    
-#    def createTestees(self):
-#        for obj in (sbol.DNASequence,
-#                    sbol.SequenceAnnotation,
-#                    sbol.DNAComponent,
-#                    sbol.Collection):
-#            uri = random_uri()
-#            self.uris.append(uri)
-#            self.testees.append(obj(self.doc, uri))
-#
-#def testURI(self):
-#    for n in range( len(self.testees) ):
-#        testee = self.testees[n]
-#            uri = self.uris[n]
-#            self.assertEqual(testee.uri, uri)
-#            self.assertReadOnly(testee, 'uri')
-#
-#class TestSBOLCompoundObject(TestSBOLObject):
-#    def createTestees(self):
-#        for obj in (sbol.DNAComponent,
-#                    sbol.Collection):
-#            uri = random_uri()
-#            self.uris.append(uri)
-#            self.testees.append(obj(self.doc, uri))
-#
-#def testDisplayID(self):
-#    for testee in self.testees:
-#        self.assertReadWrite(testee, 'display_id')
-#
-#    def testName(self):
-#        for testee in self.testees:
-#            self.assertReadWrite(testee, 'name')
-#
-#def testDescription(self):
-#    for testee in self.testees:
-#        self.assertReadWrite(testee, 'description')
-#
-#class TestDNASequence(TestSBOLObject):
-#    def createTestees(self):
-#        uri = random_uri()
-#        self.uris.append(uri)
-#        self.testees.append( sbol.DNASequence(self.doc, uri) )
-#    
-#    def testNucleotides(self):
-#        self.assertReadWrite(self.testees[0], 'nucleotides')
-#
-#class TestSequenceAnnotation(TestSBOLObject):
-#    def assertPositionWorking(self, obj, attr):
-#        self.assertEqual(obj.__getattribute__(attr), None)
-#        # check that setting valid positions works
-#        for n in range(NUM_FAST_TESTS):
-#            position = random_valid_position()
-#            obj.__setattr__(attr, position)
-#            self.assertEqual(obj.__getattribute__(attr), position)
-#        # check that setting invalid positions raises error
-#        for n in range(NUM_FAST_TESTS):
-#            obj.__setattr__(attr, None)
-#            position = random_invalid_position()
-#            self.assertRaises(sbol.PositionError, obj.__setattr__, attr, position)
-#        # check that resetting to None works
-#        obj.__setattr__(attr, 1)
-#        self.assertEqual(obj.__getattribute__(attr), 1)
-#        obj.__setattr__(attr, None)
-#        self.assertEqual(obj.__getattribute__(attr), None)
-#    
-#    def createTestees(self):
-#        uri = random_uri()
-#        self.uris.append(uri)
-#        self.testees.append( sbol.SequenceAnnotation(self.doc, uri) )
-#    
-#    def testPositions(self):
-#        self.assertPositionWorking(self.testees[0], 'start')
-#        self.assertPositionWorking(self.testees[0], 'end')
-#    
-#    def testStrand(self):
-#        # check that strand is initially forward
-#        self.assertEquals(self.testees[0].strand, '+')
-#        # check that it can only be set to valid symbols
-#        valid_polarities = ('+', '*', '-')
-#        for symbol in random_string():
-#            if symbol in valid_polarities:
-#                self.testees[0].strand = symbol
-#                self.assertEquals(self.testees[0].strand, symbol)
-#            else:
-#                self.assertRaises(sbol.StrandError,
-#                                  self.testees[0].__setattr__,
-#                                  'strand',
-#                                  symbol)
-#
-#def testSubcomponent(self):
-#    self.assertEquals(self.testees[0].subcomponent, None)
-#        uri = random_uri()
-#        self.uris.append(uri)
-#        com = sbol.DNAComponent(self.doc, uri)
-#        self.testees[0].subcomponent = com
-#        self.assertEquals(self.testees[0].subcomponent, com)
-#    
-#    def testPrecedes(self):
-#        for n in range(NUM_SLOW_TESTS):
-#            self.assertEqual(len(self.testees[0].precedes), n)
-#            uri = random_uri()
-#            self.uris.append(uri)
-#            ann = sbol.SequenceAnnotation(self.doc, uri)
-#            self.assertFalse(ann in self.testees[0].precedes)
-#            self.testees[0].precedes += ann
-#            self.assertTrue(ann in self.testees[0].precedes)
 
 class TestSequences(unittest.TestCase):
     
@@ -594,7 +521,7 @@ class TestSequences(unittest.TestCase):
         test_seq = Sequence("R0010", "ggctgca")
         doc = Document()
         doc.addSequence(test_seq)
-        seq = doc.sequences.get("R0010").elements.get()
+        seq = doc.sequences.get("R0010").elements
         
         self.assertEqual(seq, 'ggctgca')
         
@@ -608,13 +535,13 @@ class TestSequences(unittest.TestCase):
     def testSeqDisplayId(self):
         listseq_read = []
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
+        doc.read(os.path.join(MODULE_LOCATION, 'crispr_example.xml'))
 
         # List of displayIds        
         listseq = ['CRP_b_seq', 'CRa_U6_seq', 'gRNA_b_seq', 'mKate_seq']
         
         for seq in doc.sequences:
-            listseq_read.append(seq.displayId.get())
+            listseq_read.append(seq.displayId)
         
         # Python 3 compatability
         if sys.version_info[0] < 3:
@@ -623,8 +550,10 @@ class TestSequences(unittest.TestCase):
             self.assertCountEqual(listseq_read, listseq)
             
     def testSequenceElement(self):
+        setHomespace('http://sbols.org/CRISPR_Example')
+        Config.setOption('sbol_typed_uris', False)
         doc = Document()
-        doc.read(os.path.join(TEST_LOC_SBOL2, 'roundTrip.xml'))
+        doc.read(os.path.join(MODULE_LOCATION, 'crispr_example.xml'))
         # Sequence to test against
         seq = ('GCTCCGAATTTCTCGACAGATCTCATGTGATTACGCCAAGCTACGGGCGGAGTACTGTCCTC'
                'CGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGC'
@@ -632,7 +561,7 @@ class TestSequences(unittest.TestCase):
                'CGTGTACGGTGGGAGGCCTATATAAGCAGAGCTCGTTTAGTGAACCGTCAGATCGCCTCGAG'
                'TACCTCATCAGGAACATGTTGGATCCAATTCGACC')
                
-        seq_read = doc.sequences.get('CRP_b_seq').elements.get()
+        seq_read = doc.sequences.get('CRP_b_seq').elements
         self.assertEquals(seq_read, seq)
 
 #class TestPythonMethods(unittest.TestCase):
@@ -678,11 +607,26 @@ class TestMemory(unittest.TestCase):
         bool2 = cd.thisown
         self.assertNotEquals(bool1, bool2)
 
-# List of tests
-test_list = [TestRoundTripSBOL2, TestComponentDefinitions, TestSequences, TestMemory]
+class TestIterators(unittest.TestCase):
 
-def runTests():
+    def setUp(self):
+        pass
+    
+    def testOwnedObjectIterator(self):
+        cd = ComponentDefinition()
+        sa1 = cd.sequenceAnnotations.create('sa1').this
+        sa2 = cd.sequenceAnnotations.create('sa2').this
+        annotations = []
+        for sa in cd.sequenceAnnotations:
+            annotations.append(sa.this)
+        self.assertEquals(annotations, [sa1, sa2])
+
+# List of tests
+default_test_list = [TestRoundTripSBOL2, TestComponentDefinitions, TestSequences, TestMemory, TestIterators]
+
+def runTests(test_list = default_test_list):
     print("Setting up")
+    #exec(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "CRISPR_example.py")).read())
     suite_list = []
     loader = unittest.TestLoader()
     for test_class in test_list:
@@ -690,6 +634,7 @@ def runTests():
         suite_list.append(suite)
    
     full_test_suite = unittest.TestSuite(suite_list)
+    
     unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(full_test_suite)
     
 if __name__ == '__main__':
