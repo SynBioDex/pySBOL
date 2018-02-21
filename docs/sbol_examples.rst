@@ -12,8 +12,9 @@ An advantage of the SBOL data format over GenBank is the ability to represent DN
 .. code:: python
 
     # Construct an abstract design for a gene
-    gene = ComponentDefinition("gene_example");
-    gene.roles.set(SO_GENE);
+    gene = ComponentDefinition('gene_example')
+    gene.roles = SO_GENE
+
 .. end
 
 **Design abstraction** is an important engineering principle for synthetic biology. Abstraction enables the engineer to think at a high-level about functional characteristics of a system while hiding low-level physical details. For example, in electronics, abstract schematics are used to describe the function of a circuit, while hiding the physical details of how a printed circuit board is laid out. Computer-aided design (CAD) programs allow the engineer to easily switch back and forth between abstract and physical representations of a circuit. In the same spirit, PySBOL enables a CAD approach for designing genetic constructs and other forms of synthetic biology.
@@ -28,7 +29,7 @@ The gene cassette below is composed of genetic subcomponents including a promote
 
 .. code:: python
 
-    gene.assemble([ r0010, b0032, e0040, b0012 ], doc)
+    gene.assemblePrimaryStructure([ r0010, b0032, e0040, b0012 ], doc)
 .. end
 
 After creating an abstraction hierarchy, it is then possible to iterate through an object's primary structure of components:
@@ -36,7 +37,7 @@ After creating an abstraction hierarchy, it is then possible to iterate through 
 .. code:: python
 
     for component_definition in gene.getPrimaryStructure()):
-        print (component_definition.identity.get())
+        print (component_definition.identity)
 .. end
 
 This returns a list of `ComponentDefinitions` arranged in their primary sequence. *Caution!* It is also possible to iterate through components as follows, but this way is *not* guaranteed to return components in sequential order. This is because SBOL supports a variety of structural descriptions, not just primary structure.
@@ -44,7 +45,7 @@ This returns a list of `ComponentDefinitions` arranged in their primary sequence
 .. code:: python
 
     for component in gene.components:
-        print (component.definition.get())
+        print (component.definition)
 .. end
 
 -------------------------------
@@ -55,10 +56,10 @@ A **complete design** adds explicit sequence information to the components in a 
 
 .. code:: python 
 
-    gene_seq = Sequence("gene_seq")
-    gene_seq.sequences.set(gene_seq.identity.get())
+    gene_seq = Sequence('gene_seq')
+    gene_seq.sequences.set(gene_seq.identity)
     gene_seq.compile()
-    print (gene_seq.elements.get())
+    print (gene_seq.elements)
 .. end
 
 --------------------------------------------------------------
@@ -68,29 +69,33 @@ Iterating through a Primary Sequence of Components
 Sometimes it is desired to iterate through individual components inside a sequence of components. One application of this is to check the order of a sequence of components. To do so, one can simply implement typical forloop used in Python. The example below shows how one would iterate through a primary sequence of components to validate the correct order.
 
 .. code:: python
+
     doc = Document()
 
-    gene = ComponentDefinition("BB0001")
-    promoter = ComponentDefinition("R0010")
-    CDS = ComponentDefinition("B0032")
-    RBS = ComponentDefinition("E0040")
-    terminator = ComponentDefinition("B0012")
+    gene = ComponentDefinition('BB0001')
+    promoter = ComponentDefinition('R0010')
+    CDS = ComponentDefinition('B0032')
+    RBS = ComponentDefinition('E0040')
+    terminator = ComponentDefinition('B0012')
 
     doc.addComponentDefinition([gene, promoter, CDS, RBS, terminator])
 
     gene.assemble([ promoter, RBS, CDS, terminator ])
     primary_sequence = gene.getPrimaryStructure()
     for component in primary_sequence:
-        print(component.displayId.get())
+        print(component.displayId)
+
 .. end
 
 The output is shown below, which captures the correct order.
 
-.. code:: python        
+.. code:: python
+
     R0010
     E0040
     B0032
     B0012
+
 .. end
     
 -------------------------------
@@ -103,19 +108,19 @@ Full example code is provided below, which will create a file called "gene_casse
 
     from sbol import *
     
-    setHomespace("http://sys-bio.org")
+    setHomespace('http://sys-bio.org')
     doc = Document()
     
-    gene = ComponentDefinition("gene_example")
-    promoter = ComponentDefinition("R0010")
-    CDS = ComponentDefinition("B0032")
-    RBS = ComponentDefinition("E0040")
-    terminator = ComponentDefinition("B0012")
+    gene = ComponentDefinition('gene_example')
+    promoter = ComponentDefinition('R0010')
+    CDS = ComponentDefinition('B0032')
+    RBS = ComponentDefinition('E0040')
+    terminator = ComponentDefinition('B0012')
     
-    promoter.roles.set(SO_PROMOTER)
-    CDS.roles.set(SO_CDS)
-    RBS.roles.set(SO_RBS)
-    terminator.roles.set(SO_TERMINATOR)
+    promoter.roles = SO_PROMOTER
+    CDS.roles = SO_CDS
+    RBS.roles = SO_RBS
+    terminator.roles = SO_TERMINATOR
     
     doc.addComponentDefinition(gene)
     doc.addComponentDefinition(promoter)
@@ -123,35 +128,36 @@ Full example code is provided below, which will create a file called "gene_casse
     doc.addComponentDefinition(RBS)
     doc.addComponentDefinition(terminator)
     
-    gene.assemble([ promoter, RBS, CDS, terminator ])
+    gene.assemblePrimaryStructure([ promoter, RBS, CDS, terminator ])
     
     first = gene.getFirstComponent()
-    print(first.identity.get())
+    print(first.identity)
     last = gene.getLastComponent()
-    print(last.identity.get())
+    print(last.identity)
     
-    promoter_seq = Sequence("R0010", "ggctgca")
-    RBS_seq = Sequence("B0032", "aattatataaa")
-    CDS_seq = Sequence("E0040", "atgtaa")
-    terminator_seq = Sequence("B0012", "attcga")
-    gene_seq = Sequence("BB0001")
+    promoter_seq = Sequence('R0010', 'ggctgca')
+    RBS_seq = Sequence('B0032', 'aattatataaa')
+    CDS_seq = Sequence('E0040', "atgtaa")
+    terminator_seq = Sequence('B0012', 'attcga')
+    gene_seq = Sequence('BB0001')
     
     doc.addSequence([promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq])
     
-    promoter.sequences.set(promoter_seq.identity.get())
-    CDS.sequences.set(CDS_seq.identity.get())
-    RBS.sequences.set(RBS_seq.identity.get())
-    terminator.sequences.set(terminator_seq.identity.get())
-    gene.sequences.set(gene_seq.identity.get())
+    promoter.sequences.set(promoter_seq.identity)
+    CDS.sequences.set(CDS_seq.identity)
+    RBS.sequences.set(RBS_seq.identity)
+    terminator.sequences.set(terminator_seq.identity)
+    gene.sequences.set(gene_seq.identity)
     
     gene_seq.assemble()
     
-    print(promoter_seq.elements.get())
-    print(RBS_seq.elements.get())
-    print(CDS_seq.elements.get())
-    print(terminator_seq.elements.get())
-    print(gene_seq.elements.get())
+    print(promoter_seq.elements)
+    print(RBS_seq.elements)
+    print(CDS_seq.elements)
+    print(terminator_seq.elements)
+    print(gene_seq.elements)
     
-    result = doc.write("gene_cassette.xml")
+    result = doc.write('gene_cassette.xml')
     print(result)
+
 .. end
