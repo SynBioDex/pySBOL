@@ -30700,6 +30700,9 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
 
     def define(self, definition_object):
         return _libsbol.AliasedOwnedFunctionalComponent_define(self, definition_object)
+
+    def __len__(self):
+        return _libsbol.AliasedOwnedFunctionalComponent___len__(self)
 AliasedOwnedFunctionalComponent_swigregister = _libsbol.AliasedOwnedFunctionalComponent_swigregister
 AliasedOwnedFunctionalComponent_swigregister(AliasedOwnedFunctionalComponent)
 
