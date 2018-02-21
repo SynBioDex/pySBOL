@@ -15,6 +15,7 @@ In a previous era, engineers might sit at a drafting board and draft a design by
     >>> doc = Document()
     >>> doc.read('crispr_example.xml')
     >>> doc.write('crispr_example_out.xml')
+
 .. end
 
 Reading a Document will wipe any existing contents clean before import. However, you can import objects from multiple files into a single Document object using `Document.append() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.append>`_. This can be advantageous when you want to integrate multiple objects from different files into a single design. This kind of data integration is an important and useful feature of SBOL.
@@ -79,18 +80,25 @@ Objects are categorized into object store according to their respective SBOL typ
 
 .. code:: python
 
-    >>> for cd in doc.componentDefinitiions:
-    ...     print(cd)
-    ...
-    http://sbols.org/CRISPR_Example/CRP_b/1.0.0
-    http://sbols.org/CRISPR_Example/CRa_U6/1.0.0
-    http://sbols.org/CRISPR_Example/EYFP/1.0.0
-    .
-    .
-
+	>>> for obj in doc:
+	...     print(obj)
+	...
+	http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
+	http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
+	http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
+	.
+	.
 .. end
 
-This will print the unique identity of each type of object in the corresponding store. Similarly, you can iterate through `Document.moduleDefinitions <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, and `Document.models <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_. Note that the name of each object store follows a simple pattern--the plural form of the object type, starting with lowercase.
+These objects are sorted into object stores based on the type of object. For example to view ``ComponentDefinition`` objects specifically, iterate through the `Document.componentDefinitions` store:
+
+.. code:: python
+	>>> for cd in doc.componentDefinitions:
+	...     print(cd)
+	...
+.. end
+
+Similarly, you can iterate through `Document.moduleDefinitions() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, `Document.models() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_, or any top level object. The last type of object, Annotation Objects is a special case which will be discussed later.
 
 --------------------------
 Creating SBOL Data Objects
@@ -227,16 +235,14 @@ When working interactively in a Python environment, typing long form URIs can be
 Getting, Setting, and Editing Attributes
 ---------------------------------------------
 
-Getting and setting attribute values for SBOL objects is similar to other Python class objects, with a few exceptions. To access property values:
+The attributes of an SBOL object can be accessed like other Python class objects, with a few special considerations. For example, to get the values of the ``displayId`` and ``identity`` properties of any object :
 
 .. code:: python
-
-    >>> crispr_template.displayId
-    'CRISPRTemplate'
-    >>> crispr_template.identity
-    'http://sys-bio.org/ModuleDefinition/CRISPRTemplate/1.0.0'
+    >>> print(cas9.displayId)
+    >>> print(cas9.identity)
 
 .. end
+Note that ``displayId`` gives only the shorthand, local identifier for the object, while the ``identity`` property gives the full URI.
 
 The attributes above return singleton values. Some attributes, like ``ComponentDefinition.roles`` and ``ComponentDefinition.types`` support multiple values. Generally these attributes have plural names. If an attribute supports multiple values, then it will return a list. If the attribute has not been assigned any values, it will return an empty list.
 
