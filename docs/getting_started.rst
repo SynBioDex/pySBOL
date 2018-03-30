@@ -2,13 +2,13 @@ Getting Started with SBOL
 =============================
 
 This beginner’s guide introduces the basic principles of pySBOL for new users. Most of the examples discussed in this guide are excerpted from the example script .
-For more comprehensive documentation about the API, refer to documentation about specific classes and methods. For more detail about the SBOL standard, visit `sbolstandard.org <http://sbolstandard.org>`_ or'refer to the `specification document <http://sbolstandard.org/downloads/specifications/specification-data-model-2-0-1/>`_.
+For more comprehensive documentation about the API, refer to documentation about specific classes and methods. For more detail about the SBOL standard, visit `sbolstandard.org <http://sbolstandard.org>`_ or refer to the `specification document <http://sbolstandard.org/downloads/specifications/specification-data-model-2-0-1/>`_.
 
 -------------------------
 Creating an SBOL Document
 -------------------------
 
-In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in LibSBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects which represent elements of a biological design. Usually the first step is to construct a Document in which to put your objects. All file I/O operations are performed on the Document. The ``read`` and ``write`` methods are used for reading and writing files in SBOL format.
+In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in pySBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects which represent elements of a biological design. Usually the first step is to construct a Document in which to put your objects. All file I/O operations are performed on the Document. The ``read`` and ``write`` methods are used for reading and writing files in SBOL format.
 
 .. code:: python
 

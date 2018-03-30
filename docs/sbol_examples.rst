@@ -141,13 +141,11 @@ Full example code is provided below, which will create a file called "gene_casse
     terminator_seq = Sequence('B0012', 'attcga')
     gene_seq = Sequence('BB0001')
     
-    doc.addSequence([promoter_seq, CDS_seq, RBS_seq, terminator_seq, gene_seq])
-    
-    promoter.sequences.set(promoter_seq.identity)
-    CDS.sequences.set(CDS_seq.identity)
-    RBS.sequences.set(RBS_seq.identity)
-    terminator.sequences.set(terminator_seq.identity)
-    gene.sequences.set(gene_seq.identity)
+    promoter.sequence = promoter_seq
+    CDS.sequence = CDS_seq
+    RBS.sequence = RBS_seq
+    terminator.sequence = terminator_seq
+    gene.sequence = gene_seq
     
     gene_seq.assemble()
     
