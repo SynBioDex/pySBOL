@@ -3077,6 +3077,62 @@ class TopLevel(Identified):
     def initialize(self, uri):
         return _libsbol.TopLevel_initialize(self, uri)
 
+
+    def __getattribute__(self,name):
+        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
+            sbol_attribute = object.__getattribute__(self, name)
+            if not 'Owned' in sbol_attribute.__class__.__name__:
+                if sbol_attribute.getUpperBound() != '1':
+                    return sbol_attribute.getAll()
+                else:
+                    try:
+                        return sbol_attribute.get()
+                    except LookupError:
+                        return None
+                return None
+            elif sbol_attribute.getUpperBound() == '1':
+                try:
+                    return sbol_attribute.get()
+                except:
+                    return None
+        return object.__getattribute__(self, name)
+
+    __setattribute__ = __setattr__
+
+    def __setattr__(self,name, value):
+        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
+            sbol_attribute = object.__getattribute__(self, name)
+            if not 'Owned' in sbol_attribute.__class__.__name__:
+                if value == None:
+                    sbol_attribute.clear()
+                elif type(value) == list:
+                    if sbol_attribute.getUpperBound() == '1':
+                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+                    sbol_attribute.clear()
+                    for val in value:
+                        sbol_attribute.add(val)
+                else:
+                    sbol_attribute.set(value)
+            elif sbol_attribute.getUpperBound() == '1':
+                if len(sbol_attribute) > 0:
+                    sbol_obj = sbol_attribute.get()
+                    doc = sbol_obj.doc
+                    sbol_attribute.remove()
+                    if not doc:
+                        sbol_obj.thisown = True
+                    elif not doc.find(sbol_obj.identity):
+                        sbol_obj.thisown = True
+                if not value == None:
+                    sbol_attribute.set(value)
+                    value.thisown = False
+        else:
+            self.__class__.__setattribute__(self, name, value)
+
+    def __repr__(self):
+        return self.__class__.__name__
+
+
+
     def generateDesign(self, *args):
         return _libsbol.TopLevel_generateDesign(self, *args)
 

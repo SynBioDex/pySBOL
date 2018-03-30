@@ -50,7 +50,7 @@ If you would like to try out our latest snapshot, use `git <https://git-scm.com/
 Using Installer for Windows
 -------------------------------
 
-We provide binary installers for Windows users only. Simply `download the installers <https://sourceforge.net/projects/pysbol/files/2.1.1/>`_ and execute it to install it. Installer will look for your local Python distributions.
+We provide binary installers for Windows users only. Simply `download the installers <https://sourceforge.net/projects/pysbol/files/>`_ and execute it to install it. Installer will look for your local Python distributions.
 
 **Be sure to use the installers with the same Python version and architecture with the one installed in your local machine!**
 
