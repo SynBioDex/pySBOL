@@ -1,14 +1,15 @@
 Getting Started with SBOL
 =============================
 
-This beginner’s guide introduces the basic principles of pySBOL for new users. Most of the examples discussed in this guide are excerpted from the example script .
-For more comprehensive documentation about the API, refer to documentation about specific classes and methods. For more detail about the SBOL standard, visit `sbolstandard.org <http://sbolstandard.org>`_ or'refer to the `specification document <http://sbolstandard.org/downloads/specifications/specification-data-model-2-0-1/>`_.
+This beginner’s guide introduces the basic principles of pySBOL for new users. Most of the examples discussed in this guide are excerpted from the example script. The objective of this documentation is to familiarize users with the basic patterns of the API. For more comprehensive documentation about the API, refer to documentation about specific classes and methods. 
+
+The class structure and data model for the API is based on the Synthetic Biology Open Language. For more detail about the SBOL standard, visit `sbolstandard.org <http://sbolstandard.org>`_ or refer to the `specification document <http://sbolstandard.org/wp-content/uploads/2018/01/BBF-RFC114-SBOL2.2.0.pdf/>`_. This document provides diagrams and description of all the standard classes and properties that comprise SBOL. 
 
 -------------------------
 Creating an SBOL Document
 -------------------------
 
-In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in LibSBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects which represent elements of a biological design. Usually the first step is to construct a Document in which to put your objects. All file I/O operations are performed on the Document. The ``read`` and ``write`` methods are used for reading and writing files in SBOL format.
+In a previous era, engineers might sit at a drafting board and draft a design by hand. The engineer's drafting sheet in pySBOL is called a Document. The Document serves as a container, initially empty, for SBOL data objects which represent elements of a biological design. Usually the first step is to construct a Document in which to put your objects. All file I/O operations are performed on the Document. The ``read`` and ``write`` methods are used for reading and writing files in SBOL format.
 
 .. code:: python
 
@@ -98,7 +99,7 @@ These objects are sorted into object stores based on the type of object. For exa
 	...
 .. end
 
-Similarly, you can iterate through `Document.moduleDefinitions() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, `Document.models() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_, or any top level object. The last type of object, Annotation Objects is a special case which will be discussed later.
+Similarly, you can iterate through `Document.moduleDefinitions <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, `Document.models <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_, or any top level object. The last type of object, Annotation Objects is a special case which will be discussed later.
 
 --------------------------
 Creating SBOL Data Objects
