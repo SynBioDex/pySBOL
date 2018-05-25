@@ -2,4 +2,6 @@
 docs/_build
 ~/.pypirc
 */build/
+*/.DS_Store
+./.DS_Store
 */pySBOL.egg-info/
