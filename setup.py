@@ -64,6 +64,7 @@ elif config[0] == 'Mac':
       'sbol': ['_libsbol.so', 'libsbol.py', 'crispr_example.xml']
     }
 else:
+    chdir(path.join(here, package_dir))
     package_data={
       'sbol': ['examples/*'],
       'sbol.test': ['*.*', 'SBOL2/*.*'],
@@ -76,7 +77,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.3.0.post11',
+    version='2.3.0.post12',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,
