@@ -21,33 +21,6 @@ In a previous era, engineers might sit at a drafting board and draft a design by
 
 Reading a Document will wipe any existing contents clean before import. However, you can import objects from multiple files into a single Document object using `Document.append() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.append>`_. This can be advantageous when you want to integrate multiple objects from different files into a single design. This kind of data integration is an important and useful feature of SBOL.
 
-Each SBOL object in a Document is uniquely identified by a special string of characters called a Uniform Resource Identifier (URI). A URI is used as a key to retrieve objects from the Document. To see the  identity of objects in a Document, objects can be iterated over following a Python iterator pattern.
-
-.. code:: python
-
-    >>> for obj in doc:
-    ...     print(obj)
-    ...
-    http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
-    http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
-    http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
-    .
-    .
-
-.. end
-
-These URIs are said to be **sbol-compliant**. An sbol-compliant URI consists of a scheme, a namespace, a local identifier (also called a ``displayId``), and a version number. In this tutorial, we use URIs of the type ``http://sbols.org/CRISPR_Example/my_obj/1.0.0.0``, where the scheme is indicated by ``http://``, the namespace is ``http://sbols.org/CRISPR_Example``, the local identifier is ``my_object``, and the version is ``1.0.0``. SBOL-compliant URIs enable shortcuts that make the pySBOL API easier to use and are enabled by default. However, users are not required to use sbol-compliant URIs if they don't want to, and this option can be turned off.
-
-Based on our inspection of objects contained in the Document above, we can see that these objects were all created in the namespace ``http://sbols.org/CRISPR_Example``. Thus, in order to take advantage of SBOL-compliant URIs, we set an environment variable that configures this namespace as the default. In addition we set some other configuration options.
-
-.. code:: python
-
-    >>> setHomespace('http://sbols.org/CRISPR_Example')
-    >>> Config.setOption('sbol_compliant_uris', True)
-    >>> Config.setOption('sbol_typed_uris', False)
-
-.. end
-
 A Document may contain different types of SBOL objects, including ComponentDefinitions, ModuleDefinitions, Sequences, and Models. These objects are collectively referred to as TopLevel objects because they can be referenced directly from a Document. The total count of objects contained in a Document is determined using the ``len`` function. To view an inventory of objects contained in the Document, simply ``print`` it.
 
 .. code:: python
@@ -77,29 +50,42 @@ A Document may contain different types of SBOL objects, including ComponentDefin
 
 .. end
 
-Objects are categorized into object store according to their respective SBOL type. To review objects of a given type, simply iterate over the objects in that store. For example:
+Each SBOL object in a Document is uniquely identified by a special string of characters called a Uniform Resource Identifier (URI). A URI is used as a key to retrieve objects from the Document. To see the identities of objects in a Document, iterate over them using a Python iterator.
 
 .. code:: python
 
-	>>> for obj in doc:
-	...     print(obj)
-	...
-	http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
-	http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
-	http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
-	.
-	.
+    >>> for obj in doc:
+    ...     print(obj)
+    ...
+    http://sbols.org/CRISPR_Example/mKate_seq/1.0.0
+    http://sbols.org/CRISPR_Example/gRNA_b_nc/1.0.0
+    http://sbols.org/CRISPR_Example/mKate_cds/1.0.0
+    .
+    .
+
 .. end
 
 These objects are sorted into object stores based on the type of object. For example to view ``ComponentDefinition`` objects specifically, iterate through the `Document.componentDefinitions` store:
 
 .. code:: python
-	>>> for cd in doc.componentDefinitions:
-	...     print(cd)
-	...
+  >>> for cd in doc.componentDefinitions:
+  ...     print(cd)
+  ...
 .. end
 
 Similarly, you can iterate through `Document.moduleDefinitions <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModuleDefinition>`_, `Document.sequences <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getSequence>`_, `Document.models <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.libsbol.Document.getModel>`_, or any top level object. The last type of object, Annotation Objects is a special case which will be discussed later.
+
+These URIs are said to be **sbol-compliant**. An sbol-compliant URI consists of a scheme, a namespace, a local identifier (also called a ``displayId``), and a version number. In this tutorial, we use URIs of the type ``http://sbols.org/CRISPR_Example/my_obj/1.0.0.0``, where the scheme is indicated by ``http://``, the namespace is ``http://sbols.org/CRISPR_Example``, the local identifier is ``my_object``, and the version is ``1.0.0``. SBOL-compliant URIs enable shortcuts that make the pySBOL API easier to use and are enabled by default. However, users are not required to use sbol-compliant URIs if they don't want to, and this option can be turned off.
+
+Based on our inspection of objects contained in the Document above, we can see that these objects were all created in the namespace ``http://sbols.org/CRISPR_Example``. Thus, in order to take advantage of SBOL-compliant URIs, we set an environment variable that configures this namespace as the default. In addition we set some other configuration options.
+
+.. code:: python
+
+    >>> setHomespace('http://sbols.org/CRISPR_Example')
+
+.. end
+
+Setting the Homespace has several advantages. It simplifies object creation and retrieval from Documents. In addition, it serves as a way for a user to claim ownership of new objects. Generally users will want to specify a Homespace that corresponds to their organization's web domain.
 
 --------------------------
 Creating SBOL Data Objects
@@ -412,6 +398,68 @@ The ``find`` method is probably more useful as a boolean conditional when the us
             i_cdef += 1
             cdef_uri = getHomespace() + '/%s_%d/1.0.0' %(local_id, i_cdef)
         doc.componentDefinitions.create('%s_%d' %(local_id, i_cdef))
+
+.. end
+
+----------------------------------
+Copying Documents and Objects
+----------------------------------
+
+Copying a ``Document`` can result in a few different ends, depending on the user's goal. The first option is to create a simple clone of the original ``Document``. This is shown below in which the user is assumed to have already created a ``Document`` with a single ``ComponentDefinition``. After copying, the object in the ``Document`` clone has the same identity as the object in the original ``Document``.
+
+.. code:: python
+
+    >>> for o in doc:
+    ...     print o
+    ... 
+    http://examples.org/ComponentDefinition/cd/1
+    >>> doc2 = doc.copy()
+    >>> for o in doc2:
+    ...     print o
+    ... 
+    http://examples.org/ComponentDefinition/cd/1
+
+.. end
+
+
+More commonly a user wants to import objects from the target Document into their Homespace. In this case, the user can specify a target namespace for import. Objects in the original ``Document`` that belong to the target namespace are copied into the user's Homespace. Contrast the example above with the following.
+
+.. code:: python
+
+  >>> setHomespace('http://sys-bio.org')
+  >>> doc2 = doc.copy('http://examples.org')
+  >>> for o in doc:
+  ...     print o
+  ... 
+  http://examples.org/ComponentDefinition/cd/1
+  >>> for o in doc2:
+  ...     print o
+  ... 
+  http://sys-bio.org/ComponentDefinition/cd/1
+
+.. end
+
+In the examples above, the ``copy`` method returns a new ``Document``. However, it is possible to integrate the result of multiple ``copy`` operations into an existing ``Document``. 
+
+.. code:: python
+
+  >>> for o in doc1:
+         print o
+   
+  http://examples.org/ComponentDefinition/cd1/1
+  >>> for o in doc2:
+       print o
+  ... 
+  http://examples.org/ComponentDefinition/cd2/1
+  >>> doc1.copy('http://examples.org', doc3)
+  Document
+  >>> doc2.copy('http://examples.org', doc3)
+  Document
+  >>> for o in doc3:
+  ...     print o
+  ... 
+  http://examples.org/ComponentDefinition/cd2/1
+  http://examples.org/ComponentDefinition/cd1/1
 
 .. end
 

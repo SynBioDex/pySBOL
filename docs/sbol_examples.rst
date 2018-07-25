@@ -52,16 +52,15 @@ This returns a list of `ComponentDefinitions` arranged in their primary sequence
 Sequence Assembly
 -------------------------------
 
-A **complete design** adds explicit sequence information to the components in a **template design** or **abstraction hierarchy**. In order to complete a design, `Sequence` objects must first be created and associated with the promoter, CDS, RBS, terminator subcomponents. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.pySBOL.ComponentDefinition.assemble>`_ method, which assembles a template design, the `Sequence.compile` method recursively generates the complete sequence of a hierarchical design from the sequence of its subcomponents. Compiling a DNA sequence is analogous to a programmer compiling their code. *In order to compile a `Sequence`, you must first assemble a template design from `ComponentDefinitions`, as described in the previous section.*
+A **complete design** adds explicit sequence information to the components in a **template design** or **abstraction hierarchy**. In order to complete a design, `Sequence` objects must first be created and associated with the promoter, CDS, RBS, terminator subcomponents. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.pySBOL.ComponentDefinition.assemble>`_ method, which assembles a template design, the `ComponentDefinition.compile` method recursively generates the complete sequence of a hierarchical design from the sequence of its subcomponents. Compiling a DNA sequence is analogous to a programmer compiling their code. *In order to `compile` a `ComponentDefinition`, you must first assemble a template design from `ComponentDefinitions`, as described in the previous section.*
 
 .. code:: python 
 
-    gene_seq = Sequence('gene_seq')
-    gene_seq.sequences.set(gene_seq.identity)
-    gene_seq.compile()
-    print (gene_seq.elements)
+    target_sequence = gene.compile()
 .. end
 
+The `compile` method returns the target sequence as a string. In addition, it creates a new `Sequence` object and assigns the target sequence to its `elements` property
+ 
 --------------------------------------------------------------
 Iterating through a Primary Sequence of Components
 --------------------------------------------------------------
@@ -107,54 +106,39 @@ Full example code is provided below, which will create a file called "gene_casse
 .. code:: python
 
     from sbol import *
-    
+
     setHomespace('http://sys-bio.org')
     doc = Document()
-    
+
     gene = ComponentDefinition('gene_example')
     promoter = ComponentDefinition('R0010')
     CDS = ComponentDefinition('B0032')
     RBS = ComponentDefinition('E0040')
     terminator = ComponentDefinition('B0012')
-    
+
     promoter.roles = SO_PROMOTER
     CDS.roles = SO_CDS
     RBS.roles = SO_RBS
     terminator.roles = SO_TERMINATOR
-    
+
     doc.addComponentDefinition(gene)
-    doc.addComponentDefinition(promoter)
-    doc.addComponentDefinition(CDS)
-    doc.addComponentDefinition(RBS)
-    doc.addComponentDefinition(terminator)
-    
+    doc.addComponentDefinition([ promoter, CDS, RBS, terminator ])
+
     gene.assemblePrimaryStructure([ promoter, RBS, CDS, terminator ])
-    
+
     first = gene.getFirstComponent()
     print(first.identity)
     last = gene.getLastComponent()
     print(last.identity)
-    
-    promoter_seq = Sequence('R0010', 'ggctgca')
-    RBS_seq = Sequence('B0032', 'aattatataaa')
-    CDS_seq = Sequence('E0040', "atgtaa")
-    terminator_seq = Sequence('B0012', 'attcga')
-    gene_seq = Sequence('BB0001')
-    
-    promoter.sequence = promoter_seq
-    CDS.sequence = CDS_seq
-    RBS.sequence = RBS_seq
-    terminator.sequence = terminator_seq
-    gene.sequence = gene_seq
-    
-    gene_seq.assemble()
-    
-    print(promoter_seq.elements)
-    print(RBS_seq.elements)
-    print(CDS_seq.elements)
-    print(terminator_seq.elements)
-    print(gene_seq.elements)
-    
+
+    promoter.sequence = Sequence('R0010', 'ggctgca')
+    CDS.sequence = Sequence('B0032', 'aattatataaa')
+    RBS.sequence = Sequence('E0040', "atgtaa")
+    terminator.sequence = Sequence('B0012', 'attcga')
+
+    target_sequence = gene.compile()
+    print(gene.sequence.elements)
+
     result = doc.write('gene_cassette.xml')
     print(result)
 
