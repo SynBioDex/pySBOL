@@ -1010,6 +1010,10 @@ class Config(_object):
         return _libsbol.Config_getOption(option)
 
     getOption = staticmethod(getOption)
+    if _newclass:
+        register_extension_class = staticmethod(_libsbol.Config_register_extension_class)
+    else:
+        register_extension_class = _libsbol.Config_register_extension_class
     __swig_destroy__ = _libsbol.delete_Config
     __del__ = lambda self: None
 Config_swigregister = _libsbol.Config_swigregister
@@ -1132,6 +1136,10 @@ def Config_getOption(option):
     """
     return _libsbol.Config_getOption(option)
 
+def Config_register_extension_class(python_class, extension_name):
+    return _libsbol.Config_register_extension_class(python_class, extension_name)
+Config_register_extension_class = _libsbol.Config_register_extension_class
+
 
 def setHomespace(ns):
     """
@@ -1220,6 +1228,10 @@ parseNamespace = _libsbol.parseNamespace
 def parseURLDomain(url):
     return _libsbol.parseURLDomain(url)
 parseURLDomain = _libsbol.parseURLDomain
+
+def getTime():
+    return _libsbol.getTime()
+getTime = _libsbol.getTime
 
 def CurlWrite_CallbackFunc_StdString(contents, size, nmemb, s):
     return _libsbol.CurlWrite_CallbackFunc_StdString(contents, size, nmemb, s)
@@ -1406,6 +1418,8 @@ SYSBIO_BUILD = _libsbol.SYSBIO_BUILD
 SYSBIO_TEST = _libsbol.SYSBIO_TEST
 SYSBIO_ANALYSIS = _libsbol.SYSBIO_ANALYSIS
 SYSBIO_SAMPLE_ROSTER = _libsbol.SYSBIO_SAMPLE_ROSTER
+IGEM_URI = _libsbol.IGEM_URI
+IGEM_STANDARD_ASSEMBLY = _libsbol.IGEM_STANDARD_ASSEMBLY
 
 def sbolRule10101(sbol_obj, arg):
     return _libsbol.sbolRule10101(sbol_obj, arg)
@@ -1498,6 +1512,22 @@ libsbol_rule_18 = _libsbol.libsbol_rule_18
 def libsbol_rule_19(sbol_obj, arg):
     return _libsbol.libsbol_rule_19(sbol_obj, arg)
 libsbol_rule_19 = _libsbol.libsbol_rule_19
+
+def libsbol_rule_20(sbol_obj, arg):
+    return _libsbol.libsbol_rule_20(sbol_obj, arg)
+libsbol_rule_20 = _libsbol.libsbol_rule_20
+
+def libsbol_rule_21(sbol_obj, arg):
+    return _libsbol.libsbol_rule_21(sbol_obj, arg)
+libsbol_rule_21 = _libsbol.libsbol_rule_21
+
+def libsbol_rule_22(sbol_obj, arg):
+    return _libsbol.libsbol_rule_22(sbol_obj, arg)
+libsbol_rule_22 = _libsbol.libsbol_rule_22
+
+def libsbol_rule_24(sbol_obj, arg):
+    return _libsbol.libsbol_rule_24(sbol_obj, arg)
+libsbol_rule_24 = _libsbol.libsbol_rule_24
 
 def is_alphanumeric_or_underscore(c):
     return _libsbol.is_alphanumeric_or_underscore(c)
@@ -2682,11 +2712,17 @@ class SBOLObject(_object):
     def setPropertyValue(self, property_uri, val):
         return _libsbol.SBOLObject_setPropertyValue(self, property_uri, val)
 
+    def addPropertyValue(self, property_uri, val):
+        return _libsbol.SBOLObject_addPropertyValue(self, property_uri, val)
+
     def setAnnotation(self, property_uri, val):
         return _libsbol.SBOLObject_setAnnotation(self, property_uri, val)
 
     def getAnnotation(self, property_uri):
         return _libsbol.SBOLObject_getAnnotation(self, property_uri)
+
+    def apply(self, callback_fn, user_data):
+        return _libsbol.SBOLObject_apply(self, callback_fn, user_data)
 
     def update_uri(self):
         return _libsbol.SBOLObject_update_uri(self)
@@ -2706,57 +2742,65 @@ class SBOLObject(_object):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 SBOLObject_swigregister = _libsbol.SBOLObject_swigregister
@@ -2841,13 +2885,13 @@ class ReferencedObject(URIProperty):
         val = _libsbol.ReferencedObject_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -2868,13 +2912,13 @@ class ReferencedObject(URIProperty):
         val = _libsbol.ReferencedObject_add(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -2981,57 +3025,65 @@ class Identified(SBOLObject):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Identified_swigregister = _libsbol.Identified_swigregister
@@ -3076,17 +3128,69 @@ class TopLevel(Identified):
     def initialize(self, uri):
         return _libsbol.TopLevel_initialize(self, uri)
 
-    def generateDesign(self, *args):
-        return _libsbol.TopLevel_generateDesign(self, *args)
 
-    def generateBuild(self, *args):
-        return _libsbol.TopLevel_generateBuild(self, *args)
+    def __getattribute__(self,name):
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
-    def generateTest(self, *args):
-        return _libsbol.TopLevel_generateTest(self, *args)
+    __setattribute__ = __setattr__
 
-    def generateAnalysis(self, *args):
-        return _libsbol.TopLevel_generateAnalysis(self, *args)
+    def __setattr__(self,name, value):
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
+
+    def __repr__(self):
+    	return self.__class__.__name__
+
+
 TopLevel_swigregister = _libsbol.TopLevel_swigregister
 TopLevel_swigregister(TopLevel)
 
@@ -3128,57 +3232,65 @@ class Location(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Location_swigregister = _libsbol.Location_swigregister
@@ -3262,57 +3374,65 @@ class Range(Location):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Range_swigregister = _libsbol.Range_swigregister
@@ -3370,57 +3490,65 @@ class Cut(Location):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Cut_swigregister = _libsbol.Cut_swigregister
@@ -3554,57 +3682,65 @@ class SequenceAnnotation(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 SequenceAnnotation_swigregister = _libsbol.SequenceAnnotation_swigregister
@@ -3683,57 +3819,65 @@ class MapsTo(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 MapsTo_swigregister = _libsbol.MapsTo_swigregister
@@ -3839,57 +3983,65 @@ class Component(ComponentInstance):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Component_swigregister = _libsbol.Component_swigregister
@@ -4017,57 +4169,65 @@ class FunctionalComponent(ComponentInstance):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 FunctionalComponent_swigregister = _libsbol.FunctionalComponent_swigregister
@@ -4143,57 +4303,65 @@ class SequenceConstraint(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 SequenceConstraint_swigregister = _libsbol.SequenceConstraint_swigregister
@@ -4276,6 +4444,9 @@ class ComponentDefinition(TopLevel):
     __swig_getmethods__["sequenceConstraints"] = _libsbol.ComponentDefinition_sequenceConstraints_get
     if _newclass:
         sequenceConstraints = _swig_property(_libsbol.ComponentDefinition_sequenceConstraints_get, _libsbol.ComponentDefinition_sequenceConstraints_set)
+
+    def compile(self):
+        return _libsbol.ComponentDefinition_compile(self)
 
     def updateSequence(self, *args):
         """
@@ -4496,57 +4667,65 @@ class ComponentDefinition(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 
@@ -4706,57 +4885,65 @@ class Sequence(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Sequence_swigregister = _libsbol.Sequence_swigregister
@@ -4807,57 +4994,65 @@ class Participation(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Participation_swigregister = _libsbol.Participation_swigregister
@@ -4924,57 +5119,65 @@ class Interaction(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Interaction_swigregister = _libsbol.Interaction_swigregister
@@ -5040,57 +5243,65 @@ class Module(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Module_swigregister = _libsbol.Module_swigregister
@@ -5180,57 +5391,65 @@ class Model(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Model_swigregister = _libsbol.Model_swigregister
@@ -5324,57 +5543,65 @@ class Collection(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Collection_swigregister = _libsbol.Collection_swigregister
@@ -5528,57 +5755,65 @@ class ModuleDefinition(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 
@@ -5632,6 +5867,70 @@ class Association(Identified):
         plan = _swig_property(_libsbol.Association_plan_get, _libsbol.Association_plan_set)
     __swig_destroy__ = _libsbol.delete_Association
     __del__ = lambda self: None
+
+
+    def __getattribute__(self,name):
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
+
+    __setattribute__ = __setattr__
+
+    def __setattr__(self,name, value):
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
+
+    def __repr__(self):
+    	return self.__class__.__name__
+
+
 Association_swigregister = _libsbol.Association_swigregister
 Association_swigregister(Association)
 
@@ -5660,64 +5959,72 @@ class Usage(Identified):
     __swig_getmethods__["roles"] = _libsbol.Usage_roles_get
     if _newclass:
         roles = _swig_property(_libsbol.Usage_roles_get, _libsbol.Usage_roles_set)
+    __swig_destroy__ = _libsbol.delete_Usage
+    __del__ = lambda self: None
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
-    __swig_destroy__ = _libsbol.delete_Usage
-    __del__ = lambda self: None
 Usage_swigregister = _libsbol.Usage_swigregister
 Usage_swigregister(Usage)
 
@@ -5738,6 +6045,8 @@ class Agent(TopLevel):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
+    __swig_destroy__ = _libsbol.delete_Agent
+    __del__ = lambda self: None
 
     def copy(self, *args):
         """
@@ -5774,61 +6083,67 @@ class Agent(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
-    __swig_destroy__ = _libsbol.delete_Agent
-    __del__ = lambda self: None
 Agent_swigregister = _libsbol.Agent_swigregister
 Agent_swigregister(Agent)
 
@@ -5849,6 +6164,8 @@ class Plan(TopLevel):
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
+    __swig_destroy__ = _libsbol.delete_Plan
+    __del__ = lambda self: None
 
     def copy(self, *args):
         """
@@ -5885,61 +6202,67 @@ class Plan(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
-    __swig_destroy__ = _libsbol.delete_Plan
-    __del__ = lambda self: None
 Plan_swigregister = _libsbol.Plan_swigregister
 Plan_swigregister(Plan)
 
@@ -5980,6 +6303,14 @@ class Activity(TopLevel):
     __swig_getmethods__["usages"] = _libsbol.Activity_usages_get
     if _newclass:
         usages = _swig_property(_libsbol.Activity_usages_get, _libsbol.Activity_usages_set)
+    __swig_setmethods__["agent"] = _libsbol.Activity_agent_set
+    __swig_getmethods__["agent"] = _libsbol.Activity_agent_get
+    if _newclass:
+        agent = _swig_property(_libsbol.Activity_agent_get, _libsbol.Activity_agent_set)
+    __swig_setmethods__["plan"] = _libsbol.Activity_plan_set
+    __swig_getmethods__["plan"] = _libsbol.Activity_plan_get
+    if _newclass:
+        plan = _swig_property(_libsbol.Activity_plan_get, _libsbol.Activity_plan_set)
     __swig_destroy__ = _libsbol.delete_Activity
     __del__ = lambda self: None
 
@@ -6018,58 +6349,389 @@ class Activity(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
+
+
+
+    def generateDesign(self, uris, analysis_usages, design_usages = None):
+    	"""
+
+
+    	Generate one or more Design objects  
+
+    	Parameters
+    	----------
+    	* `uris` :  
+    		One or more identifiers for the new Design object(s). If the 
+    		`sbol_compliant_uris` option configuration is enabled, then the user 
+    		should specify simple identifiers for the objects. Otherwise the user 
+    		must provide full URIs each consisting of a scheme, namespace, and identifier. 
+    	* `analysis_usages` :  
+    		A singleton Analysis object, list of Analysis objects, or None. Analysis usages
+    		represent a prediction or forward-specification of the new Design's intended 
+    		structure or function.  
+    	* `design_usages` :  
+    		A singleton Design object, list of Design objects, or None. Design usages may 
+    		represent previous Designs that are being tranformed or composed into 
+    		the new Design.
+
+    	Returns
+    	-------
+    	A singleton Design or list of Designs depending on whether the user specifies
+    	a single URI or list of URIs.  
+
+    	"""
+
+    	self.__validate_activity__(SBOL_DESIGN)
+    	if type(uris) != list:
+    		uris = [ uris ]
+    	for uri in uris:
+    		if type(uri) != str:
+    			raise TypeError('Cannot generate Design. The first argument must be a string or list of strings')
+    	if len(uris) != len(set(uris)):
+    		raise ValueError('Cannot generate Design. The first argument cannot contain duplicate values')
+
+    	try:
+    		analysis_usages = self.__validate_usages__(analysis_usages, Analysis)
+    	except TypeError:
+    		raise TypeError('Cannot generate Design. The second argument must be an Analysis or list of Analyses')
+
+    	try:
+    		design_usages = self.__validate_usages__(design_usages, Design)
+    	except TypeError:
+    		raise TypeError('Cannot generate Design. The third argument must be a Design or list of Designs')
+
+    	if not len(analysis_usages) and not len(design_usages):
+    		raise ValueError('Cannot generate Design. User must specify usages of either Analysis or Design type')
+
+    	new_designs = []
+    	for uri in uris:            
+    		new_design = self.doc.designs.create(uri)
+    		new_design.wasGeneratedBy = self.identity
+    		if len(analysis_usages):
+    			new_design.specification = analysis_usages[0]
+    		new_designs.append(new_design)
+
+    	self.__create_usages__(analysis_usages)
+    	self.__create_usages__(design_usages)
+
+    	if len(new_designs) > 1:
+    		return new_designs
+    	else:
+    		return new_designs[0]
+
+    def generateBuild(self, uris, design_usages, build_usages = None):
+    	"""
+
+
+    	Generate one or more Build objects  
+
+    	Parameters
+    	----------
+    	* `uris` :  
+    		One or more identifiers for the new Build object(s). If the 
+    		`sbol_compliant_uris` option configuration is enabled, then the user 
+    		should specify simple identifiers for the objects. Otherwise the user 
+    		must provide full URIs each consisting of a scheme, namespace, and identifier. 
+    	* `design_usages` :  
+    		A singleton Design object, list of Design objects, or None. Design usages represent
+    		the engineer's intent or "blueprint" for the Build target. 
+    	* `build_usages` :  
+    		A singleton Build object, list of Build objects, or None. Build usages
+    		represent physical components, such as laboratory samples, that are assembled
+    		into the target Build.  
+
+    	Returns
+    	-------
+    	A singleton Build or list of Builds depending on whether the user specifies
+    	a single URI or list of URIs.  
+
+    	"""
+    	self.__validate_activity__(SBOL_BUILD)
+    	if type(uris) != list:
+    		uris = [ uris ]
+
+    	for uri in uris:
+    		if type(uri) != str:
+    			raise TypeError('Cannot generate Build. The first argument must be a string or list of strings')
+    	if len(uris) != len(set(uris)):
+    		raise ValueError('Cannot generate Build. The first argument cannot contain duplicate values')
+
+    	try:
+    		design_usages = self.__validate_usages__(design_usages, Design)
+    	except TypeError:
+    		raise TypeError('Cannot generate Build. The second argument must be a Design or list of Designs')
+
+    	try:
+    		build_usages = self.__validate_usages__(build_usages, Build)
+    	except TypeError:
+    		raise TypeError('Cannot generate Build. The third argument must be a Design or list of Designs')
+
+    	if not len(design_usages) and not len(build_usages):
+    		raise ValueError('Cannot generate Build. User must specify usages of either Design or Build type')
+
+    	new_builds = []
+    	for uri in uris:
+    		new_build = self.doc.builds.create(uri)
+    		new_build.wasGeneratedBy = self.identity
+    		if len(design_usages):
+    			new_build.design = design_usages[0]
+    		new_builds.append(new_build)
+
+    	self.__create_usages__(design_usages)
+    	self.__create_usages__(build_usages)
+
+    	if len(new_builds) > 1:
+    		return new_builds
+    	else:
+    		return new_builds[0]
+
+
+    def generateTest(self, uris, build_usages, test_usages = None):
+    	"""
+
+
+    	Generate one or more Test objects  
+
+    	Parameters
+    	----------
+    	* `uris` :  
+    		One or more identifiers for the new Test object(s). If the 
+    		`sbol_compliant_uris` option configuration is enabled, then the user 
+    		should specify simple identifiers for the objects. Otherwise the user 
+    		must provide full URIs each consisting of a scheme, namespace, and identifier. 
+    	* `build_usages` :  
+    		A singleton Build object, list of Build objects, or None. Build usages represent
+    		samples or analytes used in an experimental measurement.
+    	* `test_usages` :  
+    		A singleton Test object, list of Test objects, or None. Test usages
+    		represent other measurements or raw data that the user wants to integrate into
+    		a single data set.
+
+    	Returns
+    	-------
+    	A singleton Test or list of Tests depending on whether the user specifies
+    	a single URI or list of URIs.  
+
+    	"""
+    	self.__validate_activity__(SBOL_TEST)
+
+    	if type(uris) != list:
+    		uris = [ uris ]
+    	for uri in uris:
+    		if type(uri) != str:
+    			raise TypeError('Cannot generate Test. The first argument must be a string or list of strings')
+    	if len(uris) != len(set(uris)):
+    		raise ValueError('Cannot generate Test. The first argument cannot contain duplicate values')
+
+    	if type(build_usages) == SampleRoster:
+    		build_usages = [ build_usages ]
+    	else:
+    		try:
+    			build_usages = self.__validate_usages__(build_usages, Build)
+    		except TypeError:
+    			raise TypeError('Cannot generate Build. The second argument must be a Design or list of Designs')
+
+    	try:
+    		test_usages = self.__validate_usages__(test_usages, Test)
+    	except TypeError:
+    		raise TypeError('Cannot generate Build. The third argument must be a Design or list of Designs')
+
+    	if not len(build_usages) and not len(test_usages):
+    		raise ValueError('Cannot generate Build. User must specify usages of either Design or Build type')
+
+    	new_tests = []
+    	for uri in uris:
+    		new_test = self.doc.tests.create(uri)
+    		new_test.wasGeneratedBy = self.identity
+    		if len(build_usages):
+    			new_test.samples = build_usages
+    		new_tests.append(new_test)
+
+    	self.__create_usages__(build_usages)
+    	self.__create_usages__(test_usages)
+    	if len(new_tests) > 1:
+    		return new_tests
+    	else:
+    		return new_tests[0]
+
+    def generateAnalysis(self, uris, test_usages, analysis_usages = None):
+    	"""
+
+
+    	Generate one or more Analysis objects.
+
+    	Parameters
+    	----------
+    	* `uris` :  
+    		One or more identifiers for the new Analysis object(s). If the 
+    		`sbol_compliant_uris` option configuration is enabled, then the user 
+    		should specify simple identifiers for the objects. Otherwise the user 
+    		must provide full URIs each consisting of a scheme, namespace, and identifier. 
+    	* `test_usages` :  
+    		A singleton Test object, list of Test objects, or None. Test usages represent
+    		raw experimental data used to generate an Analysis.
+    	* `analysis_usages` :  
+    		A singleton Analysis object, list of Analysis objects, or None. Analysis usages
+    		represent other analyses that the user wants to integrate into
+    		a single data set or data sheet.
+
+    	Returns
+    	-------
+    	A singleton Analysis or list of Analyses depending on whether the user specifies
+    	a single URI or list of URIs.
+
+    	"""
+    	self.__validate_activity__(SBOL_TEST)
+
+    	if type(uris) != list:
+    		uris = [ uris ]
+    	for uri in uris:
+    		if type(uri) != str:
+    			raise TypeError('Cannot generate Analysis. The first argument must be a string or list of strings')
+    	if len(uris) != len(set(uris)):
+    		raise ValueError('Cannot generate Analysis. The first argument cannot contain duplicate values')
+
+    	try:
+    		test_usages = self.__validate_usages__(test_usages, Test)
+    	except TypeError:
+    		raise TypeError('Cannot generate Build. The second argument must be a Design or list of Designs')
+
+    	try:
+    		analysis_usages = self.__validate_usages__(analysis_usages, Analysis)
+    	except TypeError:
+    		raise TypeError('Cannot generate Build. The third argument must be a Design or list of Designs')
+
+    	if not len(test_usages) and not len(analysis_usages):
+    		raise ValueError('Cannot generate Build. User must specify usages of either Design or Build type')
+
+    	new_analyses = []
+    	for uri in uris:
+    		new_analysis = self.doc.analyses.create(uri)
+    		new_analysis.wasGeneratedBy = self.identity
+    		if len(test_usages):
+    			new_analysis.rawData = test_usages[0]
+    		new_analyses.append(new_analysis)
+
+    	self.__create_usages__(test_usages)
+    	self.__create_usages__(analysis_usages)
+    	if len(new_analyses) > 1:
+    		return new_analyses
+    	else:
+    		return new_analyses[0]
+
+    def __validate_activity__(self, activity_type):
+    	if not self.doc : raise ValueError('Failed to generate. This Activity must first be added to a Document')
+    	if len(self.associations):
+    		for a in self.associations:
+    			if not a.agent: 
+    				raise ValueError('Failed to generate. This Activity does not specify an Agent')
+    			if not a.plan:
+    				raise ValueError('Failed to generate. This Activity does not specify a Plan')
+    		for a in self.associations:
+    			a.roles = activity_type 
+    	else:
+    		raise ValueError('Failed to generate. This Activity does not specify an Agent or Plan')
+
+    def __validate_usages__(self, usage_list, UsageType):
+    	if usage_list == None:
+    		usage_list = []
+    	elif type(usage_list) != list:
+    		usage_list = [ usage_list ]
+    	for u in usage_list:
+    		if not type(u) == UsageType:
+    			raise TypeError()
+    	return usage_list       
+
+    def __create_usages__(self, usage_list):
+
+    	usage_map = \
+    	{
+    		Design : SBOL_URI + "#design",
+    		Build : SBOL_URI + "#build",
+    		Test : SBOL_URI + "#test",
+    		Analysis : SBOL_URI + "#learn",
+    		SampleRoster : SBOL_URI + "#build"
+    	}
+
+    	for u in usage_list:
+    		if not u.doc:
+    			if type(u == Design):
+    				self.doc.addDesign(u)
+    			if type(u == Build):
+    				self.doc.addBuild(u)
+    			elif type(u == Test):
+    				self.doc.addTest(u)
+    			elif type(u == Analysis):
+    				self.doc.addAnalsis(u)
+    			elif type(u == SampleRoster):
+    				self.doc.addTest(u)
+    		if Config.getOption('sbol_compliant_uris') == 'True':
+    			id = u.displayId
+    		else:
+    			id = u.identity
+    		U = self.usages.create(id + '_usage');
+    		U.entity = u.identity
+    		U.roles = usage_map[type(u)]
 
 Activity_swigregister = _libsbol.Activity_swigregister
 Activity_swigregister(Activity)
@@ -6181,57 +6843,65 @@ class CombinatorialDerivation(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_CombinatorialDerivation
@@ -6306,57 +6976,65 @@ class Attachment(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Attachment_swigregister = _libsbol.Attachment_swigregister
@@ -6421,57 +7099,65 @@ class Implementation(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Implementation_swigregister = _libsbol.Implementation_swigregister
@@ -6544,57 +7230,65 @@ class Design(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Design_swigregister = _libsbol.Design_swigregister
@@ -6631,6 +7325,18 @@ class Build(Implementation):
         behavior = _swig_property(_libsbol.Build_behavior_get, _libsbol.Build_behavior_set)
     __swig_destroy__ = _libsbol.delete_Build
     __del__ = lambda self: None
+    __swig_setmethods__["sysbio_type"] = _libsbol.Build_sysbio_type_set
+    __swig_getmethods__["sysbio_type"] = _libsbol.Build_sysbio_type_get
+    if _newclass:
+        sysbio_type = _swig_property(_libsbol.Build_sysbio_type_get, _libsbol.Build_sysbio_type_set)
+    __swig_setmethods__["_structure"] = _libsbol.Build__structure_set
+    __swig_getmethods__["_structure"] = _libsbol.Build__structure_get
+    if _newclass:
+        _structure = _swig_property(_libsbol.Build__structure_get, _libsbol.Build__structure_set)
+    __swig_setmethods__["_behavior"] = _libsbol.Build__behavior_set
+    __swig_getmethods__["_behavior"] = _libsbol.Build__behavior_get
+    if _newclass:
+        _behavior = _swig_property(_libsbol.Build__behavior_get, _libsbol.Build__behavior_set)
 
     def copy(self, *args):
         """
@@ -6667,57 +7373,65 @@ class Build(Implementation):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Build_swigregister = _libsbol.Build_swigregister
@@ -6748,6 +7462,8 @@ class Test(Collection):
     __swig_getmethods__["dataFiles"] = _libsbol.Test_dataFiles_get
     if _newclass:
         dataFiles = _swig_property(_libsbol.Test_dataFiles_get, _libsbol.Test_dataFiles_set)
+    __swig_destroy__ = _libsbol.delete_Test
+    __del__ = lambda self: None
 
     def copy(self, *args):
         """
@@ -6784,61 +7500,67 @@ class Test(Collection):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
-    __swig_destroy__ = _libsbol.delete_Test
-    __del__ = lambda self: None
 Test_swigregister = _libsbol.Test_swigregister
 Test_swigregister(Test)
 
@@ -6938,57 +7660,65 @@ class Analysis(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 Analysis_swigregister = _libsbol.Analysis_swigregister
@@ -7051,57 +7781,65 @@ class SampleRoster(Collection):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_SampleRoster
@@ -7137,57 +7875,65 @@ class TranscriptionalRepressionInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_TranscriptionalRepressionInteraction
@@ -7223,57 +7969,65 @@ class SmallMoleculeInhibitionInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_SmallMoleculeInhibitionInteraction
@@ -7309,57 +8063,65 @@ class GeneProductionInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_GeneProductionInteraction
@@ -7395,57 +8157,65 @@ class TranscriptionalActivationInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_TranscriptionalActivationInteraction
@@ -7481,57 +8251,65 @@ class SmallMoleculeActivationInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
     __swig_destroy__ = _libsbol.delete_SmallMoleculeActivationInteraction
@@ -7572,57 +8350,65 @@ class EnzymeCatalysisInteraction(Interaction):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 
@@ -7671,57 +8457,65 @@ class SearchQuery(TopLevel):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 
@@ -7849,10 +8643,10 @@ class PartShop(_object):
         val = _libsbol.PartShop_search(self, *args)
 
         if val[0] == '[' :
-            exec('val = ' + val)
-            return val
+        	exec('val = ' + val)
+        	return val
         else :
-            return val
+        	return val
 
 
         return val
@@ -7874,16 +8668,16 @@ class PartShop(_object):
         val = _libsbol.PartShop_submit(self, *args)
 
         if val[0] == '[' :
-            exec('val = ' + val)
-            return val
+        	exec('val = ' + val)
+        	return val
         else :
-            return val
+        	return val
 
 
         return val
 
 
-    def login(self, email, password):
+    def login(self, *args):
         """
 
         In order to submit to a PartShop, you must login first. Register on [SynBioHub](http://synbiohub.org) to obtain account credentials.
@@ -7896,7 +8690,7 @@ class PartShop(_object):
         	The user's password
 
         """
-        return _libsbol.PartShop_login(self, email, password)
+        return _libsbol.PartShop_login(self, *args)
 
 
     def getURL(self):
@@ -7907,6 +8701,9 @@ class PartShop(_object):
 
     def downloadAttachment(self, *args):
         return _libsbol.PartShop_downloadAttachment(self, *args)
+
+    def addSynBioHubAnnotations(self, doc):
+        return _libsbol.PartShop_addSynBioHubAnnotations(self, doc)
 
     def pullComponentDefinition(self, uri, doc, recursive=True):
         """
@@ -8131,9 +8928,6 @@ class Document(Identified):
         return _libsbol.Document_read(self, filename)
 
 
-    def readString(self, sbol):
-        return _libsbol.Document_readString(self, sbol)
-
     def writeString(self):
         return _libsbol.Document_writeString(self)
 
@@ -8194,12 +8988,12 @@ class Document(Identified):
         return _libsbol.Document_validate(self)
 
 
-    def copy(self, ns, doc=None):
+    def copy(self, *args):
         """
 
 
         """
-        return _libsbol.Document_copy(self, ns, doc)
+        return _libsbol.Document_copy(self, *args)
 
 
     def __len__(self):
@@ -8237,12 +9031,16 @@ class Document(Identified):
         """
         return _libsbol.Document_find(self, uri)
 
+    if _newclass:
+        count_triples = staticmethod(_libsbol.Document_count_triples)
+    else:
+        count_triples = _libsbol.Document_count_triples
 
     def parse_annotation_objects(self):
         return _libsbol.Document_parse_annotation_objects(self)
 
-    def parse_extension_objects(self):
-        return _libsbol.Document_parse_extension_objects(self)
+    def dress_document(self):
+        return _libsbol.Document_dress_document(self)
 
     def find_property(self, uri):
         """
@@ -8267,6 +9065,9 @@ class Document(Identified):
 
     def find_reference(self, uri):
         return _libsbol.Document_find_reference(self, uri)
+
+    def countTriples(self):
+        return _libsbol.Document_countTriples(self)
 
     def getNamespaces(self):
         """
@@ -8332,10 +9133,10 @@ class Document(Identified):
         val = _libsbol.Document_addComponentDefinition(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8376,10 +9177,10 @@ class Document(Identified):
         val = _libsbol.Document_addModuleDefinition(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8420,10 +9221,10 @@ class Document(Identified):
         val = _libsbol.Document_addSequence(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8453,10 +9254,10 @@ class Document(Identified):
         val = _libsbol.Document_addModel(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8486,10 +9287,10 @@ class Document(Identified):
         val = _libsbol.Document_addCollection(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8519,10 +9320,10 @@ class Document(Identified):
         val = _libsbol.Document_addActivity(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8552,10 +9353,10 @@ class Document(Identified):
         val = _libsbol.Document_addPlan(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8585,10 +9386,10 @@ class Document(Identified):
         val = _libsbol.Document_addAgent(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8618,10 +9419,10 @@ class Document(Identified):
         val = _libsbol.Document_addAttachment(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8651,10 +9452,10 @@ class Document(Identified):
         val = _libsbol.Document_addImplementation(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8684,10 +9485,10 @@ class Document(Identified):
         val = _libsbol.Document_addCombinatorialDerivation(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8717,10 +9518,10 @@ class Document(Identified):
         val = _libsbol.Document_addDesign(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8750,10 +9551,10 @@ class Document(Identified):
         val = _libsbol.Document_addBuild(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8783,10 +9584,10 @@ class Document(Identified):
         val = _libsbol.Document_addTest(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8816,10 +9617,10 @@ class Document(Identified):
         val = _libsbol.Document_addAnalysis(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8849,10 +9650,10 @@ class Document(Identified):
         val = _libsbol.Document_addSampleRoster(self, *args)
 
         if type(args[0]) is list:
-            for obj in args[0]:
-                obj.thisown = False
+        	for obj in args[0]:
+        		obj.thisown = False
         else:
-            args[0].thisown = False
+        	args[0].thisown = False
 
 
         return val
@@ -8860,57 +9661,65 @@ class Document(Identified):
 
 
     def __getattribute__(self,name):
-        if name in object.__getattribute__(self, '__swig_getmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if sbol_attribute.getUpperBound() != '1':
+    				return sbol_attribute.getAll()
+    			else:
+    				try:
+    					return sbol_attribute.get()
+    				except LookupError:
+    					return None
+    			return None
+    		elif sbol_attribute.getUpperBound() == '1':
+    			try:
+    				return sbol_attribute.get()
+    			except:
+    				return None
+    	return object.__getattribute__(self, name)
 
     __setattribute__ = __setattr__
 
     def __setattr__(self,name, value):
-        if name in object.__getattribute__(self, '__swig_setmethods__').keys():
-            sbol_attribute = object.__getattribute__(self, name)
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+    	sbol_attribute = None
+    	if is_swig_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, name)
+    	elif is_extension_property(self, name):
+    		sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+    	if sbol_attribute != None:
+    		if not 'Owned' in sbol_attribute.__class__.__name__:
+    			if value == None:
+    				sbol_attribute.clear()
+    			elif type(value) == list:
+    				if sbol_attribute.getUpperBound() == '1':
+    					raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+    				sbol_attribute.clear()
+    				for val in value:
+    					sbol_attribute.add(val)
+    			else:
+    				sbol_attribute.set(value)
+    		elif sbol_attribute.getUpperBound() == '1':
+    			if len(sbol_attribute) > 0:
+    				sbol_obj = sbol_attribute.get()
+    				doc = sbol_obj.doc
+    				sbol_attribute.remove()
+    				if not doc:
+    					sbol_obj.thisown = True
+    				elif not doc.find(sbol_obj.identity):
+    					sbol_obj.thisown = True
+    			if not value == None:
+    				sbol_attribute.set(value)
+    				value.thisown = False
+    	else:
+    		self.__class__.__setattribute__(self, name, value)
 
     def __repr__(self):
-        return self.__class__.__name__
+    	return self.__class__.__name__
 
 
 
@@ -8928,9 +9737,16 @@ class Document(Identified):
 
     def __next__(self):
         return _libsbol.Document___next__(self)
+
+    def readString(self, *args):
+        return _libsbol.Document_readString(self, *args)
 Document_swigregister = _libsbol.Document_swigregister
 Document_swigregister(Document)
 cvar = _libsbol.cvar
+
+def Document_count_triples(user_data, triple):
+    return _libsbol.Document_count_triples(user_data, triple)
+Document_count_triples = _libsbol.Document_count_triples
 
 
 def raptor_error_handler(user_data, message):
@@ -9022,13 +9838,13 @@ class OwnedPythonObject(_object):
         val = _libsbol.OwnedPythonObject_set(self, py_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -9038,13 +9854,13 @@ class OwnedPythonObject(_object):
         val = _libsbol.OwnedPythonObject_add(self, py_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -9290,13 +10106,13 @@ class LocationProperty(_object):
         val = _libsbol.LocationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -9317,13 +10133,13 @@ class LocationProperty(_object):
         val = _libsbol.LocationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -9460,13 +10276,13 @@ class OwnedLocation(LocationProperty):
         val = _libsbol.OwnedLocation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -9498,13 +10314,13 @@ class OwnedLocation(LocationProperty):
         val = _libsbol.OwnedLocation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10056,13 +10872,13 @@ class MapsToProperty(_object):
         val = _libsbol.MapsToProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10083,13 +10899,13 @@ class MapsToProperty(_object):
         val = _libsbol.MapsToProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10226,13 +11042,13 @@ class OwnedMapsTo(MapsToProperty):
         val = _libsbol.OwnedMapsTo_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10264,13 +11080,13 @@ class OwnedMapsTo(MapsToProperty):
         val = _libsbol.OwnedMapsTo_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10822,13 +11638,13 @@ class SequenceConstraintProperty(_object):
         val = _libsbol.SequenceConstraintProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10849,13 +11665,13 @@ class SequenceConstraintProperty(_object):
         val = _libsbol.SequenceConstraintProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -10992,13 +11808,13 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
         val = _libsbol.OwnedSequenceConstraint_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -11030,13 +11846,13 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
         val = _libsbol.OwnedSequenceConstraint_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -11588,13 +12404,13 @@ class SequenceAnnotationProperty(_object):
         val = _libsbol.SequenceAnnotationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -11615,13 +12431,13 @@ class SequenceAnnotationProperty(_object):
         val = _libsbol.SequenceAnnotationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -11758,13 +12574,13 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
         val = _libsbol.OwnedSequenceAnnotation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -11796,13 +12612,13 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
         val = _libsbol.OwnedSequenceAnnotation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -12354,13 +13170,13 @@ class ComponentProperty(_object):
         val = _libsbol.ComponentProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -12381,13 +13197,13 @@ class ComponentProperty(_object):
         val = _libsbol.ComponentProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -12524,13 +13340,13 @@ class OwnedComponent(ComponentProperty):
         val = _libsbol.OwnedComponent_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -12562,13 +13378,13 @@ class OwnedComponent(ComponentProperty):
         val = _libsbol.OwnedComponent_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13120,13 +13936,13 @@ class ParticipationProperty(_object):
         val = _libsbol.ParticipationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13147,13 +13963,13 @@ class ParticipationProperty(_object):
         val = _libsbol.ParticipationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13290,13 +14106,13 @@ class OwnedParticipation(ParticipationProperty):
         val = _libsbol.OwnedParticipation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13328,13 +14144,13 @@ class OwnedParticipation(ParticipationProperty):
         val = _libsbol.OwnedParticipation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13886,13 +14702,13 @@ class ModuleProperty(_object):
         val = _libsbol.ModuleProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -13913,13 +14729,13 @@ class ModuleProperty(_object):
         val = _libsbol.ModuleProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14056,13 +14872,13 @@ class OwnedModule(ModuleProperty):
         val = _libsbol.OwnedModule_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14094,13 +14910,13 @@ class OwnedModule(ModuleProperty):
         val = _libsbol.OwnedModule_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14652,13 +15468,13 @@ class InteractionProperty(_object):
         val = _libsbol.InteractionProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14679,13 +15495,13 @@ class InteractionProperty(_object):
         val = _libsbol.InteractionProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14822,13 +15638,13 @@ class OwnedInteraction(InteractionProperty):
         val = _libsbol.OwnedInteraction_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -14860,13 +15676,13 @@ class OwnedInteraction(InteractionProperty):
         val = _libsbol.OwnedInteraction_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -15418,13 +16234,13 @@ class FunctionalComponentProperty(_object):
         val = _libsbol.FunctionalComponentProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -15445,13 +16261,13 @@ class FunctionalComponentProperty(_object):
         val = _libsbol.FunctionalComponentProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -15588,13 +16404,13 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
         val = _libsbol.OwnedFunctionalComponent_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -15626,13 +16442,13 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
         val = _libsbol.OwnedFunctionalComponent_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16184,13 +17000,13 @@ class AssociationProperty(_object):
         val = _libsbol.AssociationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16211,13 +17027,13 @@ class AssociationProperty(_object):
         val = _libsbol.AssociationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16354,13 +17170,13 @@ class OwnedAssociation(AssociationProperty):
         val = _libsbol.OwnedAssociation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16392,13 +17208,13 @@ class OwnedAssociation(AssociationProperty):
         val = _libsbol.OwnedAssociation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16950,13 +17766,13 @@ class UsageProperty(_object):
         val = _libsbol.UsageProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -16977,13 +17793,13 @@ class UsageProperty(_object):
         val = _libsbol.UsageProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17120,13 +17936,13 @@ class OwnedUsage(UsageProperty):
         val = _libsbol.OwnedUsage_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17158,13 +17974,13 @@ class OwnedUsage(UsageProperty):
         val = _libsbol.OwnedUsage_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17716,13 +18532,13 @@ class VariableComponentProperty(_object):
         val = _libsbol.VariableComponentProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17743,13 +18559,13 @@ class VariableComponentProperty(_object):
         val = _libsbol.VariableComponentProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17886,13 +18702,13 @@ class OwnedVariableComponent(VariableComponentProperty):
         val = _libsbol.OwnedVariableComponent_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -17924,13 +18740,13 @@ class OwnedVariableComponent(VariableComponentProperty):
         val = _libsbol.OwnedVariableComponent_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -18482,13 +19298,13 @@ class ComponentDefinitionProperty(_object):
         val = _libsbol.ComponentDefinitionProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -18509,13 +19325,13 @@ class ComponentDefinitionProperty(_object):
         val = _libsbol.ComponentDefinitionProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -18652,13 +19468,13 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
         val = _libsbol.OwnedComponentDefinition_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -18690,13 +19506,13 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
         val = _libsbol.OwnedComponentDefinition_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -19248,13 +20064,13 @@ class ModuleDefinitionProperty(_object):
         val = _libsbol.ModuleDefinitionProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -19275,13 +20091,13 @@ class ModuleDefinitionProperty(_object):
         val = _libsbol.ModuleDefinitionProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -19418,13 +20234,13 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
         val = _libsbol.OwnedModuleDefinition_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -19456,13 +20272,13 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
         val = _libsbol.OwnedModuleDefinition_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20014,13 +20830,13 @@ class SequenceProperty(_object):
         val = _libsbol.SequenceProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20041,13 +20857,13 @@ class SequenceProperty(_object):
         val = _libsbol.SequenceProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20184,13 +21000,13 @@ class OwnedSequence(SequenceProperty):
         val = _libsbol.OwnedSequence_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20222,13 +21038,13 @@ class OwnedSequence(SequenceProperty):
         val = _libsbol.OwnedSequence_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20780,13 +21596,13 @@ class ModelProperty(_object):
         val = _libsbol.ModelProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20807,13 +21623,13 @@ class ModelProperty(_object):
         val = _libsbol.ModelProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20950,13 +21766,13 @@ class OwnedModel(ModelProperty):
         val = _libsbol.OwnedModel_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -20988,13 +21804,13 @@ class OwnedModel(ModelProperty):
         val = _libsbol.OwnedModel_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -21546,13 +22362,13 @@ class CollectionProperty(_object):
         val = _libsbol.CollectionProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -21573,13 +22389,13 @@ class CollectionProperty(_object):
         val = _libsbol.CollectionProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -21716,13 +22532,13 @@ class OwnedCollection(CollectionProperty):
         val = _libsbol.OwnedCollection_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -21754,13 +22570,13 @@ class OwnedCollection(CollectionProperty):
         val = _libsbol.OwnedCollection_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -22312,13 +23128,13 @@ class ActivityProperty(_object):
         val = _libsbol.ActivityProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -22339,13 +23155,13 @@ class ActivityProperty(_object):
         val = _libsbol.ActivityProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -22482,13 +23298,13 @@ class OwnedActivity(ActivityProperty):
         val = _libsbol.OwnedActivity_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -22520,13 +23336,13 @@ class OwnedActivity(ActivityProperty):
         val = _libsbol.OwnedActivity_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23078,13 +23894,13 @@ class PlanProperty(_object):
         val = _libsbol.PlanProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23105,13 +23921,13 @@ class PlanProperty(_object):
         val = _libsbol.PlanProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23248,13 +24064,13 @@ class OwnedPlan(PlanProperty):
         val = _libsbol.OwnedPlan_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23286,13 +24102,13 @@ class OwnedPlan(PlanProperty):
         val = _libsbol.OwnedPlan_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23844,13 +24660,13 @@ class AgentProperty(_object):
         val = _libsbol.AgentProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -23871,13 +24687,13 @@ class AgentProperty(_object):
         val = _libsbol.AgentProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24014,13 +24830,13 @@ class OwnedAgent(AgentProperty):
         val = _libsbol.OwnedAgent_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24052,13 +24868,13 @@ class OwnedAgent(AgentProperty):
         val = _libsbol.OwnedAgent_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24610,13 +25426,13 @@ class AttachmentProperty(_object):
         val = _libsbol.AttachmentProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24637,13 +25453,13 @@ class AttachmentProperty(_object):
         val = _libsbol.AttachmentProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24780,13 +25596,13 @@ class OwnedAttachment(AttachmentProperty):
         val = _libsbol.OwnedAttachment_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -24818,13 +25634,13 @@ class OwnedAttachment(AttachmentProperty):
         val = _libsbol.OwnedAttachment_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -25376,13 +26192,13 @@ class ImplementationProperty(_object):
         val = _libsbol.ImplementationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -25403,13 +26219,13 @@ class ImplementationProperty(_object):
         val = _libsbol.ImplementationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -25546,13 +26362,13 @@ class OwnedImplementation(ImplementationProperty):
         val = _libsbol.OwnedImplementation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -25584,13 +26400,13 @@ class OwnedImplementation(ImplementationProperty):
         val = _libsbol.OwnedImplementation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26142,13 +26958,13 @@ class CombinatorialDerivationProperty(_object):
         val = _libsbol.CombinatorialDerivationProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26169,13 +26985,13 @@ class CombinatorialDerivationProperty(_object):
         val = _libsbol.CombinatorialDerivationProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26312,13 +27128,13 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
         val = _libsbol.OwnedCombinatorialDerivation_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26350,13 +27166,13 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
         val = _libsbol.OwnedCombinatorialDerivation_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26908,13 +27724,13 @@ class DesignProperty(_object):
         val = _libsbol.DesignProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -26935,13 +27751,13 @@ class DesignProperty(_object):
         val = _libsbol.DesignProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27078,13 +27894,13 @@ class OwnedDesign(DesignProperty):
         val = _libsbol.OwnedDesign_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27116,13 +27932,13 @@ class OwnedDesign(DesignProperty):
         val = _libsbol.OwnedDesign_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27674,13 +28490,13 @@ class BuildProperty(_object):
         val = _libsbol.BuildProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27701,13 +28517,13 @@ class BuildProperty(_object):
         val = _libsbol.BuildProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27844,13 +28660,13 @@ class OwnedBuild(BuildProperty):
         val = _libsbol.OwnedBuild_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -27882,13 +28698,13 @@ class OwnedBuild(BuildProperty):
         val = _libsbol.OwnedBuild_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -28440,13 +29256,13 @@ class TestProperty(_object):
         val = _libsbol.TestProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -28467,13 +29283,13 @@ class TestProperty(_object):
         val = _libsbol.TestProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -28610,13 +29426,13 @@ class OwnedTest(TestProperty):
         val = _libsbol.OwnedTest_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -28648,13 +29464,13 @@ class OwnedTest(TestProperty):
         val = _libsbol.OwnedTest_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29206,13 +30022,13 @@ class AnalysisProperty(_object):
         val = _libsbol.AnalysisProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29233,13 +30049,13 @@ class AnalysisProperty(_object):
         val = _libsbol.AnalysisProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29376,13 +30192,13 @@ class OwnedAnalysis(AnalysisProperty):
         val = _libsbol.OwnedAnalysis_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29414,13 +30230,13 @@ class OwnedAnalysis(AnalysisProperty):
         val = _libsbol.OwnedAnalysis_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29972,13 +30788,13 @@ class SampleRosterProperty(_object):
         val = _libsbol.SampleRosterProperty_set(self, *args)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -29999,13 +30815,13 @@ class SampleRosterProperty(_object):
         val = _libsbol.SampleRosterProperty_add(self, new_value)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -30142,13 +30958,13 @@ class OwnedSampleRoster(SampleRosterProperty):
         val = _libsbol.OwnedSampleRoster_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -30180,13 +30996,13 @@ class OwnedSampleRoster(SampleRosterProperty):
         val = _libsbol.OwnedSampleRoster_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -30582,13 +31398,13 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
         val = _libsbol.AliasedOwnedFunctionalComponent_set(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -30620,13 +31436,13 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
         val = _libsbol.AliasedOwnedFunctionalComponent_add(self, sbol_obj)
 
         try:
-            sbol_obj.thisown = False
+        	sbol_obj.thisown = False
         except NameError:
-            try:
-                if not type(args[0]) == str:
-                    args[0].thisown = False
-            except NameError:
-                pass
+        	try:
+        		if not type(args[0]) == str:
+        			args[0].thisown = False
+        	except NameError:
+        		pass
 
 
         return val
@@ -30710,112 +31526,112 @@ AliasedOwnedFunctionalComponent_swigregister(AliasedOwnedFunctionalComponent)
 def applyToComponentHierarchy(self, callback_fn, user_data):
 # Assumes parent_component is an SBOL data structure of the general form ComponentDefinition(->Component->ComponentDefinition)n where n+1 is an integer describing how many hierarchical levels are in the SBOL structure
 # Look at each of the ComponentDef's SequenceAnnotations, is the target base there?
-    if not self.doc:
-        raise Exception('Cannot traverse Component hierarchy without a Document')
+	if not self.doc:
+		raise Exception('Cannot traverse Component hierarchy without a Document')
 
-    GET_ALL = True
-    component_nodes = []
-    if len(self.components) == 0:
-        component_nodes.append(self)  # Add leaf components
-        if (callback_fn):
-            callback_fn(self, user_data)
-    else:
-        if GET_ALL:
-            component_nodes.append(self)  # Add components with children
-            if callback_fn:
-                callback_fn(self, user_data)
-        for subc in self.components:
-            if not self.doc.find(subc.definition.get()):
-                raise Exception(subc.definition.get() + 'not found')
-            subcdef = self.doc.getComponentDefinition(subc.definition.get())
-            subcomponents = subcdef.applyToComponentHierarchy(callback_fn, user_data)
-            component_nodes.extend(subcomponents)
-    return component_nodes
+	GET_ALL = True
+	component_nodes = []
+	if len(self.components) == 0:
+		component_nodes.append(self)  # Add leaf components
+		if (callback_fn):
+			callback_fn(self, user_data)
+	else:
+		if GET_ALL:
+			component_nodes.append(self)  # Add components with children
+			if callback_fn:
+				callback_fn(self, user_data)
+		for subc in self.components:
+			if not self.doc.find(subc.definition.get()):
+				raise Exception(subc.definition.get() + 'not found')
+			subcdef = self.doc.getComponentDefinition(subc.definition.get())
+			subcomponents = subcdef.applyToComponentHierarchy(callback_fn, user_data)
+			component_nodes.extend(subcomponents)
+	return component_nodes
 
 
 ComponentDefinition.applyToComponentHierarchy = applyToComponentHierarchy
 
 
 def testSBOL():
-    """
-    Function to run test suite for pySBOL
-    """
-    import sbol.unit_tests as unit_tests
-    unit_tests.runTests()
+	"""
+	Function to run test suite for pySBOL
+	"""
+	import sbol.unit_tests as unit_tests
+	unit_tests.runTests()
 
 def is_extension_property(obj, name):
-    attribute_dict = object.__getattribute__(obj, '__dict__')
-    if name in attribute_dict:
-        if type(attribute_dict[name]) in [ TextProperty, URIProperty, IntProperty, FloatProperty, ReferencedObject, DateTimeProperty, VersionProperty ] :
-            return True
-    return False
+	attribute_dict = object.__getattribute__(obj, '__dict__')
+	if name in attribute_dict:
+		if type(attribute_dict[name]) in [ TextProperty, URIProperty, IntProperty, FloatProperty, ReferencedObject, DateTimeProperty, VersionProperty ] :
+			return True
+	return False
 
 def is_swig_property(obj, name):
-    swig_attribute_dict = object.__getattribute__(obj, '__swig_getmethods__')
-    if name in swig_attribute_dict:
-        return True
-    return False
+	swig_attribute_dict = object.__getattribute__(obj, '__swig_getmethods__')
+	if name in swig_attribute_dict:
+		return True
+	return False
 
 class PythonicInterface(object):
 
-    def __getattribute__(self,name):
-        sbol_attribute = None
-        if is_swig_property(self, name):
-            sbol_attribute = object.__getattribute__(self, name)
-        elif is_extension_property(self, name):
-            sbol_attribute = object.__getattribute__(self, '__dict__')[name]
-        if sbol_attribute:
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if sbol_attribute.getUpperBound() != '1':
-                    return sbol_attribute.getAll()
-                else:
-                    try:
-                        return sbol_attribute.get()
-                    except LookupError:
-                        return None
-                return None
-            elif sbol_attribute.getUpperBound() == '1':
-                try:
-                    return sbol_attribute.get()
-                except:
-                    return None
-        return object.__getattribute__(self, name)
+	def __getattribute__(self,name):
+		sbol_attribute = None
+		if is_swig_property(self, name):
+			sbol_attribute = object.__getattribute__(self, name)
+		elif is_extension_property(self, name):
+			sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+		if sbol_attribute != None:
+			if not 'Owned' in sbol_attribute.__class__.__name__:
+				if sbol_attribute.getUpperBound() != '1':
+					return sbol_attribute.getAll()
+				else:
+					try:
+						return sbol_attribute.get()
+					except LookupError:
+						return None
+				return None
+			elif sbol_attribute.getUpperBound() == '1':
+				try:
+					return sbol_attribute.get()
+				except:
+					return None
+		return object.__getattribute__(self, name)
 
-    def __setattr__(self,name, value):
-        sbol_attribute = None
-        if is_swig_property(self, name):
-            sbol_attribute = object.__getattribute__(self, name)
-        elif is_extension_property(self, name):
-            sbol_attribute = object.__getattribute__(self, '__dict__')[name]
-        if sbol_attribute:
-            if not 'Owned' in sbol_attribute.__class__.__name__:
-                if value == None:
-                    sbol_attribute.clear()
-                elif type(value) == list:
-                    if sbol_attribute.getUpperBound() == '1':
-                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
-                    sbol_attribute.clear()
-                    for val in value:
-                        sbol_attribute.add(val)
-                else:
-                    sbol_attribute.set(value)
-            elif sbol_attribute.getUpperBound() == '1':
-                if len(sbol_attribute) > 0:
-                    sbol_obj = sbol_attribute.get()
-                    doc = sbol_obj.doc
-                    sbol_attribute.remove()
-                    if not doc:
-                        sbol_obj.thisown = True
-                    elif not doc.find(sbol_obj.identity):
-                        sbol_obj.thisown = True
-                if not value == None:
-                    sbol_attribute.set(value)
-                    value.thisown = False
-        else:
-            self.__class__.__setattribute__(self, name, value)
+	def __setattr__(self,name, value):
+		sbol_attribute = None
+		if is_swig_property(self, name):
+			sbol_attribute = object.__getattribute__(self, name)
+		elif is_extension_property(self, name):
+			sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+		if sbol_attribute != None:
+			if not 'Owned' in sbol_attribute.__class__.__name__:
+				if value == None:
+					sbol_attribute.clear()
+				elif type(value) == list:
+					if sbol_attribute.getUpperBound() == '1':
+						raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+					sbol_attribute.clear()
+					for val in value:
+						sbol_attribute.add(val)
+				else:
+					sbol_attribute.set(value)
+			elif sbol_attribute.getUpperBound() == '1':
+				if len(sbol_attribute) > 0:
+					sbol_obj = sbol_attribute.get()
+					doc = sbol_obj.doc
+					sbol_attribute.remove()
+					if not doc:
+						sbol_obj.thisown = True
+					elif not doc.find(sbol_obj.identity):
+						sbol_obj.thisown = True
+				if not value == None:
+					sbol_attribute.set(value)
+					value.thisown = False
+		else:
+			self.__class__.__setattribute__(self, name, value)
 
-        def __repr__(self):
-            return self.__class__.__name__
+		def __repr__(self):
+			return self.__class__.__name__
 
 # This file is compatible with both classic and new-style classes.
 
