@@ -1,10 +1,10 @@
-SBOL Examples
-======================
+Computer-aided Design for Synthetic Biology
+===========================================
 
 See `Full Example Code <https://pysbol2.readthedocs.io/en/latest/sbol_examples.html#id2>`_ for full example code.
 
 ---------------------------------
-Computer-aided Design with PySBOL
+Design Abstraction
 ---------------------------------
 
 An advantage of the SBOL data format over GenBank is the ability to represent DNA as abstract components without specifying an exact sequence. An **abstract design** can be used as a template, with sequence information filled in later. In SBOL, a ComponentDefinition represents a biological component whose general function is known while its sequence is currently either unknown or unspecified. The intended function of the component is specified using a descriptive term from the Sequence Ontology (SO), a standard vocabulary for describing genetic parts. As the following example shows, some common SO terms are built in to PySBOL as pre-defined constants (see `constants.h <https://github.com/SynBioDex/pySBOL/blob/develop/source/constants.h>`_). This code example defines the new component as a gene by setting its `roles` property to the SO term for `gene`.  Other terms may be found by browsing the `Sequence Ontology <http://www.sequenceontology.org/browser/obob.cgi>`_ online.
@@ -52,7 +52,7 @@ This returns a list of `ComponentDefinitions` arranged in their primary sequence
 Sequence Assembly
 -------------------------------
 
-A **complete design** adds explicit sequence information to the components in a **template design** or **abstraction hierarchy**. In order to complete a design, `Sequence` objects must first be created and associated with the promoter, CDS, RBS, terminator subcomponents. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.pySBOL.ComponentDefinition.assemble>`_ method, which assembles a template design, the `ComponentDefinition.compile` method recursively generates the complete sequence of a hierarchical design from the sequence of its subcomponents. Compiling a DNA sequence is analogous to a programmer compiling their code. *In order to `compile` a `ComponentDefinition`, you must first assemble a template design from `ComponentDefinitions`, as described in the previous section.*
+A **complete design** adds explicit sequence information to the components in a **template design** or **abstraction hierarchy**. In order to complete a design, `Sequence` objects must first be created and associated with the promoter, CDS, RBS, terminator subcomponents. In contrast to the `ComponentDefinition.assemble() <https://pysbol2.readthedocs.io/en/latest/API.html#sbol.pySBOL.ComponentDefinition.assemble>`_ method, which assembles a template design, the `ComponentDefinition.compile` method recursively generates the complete sequence of a hierarchical design from the sequence of its subcomponents. Compiling a DNA sequence is analogous to a programmer compiling their code. In order to `compile` a `ComponentDefinition`, you must first assemble a template design from `ComponentDefinitions`, as described in the previous section.
 
 .. code:: python 
 

@@ -1,5 +1,5 @@
 Biological Parts Repositories
-======================
+=============================
 
 -----------------------------------------------
 Re-using Genetic Parts From Online Repositories
@@ -34,14 +34,22 @@ Typing full URIs can be tedious. Therefore the ``PartShop`` interface provides a
 
 .. end
 
-
-Note that the objects are pulled into the user's Homespace:
+The ``pull`` operation will retrieve ``ComponentDefinitions`` and their associated ``Sequence`` objects. Note that the objects are copied into the user's Homespace:
 
 .. code:: python
 
     >>> for obj in doc:
     ...     print obj
-
+    ...
+    http://examples.org/Sequence/BBa_R0010_sequence/1
+    http://examples.org/Sequence/BBa_B0012_sequence/1
+    http://examples.org/ComponentDefinition/BBa_E0040/1
+    http://examples.org/ComponentDefinition/BBa_B0012/1
+    http://examples.org/Sequence/BBa_E0040_sequence/1
+    http://examples.org/Activity/igem2sbol/1
+    http://examples.org/ComponentDefinition/BBa_R0010/1
+    http://examples.org/ComponentDefinition/BBa_B0032/1
+    http://examples.org/Sequence/BBa_B0032_sequence/1
 
 .. end
 
