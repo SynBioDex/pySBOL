@@ -10,7 +10,11 @@ PySBOL can be used to manage computational and experimental workflows for synthe
 
 Note that these pySBOL classes are not part of the core SBOL standard, but are abstractions provided by the pySBOL interface for the convenience of the user. However, they map closely to the SBOL data model. 
 
-In order to organize and track data as a workflow proceeds, a user can create objects and link them together using ``Activity`` objects. An ``Activity`` uses certain types of objects as inputs and generates new objects. For example, under the DBTL formalization a ``Design`` is used to generate a ``Build``. This implies that a digital blueprint for a biological system has been realized as a real construct the laboratory. If an experimental measurement is performed subsequently, via an experiment ``Activity``, a ``Test`` object is generated. A ``Test`` performs measurement on ``Builds``. Finally an ``Analysis`` may use the raw experimental data represented by a ``Test`` object. Thus, objects are created in a logical order that conforms to the DBTL formalism.  This pattern is represented in Fig.
+In order to organize and track data as a workflow proceeds, a user can create objects and link them together using ``Activity`` objects. An ``Activity`` uses certain types of objects as inputs and generates new objects. For example, under the DBTL formalization a ``Design`` is used to generate a ``Build``. This implies that a digital blueprint for a biological system has been realized as a real construct the laboratory. If an experimental measurement is performed subsequently, via an experiment ``Activity``, a ``Test`` object is generated. A ``Test`` performs measurement on ``Builds``. Finally an ``Analysis`` may use the raw experimental data represented by a ``Test`` object. Thus, objects are created in a logical order that conforms to the DBTL formalism.  This pattern is represented in the UML class diagram below.
+
+.. figure:: ./dbtl.png
+    :align: center
+    :figclass: align-center
 
 An ``Activity`` is executed by an ``Agent`` which may be a person, a piece of software, or laboratory robotics. The ``Agent`` executes a ``Plan`` which may be a laboratory protocol written in natural language or a set of automated instructions. The classes ``Activity``, ``Agent``, and ``Plan`` are all defined according the Provenance Ontology (PROV-O). The pySBOL API provides the ``Design``, ``Build``, ``Test``, and ``Analysis`` classes to simplify workflow representation. However, it is also possible to use the API to construct PROV-O workflows that conform to other patterns.
 
@@ -20,61 +24,65 @@ The DBTL cycle is a generalized, iterative framework for engineering problem-sol
 
 In addition to the logical workflow order described above, other simple workflow patterns are allowed as well. An ``Activity`` that generates an object of type X may use other objects also of type X as inputs. For example a laboratory construct may go through sequential stages of processing before the target ``Build`` is complete. Examples are enzymatic treatment, DNA purification, and transformation. At each stage, a ``Build`` uses a prior ``Build``. Therefore ``Builds`` may use prior ``Builds`` as well as ``Designs``.
 
+.. figure:: ./sep_017_fig3.png
+    :align: center
+    :figclass: align-center
+
 Branching and intersecting workflows are other common patterns of usage. For example, an intersecting workflow occurs when a construct is assembled out of multiple physical components, such as occurs when a Gibson assembly uses multiple DNA samples. Multiple ``Build`` inputs are used to generate the new ``Build``. Another kind of intersecting workflow occurs when an experimental ``Test`` is performed on multiple ``Build`` samples. Conversely, branching patterns may also occur. For example, a branching workflow occurs when transformation of a single Gibson reaction mixture generates multiple clones, each of which may be subjected to their own unique history of subsequent testing and analysis.
 
 .. code:: python
 
-from sbol import *
+	from sbol import *
 
-doc=Document()
-setHomespace('https://sys-bio.org')
+	doc=Document()
+	setHomespace('https://sys-bio.org')
 
-doc = Document()
+	doc = Document()
 
-workflow_step_1 = Activity('build_1')
-workflow_step_2 = Activity('build_2')
-workflow_step_3 = Activity('build_3')
-workflow_step_4 = Activity('build_4')
-workflow_step_5 = Activity('build_5')
-workflow_step_6 = Activity('test_1')
-workflow_step_7 = Activity('analysis_1')
+	workflow_step_1 = Activity('build_1')
+	workflow_step_2 = Activity('build_2')
+	workflow_step_3 = Activity('build_3')
+	workflow_step_4 = Activity('build_4')
+	workflow_step_5 = Activity('build_5')
+	workflow_step_6 = Activity('test_1')
+	workflow_step_7 = Activity('analysis_1')
 
-workflow_step_1.plan = Plan('PCR_protocol_part1')
-workflow_step_2.plan = Plan('PCR_protocol_part2')
-workflow_step_3.plan = Plan('PCR_protocol_part3')
-workflow_step_4.plan = Plan('gibson_assembly')
-workflow_step_5.plan = Plan('transformation')
-workflow_step_6.plan = Plan('promoter_characterization')
-workflow_step_7.plan = Plan('parameter_optimization')
+	workflow_step_1.plan = Plan('PCR_protocol_part1')
+	workflow_step_2.plan = Plan('PCR_protocol_part2')
+	workflow_step_3.plan = Plan('PCR_protocol_part3')
+	workflow_step_4.plan = Plan('gibson_assembly')
+	workflow_step_5.plan = Plan('transformation')
+	workflow_step_6.plan = Plan('promoter_characterization')
+	workflow_step_7.plan = Plan('parameter_optimization')
 
-setHomespace('')
-Config.setOption('sbol_compliant_uris', False)  # Temporarily disable auto-construction of URIs
+	setHomespace('')
+	Config.setOption('sbol_compliant_uris', False)  # Temporarily disable auto-construction of URIs
 
-workflow_step_1.agent = Agent('mailto:jdoe@sbols.org')
-workflow_step_2.agent = workflow_step_1.agent
-workflow_step_3.agent = workflow_step_1.agent
-workflow_step_4.agent = workflow_step_1.agent
-workflow_step_5.agent = workflow_step_1.agent
-workflow_step_6.agent = Agent('http://sys-bio.org/plate_reader_1')
-workflow_step_7.agent = Agent('http://tellurium.analogmachine.org')
+	workflow_step_1.agent = Agent('mailto:jdoe@sbols.org')
+	workflow_step_2.agent = workflow_step_1.agent
+	workflow_step_3.agent = workflow_step_1.agent
+	workflow_step_4.agent = workflow_step_1.agent
+	workflow_step_5.agent = workflow_step_1.agent
+	workflow_step_6.agent = Agent('http://sys-bio.org/plate_reader_1')
+	workflow_step_7.agent = Agent('http://tellurium.analogmachine.org')
 
-Config.setOption('sbol_compliant_uris', True)
-setHomespace('https://sys-bio.org')
+	Config.setOption('sbol_compliant_uris', True)
+	setHomespace('https://sys-bio.org')
 
-doc.addActivity([workflow_step_1, workflow_step_2, workflow_step_3, workflow_step_4, workflow_step_5, workflow_step_6, workflow_step_7])
+	doc.addActivity([workflow_step_1, workflow_step_2, workflow_step_3, workflow_step_4, workflow_step_5, workflow_step_6, workflow_step_7])
 
 
-target = Design('target')
-part1 = workflow_step_1.generateBuild('part1', target)
-part2 = workflow_step_2.generateBuild('part2', target)
-part3 = workflow_step_3.generateBuild('part3', target)
-gibson_mix = workflow_step_4.generateBuild('gibson_mix', target, [part1, part2, part3])
-clones = workflow_step_5.generateBuild(['clone1', 'clone2', 'clone3'], target, gibson_mix)
-experiment1 = workflow_step_6.generateTest('experiment1', clones)
-analysis1 = workflow_step_7.generateAnalysis('analysis1', experiment1)
+	target = Design('target')
+	part1 = workflow_step_1.generateBuild('part1', target)
+	part2 = workflow_step_2.generateBuild('part2', target)
+	part3 = workflow_step_3.generateBuild('part3', target)
+	gibson_mix = workflow_step_4.generateBuild('gibson_mix', target, [part1, part2, part3])
+	clones = workflow_step_5.generateBuild(['clone1', 'clone2', 'clone3'], target, gibson_mix)
+	experiment1 = workflow_step_6.generateTest('experiment1', clones)
+	analysis1 = workflow_step_7.generateAnalysis('analysis1', experiment1)
 
-response = doc.write('dbtl.xml')
-print(response)
+	response = doc.write('dbtl.xml')
+	print(response)
 
 .. end
 
