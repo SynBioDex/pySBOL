@@ -1,4 +1,4 @@
-## @package sbol
+# @package sbol
 # A Python wrapper for libSBOLc, a module for reading, writing, and constructing
 # genetic designs according to the standardized specifications of the Synthetic Biology Open Language
 #
@@ -14,4 +14,4 @@
 # @namespace sbol.sbol_test
 # Unit tests
 
-from libsbol import *
+from .libsbol import *

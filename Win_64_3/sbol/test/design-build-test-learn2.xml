@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/a1_generation/1.0.0">
+    <sbol:displayId>a1_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/a1_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/a1_generation/t2_usage/1.0.0">
+        <sbol:displayId>t2_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/a1_generation/t2_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Test/t2/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#test"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/a2_generation/1.0.0">
+    <sbol:displayId>a2_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/a2_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/a2_generation/a1_usage/1.0.0">
+        <sbol:displayId>a1_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/a2_generation/a1_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Analysis/a1/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#learn"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/b1_generation/1.0.0">
+    <sbol:displayId>b1_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b1_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/b1_generation/d2_usage/1.0.0">
+        <sbol:displayId>d2_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b1_generation/d2_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Design/d2/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#design"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/b2_generation/1.0.0">
+    <sbol:displayId>b2_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b2_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/b2_generation/b1_usage/1.0.0">
+        <sbol:displayId>b1_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b2_generation/b1_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Build/b1/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/b3_generation/1.0.0">
+    <sbol:displayId>b3_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b3_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/b3_generation/d1_usage/1.0.0">
+        <sbol:displayId>d1_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/b3_generation/d1_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Design/d1/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#design"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/d2_generation/1.0.0">
+    <sbol:displayId>d2_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/d2_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/d2_generation/d1_usage/1.0.0">
+        <sbol:displayId>d1_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/d2_generation/d1_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Design/d1/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#design"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/t1_generation/1.0.0">
+    <sbol:displayId>t1_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/t1_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/t1_generation/b2_usage/1.0.0">
+        <sbol:displayId>b2_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/t1_generation/b2_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Build/b2/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity/t2_generation/1.0.0">
+    <sbol:displayId>t2_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/t2_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity/t2_generation/t1_usage/1.0.0">
+        <sbol:displayId>t1_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity/t2_generation/t1_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Test/t1/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#test"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sys-bio:Analysis rdf:about="http://sys-bio.org/Analysis/a1/1.0.0">
+    <sbol:displayId>a1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Analysis/a1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:rawData rdf:resource="http://sys-bio.org/Test/t2/1.0.0"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Test/t2/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/a1_generation/1.0.0"/>
+  </sys-bio:Analysis>
+  <sys-bio:Analysis rdf:about="http://sys-bio.org/Analysis/a2/1.0.0">
+    <sbol:displayId>a2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Analysis/a2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:rawData rdf:resource="http://sys-bio.org/Test/t2/1.0.0"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Analysis/a1/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/a2_generation/1.0.0"/>
+  </sys-bio:Analysis>
+  <sbol:Implementation rdf:about="http://sys-bio.org/Build/b1/1.0.0">
+    <sbol:displayId>b1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Build/b1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:design rdf:resource="http://sys-bio.org/Design/d2/1.0.0"/>
+    <sys-bio:type rdf:resource="http://sys-bio.org#Build"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Design/d2/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/b1_generation/1.0.0"/>
+  </sbol:Implementation>
+  <sbol:Implementation rdf:about="http://sys-bio.org/Build/b2/1.0.0">
+    <sbol:displayId>b2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Build/b2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:_structure rdf:resource="http://sys-bio.org/ComponentDefinition/b2/1.0.0"/>
+    <sys-bio:design rdf:resource="http://sys-bio.org/Design/d2/1.0.0"/>
+    <sys-bio:type rdf:resource="http://sys-bio.org#Build"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Build/b1/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/b2_generation/1.0.0"/>
+  </sbol:Implementation>
+  <sbol:Implementation rdf:about="http://sys-bio.org/Build/b3/1.0.0">
+    <sbol:displayId>b3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Build/b3"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:design rdf:resource="http://sys-bio.org/Design/d1/1.0.0"/>
+    <sys-bio:type rdf:resource="http://sys-bio.org#Build"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Design/d1/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/b3_generation/1.0.0"/>
+  </sbol:Implementation>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/b2/1.0.0">
+    <sbol:displayId>b2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2"/>
+    <sbol:sequence rdf:resource="http://sys-bio.org/Sequence/consensus/1.0.0"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc0/1.0.0">
+        <sbol:displayId>qc0</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc0/r/1.0.0">
+            <sbol:displayId>r</sbol:displayId>
+            <sbol:end>5</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc0/r"/>
+            <sbol:start>3</sbol:start>
+            <sbol:version>1.0.0</sbol:version>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc0"/>
+        <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000347"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc1/1.0.0">
+        <sbol:displayId>qc1</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc1/r/1.0.0">
+            <sbol:displayId>r</sbol:displayId>
+            <sbol:end>6</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc1/r"/>
+            <sbol:start>6</sbol:start>
+            <sbol:version>1.0.0</sbol:version>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc1"/>
+        <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000702"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc2/1.0.0">
+        <sbol:displayId>qc2</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://sys-bio.org/ComponentDefinition/b2/qc2/r/1.0.0">
+            <sbol:displayId>r</sbol:displayId>
+            <sbol:end>8</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc2/r"/>
+            <sbol:start>7</sbol:start>
+            <sbol:version>1.0.0</sbol:version>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/b2/qc2"/>
+        <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/c1/1.0.0">
+    <sbol:displayId>c1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/c1"/>
+    <sbol:sequence rdf:resource="http://sys-bio.org/Sequence/s1/1.0.0"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/c2/1.0.0">
+    <sbol:displayId>c2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/c2"/>
+    <sbol:sequence rdf:resource="http://sys-bio.org/Sequence/s2/1.0.0"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/cd/1.0.0">
+    <sbol:displayId>cd</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/cd"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/cd2/1.0.0">
+    <sbol:displayId>cd2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/cd2"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://sys-bio.org/ComponentDefinition/d2/1.0.0">
+    <sbol:component>
+      <sbol:Component rdf:about="http://sys-bio.org/ComponentDefinition/d2/c1_0/1.0.0">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://sys-bio.org/ComponentDefinition/c1/1.0.0"/>
+        <sbol:displayId>c1_0</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c1_0"/>
+        <sbol:roleIntegration rdf:resource="http://sbols.org/v2#mergeRoles"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="http://sys-bio.org/ComponentDefinition/d2/c2_0/1.0.0">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://sys-bio.org/ComponentDefinition/c2/1.0.0"/>
+        <sbol:displayId>c2_0</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c2_0"/>
+        <sbol:roleIntegration rdf:resource="http://sbols.org/v2#mergeRoles"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:Component>
+    </sbol:component>
+    <sbol:displayId>d2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2"/>
+    <sbol:sequence rdf:resource="http://sys-bio.org/Sequence/d2/1.0.0"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://sys-bio.org/ComponentDefinition/d2/c1_annotation/1.0.0">
+        <sbol:component rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c1_0/1.0.0"/>
+        <sbol:displayId>c1_annotation</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://sys-bio.org/ComponentDefinition/d2/c1_annotation/c1_annotation_range/1.0.0">
+            <sbol:displayId>c1_annotation_range</sbol:displayId>
+            <sbol:end>4</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c1_annotation/c1_annotation_range"/>
+            <sbol:start>1</sbol:start>
+            <sbol:version>1.0.0</sbol:version>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c1_annotation"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://sys-bio.org/ComponentDefinition/d2/c2_annotation/1.0.0">
+        <sbol:component rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c2_0/1.0.0"/>
+        <sbol:displayId>c2_annotation</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://sys-bio.org/ComponentDefinition/d2/c2_annotation/c2_annotation_range/1.0.0">
+            <sbol:displayId>c2_annotation_range</sbol:displayId>
+            <sbol:end>8</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c2_annotation/c2_annotation_range"/>
+            <sbol:start>5</sbol:start>
+            <sbol:version>1.0.0</sbol:version>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c2_annotation"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceConstraint>
+      <sbol:SequenceConstraint rdf:about="http://sys-bio.org/ComponentDefinition/d2/constraint1/1.0.0">
+        <sbol:displayId>constraint1</sbol:displayId>
+        <sbol:object rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c2_0/1.0.0"/>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/ComponentDefinition/d2/constraint1"/>
+        <sbol:restriction rdf:resource="http://sbols.org/v2#precedes"/>
+        <sbol:subject rdf:resource="http://sys-bio.org/ComponentDefinition/d2/c1_0/1.0.0"/>
+        <sbol:version>1.0.0</sbol:version>
+      </sbol:SequenceConstraint>
+    </sbol:sequenceConstraint>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:ComponentDefinition>
+  <sys-bio:Design rdf:about="http://sys-bio.org/Design/d1/1.0.0">
+    <sbol:displayId>d1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Design/d1"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sys-bio:Design>
+  <sys-bio:Design rdf:about="http://sys-bio.org/Design/d2/1.0.0">
+    <sbol:displayId>d2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Design/d2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:_structure rdf:resource="http://sys-bio.org/ComponentDefinition/d2/1.0.0"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Design/d1/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/d2_generation/1.0.0"/>
+  </sys-bio:Design>
+  <sbol:Sequence rdf:about="http://sys-bio.org/Sequence/consensus/1.0.0">
+    <sbol:displayId>consensus</sbol:displayId>
+    <sbol:elements>--tttngg</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Sequence/consensus"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://sys-bio.org/Sequence/d2/1.0.0">
+    <sbol:displayId>d2</sbol:displayId>
+    <sbol:elements>aatttttt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Sequence/d2"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://sys-bio.org/Sequence/s1/1.0.0">
+    <sbol:displayId>s1</sbol:displayId>
+    <sbol:elements>aatt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Sequence/s1"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://sys-bio.org/Sequence/s2/1.0.0">
+    <sbol:displayId>s2</sbol:displayId>
+    <sbol:elements>tttt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Sequence/s2"/>
+    <sbol:version>1.0.0</sbol:version>
+  </sbol:Sequence>
+  <sbol:Collection rdf:about="http://sys-bio.org/Test/t1/1.0.0">
+    <sbol:displayId>t1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Test/t1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:samples rdf:resource="http://sys-bio.org/Build/b2/1.0.0"/>
+    <sys-bio:type rdf:resource="http://sys-bio.org#Test"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Build/b2/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/t1_generation/1.0.0"/>
+  </sbol:Collection>
+  <sbol:Collection rdf:about="http://sys-bio.org/Test/t2/1.0.0">
+    <sbol:displayId>t2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Test/t2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sys-bio:samples rdf:resource="http://sys-bio.org/Build/b2/1.0.0"/>
+    <sys-bio:type rdf:resource="http://sys-bio.org#Test"/>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Test/t1/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity/t2_generation/1.0.0"/>
+  </sbol:Collection>
+</rdf:RDF>
