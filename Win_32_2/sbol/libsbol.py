@@ -2623,7 +2623,7 @@ class SBOLObject(_object):
     ----------
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -3244,7 +3244,7 @@ class Identified(SBOLObject):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -3257,8 +3257,8 @@ class Identified(SBOLObject):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -3268,7 +3268,7 @@ class Identified(SBOLObject):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -3280,7 +3280,7 @@ class Identified(SBOLObject):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -3438,7 +3438,7 @@ class TopLevel(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -3451,8 +3451,8 @@ class TopLevel(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -3462,7 +3462,7 @@ class TopLevel(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -3474,7 +3474,7 @@ class TopLevel(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -3633,7 +3633,7 @@ class Location(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -3646,8 +3646,8 @@ class Location(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -3657,7 +3657,7 @@ class Location(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -3669,7 +3669,7 @@ class Location(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -3830,7 +3830,7 @@ class Range(Location):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -3843,8 +3843,8 @@ class Range(Location):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -3854,7 +3854,7 @@ class Range(Location):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -3866,7 +3866,7 @@ class Range(Location):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -4140,7 +4140,7 @@ class Cut(Location):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -4153,8 +4153,8 @@ class Cut(Location):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -4164,7 +4164,7 @@ class Cut(Location):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -4176,7 +4176,7 @@ class Cut(Location):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -4344,7 +4344,7 @@ class GenericLocation(Location):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -4357,8 +4357,8 @@ class GenericLocation(Location):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -4368,7 +4368,7 @@ class GenericLocation(Location):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -4380,7 +4380,7 @@ class GenericLocation(Location):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -4474,9 +4474,9 @@ class SequenceAnnotation(Identified):
         OPTIONAL set of zero or more URIs describing the specified sequence feature
         being annotated. If provided, these role URIs MUST identify terms from
         appropriate ontologies. Roles are not restricted to describing biological
-        function; they may annotate Sequences’ function in any domain for which an
+        function; they may annotate Sequences function in any domain for which an
         ontology exists. It is RECOMMENDED that these role URIs identify terms that
-        are compatible with the type properties of this SequenceAnnotation’s parent
+        are compatible with the type properties of this SequenceAnnotations parent
         ComponentDefinition. For example, a role of a SequenceAnnotation which
         belongs to a ComponentDefinition of type DNA might refer to terms from the
         Sequence Ontology. See documentation for ComponentDefinition for a table of
@@ -4500,7 +4500,7 @@ class SequenceAnnotation(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -4513,8 +4513,8 @@ class SequenceAnnotation(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -4524,7 +4524,7 @@ class SequenceAnnotation(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -4536,7 +4536,7 @@ class SequenceAnnotation(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -4804,7 +4804,7 @@ class MapsTo(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -4817,8 +4817,8 @@ class MapsTo(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -4828,7 +4828,7 @@ class MapsTo(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -4840,7 +4840,7 @@ class MapsTo(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -4992,8 +4992,8 @@ class ComponentInstance(Identified):
         objects MUST NOT form a cyclical chain of references via their definition
         properties and the ComponentDefinition objects that contain them. For
         example, consider the ComponentInstance objects A and B and the
-        ComponentDefinition objects X and Y . The reference chain “X contains A, A
-        isdefinedby Y, Y contains B, and B isdefinedby X” iscyclical.  
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
 
     * `access` : `URIProperty`  
         The access property is a REQUIRED URI that indicates whether the
@@ -5035,7 +5035,7 @@ class ComponentInstance(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -5048,8 +5048,8 @@ class ComponentInstance(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -5059,7 +5059,7 @@ class ComponentInstance(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -5071,7 +5071,7 @@ class ComponentInstance(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -5128,13 +5128,13 @@ class Component(ComponentInstance):
         However, the same building block might be used for a different purpose in an
         actual design. In other words, purpose and function are sometimes determined
         by context. The roles property comprises an OPTIONAL set of zero or more
-        role URIs describing the purpose or potential function of this Component’s
+        role URIs describing the purpose or potential function of this Components
         included sub-ComponentDefinition in the context of its parent
         ComponentDefinition. If provided, these role URIs MUST identify terms from
         appropriate ontologies. Roles are not restricted to describing biological
-        function; they may annotate a Component’s function in any domain for which
+        function; they may annotate a Components function in any domain for which
         an ontology exists. It is RECOMMENDED that these role URIs identify terms
-        that are compatible with the type properties of both this Component’s parent
+        that are compatible with the type properties of both this Components parent
         ComponentDefinition and its included sub-ComponentDefinition. For example, a
         role of a Component which belongs to a ComponentDefinition of type DNA and
         includes a sub-ComponentDefinition of type DNA might refer to terms from the
@@ -5142,7 +5142,7 @@ class Component(ComponentInstance):
         recommended ontology terms for roles.  
 
     * `roleIntegration` : `URIProperty`  
-        A roleIntegration specifies the relationship between a Component instance’s
+        A roleIntegration specifies the relationship between a Component instances
         own set of roles and the set of roles on the included sub-
         ComponentDefinition.  
 
@@ -5153,7 +5153,7 @@ class Component(ComponentInstance):
         roleIntegration is given, then http://sbols.org/v2#mergeRoles is assumed. It
         is RECOMMENDED to specify a set of Component roles only if the integrated
         result set of roles would differ from the set of roles belonging to this
-        Component’s included sub-ComponentDefinition.
+        Components included sub-ComponentDefinition.
         roleIntegration URI  
 
         Description  
@@ -5186,8 +5186,8 @@ class Component(ComponentInstance):
         objects MUST NOT form a cyclical chain of references via their definition
         properties and the ComponentDefinition objects that contain them. For
         example, consider the ComponentInstance objects A and B and the
-        ComponentDefinition objects X and Y . The reference chain “X contains A, A
-        isdefinedby Y, Y contains B, and B isdefinedby X” iscyclical.  
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
 
     * `access` : `URIProperty`  
         The access property is a REQUIRED URI that indicates whether the
@@ -5229,7 +5229,7 @@ class Component(ComponentInstance):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -5242,8 +5242,8 @@ class Component(ComponentInstance):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -5253,7 +5253,7 @@ class Component(ComponentInstance):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -5265,7 +5265,7 @@ class Component(ComponentInstance):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -5454,8 +5454,8 @@ class FunctionalComponent(ComponentInstance):
         objects MUST NOT form a cyclical chain of references via their definition
         properties and the ComponentDefinition objects that contain them. For
         example, consider the ComponentInstance objects A and B and the
-        ComponentDefinition objects X and Y . The reference chain “X contains A, A
-        isdefinedby Y, Y contains B, and B isdefinedby X” iscyclical.  
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
 
     * `access` : `URIProperty`  
         The access property is a REQUIRED URI that indicates whether the
@@ -5497,7 +5497,7 @@ class FunctionalComponent(ComponentInstance):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -5510,8 +5510,8 @@ class FunctionalComponent(ComponentInstance):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -5521,7 +5521,7 @@ class FunctionalComponent(ComponentInstance):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -5533,7 +5533,7 @@ class FunctionalComponent(ComponentInstance):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -5826,7 +5826,7 @@ class SequenceConstraint(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -5839,8 +5839,8 @@ class SequenceConstraint(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -5850,7 +5850,7 @@ class SequenceConstraint(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -5862,7 +5862,7 @@ class SequenceConstraint(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -6136,8 +6136,8 @@ class ComponentDefinition(TopLevel):
         objects, and there exist ComponentDefinition objects lower in the hierarchy
         that refer to Sequence objects with the same encoding, then the elements
         properties of these Sequence objects SHOULD be consistent with each other,
-        such that well-defined mappings exist from the “lower level” elements to the
-        “higher level” elements. This mapping is also subject to any restrictions on
+        such that well-defined mappings exist from the lower level elements to the
+        higher level elements. This mapping is also subject to any restrictions on
         the positions of the Component objects in the hierarchy that are imposed by
         the SequenceAnnotation or SequenceConstraint objects contained by the
         ComponentDefinition objects in the hierarchy. The set of relations between
@@ -6187,7 +6187,7 @@ class ComponentDefinition(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -6200,8 +6200,8 @@ class ComponentDefinition(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -6211,7 +6211,7 @@ class ComponentDefinition(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -6223,7 +6223,7 @@ class ComponentDefinition(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -6882,7 +6882,7 @@ class Sequence(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -6895,8 +6895,8 @@ class Sequence(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -6906,7 +6906,7 @@ class Sequence(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -6918,7 +6918,7 @@ class Sequence(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -7173,7 +7173,7 @@ class Participation(Identified):
         then its roles property MUST contain the URI that identifies this term.
         Lastly, if the roles property of a Participation contains multiple URIs,
         then they MUST identify non-conflicting terms. For example, the SBO terms
-        “stimulator” and “inhibitor” would conflict.  
+        stimulator and inhibitor would conflict.  
 
     * `participant` : `ReferencedObject`  
         The participant property MUST specify precisely one FunctionalComponent
@@ -7197,7 +7197,7 @@ class Participation(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -7210,8 +7210,8 @@ class Participation(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -7221,7 +7221,7 @@ class Participation(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -7233,7 +7233,7 @@ class Participation(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -7458,7 +7458,7 @@ class Interaction(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -7471,8 +7471,8 @@ class Interaction(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -7482,7 +7482,7 @@ class Interaction(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -7494,7 +7494,7 @@ class Interaction(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -7650,7 +7650,7 @@ class Module(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -7663,8 +7663,8 @@ class Module(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -7674,7 +7674,7 @@ class Module(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -7686,7 +7686,7 @@ class Module(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -7892,7 +7892,7 @@ class Model(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -7905,8 +7905,8 @@ class Model(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -7916,7 +7916,7 @@ class Model(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -7928,7 +7928,7 @@ class Model(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -8097,7 +8097,7 @@ class Collection(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -8110,8 +8110,8 @@ class Collection(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -8121,7 +8121,7 @@ class Collection(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -8133,7 +8133,7 @@ class Collection(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -8267,9 +8267,9 @@ class ModuleDefinition(TopLevel):
     * `roles` : `URIProperty`  
         The roles property is an OPTIONAL set of URIs that clarifies the intended
         function of a ModuleDefinition. These URIs might identify descriptive
-        biological roles, such as “metabolic pathway” and “signaling cascade,” but
-        they can also identify identify “logical” roles, such as “inverter” or “AND
-        gate”, or other abstract roles for describing the function of design.
+        biological roles, such as metabolic pathway and signaling cascade, but
+        they can also identify identify logical roles, such as inverter or AND
+        gate, or other abstract roles for describing the function of design.
         Interpretation of the meaning of such roles currently depends on the
         software tools that read and write them.  
 
@@ -8336,7 +8336,7 @@ class ModuleDefinition(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -8349,8 +8349,8 @@ class ModuleDefinition(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -8360,7 +8360,7 @@ class ModuleDefinition(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -8372,7 +8372,7 @@ class ModuleDefinition(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -8642,7 +8642,7 @@ class Association(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -8655,8 +8655,8 @@ class Association(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -8666,7 +8666,7 @@ class Association(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -8678,7 +8678,7 @@ class Association(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -8804,7 +8804,7 @@ class Usage(Identified):
 
     How different entities are used in an Activity is specified with the Usage
     class, which is linked from an Activity through the qualifiedUsage relationship.
-    A Usage is then linked to an Entity through the Entity’s URI and the role of
+    A Usage is then linked to an Entity through the Entitys URI and the role of
     this entity is qualified with the hadRole property. When the wasDerivedFrom
     property is used together with the full provenance described here, the entity
     pointed at by the wasDerivedFrom property MUST be included in a Usage.  
@@ -8838,7 +8838,7 @@ class Usage(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -8851,8 +8851,8 @@ class Usage(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -8862,7 +8862,7 @@ class Usage(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -8874,7 +8874,7 @@ class Usage(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -9020,7 +9020,7 @@ class Agent(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -9033,8 +9033,8 @@ class Agent(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -9044,7 +9044,7 @@ class Agent(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -9056,7 +9056,7 @@ class Agent(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -9203,7 +9203,7 @@ class Plan(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -9216,8 +9216,8 @@ class Plan(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -9227,7 +9227,7 @@ class Plan(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -9239,7 +9239,7 @@ class Plan(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -9420,7 +9420,7 @@ class Activity(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -9433,8 +9433,8 @@ class Activity(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -9444,7 +9444,7 @@ class Activity(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -9456,7 +9456,7 @@ class Activity(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -10023,7 +10023,7 @@ class VariableComponent(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -10036,8 +10036,8 @@ class VariableComponent(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -10047,7 +10047,7 @@ class VariableComponent(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -10059,7 +10059,7 @@ class VariableComponent(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -10193,7 +10193,7 @@ class CombinatorialDerivation(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -10206,8 +10206,8 @@ class CombinatorialDerivation(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -10217,7 +10217,7 @@ class CombinatorialDerivation(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -10229,7 +10229,7 @@ class CombinatorialDerivation(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -10397,7 +10397,7 @@ class Attachment(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -10410,8 +10410,8 @@ class Attachment(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -10421,7 +10421,7 @@ class Attachment(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -10433,7 +10433,7 @@ class Attachment(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -10596,7 +10596,7 @@ class Implementation(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -10609,8 +10609,8 @@ class Implementation(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -10620,7 +10620,7 @@ class Implementation(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -10632,7 +10632,7 @@ class Implementation(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -10795,7 +10795,7 @@ class Design(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -10808,8 +10808,8 @@ class Design(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -10819,7 +10819,7 @@ class Design(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -10831,7 +10831,7 @@ class Design(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -11022,7 +11022,7 @@ class Build(Implementation):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -11035,8 +11035,8 @@ class Build(Implementation):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -11046,7 +11046,7 @@ class Build(Implementation):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -11058,7 +11058,7 @@ class Build(Implementation):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -11252,7 +11252,7 @@ class Test(Collection):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -11265,8 +11265,8 @@ class Test(Collection):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -11276,7 +11276,7 @@ class Test(Collection):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -11288,7 +11288,7 @@ class Test(Collection):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -11460,7 +11460,7 @@ class Analysis(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -11473,8 +11473,8 @@ class Analysis(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -11484,7 +11484,7 @@ class Analysis(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -11496,7 +11496,7 @@ class Analysis(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -11729,7 +11729,7 @@ class SampleRoster(Collection):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -11742,8 +11742,8 @@ class SampleRoster(Collection):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -11753,7 +11753,7 @@ class SampleRoster(Collection):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -11765,7 +11765,7 @@ class SampleRoster(Collection):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -11988,7 +11988,7 @@ class TranscriptionalRepressionInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -12001,8 +12001,8 @@ class TranscriptionalRepressionInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -12012,7 +12012,7 @@ class TranscriptionalRepressionInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -12024,7 +12024,7 @@ class TranscriptionalRepressionInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -12228,7 +12228,7 @@ class SmallMoleculeInhibitionInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -12241,8 +12241,8 @@ class SmallMoleculeInhibitionInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -12252,7 +12252,7 @@ class SmallMoleculeInhibitionInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -12264,7 +12264,7 @@ class SmallMoleculeInhibitionInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -12468,7 +12468,7 @@ class GeneProductionInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -12481,8 +12481,8 @@ class GeneProductionInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -12492,7 +12492,7 @@ class GeneProductionInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -12504,7 +12504,7 @@ class GeneProductionInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -12708,7 +12708,7 @@ class TranscriptionalActivationInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -12721,8 +12721,8 @@ class TranscriptionalActivationInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -12732,7 +12732,7 @@ class TranscriptionalActivationInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -12744,7 +12744,7 @@ class TranscriptionalActivationInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -12948,7 +12948,7 @@ class SmallMoleculeActivationInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -12961,8 +12961,8 @@ class SmallMoleculeActivationInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -12972,7 +12972,7 @@ class SmallMoleculeActivationInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -12984,7 +12984,7 @@ class SmallMoleculeActivationInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -13194,7 +13194,7 @@ class EnzymeCatalysisInteraction(Interaction):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -13207,8 +13207,8 @@ class EnzymeCatalysisInteraction(Interaction):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -13218,7 +13218,7 @@ class EnzymeCatalysisInteraction(Interaction):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -13230,7 +13230,7 @@ class EnzymeCatalysisInteraction(Interaction):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -13392,7 +13392,7 @@ class SearchQuery(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -13405,8 +13405,8 @@ class SearchQuery(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -13416,7 +13416,7 @@ class SearchQuery(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -13428,7 +13428,7 @@ class SearchQuery(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -13584,7 +13584,7 @@ class SearchResponse(TopLevel):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -13597,8 +13597,8 @@ class SearchResponse(TopLevel):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -13608,7 +13608,7 @@ class SearchResponse(TopLevel):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -13620,7 +13620,7 @@ class SearchResponse(TopLevel):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities
@@ -14089,7 +14089,7 @@ class Document(Identified):
         If the version property is used, then it is RECOMMENDED that version
         numbering follow the conventions of semantic versioning, particularly as
         implemented by Maven. This convention represents versions as sequences of
-        numbers and qualifiers that are separated by the characters “.” and “-” and
+        numbers and qualifiers that are separated by the characters . and - and
         are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
         For a full explanation, see the linked resources.  
 
@@ -14102,8 +14102,8 @@ class Document(Identified):
         MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
         via its own wasDerivedFrom property or form a cyclical chain of references
         via its wasDerivedFrom property and those of other SBOL objects. For
-        example, the reference chain “ A was derived from B and B was derived from
-        A” is cyclical.  
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
 
     * `wasGeneratedBy` : `ReferencedObject`  
         An Activity which generated this ComponentDefinition, eg., a design process
@@ -14113,7 +14113,7 @@ class Document(Identified):
         The name property is OPTIONAL and has a data type of String. This property
         is intended to be displayed to a human when visualizing an Identified
         object. If an Identified object lacks a name, then software tools SHOULD
-        instead display the object’s displayId or identity. It is RECOMMENDED that
+        instead display the objects displayId or identity. It is RECOMMENDED that
         software tools give users the ability to switch perspectives between name
         properties that are human-readable and displayId properties that are less
         human-readable, but are more likely to be unique.  
@@ -14125,7 +14125,7 @@ class Document(Identified):
 
     * `identity` : `URIProperty`  
         The identity property is REQUIRED by all Identified objects and has a data
-        type of URI. A given Identified object’s identity URI MUST be globally
+        type of URI. A given Identified objects identity URI MUST be globally
         unique among all other identity URIs. The identity of a compliant SBOL
         object MUST begin with a URI prefix that maps to a domain over which the
         user has control. Namely, the user can guarantee uniqueness of identities

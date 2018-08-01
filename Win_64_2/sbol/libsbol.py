@@ -854,7 +854,9 @@ class Config(_object):
 
     A class which contains global configuration variables for the libSBOL
     environment. Intended to be used like a static class, configuration variables
-    are accessed through the `Config' object.
+    are accessed through the Config::setOptions and Config::getOptions methods.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/config.h
 
     """
 
@@ -867,6 +869,7 @@ class Config(_object):
     def __init__(self):
         """
 
+        `Config()`  
 
         """
         this = _libsbol.new_Config()
@@ -893,102 +896,7 @@ class Config(_object):
     def setOption(*args):
         """
 
-
-        Configure options for online validation and conversion
-        Option  
-
-        Description  
-
-        Values  
-
-        validate  
-
-        Enable validation and conversion requests through the online validator  
-
-        True or False  
-
-        validatorURL  
-
-        The http request endpoint for validation  
-
-        A valid URL, set to  http://www.async.ece.utah.edu/sbol-validator/endpoint.php
-        by default  
-
-        output  
-
-        File format for conversion  
-
-        SBOL2, SBOL1, FASTA, GenBank  
-
-        diff  
-
-        Report differences between two files  
-
-        True or False  
-
-        noncompliantUrisAllowed  
-
-        If set to false, URIs in the file will not be checked for compliance  
-        with the SBOL specification  
-
-        True or False  
-
-        incompleteDocumentsAllowed  
-
-        If set to false, not all referenced objects must be described within  
-        the given main_file  
-
-        True or False  
-
-        bestPracticesCheck  
-
-        If set to true, the file is checked for the best practice rules set  
-        in the SBOL specification  
-
-        True or False  
-
-        failOnFirstError  
-
-        If set to true, the validator will fail at the first error  
-
-        True or False  
-
-        displayFullErrorStackTrace  
-
-        If set to true (and failOnFirstError is true) the validator will  
-        provide a stack trace for the first validation error  
-
-        True or False  
-
-        topLevelToConvert  
-
-
-
-        uriPrefix  
-
-        Required for conversion from FASTA and GenBank to SBOL1 or SBOL2,  
-        used to generate URIs  
-
-        True or False  
-
-        version  
-
-        Adds the version to all URIs and to the document  
-
-        A valid Maven version string  
-
-        wantFileBack  
-
-        Whether or not to return the file contents as a string  
-
-        True or False  
-
-        Parameters
-        ----------
-        * `option` :  
-            The option key  
-        * `value` :  
-            The option value  
+        `setOption(option, value)`  
 
         """
         return _libsbol.Config_setOption(*args)
@@ -998,6 +906,7 @@ class Config(_object):
     def getOption(option):
         """
 
+        `getOption(option) -> std::string`  
 
         Get current option value for online validation and conversion.  
 
@@ -1022,102 +931,7 @@ Config_swigregister(Config)
 def Config_setOption(*args):
     """
 
-
-    Configure options for online validation and conversion
-    Option  
-
-    Description  
-
-    Values  
-
-    validate  
-
-    Enable validation and conversion requests through the online validator  
-
-    True or False  
-
-    validatorURL  
-
-    The http request endpoint for validation  
-
-    A valid URL, set to  http://www.async.ece.utah.edu/sbol-validator/endpoint.php
-    by default  
-
-    output  
-
-    File format for conversion  
-
-    SBOL2, SBOL1, FASTA, GenBank  
-
-    diff  
-
-    Report differences between two files  
-
-    True or False  
-
-    noncompliantUrisAllowed  
-
-    If set to false, URIs in the file will not be checked for compliance  
-    with the SBOL specification  
-
-    True or False  
-
-    incompleteDocumentsAllowed  
-
-    If set to false, not all referenced objects must be described within  
-    the given main_file  
-
-    True or False  
-
-    bestPracticesCheck  
-
-    If set to true, the file is checked for the best practice rules set  
-    in the SBOL specification  
-
-    True or False  
-
-    failOnFirstError  
-
-    If set to true, the validator will fail at the first error  
-
-    True or False  
-
-    displayFullErrorStackTrace  
-
-    If set to true (and failOnFirstError is true) the validator will  
-    provide a stack trace for the first validation error  
-
-    True or False  
-
-    topLevelToConvert  
-
-
-
-    uriPrefix  
-
-    Required for conversion from FASTA and GenBank to SBOL1 or SBOL2,  
-    used to generate URIs  
-
-    True or False  
-
-    version  
-
-    Adds the version to all URIs and to the document  
-
-    A valid Maven version string  
-
-    wantFileBack  
-
-    Whether or not to return the file contents as a string  
-
-    True or False  
-
-    Parameters
-    ----------
-    * `option` :  
-        The option key  
-    * `value` :  
-        The option value  
+    `setOption(option, value)`  
 
     """
     return _libsbol.Config_setOption(*args)
@@ -1125,6 +939,7 @@ def Config_setOption(*args):
 def Config_getOption(option):
     """
 
+    `getOption(option) -> std::string`  
 
     Get current option value for online validation and conversion.  
 
@@ -1144,14 +959,12 @@ Config_register_extension_class = _libsbol.Config_register_extension_class
 def setHomespace(ns):
     """
 
+    `setHomespace(ns) -> SBOL_DECLSPEC void`  
 
-    Sets the default namespace for autocreation of URIs when a new SBOL object is
-    created.  
+    Global methods.  
 
-    Parameters
-    ----------
-    * `ns`:
-        Homespace
+    Set the default namespace for autocreation of URIs when a new SBOL object is
+    created  
 
     """
     return _libsbol.setHomespace(ns)
@@ -1159,8 +972,9 @@ def setHomespace(ns):
 def getHomespace():
     """
 
+    `getHomespace() -> SBOL_DECLSPEC std::string`  
 
-    Returns the current default namespace for autocreation of URIs when a new SBOL
+    Get the current default namespace for autocreation of URIs when a new SBOL
     object is created.  
 
     """
@@ -1169,6 +983,7 @@ def getHomespace():
 def hasHomespace():
     """
 
+    `hasHomespace() -> SBOL_DECLSPEC int`  
 
     Checks if a valid default namespace has been defined.  
 
@@ -1178,6 +993,7 @@ def hasHomespace():
 def setFileFormat(file_format):
     """
 
+    `setFileFormat(file_format) -> SBOL_DECLSPEC void`  
 
     Sets file format to use.  
 
@@ -1187,6 +1003,7 @@ def setFileFormat(file_format):
 def getFileFormat():
     """
 
+    `getFileFormat() -> std::string SBOL_DECLSPEC`  
 
     Returns currently accepted file format.  
 
@@ -1422,120 +1239,236 @@ IGEM_URI = _libsbol.IGEM_URI
 IGEM_STANDARD_ASSEMBLY = _libsbol.IGEM_STANDARD_ASSEMBLY
 
 def sbolRule10101(sbol_obj, arg):
+    """
+
+    `sbolRule10101(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.sbolRule10101(sbol_obj, arg)
-sbolRule10101 = _libsbol.sbolRule10101
 
 def sbolRule10102(sbol_obj, arg):
+    """
+
+    `sbolRule10102(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.sbolRule10102(sbol_obj, arg)
-sbolRule10102 = _libsbol.sbolRule10102
 
 def sbol_rule_10202(sbol_obj, arg):
+    """
+
+    `sbol_rule_10202(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.sbol_rule_10202(sbol_obj, arg)
-sbol_rule_10202 = _libsbol.sbol_rule_10202
 
 def sbol_rule_10204(sbol_obj, arg):
+    """
+
+    `sbol_rule_10204(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.sbol_rule_10204(sbol_obj, arg)
-sbol_rule_10204 = _libsbol.sbol_rule_10204
 
 def libsbol_rule_1(sbol_obj, arg):
+    """
+
+    `libsbol_rule_1(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_1(sbol_obj, arg)
-libsbol_rule_1 = _libsbol.libsbol_rule_1
 
 def libsbol_rule_2(sbol_obj, arg):
+    """
+
+    `libsbol_rule_2(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_2(sbol_obj, arg)
-libsbol_rule_2 = _libsbol.libsbol_rule_2
 
 def libsbol_rule_3(sbol_obj, arg):
+    """
+
+    `libsbol_rule_3(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_3(sbol_obj, arg)
-libsbol_rule_3 = _libsbol.libsbol_rule_3
 
 def libsbol_rule_4(sbol_obj, arg):
+    """
+
+    `libsbol_rule_4(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_4(sbol_obj, arg)
-libsbol_rule_4 = _libsbol.libsbol_rule_4
 
 def libsbol_rule_5(sbol_obj, arg):
+    """
+
+    `libsbol_rule_5(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_5(sbol_obj, arg)
-libsbol_rule_5 = _libsbol.libsbol_rule_5
 
 def libsbol_rule_6(sbol_obj, arg):
+    """
+
+    `libsbol_rule_6(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_6(sbol_obj, arg)
-libsbol_rule_6 = _libsbol.libsbol_rule_6
 
 def libsbol_rule_7(sbol_obj, arg):
+    """
+
+    `libsbol_rule_7(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_7(sbol_obj, arg)
-libsbol_rule_7 = _libsbol.libsbol_rule_7
 
 def libsbol_rule_8(sbol_obj, arg):
+    """
+
+    `libsbol_rule_8(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_8(sbol_obj, arg)
-libsbol_rule_8 = _libsbol.libsbol_rule_8
 
 def libsbol_rule_9(sbol_obj, arg):
+    """
+
+    `libsbol_rule_9(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_9(sbol_obj, arg)
-libsbol_rule_9 = _libsbol.libsbol_rule_9
 
 def libsbol_rule_10(sbol_obj, arg):
+    """
+
+    `libsbol_rule_10(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_10(sbol_obj, arg)
-libsbol_rule_10 = _libsbol.libsbol_rule_10
 
 def libsbol_rule_11(sbol_obj, arg):
+    """
+
+    `libsbol_rule_11(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_11(sbol_obj, arg)
-libsbol_rule_11 = _libsbol.libsbol_rule_11
 
 def libsbol_rule_12(sbol_obj, arg):
+    """
+
+    `libsbol_rule_12(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_12(sbol_obj, arg)
-libsbol_rule_12 = _libsbol.libsbol_rule_12
 
 def libsbol_rule_13(sbol_obj, arg):
+    """
+
+    `libsbol_rule_13(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_13(sbol_obj, arg)
-libsbol_rule_13 = _libsbol.libsbol_rule_13
 
 def libsbol_rule_14(sbol_obj, arg):
+    """
+
+    `libsbol_rule_14(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_14(sbol_obj, arg)
-libsbol_rule_14 = _libsbol.libsbol_rule_14
 
 def libsbol_rule_15(sbol_obj, arg):
+    """
+
+    `libsbol_rule_15(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_15(sbol_obj, arg)
-libsbol_rule_15 = _libsbol.libsbol_rule_15
 
 def libsbol_rule_16(sbol_obj, arg):
+    """
+
+    `libsbol_rule_16(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_16(sbol_obj, arg)
-libsbol_rule_16 = _libsbol.libsbol_rule_16
 
 def libsbol_rule_17(sbol_obj, arg):
+    """
+
+    `libsbol_rule_17(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_17(sbol_obj, arg)
-libsbol_rule_17 = _libsbol.libsbol_rule_17
 
 def libsbol_rule_18(sbol_obj, arg):
+    """
+
+    `libsbol_rule_18(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_18(sbol_obj, arg)
-libsbol_rule_18 = _libsbol.libsbol_rule_18
 
 def libsbol_rule_19(sbol_obj, arg):
+    """
+
+    `libsbol_rule_19(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_19(sbol_obj, arg)
-libsbol_rule_19 = _libsbol.libsbol_rule_19
 
 def libsbol_rule_20(sbol_obj, arg):
+    """
+
+    `libsbol_rule_20(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_20(sbol_obj, arg)
-libsbol_rule_20 = _libsbol.libsbol_rule_20
 
 def libsbol_rule_21(sbol_obj, arg):
+    """
+
+    `libsbol_rule_21(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_21(sbol_obj, arg)
-libsbol_rule_21 = _libsbol.libsbol_rule_21
 
 def libsbol_rule_22(sbol_obj, arg):
+    """
+
+    `libsbol_rule_22(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_22(sbol_obj, arg)
-libsbol_rule_22 = _libsbol.libsbol_rule_22
 
 def libsbol_rule_24(sbol_obj, arg):
+    """
+
+    `libsbol_rule_24(sbol_obj, arg) -> SBOL_DECLSPEC void`  
+
+    """
     return _libsbol.libsbol_rule_24(sbol_obj, arg)
-libsbol_rule_24 = _libsbol.libsbol_rule_24
 
 def is_alphanumeric_or_underscore(c):
+    """
+
+    `is_alphanumeric_or_underscore(c) -> bool`  
+
+    """
     return _libsbol.is_alphanumeric_or_underscore(c)
-is_alphanumeric_or_underscore = _libsbol.is_alphanumeric_or_underscore
 
 def is_not_alphanumeric_or_underscore(c):
+    """
+
+    `is_not_alphanumeric_or_underscore(c) -> bool`  
+
+    """
     return _libsbol.is_not_alphanumeric_or_underscore(c)
-is_not_alphanumeric_or_underscore = _libsbol.is_not_alphanumeric_or_underscore
 class _StringProperty(_object):
     """
 
@@ -1551,6 +1484,12 @@ class _StringProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -1562,27 +1501,7 @@ class _StringProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new__StringProperty(*args)
@@ -1596,10 +1515,7 @@ class _StringProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol._StringProperty_getTypeURI(self)
@@ -1608,6 +1524,7 @@ class _StringProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol._StringProperty_getOwner(self)
@@ -1616,8 +1533,9 @@ class _StringProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -1632,6 +1550,7 @@ class _StringProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -1647,16 +1566,9 @@ class _StringProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol._StringProperty_remove(self, index)
@@ -1665,8 +1577,9 @@ class _StringProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol._StringProperty_clear(self)
@@ -1675,37 +1588,73 @@ class _StringProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol._StringProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol._StringProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol._StringProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol._StringProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol._StringProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol._StringProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol._StringProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol._StringProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol._StringProperty_python_iter_get, _libsbol._StringProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol._StringProperty_addValidationRule(self, *args)
+
 _StringProperty_swigregister = _libsbol._StringProperty_swigregister
 _StringProperty_swigregister(_StringProperty)
 
@@ -1724,6 +1673,12 @@ class _IntProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -1735,27 +1690,7 @@ class _IntProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new__IntProperty(*args)
@@ -1769,10 +1704,7 @@ class _IntProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol._IntProperty_getTypeURI(self)
@@ -1781,6 +1713,7 @@ class _IntProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol._IntProperty_getOwner(self)
@@ -1789,8 +1722,9 @@ class _IntProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -1805,6 +1739,7 @@ class _IntProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -1820,16 +1755,9 @@ class _IntProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol._IntProperty_remove(self, index)
@@ -1838,8 +1766,9 @@ class _IntProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol._IntProperty_clear(self)
@@ -1848,37 +1777,73 @@ class _IntProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol._IntProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol._IntProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol._IntProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol._IntProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol._IntProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol._IntProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol._IntProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol._IntProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol._IntProperty_python_iter_get, _libsbol._IntProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol._IntProperty_addValidationRule(self, *args)
+
 _IntProperty_swigregister = _libsbol._IntProperty_swigregister
 _IntProperty_swigregister(_IntProperty)
 
@@ -1897,6 +1862,12 @@ class _FloatProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -1908,27 +1879,7 @@ class _FloatProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new__FloatProperty(*args)
@@ -1942,10 +1893,7 @@ class _FloatProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol._FloatProperty_getTypeURI(self)
@@ -1954,6 +1902,7 @@ class _FloatProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol._FloatProperty_getOwner(self)
@@ -1962,8 +1911,9 @@ class _FloatProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -1978,6 +1928,7 @@ class _FloatProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -1993,16 +1944,9 @@ class _FloatProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol._FloatProperty_remove(self, index)
@@ -2011,8 +1955,9 @@ class _FloatProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol._FloatProperty_clear(self)
@@ -2021,37 +1966,73 @@ class _FloatProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol._FloatProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol._FloatProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol._FloatProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol._FloatProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol._FloatProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol._FloatProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol._FloatProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol._FloatProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol._FloatProperty_python_iter_get, _libsbol._FloatProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol._FloatProperty_addValidationRule(self, *args)
+
 _FloatProperty_swigregister = _libsbol._FloatProperty_swigregister
 _FloatProperty_swigregister(_FloatProperty)
 
@@ -2065,6 +2046,12 @@ class URIProperty(_StringProperty):
 
     A URIProperty often contains a reference to an SBOL object or may contain an
     ontology term.  
+
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
 
     """
 
@@ -2081,6 +2068,7 @@ class URIProperty(_StringProperty):
     def __init__(self, *args):
         """
 
+        `URIProperty(property_owner, type_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_URIProperty(*args)
@@ -2092,8 +2080,9 @@ class URIProperty(_StringProperty):
     def get(self):
         """
 
+        `get() -> std::string`  
 
-        Basic getter for all SBOL literal properties.  
+        Get first URI.  
 
         Returns
         -------
@@ -2106,9 +2095,7 @@ class URIProperty(_StringProperty):
     def getAll(self):
         """
 
-
-        Retrieve a vector of objects from the URIProperty.
-
+        `getAll() -> std::vector< std::string >`  
 
         """
         val = _libsbol.URIProperty_getAll(self)
@@ -2146,6 +2133,12 @@ class TextProperty(_StringProperty):
 
     They can be used as member objects inside custom SBOL Extension classes.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
+
     """
 
     __swig_setmethods__ = {}
@@ -2161,6 +2154,7 @@ class TextProperty(_StringProperty):
     def __init__(self, *args):
         """
 
+        `TextProperty(property_owner, type_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_TextProperty(*args)
@@ -2172,6 +2166,7 @@ class TextProperty(_StringProperty):
     def get(self):
         """
 
+        `get() -> std::string`  
 
         Basic getter for all SBOL literal properties.  
 
@@ -2186,9 +2181,7 @@ class TextProperty(_StringProperty):
     def getAll(self):
         """
 
-
-        Retrieve a vector of objects from the TextProperty.
-
+        `getAll() -> std::vector< std::string >`  
 
         """
         val = _libsbol.TextProperty_getAll(self)
@@ -2226,6 +2219,12 @@ class IntProperty(_IntProperty):
 
     They can be used as member objects inside custom SBOL Extension classes.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
+
     """
 
     __swig_setmethods__ = {}
@@ -2241,6 +2240,7 @@ class IntProperty(_IntProperty):
     def __init__(self, *args):
         """
 
+        `IntProperty(property_owner, type_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_IntProperty(*args)
@@ -2252,8 +2252,9 @@ class IntProperty(_IntProperty):
     def get(self):
         """
 
+        `get() -> int`  
 
-        Basic getter for all SBOL literal properties.  
+        Get the integer value.  
 
         Returns
         -------
@@ -2266,9 +2267,7 @@ class IntProperty(_IntProperty):
     def getAll(self):
         """
 
-
-        Retrieve a vector of objects from the IntProperty.
-
+        `getAll() -> std::vector< int >`  
 
         """
         val = _libsbol.IntProperty_getAll(self)
@@ -2299,6 +2298,21 @@ IntProperty_swigregister = _libsbol.IntProperty_swigregister
 IntProperty_swigregister(IntProperty)
 
 class FloatProperty(_FloatProperty):
+    """
+
+
+    FloatProperty objects are used to contain floats.  
+
+    They can be used as member objects inside custom SBOL Extension classes.  
+
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [_FloatProperty]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -2310,6 +2324,11 @@ class FloatProperty(_FloatProperty):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `FloatProperty(property_owner, type_uri, lower_bound, upper_bound)`  
+
+        """
         this = _libsbol.new_FloatProperty(*args)
         try:
             self.this.append(this)
@@ -2317,9 +2336,26 @@ class FloatProperty(_FloatProperty):
             self.this = this
 
     def get(self):
+        """
+
+        `get() -> double`  
+
+        Get the float value.  
+
+        Returns
+        -------
+        An integer  
+
+        """
         return _libsbol.FloatProperty_get(self)
 
+
     def getAll(self):
+        """
+
+        `getAll() -> std::vector< double >`  
+
+        """
         val = _libsbol.FloatProperty_getAll(self)
 
         val = list(val)
@@ -2354,9 +2390,13 @@ class VersionProperty(TextProperty):
     Contains a version number for an SBOL object.  
 
     The VersionProperty follows Maven versioning semantics and includes a major,
-    minor, and patch version number. Specifically, libSBOL currently only supports
-    using '.' as a delimiter (e.g.: v2.0.1). If the user does not want to follow Maven
-    versioning, they can specify an arbitrary version string using the set() method.  
+    minor, and patch version number.  
+
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
 
     """
 
@@ -2376,6 +2416,7 @@ class VersionProperty(TextProperty):
     def incrementMajor(self):
         """
 
+        `incrementMajor()`  
 
         Increment major version.  
 
@@ -2386,6 +2427,7 @@ class VersionProperty(TextProperty):
     def incrementMinor(self):
         """
 
+        `incrementMinor()`  
 
         Increment minor version.  
 
@@ -2396,6 +2438,7 @@ class VersionProperty(TextProperty):
     def incrementPatch(self):
         """
 
+        `incrementPatch()`  
 
         Increment patch version.  
 
@@ -2406,6 +2449,7 @@ class VersionProperty(TextProperty):
     def decrementMinor(self):
         """
 
+        `decrementMinor()`  
 
         Decrement major version.  
 
@@ -2416,6 +2460,7 @@ class VersionProperty(TextProperty):
     def decrementMajor(self):
         """
 
+        `decrementMajor()`  
 
         Decrement major version.  
 
@@ -2426,6 +2471,7 @@ class VersionProperty(TextProperty):
     def decrementPatch(self):
         """
 
+        `decrementPatch()`  
 
         Decrement major version.  
 
@@ -2436,6 +2482,7 @@ class VersionProperty(TextProperty):
     def major(self):
         """
 
+        `major() -> int`  
 
         Get major version.  
 
@@ -2451,6 +2498,7 @@ class VersionProperty(TextProperty):
     def minor(self):
         """
 
+        `minor() -> int`  
 
         Get minor version.  
 
@@ -2466,6 +2514,7 @@ class VersionProperty(TextProperty):
     def patch(self):
         """
 
+        `patch() -> int`  
 
         Get patch version.  
 
@@ -2481,6 +2530,25 @@ class VersionProperty(TextProperty):
     def __init__(self, property_owner, type_uri, lower_bound, upper_bound, initial_value):
         """
 
+        `VersionProperty(property_owner, type_uri, lower_bound, upper_bound,
+            initial_value)`  
+
+        Initialize the VersionProperty with a version string.  
+
+        If a version is specified, it will be checked to confirm it follows Maven
+        versioning semantics.  
+
+        Parameters
+        ----------
+        * `type_uri` :  
+            An RDF type for the property which determines how the property is serialized
+            in SBOL files  
+        * `lower_bound` :  
+            A char flag (typically '0' or '1') indicating the minimum number of values
+            allowed for this property  
+        * `upper_bound` :  
+            A char flag (typically '1' or '*') indicating the maximum number of values
+            allowed for this property  
 
         """
         this = _libsbol.new_VersionProperty(property_owner, type_uri, lower_bound, upper_bound, initial_value)
@@ -2494,6 +2562,19 @@ VersionProperty_swigregister = _libsbol.VersionProperty_swigregister
 VersionProperty_swigregister(VersionProperty)
 
 class DateTimeProperty(TextProperty):
+    """
+
+
+    Contains a DateTime string following XML Schema.  
+
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/properties.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TextProperty]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -2505,6 +2586,11 @@ class DateTimeProperty(TextProperty):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `DateTimeProperty(property_owner, type_uri, lower_bound, upper_bound)`  
+
+        """
         this = _libsbol.new_DateTimeProperty(*args)
         try:
             self.this.append(this)
@@ -2512,7 +2598,15 @@ class DateTimeProperty(TextProperty):
             self.this = this
 
     def stampTime(self):
+        """
+
+        `stampTime() -> std::string`  
+
+        Set this property with the current time.  
+
+        """
         return _libsbol.DateTimeProperty_stampTime(self)
+
     __swig_destroy__ = _libsbol.delete_DateTimeProperty
     __del__ = lambda self: None
 DateTimeProperty_swigregister = _libsbol.DateTimeProperty_swigregister
@@ -2522,8 +2616,21 @@ class SBOLObject(_object):
     """
 
 
-    An SBOLObject converts a class data structure into an RDF triple store and
+    An SBOLObject converts a C++ class data structure into an RDF triple store and
     contains methods for serializing and parsing RDF triples.  
+
+    Attributes
+    ----------
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
 
     """
 
@@ -2552,6 +2659,7 @@ class SBOLObject(_object):
     def __init__(self, *args):
         """
 
+        `SBOLObject(uri="example")`  
 
         """
         this = _libsbol.new_SBOLObject(*args)
@@ -2565,6 +2673,7 @@ class SBOLObject(_object):
     def getTypeURI(self):
         """
 
+        `getTypeURI() -> rdf_type`  
 
         Returns
         -------
@@ -2577,6 +2686,7 @@ class SBOLObject(_object):
     def getClassName(self, type):
         """
 
+        `getClassName(type) -> std::string`  
 
         Returns
         -------
@@ -2589,8 +2699,10 @@ class SBOLObject(_object):
     def find(self, uri):
         """
 
+        `find(uri) -> SBOLObject *`  
 
-        Search this object recursively to see if an object with the URI already exists.  
+        Search this object recursively to see if an object or any child object with URI
+        already exists.  
 
         Parameters
         ----------
@@ -2608,6 +2720,7 @@ class SBOLObject(_object):
     def find_property(self, uri):
         """
 
+        `find_property(uri) -> SBOLObject *`  
 
         Search this object recursively to see if it contains a member property with the
         given RDF type.  
@@ -2627,14 +2740,54 @@ class SBOLObject(_object):
 
 
     def find_property_value(self, *args):
+        """
+
+        `find_property_value(uri, value, matches={}) -> std::vector< SBOLObject * >`  
+
+        Search this object recursively to see if it contains a member property with the
+        given RDF type and indicated property value.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The RDF type of the property to search for.  
+        * `value` :  
+            The property value to match  
+
+        Returns
+        -------
+        A vector containing all objects found that contain a member property with the
+        specified RDF type  
+
+        """
         return _libsbol.SBOLObject_find_property_value(self, *args)
 
+
     def find_reference(self, uri):
+        """
+
+        `find_reference(uri) -> std::vector< SBOLObject * >`  
+
+        Search this object recursively to see if it contains a member property with the
+        given RDF type and indicated property value.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A URI, either an ontology term or an object reference, to search for  
+
+        Returns
+        -------
+        A vector containing all objects found that contain the URI in a property value  
+
+        """
         return _libsbol.SBOLObject_find_reference(self, uri)
+
 
     def compare(self, comparand):
         """
 
+        `compare(comparand) -> int`  
 
         Compare two SBOL objects or Documents.  
 
@@ -2657,6 +2810,7 @@ class SBOLObject(_object):
     def getPropertyValue(self, property_uri):
         """
 
+        `getPropertyValue(property_uri) -> std::string`  
 
         Get the value of a custom annotation property by its URI.  
 
@@ -2676,6 +2830,7 @@ class SBOLObject(_object):
     def getPropertyValues(self, property_uri):
         """
 
+        `getPropertyValues(property_uri) -> std::vector< std::string >`  
 
         Get all values of a custom annotation property by its URI.  
 
@@ -2695,6 +2850,7 @@ class SBOLObject(_object):
     def getProperties(self):
         """
 
+        `getProperties() -> std::vector< std::string >`  
 
         Gets URIs for all properties contained by this object.  
 
@@ -2710,22 +2866,84 @@ class SBOLObject(_object):
 
 
     def setPropertyValue(self, property_uri, val):
+        """
+
+        `setPropertyValue(property_uri, val)`  
+
+        Set and overwrite the value for a user-defined annotation property.  
+
+        Either a literal or URI value  
+
+        """
         return _libsbol.SBOLObject_setPropertyValue(self, property_uri, val)
 
+
     def addPropertyValue(self, property_uri, val):
+        """
+
+        `addPropertyValue(property_uri, val)`  
+
+        Append a value to a user-defined annotation property.  
+
+        Either a literal or URI value  
+
+        """
         return _libsbol.SBOLObject_addPropertyValue(self, property_uri, val)
 
+
     def setAnnotation(self, property_uri, val):
+        """
+
+        `setAnnotation(property_uri, val)`  
+
+        Set the value for a user-defined annotation property.  
+
+        Synonymous with setPropertyValue  If the value is a URI, it should be surrounded
+        by angle brackets, else it will be interpreted as a literal value  
+
+        """
         return _libsbol.SBOLObject_setAnnotation(self, property_uri, val)
 
+
     def getAnnotation(self, property_uri):
+        """
+
+        `getAnnotation(property_uri) -> std::string`  
+
+        Get the value of a custom annotation property by its URI.  
+
+        Synonymous with getPropertyValue  
+
+        Parameters
+        ----------
+        * `property_uri` :  
+            The URI for the property  
+
+        Returns
+        -------
+        The value of the property or SBOL_ERROR_NOT_FOUND  
+
+        """
         return _libsbol.SBOLObject_getAnnotation(self, property_uri)
 
+
     def apply(self, callback_fn, user_data):
+        """
+
+        `apply(callback_fn, user_data)`  
+
+        """
         return _libsbol.SBOLObject_apply(self, callback_fn, user_data)
 
+
     def update_uri(self):
+        """
+
+        `update_uri()`  
+
+        """
         return _libsbol.SBOLObject_update_uri(self)
+
     __swig_setmethods__["PythonObjects"] = _libsbol.SBOLObject_PythonObjects_set
     __swig_getmethods__["PythonObjects"] = _libsbol.SBOLObject_PythonObjects_get
     if _newclass:
@@ -2735,7 +2953,13 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_register_extension_class(self, python_class, extension_name)
 
     def cast(self, python_class):
+        """
+
+        `cast() -> SBOLClass &`  
+
+        """
         return _libsbol.SBOLObject_cast(self, python_class)
+
 
     def __str__(self):
         return _libsbol.SBOLObject___str__(self)
@@ -2814,9 +3038,15 @@ class ReferencedObject(URIProperty):
     that refers to an an associated object.  
 
     The object it points to may be another resource in this Document or an external
-    reference, for example to an object in an external repository. In the SBOL
-    specification, association by reference is indicated in class diagrams by arrows
-    with open (white) diamonds.  
+    reference, for example to an object in an external repository or database. In
+    the SBOL specification, association by reference is indicated in class diagrams
+    by arrows with open (white) diamonds.  
+
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
 
     """
 
@@ -2833,6 +3063,8 @@ class ReferencedObject(URIProperty):
     def __init__(self, *args):
         """
 
+        `ReferencedObject(property_owner, type_uri, reference_type_uri, lower_bound,
+            upper_bound)`  
 
         """
         this = _libsbol.new_ReferencedObject(*args)
@@ -2844,8 +3076,22 @@ class ReferencedObject(URIProperty):
     def create(self, uri):
         """
 
+        `create(uri) -> std::string`  
+
+        Creates a new SBOL object corresponding to the RDF type specified in the
+        Property definition.  
 
         Creates another SBOL object derived from TopLevel and adds it to the Document.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A Uniform Resource Identifier (URI) for the new object, or a displayId if
+            operating in SBOL-compliant mode (library default)  
+
+        Returns
+        -------
+        The full URI of the created object  
 
         Parameters
         ----------
@@ -2872,8 +3118,9 @@ class ReferencedObject(URIProperty):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL ReferencedObject.  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -2900,13 +3147,14 @@ class ReferencedObject(URIProperty):
     def add(self, *args):
         """
 
+        `add(obj)`  
 
-        Appends the new value to a list of values, for properties that allow it.  
+        Append a URI reference of an object to the property store.  
 
         Parameters
         ----------
-        * `new_value` :  
-            A new string which will be added to a list of values.  
+        * `The` :  
+            referenced object  
 
         """
         val = _libsbol.ReferencedObject_add(self, *args)
@@ -2927,6 +3175,7 @@ class ReferencedObject(URIProperty):
     def addReference(self, uri):
         """
 
+        `addReference(uri)`  
 
         """
         return _libsbol.ReferencedObject_addReference(self, uri)
@@ -2935,6 +3184,7 @@ class ReferencedObject(URIProperty):
     def setReference(self, uri):
         """
 
+        `setReference(uri)`  
 
         """
         return _libsbol.ReferencedObject_setReference(self, uri)
@@ -2974,6 +3224,71 @@ class Identified(SBOLObject):
     unique string that identifies and refers to a specific object in an SBOL
     document or in an online resource such as a DNA repository.  
 
+    Attributes
+    ----------
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/identified.h
+
     """
 
     __swig_setmethods__ = {}
@@ -2987,6 +3302,11 @@ class Identified(SBOLObject):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Identified(type_uri=SBOL_IDENTIFIED, uri="example", version=VERSION_STRING)`  
+
+        """
         this = _libsbol.new_Identified(*args)
         try:
             self.this.append(this)
@@ -3096,6 +3416,73 @@ class TopLevel(Identified):
     All SBOL classes derived from TopLevel appear as top level nodes in the RDF/XML
     document tree and SBOL files. An abstract class.  
 
+    Attributes
+    ----------
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/toplevel.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3115,6 +3502,7 @@ class TopLevel(Identified):
     def __init__(self, *args):
         """
 
+        `TopLevel(type_uri=SBOL_TOP_LEVEL, uri="example", version=VERSION_STRING)`  
 
         """
         this = _libsbol.new_TopLevel(*args)
@@ -3126,7 +3514,13 @@ class TopLevel(Identified):
     __del__ = lambda self: None
 
     def initialize(self, uri):
+        """
+
+        `initialize(uri)`  
+
+        """
         return _libsbol.TopLevel_initialize(self, uri)
+
 
 
     def __getattribute__(self,name):
@@ -3201,6 +3595,89 @@ class Location(Identified):
     The Location class specifies the strand orientation of a Component and can be
     further extended by the Range, Cut, and GenericLocation classes.  
 
+    Attributes
+    ----------
+    * `orientation` : `URIProperty`  
+        The orientation indicates how a region of double-stranded DNA represented by
+        the parent SequenceAnnotation and its associated Component are oriented.  
+
+        The orientation may be one of the following values. By default it is set to
+        SBOL_ORIENTATION_INLINE.
+        Orientation URI  
+
+        libSBOL Symbol  
+
+        http://sbols.org/v2#inline  
+
+        SBOL_ORIENTATION_INLINE  
+
+        http://sbols.org/v2#reverseComplement  
+
+        SBOL_ORIENTATION_REVERSE_COMPLEMENT  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/location.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3216,6 +3693,8 @@ class Location(Identified):
     def __init__(self, *args):
         """
 
+        `Location(type=SBOL_LOCATION, uri="example",
+            orientation=SBOL_ORIENTATION_INLINE)`  
 
         """
         this = _libsbol.new_Location(*args)
@@ -3305,6 +3784,97 @@ class Range(Location):
     Sequence. Note that the index of the first location is 1, as is typical practice
     in biology, rather than 0, as is typical practice in computer science.  
 
+    Attributes
+    ----------
+    * `start` : `IntProperty`  
+        Specifies the inclusive starting position of a sequence region. It must be 1
+        or greater.  
+
+    * `end` : `IntProperty`  
+        Specifies the inclusive end position of a sequence region. It must be equal
+        to or greater than the start.  
+
+    * `orientation` : `URIProperty`  
+        The orientation indicates how a region of double-stranded DNA represented by
+        the parent SequenceAnnotation and its associated Component are oriented.  
+
+        The orientation may be one of the following values. By default it is set to
+        SBOL_ORIENTATION_INLINE.
+        Orientation URI  
+
+        libSBOL Symbol  
+
+        http://sbols.org/v2#inline  
+
+        SBOL_ORIENTATION_INLINE  
+
+        http://sbols.org/v2#reverseComplement  
+
+        SBOL_ORIENTATION_REVERSE_COMPLEMENT  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/location.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3320,10 +3890,12 @@ class Range(Location):
     def __init__(self, *args):
         """
 
+        `Range(uri="example", start=1, end=2)`  
 
         Construct a Range.  
 
-        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
+        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
+        Range > instead.  
 
         Parameters
         ----------
@@ -3353,22 +3925,101 @@ class Range(Location):
         end = _swig_property(_libsbol.Range_end_get, _libsbol.Range_end_set)
 
     def precedes(self, comparand):
+        """
+
+        `precedes(comparand) -> int`  
+
+        Calculates how many bases separate these Ranges  Another Range object.  
+
+        Returns
+        -------
+        The number of bases by which this Range precedes the comparand, or 0 if it does
+        not precede  
+
+        """
         return _libsbol.Range_precedes(self, comparand)
 
+
     def follows(self, comparand):
+        """
+
+        `follows(comparand) -> int`  
+
+        Calculates how many bases separate these Ranges  Another Range object.  
+
+        Returns
+        -------
+        The number of bases by which this Range follows the comparand, or 0 if it does
+        not follow  
+
+        """
         return _libsbol.Range_follows(self, comparand)
 
+
     def contains(self, comparand):
+        """
+
+        `contains(comparand) -> int`  
+
+        Calculates how many bases of the comparand are contained by this Range.  
+
+        Another Range object  
+
+        Returns
+        -------
+        The number of bases which are contained (equivalent to the length of the
+        comparand), or 0 if it is not contained.  
+
+        """
         return _libsbol.Range_contains(self, comparand)
 
+
     def overlaps(self, comparand):
+        """
+
+        `overlaps(comparand) -> int`  
+
+        Calculates how many bases separate this Range from the comparand.  
+
+        Another Range object  
+
+        Returns
+        -------
+        The number of bases by which the Ranges overlap. If they overlap, this is always
+        a positive number regardless of direction. If they do not overlap, returns zero  
+
+        """
         return _libsbol.Range_overlaps(self, comparand)
 
+
     def length(self):
+        """
+
+        `length() -> int`  
+
+        Returns the length of a Range.  
+
+        """
         return _libsbol.Range_length(self)
 
+
     def adjoins(self, comparand):
+        """
+
+        `adjoins(comparand) -> int`  
+
+        Indicate if these Ranges represent adjacent intervals.  
+
+        Another Range object  
+
+        Returns
+        -------
+        1 if these Ranges adjoin or border each other, 0 if they are separated by an
+        intervening Range  
+
+        """
         return _libsbol.Range_adjoins(self, comparand)
+
     __swig_destroy__ = _libsbol.delete_Range
     __del__ = lambda self: None
 
@@ -3443,7 +4094,96 @@ class Cut(Location):
 
 
     The Cut class specifies a location between two coordinates of a Sequence's
-    elements. 
+    elements. class Cut : public Location.  
+
+    Attributes
+    ----------
+    * `at` : `IntProperty`  
+        This property specifies the location between this nucleotide coordinate (or
+        other sequence element) and the nucleotide coordinate immediately following
+        it. When equal to zero, the specified region is immediately before the first
+        nucleotide or character in the elements.  
+
+    * `orientation` : `URIProperty`  
+        The orientation indicates how a region of double-stranded DNA represented by
+        the parent SequenceAnnotation and its associated Component are oriented.  
+
+        The orientation may be one of the following values. By default it is set to
+        SBOL_ORIENTATION_INLINE.
+        Orientation URI  
+
+        libSBOL Symbol  
+
+        http://sbols.org/v2#inline  
+
+        SBOL_ORIENTATION_INLINE  
+
+        http://sbols.org/v2#reverseComplement  
+
+        SBOL_ORIENTATION_REVERSE_COMPLEMENT  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/location.h
 
     """
 
@@ -3460,10 +4200,12 @@ class Cut(Location):
     def __init__(self, *args):
         """
 
+        `Cut(uri="example", at=0)`  
 
         Construct a Cut.  
 
-        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
+        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
+        Cut > instead.  
 
         Parameters
         ----------
@@ -3564,6 +4306,89 @@ class GenericLocation(Location):
     SequenceAnnotation and any associated Component when their parent
     ComponentDefinition is a partial design that lacks a Sequence.  
 
+    Attributes
+    ----------
+    * `orientation` : `URIProperty`  
+        The orientation indicates how a region of double-stranded DNA represented by
+        the parent SequenceAnnotation and its associated Component are oriented.  
+
+        The orientation may be one of the following values. By default it is set to
+        SBOL_ORIENTATION_INLINE.
+        Orientation URI  
+
+        libSBOL Symbol  
+
+        http://sbols.org/v2#inline  
+
+        SBOL_ORIENTATION_INLINE  
+
+        http://sbols.org/v2#reverseComplement  
+
+        SBOL_ORIENTATION_REVERSE_COMPLEMENT  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/location.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3579,10 +4404,12 @@ class GenericLocation(Location):
     def __init__(self, *args):
         """
 
+        `GenericLocation(uri="example")`  
 
         Construct a GenericLocation.  
 
-        If operating in SBOL-compliant mode, use SequenceAnnotation.locations.create instead.  
+        If operating in SBOL-compliant mode, use SequenceAnnotation::locations.create <
+        GenericLocation > instead.  
 
         Parameters
         ----------
@@ -3613,6 +4440,111 @@ class SequenceAnnotation(Identified):
     ComponentDefinition through association with the Component objects contained by
     this ComponentDefinition.  
 
+    Attributes
+    ----------
+    * `component` : `ReferencedObject`  
+        The component property is OPTIONAL and has a data type of URI. This URI MUST
+        refer to a Component that is contained by the same parent
+        ComponentDefinition that contains the SequenceAnnotation. In this way, the
+        properties of the SequenceAnnotation, such as its description and locations,
+        are associated with part of the substructure of its parent
+        ComponentDefinition.  
+
+    * `locations` : `OwnedObject< Location >`  
+        The locations property is a REQUIRED set of one or more Location objects
+        that indicate which elements of a Sequence are described by the
+        SequenceAnnotation.  
+
+        Allowing multiple Location objects on a single SequenceAnnotation is
+        intended to enable representation of discontinuous regions (for example, a
+        Component encoded across a set of exons with interspersed introns). As such,
+        the Location objects of a single SequenceAnnotation SHOULD NOT specify
+        overlapping regions, since it is not clear what this would mean. There is no
+        such concern with different SequenceAnnotation objects, however, which can
+        freely overlap in Location (for example, specifying overlapping linkers for
+        sequence assembly).  
+
+    * `roles` : `URIProperty`  
+        Alternatively to describing substructure, a SequenceAnnotation can be
+        utilized to identify a feature, such as a GenBank feature, of a specified
+        Sequence.  
+
+        In this use case, the SequenceAnnotation MUST NOT have a component property,
+        but instead it would have a roles property. The roles property comprises an
+        OPTIONAL set of zero or more URIs describing the specified sequence feature
+        being annotated. If provided, these role URIs MUST identify terms from
+        appropriate ontologies. Roles are not restricted to describing biological
+        function; they may annotate Sequences function in any domain for which an
+        ontology exists. It is RECOMMENDED that these role URIs identify terms that
+        are compatible with the type properties of this SequenceAnnotations parent
+        ComponentDefinition. For example, a role of a SequenceAnnotation which
+        belongs to a ComponentDefinition of type DNA might refer to terms from the
+        Sequence Ontology. See documentation for ComponentDefinition for a table of
+        recommended ontology terms.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/sequenceannotation.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3628,6 +4560,7 @@ class SequenceAnnotation(Identified):
     def __init__(self, *args):
         """
 
+        `SequenceAnnotation(uri="example", version=VERSION_STRING)`  
 
         Construct a ComponentDefinition.  
 
@@ -3661,22 +4594,66 @@ class SequenceAnnotation(Identified):
         roles = _swig_property(_libsbol.SequenceAnnotation_roles_get, _libsbol.SequenceAnnotation_roles_set)
 
     def precedes(self, *args):
+        """
+
+        `precedes(comparand_list) -> std::vector< SequenceAnnotation * >`  
+
+        """
         return _libsbol.SequenceAnnotation_precedes(self, *args)
 
+
     def follows(self, *args):
+        """
+
+        `follows(comparand_list) -> std::vector< SequenceAnnotation * >`  
+
+        """
         return _libsbol.SequenceAnnotation_follows(self, *args)
 
+
     def contains(self, *args):
+        """
+
+        `contains(comparand_list) -> std::vector< SequenceAnnotation * >`  
+
+        """
         return _libsbol.SequenceAnnotation_contains(self, *args)
 
+
     def overlaps(self, *args):
+        """
+
+        `overlaps(comparand_list) -> std::vector< SequenceAnnotation * >`  
+
+        """
         return _libsbol.SequenceAnnotation_overlaps(self, *args)
 
+
     def extract(self, start_reference=1):
+        """
+
+        `extract(start_reference=1) -> ComponentDefinition &`  
+
+        Convert a SequenceAnnotation to a subcomponent.  
+
+        Returns
+        -------
+        A ComponentDefinition representing the subcomponent  
+
+        """
         return _libsbol.SequenceAnnotation_extract(self, start_reference)
 
+
     def length(self):
+        """
+
+        `length() -> int`  
+
+        The length of a SequenceAnnotation in base coordinates.  
+
+        """
         return _libsbol.SequenceAnnotation_length(self)
+
     __swig_destroy__ = _libsbol.delete_SequenceAnnotation
     __del__ = lambda self: None
 
@@ -3759,6 +4736,119 @@ class MapsTo(Identified):
     ModuleDefinition, for example mapping a generic gene to an explicit component
     with a name and sequence.  
 
+    Attributes
+    ----------
+    * `refinement` : `URIProperty`  
+        Each MapsTo object MUST specify the relationship between its local and
+        remote ComponentInstance objects using one of the REQUIRED refinement URIs
+        provided in the table below.  
+
+        Refinement URI  
+
+        libSBOL Symbol  
+
+        Description  
+
+        http://sbols.org/v2#useRemote  
+
+        SBOL_REFINEMENT_USE_REMOTE  
+
+        All references to the local ComponentInstance MUST dereference to the  
+        remote ComponentInstance instead.  
+
+        http://sbols.org/v2#useLocal  
+
+        SBOL_REFINEMENT_USE_LOCAL  
+
+        In the context of the ComponentDefinition or ModuleDefinition that contains  
+        the owner of the MapsTo, all references to the remote ComponentInstance  
+        MUST dereference to the local ComponentInstance instead.  
+
+        http://sbols.org/v2#verifyIdentical  
+
+        SBOL_REFINEMENT_VERIFY_IDENTICAL  
+
+        The definition properties of the local and remoteComponentInstance objects  
+        MUST refer to the same ComponentDefinition.  
+
+        http://sbols.org/v2#merge  
+
+        SBOL_REFINEMENT_MERGE_DESCRIPTION  
+
+        In the context of the ComponentDefinition or ModuleDefinition that  
+        contains the owner of the MapsTo, all references to the local  
+        ComponentInstance or the remote ComponentInstance MUST dereference  
+        to both objects.  
+
+    * `local` : `ReferencedObject`  
+        The identity of the lower level ComponentInstance.  
+
+    * `remote` : `ReferencedObject`  
+        The identity of the higher level ComponentInstance.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/mapsto.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3786,6 +4876,8 @@ class MapsTo(Identified):
     def __init__(self, *args):
         """
 
+        `MapsTo(uri="example", local="", remote="",
+            refinement=SBOL_REFINEMENT_VERIFY_IDENTICAL)`  
 
         Construct a MapsTo.  
 
@@ -3887,6 +4979,105 @@ class ComponentInstance(Identified):
     """
 
 
+    Attributes
+    ----------
+    * `definition` : `ReferencedObject`  
+        The definition property is a REQUIRED URI that refers to the
+        ComponentDefinition of the ComponentInstance.  
+
+        As described in the previous section, this ComponentDefinition effectively
+        provides information about the types and roles of the ComponentInstance. The
+        definition property MUST NOT refer to the same ComponentDefinition as the
+        one that contains the ComponentInstance. Furthermore, ComponentInstance
+        objects MUST NOT form a cyclical chain of references via their definition
+        properties and the ComponentDefinition objects that contain them. For
+        example, consider the ComponentInstance objects A and B and the
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
+
+    * `access` : `URIProperty`  
+        The access property is a REQUIRED URI that indicates whether the
+        ComponentInstance can be referred to remotely by a MapsTo.  
+
+        The value of the access property MUST be one of the following URIs.
+        Access URI  
+
+        Description  
+
+        http://sbols.org/v2#public  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+        http://sbols.org/v2#private  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+    * `mapsTos` : `OwnedObject< MapsTo >`  
+        The mapsTos property is OPTIONAL and MAY contain a set of MapsTo objects
+        that refer to and link together ComponentInstance objects (both Component
+        objects and FunctionalComponent objects) within a larger design.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
     """
 
     __swig_setmethods__ = {}
@@ -3928,6 +5119,161 @@ class Component(ComponentInstance):
     the ComponentDefinition of the promoter Component could contain Component
     objects defined as various operator sites.  
 
+    Attributes
+    ----------
+    * `roles` : `URIProperty`  
+        The expected purpose and function of a genetic part are described by the
+        roles property of ComponentDefinition.  
+
+        However, the same building block might be used for a different purpose in an
+        actual design. In other words, purpose and function are sometimes determined
+        by context. The roles property comprises an OPTIONAL set of zero or more
+        role URIs describing the purpose or potential function of this Components
+        included sub-ComponentDefinition in the context of its parent
+        ComponentDefinition. If provided, these role URIs MUST identify terms from
+        appropriate ontologies. Roles are not restricted to describing biological
+        function; they may annotate a Components function in any domain for which
+        an ontology exists. It is RECOMMENDED that these role URIs identify terms
+        that are compatible with the type properties of both this Components parent
+        ComponentDefinition and its included sub-ComponentDefinition. For example, a
+        role of a Component which belongs to a ComponentDefinition of type DNA and
+        includes a sub-ComponentDefinition of type DNA might refer to terms from the
+        Sequence Ontology. See documentation for ComponentDefinition for a table of
+        recommended ontology terms for roles.  
+
+    * `roleIntegration` : `URIProperty`  
+        A roleIntegration specifies the relationship between a Component instances
+        own set of roles and the set of roles on the included sub-
+        ComponentDefinition.  
+
+        The roleIntegration property has a data type of URI. A Component instance
+        with zero roles MAY OPTIONALLY specify a roleIntegration. A Component
+        instance with one or more roles MUST specify a roleIntegration from the
+        table below If zero Component roles are given and no Component
+        roleIntegration is given, then http://sbols.org/v2#mergeRoles is assumed. It
+        is RECOMMENDED to specify a set of Component roles only if the integrated
+        result set of roles would differ from the set of roles belonging to this
+        Components included sub-ComponentDefinition.
+        roleIntegration URI  
+
+        Description  
+
+        http://sbols.org/v2#overrideRoles  
+
+        In the context of this Component, ignore any roles given for the included
+        sub-ComponentDefinition.  
+
+
+        Instead use only the set of zero or more roles given for this Component.  
+
+        http://sbols.org/v2#mergeRoles  
+
+        Use the union of the two sets: both the set of zero or more roles given for
+        this Component as well  
+
+
+        as the set of zero or more roles given for the included sub-
+        ComponentDefinition.  
+
+    * `definition` : `ReferencedObject`  
+        The definition property is a REQUIRED URI that refers to the
+        ComponentDefinition of the ComponentInstance.  
+
+        As described in the previous section, this ComponentDefinition effectively
+        provides information about the types and roles of the ComponentInstance. The
+        definition property MUST NOT refer to the same ComponentDefinition as the
+        one that contains the ComponentInstance. Furthermore, ComponentInstance
+        objects MUST NOT form a cyclical chain of references via their definition
+        properties and the ComponentDefinition objects that contain them. For
+        example, consider the ComponentInstance objects A and B and the
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
+
+    * `access` : `URIProperty`  
+        The access property is a REQUIRED URI that indicates whether the
+        ComponentInstance can be referred to remotely by a MapsTo.  
+
+        The value of the access property MUST be one of the following URIs.
+        Access URI  
+
+        Description  
+
+        http://sbols.org/v2#public  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+        http://sbols.org/v2#private  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+    * `mapsTos` : `OwnedObject< MapsTo >`  
+        The mapsTos property is OPTIONAL and MAY contain a set of MapsTo objects
+        that refer to and link together ComponentInstance objects (both Component
+        objects and FunctionalComponent objects) within a larger design.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/component.h
+
     """
 
     __swig_setmethods__ = {}
@@ -3951,6 +5297,8 @@ class Component(ComponentInstance):
     def __init__(self, *args):
         """
 
+        `Component(uri="example", definition="", access=SBOL_ACCESS_PUBLIC,
+            version=VERSION_STRING)`  
 
         Construct a Component.  
 
@@ -4056,6 +5404,144 @@ class FunctionalComponent(ComponentInstance):
     how the that describes how the FunctionalComponent interacts with others and
     summarizes their aggregate function.  
 
+    Attributes
+    ----------
+    * `direction` : `URIProperty`  
+        Each FunctionalComponent MUST specify via the direction property whether it
+        serves as an input, output, both, or neither for its parent ModuleDefinition
+        object.  
+
+        The value for this property MUST be one of the URIs given in the table
+        below.
+        Direction URI  
+
+        Description  
+
+        LibSBOL Symbol  
+
+        http://sbols.org/v2#in  
+
+        Indicates that the FunctionalComponent is an input.  
+
+        SBOL_DIRECTION_IN  
+
+        http://sbols.org/v2#out  
+
+        Indicates that the FunctionalComponent is an output.  
+
+        SBOL_DIRECTION_OUT  
+
+        http://sbols.org/v2#inout  
+
+        Indicates that the FunctionalComponent is both an input and output  
+
+        SBOL_DIRECTION_IN_OUT  
+
+        http://sbols.org/v2#none  
+
+        Indicates that the FunctionalComponent is neither an input or output.  
+
+        SBOL_DIRECTION_NONE  
+
+    * `definition` : `ReferencedObject`  
+        The definition property is a REQUIRED URI that refers to the
+        ComponentDefinition of the ComponentInstance.  
+
+        As described in the previous section, this ComponentDefinition effectively
+        provides information about the types and roles of the ComponentInstance. The
+        definition property MUST NOT refer to the same ComponentDefinition as the
+        one that contains the ComponentInstance. Furthermore, ComponentInstance
+        objects MUST NOT form a cyclical chain of references via their definition
+        properties and the ComponentDefinition objects that contain them. For
+        example, consider the ComponentInstance objects A and B and the
+        ComponentDefinition objects X and Y . The reference chain X contains A, A
+        isdefinedby Y, Y contains B, and B isdefinedby X iscyclical.  
+
+    * `access` : `URIProperty`  
+        The access property is a REQUIRED URI that indicates whether the
+        ComponentInstance can be referred to remotely by a MapsTo.  
+
+        The value of the access property MUST be one of the following URIs.
+        Access URI  
+
+        Description  
+
+        http://sbols.org/v2#public  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+        http://sbols.org/v2#private  
+
+        The ComponentInstance MAY be referred to by remote MapsTo objects  
+
+    * `mapsTos` : `OwnedObject< MapsTo >`  
+        The mapsTos property is OPTIONAL and MAY contain a set of MapsTo objects
+        that refer to and link together ComponentInstance objects (both Component
+        objects and FunctionalComponent objects) within a larger design.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/component.h
+
     """
 
     __swig_setmethods__ = {}
@@ -4075,6 +5561,9 @@ class FunctionalComponent(ComponentInstance):
     def __init__(self, *args):
         """
 
+        `FunctionalComponent(uri="example", definition="",
+            access=SBOL_ACCESS_PUBLIC, direction=SBOL_DIRECTION_NONE,
+            version=VERSION_STRING)`  
 
         Construct a FunctionalComponent.  
 
@@ -4109,6 +5598,7 @@ class FunctionalComponent(ComponentInstance):
     def connect(self, interface_component):
         """
 
+        `connect(interface_component)`  
 
         This method connects module inputs and outputs.  
 
@@ -4128,6 +5618,7 @@ class FunctionalComponent(ComponentInstance):
     def mask(self, masked_component):
         """
 
+        `mask(masked_component)`  
 
         This method is used to state that FunctionalComponents in separate
         ModuleDefinitions are functionally equivalent.  
@@ -4147,11 +5638,31 @@ class FunctionalComponent(ComponentInstance):
 
 
     def override(self, masked_component):
+        """
+
+        `override(masked_component)`  
+
+        This method is used to state that FunctionalComponents in separate
+        ModuleDefinitions are functionally equivalent.  
+
+        Using this method will override the FunctionalComponent in the argument with the
+        FunctionalComponent calling the method. This is useful for overriding a generic,
+        template component with an explicitly defined component. This convenience method
+        auto-constructs a MapsTo object. See Biosystem Design for an example  
+
+        Parameters
+        ----------
+        * `masked_component` :  
+            The FunctionalComponent that is being masked (over-ridden)  
+
+        """
         return _libsbol.FunctionalComponent_override(self, masked_component)
+
 
     def isMasked(self):
         """
 
+        `isMasked() -> int`  
 
         Used to tell if a FunctionalComponent is linked to an equivalent
         FunctionalComponent in another ModuleDefinition.  
@@ -4244,6 +5755,122 @@ class SequenceConstraint(Identified):
     precise positions or orientations of their contained Component objects are not
     yet fully determined.  
 
+    Attributes
+    ----------
+    * `subject` : `ReferencedObject`  
+        The subject property is REQUIRED and MUST contain a URI that refers to a
+        Component contained by the same parent ComponentDefinition that contains the
+        SequenceConstraint.  
+
+    * `object` : `ReferencedObject`  
+        The object property is REQUIRED and MUST contain a URI that refers to a
+        Component contained by the same parent ComponentDefinition that contains the
+        SequenceConstraint. This Component MUST NOT be the same Component that the
+        SequenceConstraint refers to via its subject property.  
+
+    * `restriction` : `URIProperty`  
+        The restriction property is REQUIRED and has a data type of URI.  
+
+        This property MUST indicate the type of structural restriction on the
+        relative, sequence-based positions or orientations of the subject and object
+        Component objects. The URI value of this property SHOULD come from the
+        RECOMMENDED URIs in the following table.
+        libSBOL Symbol  
+
+        Description  
+
+        SBOL_RESTRICTION_PRECEDES  
+
+        The position of the subject Component MUST precede that of the object
+        Component.  
+         If each one is associated with a SequenceAnnotation, then the
+        SequenceAnnotation  
+        associated with the subject Component MUST specify a region that starts
+        before  
+        the region specified by the SequenceAnnotation associated with the object
+        Component.  
+
+        SBOL_RESTRICTION_SAME_ORIENTATION_AS  
+
+        The subject and object Component objects MUST have the same orientation. If
+        each  
+        one is associated with a SequenceAnnotation, then the orientation URIs of
+        the  Location objects of the first SequenceAnnotation MUST be among those of
+        the  
+        second SequenceAnnotation, and vice versa.  
+
+        SBOL_RESTRICTION_OPPOSITE_ORIENTATION_AS  
+
+        The subject and object Component objects MUST have opposite orientations. If  
+        each one is associated with a SequenceAnnotation, then the orientation URIs
+        of  
+        the Location objects of one SequenceAnnotation MUST NOT be among those of
+        the  
+        other SequenceAnnotation.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/sequenceconstraint.h
+
     """
 
     __swig_setmethods__ = {}
@@ -4259,6 +5886,8 @@ class SequenceConstraint(Identified):
     def __init__(self, *args):
         """
 
+        `SequenceConstraint(uri="example", subject="", object="",
+            restriction=SBOL_RESTRICTION_PRECEDES, version=VERSION_STRING)`  
 
         Construct a SequenceConstraint.  
 
@@ -4377,7 +6006,231 @@ class ComponentDefinition(TopLevel):
     The primary usage of this class is to represent structural entities with
     designed sequences, such as DNA, RNA, and proteins, but it can also be used to
     represent any other entity that is part of a design, such as small molecules,
-    proteins, and complexes
+    proteins, and complexes  
+
+    Attributes
+    ----------
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that specifies the category of
+        biochemical or physical entity (for example DNA, protein, or small molecule)
+        that a ComponentDefinition object abstracts for the purpose of engineering
+        design.  
+
+        The types property of every ComponentDefinition MUST contain one or more
+        URIs that MUST identify terms from appropriate ontologies, such as the
+        BioPAX ontology or the ontology of Chemical Entities of Biological Interest.
+        See the table below for examples.
+        Type  
+
+        URI for BioPAX Term  
+
+        LibSBOL symbol  
+
+        DNA  
+
+        http://www.biopax.org/release/biopax-level3.owl#DnaRegion  
+
+        BIOPAX_DNA  
+
+        RNA  
+
+        http://www.biopax.org/release/biopax-level3.owl#RnaRegion  
+
+        BIOPAX_RNA  
+
+        Protein  
+
+        http://www.biopax.org/release/biopax-level3.owl#Protein  
+
+        BIOPAX_PROTEIN  
+
+        Small Molecule  
+
+        http://www.biopax.org/release/biopax-level3.owl#SmallMolecule  
+
+        BIOPAX_SMALL_MOLECULE  
+
+        Complex  
+
+        http://www.biopax.org/release/biopax-level3.owl#Complex  
+
+        BIOPAX_COMPLEX  
+
+    * `roles` : `URIProperty`  
+        The roles property is an OPTIONAL set of URIs that clarifies the potential
+        function of the entity represented by a ComponentDefinition in a biochemical
+        or physical context.  
+
+        The roles property of a ComponentDefinition MAY contain one or more URIs
+        that MUST identify terms from ontologies that are consistent with the types
+        property of the ComponentDefinition. For example, the roles property of a
+        DNA or RNA ComponentDefinition could contain URIs identifying terms from the
+        Sequence Ontology (SO). See the table below for common examples
+        Role  
+
+        URI for Sequence Ontology Term  
+
+        LibSBOL symbol  
+
+        Miscellaneous  
+
+        http://identifiers.org/so/SO:0000001  
+
+        SO_MISC  
+
+        Promoter  
+
+        http://identifiers.org/so/SO:0000167  
+
+        SO_PROMOTER  
+
+        RBS  
+
+        http://identifiers.org/so/SO:0000139  
+
+        SO_RBS  
+
+        CDS  
+
+        http://identifiers.org/so/SO:0000316  
+
+        SO_CDS  
+
+        Terminator  
+
+        http://identifiers.org/so/SO:0000141  
+
+        SO_TERMINATOR  
+
+        Gene  
+
+        http://identifiers.org/so/SO:0000704  
+
+
+        Operator  
+
+        http://identifiers.org/so/SO:0000057  
+
+
+        Engineered Gene  
+
+        http://identifiers.org/so/SO:0000280  
+
+
+        mRNA  
+
+        http://identifiers.org/so/SO:0000234  
+
+
+        Effector  
+
+        http://identifiers.org/chebi/CHEBI:35224  
+
+
+    * `components` : `OwnedObject< Component >`  
+        The components property is OPTIONAL and MAY specify a set of Component
+        objects that are contained by the ComponentDefinition. The components
+        properties of ComponentDefinition objects can be used to construct a
+        hierarchy of Component and ComponentDefinition objects. If a
+        ComponentDefinition in such a hierarchy refers to one or more Sequence
+        objects, and there exist ComponentDefinition objects lower in the hierarchy
+        that refer to Sequence objects with the same encoding, then the elements
+        properties of these Sequence objects SHOULD be consistent with each other,
+        such that well-defined mappings exist from the lower level elements to the
+        higher level elements. This mapping is also subject to any restrictions on
+        the positions of the Component objects in the hierarchy that are imposed by
+        the SequenceAnnotation or SequenceConstraint objects contained by the
+        ComponentDefinition objects in the hierarchy. The set of relations between
+        Component and ComponentDefinition objects is strictly acyclic.  
+
+    * `sequences` : `ReferencedObject`  
+        The sequences property is OPTIONAL and MAY include a URI that refer to a
+        Sequence object. The referenced object defines the primary structure of the
+        ComponentDefinition.  
+
+    * `sequence` : `OwnedObject< Sequence >`  
+
+    * `sequenceAnnotations` : `OwnedObject< SequenceAnnotation >`  
+        The sequenceAnnotations property is OPTIONAL and MAY contain a set of
+        SequenceAnnotation objects. Each SequenceAnnotation specifies and describes
+        a potentially discontiguous region on the Sequence objects referred to by
+        the ComponentDefinition.  
+
+    * `sequenceConstraints` : `OwnedObject< SequenceConstraint >`  
+        The sequenceConstraints property is OPTIONAL and MAY contain a set of
+        SequenceConstraint objects. These objects describe any restrictions on the
+        relative, sequence-based positions and/or orientations of the Component
+        objects contained by the ComponentDefinition. For example, the
+        ComponentDefinition of a gene might specify that the position of its
+        promoter Component precedes that of its CDS Component. This is particularly
+        useful when a ComponentDefinition lacks a Sequence and therefore cannot
+        specify the precise, sequence-based positions of its Component objects using
+        SequenceAnnotation objects.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/componentdefinition.h
 
     """
 
@@ -4394,21 +6247,14 @@ class ComponentDefinition(TopLevel):
     def __init__(self, *args):
         """
 
+        `ComponentDefinition(type, uri, component_type, version)`  
 
-        Construct a ComponentDefinition.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
-            configuration is enabled, then this argument is simply the displayId for the
-            new object and a full URI will automatically be constructed.  
         * `type` :  
-            A BioPAX ontology term that indicates whether the ComponentDefinition is
-            DNA, RNA, protein, or some other molecule type.  
-        * `version` :  
-            An arbitrary version string. If SBOLCompliance is enabled, this should be a
-            Maven version string of the form "major.minor.patch".  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_ComponentDefinition(*args)
@@ -4446,11 +6292,22 @@ class ComponentDefinition(TopLevel):
         sequenceConstraints = _swig_property(_libsbol.ComponentDefinition_sequenceConstraints_get, _libsbol.ComponentDefinition_sequenceConstraints_set)
 
     def compile(self):
+        """
+
+        `compile() -> std::string`  
+
+        Compiles an abstraction hierarchy of ComponentDefinitions into a nucleotide
+        sequence. If no Sequence object is associated with this ComponentDefinition, one
+        will be automatically instantiated.  
+
+        """
         return _libsbol.ComponentDefinition_compile(self)
+
 
     def updateSequence(self, *args):
         """
 
+        `updateSequence(composite_sequence="") -> std::string`  
 
         Assemble a parent ComponentDefinition's Sequence from its subcomponent
         Sequences.  
@@ -4471,6 +6328,7 @@ class ComponentDefinition(TopLevel):
     def getInSequentialOrder(self):
         """
 
+        `getInSequentialOrder() -> std::vector< Component * >`  
 
         Orders this ComponentDefinition's member Components into a linear arrangement
         based on Sequence Constraints.  
@@ -4486,6 +6344,7 @@ class ComponentDefinition(TopLevel):
     def hasUpstreamComponent(self, current_component):
         """
 
+        `hasUpstreamComponent(current_component) -> int`  
 
         Checks if the specified Component has a Component upstream in linear arrangement
         on the DNA strand.  
@@ -4508,6 +6367,7 @@ class ComponentDefinition(TopLevel):
     def getUpstreamComponent(self, current_component):
         """
 
+        `getUpstreamComponent(current_component) -> Component &`  
 
         Get the upstream Component.  
 
@@ -4522,6 +6382,7 @@ class ComponentDefinition(TopLevel):
     def hasDownstreamComponent(self, current_component):
         """
 
+        `hasDownstreamComponent(current_component) -> int`  
 
         Checks if the specified Component has a Component downstream in linear
         arrangement on the DNA strand.  
@@ -4544,6 +6405,7 @@ class ComponentDefinition(TopLevel):
     def getDownstreamComponent(self, current_component):
         """
 
+        `getDownstreamComponent(current_component) -> Component &`  
 
         Get the downstream Component.  
 
@@ -4558,6 +6420,7 @@ class ComponentDefinition(TopLevel):
     def getFirstComponent(self):
         """
 
+        `getFirstComponent() -> Component &`  
 
         Gets the first Component in a linear sequence.  
 
@@ -4572,6 +6435,7 @@ class ComponentDefinition(TopLevel):
     def getLastComponent(self):
         """
 
+        `getLastComponent() -> Component &`  
 
         Gets the last Component in a linear sequence.  
 
@@ -4584,35 +6448,186 @@ class ComponentDefinition(TopLevel):
 
 
     def applyToComponentHierarchy(self, callback_fn=None, user_data=None):
+        """
+
+        `applyToComponentHierarchy(callback_fn=NULL, user_data=NULL) -> std::vector<
+            ComponentDefinition * >`  
+
+        Perform an operation on every Component in a structurally-linked hierarchy of
+        Components by applying a callback function.  
+
+        If no callback is specified, the default behavior is to return a pointer list of
+        each Component in the hierarchy.  
+
+        Parameters
+        ----------
+        * `callback_fun` :  
+            A pointer to a callback function with signature void
+            callback_fn(ComponentDefinition *, void *).  
+        * `user_data` :  
+            Arbitrary user data which can be passed in and out of the callback as an
+            argument or return value.  
+
+        Returns
+        -------
+        Returns a flat list of pointers to all Components in the hierarchy.  
+
+        """
         return _libsbol.ComponentDefinition_applyToComponentHierarchy(self, callback_fn, user_data)
 
+
     def getPrimaryStructure(self):
+        """
+
+        `getPrimaryStructure() -> std::vector< ComponentDefinition * >`  
+
+        Get the primary sequence of a design in terms of its sequentially ordered
+        Components.  
+
+        """
         return _libsbol.ComponentDefinition_getPrimaryStructure(self)
 
+
     def insertDownstream(self, target, insert):
+        """
+
+        `insertDownstream(target, insert)`  
+
+        Insert a Component downstream of another in a primary sequence, shifting any
+        adjacent Components dowstream as well.  
+
+        Parameters
+        ----------
+        * `target` :  
+            The target Component will be upstream of the insert Component after this
+            operation.  
+        * `insert` :  
+            The insert Component is inserted downstream of the target Component.  
+
+        """
         return _libsbol.ComponentDefinition_insertDownstream(self, target, insert)
 
+
     def insertUpstream(self, target, insert):
+        """
+
+        `insertUpstream(target, insert)`  
+
+        Insert a Component upstream of another in a primary sequence, shifting any
+        adjacent Components upstream as well.  
+
+        Parameters
+        ----------
+        * `target` :  
+            The target Component will be downstream of the insert Component after this
+            operation.  
+        * `insert` :  
+            The insert Component is inserted upstream of the target Component.  
+
+        """
         return _libsbol.ComponentDefinition_insertUpstream(self, target, insert)
 
+
     def addUpstreamFlank(self, target, elements):
+        """
+
+        `addUpstreamFlank(target, elements)`  
+
+        This may be a useful method when building up SBOL representations of natural DNA
+        sequences.  
+
+        For example it is often necessary to specify components that are assumed to have
+        no meaningful role in the design, but are nevertheless important to fill in
+        regions of sequence. This method autoconstructs a ComponentDefinition and
+        Sequence object to create an arbitrary flanking sequence around design
+        Components. The new ComponentDefinition will have Sequence Ontology type of
+        flanking_region or SO:0000239  
+
+        Parameters
+        ----------
+        * `target` :  
+            The new flanking sequence will be placed upstream of the target  
+        * `elements` :  
+            The primary sequence elements will be assigned to the autoconstructed
+            Sequence object. The encoding is inferred  
+
+        """
         return _libsbol.ComponentDefinition_addUpstreamFlank(self, target, elements)
 
+
     def addDownstreamFlank(self, target, elements):
+        """
+
+        `addDownstreamFlank(target, elements)`  
+
+        This may be a useful method when building up SBOL representations of natural DNA
+        sequences.  
+
+        For example it is often necessary to specify components that are assumed to have
+        no meaningful role in the design, but are nevertheless important to fill in
+        regions of sequence. This method autoconstructs a ComponentDefinition and
+        Sequence object to create an arbitrary flanking sequence around design
+        Components. The new ComponentDefinition will have Sequence Ontology type of
+        flanking_sequence.  
+
+        Parameters
+        ----------
+        * `target` :  
+            The new flanking sequence will be placed downstream of the target  
+        * `elements` :  
+            The primary sequence elements will be assigned to the autoconstructed
+            Sequence object. The encoding is inferred  
+
+        """
         return _libsbol.ComponentDefinition_addDownstreamFlank(self, target, elements)
 
+
     def isComplete(self, *args):
+        """
+
+        `isComplete() -> bool`  
+
+        Recursively verifies that the parent Document contains a ComponentDefinition and
+        Sequence for each and every ComponentDefinition in the abstraction hierarchy.  
+
+        If a ComponentDefinition is not complete, some objects are missing from the
+        Document or externally linked. Diagnose with isComplete(std::string &msg)  
+
+        Returns
+        -------
+        true if the abstraction hierarchy is complete, false otherwise.  
+
+        """
         return _libsbol.ComponentDefinition_isComplete(self, *args)
 
+
     def disassemble(self, range_start=1):
+        """
+
+        `disassemble(range_start=1)`  
+
+        Instantiates a Component for every SequenceAnnotation. When converting from a
+        flat GenBank file to a flat SBOL file, the result is a ComponentDefinition with
+        SequenceAnnotations. This method will convert the flat SBOL file into
+        hierarchical SBOL.  
+
+        """
         return _libsbol.ComponentDefinition_disassemble(self, range_start)
 
+
     def build(self):
+        """
+
+        `build() -> ComponentDefinition &`  
+
+        """
         return _libsbol.ComponentDefinition_build(self)
+
 
     def participate(self, species):
         """
 
+        `participate(species)`  
 
         A convenience method that assigns a component to participate in a biochemical
         reaction.  
@@ -4635,31 +6650,7 @@ class ComponentDefinition(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.ComponentDefinition_copy(self, *args)
@@ -4732,32 +6723,80 @@ class ComponentDefinition(TopLevel):
     def assemble(self, *args):
         """
 
+        `assemble(list_of_uris, assembly_standard="")`  
 
-        Assembles the provided vector of Components into a structural hierarchy.  
+        Assembles ComponentDefinitions into an abstraction hierarchy.  
 
-        update SequenceAnnotation starts and ends  
-
-        Autoconstructs the required Components and SequenceConstraints. The resulting
-        data structure is a partial design, still lacking a specific DNA (or other)
-        sequence. To fully realize a design, use Sequence::assemble().  
+        The resulting data structure is a partial design, still lacking a primary
+        structure or explicit sequence. To form a primary structure out of the
+        ComponentDefinitions, call linearize after calling assemble. To fully realize
+        the target sequence, use Sequence::assemble().  
 
         Parameters
         ----------
-        * `list_of_components` :  
-            A list of subcomponents that will compose this ComponentDefinition  
+        * `list_of_uris` :  
+            A list of URIs for the constituent ComponentDefinitions, or displayIds if
+            using SBOL-compliant URIs  
+        * `assembly_standard` :  
+            An optional argument such as IGEM_STANDARD_ASSEMBLY that affects how
+            components are composed and the final target sequence  
 
         """
         return _libsbol.ComponentDefinition_assemble(self, *args)
 
 
     def assemblePrimaryStructure(self, *args):
+        """
+
+        `assemblePrimaryStructure(primary_structure, doc, assembly_standard="")`  
+
+        Assembles ComponentDefinition into a linear primary structure.  
+
+        The resulting data structure is a partial design, still lacking an explicit
+        sequence. To fully realize the target sequence, use Sequence::assemble().  
+
+        Parameters
+        ----------
+        * `list_of_components` :  
+            A list of subcomponents that will compose this ComponentDefinition  
+        * `doc` :  
+            The Document to which the assembled ComponentDefinitions will be added  
+        * `assembly_standard` :  
+            An optional argument such as IGEM_STANDARD_ASSEMBLY that affects how
+            components are composed and the final target sequence  
+
+        """
         return _libsbol.ComponentDefinition_assemblePrimaryStructure(self, *args)
 
+
     def linearize(self, *args):
+        """
+
+        `linearize(list_of_uris)`  
+
+        """
         return _libsbol.ComponentDefinition_linearize(self, *args)
 
+
     def isRegular(self, *args):
+        """
+
+        `isRegular() -> bool`  
+
+        Recursively checks if this ComponentDefinition defines a SequenceAnnotation and
+        Range for every Sequence.  
+
+        Regularity is more stringent than completeness. A design must be complete to be
+        regular. If the Component is irregular, diagnose with isRegular(std::string
+        &msg)  
+
+        Returns
+        -------
+        true if the abstraction hierarchy is regular, false otherwise.  
+
+        """
         return _libsbol.ComponentDefinition_isRegular(self, *args)
+
 ComponentDefinition_swigregister = _libsbol.ComponentDefinition_swigregister
 ComponentDefinition_swigregister(ComponentDefinition)
 
@@ -4767,6 +6806,126 @@ class Sequence(TopLevel):
 
     The primary structure (eg, nucleotide or amino acid sequence) of a
     ComponentDefinition object.  
+
+    Attributes
+    ----------
+    * `elements` : `TextProperty`  
+        The elements property is a REQUIRED String of characters that represents the
+        constituents of a biological or chemical molecule. For example, these
+        characters could represent the nucleotide bases of a molecule of DNA, the
+        amino acid residues of a protein, or the atoms and chemical bonds of a small
+        molecule.  
+
+    * `encoding` : `URIProperty`  
+        The encoding property is REQUIRED and has a data type of URI.  
+
+        This property MUST indicate how the elements property of a Sequence MUST be
+        formed and interpreted. For example, the elements property of a Sequence
+        with an IUPAC DNA encoding property MUST contain characters that represent
+        nucleotide bases, such as a, t, c, and g. The elements property of a
+        Sequence with a Simplified Molecular-Input Line-Entry System (SMILES)
+        encoding, on the other hand, MUST contain characters that represent atoms
+        and chemical bonds, such as C, N, O, and =. It is RECOMMENDED that the
+        encoding property contains a URI from the table below. The terms in the
+        table are organized by the type of ComponentDefinition that typically refer
+        to a Sequence with such an encoding. When the encoding of a Sequence is well
+        described by one of the URIs in the table, it MUST contain that URI.
+        ComponentDefinition type  
+
+        Encoding  
+
+        libSBOL Symbol  
+
+        URI  
+
+        DNA, RNA  
+
+        IUPAC DNA, RNA  
+
+        SBOL_ENCODING_IUPAC  
+
+        http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html  
+
+        Protein  
+
+        IUPAC Protein  
+
+        SBOL_ENCODING_IUPAC_PROTEIN  
+
+        http://www.chem.qmul.ac.uk/iupac/AminoAcid/  
+
+        Small Molecule  
+
+        SMILES  
+
+        SBOL_ENCODING_SMILES  
+
+        http://www.opensmiles.org/opensmiles.html  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/sequence.h
 
     """
 
@@ -4783,24 +6942,14 @@ class Sequence(TopLevel):
     def __init__(self, *args):
         """
 
+        `Sequence(type_uri, uri, elements, encoding, version)`  
 
-        Construct a ComponentDefinition.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
-            configuration is enabled, then this argument is simply the displayId for the
-            new object and a full URI will automatically be constructed.  
-        * `elements` :  
-            A string representation of the primary structure of DNA, RNA, protein, or a
-            SMILES string for small molecules.  
-        * `encoding` :  
-            A URI that describes the representation format used for the elements
-            property. Set to SBOL_ENCODING_IUPAC by default  
-        * `version` :  
-            An arbitrary version string. If SBOLCompliance is enabled, this should be a
-            Maven version string.  
+        * `type_uri` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Sequence(*args)
@@ -4820,11 +6969,12 @@ class Sequence(TopLevel):
     def assemble(self, *args):
         """
 
+        `assemble(composite_sequence="") -> std::string`  
 
         Calculates the complete sequence of a high-level Component from the sequence of
         its subcomponents.  
 
-        {rior to assembling the the complete sequence, you must assemble a template
+        Pior to assembling the the complete sequence, you must assemble a template
         design by calling ComponentDefinition::assemble for the ComponentDefinition that
         references this Sequence.  
 
@@ -4840,44 +6990,53 @@ class Sequence(TopLevel):
 
 
     def compile(self):
+        """
+
+        `compile() -> std::string`  
+
+        Synonomous with Sequence::assemble. Calculates the complete sequence of a high-
+        level Component from the sequence of its subcomponents. Prior to assembling the
+        the complete sequence, you must assemble a template design by calling
+        ComponentDefinition::assemble for the ComponentDefinition that references this
+        Sequence.  
+
+        """
         return _libsbol.Sequence_compile(self)
 
+
     def length(self):
+        """
+
+        `length() -> int`  
+
+        Returns
+        -------
+        The length of the primary sequence in the elements property  
+
+        """
         return _libsbol.Sequence_length(self)
 
+
     def synthesize(self, clone_id):
+        """
+
+        `synthesize(clone_id) -> ComponentDefinition &`  
+
+        Parameters
+        ----------
+        * `clone_id` :  
+            A URI for the build, or displayId if working in SBOLCompliant mode.  
+
+        """
         return _libsbol.Sequence_synthesize(self, clone_id)
+
     __swig_destroy__ = _libsbol.delete_Sequence
     __del__ = lambda self: None
 
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Sequence_copy(self, *args)
@@ -4956,6 +7115,133 @@ class Participation(Identified):
     Each Participation represents how a particular FunctionalComponent behaves in
     its parent Interaction.  
 
+    Attributes
+    ----------
+    * `roles` : `URIProperty`  
+        The roles property is an OPTIONAL set of URIs that describes the behavior of
+        a Participation (and by extension its referenced FunctionalComponent) in the
+        context of its parent Interaction.  
+
+        The roles property MAY contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the participant role
+        branch of the SBO. The table below provides a list of possible SBO terms for
+        the roles property and their corresponding URIs.
+        Role  
+
+        Systems Biology Ontology Term  
+
+        LibSBOL Symbol  
+
+        Inhibitor  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000020  
+
+        SBO_INHIBITOR  
+
+        Stimulator  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000459  
+
+        SBO_STIMULATOR  
+
+        Reactant  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000010  
+
+        SBO_REACTANT  
+
+        Product  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000011  
+
+        SBO_PRODUCT  
+
+        Ligand  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000280  
+
+        SBO_LIGAND  
+
+        Non-covalent Complex  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000253  
+
+        SBO_NONCOVALENT_COMPLEX  
+
+        If a Participation is well described by one of the terms from this table
+        then its roles property MUST contain the URI that identifies this term.
+        Lastly, if the roles property of a Participation contains multiple URIs,
+        then they MUST identify non-conflicting terms. For example, the SBO terms
+        stimulator and inhibitor would conflict.  
+
+    * `participant` : `ReferencedObject`  
+        The participant property MUST specify precisely one FunctionalComponent
+        object that plays the designated role in its parent Interaction object.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/participation.h
+
     """
 
     __swig_setmethods__ = {}
@@ -4971,6 +7257,14 @@ class Participation(Identified):
     def __init__(self, *args):
         """
 
+        `Participation(type, uri, participant, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Participation(*args)
@@ -4988,7 +7282,13 @@ class Participation(Identified):
         participant = _swig_property(_libsbol.Participation_participant_get, _libsbol.Participation_participant_set)
 
     def define(self, *args):
+        """
+
+        `define(species, role="")`  
+
+        """
         return _libsbol.Participation_define(self, *args)
+
     __swig_destroy__ = _libsbol.delete_Participation
     __del__ = lambda self: None
 
@@ -5069,6 +7369,140 @@ class Interaction(Identified):
     biology (e.g. transcription and translation), and other basic molecular
     interactions (e.g., non-covalent binding or enzymatic phosphorylation).  
 
+    Attributes
+    ----------
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/interaction.h
+
     """
 
     __swig_setmethods__ = {}
@@ -5084,17 +7518,14 @@ class Interaction(Identified):
     def __init__(self, *args):
         """
 
+        `Interaction(type, uri, interaction_type)`  
 
-        Construct an Interaction.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
-            configuration is enabled, then this argument is simply the displayId for the
-            new object and a full URI will automatically be constructed.  
-        * `interaction_type` :  
-            A Systems Biology Ontology term that describes a biochemical interaction  
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Interaction(*args)
@@ -5190,6 +7621,80 @@ class Module(Identified):
     The Module class represents a submodule of a ModuleDefinition within a
     hierarchical design.  
 
+    Attributes
+    ----------
+    * `definition` : `ReferencedObject`  
+        The definition property is a REQUIRED URI that refers to the
+        ModuleDefinition for the Module.  
+
+    * `mapsTos` : `OwnedObject< MapsTo >`  
+        The mapsTos property is an OPTIONAL set of MapsTo objects that refer to and
+        link ComponentInstance objects together within the heterarchy of Module,
+        ModuleDefinition, ComponentInstance, and ComponentDefinition objects.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/module.h
+
     """
 
     __swig_setmethods__ = {}
@@ -5213,24 +7718,14 @@ class Module(Identified):
     def __init__(self, *args):
         """
 
+        `Module(type, uri, definition, version)`  
 
-        Construct a Module.  
-
-        If operating in SBOL-compliant mode, use ModuleDefinition::modules::create
-        instead.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            If operating in open-world mode, this should be a full URI including a
-            scheme, namespace, and identifier. If SBOLCompliance configuration is
-            enabled, then this argument is simply the displayId for the new object and a
-            full URI will automatically be constructed.  
-        * `definition` :  
-            The identity of the Component with this structural constraint  
-        * `version` :  
-            An arbitrary version string. If SBOLCompliance is enabled, this should be a
-            Maven version string of the form "major.minor.patch".  
+        * `type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Module(*args)
@@ -5319,6 +7814,129 @@ class Model(TopLevel):
     of SBOL can formalize the function of a ModuleDefinition in the language of
     their choice.  
 
+    Attributes
+    ----------
+    * `source` : `URIProperty`  
+        The source property is REQUIRED and MUST contain a URI reference to the
+        source file for a model.  
+
+    * `language` : `URIProperty`  
+        The language property is REQUIRED and MUST contain a URI that specifies the
+        language in which the model is implemented.  
+
+        It is RECOMMENDED that this URI refer to a term from the EMBRACE Data and
+        Methods (EDAM) ontology. The Table below provides a list of terms from this
+        ontology and their URIs. If the language property of a Model is well-
+        described by one these terms, then it MUST contain the URI for this term as
+        its value.
+        Model Language  
+
+        URI for EDAM Term  
+
+        libSBOL Symbol  
+
+        SBML  
+
+        http://identifiers.org/edam/format_2585  
+
+        EDAM_SBML  
+
+        CellML  
+
+        http://identifiers.org/edam/format_3240  
+
+        EDAM_CELLML  
+
+        BioPAX  
+
+        http://identifiers.org/edam/format_3156  
+
+        EDAM_BIOPAX  
+
+    * `framework` : `URIProperty`  
+        Model Language  
+
+        URI for SBO Term  
+
+        libSBOL Symbol  
+
+        Continuous  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000062  
+
+        SBO_CONTINUOUS  
+
+        Discrete  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000063  
+
+        SBO_DISCRETE  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/model.h
+
     """
 
     __swig_setmethods__ = {}
@@ -5334,6 +7952,14 @@ class Model(TopLevel):
     def __init__(self, *args):
         """
 
+        `Model(type, uri, source, language, framework, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Model(*args)
@@ -5359,31 +7985,7 @@ class Model(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Model_copy(self, *args)
@@ -5469,6 +8071,77 @@ class Collection(TopLevel):
     ComponentDefinition, Sequence, and Model objects used to provide its full
     specification.  
 
+    Attributes
+    ----------
+    * `members` : `URIProperty`  
+        The members property of a Collection is OPTIONAL and MAY contain a set of
+        URI references to zero or more TopLevel objects.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/collection.h
+
     """
 
     __swig_setmethods__ = {}
@@ -5484,16 +8157,14 @@ class Collection(TopLevel):
     def __init__(self, *args):
         """
 
+        `Collection(type, uri, version)`  
 
-        Construct a Collection.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            If operating in open-world mode, this should be a full URI including a
-            scheme, namespace, and identifier. If SBOLCompliance configuration is
-            enabled, then this argument is simply the displayId for the new object and a
-            full URI will automatically be constructed.  
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_Collection(*args)
@@ -5511,31 +8182,7 @@ class Collection(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Collection_copy(self, *args)
@@ -5615,6 +8262,125 @@ class ModuleDefinition(TopLevel):
     entities in a biological design. The primary usage of this class is to assert
     the molecular interactions and abstract function of its child entities.  
 
+    Attributes
+    ----------
+    * `roles` : `URIProperty`  
+        The roles property is an OPTIONAL set of URIs that clarifies the intended
+        function of a ModuleDefinition. These URIs might identify descriptive
+        biological roles, such as metabolic pathway and signaling cascade, but
+        they can also identify identify logical roles, such as inverter or AND
+        gate, or other abstract roles for describing the function of design.
+        Interpretation of the meaning of such roles currently depends on the
+        software tools that read and write them.  
+
+    * `modules` : `OwnedObject< Module >`  
+        The modules property is OPTIONAL and MAY specify a set of Module objects
+        contained by the ModuleDefinition. While the ModuleDefinition class is
+        analogous to a specification sheet for a system of interacting biological
+        elements, the Module class represents the occurrence of a particular
+        subsystem within the system. Hence, this class allows a system design to
+        include multiple instances of a subsystem, all defined by reference to the
+        same ModuleDefinition. For example, consider the ModuleDefinition for a
+        network of two-input repressor devices in which the particular repressors
+        have not been chosen yet. This ModuleDefinition could contain multiple
+        Module objects that refer to the same ModuleDefinition of an abstract two-
+        input repressor device. Note that the set of relations between Module and
+        ModuleDefinition objects is strictly acyclic.  
+
+    * `interactions` : `OwnedObject< Interaction >`  
+        The interactions property is OPTIONAL and MAY specify a set of Interaction
+        objects within the ModuleDefinition. The Interaction class provides an
+        abstract, machine-readable representation of entity behavior within a
+        ModuleDefinition. Each Interaction contains Participation objects that
+        indicate the roles of the FunctionalComponent objects involved in the
+        Interaction.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+        The functionalComponents property is OPTIONAL and MAY specify a set of
+        FunctionalComponent objects contained by the ModuleDefinition. Just as a
+        Module represents an instance of a subsystem in the overall system
+        represented by a ModuleDefinition, a FunctionalComponent represents an
+        instance of a structural entity (represented by a ComponentDefinition) in
+        the system. This concept allows a ModuleDefinition to assert different
+        interactions for separate copies of the same structural entity if needed.
+        For example, a ModuleDefinition might contain multiple FunctionalComponent
+        objects that refer to the same promoter ComponentDefinition, but assert
+        different interactions for these promoter copies based on their separate
+        positions in another ComponentDefinition that represents the structure of
+        the entire system.  
+
+    * `models` : `ReferencedObject`  
+        The models property is OPTIONAL and MAY specify a set of URI references to
+        Model objects. Model objects are placeholders that link ModuleDefinition
+        objects to computational models of any format. A ModuleDefinition object can
+        link to more than one Model since each might encode system behavior in a
+        different way or at a different level of detail.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/moduledefinition.h
+
     """
 
     __swig_setmethods__ = {}
@@ -5630,18 +8396,14 @@ class ModuleDefinition(TopLevel):
     def __init__(self, *args):
         """
 
+        `ModuleDefinition(sbol_type_uri, uri, version)`  
 
-        Construct a ModuleDefinition.  
+        Constructor used for defining extension classes.  
 
         Parameters
         ----------
-        * `uri` :  
-            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
-            configuration is enabled, then this argument is simply the displayId for the
-            new object and a full URI will automatically be constructed.  
-        * `version` :  
-            An arbitrary version string. If SBOLCompliance is enabled, this should be a
-            valid Maven version string.  
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
 
         """
         this = _libsbol.new_ModuleDefinition(*args)
@@ -5673,19 +8435,16 @@ class ModuleDefinition(TopLevel):
     def setOutput(self, *args):
         """
 
+        `setOutput(output)`  
 
-        Defines an output for a system module.  
+        Configures a FunctionalComponent as an output for a Module.  
+
+        Useful for bottom-up assembly of Modules and sub-Modules.  
 
         Parameters
         ----------
         * `output` :  
-            A ComponentDefinition that defines the output  
-
-        Returns
-        -------
-        A FunctionalComponent that is derived from the argument ComponentDefinition and
-        configured as this ModuleDefinition's output (it's direction property is set to
-        SBOL_DIRECTION_OUT)  
+            The FunctionalComponent that will be configured  
 
         """
         return _libsbol.ModuleDefinition_setOutput(self, *args)
@@ -5694,60 +8453,67 @@ class ModuleDefinition(TopLevel):
     def setInput(self, *args):
         """
 
+        `setInput(input)`  
 
-        Defines an input for a system module.  
+        Configures a FunctionalComponent as an input for a Module.  
+
+        Useful for bottom-up assembly of Modules and sub-Modules  
 
         Parameters
         ----------
         * `input` :  
-            A ComponentDefinition that defines the input  
-
-        Returns
-        -------
-        A FunctionalComponent that is derived from the argument ComponentDefinition and
-        configured as this ModuleDefinition's input (it's direction property is set to
-        SBOL_DIRECTION_IN)  
+            The FunctionalComponent that will be configured  
 
         """
         return _libsbol.ModuleDefinition_setInput(self, *args)
 
 
     def connect(self, output, input):
+        """
+
+        `connect(output, input)`  
+
+        Connects the output of a sub-Module with the input of another sub-Module.  
+
+        Auto-constructs MapsTo objects.  
+
+        Parameters
+        ----------
+        * `output` :  
+            A FunctionalComponent configured as a Module output (see setOutput)  
+        * `input` :  
+            A FunctionalComponent configured as a Module input (see setInput)  
+
+        """
         return _libsbol.ModuleDefinition_connect(self, output, input)
 
+
     def override(self, highlevel, lowlevel):
+        """
+
+        `override(highlevel, lowlevel)`  
+
+        Overrides a low-level component in an abstract sub-Module with a high-level
+        component in a parent ModuleDefinition, for example when overriding an abstract
+        template Module with explicit components.  
+
+        Parameters
+        ----------
+        * `highlevel` :  
+            A high-level FunctionalComponent  
+        * `lowlevel` :  
+            A low-level FunctionalComponent in a nested sub-Module  
+
+        """
         return _libsbol.ModuleDefinition_override(self, highlevel, lowlevel)
+
     __swig_destroy__ = _libsbol.delete_ModuleDefinition
     __del__ = lambda self: None
 
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.ModuleDefinition_copy(self, *args)
@@ -5820,6 +8586,7 @@ class ModuleDefinition(TopLevel):
     def assemble(self, *args):
         """
 
+        `assemble(list_of_modules)`  
 
         Assemble a high-level ModuleDefinition from lower-level submodules.  
 
@@ -5837,6 +8604,91 @@ ModuleDefinition_swigregister = _libsbol.ModuleDefinition_swigregister
 ModuleDefinition_swigregister(ModuleDefinition)
 
 class Association(Identified):
+    """
+
+
+    An Association is linked to an Agent through the agent relationship. The
+    Association includes the hadRole property to qualify the role of the Agent in
+    the Activity.  
+
+    Attributes
+    ----------
+    * `agent` : `ReferencedObject`  
+        The agent property is REQUIRED and MUST contain a URI that refers to an
+        Agent object.  
+
+    * `roles` : `URIProperty`  
+        The hadRole property is REQUIRED and MUST contain a URI that refers to a
+        particular term describing the usage of the agent.  
+
+    * `plan` : `ReferencedObject`  
+        The hadPlan property is OPTIONAL and contains a URI that refers to a Plan.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/provo.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Identified]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -5848,6 +8700,18 @@ class Association(Identified):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Association(type, uri, agent, role, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Association(*args)
         try:
             self.this.append(this)
@@ -5935,6 +8799,92 @@ Association_swigregister = _libsbol.Association_swigregister
 Association_swigregister(Association)
 
 class Usage(Identified):
+    """
+
+
+    How different entities are used in an Activity is specified with the Usage
+    class, which is linked from an Activity through the qualifiedUsage relationship.
+    A Usage is then linked to an Entity through the Entitys URI and the role of
+    this entity is qualified with the hadRole property. When the wasDerivedFrom
+    property is used together with the full provenance described here, the entity
+    pointed at by the wasDerivedFrom property MUST be included in a Usage.  
+
+    Attributes
+    ----------
+    * `entity` : `URIProperty`  
+        The entity property is REQUIRED and MUST contain a URI which MAY refer to an
+        SBOL Identified object.  
+
+    * `roles` : `URIProperty`  
+        The hadRole property is REQUIRED and MAY contain a URI that refers to a
+        particular term describing the usage of an entity referenced by the entity
+        property.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/provo.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Identified]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -5946,6 +8896,18 @@ class Usage(Identified):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Usage(type, uri, entity, role, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Usage(*args)
         try:
             self.this.append(this)
@@ -6029,6 +8991,82 @@ Usage_swigregister = _libsbol.Usage_swigregister
 Usage_swigregister(Usage)
 
 class Agent(TopLevel):
+    """
+
+
+    Examples of agents are person, organisation or software. These agents should be
+    annotated with additional information, such as software version, needed to be
+    able to run the same software again.  
+
+    Attributes
+    ----------
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/provo.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6040,6 +9078,18 @@ class Agent(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Agent(type, uri, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Agent(*args)
         try:
             self.this.append(this)
@@ -6051,31 +9101,7 @@ class Agent(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Agent_copy(self, *args)
@@ -6148,6 +9174,82 @@ Agent_swigregister = _libsbol.Agent_swigregister
 Agent_swigregister(Agent)
 
 class Plan(TopLevel):
+    """
+
+
+    Examples of agents are person, organisation or software. These agents should be
+    annotated with additional information, such as software version, needed to be
+    able to run the same software again.  
+
+    Attributes
+    ----------
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/provo.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6159,6 +9261,18 @@ class Plan(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Plan(type, uri, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Plan(*args)
         try:
             self.this.append(this)
@@ -6170,31 +9284,7 @@ class Plan(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Plan_copy(self, *args)
@@ -6267,6 +9357,116 @@ Plan_swigregister = _libsbol.Plan_swigregister
 Plan_swigregister(Plan)
 
 class Activity(TopLevel):
+    """
+
+
+    A generated Entity is linked through a wasGeneratedBy relationship to an
+    Activity, which is used to describe how different Agents and other entities were
+    used. An Activity is linked through a qualifiedAssociation to Associations, to
+    describe the role of agents, and is linked through qualifiedUsage to Usages to
+    describe the role of other entities used as part of the activity. Moreover, each
+    Activity includes optional startedAtTime and endedAtTime properties. When using
+    Activity to capture how an entity was derived, it is expected that any
+    additional information needed will be attached as annotations. This may include
+    software settings or textual notes. Activities can also be linked together using
+    the wasInformedBy relationship to provide dependency without explicitly
+    specifying start and end times.  
+
+    Attributes
+    ----------
+    * `startedAtTime` : `DateTimeProperty`  
+
+    * `endedAtTime` : `DateTimeProperty`  
+        The endedAtTime property is OPTIONAL and contains a dateTime (see section
+        Section 12.7) value, indicating when the activity ended.  
+
+    * `wasInformedBy` : `ReferencedObject`  
+        The wasInformedBy property is OPTIONAL and contains a URI of another
+        activity.  
+
+    * `associations` : `OwnedObject< Association >`  
+        The qualifiedAssociation property is OPTIONAL and MAY contain a set of URIs
+        that refers to Association.  
+
+    * `usages` : `OwnedObject< Usage >`  
+        The qualifiedUsage property is OPTIONAL and MAY contain a set of URIs that
+        refers to Usage objects.  
+
+    * `agent` : `OwnedObject< Agent >`  
+        An Agent object may be specified here, and it will be synced with the
+        Association::agent property.  
+
+    * `plan` : `OwnedObject< Plan >`  
+        A Plan object may be specified here, and it will be synced with the
+        Association::plan property.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/provo.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6278,6 +9478,18 @@ class Activity(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Activity(type, uri, action_type, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Activity(*args)
         try:
             self.this.append(this)
@@ -6317,31 +9529,7 @@ class Activity(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Activity_copy(self, *args)
@@ -6737,6 +9925,151 @@ Activity_swigregister = _libsbol.Activity_swigregister
 Activity_swigregister(Activity)
 
 class VariableComponent(Identified):
+    """
+
+
+    The VariableComponent class can be used to specify a choice of
+    ComponentDefinition objects for any new Component derived from a template
+    Component in the template ComponentDefinition. This specification is made using
+    the class properties variable, variants, variantCollections, and
+    variantDerivations. While the variants, variantCollections, and
+    variantDerivations properties are OPTIONAL, at least one of them MUST NOT be
+    empty.  
+
+    Attributes
+    ----------
+    * `variable` : `ReferencedObject`  
+        The variable property is REQUIRED and MUST contain a URI that refers to a
+        template `Component` in the template `ComponentDefinition`. If the
+        wasDerivedFrom property of a Component refers to this template Component,
+        then the definition property of the derived Component MUST refer to one of
+        the ComponentDefinition objects referred to by the variants property of the
+        VariableComponent. If not, then this definition property MUST either (1)
+        refer to one of the ComponentDefinition objects from a Collection referred
+        to by the variantCollections property of the VariableComponent, or (2) refer
+        to a ComponentDefinition derived from a CombinatorialDerivation referred to
+        by the variantDerivations property of the VariableComponent.  
+
+    * `repeat` : `URIProperty`  
+        The `repeat` property is REQUIRED and has a data type of URI.  
+
+        This property specifies how many `Component` objects can be derived from the
+        template `Component` during the derivation of a new `ComponentDefinition`.
+        The URI value of this property MUST come from the REQUIRED `operator` URIs
+        provided in the table below
+        Operator URI  
+
+        Description  
+
+        http://sbols.org/v2#zeroOrOne  
+
+        No more than one `Component` in the derived `ComponentDefinition` SHOULD
+        have a `wasDerivedFrom` property that refers to the template `Component`.  
+
+        http://sbols.org/v2#one  
+
+        Exactly one `Component` in the derived `ComponentDefinition` SHOULD have a
+        `wasDerivedFrom` property that refers to the template `Component`.  
+
+        http://sbols.org/v2#zeroOrMore  
+
+        Any number of `Component` objects in the derived `ComponentDefinition` MAY
+        have `wasDerivedFrom` properties that refer to the template `Component`.  
+
+        http://sbols.org/v2#oneOrMore  
+
+        At least one `Component` in the derived `ComponentDefinition` SHOULD have a
+        `wasDerivedFrom` property that refers to the template `Component`.  
+
+    * `variants` : `ReferencedObject`  
+        The variants property is OPTIONAL and MAY contain zero or more URIs that
+        each refer to a ComponentDefinition. This property specifies individual
+        ComponentDefinition objects to serve as options when deriving a new
+        Component from the template Component.  
+
+    * `variantCollections` : `ReferencedObject`  
+        The variantCollections property is OPTIONAL and MAY contain zero or more
+        URIs that each refer to a Collection. The members property of each
+        Collection referred to in this way MUST NOT be empty and MUST refer only to
+        ComponentDefinition objects. This property enables the convenient
+        specification of existing groups of ComponentDefinition objects to serve as
+        options when deriving a new Component from the template Component.  
+
+    * `variantDerivations` : `ReferencedObject`  
+        The variantDerivations property is OPTIONAL and MAY contain zero or more
+        URIs that each refer to a CombinatorialDerivation. This property enables the
+        convenient specification of ComponentDefinition objects derived in
+        accordance with another CombinatorialDerivation to serve as options when
+        deriving a new Component from the template Component. The variantDerivations
+        property of a VariableComponent MUST NOT refer to the
+        CombinatorialDerivation that contains this VariableComponent (no cyclic
+        derivations are allowed.  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/combinatorialderivation.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Identified]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6748,6 +10081,18 @@ class VariableComponent(Identified):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `VariableComponent(type, uri, repeat, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_VariableComponent(*args)
         try:
             self.this.append(this)
@@ -6779,6 +10124,122 @@ VariableComponent_swigregister = _libsbol.VariableComponent_swigregister
 VariableComponent_swigregister(VariableComponent)
 
 class CombinatorialDerivation(TopLevel):
+    """
+
+
+    A ComponentDeriviation specifies the composition of a combinatorial design or
+    variant library for common use cases in synthetic biology, such as tuning the
+    performance of a genetic circuit or biosynthetic pathway through combinatorial
+    DNA assembly and screening.  
+
+    Attributes
+    ----------
+    * `strategy` : `URIProperty`  
+        The `strategy` property is OPTIONAL and has a data type of URI.  
+
+        Table 1 provides a list of REQUIRED strategy URIs. If the `strategy`
+        property is not empty, then it MUST contain a URI from Table 1. This
+        property recommends how many `ComponentDefinition` objects a user SHOULD
+        derive from the `template` `ComponentDefinition`.
+        Strategy URI  
+
+        Description  
+
+        http://sbols.org/v2#enumerate  
+
+        A user SHOULD derive all `ComponentDefinition` objects with a unique
+        substructure as specified by the `Component` objects contained by the
+        `template` `ComponentDefinition` and the `VariableComponent` objects
+        contained by the `CombinatorialDerivation`.  
+
+        http://sbols.org/v2#sample  
+
+        A user SHOULD derive a subset of all `ComponentDefinition` objects with a
+        unique substructure as specified by the `Component` objects contained by the
+        `template` `ComponentDefinition` and the `VariableComponent` objects
+        contained by the `CombinatorialDerivation`. The manner in which this subset
+        is chosen is for the user to decide.  
+
+    * `masterTemplate` : `ReferencedObject`  
+        The `master` property is REQUIRED and MUST contain a URI that refers to a
+        ComponentDefinition. This ComponentDefinition is expected to serve as a
+        template for the derivation of new ComponentDefinition objects.
+        Consequently, its components property SHOULD contain one or more Component
+        objects that describe its substructure (referred to hereafter as template
+        Component objects), and its sequenceConstraints property MAY also contain
+        one or more SequenceConstraint objects that constrain this substructure.  
+
+    * `variableComponents` : `OwnedObject< VariableComponent >`  
+        VariableComponent objects denote the choices available when deriving the
+        library of variants specified by a CombinatorialDerivation.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/combinatorialderivation.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6790,6 +10251,18 @@ class CombinatorialDerivation(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `CombinatorialDerivation(type, uri, strategy, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_CombinatorialDerivation(*args)
         try:
             self.this.append(this)
@@ -6811,31 +10284,7 @@ class CombinatorialDerivation(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.CombinatorialDerivation_copy(self, *args)
@@ -6910,6 +10359,91 @@ CombinatorialDerivation_swigregister = _libsbol.CombinatorialDerivation_swigregi
 CombinatorialDerivation_swigregister(CombinatorialDerivation)
 
 class Attachment(TopLevel):
+    """
+
+
+    The Attachment class is a general container for data files, especially
+    experimental data files. Attachment is a TopLevel object, and any other TopLevel
+    object can refer to a list of attachments.  
+
+    Attributes
+    ----------
+    * `source` : `URIProperty`  
+        The source is a link to the external file and is REQUIRED.  
+
+    * `format` : `URIProperty`  
+
+    * `size` : `IntProperty`  
+
+    * `hash` : `TextProperty`  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/attachment.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -6921,6 +10455,18 @@ class Attachment(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Attachment(type, uri, source, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Attachment(*args)
         try:
             self.this.append(this)
@@ -6944,31 +10490,7 @@ class Attachment(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Attachment_copy(self, *args)
@@ -7041,6 +10563,86 @@ Attachment_swigregister = _libsbol.Attachment_swigregister
 Attachment_swigregister(Attachment)
 
 class Implementation(TopLevel):
+    """
+
+
+    An Implementation represents a real, physical instance of a synthetic biological
+    construct which may be associated with a laboratory sample. An Implementation
+    may be linked back to its original design (either a ModuleDefinition or
+    ComponentDefinition) using the wasDerivedFrom property inherited from the
+    Identified superclass.  
+
+    Attributes
+    ----------
+    * `built` : `URIProperty`  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/implementation.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7052,6 +10654,18 @@ class Implementation(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Implementation(type, uri, version)`  
+
+        Constructor used for defining extension classes.  
+
+        Parameters
+        ----------
+        * `rdf_type` :  
+            The RDF type for an extension class derived from this one  
+
+        """
         this = _libsbol.new_Implementation(*args)
         try:
             self.this.append(this)
@@ -7067,31 +10681,7 @@ class Implementation(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Implementation_copy(self, *args)
@@ -7164,6 +10754,94 @@ Implementation_swigregister = _libsbol.Implementation_swigregister
 Implementation_swigregister(Implementation)
 
 class Design(TopLevel):
+    """
+
+
+    This class represents a biological Design. A Design is a conceptual
+    representation of a biological system that a synthetic biologist intends to
+    build. A Design is the first object created in libSBOL's formalized Design-
+    Build-Test-Analysis workflow.  
+
+    Attributes
+    ----------
+    * `structure` : `OwnedObject< ComponentDefinition >`  
+        The target biological structure for synthesis or other molecular assembly.  
+
+    * `function` : `OwnedObject< ModuleDefinition >`  
+        The intended function and predicted behavior of the Design object.  
+
+    * `characterization` : `ReferencedObject`  
+        A reference to an Analysis or multiple Analysis objects that contain
+        characterization data, previously verified experimental knowledge, or
+        explanatory models that inform a Design.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/dbtl.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7175,6 +10853,30 @@ class Design(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Design(uri, structure, function, version=VERSION_STRING)`  
+
+        Constructs a new Design.  
+
+        The structure and function of the Design are initialized. A FunctionalComponent
+        is autoconstructed which correlates the structure and function.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `structure` :  
+            A ComponentDefinition representing the structural aspects of the Design  
+        * `function` :  
+            A ModuleDefiniition representing the functional aspects of the Design  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
         this = _libsbol.new_Design(*args)
         try:
             self.this.append(this)
@@ -7198,31 +10900,7 @@ class Design(TopLevel):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Design_copy(self, *args)
@@ -7295,6 +10973,102 @@ Design_swigregister = _libsbol.Design_swigregister
 Design_swigregister(Design)
 
 class Build(Implementation):
+    """
+
+
+    A Build is a realization of a Design. For practical purposes, a Build can
+    represent a biological clone, a plasmid, or other laboratory sample. For a given
+    Design, there may be multiple Builds realized in the lab. A Build represents the
+    second step in libSBOL's formalized Design-Build-Test-Analyze workflow.  
+
+    Attributes
+    ----------
+    * `design` : `ReferencedObject`  
+        A reference to a Design object which represents the intended structure and
+        function for this Build.  
+
+    * `structure` : `OwnedObject< ComponentDefinition >`  
+        The experimentally verified structure of the construct as verified by DNA
+        sequencing or other analysis.  
+
+    * `behavior` : `OwnedObject< ModuleDefinition >`  
+        The observed behavior of the constructed system.  
+
+    * `sysbio_type` : `URIProperty`  
+
+    * `_structure` : `ReferencedObject`  
+
+    * `_behavior` : `ReferencedObject`  
+
+    * `built` : `URIProperty`  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/dbtl.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Implementation]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7306,6 +11080,32 @@ class Build(Implementation):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Build(uri, structure, behavior, version=VERSION_STRING)`  
+
+        Constructs a new Build.  
+
+        The structure and behavior of the Build are initialized. A FunctionalComponent
+        is autoconstructed which correlates the structure and function.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `structure` :  
+            A ComponentDefinition representing the experimentally verified structure of
+            the construct as verified by DNA sequencing or other analysis  
+        * `function` :  
+            A ModuleDefiniition representing the observed behavior of the constructed
+            system  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
         this = _libsbol.new_Build(*args)
         try:
             self.this.append(this)
@@ -7341,31 +11141,7 @@ class Build(Implementation):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Build_copy(self, *args)
@@ -7438,6 +11214,91 @@ Build_swigregister = _libsbol.Build_swigregister
 Build_swigregister(Build)
 
 class Test(Collection):
+    """
+
+
+    A Test is a container for experimental data. A Test is the product of the third
+    step of libSBOL's formalized Design-Build-Test-Analyze workflow.  
+
+    Attributes
+    ----------
+    * `samples` : `ReferencedObject`  
+        References to Builds which were tested in the experiment.  
+
+    * `dataFiles` : `ReferencedObject`  
+        References to file Attachments which contain experimental data sets.  
+
+    * `members` : `URIProperty`  
+        The members property of a Collection is OPTIONAL and MAY contain a set of
+        URI references to zero or more TopLevel objects.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/dbtl.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Collection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7449,6 +11310,23 @@ class Test(Collection):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Test(uri="example", version=VERSION_STRING)`  
+
+        Construct a new Test object.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
         this = _libsbol.new_Test(*args)
         try:
             self.this.append(this)
@@ -7468,31 +11346,7 @@ class Test(Collection):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Test_copy(self, *args)
@@ -7565,6 +11419,92 @@ Test_swigregister = _libsbol.Test_swigregister
 Test_swigregister(Test)
 
 class Analysis(TopLevel):
+    """
+
+
+    Attributes
+    ----------
+    * `rawData` : `ReferencedObject`  
+        A reference to a Test object which contains the raw data for an Analysis.  
+
+    * `dataFiles` : `ReferencedObject`  
+        References to file Attachments which contain experimental data sets.  
+
+    * `dataSheet` : `ReferencedObject`  
+        A reference to a datasheet file.  
+
+    * `consensusSequence` : `OwnedObject< Sequence >`  
+        A sequence object that represents a consensus sequence from DNA sequencing
+        data.  
+
+    * `fittedModel` : `OwnedObject< Model >`  
+        A Model derived from fitting an experimental data set.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7576,6 +11516,23 @@ class Analysis(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `Analysis(uri="example", version=VERSION_STRING)`  
+
+        Construct a new Analysis object.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
         this = _libsbol.new_Analysis(*args)
         try:
             self.this.append(this)
@@ -7603,6 +11560,13 @@ class Analysis(TopLevel):
         fittedModel = _swig_property(_libsbol.Analysis_fittedModel_get, _libsbol.Analysis_fittedModel_set)
 
     def verifyTarget(self, consensus_sequence):
+        """
+
+        `verifyTarget(consensus_sequence)`  
+
+        Compare a consensus Sequence to the target Sequence.  
+
+        """
         val = _libsbol.Analysis_verifyTarget(self, consensus_sequence)
 
         consensus_sequence.thisown = False
@@ -7612,47 +11576,51 @@ class Analysis(TopLevel):
 
 
     def reportIdentity(self):
+        """
+
+        `reportIdentity() -> std::unordered_map< std::string, std::tuple< int, int,
+            float > >`  
+
+        """
         return _libsbol.Analysis_reportIdentity(self)
 
+
     def reportError(self):
+        """
+
+        `reportError() -> std::unordered_map< std::string, std::tuple< int, int, float >
+            >`  
+
+        """
         return _libsbol.Analysis_reportError(self)
 
+
     def reportCoverage(self):
+        """
+
+        `reportCoverage() -> std::unordered_map< std::string, std::tuple< int, int,
+            float > >`  
+
+        """
         return _libsbol.Analysis_reportCoverage(self)
 
+
     def reportAmbiguity(self):
+        """
+
+        `reportAmbiguity() -> std::unordered_map< std::string, std::tuple< int, int,
+            float > >`  
+
+        """
         return _libsbol.Analysis_reportAmbiguity(self)
+
     __swig_destroy__ = _libsbol.delete_Analysis
     __del__ = lambda self: None
 
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Analysis_copy(self, *args)
@@ -7725,6 +11693,89 @@ Analysis_swigregister = _libsbol.Analysis_swigregister
 Analysis_swigregister(Analysis)
 
 class SampleRoster(Collection):
+    """
+
+
+    A SampleRoster is a container used to group Builds that are included in an
+    experiment together. A SampleRoster can be used to generate a Test in a Design-
+    Build-Test-Learn workflow.  
+
+    Attributes
+    ----------
+    * `samples` : `ReferencedObject`  
+        References to Builds which were tested in an experiment.  
+
+    * `members` : `URIProperty`  
+        The members property of a Collection is OPTIONAL and MAY contain a set of
+        URI references to zero or more TopLevel objects.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/dbtl.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Collection]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7736,6 +11787,23 @@ class SampleRoster(Collection):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `SampleRoster(uri="example", version=VERSION_STRING)`  
+
+        Construct a new SampleRoster object.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A full URI including a scheme, namespace, and identifier. If SBOLCompliance
+            configuration is enabled, then this argument is simply the displayId for the
+            new object and a full URI will automatically be constructed.  
+        * `version` :  
+            An arbitrary version string. If SBOLCompliance is enabled, this should be a
+            Maven version string of the form "major.minor.patch".  
+
+        """
         this = _libsbol.new_SampleRoster(*args)
         try:
             self.this.append(this)
@@ -7749,31 +11817,7 @@ class SampleRoster(Collection):
     def copy(self, *args):
         """
 
-
-        Copy an object and automatically increment its version.  
-
-        If the optional version argument is specified, it will be used instead of
-        incrementing the copied object's version. An object may also be copied into a
-        new document and a new namespace, assuming compliant URIs.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object being copied  
-
-        Parameters
-        ----------
-        * `new_doc` :  
-            The new copies will be attached to this Document. NULL by default.  
-        * `ns` :  
-            This namespace will be substituted for the current namespace (as configured
-            by setHomespace) in all SBOL-compliat URIs.  
-        * `version` :  
-            A new version  
-
-        Returns
-        -------
-        The full URI of the created object.  
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.SampleRoster_copy(self, *args)
@@ -7848,6 +11892,147 @@ SampleRoster_swigregister = _libsbol.SampleRoster_swigregister
 SampleRoster_swigregister(SampleRoster)
 
 class TranscriptionalRepressionInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `repressor` : `AliasedProperty< FunctionalComponent >`  
+
+    * `targetPromoter` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7859,6 +12044,11 @@ class TranscriptionalRepressionInteraction(Interaction):
     __repr__ = _swig_repr
 
     def __init__(self, uri, repressor, target_promoter):
+        """
+
+        `TranscriptionalRepressionInteraction(uri, repressor, target_promoter)`  
+
+        """
         this = _libsbol.new_TranscriptionalRepressionInteraction(uri, repressor, target_promoter)
         try:
             self.this.append(this)
@@ -7942,6 +12132,147 @@ TranscriptionalRepressionInteraction_swigregister = _libsbol.TranscriptionalRepr
 TranscriptionalRepressionInteraction_swigregister(TranscriptionalRepressionInteraction)
 
 class SmallMoleculeInhibitionInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `ligand` : `AliasedProperty< FunctionalComponent >`  
+
+    * `transcriptionFactor` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -7953,6 +12284,11 @@ class SmallMoleculeInhibitionInteraction(Interaction):
     __repr__ = _swig_repr
 
     def __init__(self, uri, ligand, transcription_factor):
+        """
+
+        `SmallMoleculeInhibitionInteraction(uri, ligand, transcription_factor)`  
+
+        """
         this = _libsbol.new_SmallMoleculeInhibitionInteraction(uri, ligand, transcription_factor)
         try:
             self.this.append(this)
@@ -8036,6 +12372,147 @@ SmallMoleculeInhibitionInteraction_swigregister = _libsbol.SmallMoleculeInhibiti
 SmallMoleculeInhibitionInteraction_swigregister(SmallMoleculeInhibitionInteraction)
 
 class GeneProductionInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `gene` : `AliasedProperty< FunctionalComponent >`  
+
+    * `product` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8047,6 +12524,11 @@ class GeneProductionInteraction(Interaction):
     __repr__ = _swig_repr
 
     def __init__(self, uri, gene, product):
+        """
+
+        `GeneProductionInteraction(uri, gene, product)`  
+
+        """
         this = _libsbol.new_GeneProductionInteraction(uri, gene, product)
         try:
             self.this.append(this)
@@ -8130,6 +12612,147 @@ GeneProductionInteraction_swigregister = _libsbol.GeneProductionInteraction_swig
 GeneProductionInteraction_swigregister(GeneProductionInteraction)
 
 class TranscriptionalActivationInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `activator` : `AliasedProperty< FunctionalComponent >`  
+
+    * `targetPromoter` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8141,6 +12764,11 @@ class TranscriptionalActivationInteraction(Interaction):
     __repr__ = _swig_repr
 
     def __init__(self, uri, activator, target_promoter):
+        """
+
+        `TranscriptionalActivationInteraction(uri, activator, target_promoter)`  
+
+        """
         this = _libsbol.new_TranscriptionalActivationInteraction(uri, activator, target_promoter)
         try:
             self.this.append(this)
@@ -8224,6 +12852,147 @@ TranscriptionalActivationInteraction_swigregister = _libsbol.TranscriptionalActi
 TranscriptionalActivationInteraction_swigregister(TranscriptionalActivationInteraction)
 
 class SmallMoleculeActivationInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `ligand` : `AliasedProperty< FunctionalComponent >`  
+
+    * `transcriptionFactor` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8235,6 +13004,11 @@ class SmallMoleculeActivationInteraction(Interaction):
     __repr__ = _swig_repr
 
     def __init__(self, uri, ligand, transcription_factor):
+        """
+
+        `SmallMoleculeActivationInteraction(uri, ligand, transcription_factor)`  
+
+        """
         this = _libsbol.new_SmallMoleculeActivationInteraction(uri, ligand, transcription_factor)
         try:
             self.this.append(this)
@@ -8318,6 +13092,153 @@ SmallMoleculeActivationInteraction_swigregister = _libsbol.SmallMoleculeActivati
 SmallMoleculeActivationInteraction_swigregister(SmallMoleculeActivationInteraction)
 
 class EnzymeCatalysisInteraction(Interaction):
+    """
+
+
+    Attributes
+    ----------
+    * `enzyme` : `AliasedProperty< FunctionalComponent >`  
+
+    * `substrates` : `AliasedProperty< FunctionalComponent >`  
+
+    * `products` : `AliasedProperty< FunctionalComponent >`  
+
+    * `cofactors` : `AliasedProperty< FunctionalComponent >`  
+
+    * `sideproducts` : `AliasedProperty< FunctionalComponent >`  
+
+    * `types` : `URIProperty`  
+        The types property is a REQUIRED set of URIs that describes the behavior
+        represented by an Interaction.  
+
+        The types property MUST contain one or more URIs that MUST identify terms
+        from appropriate ontologies. It is RECOMMENDED that at least one of the URIs
+        contained by the types property refer to a term from the occurring entity
+        branch of the Systems Biology Ontology (SBO). (See
+        http://www.ebi.ac.uk/sbo/main/) The following table provides a list of
+        possible SBO terms for the types property and their corresponding URIs.
+        Type  
+
+        URI for SBO Term  
+
+        LibSBOL symbol  
+
+        Biochemical Reaction  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000176  
+
+        SBO_BIOCHEMICAL_REACTION  
+
+        Inhibition  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000169  
+
+        SBO_INHIBITION  
+
+        Stimulation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000170  
+
+        SBO_STIMULATION  
+
+        Genetic Production  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000589  
+
+        SBO_GENETIC_PRODUCTION  
+
+        Non-Covalent Binding  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000177  
+
+        SBO_NONCOVALENT_BINDING  
+
+        Degradation  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000179  
+
+        SBO_DEGRADATION  
+
+        Control  
+
+        http://identifiers.org/biomodels.sbo/SBO:0000168  
+
+        SBO_CONTROL  
+
+    * `participations` : `OwnedObject< Participation >`  
+        The participations property is an OPTIONAL and MAY contain a set of
+        Participation objects, each of which identifies the roles that its
+        referenced FunctionalComponent plays in the Interaction. Even though an
+        Interaction generally contains at least one Participation, the case of zero
+        Participation objects is allowed because it is plausible that a designer
+        might want to specify that an Interaction will exist, even if its
+        participants have not yet been determined.  
+
+    * `functionalComponents` : `OwnedObject< FunctionalComponent >`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [Interaction]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8413,6 +13334,12 @@ class EnzymeCatalysisInteraction(Interaction):
 
 
     def __init__(self, *args):
+        """
+
+        `EnzymeCatalysisInteraction(uri, enzyme, substrates, products, cofactors,
+            sideproducts)`  
+
+        """
         this = _libsbol.new_EnzymeCatalysisInteraction(*args)
         try:
             self.this.append(this)
@@ -8424,6 +13351,94 @@ EnzymeCatalysisInteraction_swigregister = _libsbol.EnzymeCatalysisInteraction_sw
 EnzymeCatalysisInteraction_swigregister(EnzymeCatalysisInteraction)
 
 class SearchQuery(TopLevel):
+    """
+
+
+    A SearchQuery object is used to configure advanced searches for bioparts in a
+    PartShop. Advanced searches are useful for matching values across multiple
+    fields, or to specify multiple values in a single field.  
+
+    Attributes
+    ----------
+    * `objectType` : `URIProperty`  
+        Set this property to indicate the type of SBOL object to search for. Set to
+        SBOL_COMPONENT_DEFINITION by default.  
+
+    * `limit` : `IntProperty`  
+        Set this property to specify the total number of records to retrieve from a
+        search request. By default 25 records are retrieved.  
+
+    * `offset` : `IntProperty`  
+        When the number of search hits exceeds the limit, the offset property can be
+        used to retrieve more records.  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/partshop.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8435,6 +13450,19 @@ class SearchQuery(TopLevel):
     __repr__ = _swig_repr
 
     def __init__(self, *args):
+        """
+
+        `SearchQuery(search_target=SBOL_COMPONENT_DEFINITION, offset=0, limit=25)`  
+
+        SearchQuery constructor.  
+
+        Parameters
+        ----------
+        * `search_target` :  
+            The type of SBOL object to search for, indicated using a URI. Set to
+            SBOL_COMPONENT_DEFINITION by default.  
+
+        """
         this = _libsbol.new_SearchQuery(*args)
         try:
             self.this.append(this)
@@ -8525,6 +13553,84 @@ SearchQuery_swigregister = _libsbol.SearchQuery_swigregister
 SearchQuery_swigregister(SearchQuery)
 
 class SearchResponse(TopLevel):
+    """
+
+
+    A SearchResponse is a container of search records returned by a search request.  
+
+    Attributes
+    ----------
+    * `records` : `std::vector< sbol::Identified *>`  
+
+    * `python_iter` : `std::vector< Identified * >::iterator`  
+
+    * `attachments` : `ReferencedObject`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/partshop.h
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [TopLevel]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -8540,9 +13646,27 @@ class SearchResponse(TopLevel):
         records = _swig_property(_libsbol.SearchResponse_records_get, _libsbol.SearchResponse_records_set)
 
     def extend(self, response):
+        """
+
+        `extend(response)`  
+
+        Adds more search records to an existing SearchResponse.  
+
+        Parameters
+        ----------
+        * `response` :  
+            A SearchResponse object  
+
+        """
         return _libsbol.SearchResponse_extend(self, response)
 
+
     def __init__(self):
+        """
+
+        `SearchResponse()`  
+
+        """
         this = _libsbol.new_SearchResponse()
         try:
             self.this.append(this)
@@ -8552,7 +13676,13 @@ class SearchResponse(TopLevel):
     __del__ = lambda self: None
 
     def end(self):
+        """
+
+        `end() -> iterator`  
+
+        """
         return _libsbol.SearchResponse_end(self)
+
     __swig_setmethods__["python_iter"] = _libsbol.SearchResponse_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.SearchResponse_python_iter_get
     if _newclass:
@@ -8576,6 +13706,15 @@ SearchResponse_swigregister = _libsbol.SearchResponse_swigregister
 SearchResponse_swigregister(SearchResponse)
 
 class PartShop(_object):
+    """
+
+
+    A class which provides an API front-end for online bioparts repositories.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/partshop.h
+
+    """
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, PartShop, name, value)
     __swig_getmethods__ = {}
@@ -8583,6 +13722,18 @@ class PartShop(_object):
     __repr__ = _swig_repr
 
     def __init__(self, url):
+        """
+
+        `PartShop(url)`  
+
+        Construct an interface to an instance of SynBioHub or other parts repository.  
+
+        Parameters
+        ----------
+        * `The` :  
+            URL of the online repository  
+
+        """
         this = _libsbol.new_PartShop(url)
         try:
             self.this.append(this)
@@ -8592,20 +13743,25 @@ class PartShop(_object):
     def pull(self, *args):
         """
 
-        Retrieve an object from an online resource
-
-        Parameters
-        ----------
-        * `uri` : 
-            The identity of the SBOL object you want to retrieve  
-        * `doc` :
-        	The Document to which SBOL data will be added
+        `pull(uri, doc, recursive)`  
 
         """
         return _libsbol.PartShop_pull(self, *args)
 
 
     def searchRootCollections(self):
+        """
+
+        `searchRootCollections() -> std::string`  
+
+        Returns all Collections that are not members of any other Collections.  
+
+        Parameters
+        ----------
+        * `doc` :  
+            A Document to add the Collections to  
+
+        """
         val = _libsbol.PartShop_searchRootCollections(self)
 
         true = True
@@ -8618,6 +13774,20 @@ class PartShop(_object):
 
 
     def searchSubCollections(self, uri):
+        """
+
+        `searchSubCollections(uri) -> std::string`  
+
+        Returns all Collections that are members of the Collection specified by its URI.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The URI of a Collection of Collections  
+        * `doc` :  
+            A Document to add the subcollections to  
+
+        """
         val = _libsbol.PartShop_searchSubCollections(self, uri)
 
         true = True
@@ -8632,12 +13802,19 @@ class PartShop(_object):
     def search(self, *args):
         """
 
-        An advanced search that allows the user to specify an arbitrary number of search criteria as key/value pairs. Metadata is return as a list of object metadata in dictionary format.
+        `search(q) -> SearchResponse &`  
+
+        Perform an ADVANCED search using a SearchQuery object.  
 
         Parameters
         ----------
-        * `q` :
-        	A SearchQuery object populated with search fields and values specified as key/value pairs
+        * `search_query` :  
+            A map of string key-value pairs. Keys are objectType, sbolTag, collection,
+            dcterms:tag, namespace/tag, offset, limit.  
+
+        Returns
+        -------
+        Search metadata A vector of maps with key-value pairs.  
 
         """
         val = _libsbol.PartShop_search(self, *args)
@@ -8653,16 +13830,43 @@ class PartShop(_object):
 
 
     def searchCount(self, *args):
+        """
+
+        `searchCount(q) -> int`  
+
+        Returns the number of search records matching the given criteria for an ADVANCED
+        search.  
+
+        Parameters
+        ----------
+        * `search_query` :  
+            A map of string key-value pairs. See SearchQuery for required and optional
+            criteria.  
+
+        Returns
+        -------
+        An integer count.  
+
+        """
         return _libsbol.PartShop_searchCount(self, *args)
+
 
     def submit(self, *args):
         """
 
-        Submit your SBOL data to a SynBioHub instance. In order to submit to a PartShop, you must login first. Register on [SynBioHub](http://synbiohub.org) to obtain account credentials.
-        * `doc` :
-        	The Document to submit
-        * `overwrite` :
-        	An integer code: 0(default) - do not overwrite, 1 - overwrite, 2 - merge
+        `submit(doc, collection="", overwrite=0) -> std::string`  
+
+        Submit an SBOL Document to SynBioHub.  
+
+        Parameters
+        ----------
+        * `doc` :  
+            The Document to submit  
+        * `collection` :  
+            The URI of an SBOL Collection to which the Document contents will be
+            uploaded  
+        * `overwrite` :  
+            An integer code: 0(default) - do not overwrite, 1 - overwrite, 2 - merge  
 
         """
         val = _libsbol.PartShop_submit(self, *args)
@@ -8680,42 +13884,87 @@ class PartShop(_object):
     def login(self, *args):
         """
 
-        In order to submit to a PartShop, you must login first. Register on [SynBioHub](http://synbiohub.org) to obtain account credentials.
+        `login(email, password="")`  
+
+        In order to submit to a PartShop, you must login first.  
+
+        Register on SynBioHub to obtain account credentials.  
 
         Parameters
         ----------
-        * `email` :
-        	The email associated with the user's SynBioHub account
-        * `password` :
-        	The user's password
+        * `email` :  
+            The email associated with the user's SynBioHub account  
+        * `password` :  
+            The user's password  
 
         """
         return _libsbol.PartShop_login(self, *args)
 
 
     def getURL(self):
+        """
+
+        `getURL() -> std::string`  
+
+        Returns the network address of the PartShop.  
+
+        Returns
+        -------
+        The URL of the online repository  
+
+        """
         return _libsbol.PartShop_getURL(self)
 
+
     def attachFile(self, topleveluri, filename):
+        """
+
+        `attachFile(topleveluri, filename)`  
+
+        Upload and attach a file to a TopLevel object in a PartShop.  
+
+        Parameters
+        ----------
+        * `top_level_uri` :  
+            The identity of the object to which the file will be attached  
+        * `file_name` :  
+            A path to the file attachment  
+
+        """
         return _libsbol.PartShop_attachFile(self, topleveluri, filename)
 
+
     def downloadAttachment(self, *args):
+        """
+
+        `downloadAttachment(attachment_uri, path=".")`  
+
+        Download a file attached to a TopLevel object in an online repository.  
+
+        Parameters
+        ----------
+        * `attachment_uri` :  
+            The full URI of the attached object  
+        * `path` :  
+            The target path to which the file will be downloaded  
+
+        """
         return _libsbol.PartShop_downloadAttachment(self, *args)
 
+
     def addSynBioHubAnnotations(self, doc):
+        """
+
+        `addSynBioHubAnnotations(doc)`  
+
+        """
         return _libsbol.PartShop_addSynBioHubAnnotations(self, doc)
+
 
     def pullComponentDefinition(self, uri, doc, recursive=True):
         """
 
-        Retrieve an object from an online resource
-
-        Parameters
-        ----------
-        * `uri` : 
-            The identity of the SBOL object you want to retrieve  
-        * `doc` :
-        	The Document to which SBOL data will be added
+        `pull(uri, doc, recursive)`  
 
         """
         return _libsbol.PartShop_pullComponentDefinition(self, uri, doc, recursive)
@@ -8724,14 +13973,7 @@ class PartShop(_object):
     def pullCollection(self, uri, doc, recursive=True):
         """
 
-        Retrieve an object from an online resource
-
-        Parameters
-        ----------
-        * `uri` : 
-            The identity of the SBOL object you want to retrieve  
-        * `doc` :
-        	The Document to which SBOL data will be added
+        `pull(uri, doc, recursive)`  
 
         """
         return _libsbol.PartShop_pullCollection(self, uri, doc, recursive)
@@ -8740,14 +13982,7 @@ class PartShop(_object):
     def pullSequence(self, uri, doc, recursive=True):
         """
 
-        Retrieve an object from an online resource
-
-        Parameters
-        ----------
-        * `uri` : 
-            The identity of the SBOL object you want to retrieve  
-        * `doc` :
-        	The Document to which SBOL data will be added
+        `pull(uri, doc, recursive)`  
 
         """
         return _libsbol.PartShop_pullSequence(self, uri, doc, recursive)
@@ -8756,7 +13991,14 @@ class PartShop(_object):
     def countComponentDefinition(self):
         """
 
-        Return the count of objects contained in a PartShop
+        `count() -> int`  
+
+        Return the count of objects contained in a PartShop.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object, usually a ComponentDefinition  
 
         """
         return _libsbol.PartShop_countComponentDefinition(self)
@@ -8765,7 +14007,14 @@ class PartShop(_object):
     def countCollection(self):
         """
 
-        Return the count of objects contained in a PartShop
+        `count() -> int`  
+
+        Return the count of objects contained in a PartShop.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object, usually a ComponentDefinition  
 
         """
         return _libsbol.PartShop_countCollection(self)
@@ -8782,6 +14031,109 @@ class Document(Identified):
     Read and write SBOL using a Document class. The Document is a container for
     Components, Modules, and all other SBOLObjects.  
 
+    Attributes
+    ----------
+    * `designs` : `OwnedObject< Design >`  
+
+    * `builds` : `OwnedObject< Build >`  
+
+    * `tests` : `OwnedObject< Test >`  
+
+    * `analyses` : `OwnedObject< Analysis >`  
+
+    * `componentDefinitions` : `OwnedObject< ComponentDefinition >`  
+
+    * `moduleDefinitions` : `OwnedObject< ModuleDefinition >`  
+
+    * `models` : `OwnedObject< Model >`  
+
+    * `sequences` : `OwnedObject< Sequence >`  
+
+    * `collections` : `OwnedObject< Collection >`  
+
+    * `activities` : `OwnedObject< Activity >`  
+
+    * `plans` : `OwnedObject< Plan >`  
+
+    * `agents` : `OwnedObject< Agent >`  
+
+    * `attachments` : `OwnedObject< Attachment >`  
+
+    * `combinatorialderivations` : `OwnedObject< CombinatorialDerivation >`  
+
+    * `implementations` : `OwnedObject< Implementation >`  
+
+    * `sampleRosters` : `OwnedObject< SampleRoster >`  
+
+    * `citations` : `URIProperty`  
+
+    * `keywords` : `URIProperty`  
+
+    * `python_iter` : `iterator`  
+
+    * `persistentIdentity` : `URIProperty`  
+        The persistentIdentity property is OPTIONAL and has a data type of URI. This
+        URI serves to uniquely refer to a set of SBOL objects that are different
+        versions of each other. An Identified object MUST be referred to using
+        either its identity URI or its persistentIdentity URI.  
+
+    * `displayId` : `TextProperty`  
+        The displayId property is an OPTIONAL identifier with a data type of String.
+        This property is intended to be an intermediate between name and identity
+        that is machine-readable, but more human-readable than the full URI of an
+        identity. If the displayId property is used, then its String value SHOULD be
+        locally unique (global uniqueness is not necessary) and MUST be composed of
+        only alphanumeric or underscore characters and MUST NOT begin with a digit.  
+
+    * `version` : `VersionProperty`  
+        If the version property is used, then it is RECOMMENDED that version
+        numbering follow the conventions of semantic versioning, particularly as
+        implemented by Maven. This convention represents versions as sequences of
+        numbers and qualifiers that are separated by the characters . and - and
+        are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+        For a full explanation, see the linked resources.  
+
+    * `wasDerivedFrom` : `URIProperty`  
+        The wasDerivedFrom property is OPTIONAL and has a data type of URI. An SBOL
+        object with this property refers to another SBOL object or non-SBOL resource
+        from which this object was derived. If the wasDerivedFrom property of an
+        SBOL object A that refers to an SBOL object B has an identical
+        persistentIdentity, and both A and B have a version, then the version of B
+        MUST precede that of A. In addition, an SBOL object MUST NOT refer to itself
+        via its own wasDerivedFrom property or form a cyclical chain of references
+        via its wasDerivedFrom property and those of other SBOL objects. For
+        example, the reference chain  A was derived from B and B was derived from
+        A is cyclical.  
+
+    * `wasGeneratedBy` : `ReferencedObject`  
+        An Activity which generated this ComponentDefinition, eg., a design process
+        like codon-optimization or a construction process like Gibson Assembly.  
+
+    * `name` : `TextProperty`  
+        The name property is OPTIONAL and has a data type of String. This property
+        is intended to be displayed to a human when visualizing an Identified
+        object. If an Identified object lacks a name, then software tools SHOULD
+        instead display the objects displayId or identity. It is RECOMMENDED that
+        software tools give users the ability to switch perspectives between name
+        properties that are human-readable and displayId properties that are less
+        human-readable, but are more likely to be unique.  
+
+    * `description` : `TextProperty`  
+        The description property is OPTIONAL and has a data type of String. This
+        property is intended to contain a more thorough text description of an
+        Identified object.  
+
+    * `identity` : `URIProperty`  
+        The identity property is REQUIRED by all Identified objects and has a data
+        type of URI. A given Identified objects identity URI MUST be globally
+        unique among all other identity URIs. The identity of a compliant SBOL
+        object MUST begin with a URI prefix that maps to a domain over which the
+        user has control. Namely, the user can guarantee uniqueness of identities
+        within this domain. For other best practices regarding URIs see Section 11.2
+        of the SBOL specification doucment.  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/document.h
+
     """
 
     __swig_setmethods__ = {}
@@ -8797,9 +14149,7 @@ class Document(Identified):
     def __init__(self, *args):
         """
 
-
-        Construct a Document. The Document is a container for Components, Modules, and
-        all other SBOLObjects.  
+        `Document(filename)`  
 
         """
         this = _libsbol.new_Document(*args)
@@ -8895,6 +14245,7 @@ class Document(Identified):
     def write(self, filename):
         """
 
+        `write(filename) -> std::string`  
 
         Serialize all objects in this Document to an RDF/XML file.  
 
@@ -8914,6 +14265,7 @@ class Document(Identified):
     def read(self, filename):
         """
 
+        `read(filename)`  
 
         Read an RDF/XML file and attach the SBOL objects to this Document.  
 
@@ -8929,11 +14281,20 @@ class Document(Identified):
 
 
     def writeString(self):
+        """
+
+        `writeString() -> std::string`  
+
+        Convert data objects in this Document into textual SBOL.  
+
+        """
         return _libsbol.Document_writeString(self)
+
 
     def append(self, filename):
         """
 
+        `append(filename)`  
 
         Read an RDF/XML file and attach the SBOL objects to this Document.  
 
@@ -8951,38 +14312,69 @@ class Document(Identified):
     def request_validation(self, sbol):
         """
 
-
-        Submit this Document to the online validator.  
-
-        Returns
-        -------
-        The validation results  
+        `request_validation(sbol) -> std::string`  
 
         """
         return _libsbol.Document_request_validation(self, sbol)
 
 
     def request_comparison(self, diff_file):
+        """
+
+        `request_comparison(diff_file) -> std::string`  
+
+        Perform comparison on Documents using the online validation tool.  
+
+        This is for cross-validation of SBOL documents with libSBOLj. Document
+        comparison can also be performed using the built-in compare method.  
+
+        Returns
+        -------
+        The comparison results  
+
+        """
         return _libsbol.Document_request_comparison(self, diff_file)
 
+
     def query_repository(self, command):
+        """
+
+        `query_repository(command) -> std::string`  
+
+        """
         return _libsbol.Document_query_repository(self, command)
 
+
     def search_metadata(self, role, type, name, collection):
+        """
+
+        `search_metadata(role, type, name, collection) -> std::string`  
+
+        """
         return _libsbol.Document_search_metadata(self, role, type, name, collection)
 
+
     def generate(self, world, sbol_serializer, sbol_buffer, sbol_buffer_len, ios, base_uri):
+        """
+
+        `generate() -> SBOLClass &`  
+
+        """
         return _libsbol.Document_generate(self, world, sbol_serializer, sbol_buffer, sbol_buffer_len, ios, base_uri)
+
 
     def validate(self):
         """
 
+        `validate() -> std::string`  
 
-        Run validation on this Document.  
+        Run validation on this Document via the online validation tool.  
 
         Returns
         -------
-        The validation results  
+        A string containing a message with the validation results  
+
+        author: KC  
 
         """
         return _libsbol.Document_validate(self)
@@ -8991,6 +14383,7 @@ class Document(Identified):
     def copy(self, *args):
         """
 
+        `copy(ns="", version="") -> SBOLClass &`  
 
         """
         return _libsbol.Document_copy(self, *args)
@@ -9003,10 +14396,25 @@ class Document(Identified):
         return _libsbol.Document___str__(self)
 
     def summary(self):
+        """
+
+        `summary() -> std::string`  
+
+        Get a summary of objects in the Document, including SBOL core object and custom
+        annotation objects.  
+
+        """
         return _libsbol.Document_summary(self)
 
+
     def end(self):
+        """
+
+        `end() -> iterator`  
+
+        """
         return _libsbol.Document_end(self)
+
     __swig_setmethods__["python_iter"] = _libsbol.Document_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.Document_python_iter_get
     if _newclass:
@@ -9015,6 +14423,7 @@ class Document(Identified):
     def find(self, uri):
         """
 
+        `find(uri) -> SBOLObject *`  
 
         Search recursively for an SBOLObject in this Document that matches the uri.  
 
@@ -9045,6 +14454,7 @@ class Document(Identified):
     def find_property(self, uri):
         """
 
+        `find_property(uri) -> SBOLObject *`  
 
         Search this object recursively to see if it contains a member property with the
         given RDF type.  
@@ -9064,14 +14474,39 @@ class Document(Identified):
 
 
     def find_reference(self, uri):
+        """
+
+        `find_reference(uri) -> std::vector< SBOLObject * >`  
+
+        Search this object recursively to see if it contains a member property with the
+        given RDF type and indicated property value.  
+
+        Parameters
+        ----------
+        * `uri` :  
+            A URI, either an ontology term or an object reference, to search for  
+
+        Returns
+        -------
+        A vector containing all objects found that contain the URI in a property value  
+
+        """
         return _libsbol.Document_find_reference(self, uri)
 
+
     def countTriples(self):
+        """
+
+        `countTriples() -> int`  
+
+        """
         return _libsbol.Document_countTriples(self)
+
 
     def getNamespaces(self):
         """
 
+        `getNamespaces() -> std::vector< std::string >`  
 
         Returns
         -------
@@ -9084,6 +14519,7 @@ class Document(Identified):
     def addNamespace(self, *args):
         """
 
+        `addNamespace(ns, prefix)`  
 
         Add a new namespace to this Document.  
 
@@ -9101,6 +14537,7 @@ class Document(Identified):
     def getComponentDefinition(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9121,13 +14558,7 @@ class Document(Identified):
     def addComponentDefinition(self, *args):
         """
 
-
-        Adds a component definition or a list of component definitions to a sbol::Document object.
-
-        Parameters
-        ----------
-        * `componentDefinition` : 
-            ComponentDefinition object or a list of ComponentDefinition objects
+        `addComponentDefinition(sbol_obj)`  
 
         """
         val = _libsbol.Document_addComponentDefinition(self, *args)
@@ -9145,6 +14576,7 @@ class Document(Identified):
     def getModuleDefinition(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9165,13 +14597,7 @@ class Document(Identified):
     def addModuleDefinition(self, *args):
         """
 
-
-        Adds a module definition or a list of module definitions to a sbol::Document object.
-
-        Parameters
-        ----------
-        * `moduleDefinition` : 
-            ModuleDefinition object or a list of ModuleDefinition objects
+        `addModuleDefinition(sbol_obj)`  
 
         """
         val = _libsbol.Document_addModuleDefinition(self, *args)
@@ -9189,6 +14615,7 @@ class Document(Identified):
     def getSequence(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9209,13 +14636,7 @@ class Document(Identified):
     def addSequence(self, *args):
         """
 
-
-        Adds a sequence or a list of sequences to a sbol::Document object.
-
-        Parameters
-        ----------
-        * `sequence` : 
-            Sequence object or a list of Sequence objects
+        `addSequence(sbol_obj)`  
 
         """
         val = _libsbol.Document_addSequence(self, *args)
@@ -9233,6 +14654,7 @@ class Document(Identified):
     def getModel(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9251,6 +14673,11 @@ class Document(Identified):
 
 
     def addModel(self, *args):
+        """
+
+        `addModel(sbol_obj)`  
+
+        """
         val = _libsbol.Document_addModel(self, *args)
 
         if type(args[0]) is list:
@@ -9266,6 +14693,7 @@ class Document(Identified):
     def getCollection(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9299,6 +14727,7 @@ class Document(Identified):
     def getActivity(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9332,6 +14761,7 @@ class Document(Identified):
     def getPlan(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9365,6 +14795,7 @@ class Document(Identified):
     def getAgent(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9398,6 +14829,7 @@ class Document(Identified):
     def getAttachment(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9431,6 +14863,7 @@ class Document(Identified):
     def getImplementation(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9464,6 +14897,7 @@ class Document(Identified):
     def getCombinatorialDerivation(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9497,6 +14931,7 @@ class Document(Identified):
     def getDesign(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9530,6 +14965,7 @@ class Document(Identified):
     def getBuild(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9563,6 +14999,7 @@ class Document(Identified):
     def getTest(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9596,6 +15033,7 @@ class Document(Identified):
     def getAnalysis(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9629,6 +15067,7 @@ class Document(Identified):
     def getSampleRoster(self, uri):
         """
 
+        `get(uri) -> SBOLClass &`  
 
         Retrieve an object from the Document.  
 
@@ -9739,7 +15178,20 @@ class Document(Identified):
         return _libsbol.Document___next__(self)
 
     def readString(self, *args):
+        """
+
+        `readString(sbol)`  
+
+        Convert text in SBOL into data objects.  
+
+        Parameters
+        ----------
+        * `sbol` :  
+            A string formatted in SBOL  
+
+        """
         return _libsbol.Document_readString(self, *args)
+
 Document_swigregister = _libsbol.Document_swigregister
 Document_swigregister(Document)
 cvar = _libsbol.cvar
@@ -10028,6 +15480,12 @@ class LocationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -10039,27 +15497,7 @@ class LocationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_LocationProperty(*args)
@@ -10073,10 +15511,7 @@ class LocationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.LocationProperty_getTypeURI(self)
@@ -10085,6 +15520,7 @@ class LocationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.LocationProperty_getOwner(self)
@@ -10093,8 +15529,9 @@ class LocationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -10121,6 +15558,7 @@ class LocationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -10148,16 +15586,9 @@ class LocationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.LocationProperty_remove(self, index)
@@ -10166,8 +15597,9 @@ class LocationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.LocationProperty_clear(self)
@@ -10176,37 +15608,73 @@ class LocationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.LocationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.LocationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.LocationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.LocationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.LocationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.LocationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.LocationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.LocationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.LocationProperty_python_iter_get, _libsbol.LocationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.LocationProperty_addValidationRule(self, *args)
+
 LocationProperty_swigregister = _libsbol.LocationProperty_swigregister
 LocationProperty_swigregister(LocationProperty)
 
@@ -10227,6 +15695,12 @@ class OwnedLocation(LocationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -10242,6 +15716,7 @@ class OwnedLocation(LocationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedLocation(*args)
@@ -10253,24 +15728,15 @@ class OwnedLocation(LocationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedLocation_set(self, sbol_obj)
@@ -10291,24 +15757,14 @@ class OwnedLocation(LocationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedLocation_add(self, sbol_obj)
@@ -10329,6 +15785,7 @@ class OwnedLocation(LocationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -10359,9 +15816,13 @@ class OwnedLocation(LocationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedLocation_getAll(self)
@@ -10375,16 +15836,14 @@ class OwnedLocation(LocationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedLocation_remove(self, *args)
@@ -10393,6 +15852,7 @@ class OwnedLocation(LocationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -10403,29 +15863,7 @@ class OwnedLocation(LocationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedLocation_create(self, uri)
@@ -10437,10 +15875,56 @@ class OwnedLocation(LocationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedLocation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedLocation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedLocation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedLocation_python_iter_get
     if _newclass:
@@ -10461,29 +15945,7 @@ class OwnedLocation(LocationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedLocation_createRange(self, uri)
@@ -10497,6 +15959,7 @@ class OwnedLocation(LocationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -10527,29 +15990,7 @@ class OwnedLocation(LocationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedLocation_createCut(self, uri)
@@ -10563,6 +16004,7 @@ class OwnedLocation(LocationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -10593,29 +16035,7 @@ class OwnedLocation(LocationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedLocation_createGenericLocation(self, uri)
@@ -10629,6 +16049,7 @@ class OwnedLocation(LocationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -10794,6 +16215,12 @@ class MapsToProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -10805,27 +16232,7 @@ class MapsToProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_MapsToProperty(*args)
@@ -10839,10 +16246,7 @@ class MapsToProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.MapsToProperty_getTypeURI(self)
@@ -10851,6 +16255,7 @@ class MapsToProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.MapsToProperty_getOwner(self)
@@ -10859,8 +16264,9 @@ class MapsToProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -10887,6 +16293,7 @@ class MapsToProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -10914,16 +16321,9 @@ class MapsToProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.MapsToProperty_remove(self, index)
@@ -10932,8 +16332,9 @@ class MapsToProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.MapsToProperty_clear(self)
@@ -10942,37 +16343,73 @@ class MapsToProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.MapsToProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.MapsToProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.MapsToProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.MapsToProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.MapsToProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.MapsToProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.MapsToProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.MapsToProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.MapsToProperty_python_iter_get, _libsbol.MapsToProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.MapsToProperty_addValidationRule(self, *args)
+
 MapsToProperty_swigregister = _libsbol.MapsToProperty_swigregister
 MapsToProperty_swigregister(MapsToProperty)
 
@@ -10993,6 +16430,12 @@ class OwnedMapsTo(MapsToProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -11008,6 +16451,7 @@ class OwnedMapsTo(MapsToProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedMapsTo(*args)
@@ -11019,24 +16463,15 @@ class OwnedMapsTo(MapsToProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedMapsTo_set(self, sbol_obj)
@@ -11057,24 +16492,14 @@ class OwnedMapsTo(MapsToProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedMapsTo_add(self, sbol_obj)
@@ -11095,6 +16520,7 @@ class OwnedMapsTo(MapsToProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -11125,9 +16551,13 @@ class OwnedMapsTo(MapsToProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedMapsTo_getAll(self)
@@ -11141,16 +16571,14 @@ class OwnedMapsTo(MapsToProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedMapsTo_remove(self, *args)
@@ -11159,6 +16587,7 @@ class OwnedMapsTo(MapsToProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -11169,29 +16598,7 @@ class OwnedMapsTo(MapsToProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedMapsTo_create(self, uri)
@@ -11203,10 +16610,56 @@ class OwnedMapsTo(MapsToProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedMapsTo_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedMapsTo_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedMapsTo_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedMapsTo_python_iter_get
     if _newclass:
@@ -11227,29 +16680,7 @@ class OwnedMapsTo(MapsToProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedMapsTo_createRange(self, uri)
@@ -11263,6 +16694,7 @@ class OwnedMapsTo(MapsToProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -11293,29 +16725,7 @@ class OwnedMapsTo(MapsToProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedMapsTo_createCut(self, uri)
@@ -11329,6 +16739,7 @@ class OwnedMapsTo(MapsToProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -11359,29 +16770,7 @@ class OwnedMapsTo(MapsToProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedMapsTo_createGenericLocation(self, uri)
@@ -11395,6 +16784,7 @@ class OwnedMapsTo(MapsToProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -11560,6 +16950,12 @@ class SequenceConstraintProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -11571,27 +16967,7 @@ class SequenceConstraintProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_SequenceConstraintProperty(*args)
@@ -11605,10 +16981,7 @@ class SequenceConstraintProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.SequenceConstraintProperty_getTypeURI(self)
@@ -11617,6 +16990,7 @@ class SequenceConstraintProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.SequenceConstraintProperty_getOwner(self)
@@ -11625,8 +16999,9 @@ class SequenceConstraintProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -11653,6 +17028,7 @@ class SequenceConstraintProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -11680,16 +17056,9 @@ class SequenceConstraintProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.SequenceConstraintProperty_remove(self, index)
@@ -11698,8 +17067,9 @@ class SequenceConstraintProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.SequenceConstraintProperty_clear(self)
@@ -11708,37 +17078,73 @@ class SequenceConstraintProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.SequenceConstraintProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.SequenceConstraintProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.SequenceConstraintProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.SequenceConstraintProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.SequenceConstraintProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.SequenceConstraintProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.SequenceConstraintProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.SequenceConstraintProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.SequenceConstraintProperty_python_iter_get, _libsbol.SequenceConstraintProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.SequenceConstraintProperty_addValidationRule(self, *args)
+
 SequenceConstraintProperty_swigregister = _libsbol.SequenceConstraintProperty_swigregister
 SequenceConstraintProperty_swigregister(SequenceConstraintProperty)
 
@@ -11759,6 +17165,12 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -11774,6 +17186,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedSequenceConstraint(*args)
@@ -11785,24 +17198,15 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedSequenceConstraint_set(self, sbol_obj)
@@ -11823,24 +17227,14 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedSequenceConstraint_add(self, sbol_obj)
@@ -11861,6 +17255,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -11891,9 +17286,13 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedSequenceConstraint_getAll(self)
@@ -11907,16 +17306,14 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedSequenceConstraint_remove(self, *args)
@@ -11925,6 +17322,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -11935,29 +17333,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceConstraint_create(self, uri)
@@ -11969,10 +17345,56 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedSequenceConstraint_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedSequenceConstraint_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequenceConstraint_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequenceConstraint_python_iter_get
     if _newclass:
@@ -11993,29 +17415,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceConstraint_createRange(self, uri)
@@ -12029,6 +17429,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12059,29 +17460,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceConstraint_createCut(self, uri)
@@ -12095,6 +17474,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12125,29 +17505,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceConstraint_createGenericLocation(self, uri)
@@ -12161,6 +17519,7 @@ class OwnedSequenceConstraint(SequenceConstraintProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12326,6 +17685,12 @@ class SequenceAnnotationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -12337,27 +17702,7 @@ class SequenceAnnotationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_SequenceAnnotationProperty(*args)
@@ -12371,10 +17716,7 @@ class SequenceAnnotationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.SequenceAnnotationProperty_getTypeURI(self)
@@ -12383,6 +17725,7 @@ class SequenceAnnotationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.SequenceAnnotationProperty_getOwner(self)
@@ -12391,8 +17734,9 @@ class SequenceAnnotationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -12419,6 +17763,7 @@ class SequenceAnnotationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -12446,16 +17791,9 @@ class SequenceAnnotationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.SequenceAnnotationProperty_remove(self, index)
@@ -12464,8 +17802,9 @@ class SequenceAnnotationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.SequenceAnnotationProperty_clear(self)
@@ -12474,37 +17813,73 @@ class SequenceAnnotationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.SequenceAnnotationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.SequenceAnnotationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.SequenceAnnotationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.SequenceAnnotationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.SequenceAnnotationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.SequenceAnnotationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.SequenceAnnotationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.SequenceAnnotationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.SequenceAnnotationProperty_python_iter_get, _libsbol.SequenceAnnotationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.SequenceAnnotationProperty_addValidationRule(self, *args)
+
 SequenceAnnotationProperty_swigregister = _libsbol.SequenceAnnotationProperty_swigregister
 SequenceAnnotationProperty_swigregister(SequenceAnnotationProperty)
 
@@ -12525,6 +17900,12 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -12540,6 +17921,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedSequenceAnnotation(*args)
@@ -12551,24 +17933,15 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_set(self, sbol_obj)
@@ -12589,24 +17962,14 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_add(self, sbol_obj)
@@ -12627,6 +17990,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12657,9 +18021,13 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_getAll(self)
@@ -12673,16 +18041,14 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedSequenceAnnotation_remove(self, *args)
@@ -12691,6 +18057,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -12701,29 +18068,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_create(self, uri)
@@ -12735,10 +18080,56 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedSequenceAnnotation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedSequenceAnnotation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequenceAnnotation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequenceAnnotation_python_iter_get
     if _newclass:
@@ -12759,29 +18150,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_createRange(self, uri)
@@ -12795,6 +18164,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12825,29 +18195,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_createCut(self, uri)
@@ -12861,6 +18209,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -12891,29 +18240,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequenceAnnotation_createGenericLocation(self, uri)
@@ -12927,6 +18254,7 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -13092,6 +18420,12 @@ class ComponentProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -13103,27 +18437,7 @@ class ComponentProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ComponentProperty(*args)
@@ -13137,10 +18451,7 @@ class ComponentProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ComponentProperty_getTypeURI(self)
@@ -13149,6 +18460,7 @@ class ComponentProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ComponentProperty_getOwner(self)
@@ -13157,8 +18469,9 @@ class ComponentProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -13185,6 +18498,7 @@ class ComponentProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -13212,16 +18526,9 @@ class ComponentProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ComponentProperty_remove(self, index)
@@ -13230,8 +18537,9 @@ class ComponentProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ComponentProperty_clear(self)
@@ -13240,37 +18548,73 @@ class ComponentProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ComponentProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ComponentProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ComponentProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ComponentProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ComponentProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ComponentProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ComponentProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ComponentProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ComponentProperty_python_iter_get, _libsbol.ComponentProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ComponentProperty_addValidationRule(self, *args)
+
 ComponentProperty_swigregister = _libsbol.ComponentProperty_swigregister
 ComponentProperty_swigregister(ComponentProperty)
 
@@ -13291,6 +18635,12 @@ class OwnedComponent(ComponentProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -13306,6 +18656,7 @@ class OwnedComponent(ComponentProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedComponent(*args)
@@ -13317,24 +18668,15 @@ class OwnedComponent(ComponentProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedComponent_set(self, sbol_obj)
@@ -13355,24 +18697,14 @@ class OwnedComponent(ComponentProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedComponent_add(self, sbol_obj)
@@ -13393,6 +18725,7 @@ class OwnedComponent(ComponentProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -13423,9 +18756,13 @@ class OwnedComponent(ComponentProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedComponent_getAll(self)
@@ -13439,16 +18776,14 @@ class OwnedComponent(ComponentProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedComponent_remove(self, *args)
@@ -13457,6 +18792,7 @@ class OwnedComponent(ComponentProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -13467,29 +18803,7 @@ class OwnedComponent(ComponentProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponent_create(self, uri)
@@ -13501,10 +18815,56 @@ class OwnedComponent(ComponentProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedComponent_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedComponent_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedComponent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedComponent_python_iter_get
     if _newclass:
@@ -13525,29 +18885,7 @@ class OwnedComponent(ComponentProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponent_createRange(self, uri)
@@ -13561,6 +18899,7 @@ class OwnedComponent(ComponentProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -13591,29 +18930,7 @@ class OwnedComponent(ComponentProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponent_createCut(self, uri)
@@ -13627,6 +18944,7 @@ class OwnedComponent(ComponentProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -13657,29 +18975,7 @@ class OwnedComponent(ComponentProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponent_createGenericLocation(self, uri)
@@ -13693,6 +18989,7 @@ class OwnedComponent(ComponentProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -13858,6 +19155,12 @@ class ParticipationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -13869,27 +19172,7 @@ class ParticipationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ParticipationProperty(*args)
@@ -13903,10 +19186,7 @@ class ParticipationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ParticipationProperty_getTypeURI(self)
@@ -13915,6 +19195,7 @@ class ParticipationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ParticipationProperty_getOwner(self)
@@ -13923,8 +19204,9 @@ class ParticipationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -13951,6 +19233,7 @@ class ParticipationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -13978,16 +19261,9 @@ class ParticipationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ParticipationProperty_remove(self, index)
@@ -13996,8 +19272,9 @@ class ParticipationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ParticipationProperty_clear(self)
@@ -14006,37 +19283,73 @@ class ParticipationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ParticipationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ParticipationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ParticipationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ParticipationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ParticipationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ParticipationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ParticipationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ParticipationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ParticipationProperty_python_iter_get, _libsbol.ParticipationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ParticipationProperty_addValidationRule(self, *args)
+
 ParticipationProperty_swigregister = _libsbol.ParticipationProperty_swigregister
 ParticipationProperty_swigregister(ParticipationProperty)
 
@@ -14057,6 +19370,12 @@ class OwnedParticipation(ParticipationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -14072,6 +19391,7 @@ class OwnedParticipation(ParticipationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedParticipation(*args)
@@ -14083,24 +19403,15 @@ class OwnedParticipation(ParticipationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedParticipation_set(self, sbol_obj)
@@ -14121,24 +19432,14 @@ class OwnedParticipation(ParticipationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedParticipation_add(self, sbol_obj)
@@ -14159,6 +19460,7 @@ class OwnedParticipation(ParticipationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -14189,9 +19491,13 @@ class OwnedParticipation(ParticipationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedParticipation_getAll(self)
@@ -14205,16 +19511,14 @@ class OwnedParticipation(ParticipationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedParticipation_remove(self, *args)
@@ -14223,6 +19527,7 @@ class OwnedParticipation(ParticipationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -14233,29 +19538,7 @@ class OwnedParticipation(ParticipationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedParticipation_create(self, uri)
@@ -14267,10 +19550,56 @@ class OwnedParticipation(ParticipationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedParticipation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedParticipation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedParticipation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedParticipation_python_iter_get
     if _newclass:
@@ -14291,29 +19620,7 @@ class OwnedParticipation(ParticipationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedParticipation_createRange(self, uri)
@@ -14327,6 +19634,7 @@ class OwnedParticipation(ParticipationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -14357,29 +19665,7 @@ class OwnedParticipation(ParticipationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedParticipation_createCut(self, uri)
@@ -14393,6 +19679,7 @@ class OwnedParticipation(ParticipationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -14423,29 +19710,7 @@ class OwnedParticipation(ParticipationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedParticipation_createGenericLocation(self, uri)
@@ -14459,6 +19724,7 @@ class OwnedParticipation(ParticipationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -14624,6 +19890,12 @@ class ModuleProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -14635,27 +19907,7 @@ class ModuleProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ModuleProperty(*args)
@@ -14669,10 +19921,7 @@ class ModuleProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ModuleProperty_getTypeURI(self)
@@ -14681,6 +19930,7 @@ class ModuleProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ModuleProperty_getOwner(self)
@@ -14689,8 +19939,9 @@ class ModuleProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -14717,6 +19968,7 @@ class ModuleProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -14744,16 +19996,9 @@ class ModuleProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ModuleProperty_remove(self, index)
@@ -14762,8 +20007,9 @@ class ModuleProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ModuleProperty_clear(self)
@@ -14772,37 +20018,73 @@ class ModuleProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ModuleProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ModuleProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ModuleProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ModuleProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ModuleProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ModuleProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ModuleProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ModuleProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ModuleProperty_python_iter_get, _libsbol.ModuleProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ModuleProperty_addValidationRule(self, *args)
+
 ModuleProperty_swigregister = _libsbol.ModuleProperty_swigregister
 ModuleProperty_swigregister(ModuleProperty)
 
@@ -14823,6 +20105,12 @@ class OwnedModule(ModuleProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -14838,6 +20126,7 @@ class OwnedModule(ModuleProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedModule(*args)
@@ -14849,24 +20138,15 @@ class OwnedModule(ModuleProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedModule_set(self, sbol_obj)
@@ -14887,24 +20167,14 @@ class OwnedModule(ModuleProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedModule_add(self, sbol_obj)
@@ -14925,6 +20195,7 @@ class OwnedModule(ModuleProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -14955,9 +20226,13 @@ class OwnedModule(ModuleProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedModule_getAll(self)
@@ -14971,16 +20246,14 @@ class OwnedModule(ModuleProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedModule_remove(self, *args)
@@ -14989,6 +20262,7 @@ class OwnedModule(ModuleProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -14999,29 +20273,7 @@ class OwnedModule(ModuleProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModule_create(self, uri)
@@ -15033,10 +20285,56 @@ class OwnedModule(ModuleProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedModule_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedModule_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModule_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModule_python_iter_get
     if _newclass:
@@ -15057,29 +20355,7 @@ class OwnedModule(ModuleProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModule_createRange(self, uri)
@@ -15093,6 +20369,7 @@ class OwnedModule(ModuleProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15123,29 +20400,7 @@ class OwnedModule(ModuleProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModule_createCut(self, uri)
@@ -15159,6 +20414,7 @@ class OwnedModule(ModuleProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15189,29 +20445,7 @@ class OwnedModule(ModuleProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModule_createGenericLocation(self, uri)
@@ -15225,6 +20459,7 @@ class OwnedModule(ModuleProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15390,6 +20625,12 @@ class InteractionProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -15401,27 +20642,7 @@ class InteractionProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_InteractionProperty(*args)
@@ -15435,10 +20656,7 @@ class InteractionProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.InteractionProperty_getTypeURI(self)
@@ -15447,6 +20665,7 @@ class InteractionProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.InteractionProperty_getOwner(self)
@@ -15455,8 +20674,9 @@ class InteractionProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -15483,6 +20703,7 @@ class InteractionProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -15510,16 +20731,9 @@ class InteractionProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.InteractionProperty_remove(self, index)
@@ -15528,8 +20742,9 @@ class InteractionProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.InteractionProperty_clear(self)
@@ -15538,37 +20753,73 @@ class InteractionProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.InteractionProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.InteractionProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.InteractionProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.InteractionProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.InteractionProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.InteractionProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.InteractionProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.InteractionProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.InteractionProperty_python_iter_get, _libsbol.InteractionProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.InteractionProperty_addValidationRule(self, *args)
+
 InteractionProperty_swigregister = _libsbol.InteractionProperty_swigregister
 InteractionProperty_swigregister(InteractionProperty)
 
@@ -15589,6 +20840,12 @@ class OwnedInteraction(InteractionProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -15604,6 +20861,7 @@ class OwnedInteraction(InteractionProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedInteraction(*args)
@@ -15615,24 +20873,15 @@ class OwnedInteraction(InteractionProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedInteraction_set(self, sbol_obj)
@@ -15653,24 +20902,14 @@ class OwnedInteraction(InteractionProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedInteraction_add(self, sbol_obj)
@@ -15691,6 +20930,7 @@ class OwnedInteraction(InteractionProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15721,9 +20961,13 @@ class OwnedInteraction(InteractionProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedInteraction_getAll(self)
@@ -15737,16 +20981,14 @@ class OwnedInteraction(InteractionProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedInteraction_remove(self, *args)
@@ -15755,6 +20997,7 @@ class OwnedInteraction(InteractionProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -15765,29 +21008,7 @@ class OwnedInteraction(InteractionProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedInteraction_create(self, uri)
@@ -15799,10 +21020,56 @@ class OwnedInteraction(InteractionProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedInteraction_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedInteraction_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedInteraction_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedInteraction_python_iter_get
     if _newclass:
@@ -15823,29 +21090,7 @@ class OwnedInteraction(InteractionProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedInteraction_createRange(self, uri)
@@ -15859,6 +21104,7 @@ class OwnedInteraction(InteractionProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15889,29 +21135,7 @@ class OwnedInteraction(InteractionProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedInteraction_createCut(self, uri)
@@ -15925,6 +21149,7 @@ class OwnedInteraction(InteractionProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -15955,29 +21180,7 @@ class OwnedInteraction(InteractionProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedInteraction_createGenericLocation(self, uri)
@@ -15991,6 +21194,7 @@ class OwnedInteraction(InteractionProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -16156,6 +21360,12 @@ class FunctionalComponentProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -16167,27 +21377,7 @@ class FunctionalComponentProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_FunctionalComponentProperty(*args)
@@ -16201,10 +21391,7 @@ class FunctionalComponentProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.FunctionalComponentProperty_getTypeURI(self)
@@ -16213,6 +21400,7 @@ class FunctionalComponentProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.FunctionalComponentProperty_getOwner(self)
@@ -16221,8 +21409,9 @@ class FunctionalComponentProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -16249,6 +21438,7 @@ class FunctionalComponentProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -16276,16 +21466,9 @@ class FunctionalComponentProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.FunctionalComponentProperty_remove(self, index)
@@ -16294,8 +21477,9 @@ class FunctionalComponentProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.FunctionalComponentProperty_clear(self)
@@ -16304,37 +21488,73 @@ class FunctionalComponentProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.FunctionalComponentProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.FunctionalComponentProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.FunctionalComponentProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.FunctionalComponentProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.FunctionalComponentProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.FunctionalComponentProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.FunctionalComponentProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.FunctionalComponentProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.FunctionalComponentProperty_python_iter_get, _libsbol.FunctionalComponentProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.FunctionalComponentProperty_addValidationRule(self, *args)
+
 FunctionalComponentProperty_swigregister = _libsbol.FunctionalComponentProperty_swigregister
 FunctionalComponentProperty_swigregister(FunctionalComponentProperty)
 
@@ -16355,6 +21575,12 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -16370,6 +21596,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedFunctionalComponent(*args)
@@ -16381,24 +21608,15 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedFunctionalComponent_set(self, sbol_obj)
@@ -16419,24 +21637,14 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedFunctionalComponent_add(self, sbol_obj)
@@ -16457,6 +21665,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -16487,9 +21696,13 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedFunctionalComponent_getAll(self)
@@ -16503,16 +21716,14 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedFunctionalComponent_remove(self, *args)
@@ -16521,6 +21732,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -16531,29 +21743,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedFunctionalComponent_create(self, uri)
@@ -16565,10 +21755,56 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedFunctionalComponent_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedFunctionalComponent_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedFunctionalComponent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedFunctionalComponent_python_iter_get
     if _newclass:
@@ -16589,29 +21825,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedFunctionalComponent_createRange(self, uri)
@@ -16625,6 +21839,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -16655,29 +21870,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedFunctionalComponent_createCut(self, uri)
@@ -16691,6 +21884,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -16721,29 +21915,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedFunctionalComponent_createGenericLocation(self, uri)
@@ -16757,6 +21929,7 @@ class OwnedFunctionalComponent(FunctionalComponentProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -16922,6 +22095,12 @@ class AssociationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -16933,27 +22112,7 @@ class AssociationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_AssociationProperty(*args)
@@ -16967,10 +22126,7 @@ class AssociationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.AssociationProperty_getTypeURI(self)
@@ -16979,6 +22135,7 @@ class AssociationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.AssociationProperty_getOwner(self)
@@ -16987,8 +22144,9 @@ class AssociationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -17015,6 +22173,7 @@ class AssociationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -17042,16 +22201,9 @@ class AssociationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.AssociationProperty_remove(self, index)
@@ -17060,8 +22212,9 @@ class AssociationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.AssociationProperty_clear(self)
@@ -17070,37 +22223,73 @@ class AssociationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.AssociationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.AssociationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.AssociationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.AssociationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.AssociationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.AssociationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.AssociationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.AssociationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.AssociationProperty_python_iter_get, _libsbol.AssociationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.AssociationProperty_addValidationRule(self, *args)
+
 AssociationProperty_swigregister = _libsbol.AssociationProperty_swigregister
 AssociationProperty_swigregister(AssociationProperty)
 
@@ -17121,6 +22310,12 @@ class OwnedAssociation(AssociationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -17136,6 +22331,7 @@ class OwnedAssociation(AssociationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedAssociation(*args)
@@ -17147,24 +22343,15 @@ class OwnedAssociation(AssociationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedAssociation_set(self, sbol_obj)
@@ -17185,24 +22372,14 @@ class OwnedAssociation(AssociationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedAssociation_add(self, sbol_obj)
@@ -17223,6 +22400,7 @@ class OwnedAssociation(AssociationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -17253,9 +22431,13 @@ class OwnedAssociation(AssociationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedAssociation_getAll(self)
@@ -17269,16 +22451,14 @@ class OwnedAssociation(AssociationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedAssociation_remove(self, *args)
@@ -17287,6 +22467,7 @@ class OwnedAssociation(AssociationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -17297,29 +22478,7 @@ class OwnedAssociation(AssociationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAssociation_create(self, uri)
@@ -17331,10 +22490,56 @@ class OwnedAssociation(AssociationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedAssociation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedAssociation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedAssociation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedAssociation_python_iter_get
     if _newclass:
@@ -17355,29 +22560,7 @@ class OwnedAssociation(AssociationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAssociation_createRange(self, uri)
@@ -17391,6 +22574,7 @@ class OwnedAssociation(AssociationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -17421,29 +22605,7 @@ class OwnedAssociation(AssociationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAssociation_createCut(self, uri)
@@ -17457,6 +22619,7 @@ class OwnedAssociation(AssociationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -17487,29 +22650,7 @@ class OwnedAssociation(AssociationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAssociation_createGenericLocation(self, uri)
@@ -17523,6 +22664,7 @@ class OwnedAssociation(AssociationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -17688,6 +22830,12 @@ class UsageProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -17699,27 +22847,7 @@ class UsageProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_UsageProperty(*args)
@@ -17733,10 +22861,7 @@ class UsageProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.UsageProperty_getTypeURI(self)
@@ -17745,6 +22870,7 @@ class UsageProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.UsageProperty_getOwner(self)
@@ -17753,8 +22879,9 @@ class UsageProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -17781,6 +22908,7 @@ class UsageProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -17808,16 +22936,9 @@ class UsageProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.UsageProperty_remove(self, index)
@@ -17826,8 +22947,9 @@ class UsageProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.UsageProperty_clear(self)
@@ -17836,37 +22958,73 @@ class UsageProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.UsageProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.UsageProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.UsageProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.UsageProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.UsageProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.UsageProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.UsageProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.UsageProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.UsageProperty_python_iter_get, _libsbol.UsageProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.UsageProperty_addValidationRule(self, *args)
+
 UsageProperty_swigregister = _libsbol.UsageProperty_swigregister
 UsageProperty_swigregister(UsageProperty)
 
@@ -17887,6 +23045,12 @@ class OwnedUsage(UsageProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -17902,6 +23066,7 @@ class OwnedUsage(UsageProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedUsage(*args)
@@ -17913,24 +23078,15 @@ class OwnedUsage(UsageProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedUsage_set(self, sbol_obj)
@@ -17951,24 +23107,14 @@ class OwnedUsage(UsageProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedUsage_add(self, sbol_obj)
@@ -17989,6 +23135,7 @@ class OwnedUsage(UsageProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18019,9 +23166,13 @@ class OwnedUsage(UsageProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedUsage_getAll(self)
@@ -18035,16 +23186,14 @@ class OwnedUsage(UsageProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedUsage_remove(self, *args)
@@ -18053,6 +23202,7 @@ class OwnedUsage(UsageProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -18063,29 +23213,7 @@ class OwnedUsage(UsageProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedUsage_create(self, uri)
@@ -18097,10 +23225,56 @@ class OwnedUsage(UsageProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedUsage_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedUsage_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedUsage_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedUsage_python_iter_get
     if _newclass:
@@ -18121,29 +23295,7 @@ class OwnedUsage(UsageProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedUsage_createRange(self, uri)
@@ -18157,6 +23309,7 @@ class OwnedUsage(UsageProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18187,29 +23340,7 @@ class OwnedUsage(UsageProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedUsage_createCut(self, uri)
@@ -18223,6 +23354,7 @@ class OwnedUsage(UsageProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18253,29 +23385,7 @@ class OwnedUsage(UsageProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedUsage_createGenericLocation(self, uri)
@@ -18289,6 +23399,7 @@ class OwnedUsage(UsageProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18454,6 +23565,12 @@ class VariableComponentProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -18465,27 +23582,7 @@ class VariableComponentProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_VariableComponentProperty(*args)
@@ -18499,10 +23596,7 @@ class VariableComponentProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.VariableComponentProperty_getTypeURI(self)
@@ -18511,6 +23605,7 @@ class VariableComponentProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.VariableComponentProperty_getOwner(self)
@@ -18519,8 +23614,9 @@ class VariableComponentProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -18547,6 +23643,7 @@ class VariableComponentProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -18574,16 +23671,9 @@ class VariableComponentProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.VariableComponentProperty_remove(self, index)
@@ -18592,8 +23682,9 @@ class VariableComponentProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.VariableComponentProperty_clear(self)
@@ -18602,37 +23693,73 @@ class VariableComponentProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.VariableComponentProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.VariableComponentProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.VariableComponentProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.VariableComponentProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.VariableComponentProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.VariableComponentProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.VariableComponentProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.VariableComponentProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.VariableComponentProperty_python_iter_get, _libsbol.VariableComponentProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.VariableComponentProperty_addValidationRule(self, *args)
+
 VariableComponentProperty_swigregister = _libsbol.VariableComponentProperty_swigregister
 VariableComponentProperty_swigregister(VariableComponentProperty)
 
@@ -18653,6 +23780,12 @@ class OwnedVariableComponent(VariableComponentProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -18668,6 +23801,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedVariableComponent(*args)
@@ -18679,24 +23813,15 @@ class OwnedVariableComponent(VariableComponentProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedVariableComponent_set(self, sbol_obj)
@@ -18717,24 +23842,14 @@ class OwnedVariableComponent(VariableComponentProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedVariableComponent_add(self, sbol_obj)
@@ -18755,6 +23870,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18785,9 +23901,13 @@ class OwnedVariableComponent(VariableComponentProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedVariableComponent_getAll(self)
@@ -18801,16 +23921,14 @@ class OwnedVariableComponent(VariableComponentProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedVariableComponent_remove(self, *args)
@@ -18819,6 +23937,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -18829,29 +23948,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedVariableComponent_create(self, uri)
@@ -18863,10 +23960,56 @@ class OwnedVariableComponent(VariableComponentProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedVariableComponent_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedVariableComponent_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedVariableComponent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedVariableComponent_python_iter_get
     if _newclass:
@@ -18887,29 +24030,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedVariableComponent_createRange(self, uri)
@@ -18923,6 +24044,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -18953,29 +24075,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedVariableComponent_createCut(self, uri)
@@ -18989,6 +24089,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19019,29 +24120,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedVariableComponent_createGenericLocation(self, uri)
@@ -19055,6 +24134,7 @@ class OwnedVariableComponent(VariableComponentProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19220,6 +24300,12 @@ class ComponentDefinitionProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -19231,27 +24317,7 @@ class ComponentDefinitionProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ComponentDefinitionProperty(*args)
@@ -19265,10 +24331,7 @@ class ComponentDefinitionProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ComponentDefinitionProperty_getTypeURI(self)
@@ -19277,6 +24340,7 @@ class ComponentDefinitionProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ComponentDefinitionProperty_getOwner(self)
@@ -19285,8 +24349,9 @@ class ComponentDefinitionProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -19313,6 +24378,7 @@ class ComponentDefinitionProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -19340,16 +24406,9 @@ class ComponentDefinitionProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ComponentDefinitionProperty_remove(self, index)
@@ -19358,8 +24417,9 @@ class ComponentDefinitionProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ComponentDefinitionProperty_clear(self)
@@ -19368,37 +24428,73 @@ class ComponentDefinitionProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ComponentDefinitionProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ComponentDefinitionProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ComponentDefinitionProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ComponentDefinitionProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ComponentDefinitionProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ComponentDefinitionProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ComponentDefinitionProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ComponentDefinitionProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ComponentDefinitionProperty_python_iter_get, _libsbol.ComponentDefinitionProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ComponentDefinitionProperty_addValidationRule(self, *args)
+
 ComponentDefinitionProperty_swigregister = _libsbol.ComponentDefinitionProperty_swigregister
 ComponentDefinitionProperty_swigregister(ComponentDefinitionProperty)
 
@@ -19419,6 +24515,12 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -19434,6 +24536,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedComponentDefinition(*args)
@@ -19445,24 +24548,15 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedComponentDefinition_set(self, sbol_obj)
@@ -19483,24 +24577,14 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedComponentDefinition_add(self, sbol_obj)
@@ -19521,6 +24605,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19551,9 +24636,13 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedComponentDefinition_getAll(self)
@@ -19567,16 +24656,14 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedComponentDefinition_remove(self, *args)
@@ -19585,6 +24672,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -19595,29 +24683,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponentDefinition_create(self, uri)
@@ -19629,10 +24695,56 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedComponentDefinition_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedComponentDefinition_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedComponentDefinition_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedComponentDefinition_python_iter_get
     if _newclass:
@@ -19653,29 +24765,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponentDefinition_createRange(self, uri)
@@ -19689,6 +24779,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19719,29 +24810,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponentDefinition_createCut(self, uri)
@@ -19755,6 +24824,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19785,29 +24855,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedComponentDefinition_createGenericLocation(self, uri)
@@ -19821,6 +24869,7 @@ class OwnedComponentDefinition(ComponentDefinitionProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -19986,6 +25035,12 @@ class ModuleDefinitionProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -19997,27 +25052,7 @@ class ModuleDefinitionProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ModuleDefinitionProperty(*args)
@@ -20031,10 +25066,7 @@ class ModuleDefinitionProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ModuleDefinitionProperty_getTypeURI(self)
@@ -20043,6 +25075,7 @@ class ModuleDefinitionProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ModuleDefinitionProperty_getOwner(self)
@@ -20051,8 +25084,9 @@ class ModuleDefinitionProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -20079,6 +25113,7 @@ class ModuleDefinitionProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -20106,16 +25141,9 @@ class ModuleDefinitionProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ModuleDefinitionProperty_remove(self, index)
@@ -20124,8 +25152,9 @@ class ModuleDefinitionProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ModuleDefinitionProperty_clear(self)
@@ -20134,37 +25163,73 @@ class ModuleDefinitionProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ModuleDefinitionProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ModuleDefinitionProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ModuleDefinitionProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ModuleDefinitionProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ModuleDefinitionProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ModuleDefinitionProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ModuleDefinitionProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ModuleDefinitionProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ModuleDefinitionProperty_python_iter_get, _libsbol.ModuleDefinitionProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ModuleDefinitionProperty_addValidationRule(self, *args)
+
 ModuleDefinitionProperty_swigregister = _libsbol.ModuleDefinitionProperty_swigregister
 ModuleDefinitionProperty_swigregister(ModuleDefinitionProperty)
 
@@ -20185,6 +25250,12 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -20200,6 +25271,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedModuleDefinition(*args)
@@ -20211,24 +25283,15 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedModuleDefinition_set(self, sbol_obj)
@@ -20249,24 +25312,14 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedModuleDefinition_add(self, sbol_obj)
@@ -20287,6 +25340,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -20317,9 +25371,13 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedModuleDefinition_getAll(self)
@@ -20333,16 +25391,14 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedModuleDefinition_remove(self, *args)
@@ -20351,6 +25407,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -20361,29 +25418,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModuleDefinition_create(self, uri)
@@ -20395,10 +25430,56 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedModuleDefinition_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedModuleDefinition_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModuleDefinition_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModuleDefinition_python_iter_get
     if _newclass:
@@ -20419,29 +25500,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModuleDefinition_createRange(self, uri)
@@ -20455,6 +25514,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -20485,29 +25545,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModuleDefinition_createCut(self, uri)
@@ -20521,6 +25559,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -20551,29 +25590,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModuleDefinition_createGenericLocation(self, uri)
@@ -20587,6 +25604,7 @@ class OwnedModuleDefinition(ModuleDefinitionProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -20752,6 +25770,12 @@ class SequenceProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -20763,27 +25787,7 @@ class SequenceProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_SequenceProperty(*args)
@@ -20797,10 +25801,7 @@ class SequenceProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.SequenceProperty_getTypeURI(self)
@@ -20809,6 +25810,7 @@ class SequenceProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.SequenceProperty_getOwner(self)
@@ -20817,8 +25819,9 @@ class SequenceProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -20845,6 +25848,7 @@ class SequenceProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -20872,16 +25876,9 @@ class SequenceProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.SequenceProperty_remove(self, index)
@@ -20890,8 +25887,9 @@ class SequenceProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.SequenceProperty_clear(self)
@@ -20900,37 +25898,73 @@ class SequenceProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.SequenceProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.SequenceProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.SequenceProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.SequenceProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.SequenceProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.SequenceProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.SequenceProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.SequenceProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.SequenceProperty_python_iter_get, _libsbol.SequenceProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.SequenceProperty_addValidationRule(self, *args)
+
 SequenceProperty_swigregister = _libsbol.SequenceProperty_swigregister
 SequenceProperty_swigregister(SequenceProperty)
 
@@ -20951,6 +25985,12 @@ class OwnedSequence(SequenceProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -20966,6 +26006,7 @@ class OwnedSequence(SequenceProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedSequence(*args)
@@ -20977,24 +26018,15 @@ class OwnedSequence(SequenceProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedSequence_set(self, sbol_obj)
@@ -21015,24 +26047,14 @@ class OwnedSequence(SequenceProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedSequence_add(self, sbol_obj)
@@ -21053,6 +26075,7 @@ class OwnedSequence(SequenceProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -21083,9 +26106,13 @@ class OwnedSequence(SequenceProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedSequence_getAll(self)
@@ -21099,16 +26126,14 @@ class OwnedSequence(SequenceProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedSequence_remove(self, *args)
@@ -21117,6 +26142,7 @@ class OwnedSequence(SequenceProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -21127,29 +26153,7 @@ class OwnedSequence(SequenceProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequence_create(self, uri)
@@ -21161,10 +26165,56 @@ class OwnedSequence(SequenceProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedSequence_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedSequence_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSequence_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSequence_python_iter_get
     if _newclass:
@@ -21185,29 +26235,7 @@ class OwnedSequence(SequenceProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequence_createRange(self, uri)
@@ -21221,6 +26249,7 @@ class OwnedSequence(SequenceProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -21251,29 +26280,7 @@ class OwnedSequence(SequenceProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequence_createCut(self, uri)
@@ -21287,6 +26294,7 @@ class OwnedSequence(SequenceProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -21317,29 +26325,7 @@ class OwnedSequence(SequenceProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSequence_createGenericLocation(self, uri)
@@ -21353,6 +26339,7 @@ class OwnedSequence(SequenceProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -21518,6 +26505,12 @@ class ModelProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -21529,27 +26522,7 @@ class ModelProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ModelProperty(*args)
@@ -21563,10 +26536,7 @@ class ModelProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ModelProperty_getTypeURI(self)
@@ -21575,6 +26545,7 @@ class ModelProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ModelProperty_getOwner(self)
@@ -21583,8 +26554,9 @@ class ModelProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -21611,6 +26583,7 @@ class ModelProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -21638,16 +26611,9 @@ class ModelProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ModelProperty_remove(self, index)
@@ -21656,8 +26622,9 @@ class ModelProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ModelProperty_clear(self)
@@ -21666,37 +26633,73 @@ class ModelProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ModelProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ModelProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ModelProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ModelProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ModelProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ModelProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ModelProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ModelProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ModelProperty_python_iter_get, _libsbol.ModelProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ModelProperty_addValidationRule(self, *args)
+
 ModelProperty_swigregister = _libsbol.ModelProperty_swigregister
 ModelProperty_swigregister(ModelProperty)
 
@@ -21717,6 +26720,12 @@ class OwnedModel(ModelProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -21732,6 +26741,7 @@ class OwnedModel(ModelProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedModel(*args)
@@ -21743,24 +26753,15 @@ class OwnedModel(ModelProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedModel_set(self, sbol_obj)
@@ -21781,24 +26782,14 @@ class OwnedModel(ModelProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedModel_add(self, sbol_obj)
@@ -21819,6 +26810,7 @@ class OwnedModel(ModelProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -21849,9 +26841,13 @@ class OwnedModel(ModelProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedModel_getAll(self)
@@ -21865,16 +26861,14 @@ class OwnedModel(ModelProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedModel_remove(self, *args)
@@ -21883,6 +26877,7 @@ class OwnedModel(ModelProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -21893,29 +26888,7 @@ class OwnedModel(ModelProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModel_create(self, uri)
@@ -21927,10 +26900,56 @@ class OwnedModel(ModelProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedModel_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedModel_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedModel_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedModel_python_iter_get
     if _newclass:
@@ -21951,29 +26970,7 @@ class OwnedModel(ModelProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModel_createRange(self, uri)
@@ -21987,6 +26984,7 @@ class OwnedModel(ModelProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22017,29 +27015,7 @@ class OwnedModel(ModelProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModel_createCut(self, uri)
@@ -22053,6 +27029,7 @@ class OwnedModel(ModelProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22083,29 +27060,7 @@ class OwnedModel(ModelProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedModel_createGenericLocation(self, uri)
@@ -22119,6 +27074,7 @@ class OwnedModel(ModelProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22284,6 +27240,12 @@ class CollectionProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -22295,27 +27257,7 @@ class CollectionProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_CollectionProperty(*args)
@@ -22329,10 +27271,7 @@ class CollectionProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.CollectionProperty_getTypeURI(self)
@@ -22341,6 +27280,7 @@ class CollectionProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.CollectionProperty_getOwner(self)
@@ -22349,8 +27289,9 @@ class CollectionProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -22377,6 +27318,7 @@ class CollectionProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -22404,16 +27346,9 @@ class CollectionProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.CollectionProperty_remove(self, index)
@@ -22422,8 +27357,9 @@ class CollectionProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.CollectionProperty_clear(self)
@@ -22432,37 +27368,73 @@ class CollectionProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.CollectionProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.CollectionProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.CollectionProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.CollectionProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.CollectionProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.CollectionProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.CollectionProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.CollectionProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.CollectionProperty_python_iter_get, _libsbol.CollectionProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.CollectionProperty_addValidationRule(self, *args)
+
 CollectionProperty_swigregister = _libsbol.CollectionProperty_swigregister
 CollectionProperty_swigregister(CollectionProperty)
 
@@ -22483,6 +27455,12 @@ class OwnedCollection(CollectionProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -22498,6 +27476,7 @@ class OwnedCollection(CollectionProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedCollection(*args)
@@ -22509,24 +27488,15 @@ class OwnedCollection(CollectionProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedCollection_set(self, sbol_obj)
@@ -22547,24 +27517,14 @@ class OwnedCollection(CollectionProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedCollection_add(self, sbol_obj)
@@ -22585,6 +27545,7 @@ class OwnedCollection(CollectionProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22615,9 +27576,13 @@ class OwnedCollection(CollectionProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedCollection_getAll(self)
@@ -22631,16 +27596,14 @@ class OwnedCollection(CollectionProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedCollection_remove(self, *args)
@@ -22649,6 +27612,7 @@ class OwnedCollection(CollectionProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -22659,29 +27623,7 @@ class OwnedCollection(CollectionProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCollection_create(self, uri)
@@ -22693,10 +27635,56 @@ class OwnedCollection(CollectionProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedCollection_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedCollection_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedCollection_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedCollection_python_iter_get
     if _newclass:
@@ -22717,29 +27705,7 @@ class OwnedCollection(CollectionProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCollection_createRange(self, uri)
@@ -22753,6 +27719,7 @@ class OwnedCollection(CollectionProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22783,29 +27750,7 @@ class OwnedCollection(CollectionProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCollection_createCut(self, uri)
@@ -22819,6 +27764,7 @@ class OwnedCollection(CollectionProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -22849,29 +27795,7 @@ class OwnedCollection(CollectionProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCollection_createGenericLocation(self, uri)
@@ -22885,6 +27809,7 @@ class OwnedCollection(CollectionProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -23050,6 +27975,12 @@ class ActivityProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -23061,27 +27992,7 @@ class ActivityProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ActivityProperty(*args)
@@ -23095,10 +28006,7 @@ class ActivityProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ActivityProperty_getTypeURI(self)
@@ -23107,6 +28015,7 @@ class ActivityProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ActivityProperty_getOwner(self)
@@ -23115,8 +28024,9 @@ class ActivityProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -23143,6 +28053,7 @@ class ActivityProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -23170,16 +28081,9 @@ class ActivityProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ActivityProperty_remove(self, index)
@@ -23188,8 +28092,9 @@ class ActivityProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ActivityProperty_clear(self)
@@ -23198,37 +28103,73 @@ class ActivityProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ActivityProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ActivityProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ActivityProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ActivityProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ActivityProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ActivityProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ActivityProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ActivityProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ActivityProperty_python_iter_get, _libsbol.ActivityProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ActivityProperty_addValidationRule(self, *args)
+
 ActivityProperty_swigregister = _libsbol.ActivityProperty_swigregister
 ActivityProperty_swigregister(ActivityProperty)
 
@@ -23249,6 +28190,12 @@ class OwnedActivity(ActivityProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -23264,6 +28211,7 @@ class OwnedActivity(ActivityProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedActivity(*args)
@@ -23275,24 +28223,15 @@ class OwnedActivity(ActivityProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedActivity_set(self, sbol_obj)
@@ -23313,24 +28252,14 @@ class OwnedActivity(ActivityProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedActivity_add(self, sbol_obj)
@@ -23351,6 +28280,7 @@ class OwnedActivity(ActivityProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -23381,9 +28311,13 @@ class OwnedActivity(ActivityProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedActivity_getAll(self)
@@ -23397,16 +28331,14 @@ class OwnedActivity(ActivityProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedActivity_remove(self, *args)
@@ -23415,6 +28347,7 @@ class OwnedActivity(ActivityProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -23425,29 +28358,7 @@ class OwnedActivity(ActivityProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedActivity_create(self, uri)
@@ -23459,10 +28370,56 @@ class OwnedActivity(ActivityProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedActivity_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedActivity_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedActivity_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedActivity_python_iter_get
     if _newclass:
@@ -23483,29 +28440,7 @@ class OwnedActivity(ActivityProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedActivity_createRange(self, uri)
@@ -23519,6 +28454,7 @@ class OwnedActivity(ActivityProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -23549,29 +28485,7 @@ class OwnedActivity(ActivityProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedActivity_createCut(self, uri)
@@ -23585,6 +28499,7 @@ class OwnedActivity(ActivityProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -23615,29 +28530,7 @@ class OwnedActivity(ActivityProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedActivity_createGenericLocation(self, uri)
@@ -23651,6 +28544,7 @@ class OwnedActivity(ActivityProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -23816,6 +28710,12 @@ class PlanProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -23827,27 +28727,7 @@ class PlanProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_PlanProperty(*args)
@@ -23861,10 +28741,7 @@ class PlanProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.PlanProperty_getTypeURI(self)
@@ -23873,6 +28750,7 @@ class PlanProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.PlanProperty_getOwner(self)
@@ -23881,8 +28759,9 @@ class PlanProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -23909,6 +28788,7 @@ class PlanProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -23936,16 +28816,9 @@ class PlanProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.PlanProperty_remove(self, index)
@@ -23954,8 +28827,9 @@ class PlanProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.PlanProperty_clear(self)
@@ -23964,37 +28838,73 @@ class PlanProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.PlanProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.PlanProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.PlanProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.PlanProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.PlanProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.PlanProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.PlanProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.PlanProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.PlanProperty_python_iter_get, _libsbol.PlanProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.PlanProperty_addValidationRule(self, *args)
+
 PlanProperty_swigregister = _libsbol.PlanProperty_swigregister
 PlanProperty_swigregister(PlanProperty)
 
@@ -24015,6 +28925,12 @@ class OwnedPlan(PlanProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -24030,6 +28946,7 @@ class OwnedPlan(PlanProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedPlan(*args)
@@ -24041,24 +28958,15 @@ class OwnedPlan(PlanProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedPlan_set(self, sbol_obj)
@@ -24079,24 +28987,14 @@ class OwnedPlan(PlanProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedPlan_add(self, sbol_obj)
@@ -24117,6 +29015,7 @@ class OwnedPlan(PlanProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -24147,9 +29046,13 @@ class OwnedPlan(PlanProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedPlan_getAll(self)
@@ -24163,16 +29066,14 @@ class OwnedPlan(PlanProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedPlan_remove(self, *args)
@@ -24181,6 +29082,7 @@ class OwnedPlan(PlanProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -24191,29 +29093,7 @@ class OwnedPlan(PlanProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedPlan_create(self, uri)
@@ -24225,10 +29105,56 @@ class OwnedPlan(PlanProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedPlan_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedPlan_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedPlan_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedPlan_python_iter_get
     if _newclass:
@@ -24249,29 +29175,7 @@ class OwnedPlan(PlanProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedPlan_createRange(self, uri)
@@ -24285,6 +29189,7 @@ class OwnedPlan(PlanProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -24315,29 +29220,7 @@ class OwnedPlan(PlanProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedPlan_createCut(self, uri)
@@ -24351,6 +29234,7 @@ class OwnedPlan(PlanProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -24381,29 +29265,7 @@ class OwnedPlan(PlanProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedPlan_createGenericLocation(self, uri)
@@ -24417,6 +29279,7 @@ class OwnedPlan(PlanProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -24582,6 +29445,12 @@ class AgentProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -24593,27 +29462,7 @@ class AgentProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_AgentProperty(*args)
@@ -24627,10 +29476,7 @@ class AgentProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.AgentProperty_getTypeURI(self)
@@ -24639,6 +29485,7 @@ class AgentProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.AgentProperty_getOwner(self)
@@ -24647,8 +29494,9 @@ class AgentProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -24675,6 +29523,7 @@ class AgentProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -24702,16 +29551,9 @@ class AgentProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.AgentProperty_remove(self, index)
@@ -24720,8 +29562,9 @@ class AgentProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.AgentProperty_clear(self)
@@ -24730,37 +29573,73 @@ class AgentProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.AgentProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.AgentProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.AgentProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.AgentProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.AgentProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.AgentProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.AgentProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.AgentProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.AgentProperty_python_iter_get, _libsbol.AgentProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.AgentProperty_addValidationRule(self, *args)
+
 AgentProperty_swigregister = _libsbol.AgentProperty_swigregister
 AgentProperty_swigregister(AgentProperty)
 
@@ -24781,6 +29660,12 @@ class OwnedAgent(AgentProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -24796,6 +29681,7 @@ class OwnedAgent(AgentProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedAgent(*args)
@@ -24807,24 +29693,15 @@ class OwnedAgent(AgentProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedAgent_set(self, sbol_obj)
@@ -24845,24 +29722,14 @@ class OwnedAgent(AgentProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedAgent_add(self, sbol_obj)
@@ -24883,6 +29750,7 @@ class OwnedAgent(AgentProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -24913,9 +29781,13 @@ class OwnedAgent(AgentProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedAgent_getAll(self)
@@ -24929,16 +29801,14 @@ class OwnedAgent(AgentProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedAgent_remove(self, *args)
@@ -24947,6 +29817,7 @@ class OwnedAgent(AgentProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -24957,29 +29828,7 @@ class OwnedAgent(AgentProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAgent_create(self, uri)
@@ -24991,10 +29840,56 @@ class OwnedAgent(AgentProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedAgent_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedAgent_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedAgent_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedAgent_python_iter_get
     if _newclass:
@@ -25015,29 +29910,7 @@ class OwnedAgent(AgentProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAgent_createRange(self, uri)
@@ -25051,6 +29924,7 @@ class OwnedAgent(AgentProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25081,29 +29955,7 @@ class OwnedAgent(AgentProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAgent_createCut(self, uri)
@@ -25117,6 +29969,7 @@ class OwnedAgent(AgentProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25147,29 +30000,7 @@ class OwnedAgent(AgentProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAgent_createGenericLocation(self, uri)
@@ -25183,6 +30014,7 @@ class OwnedAgent(AgentProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25348,6 +30180,12 @@ class AttachmentProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -25359,27 +30197,7 @@ class AttachmentProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_AttachmentProperty(*args)
@@ -25393,10 +30211,7 @@ class AttachmentProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.AttachmentProperty_getTypeURI(self)
@@ -25405,6 +30220,7 @@ class AttachmentProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.AttachmentProperty_getOwner(self)
@@ -25413,8 +30229,9 @@ class AttachmentProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -25441,6 +30258,7 @@ class AttachmentProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -25468,16 +30286,9 @@ class AttachmentProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.AttachmentProperty_remove(self, index)
@@ -25486,8 +30297,9 @@ class AttachmentProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.AttachmentProperty_clear(self)
@@ -25496,37 +30308,73 @@ class AttachmentProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.AttachmentProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.AttachmentProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.AttachmentProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.AttachmentProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.AttachmentProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.AttachmentProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.AttachmentProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.AttachmentProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.AttachmentProperty_python_iter_get, _libsbol.AttachmentProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.AttachmentProperty_addValidationRule(self, *args)
+
 AttachmentProperty_swigregister = _libsbol.AttachmentProperty_swigregister
 AttachmentProperty_swigregister(AttachmentProperty)
 
@@ -25547,6 +30395,12 @@ class OwnedAttachment(AttachmentProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -25562,6 +30416,7 @@ class OwnedAttachment(AttachmentProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedAttachment(*args)
@@ -25573,24 +30428,15 @@ class OwnedAttachment(AttachmentProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedAttachment_set(self, sbol_obj)
@@ -25611,24 +30457,14 @@ class OwnedAttachment(AttachmentProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedAttachment_add(self, sbol_obj)
@@ -25649,6 +30485,7 @@ class OwnedAttachment(AttachmentProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25679,9 +30516,13 @@ class OwnedAttachment(AttachmentProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedAttachment_getAll(self)
@@ -25695,16 +30536,14 @@ class OwnedAttachment(AttachmentProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedAttachment_remove(self, *args)
@@ -25713,6 +30552,7 @@ class OwnedAttachment(AttachmentProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -25723,29 +30563,7 @@ class OwnedAttachment(AttachmentProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAttachment_create(self, uri)
@@ -25757,10 +30575,56 @@ class OwnedAttachment(AttachmentProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedAttachment_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedAttachment_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedAttachment_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedAttachment_python_iter_get
     if _newclass:
@@ -25781,29 +30645,7 @@ class OwnedAttachment(AttachmentProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAttachment_createRange(self, uri)
@@ -25817,6 +30659,7 @@ class OwnedAttachment(AttachmentProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25847,29 +30690,7 @@ class OwnedAttachment(AttachmentProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAttachment_createCut(self, uri)
@@ -25883,6 +30704,7 @@ class OwnedAttachment(AttachmentProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -25913,29 +30735,7 @@ class OwnedAttachment(AttachmentProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAttachment_createGenericLocation(self, uri)
@@ -25949,6 +30749,7 @@ class OwnedAttachment(AttachmentProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -26114,6 +30915,12 @@ class ImplementationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -26125,27 +30932,7 @@ class ImplementationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_ImplementationProperty(*args)
@@ -26159,10 +30946,7 @@ class ImplementationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.ImplementationProperty_getTypeURI(self)
@@ -26171,6 +30955,7 @@ class ImplementationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.ImplementationProperty_getOwner(self)
@@ -26179,8 +30964,9 @@ class ImplementationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -26207,6 +30993,7 @@ class ImplementationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -26234,16 +31021,9 @@ class ImplementationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.ImplementationProperty_remove(self, index)
@@ -26252,8 +31032,9 @@ class ImplementationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.ImplementationProperty_clear(self)
@@ -26262,37 +31043,73 @@ class ImplementationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.ImplementationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.ImplementationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.ImplementationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.ImplementationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.ImplementationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.ImplementationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.ImplementationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.ImplementationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.ImplementationProperty_python_iter_get, _libsbol.ImplementationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.ImplementationProperty_addValidationRule(self, *args)
+
 ImplementationProperty_swigregister = _libsbol.ImplementationProperty_swigregister
 ImplementationProperty_swigregister(ImplementationProperty)
 
@@ -26313,6 +31130,12 @@ class OwnedImplementation(ImplementationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -26328,6 +31151,7 @@ class OwnedImplementation(ImplementationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedImplementation(*args)
@@ -26339,24 +31163,15 @@ class OwnedImplementation(ImplementationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedImplementation_set(self, sbol_obj)
@@ -26377,24 +31192,14 @@ class OwnedImplementation(ImplementationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedImplementation_add(self, sbol_obj)
@@ -26415,6 +31220,7 @@ class OwnedImplementation(ImplementationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -26445,9 +31251,13 @@ class OwnedImplementation(ImplementationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedImplementation_getAll(self)
@@ -26461,16 +31271,14 @@ class OwnedImplementation(ImplementationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedImplementation_remove(self, *args)
@@ -26479,6 +31287,7 @@ class OwnedImplementation(ImplementationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -26489,29 +31298,7 @@ class OwnedImplementation(ImplementationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedImplementation_create(self, uri)
@@ -26523,10 +31310,56 @@ class OwnedImplementation(ImplementationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedImplementation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedImplementation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedImplementation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedImplementation_python_iter_get
     if _newclass:
@@ -26547,29 +31380,7 @@ class OwnedImplementation(ImplementationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedImplementation_createRange(self, uri)
@@ -26583,6 +31394,7 @@ class OwnedImplementation(ImplementationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -26613,29 +31425,7 @@ class OwnedImplementation(ImplementationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedImplementation_createCut(self, uri)
@@ -26649,6 +31439,7 @@ class OwnedImplementation(ImplementationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -26679,29 +31470,7 @@ class OwnedImplementation(ImplementationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedImplementation_createGenericLocation(self, uri)
@@ -26715,6 +31484,7 @@ class OwnedImplementation(ImplementationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -26880,6 +31650,12 @@ class CombinatorialDerivationProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -26891,27 +31667,7 @@ class CombinatorialDerivationProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_CombinatorialDerivationProperty(*args)
@@ -26925,10 +31681,7 @@ class CombinatorialDerivationProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.CombinatorialDerivationProperty_getTypeURI(self)
@@ -26937,6 +31690,7 @@ class CombinatorialDerivationProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.CombinatorialDerivationProperty_getOwner(self)
@@ -26945,8 +31699,9 @@ class CombinatorialDerivationProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -26973,6 +31728,7 @@ class CombinatorialDerivationProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -27000,16 +31756,9 @@ class CombinatorialDerivationProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.CombinatorialDerivationProperty_remove(self, index)
@@ -27018,8 +31767,9 @@ class CombinatorialDerivationProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.CombinatorialDerivationProperty_clear(self)
@@ -27028,37 +31778,73 @@ class CombinatorialDerivationProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.CombinatorialDerivationProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.CombinatorialDerivationProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.CombinatorialDerivationProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.CombinatorialDerivationProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.CombinatorialDerivationProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.CombinatorialDerivationProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.CombinatorialDerivationProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.CombinatorialDerivationProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.CombinatorialDerivationProperty_python_iter_get, _libsbol.CombinatorialDerivationProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.CombinatorialDerivationProperty_addValidationRule(self, *args)
+
 CombinatorialDerivationProperty_swigregister = _libsbol.CombinatorialDerivationProperty_swigregister
 CombinatorialDerivationProperty_swigregister(CombinatorialDerivationProperty)
 
@@ -27079,6 +31865,12 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -27094,6 +31886,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedCombinatorialDerivation(*args)
@@ -27105,24 +31898,15 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_set(self, sbol_obj)
@@ -27143,24 +31927,14 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_add(self, sbol_obj)
@@ -27181,6 +31955,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -27211,9 +31986,13 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_getAll(self)
@@ -27227,16 +32006,14 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedCombinatorialDerivation_remove(self, *args)
@@ -27245,6 +32022,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -27255,29 +32033,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_create(self, uri)
@@ -27289,10 +32045,56 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedCombinatorialDerivation_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedCombinatorialDerivation_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedCombinatorialDerivation_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedCombinatorialDerivation_python_iter_get
     if _newclass:
@@ -27313,29 +32115,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_createRange(self, uri)
@@ -27349,6 +32129,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -27379,29 +32160,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_createCut(self, uri)
@@ -27415,6 +32174,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -27445,29 +32205,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedCombinatorialDerivation_createGenericLocation(self, uri)
@@ -27481,6 +32219,7 @@ class OwnedCombinatorialDerivation(CombinatorialDerivationProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -27646,6 +32385,12 @@ class DesignProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -27657,27 +32402,7 @@ class DesignProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_DesignProperty(*args)
@@ -27691,10 +32416,7 @@ class DesignProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.DesignProperty_getTypeURI(self)
@@ -27703,6 +32425,7 @@ class DesignProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.DesignProperty_getOwner(self)
@@ -27711,8 +32434,9 @@ class DesignProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -27739,6 +32463,7 @@ class DesignProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -27766,16 +32491,9 @@ class DesignProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.DesignProperty_remove(self, index)
@@ -27784,8 +32502,9 @@ class DesignProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.DesignProperty_clear(self)
@@ -27794,37 +32513,73 @@ class DesignProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.DesignProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.DesignProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.DesignProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.DesignProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.DesignProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.DesignProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.DesignProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.DesignProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.DesignProperty_python_iter_get, _libsbol.DesignProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.DesignProperty_addValidationRule(self, *args)
+
 DesignProperty_swigregister = _libsbol.DesignProperty_swigregister
 DesignProperty_swigregister(DesignProperty)
 
@@ -27845,6 +32600,12 @@ class OwnedDesign(DesignProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -27860,6 +32621,7 @@ class OwnedDesign(DesignProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedDesign(*args)
@@ -27871,24 +32633,15 @@ class OwnedDesign(DesignProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedDesign_set(self, sbol_obj)
@@ -27909,24 +32662,14 @@ class OwnedDesign(DesignProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedDesign_add(self, sbol_obj)
@@ -27947,6 +32690,7 @@ class OwnedDesign(DesignProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -27977,9 +32721,13 @@ class OwnedDesign(DesignProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedDesign_getAll(self)
@@ -27993,16 +32741,14 @@ class OwnedDesign(DesignProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedDesign_remove(self, *args)
@@ -28011,6 +32757,7 @@ class OwnedDesign(DesignProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -28021,29 +32768,7 @@ class OwnedDesign(DesignProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedDesign_create(self, uri)
@@ -28055,10 +32780,56 @@ class OwnedDesign(DesignProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedDesign_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedDesign_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedDesign_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedDesign_python_iter_get
     if _newclass:
@@ -28079,29 +32850,7 @@ class OwnedDesign(DesignProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedDesign_createRange(self, uri)
@@ -28115,6 +32864,7 @@ class OwnedDesign(DesignProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28145,29 +32895,7 @@ class OwnedDesign(DesignProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedDesign_createCut(self, uri)
@@ -28181,6 +32909,7 @@ class OwnedDesign(DesignProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28211,29 +32940,7 @@ class OwnedDesign(DesignProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedDesign_createGenericLocation(self, uri)
@@ -28247,6 +32954,7 @@ class OwnedDesign(DesignProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28412,6 +33120,12 @@ class BuildProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -28423,27 +33137,7 @@ class BuildProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_BuildProperty(*args)
@@ -28457,10 +33151,7 @@ class BuildProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.BuildProperty_getTypeURI(self)
@@ -28469,6 +33160,7 @@ class BuildProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.BuildProperty_getOwner(self)
@@ -28477,8 +33169,9 @@ class BuildProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -28505,6 +33198,7 @@ class BuildProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -28532,16 +33226,9 @@ class BuildProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.BuildProperty_remove(self, index)
@@ -28550,8 +33237,9 @@ class BuildProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.BuildProperty_clear(self)
@@ -28560,37 +33248,73 @@ class BuildProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.BuildProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.BuildProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.BuildProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.BuildProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.BuildProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.BuildProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.BuildProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.BuildProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.BuildProperty_python_iter_get, _libsbol.BuildProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.BuildProperty_addValidationRule(self, *args)
+
 BuildProperty_swigregister = _libsbol.BuildProperty_swigregister
 BuildProperty_swigregister(BuildProperty)
 
@@ -28611,6 +33335,12 @@ class OwnedBuild(BuildProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -28626,6 +33356,7 @@ class OwnedBuild(BuildProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedBuild(*args)
@@ -28637,24 +33368,15 @@ class OwnedBuild(BuildProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedBuild_set(self, sbol_obj)
@@ -28675,24 +33397,14 @@ class OwnedBuild(BuildProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedBuild_add(self, sbol_obj)
@@ -28713,6 +33425,7 @@ class OwnedBuild(BuildProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28743,9 +33456,13 @@ class OwnedBuild(BuildProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedBuild_getAll(self)
@@ -28759,16 +33476,14 @@ class OwnedBuild(BuildProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedBuild_remove(self, *args)
@@ -28777,6 +33492,7 @@ class OwnedBuild(BuildProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -28787,29 +33503,7 @@ class OwnedBuild(BuildProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedBuild_create(self, uri)
@@ -28821,10 +33515,56 @@ class OwnedBuild(BuildProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedBuild_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedBuild_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedBuild_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedBuild_python_iter_get
     if _newclass:
@@ -28845,29 +33585,7 @@ class OwnedBuild(BuildProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedBuild_createRange(self, uri)
@@ -28881,6 +33599,7 @@ class OwnedBuild(BuildProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28911,29 +33630,7 @@ class OwnedBuild(BuildProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedBuild_createCut(self, uri)
@@ -28947,6 +33644,7 @@ class OwnedBuild(BuildProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -28977,29 +33675,7 @@ class OwnedBuild(BuildProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedBuild_createGenericLocation(self, uri)
@@ -29013,6 +33689,7 @@ class OwnedBuild(BuildProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -29178,6 +33855,12 @@ class TestProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -29189,27 +33872,7 @@ class TestProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_TestProperty(*args)
@@ -29223,10 +33886,7 @@ class TestProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.TestProperty_getTypeURI(self)
@@ -29235,6 +33895,7 @@ class TestProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.TestProperty_getOwner(self)
@@ -29243,8 +33904,9 @@ class TestProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -29271,6 +33933,7 @@ class TestProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -29298,16 +33961,9 @@ class TestProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.TestProperty_remove(self, index)
@@ -29316,8 +33972,9 @@ class TestProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.TestProperty_clear(self)
@@ -29326,37 +33983,73 @@ class TestProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.TestProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.TestProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.TestProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.TestProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.TestProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.TestProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.TestProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.TestProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.TestProperty_python_iter_get, _libsbol.TestProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.TestProperty_addValidationRule(self, *args)
+
 TestProperty_swigregister = _libsbol.TestProperty_swigregister
 TestProperty_swigregister(TestProperty)
 
@@ -29377,6 +34070,12 @@ class OwnedTest(TestProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -29392,6 +34091,7 @@ class OwnedTest(TestProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedTest(*args)
@@ -29403,24 +34103,15 @@ class OwnedTest(TestProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedTest_set(self, sbol_obj)
@@ -29441,24 +34132,14 @@ class OwnedTest(TestProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedTest_add(self, sbol_obj)
@@ -29479,6 +34160,7 @@ class OwnedTest(TestProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -29509,9 +34191,13 @@ class OwnedTest(TestProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedTest_getAll(self)
@@ -29525,16 +34211,14 @@ class OwnedTest(TestProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedTest_remove(self, *args)
@@ -29543,6 +34227,7 @@ class OwnedTest(TestProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -29553,29 +34238,7 @@ class OwnedTest(TestProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedTest_create(self, uri)
@@ -29587,10 +34250,56 @@ class OwnedTest(TestProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedTest_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedTest_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedTest_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedTest_python_iter_get
     if _newclass:
@@ -29611,29 +34320,7 @@ class OwnedTest(TestProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedTest_createRange(self, uri)
@@ -29647,6 +34334,7 @@ class OwnedTest(TestProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -29677,29 +34365,7 @@ class OwnedTest(TestProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedTest_createCut(self, uri)
@@ -29713,6 +34379,7 @@ class OwnedTest(TestProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -29743,29 +34410,7 @@ class OwnedTest(TestProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedTest_createGenericLocation(self, uri)
@@ -29779,6 +34424,7 @@ class OwnedTest(TestProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -29944,6 +34590,12 @@ class AnalysisProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -29955,27 +34607,7 @@ class AnalysisProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_AnalysisProperty(*args)
@@ -29989,10 +34621,7 @@ class AnalysisProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.AnalysisProperty_getTypeURI(self)
@@ -30001,6 +34630,7 @@ class AnalysisProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.AnalysisProperty_getOwner(self)
@@ -30009,8 +34639,9 @@ class AnalysisProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -30037,6 +34668,7 @@ class AnalysisProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -30064,16 +34696,9 @@ class AnalysisProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.AnalysisProperty_remove(self, index)
@@ -30082,8 +34707,9 @@ class AnalysisProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.AnalysisProperty_clear(self)
@@ -30092,37 +34718,73 @@ class AnalysisProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.AnalysisProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.AnalysisProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.AnalysisProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.AnalysisProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.AnalysisProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.AnalysisProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.AnalysisProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.AnalysisProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.AnalysisProperty_python_iter_get, _libsbol.AnalysisProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.AnalysisProperty_addValidationRule(self, *args)
+
 AnalysisProperty_swigregister = _libsbol.AnalysisProperty_swigregister
 AnalysisProperty_swigregister(AnalysisProperty)
 
@@ -30143,6 +34805,12 @@ class OwnedAnalysis(AnalysisProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -30158,6 +34826,7 @@ class OwnedAnalysis(AnalysisProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedAnalysis(*args)
@@ -30169,24 +34838,15 @@ class OwnedAnalysis(AnalysisProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedAnalysis_set(self, sbol_obj)
@@ -30207,24 +34867,14 @@ class OwnedAnalysis(AnalysisProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedAnalysis_add(self, sbol_obj)
@@ -30245,6 +34895,7 @@ class OwnedAnalysis(AnalysisProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -30275,9 +34926,13 @@ class OwnedAnalysis(AnalysisProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedAnalysis_getAll(self)
@@ -30291,16 +34946,14 @@ class OwnedAnalysis(AnalysisProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedAnalysis_remove(self, *args)
@@ -30309,6 +34962,7 @@ class OwnedAnalysis(AnalysisProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -30319,29 +34973,7 @@ class OwnedAnalysis(AnalysisProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAnalysis_create(self, uri)
@@ -30353,10 +34985,56 @@ class OwnedAnalysis(AnalysisProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedAnalysis_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedAnalysis_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedAnalysis_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedAnalysis_python_iter_get
     if _newclass:
@@ -30377,29 +35055,7 @@ class OwnedAnalysis(AnalysisProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAnalysis_createRange(self, uri)
@@ -30413,6 +35069,7 @@ class OwnedAnalysis(AnalysisProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -30443,29 +35100,7 @@ class OwnedAnalysis(AnalysisProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAnalysis_createCut(self, uri)
@@ -30479,6 +35114,7 @@ class OwnedAnalysis(AnalysisProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -30509,29 +35145,7 @@ class OwnedAnalysis(AnalysisProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedAnalysis_createGenericLocation(self, uri)
@@ -30545,6 +35159,7 @@ class OwnedAnalysis(AnalysisProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -30710,6 +35325,12 @@ class SampleRosterProperty(_object):
         SBOL specification currently supports string, URI, and integer literal
         values.  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/property.h
+
     """
 
     __swig_setmethods__ = {}
@@ -30721,27 +35342,7 @@ class SampleRosterProperty(_object):
     def __init__(self, *args):
         """
 
-
-        Parameters
-        ----------
-        * `type_uri` :  
-            An RDF hash URI for this property, consisting of a namespace followed by an
-            identifier. For example, Properties of SBOLObjects use URIs of the form
-            http://sbols.org/v2#somePropertyName, where the identifier somePropertyName
-            determines the appearance of XML nodes in an SBOL file. Alternatively,
-            annotations in a custom namespace can be provided using a similarly formed
-            hash URI in another namespace.  
-        * `property_owner` :  
-            All Property objects must have a pointer back to its parent SBOLObject of
-            which it is a member  
-        * `initial_value` :  
-            The initial value of the Property  
-        * `validation_rules` :  
-            A vector of externally defined ValidationRules. The vector contains pointers
-            to functions which correspond to the validation rules listed in the appendix
-            of the formal SBOL specification document. ValidationRules are automatically
-            checked every time a setter or adder method is called and when Documents are
-            read and written.  
+        `Property(property_owner, type_uri, lower_bound, upper_bound, validation_rules)`  
 
         """
         this = _libsbol.new_SampleRosterProperty(*args)
@@ -30755,10 +35356,7 @@ class SampleRosterProperty(_object):
     def getTypeURI(self):
         """
 
-
-        Returns
-        -------
-        The uniform resource identifier that describes the RDF-type of this SBOL Object  
+        `getTypeURI() -> rdf_type`  
 
         """
         return _libsbol.SampleRosterProperty_getTypeURI(self)
@@ -30767,6 +35365,7 @@ class SampleRosterProperty(_object):
     def getOwner(self):
         """
 
+        `getOwner() -> SBOLObject &`  
 
         """
         return _libsbol.SampleRosterProperty_getOwner(self)
@@ -30775,8 +35374,9 @@ class SampleRosterProperty(_object):
     def set(self, *args):
         """
 
+        `set(new_value)`  
 
-        Basic setter for SBOL Property.
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
@@ -30803,6 +35403,7 @@ class SampleRosterProperty(_object):
     def add(self, new_value):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
@@ -30830,16 +35431,9 @@ class SampleRosterProperty(_object):
     def remove(self, index=0):
         """
 
+        `remove(index=0)`  
 
-        Remove a Property from the list of objects and destroy it.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
-        * `index` :  
-            A numerical index for the object. 
+        Remove a property value.  
 
         """
         return _libsbol.SampleRosterProperty_remove(self, index)
@@ -30848,8 +35442,9 @@ class SampleRosterProperty(_object):
     def clear(self):
         """
 
+        `clear()`  
 
-        Remove all children objects from the parent and destroy them.  
+        Clear all property values.  
 
         """
         return _libsbol.SampleRosterProperty_clear(self)
@@ -30858,37 +35453,73 @@ class SampleRosterProperty(_object):
     def write(self):
         """
 
+        `write()`  
 
         """
         return _libsbol.SampleRosterProperty_write(self)
 
 
     def find(self, query):
+        """
+
+        `find(query) -> bool`  
+
+        Check if a value in this property matches the query.  
+
+        """
         return _libsbol.SampleRosterProperty_find(self, query)
 
+
     def getLowerBound(self):
+        """
+
+        `getLowerBound() -> char`  
+
+        """
         return _libsbol.SampleRosterProperty_getLowerBound(self)
 
+
     def getUpperBound(self):
+        """
+
+        `getUpperBound() -> char`  
+
+        """
         return _libsbol.SampleRosterProperty_getUpperBound(self)
+
 
     def validate(self, arg=None):
         """
 
+        `validate(arg=NULL)`  
 
         """
         return _libsbol.SampleRosterProperty_validate(self, arg)
 
 
     def copy(self, target_property):
+        """
+
+        `copy(target_property)`  
+
+        Copy property values to a target object's property fields.  
+
+        """
         return _libsbol.SampleRosterProperty_copy(self, target_property)
+
     __swig_setmethods__["python_iter"] = _libsbol.SampleRosterProperty_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.SampleRosterProperty_python_iter_get
     if _newclass:
         python_iter = _swig_property(_libsbol.SampleRosterProperty_python_iter_get, _libsbol.SampleRosterProperty_python_iter_set)
 
     def addValidationRule(self, *args):
+        """
+
+        `addValidationRule(rule)`  
+
+        """
         return _libsbol.SampleRosterProperty_addValidationRule(self, *args)
+
 SampleRosterProperty_swigregister = _libsbol.SampleRosterProperty_swigregister
 SampleRosterProperty_swigregister(SampleRosterProperty)
 
@@ -30909,6 +35540,12 @@ class OwnedSampleRoster(SampleRosterProperty):
     * `SBOLClass` :  
         The type of child SBOL object contained by this Property  
 
+    Attributes
+    ----------
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    C++ includes: /Users/bbartley/Dev/git/libSBOL/source/object.h
+
     """
 
     __swig_setmethods__ = {}
@@ -30924,6 +35561,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def __init__(self, *args):
         """
 
+        `OwnedObject(property_owner, sbol_uri, lower_bound, upper_bound)`  
 
         """
         this = _libsbol.new_OwnedSampleRoster(*args)
@@ -30935,24 +35573,15 @@ class OwnedSampleRoster(SampleRosterProperty):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.OwnedSampleRoster_set(self, sbol_obj)
@@ -30973,24 +35602,14 @@ class OwnedSampleRoster(SampleRosterProperty):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.OwnedSampleRoster_add(self, sbol_obj)
@@ -31011,6 +35630,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def get(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -31041,9 +35661,13 @@ class OwnedSampleRoster(SampleRosterProperty):
     def getAll(self):
         """
 
+        `getAll() -> std::vector< SBOLClass * >`  
 
-        Retrieve a vector of objects from the OwnedObject.
+        Get all the objects contained in the property.  
 
+        Returns
+        -------
+        A vector of pointers to the objects  
 
         """
         val = _libsbol.OwnedSampleRoster_getAll(self)
@@ -31057,16 +35681,14 @@ class OwnedSampleRoster(SampleRosterProperty):
     def remove(self, *args):
         """
 
+        `remove(index=0)`  
 
         Remove an object from the list of objects and destroy it.  
 
         Parameters
         ----------
-        * `uri` :  
-            The identity of the object to be destroyed. This can be a displayId of the
-            object or a full URI may be provided.  
         * `index` :  
-            A numerical index for the object. 
+            A numerical index for the object.  
 
         """
         return _libsbol.OwnedSampleRoster_remove(self, *args)
@@ -31075,6 +35697,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def clear(self):
         """
 
+        `clear()`  
 
         Remove all children objects from the parent and destroy them.  
 
@@ -31085,29 +35708,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSampleRoster_create(self, uri)
@@ -31119,10 +35720,56 @@ class OwnedSampleRoster(SampleRosterProperty):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        Autoconstructs a child object and attaches it to the parent object.  
+
+        Additionally, it sets the definition property of the child object, for example,
+        in the case of creating Components, FunctionalComponents, and Modules. The new
+        object will be constructed with default values specified in the constructor for
+        this type of object. If SBOLCompliance is enabled, the child object's identity
+        will be constructed using the supplied displayId argument. Otherwise, the user
+        should supply a full URI.  
+
+        templateparam
+        -------------
+        * `SBOLClass` :  
+            The type of SBOL object that will be created  
+
+        Parameters
+        ----------
+        * `definition_object` :  
+            The returned object will reference the definition_object in its definition
+            property.  
+
+        Returns
+        -------
+        A reference to the child object  check uniqueness of URI in Document  
+
+        """
         return _libsbol.OwnedSampleRoster_define(self, definition_object)
 
+
     def find(self, uri):
+        """
+
+        `find(uri) -> bool`  
+
+        Parameters
+        ----------
+        * `uri` :  
+            The full uniform resource identifier of the object to search for in this
+            property  
+
+        Returns
+        -------
+        A boolean indicating whether found or not  
+
+        """
         return _libsbol.OwnedSampleRoster_find(self, uri)
+
     __swig_setmethods__["python_iter"] = _libsbol.OwnedSampleRoster_python_iter_set
     __swig_getmethods__["python_iter"] = _libsbol.OwnedSampleRoster_python_iter_get
     if _newclass:
@@ -31143,29 +35790,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def createRange(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSampleRoster_createRange(self, uri)
@@ -31179,6 +35804,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def getRange(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -31209,29 +35835,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def createCut(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSampleRoster_createCut(self, uri)
@@ -31245,6 +35849,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def getCut(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -31275,29 +35880,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def createGenericLocation(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> Test &`  
 
         """
         val = _libsbol.OwnedSampleRoster_createGenericLocation(self, uri)
@@ -31311,6 +35894,7 @@ class OwnedSampleRoster(SampleRosterProperty):
     def getGenericLocation(self, *args):
         """
 
+        `get(uri="") -> SBOLSubClass &`  
 
         Get the child object.  
 
@@ -31349,6 +35933,17 @@ OwnedSampleRoster_swigregister = _libsbol.OwnedSampleRoster_swigregister
 OwnedSampleRoster_swigregister(OwnedSampleRoster)
 
 class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
+    """
+
+
+    Attributes
+    ----------
+    * `alias` : `rdf_type`  
+
+    * `python_iter` : `std::vector< std::string >::iterator`  
+
+    """
+
     __swig_setmethods__ = {}
     for _s in [OwnedFunctionalComponent]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
@@ -31364,6 +35959,12 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
         alias = _swig_property(_libsbol.AliasedOwnedFunctionalComponent_alias_get, _libsbol.AliasedOwnedFunctionalComponent_alias_set)
 
     def __init__(self, property_owner, sbol_uri, alias_uri, lower_bound, upper_bound, validation_rules):
+        """
+
+        `AliasedProperty(property_owner, sbol_uri, alias_uri, lower_bound, upper_bound,
+            validation_rules)`  
+
+        """
         this = _libsbol.new_AliasedOwnedFunctionalComponent(property_owner, sbol_uri, alias_uri, lower_bound, upper_bound, validation_rules)
         try:
             self.this.append(this)
@@ -31375,24 +35976,15 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
     def set(self, sbol_obj):
         """
 
+        `set(new_value)`  
 
-        Basic setter for OwnedObject SBOL IntProperty.
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
+        Basic setter for SBOL IntProperty, but can be used with TextProperty as well.  
 
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Assigns a child object to
-            this OwnedObject container property. This method always overwrites the first
-            SBOLObject in the container. appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
-        * `sbol_obj` :  
-            The child object Sets the first object in the container  
+        * `new_value` :  
+            A new integer value for the property, which is converted to a raw string
+            during serialization.  
 
         """
         val = _libsbol.AliasedOwnedFunctionalComponent_set(self, sbol_obj)
@@ -31413,24 +36005,14 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
     def add(self, sbol_obj):
         """
 
+        `add(new_value)`  
 
         Appends the new value to a list of values, for properties that allow it.  
 
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
         Parameters
         ----------
-        * `sbol_obj` :  
-            A child object to add to this container property. Adds a child object to the
-            parent object. This method always appends another object to those already
-            contained in this OwnedObject property. In SBOLCompliant mode, the create
-            method is preferred  
+        * `new_value` :  
+            A new string which will be added to a list of values.  
 
         """
         val = _libsbol.AliasedOwnedFunctionalComponent_add(self, sbol_obj)
@@ -31451,28 +36033,7 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
     def get(self, *args):
         """
 
-
-        Get the child object.  
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of the child object  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this type specialization when adding
-            multiple types of SBOLObjects to a container.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            The specific URI for a child object if this OwnedObject property contains
-            multiple objects,  
-
-        Returns
-        -------
-        A reference to the child object Returns a child object from the OwnedObject
-        property. If no URI is specified, the first object in this OwnedObject property
-        is returned.  
+        `get(uri="") -> SBOLClass &`  
 
         """
         return _libsbol.AliasedOwnedFunctionalComponent_get(self, *args)
@@ -31481,29 +36042,7 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
     def create(self, uri):
         """
 
-
-        templateparam
-        -------------
-        * `SBOLClass` :  
-            The type of SBOL object contained in this OwnedObject property  
-        * `SBOLSubClass` :  
-            A derived class of SBOLClass. Use this specialization for OwnedObject
-            properties which contain multiple types of SBOLObjects.  
-
-        Parameters
-        ----------
-        * `uri` :  
-            If SBOLCompliance is enabled, this should be the displayId for the new child
-            object. If not enabled, this should be a full raw URI.  
-
-        Returns
-        -------
-        A reference to the child object Autoconstructs a child object and attaches it to
-        the parent object. The new object will be constructed with default values
-        specified in the constructor for this type of object. If SBOLCompliance is
-        enabled, the child object's identity will be constructed using the supplied
-        displayId argument. Otherwise, the user should supply a full URI.  check
-        uniqueness of URI in Document  
+        `create(uri) -> SBOLClass &`  
 
         """
         val = _libsbol.AliasedOwnedFunctionalComponent_create(self, uri)
@@ -31515,10 +36054,22 @@ class AliasedOwnedFunctionalComponent(OwnedFunctionalComponent):
 
 
     def define(self, definition_object):
+        """
+
+        `define(definition_object) -> SBOLClass &`  
+
+        """
         return _libsbol.AliasedOwnedFunctionalComponent_define(self, definition_object)
 
+
     def __len__(self):
+        """
+
+        `__len__() -> int`  
+
+        """
         return _libsbol.AliasedOwnedFunctionalComponent___len__(self)
+
 AliasedOwnedFunctionalComponent_swigregister = _libsbol.AliasedOwnedFunctionalComponent_swigregister
 AliasedOwnedFunctionalComponent_swigregister(AliasedOwnedFunctionalComponent)
 
