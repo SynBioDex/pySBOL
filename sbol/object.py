@@ -1,0 +1,3 @@
+class SBOLObject:
+    # TODO
+    pass
