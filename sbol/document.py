@@ -14,7 +14,7 @@ class Document:
 
         :param filename: (optional) a file to initialize the Document.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def add(self, sbol_objs):
         """
@@ -23,7 +23,7 @@ class Document:
         :param sbol_objs: The SBOL object(s) you want to serialize. Either a single object or a list of objects.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def addComponentDefinition(self, sbol_obj):
         """
@@ -68,7 +68,7 @@ class Document:
         :param uri: The identity of the SBOL object you want to retrieve.
         :return: The SBOL object.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getAll(self):
         """
@@ -76,7 +76,7 @@ class Document:
 
         :return: A list of objects from the Document.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     # File I/O #
     def write(self, filename):
@@ -86,7 +86,7 @@ class Document:
         :param filename: The full name of the file you want to write (including file extension).
         :return: A string with the validation results, or empty string if validation is disabled.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def read(self, filename):
         """
@@ -96,7 +96,7 @@ class Document:
         :param filename: The full name of the file you want to read (including file extension).
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def readString(self, sbol_str):
         """
@@ -105,7 +105,7 @@ class Document:
         :param sbol_str: A string formatted in SBOL.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def writeString(self):
         """
@@ -113,7 +113,7 @@ class Document:
 
         :return: A string representation of the objects in this Document.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def append(self, filename):
         """
@@ -123,12 +123,12 @@ class Document:
         :param filename: The full name of the file you want to read (including file extension).
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     # Online validation #
     def request_validation(self, sbol_str):
         # TODO what is this method supposed to do?
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def request_comparison(self, diff_file):
         """
@@ -139,7 +139,7 @@ class Document:
         :param diff_file:
         :return: The comparison results
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def clear(self):
         """
@@ -147,7 +147,7 @@ class Document:
 
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def query_repository(self, command):
         """
@@ -156,7 +156,7 @@ class Document:
         :return: str
         """
         # TODO better docstring
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def search_metadata(self, role, type, name, collection):
         """
@@ -168,7 +168,7 @@ class Document:
         :return: str
         """
         # TODO better docstring
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     # TODO The commented-out methods below are important, but they rely heavily on raptor
     # static std::string string_from_raptor_term(raptor_term *term, bool addWrapper=false);
@@ -182,7 +182,7 @@ class Document:
         :param out: output stream
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def validate(self):
         """
@@ -190,7 +190,7 @@ class Document:
 
         :return: A string containing a message with the validation results
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def size(self):
         """
@@ -198,7 +198,7 @@ class Document:
 
         :return: The total number of objects in the Document.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def __len__(self):
         """
@@ -220,7 +220,7 @@ class Document:
 
     def cacheObjects(self):
         # TODO docstring
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def referenceNamespace(self, uri):
         """
@@ -229,7 +229,7 @@ class Document:
         :return: str
         """
         # TODO better docstring
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def summary(self):
         """
@@ -237,7 +237,7 @@ class Document:
 
         :return: A string representation of the Document.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     # TODO Port iterator, which loops over top-level items of Document
 
@@ -248,4 +248,4 @@ class Document:
         :param uri: The identity of the object to search for.
         :return: A pointer to the SBOLObject, or NULL if an object with this identity doesn't exist.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")

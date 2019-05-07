@@ -1,7 +1,7 @@
 from constants import *
+from toplevel import *
 
-
-class ComponentDefinition:
+class ComponentDefinition(TopLevel):
     """
     The ComponentDefinition class represents the structural entities of a biological design.
 
@@ -22,7 +22,7 @@ class ComponentDefinition:
         a Maven version string of the form "major.minor.patch".
         :param rdf_type: The RDF type for an extension class derived from this one
         """
-        pass
+        super().__init__(rdf_type, uri, version)
 
     def assemble(self, components, assembly_standard="", doc=None):
         """Assembles ComponentDefinitions into an abstraction hierarchy.
@@ -38,7 +38,7 @@ class ComponentDefinition:
         you must add this ComponentDefinition to a Document before calling this method.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def assemblePrimaryStructure(self, primary_structure, assembly_standard="", doc=None):
         """Assembles ComponentDefinition into a linear primary structure.
@@ -53,7 +53,7 @@ class ComponentDefinition:
         you must add this ComponentDefinition to a Document before calling this method.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def compile(self):
         """Compiles an abstraction hierarchy of ComponentDefinitions into a nucleotide sequence.
@@ -61,7 +61,7 @@ class ComponentDefinition:
         If no Sequence object is associated with this ComponentDefinition, one will be automatically instantiated
         :return: A string representing the nucleotide sequence for this ComponentDefinition.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def updateSequence(self, composite_sequence=""):
         """Assemble a parent ComponentDefinition's Sequence from its subcomponent Sequences.
@@ -69,14 +69,14 @@ class ComponentDefinition:
         :param composite_sequence: A recursive parameter, use default value.
         :return: The assembled parent sequence.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getInSequentialOrder(self):
         """Orders this ComponentDefinition's member Components into a linear arrangement based on Sequence Constraints.
 
         :return: Primary sequence structure.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def hasUpstreamComponent(self, current_component):
         """Checks if the specified Component has a Component upstream in linear arrangement on the DNA strand.
@@ -85,7 +85,7 @@ class ComponentDefinition:
         :param current_component: A Component in this ComponentDefinition.
         :return: True if found, False if not
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getUpstreamComponent(self, current_component):
         """Get the upstream component.
@@ -93,7 +93,7 @@ class ComponentDefinition:
         :param current_component: A Component in this ComponentDefinition.
         :return: The upstream component.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def hasDownstreamComponent(self, current_component):
         """Checks if the specified Component has a Component downstream in linear arrangement on the DNA strand.
@@ -102,7 +102,7 @@ class ComponentDefinition:
         :param current_component: A Component in this ComponentDefinition.
         :return: True if found, False if not.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getDownstreamComponent(self, current_component):
         """Get the downstream component.
@@ -110,21 +110,21 @@ class ComponentDefinition:
         :param current_component: A Component in this ComponentDefinition.
         :return: The downstream component.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getFirstComponent(self):
         """Gets the first Component in a linear sequence.
 
         :return: The first component in sequential order.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getLastComponent(self):
         """Gets the last Component in a linear sequence.
 
         :return: The last component in sequential order.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def applyToComponentHierarchy(self, callback=None, user_data=None):
         """Perform an operation on every Component in a structurally-linked hierarchy of Components
@@ -135,14 +135,14 @@ class ComponentDefinition:
         :param user_data: Arbitrary user data which can be passed in and out of the callback as an argument.
         :return: A list of all Components in the hierarchy.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getPrimaryStructure(self):
         """Get the primary sequence of a design in terms of its sequentially ordered Components.
 
         :return: Primary structure.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def insertDownstream(self, target, component_to_insert):
         """Insert a Component downstream of another in a primary sequence, shifting any
@@ -152,7 +152,7 @@ class ComponentDefinition:
         :param component_to_insert: The insert Component is inserted downstream of the target Component.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def insertUpstream(self, target, component_to_insert):
         """Insert a Component upstream of another in a primary sequence, shifting any
@@ -163,7 +163,7 @@ class ComponentDefinition:
         :param component_to_insert: The insert Component is inserted upstream of the target Component.
         :return:
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def addUpstreamFlank(self, target, elements):
         """A useful method when building up SBOL representations of natural DNA sequences.
@@ -177,7 +177,7 @@ class ComponentDefinition:
         The encoding is inferred.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def addDownstreamFlank(self, target, elements):
         """A useful method when building up SBOL representations of natural DNA sequences.
@@ -191,7 +191,7 @@ class ComponentDefinition:
         The encoding is inferred.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def isRegular(self, msg=None):
         """Use this diagnose an irregular design.
@@ -201,7 +201,7 @@ class ComponentDefinition:
         :param msg: An optional message for diagnosing the irregularity, if any is found.
         :return: True if the abstraction hierarchy is regular, False otherwise.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def isComplete(self, msg=None):
         """Use this diagnose an incomplete design.
@@ -211,7 +211,7 @@ class ComponentDefinition:
         :param msg: An optional message for diagnosing the irregularity, if any is found.
         :return: True if the abstraction hierarchy is complete, False otherwise.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def disassemble(self, range_start=1):
         """Instantiates a Component for every SequenceAnnotation
@@ -223,7 +223,7 @@ class ComponentDefinition:
         :param range_start:
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def linearize(self, components=None):
         """
@@ -233,7 +233,7 @@ class ComponentDefinition:
         ComponentDefinitions is assumed.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def build(self):
         """
@@ -251,4 +251,4 @@ class ComponentDefinition:
         :param species: A Participation object (ie, participant species in a biochemical Interaction).
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")

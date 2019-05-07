@@ -11,19 +11,19 @@ class SBOLObject(metaclass=ABCMeta):
     _default_namespace = None
     _hidden_properties = []
 
-    def _init(self, rdf_type, uri):
-        pass
+    # def _init(self, rdf_type, uri):
+    #     raise NotImplementedError("Not yet implemented")
 
     def _serialize(self):
         # Convert and SBOL object into RDF triples.
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def _nest(self):
         # Pretty-writer that converts flat RDF/XML into nested RDF/XML (ie. SBOL)
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def _makeQName(self, uri):
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def _register_extension_class(self, ns, ns_prefix, class_name):
         """Register an extension class and its namespace, so custom data can be embedded into and read from SBOL files.
@@ -35,7 +35,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param class_name: The extension class name.
         :return: The new class.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     # 'Public' members
     doc = None
@@ -53,9 +53,9 @@ class SBOLObject(metaclass=ABCMeta):
     # [SBOL specification doucment](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
     identity = None
 
-    def __init__(self, uri="example"):
+    def __init__(self, type=UNDEFINED, uri="example"):
         """Open-world constructor."""
-        self._init(UNDEFINED, uri)
+        raise NotImplementedError("Not yet implemented")
 
     @abstractmethod
     def getTypeURI(self):
@@ -66,7 +66,7 @@ class SBOLObject(metaclass=ABCMeta):
 
     def getClassName(self, rdf_type):
         """Parses a local class name from the RDF-type of this SBOL Object."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def find(self, uri):
         """Search this object recursively to see if an object or any child object with URI already exists.
@@ -74,7 +74,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param uri: The URI to search for.
         :return: The SBOLObject associated with this URI if it exists, None otherwise.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def cacheObjects(self, objectCache):
         """TODO document
@@ -82,7 +82,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param objectCache: a dictionary mapping strings to SBOLObjects
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def find_property(self, uri):
         """Search this object recursively to see if it contains a member property with the given RDF type.
@@ -90,7 +90,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param uri: The RDF type of the property to search for.
         :return: The SBOLObject that contains a member property with the specified RDF type, None otherwise
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def find_property_value(self, uri, value, matches=None):
         """Search this object recursively to see if it contains a member property with the given RDF type
@@ -101,7 +101,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param matches:
         :return: A vector containing all objects found that contain a member property with the specified RDF type
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def find_reference(self, uri):
         """Search this object recursively to see if it contains a member property with the given RDF type
@@ -110,7 +110,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param uri: A URI, either an ontology term or an object reference, to search for.
         :return: A vector containing all objects found that contain the URI in a property value.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def compare(self, comparand):
         """Compare two SBOL objects or Documents. The behavior is currently undefined for objects
@@ -128,7 +128,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param other: The object being compared to this one.
         :return: True if the objects are identical, False if they are different.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getPropertyValue(self, property_uri):
         """Get the value of a custom annotation property by its URI.
@@ -136,7 +136,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param property_uri: The URI for the property.
         :return: The value of the property or SBOL_ERROR_NOT_FOUND.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getPropertyValues(self, property_uri):
         """Get all values of a custom annotation property by its URI.
@@ -144,7 +144,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param property_uri: The URI for the property.
         :return: A vector of property values or SBOL_ERROR_NOT_FOUND.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getProperties(self):
         """Gets URIs for all properties contained by this object. This includes SBOL core properties as well as
@@ -152,7 +152,7 @@ class SBOLObject(metaclass=ABCMeta):
 
         :return: A vector of URIs that identify the properties contained in this object.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def setPropertyValue(self, property_uri, val):
         """Set and overwrite the value for a user-defined annotation property.
@@ -161,7 +161,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param val: Either a literal or URI value.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def addPropertyValue(self, property_uri, val):
         """Append a value to a user-defined annotation property.
@@ -170,7 +170,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param val: Either a literal or URI value.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def setAnnotation(self, property_uri, val):
         """Set the value for a user-defined annotation property. Synonymous with setPropertyValue.
@@ -180,7 +180,7 @@ class SBOLObject(metaclass=ABCMeta):
         else it will be interpreted as a literal value.
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getAnnotation(self, property_uri):
         """Get the value of a custom annotation property by its URI. Synonymous with getPropertyValue.
@@ -188,7 +188,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param property_uri: The URI for the property.
         :return: The value of the property or SBOL_ERROR_NOT_FOUND.
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def apply(self, callback, user_data):
         """
@@ -197,14 +197,14 @@ class SBOLObject(metaclass=ABCMeta):
         :param user_data:
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def update_uri(self):
         """
         TODO document
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def serialize_rdf2xml(self, os, indentLevel):
         """Serialize the SBOLObject.
@@ -213,7 +213,7 @@ class SBOLObject(metaclass=ABCMeta):
         :param indentLevel:
         :return: None
         """
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     @abstractmethod
     def __str__(self):

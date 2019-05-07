@@ -67,23 +67,23 @@ class Property():
 
     def add(self, new_value):
         """Appends the new value to a list of values, for properties that allow it."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def remove(self, index=0):
         """Remove a property value."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def clear(self):
         """Clear all property values."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def write(self):
         """Write property values."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def find(self, query):
         """Check if a value in this property matches the query."""
-        pass
+        raise NotImplementedError("Not yet implemented")
 
     def getLowerBound(self):
         return self._lowerBound
@@ -105,5 +105,5 @@ class Property():
             return False
 
     def _isHidden(self):
-        pass
+        raise NotImplementedError("Not yet implemented")
 

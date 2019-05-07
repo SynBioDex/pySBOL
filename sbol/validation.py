@@ -21,19 +21,19 @@ def is_not_alphanumeric_or_underscore(c):
 def sbolRule10101(sbol_obj, arg):
     """An SBOL document MUST declare the use of the following XML namespace: http://sbols.org/v2#."""
     # TODO
-    pass
+    raise NotImplementedError("Not yet implemented")
 
 
 def sbolRule10102(sbol_obj, arg):
     """An SBOL document MUST declare the use of the following XML namespace: http://www.w3.org/1999/02/22-rdf-syntax-ns#."""
     # TODO
-    pass
+    raise NotImplementedError("Not yet implemented")
 
 
 def sbol_rule_10202(sbol_obj, arg):
     """The identity property of an Identified object MUST be globally unique."""
     # TODO
-    pass
+    raise NotImplementedError("Not yet implemented")
 
 
 # The displayId property of an Identified object is OPTIONAL and MAY contain a String that MUST
@@ -43,7 +43,7 @@ def sbol_rule_10204(sbol_obj, arg):
     be composed of only alphanumeric or underscore characters and MUST NOT begin with a digit.
     """
     # TODO
-    pass
+    raise NotImplementedError("Not yet implemented")
 
 
 # The definition property MUST NOT refer to the same ComponentDefinition as the one that contains the
