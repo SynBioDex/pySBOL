@@ -20,7 +20,7 @@ class Identified(SBOLObject):
     # If the version property is used, then it is RECOMMENDED that version numbering follow the conventions
     # of [semantic versioning](http://semver.org/), particularly as implemented by [Maven](http://maven.apache.org/).
     # This convention represents versions as sequences of numbers and qualifiers that are separated
-    # by the characters “.” and “-” and are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
+    # by the characters '.' and '-' and are compared in lexicographical order (for example, 1 < 1.3.1 < 2.0-beta).
     # For a full explanation, see the linked resources.
     version = None
 
@@ -39,7 +39,7 @@ class Identified(SBOLObject):
 
     # The name property is OPTIONAL and has a data type of String. This property is intended to be displayed to a human
     #  when visualizing an Identified object. If an Identified object lacks a name, then software tools SHOULD
-    # instead display the object’s displayId or identity. It is RECOMMENDED that software tools give users
+    # instead display the object's displayId or identity. It is RECOMMENDED that software tools give users
     # the ability to switch perspectives between name properties that are human-readable and displayId properties
     # that are less human-readable, but are more likely to be unique.
     name = None

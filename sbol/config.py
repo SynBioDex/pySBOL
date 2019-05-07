@@ -13,7 +13,8 @@ class Config:
     __catch_exceptions = 0
     __format = 'rdfxml'
 
-    def setHomespace(self, ns):
+    @staticmethod
+    def setHomespace(ns):
         """Setting the Homespace has several advantages. It simplifies object creation and retrieval from Documents.
         In addition, it serves as a way for a user to claim ownership of new objects. Generally users will want to
         specify a Homespace that corresponds to their organization's web domain.
@@ -22,21 +23,24 @@ class Config:
         """
         raise NotImplementedError("Not yet implemented")
 
-    def getHomespace(self):
+    @staticmethod
+    def getHomespace():
         """
 
         :return: The Homespace (a string representing the default namespace).
         """
         raise NotImplementedError("Not yet implemented")
 
-    def hasHomespace(self):
+    @staticmethod
+    def hasHomespace():
         """
 
         :return: True if Homespace is set, False otherwise.
         """
         raise NotImplementedError("Not yet implemented")
 
-    def setFileFormat(self, file_format):
+    @staticmethod
+    def setFileFormat(file_format):
         """
 
         :param file_format: The file format to use.
@@ -44,13 +48,15 @@ class Config:
         """
         raise NotImplementedError("Not yet implemented")
 
-    def getFileFormat(self):
+    @staticmethod
+    def getFileFormat():
         """
 
         :return: The file format.
         """
 
-    def setOption(self, option, val):
+    @staticmethod
+    def setOption(option, val):
         """
         Configure options for libSBOL. Access online validation and conversion.
 
@@ -78,7 +84,8 @@ class Config:
         """
         raise NotImplementedError("Not yet implemented")
 
-    def getOption(self, option):
+    @staticmethod
+    def getOption(option):
         """Get current option value for online validation and conversion
 
         :param option: The option key

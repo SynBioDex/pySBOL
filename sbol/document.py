@@ -8,6 +8,27 @@ class Document:
     to populate it with SBOL objects representing design elements.
     """
 
+    designs = None
+    builds = None
+    tests = None
+    analyses = None
+    componentDefinitions = None
+    moduleDefinitions = None
+    models = None
+    sequences = None
+    collections = None
+    activities = None
+    plans = None
+    agents = None
+    attachments = None
+    combinatorialderivations = None
+    implementations = None
+    sampleRosters = None
+    experiments = None
+    experimentalData = None
+    citations = None
+    keywords = None
+
     def __init__(self, filename=None):
         """
         Construct a document.
@@ -22,6 +43,15 @@ class Document:
 
         :param sbol_objs: The SBOL object(s) you want to serialize. Either a single object or a list of objects.
         :return: None
+        """
+        raise NotImplementedError("Not yet implemented")
+
+    def addNamespace(self, ns, prefix):
+        """Add a new namespace to the Document.
+
+        :param ns: The namespace, eg. http://sbols.org/v2#
+        :param prefix: The namespace prefix, eg. sbol
+        :return:
         """
         raise NotImplementedError("Not yet implemented")
 
@@ -64,7 +94,7 @@ class Document:
     def get(self, uri):
         """
         Retrieve an object from the Document.
-
+cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param uri: The identity of the SBOL object you want to retrieve.
         :return: The SBOL object.
         """
@@ -76,6 +106,18 @@ class Document:
 
         :return: A list of objects from the Document.
         """
+        raise NotImplementedError("Not yet implemented")
+
+    def getComponentDefinition(self, uri):
+        raise NotImplementedError("Not yet implemented")
+
+    def getModuleDefinition(self, uri):
+        raise NotImplementedError("Not yet implemented")
+
+    def getSequence(self, uri):
+        raise NotImplementedError("Not yet implemented")
+
+    def getModel(self, uri):
         raise NotImplementedError("Not yet implemented")
 
     # File I/O #
