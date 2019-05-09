@@ -1,4 +1,7 @@
-class Document:
+from identified import *
+
+
+class Document(Identified):
     """
     The Document is a container for all SBOL data objects.
 
@@ -35,7 +38,7 @@ class Document:
 
         :param filename: (optional) a file to initialize the Document.
         """
-        raise NotImplementedError("Not yet implemented")
+        super().__init__(SBOL_DOCUMENT, "", VERSION_STRING)
 
     def add(self, sbol_objs):
         """
@@ -260,7 +263,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         """
         return self.summary()
 
-    def cacheObjects(self):
+    def cacheObjectsDocument(self):
         # TODO docstring
         raise NotImplementedError("Not yet implemented")
 
