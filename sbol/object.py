@@ -2,15 +2,17 @@ from abc import ABCMeta, abstractmethod  # Note: Python 3 defines a helper class
 from constants import *
 from property import *
 from validation import *
+from config import *
+
 
 class SBOLObject(metaclass=ABCMeta):
     """An SBOLObject converts a Python data structure into an RDF triple store
      and contains methods for serializing and parsing RDF triples.
     """
     # 'Protected' members
-    _namespaces = {}
+    _namespaces = None
     _default_namespace = None
-    _hidden_properties = []
+    _hidden_properties = None
 
     # def _init(self, rdf_type, uri):
     #     raise NotImplementedError("Not yet implemented")
@@ -42,8 +44,8 @@ class SBOLObject(metaclass=ABCMeta):
     doc = None
     rdf_type = None
     parent = None
-    properties = {}
-    owned_objects = {}
+    properties = None
+    owned_objects = None
 
     # TODO Docstrings on variables isn't a thing in Python. Consider using Epydoc.
     # The identity property is REQUIRED by all Identified objects and has a data type of URI.
@@ -51,13 +53,24 @@ class SBOLObject(metaclass=ABCMeta):
     # The identity of a compliant SBOL object MUST begin with a URI prefix that maps to a domain
     # over which the user has control. Namely, the user can guarantee uniqueness of identities within this domain.
     # For other best practices regarding URIs see Section 11.2 of the
-    # [SBOL specification doucment](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
-    identity = None
+    # [SBOL specification document](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
+    _identity = None
 
     def __init__(self, _rdf_type=UNDEFINED, uri="example"):
         """Open-world constructor."""
         self.rdf_type = _rdf_type
-        self.identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
+        self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
+        if hasHomespace():
+            self._identity.set(os.path.join(getHomespace(), uri))
+
+    @property
+    def identity(self):
+        # Return the value associated with the identity property
+        return self._identity.value
+
+    @identity.setter
+    def identity(self, new_identity):
+        self._identity.set(new_identity)
 
     @abstractmethod
     def getTypeURI(self):
@@ -222,4 +235,4 @@ class SBOLObject(metaclass=ABCMeta):
         raise NotImplementedError("Not yet implemented")
 
     def __str__(self):
-        return self.identity.get()
+        return self._identity.get()
