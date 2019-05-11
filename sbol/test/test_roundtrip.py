@@ -400,6 +400,13 @@ class TestRoundTripFailSBOL2(unittest.TestCase):
         # Expected to fail
         self.assertRaises(AssertionError, lambda: self.assertEqual(self.doc.compare(self.doc2), 1))
 
+class SimpleTest(unittest.TestCase):
+    def test_read(self):
+        test_file = str(TEST_FILES_SBOL2[0])
+        print(str(test_file))
+        split_path = os.path.splitext(test_file)
+        self.doc = Document()   # Document for read and write
+        self.doc.read(os.path.join(TEST_LOC_SBOL2, split_path[0] + split_path[1]))
 
 def runTests(test_list):
     #exec(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "CRISPR_example.py")).read())

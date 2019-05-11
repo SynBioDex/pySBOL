@@ -1,21 +1,10 @@
 from constants import *
 from toplevel import *
+from property import *
 
 
 class ModuleDefinition(TopLevel):
     """ModuleDefinition is a principle top-level class for describing the function of a design."""
-
-    def __init__(self, uri="example", version=VERSION_STRING, sbol_type_uri=SBOL_MODULE_DEFINITION):
-        """Construct a ModuleDefinition
-
-        :param uri: A full URI including a scheme, namespace, and identifier.
-        If SBOLCompliance configuration is enabled, then this argument is simply the displayId
-        for the new object and a full URI will automatically be constructed.
-        :param version: An arbitrary version string. If SBOLCompliance is enabled,
-        this should be a valid [Maven version string](http://maven.apache.org/).
-        :param sbol_type_uri: The RDF type for an extension class derived from this one (optional)
-        """
-        super().__init__(sbol_type_uri, uri, version)
 
     # The roles property is an OPTIONAL set of URIs that clarifies the intended function of a ModuleDefinition.
     # These URIs might identify descriptive biological roles, such as "metabolic pathway" and "signaling cascade",
@@ -55,6 +44,19 @@ class ModuleDefinition(TopLevel):
     # A ModuleDefinition object can link to more than one Model since each might encode system behavior in
     # a different way or at a different level of detail.
     models = None
+
+    def __init__(self, uri="example", version=VERSION_STRING, sbol_type_uri=SBOL_MODULE_DEFINITION):
+        """Construct a ModuleDefinition
+
+        :param uri: A full URI including a scheme, namespace, and identifier.
+        If SBOLCompliance configuration is enabled, then this argument is simply the displayId
+        for the new object and a full URI will automatically be constructed.
+        :param version: An arbitrary version string. If SBOLCompliance is enabled,
+        this should be a valid [Maven version string](http://maven.apache.org/).
+        :param sbol_type_uri: The RDF type for an extension class derived from this one (optional)
+        """
+        super().__init__(sbol_type_uri, uri, version)
+        roles = Property(self, SBOL_ROLES, '0', '*', [])
 
     def setOutput(self, output):
         """Defines an output for a sub-Module. Useful for top-down assembly of Modules and sub-Modules.
@@ -140,3 +142,7 @@ class ModuleDefinition(TopLevel):
         :return: None
         """
         raise NotImplementedError("Not yet implemented")
+
+    def getTypeURI(self):
+        return SBOL_MODULE_DEFINITION
+

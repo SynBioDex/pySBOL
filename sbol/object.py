@@ -1,6 +1,7 @@
 from abc import ABCMeta, abstractmethod  # Note: Python 3 defines a helper class ABC.
 from constants import *
-
+from property import *
+from validation import *
 
 class SBOLObject(metaclass=ABCMeta):
     """An SBOLObject converts a Python data structure into an RDF triple store
@@ -53,9 +54,10 @@ class SBOLObject(metaclass=ABCMeta):
     # [SBOL specification doucment](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
     identity = None
 
-    def __init__(self, type=UNDEFINED, uri="example"):
+    def __init__(self, _rdf_type=UNDEFINED, uri="example"):
         """Open-world constructor."""
-        raise NotImplementedError("Not yet implemented")
+        self.rdf_type = _rdf_type
+        self.identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
 
     @abstractmethod
     def getTypeURI(self):
@@ -128,6 +130,10 @@ class SBOLObject(metaclass=ABCMeta):
         :param other: The object being compared to this one.
         :return: True if the objects are identical, False if they are different.
         """
+        # if other is None or not isinstance(other, SBOLObject):
+        #     return False
+        # if self.rdf_type != other.rdf_type:
+        #     print(self.identity.get() + ' does not match type of ' + other.type())
         raise NotImplementedError("Not yet implemented")
 
     def getPropertyValue(self, property_uri):
@@ -215,6 +221,5 @@ class SBOLObject(metaclass=ABCMeta):
         """
         raise NotImplementedError("Not yet implemented")
 
-    @abstractmethod
     def __str__(self):
-        raise NotImplementedError("Child classes must define __str__")
+        return self.identity.get()

@@ -1,4 +1,7 @@
 from identified import *
+from config import *
+import rdflib
+import os
 
 
 class Document(Identified):
@@ -11,27 +14,6 @@ class Document(Identified):
     to populate it with SBOL objects representing design elements.
     """
 
-    designs = None
-    builds = None
-    tests = None
-    analyses = None
-    componentDefinitions = None
-    moduleDefinitions = None
-    models = None
-    sequences = None
-    collections = None
-    activities = None
-    plans = None
-    agents = None
-    attachments = None
-    combinatorialderivations = None
-    implementations = None
-    sampleRosters = None
-    experiments = None
-    experimentalData = None
-    citations = None
-    keywords = None
-
     def __init__(self, filename=None):
         """
         Construct a document.
@@ -39,6 +21,30 @@ class Document(Identified):
         :param filename: (optional) a file to initialize the Document.
         """
         super().__init__(SBOL_DOCUMENT, "", VERSION_STRING)
+        # The Document's register of objects
+        self.object_cache = {}
+        self.resource_namespaces = None
+        self.designs = None
+        self.builds = None
+        self.tests = None
+        self.analyses = None
+        self.componentDefinitions = None
+        self.moduleDefinitions = None
+        self.models = None
+        self.sequences = None
+        self.collections = None
+        self.activities = None
+        self.plans = None
+        self.agents = None
+        self.attachments = None
+        self.combinatorialderivations = None
+        self.implementations = None
+        self.sampleRosters = None
+        self.experiments = None
+        self.experimentalData = None
+        self.citations = None
+        self.graph = None
+        self.keywords = None
 
     def add(self, sbol_objs):
         """
@@ -94,6 +100,22 @@ class Document(Identified):
         """
         self.add(sbol_obj)
 
+    def create(self, uri):
+        """
+        Creates another SBOL object derived from TopLevel and adds it to the Document.
+        NOTE: originally from ReferencedObject
+        :param uri: In "open world" mode, this is a full URI and the same as the returned URI.
+        If the default namespace for libSBOL has been configured, then this argument should simply be a
+        local identifier. If SBOL-compliance is enabled, this argument should be the intended
+        displayId of the new object. A full URI is automatically generated and returned.
+        :return: The full URI of the created object
+        """
+        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
+            obj = Identified()
+            #obj.identity = os.path.join(getHomespace(), )
+        raise NotImplementedError("Not yet implemented")
+
+
     def get(self, uri):
         """
         Retrieve an object from the Document.
@@ -141,7 +163,16 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param filename: The full name of the file you want to read (including file extension).
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        with open(filename, 'r') as f:
+            graph = rdflib.Graph()
+            graph.parse(f, format="application/rdf+xml")
+            # top_query = "PREFIX : <http://example.org/ns#> " \
+            #     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
+            #     "PREFIX sbol: <http://sbols.org/v2#> " \
+            #     "SELECT ?s ?o " \
+            #     "{ ?s a ?o }"
+            # top_level_results = graph.query(top_query)
+
 
     def readString(self, sbol_str):
         """
@@ -263,6 +294,13 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         """
         return self.summary()
 
+    def __eq__(self, other):
+        raise NotImplementedError("Not yet implemented")
+        # if self.graph is None:
+        #     return other.graph is None
+        # else:
+        #     return rdflib.compare.isomorphic(self.graph, other.graph)
+
     def cacheObjectsDocument(self):
         # TODO docstring
         raise NotImplementedError("Not yet implemented")
@@ -294,3 +332,6 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :return: A pointer to the SBOLObject, or NULL if an object with this identity doesn't exist.
         """
         raise NotImplementedError("Not yet implemented")
+
+    def getTypeURI(self):
+        return SBOL_DOCUMENT

@@ -1,5 +1,6 @@
 import re
 from sbolerror import SBOLError, SBOLErrorCode
+from identified import *
 
 def is_alphanumeric_or_underscore(c):
     i = ord(c)
@@ -32,7 +33,11 @@ def sbolRule10102(sbol_obj, arg):
 
 def sbol_rule_10202(sbol_obj, arg):
     """The identity property of an Identified object MUST be globally unique."""
-    # TODO
+    if not isinstance(sbol_obj, Identified) or not isinstance(arg, str):
+        # Not applicable
+        raise TypeError('Inappropriate types passed to sbol_rule_10202')
+    # if sbol_obj.doc is not None:
+    #     #     if sbol_obj.doc.
     raise NotImplementedError("Not yet implemented")
 
 

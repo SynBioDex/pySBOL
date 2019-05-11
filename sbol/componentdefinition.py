@@ -252,3 +252,6 @@ class ComponentDefinition(TopLevel):
         :return: None
         """
         raise NotImplementedError("Not yet implemented")
+
+    def getTypeURI(self):
+        return SBOL_COMPONENT_DEFINITION

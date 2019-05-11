@@ -1,3 +1,5 @@
+from rdflib import URIRef, Literal
+
 class Property():
     """Member properties of all SBOL objects are defined using a Property object.
 
@@ -5,22 +7,15 @@ class Property():
     At a low level, the Property class converts SBOL data structures into RDF triples.
     """
 
-    _value = None
-    _rdf_type = None
-    _sbol_owner = None
-    _lowerBound = None
-    _upperBound = None
-    _validation_rules = None
-
-    def __init__(self, property_owner, type_uri, lower_bound, upper_bound, validation_rules, initial_value):
+    def __init__(self, property_owner, type_uri, lower_bound, upper_bound, validation_rules, initial_value=None):
         """Construct a Property.
 
-        :param property_owner: An RDF hash URI for this property, consisting of a namespace followed by an identifier.
+        :param property_owner: All Property objects must have a pointer back to their parent SBOLObject.
+        :param type_uri: An RDF hash URI for this property, consisting of a namespace followed by an identifier.
         For example, Properties of SBOLObjects use URIs of the form http://sbols.org/v2#somePropertyName,
         where the identifier somePropertyName determines the appearance of XML nodes in an SBOL file.
         Alternatively, annotations in a custom namespace can be provided using a similarly formed hash URI
         in another namespace.
-        :param type_uri: All Property objects must have a pointer back to its parent SBOLObject of which it is a member.
         :param lower_bound:
         :param upper_bound:
         :param validation_rules: A vector of externally defined ValidationRules.
@@ -33,7 +28,10 @@ class Property():
         self._rdf_type = type_uri
         self._lowerBound = lower_bound
         self._upperBound = upper_bound
+        self._validation_rules = []
         self._validation_rules = validation_rules
+        self._values = []
+        self._values.append(initial_value)
 
     def getTypeURI(self):
         """
@@ -51,19 +49,24 @@ class Property():
 
     @property
     def value(self):
-        return self._value
+        return self.get()
 
     @value.setter
     def value(self, new_value):
-        # TODO perform validation prior to setting the value
-        self._value = new_value
+        self.set(new_value)
 
     def get(self):
-        return self._value
+        if len(self._values) == 0:
+            return None
+        else:
+            return self._values[len(self._values)-1]
 
     def set(self, new_value):
         # TODO perform validation prior to setting the value
-        self._value = new_value
+        if len(self._values) == 0:
+            self._values.append(new_value)
+        else:
+            self._values[len(self._values)-1] = new_value
 
     def add(self, new_value):
         """Appends the new value to a list of values, for properties that allow it."""
@@ -79,7 +82,15 @@ class Property():
 
     def write(self):
         """Write property values."""
-        raise NotImplementedError("Not yet implemented")
+        subject = self._sbol_owner.identity.get()
+        predicate = self._rdf_type
+        if len(self._values) > 0:
+            obj = self._values[0]
+        else:
+            obj = None
+        print('Subject: ' + subject)
+        print('Predicate: ' + predicate)
+        print('Object: ' + obj)
 
     def find(self, query):
         """Check if a value in this property matches the query."""
