@@ -80,7 +80,7 @@ class Identified(SBOLObject):
 
     @property
     def version(self):
-        return self._name.value
+        return self._version.value
 
     @version.setter
     def version(self, new_version):

@@ -70,7 +70,7 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(expected_crispr_template_md, str(crispr_template_md))
         self.assertEqual(expected_crispr_template_md, crispr_template_md.identity)
         self.assertEqual(expected_crispr_template_cd, str(crispr_template_cd))
-        self.assertEqual(crispr_template_cd, crispr_template_cd.identity)
+        self.assertEqual(expected_crispr_template_cd, crispr_template_cd.identity)
 
 
 if __name__ == '__main__':

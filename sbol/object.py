@@ -72,16 +72,18 @@ class SBOLObject(metaclass=ABCMeta):
     def identity(self, new_identity):
         self._identity.set(new_identity)
 
-    @abstractmethod
     def getTypeURI(self):
         """
         :return: The uniform resource identifier that describes the RDF-type of this SBOL Object.
         """
-        raise NotImplementedError("Child classes must define getTypeURI")
+        return self.rdf_type
 
     def getClassName(self, rdf_type):
         """Parses a local class name from the RDF-type of this SBOL Object."""
-        raise NotImplementedError("Not yet implemented")
+        if '#' in rdf_type:
+            return rdf_type.split('#')[1]
+        else:
+            return rdf_type
 
     def find(self, uri):
         """Search this object recursively to see if an object or any child object with URI already exists.
