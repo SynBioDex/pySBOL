@@ -49,7 +49,7 @@ class Identified(SBOLObject):
     def __init__(self, type_uri=SBOL_IDENTIFIED, uri='example', version=VERSION_STRING):
         super().__init__(type_uri, uri)
         self._persistentIdentity = Property(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, uri)
-        self._displayId = Property(self, SBOL_DISPLAY_ID, '0', '1', validation.sbol_rule_10204)
+        self._displayId = Property(self, SBOL_DISPLAY_ID, '0', '1', [validation.sbol_rule_10204])
         self._version = Property(self, SBOL_VERSION, '0', '1', None, version)
         self._name = Property(self, SBOL_NAME, '0', '1', None)
         self._description = Property(self, SBOL_DESCRIPTION, '0', '1', None)

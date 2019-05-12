@@ -22,29 +22,30 @@ class Document(Identified):
         """
         super().__init__(SBOL_DOCUMENT, "", VERSION_STRING)
         # The Document's register of objects
-        self.object_cache = {}
+        self.object_cache = {} # Needed?
+        self.sbol_objects = None # Needed?
         self.resource_namespaces = None
-        self.designs = None
-        self.builds = None
-        self.tests = None
-        self.analyses = None
-        self.componentDefinitions = None
-        self.moduleDefinitions = None
-        self.models = None
-        self.sequences = None
-        self.collections = None
-        self.activities = None
-        self.plans = None
-        self.agents = None
-        self.attachments = None
-        self.combinatorialderivations = None
-        self.implementations = None
-        self.sampleRosters = None
-        self.experiments = None
-        self.experimentalData = None
-        self.citations = None
+        self.designs = Property(self, SYSBIO_DESIGN, '0', '*', [libsbol_rule_11])
+        self.builds = Property(self, SYSBIO_BUILD, '0', '*', [libsbol_rule_12])
+        self.tests = Property(self, SYSBIO_TEST, '0', '*', [libsbol_rule_13])
+        self.analyses = Property(self, SYSBIO_ANALYSIS, '0', '*', [libsbol_rule_14])
+        self.componentDefinitions = Property(self, SBOL_COMPONENT_DEFINITION, '0', '*', None)
+        self.moduleDefinitions = Property(self, SBOL_MODULE_DEFINITION, '0', '*', None)
+        self.models = Property(self, SBOL_MODEL, '0', '*', None)
+        self.sequences = Property(self, SBOL_SEQUENCE, '0', '*', None)
+        self.collections = Property(self, SBOL_COLLECTION, '0', '*', None)
+        self.activities = Property(self, PROVO_ACTIVITY, '0', '*', None)
+        self.plans = Property(self, PROVO_PLAN, '0', '*', None)
+        self.agents = Property(self, PROVO_AGENT, '0', '*', None)
+        self.attachments = Property(self, SBOL_ATTACHMENT, '0', '*', None)
+        self.combinatorialderivations = Property(self, SBOL_COMBINATORIAL_DERIVATION, '0', '*', None)
+        self.implementations = Property(self, SBOL_IMPLEMENTATION, '0', '*', None)
+        self.sampleRosters = Property(self, SYSBIO_SAMPLE_ROSTER, '0', '*', [validation.libsbol_rule_16])
+        self.experiments = Property(self, SBOL_EXPERIMENT, '0', '*', None)
+        self.experimentalData = Property(self, SBOL_EXPERIMENTAL_DATA, '0', '*', None)
+        self.citations = Property(self, PURL_URI + "bibliographicCitation", '0', '*', None)
         self.graph = None
-        self.keywords = None
+        self.keywords = Property(self, PURL_URI + "elements/1.1/subject", '0', '*', None)
 
     def add(self, sbol_objs):
         """
@@ -53,7 +54,8 @@ class Document(Identified):
         :param sbol_objs: The SBOL object(s) you want to serialize. Either a single object or a list of objects.
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        for obj in sbol_objs:
+            self.object_cache[obj.identity] = obj
 
     def addNamespace(self, ns, prefix):
         """Add a new namespace to the Document.
@@ -71,7 +73,7 @@ class Document(Identified):
         :param sbol_obj: component definition
         :return: None
         """
-        self.add(sbol_obj)
+        self.componentDefinitions[sbol_obj.identity] = sbol_obj
 
     def addModuleDefinition(self, sbol_obj):
         """
@@ -80,7 +82,7 @@ class Document(Identified):
         :param sbol_obj: module definition
         :return: None
         """
-        self.add(sbol_obj)
+        self.moduleDefinitions[sbol_obj.identity] = sbol_obj
 
     def addSequence(self, sbol_obj):
         """
@@ -89,7 +91,7 @@ class Document(Identified):
         :param sbol_obj: sequence
         :return: None
         """
-        self.add(sbol_obj)
+        self.add([sbol_obj])
 
     def addModel(self, sbol_obj):
         """
@@ -98,7 +100,7 @@ class Document(Identified):
         :param sbol_obj: model
         :return: None
         """
-        self.add(sbol_obj)
+        self.add([sbol_obj])
 
     def create(self, uri):
         """
@@ -123,7 +125,12 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param uri: The identity of the SBOL object you want to retrieve.
         :return: The SBOL object.
         """
-        raise NotImplementedError("Not yet implemented")
+        # TODO may want to move into SBOLObject or Property
+        # First, search the object's property store for the uri
+        if uri in self.object_cache:
+            return self.object_cache[uri]
+        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS) is True:
+            return
 
     def getAll(self):
         """

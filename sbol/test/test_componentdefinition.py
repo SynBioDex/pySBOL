@@ -10,7 +10,29 @@ class TestComponentDefinitions(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_typesSet(self):
+        cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)  # Constructs a protein component
+        self.assertEqual(BIOPAX_PROTEIN, cas9.types)
+
+    def test_typesNotSet(self):
+        target_promoter = ComponentDefinition('target_promoter')
+        self.assertEqual(BIOPAX_DNA, target_promoter.types)
+
+    def testAddComponentDefinition_nonCompliant(self):
+        setHomespace('http://sbols.org/CRISPR_Example')
+        Config.setOption('sbol_compliant_uris', False)
+        Config.setOption('sbol_typed_uris', False)
+        test_CD = ComponentDefinition("BB0001")
+        doc = Document()
+        doc.addComponentDefinition(test_CD)
+        self.assertIsNotNone(doc.componentDefinitions.get("BB0001"))
+        identity = doc.componentDefinitions[0].identity
+        self.assertEqual(identity, "BB0001")
+
     def testAddComponentDefinition(self):
+        setHomespace('http://sbols.org/CRISPR_Example')
+        Config.setOption('sbol_compliant_uris', True)
+        Config.setOption('sbol_typed_uris', False)
         test_CD = ComponentDefinition("BB0001")
         doc = Document()
         doc.addComponentDefinition(test_CD)
@@ -42,11 +64,11 @@ class TestComponentDefinitions(unittest.TestCase):
             listCD_read.append(CD.displayId)
 
         self.assertSequenceEqual(listCD_read, listCD)
-        # # Python 3 compatability
-        # if sys.version_info[0] < 3:
-        # 	self.assertItemsEqual(listCD_read, listCD)
-        # else:
-        # 	self.assertCountEqual(listCD_read, listCD)
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(listCD_read, listCD)
+        else:
+            self.assertCountEqual(listCD_read, listCD)
 
     def testPrimaryStructureIteration(self):
         listCD = []

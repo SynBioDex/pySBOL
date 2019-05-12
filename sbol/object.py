@@ -62,6 +62,8 @@ class SBOLObject(metaclass=ABCMeta):
         self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
         if hasHomespace():
             self._identity.set(os.path.join(getHomespace(), uri))
+        self.owned_objects = {}  # map<rdf_type, vector<SBOLObject>>
+        self.properties = {}  # map<rdf_type, vector<SBOLObject>>
 
     @property
     def identity(self):

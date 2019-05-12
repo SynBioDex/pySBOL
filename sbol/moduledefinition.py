@@ -56,7 +56,7 @@ class ModuleDefinition(TopLevel):
         :param sbol_type_uri: The RDF type for an extension class derived from this one (optional)
         """
         super().__init__(sbol_type_uri, uri, version)
-        roles = Property(self, SBOL_ROLES, '0', '*', [])
+        roles = Property(self, SBOL_ROLES, '0', '*', None)
 
     def setOutput(self, output):
         """Defines an output for a sub-Module. Useful for top-down assembly of Modules and sub-Modules.

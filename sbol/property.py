@@ -1,4 +1,5 @@
 from rdflib import URIRef, Literal
+from sbolerror import *
 
 class Property():
     """Member properties of all SBOL objects are defined using a Property object.
@@ -118,3 +119,38 @@ class Property():
     def _isHidden(self):
         raise NotImplementedError("Not yet implemented")
 
+
+class OwnedObject(Property):
+    def __init__(self, property_owner, sbol_uri, lower_bound, upper_bound, validation_rules=None, first_object=None):
+        """Initialize a container and optionally put the first object in it.
+        If validation rules are specified, they will be checked upon initialization.
+        """
+        super().__init__(property_owner, sbol_uri, lower_bound, upper_bound, validation_rules, first_object)
+        # Register Property in owner Object
+        if self._sbol_owner is not None:
+            self._sbol_owner.properties.pop(sbol_uri, None)
+            self._sbol_owner.owned_objects[sbol_uri] = [] # vector of SBOLObjects
+            if first_object is not None:
+                self._sbol_owner.owned_objects[sbol_uri].append(first_object)
+
+    def add(self, sbol_obj):
+        # TODO - implementation in document.h
+        # TODO void OwnedObject<SBOLClass>::add(SBOLClass& sbol_obj)
+        raise NotImplementedError("Not yet implemented")
+
+    def __getitem__(self, item):
+        # TODO - implementation in document.h
+        # TODO SBOLClass& OwnedObject<SBOLClass>::operator[] (std::string uri)
+        raise NotImplementedError("Not yet implemented")
+
+    def __setitem__(self, key, value):
+        # TODO - implementation in document.h
+        # TODO void OwnedObject<SBOLClass>::set(SBOLClass& sbol_obj)
+        raise NotImplementedError("Not yet implemented")
+
+    def getOwnedObject(self, uri):
+        # TODO - original method signature was 'get' but this conflicts with Property::get
+        raise NotImplementedError("Not yet implemented")
+
+    def setOwnedObject(self, sbol_obj):
+        raise NotImplementedError("Not yet implemented")

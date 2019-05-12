@@ -78,3 +78,32 @@ def libsbol_rule_2(sbol_obj, arg):
         raise SBOLError(SBOLErrorCode.SBOL_ERROR_NONCOMPLIANT_VERSION,
                         "Invalid datetime format. Datetimes are based on XML Schema dateTime datatype. "
                         "For example 2016-03-16T20:12:00Z")
+
+
+def libsbol_rule_11(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_12(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_13(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_14(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_16(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_20(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_21(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
