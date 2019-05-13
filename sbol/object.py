@@ -93,7 +93,16 @@ class SBOLObject(metaclass=ABCMeta):
         :param uri: The URI to search for.
         :return: The SBOLObject associated with this URI if it exists, None otherwise.
         """
-        raise NotImplementedError("Not yet implemented")
+        if self.identity == uri:
+            return self
+        for rdf_type, object_store in self.owned_objects.items():
+            if rdf_type in self._hidden_properties:
+                continue
+            for obj in object_store:
+                match = obj.find(uri)
+                if match is not None:  # NOTE: original implementation has 2 recursive calls, which is probably bad...
+                    return match
+        return None
 
     def cacheObjects(self, objectCache):
         """TODO document
@@ -109,7 +118,14 @@ class SBOLObject(metaclass=ABCMeta):
         :param uri: The RDF type of the property to search for.
         :return: The SBOLObject that contains a member property with the specified RDF type, None otherwise
         """
-        raise NotImplementedError("Not yet implemented")
+        if uri in self.owned_objects and uri in self.properties:
+            return self
+        for rdf_type, object_store in self.owned_objects.items():
+            for obj in object_store:
+                match = obj.find_property(uri)
+                if match:
+                    return match
+        return None
 
     def find_property_value(self, uri, value, matches=None):
         """Search this object recursively to see if it contains a member property with the given RDF type
@@ -120,7 +136,17 @@ class SBOLObject(metaclass=ABCMeta):
         :param matches:
         :return: A vector containing all objects found that contain a member property with the specified RDF type
         """
-        raise NotImplementedError("Not yet implemented")
+        matches = []
+        for rdf_type, store  in self.owned_objects.items():
+            # Skip hidden and aliased properties
+            if rdf_type in self._hidden_properties:
+                continue
+            for obj in store:
+                matches += obj.find_property_value(uri, value)
+        value_store = self.properties[uri]
+        for val in value_store:
+            matches.append(val)
+        return matches
 
     def find_reference(self, uri):
         """Search this object recursively to see if it contains a member property with the given RDF type
@@ -175,7 +201,10 @@ class SBOLObject(metaclass=ABCMeta):
 
         :return: A vector of URIs that identify the properties contained in this object.
         """
-        raise NotImplementedError("Not yet implemented")
+        property_uris = [p for p in self.properties.keys()]
+        owned_objects_uris = [p for p in self.owned_objects.keys()]
+        return property_uris + owned_objects_uris
+
 
     def setPropertyValue(self, property_uri, val):
         """Set and overwrite the value for a user-defined annotation property.
@@ -222,12 +251,14 @@ class SBOLObject(metaclass=ABCMeta):
         """
         raise NotImplementedError("Not yet implemented")
 
+    @abstractmethod
     def update_uri(self):
         """
-        TODO document
+        Recursively generates SBOL compliant ids for an object and all
+        its owned objects, then checks to make sure that these ids are unique.
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        raise NotImplementedError("Implemented by child classes")
 
     def serialize_rdf2xml(self, os, indentLevel):
         """Serialize the SBOLObject.
@@ -240,3 +271,6 @@ class SBOLObject(metaclass=ABCMeta):
 
     def __str__(self):
         return self._identity.get()
+
+    def is_top_level(self):
+        return False

@@ -1,5 +1,13 @@
 from rdflib import URIRef, Literal
 from sbolerror import *
+from config import Config, ConfigOptions, getHomespace, parseClassName, parsePropertyName
+from constants import *
+import os
+
+
+def sort_version(obj):
+    return obj.version
+
 
 class Property():
     """Member properties of all SBOL objects are defined using a Property object.
@@ -31,8 +39,8 @@ class Property():
         self._upperBound = upper_bound
         self._validation_rules = []
         self._validation_rules = validation_rules
-        self._values = []
-        self._values.append(initial_value)
+        self.values = []
+        self.values.append(initial_value)
 
     def getTypeURI(self):
         """
@@ -57,17 +65,17 @@ class Property():
         self.set(new_value)
 
     def get(self):
-        if len(self._values) == 0:
+        if len(self.values) == 0:
             return None
         else:
-            return self._values[len(self._values)-1]
+            return self.values[len(self.values) - 1]
 
     def set(self, new_value):
         # TODO perform validation prior to setting the value
-        if len(self._values) == 0:
-            self._values.append(new_value)
+        if len(self.values) == 0:
+            self.values.append(new_value)
         else:
-            self._values[len(self._values)-1] = new_value
+            self.values[len(self.values) - 1] = new_value
 
     def add(self, new_value):
         """Appends the new value to a list of values, for properties that allow it."""
@@ -85,8 +93,8 @@ class Property():
         """Write property values."""
         subject = self._sbol_owner.identity.get()
         predicate = self._rdf_type
-        if len(self._values) > 0:
-            obj = self._values[0]
+        if len(self.values) > 0:
+            obj = self.values[0]
         else:
             obj = None
         print('Subject: ' + subject)
@@ -117,7 +125,7 @@ class Property():
             return False
 
     def _isHidden(self):
-        raise NotImplementedError("Not yet implemented")
+        return self._rdf_type in self._sbol_owner.hidden_properties
 
 
 class OwnedObject(Property):
@@ -134,23 +142,194 @@ class OwnedObject(Property):
                 self._sbol_owner.owned_objects[sbol_uri].append(first_object)
 
     def add(self, sbol_obj):
-        # TODO - implementation in document.h
-        # TODO void OwnedObject<SBOLClass>::add(SBOLClass& sbol_obj)
-        raise NotImplementedError("Not yet implemented")
+        if self._sbol_owner is not None:
+            if sbol_obj.is_top_level() and self._sbol_owner.doc is not None:
+                self._sbol_owner.doc.add(sbol_obj)
+        else:
+            object_store = self._sbol_owner.owned_objects[self._rdf_type]
+            if sbol_obj in object_store:
+                raise SBOLError("The object " + sbol_obj.identity + " is already contained by the " +
+                                self._rdf_type + " property", SBOLErrorCode.SBOL_ERROR_URI_NOT_UNIQUE)
+            # Add to Document and check for uniqueness of URI
+            if self._sbol_owner.doc is not None:
+                sbol_obj.doc = self._sbol_owner.doc
+            # Add to parent object
+            object_store.append(sbol_obj)
+            sbol_obj.parent = self._sbol_owner
+            # Update URI for the argument object and all its children, if SBOL-compliance is enabled.
+            sbol_obj.update_uri()
+            
+            # Run validation rules
+            # TODO
 
-    def __getitem__(self, item):
-        # TODO - implementation in document.h
-        # TODO SBOLClass& OwnedObject<SBOLClass>::operator[] (std::string uri)
-        raise NotImplementedError("Not yet implemented")
+    def __getitem__(self, uri):
+        if Config.getOption(ConfigOptions.VERBOSE) is True:
+            print('SBOL compliant URIs are set to ' + Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS))
+            print('SBOL typed URIs are set to ' + Config.getOption(ConfigOptions.SBOL_TYPED_URIS))
+            print('Searching for ' + uri)
+        # Search this property's object store for the uri
+        object_store = self._sbol_owner.owned_objects[self._rdf_type]
+        for obj in object_store:
+            if uri == obj.identity:
+                return obj
+        # If searching by the full URI fails, assume the user is searching
+        # for an SBOL-compliant URI using the displayId only
+        # Form compliant URI for child object
+        parent_obj = self._sbol_owner
+        resource_namespaces = []
+        resource_namespaces.append(getHomespace())
+        if parent_obj.doc is not None:
+            for ns in parent_obj.doc.resource_namespaces:
+                resource_namespaces.append(ns)
+        # Check for regular, SBOL-compliant URIs
+        obj = self.find_resource(uri, resource_namespaces, object_store, parent_obj, typedURI=False)
+        if obj is not None:
+            return obj
+        else:
+            obj = self.find_resource(uri, resource_namespaces, object_store, parent_obj, typedURI=True)
+            if obj is not None:
+                return obj
+            else:
+                raise SBOLError('Object ' + uri + ' not found', SBOLErrorCode.NOT_FOUND_ERROR)
 
-    def __setitem__(self, key, value):
-        # TODO - implementation in document.h
-        # TODO void OwnedObject<SBOLClass>::set(SBOLClass& sbol_obj)
-        raise NotImplementedError("Not yet implemented")
+    def find_resource(self, uri, resource_namespaces, object_store, parent_obj, typedURI=False):
+        persistentIdentity = ''
+        for ns in resource_namespaces:
+            # Assume the parent object is TopLevel and form the compliant URI
+            if typedURI is True:
+                compliant_uri = os.path.join(ns, parseClassName(self._rdf_type), uri)
+            else:
+                compliant_uri = os.path.join(ns, uri)
+            compliant_uri += os.sep
+            persistent_id_matches = []
+            if Config.getOption('verbose') is True:
+                print('Searching for TopLevel: ' + compliant_uri)
+            for obj in object_store:
+                if compliant_uri in obj.identity:
+                    persistent_id_matches.append(obj)
+                # Sort objects with same persistentIdentity by version
+                # TODO is this right?
+                persistent_id_matches.sort(key=sort_version)
+            # If objects matching the persistentIdentity were found, return the most recent version
+            if len(persistent_id_matches) > 0:
+                return persistent_id_matches[-1]
+            # Assume the object is not TopLevel # TODO Not sure what this is for
+            if SBOL_PERSISTENT_IDENTITY in parent_obj.properties:
+                persistentIdentity = parent_obj.properties[SBOL_PERSISTENT_IDENTITY][0]
+            if SBOL_VERSION in parent_obj.properties:
+                version = parent_obj.properties[SBOL_VERSION[0]]
+                compliant_uri = os.path.join(persistentIdentity, uri, version)
+            else:
+                compliant_uri = os.path.join(persistentIdentity, uri)
+            if Config.getOption(ConfigOptions.VERBOSE) is True:
+                print('Searching for non-TopLevel: ' + compliant_uri)
+            for obj in object_store:
+                if obj.identity == compliant_uri:
+                    return obj
 
     def getOwnedObject(self, uri):
-        # TODO - original method signature was 'get' but this conflicts with Property::get
-        raise NotImplementedError("Not yet implemented")
+        # TODO: original getter contains a size check when the uri is a constant string
+        if uri == '':
+            return self._sbol_owner.owned_objects[self._rdf_type][0]
+        else:
+            return self.__getitem__(uri)
 
-    def setOwnedObject(self, sbol_obj):
-        raise NotImplementedError("Not yet implemented")
+    def __setitem__(self, rdf_type, sbol_obj):
+        # NOTE: custom implementation. Not sure where this is defined in the original code.
+        if self._sbol_owner.is_top_level():
+            doc = self._sbol_owner.doc
+            if self._isHidden() and doc.find(sbol_obj.identity):
+                # In order to avoid a duplicate URI error, don't attempt
+                # to add the object if this is a hidden property,
+                pass
+            else:
+                doc.add(sbol_obj)
+        # Add to parent object
+        if len(self._sbol_owner.owned_objects[rdf_type]) == 0:
+            self._sbol_owner.owned_objects[rdf_type].append(sbol_obj)
+        else:
+            raise SBOLError("Cannot set " + parsePropertyName(rdf_type) + " property. "
+                            "The property is already set. Call remove before attempting to overwrite the value.",
+                            SBOLErrorCode.SBOL_ERROR_INVALID_ARGUMENT)
+        sbol_obj.parent = self._sbol_owner
+        # Update URI for the argument object and all its children, if SBOL-compliance is enabled.
+        sbol_obj.update_uri()
+
+        # Run validation rules
+        # TODO
+
+    def set(self, sbol_obj):
+        """Sets the first object in the container"""
+        if self._sbol_owner.is_top_level():
+            doc = self._sbol_owner.doc
+            if self._isHidden() and doc.find(sbol_obj.identity):
+                # In order to avoid a duplicate URI error, don't attempt
+                # to add the object if this is a hidden property,
+                pass
+            else:
+                doc.add(sbol_obj)
+        self.set_notoplevelcheck(sbol_obj)
+
+    def set_notoplevelcheck(self, sbol_obj):
+        # Add to parent object
+        if len(self._sbol_owner.owned_objects[self._rdf_type]) == 0:
+            self._sbol_owner.owned_objects[self._rdf_type].append(sbol_obj)
+        else:
+            raise SBOLError("Cannot set " + parsePropertyName(self._rdf_type) + " property. "
+                            "The property is already set. Call remove before attempting to overwrite the value.",
+                            SBOLErrorCode.SBOL_ERROR_INVALID_ARGUMENT)
+        sbol_obj.parent = self._sbol_owner
+        # Update URI for the argument object and all its children, if SBOL-compliance is enabled.
+        sbol_obj.update_uri()
+
+        # Run validation rules
+        # TODO
+
+    def removeOwnedObject(self, id):
+        """id can be either an integer index or a string URI"""
+        if type(id) is int:
+            self.removeOwnedObject_int(id)
+        elif type(id) is str:
+            self.removeOwnedObject_str(id)
+        else:
+            raise TypeError('id parameter must be an integer index or a string uri')
+
+    def removeOwnedObject_int(self, index):
+        if self._sbol_owner is not None:
+            if self._rdf_type in self._sbol_owner.owned_objects:
+                object_store = self._sbol_owner.owned_objects[self._rdf_type]
+                if index >= len(object_store):
+                    raise SBOLError("Index out of range", SBOLErrorCode.SBOL_ERROR_INVALID_ARGUMENT)
+                obj = object_store[index]
+                if self._sbol_owner.getTypeURI() == SBOL_DOCUMENT:
+                    del obj.doc.SBOLObjects[obj.identity]
+                # Erase nested, hidden TopLevel objects from Document
+                if obj.doc is not None and obj.doc.find(obj.identity) is not None:
+                    obj.doc = None  # TODO not sure what this actually does
+                del object_store[index]
+        else:
+            raise Exception('This property is not defined in the parent object')
+
+    def removeOwnedObject_str(self, uri):
+        if self._sbol_owner is not None:
+            if self._rdf_type in self._sbol_owner.owned_objects:
+                object_store = self._sbol_owner.owned_objects[self._rdf_type]
+                for obj in object_store:
+                    if uri == obj.identity:
+                        object_store.remove(obj) # TODO there is probably a better way to do this
+                        # Erase TopLevel objects from Document
+                        if self._sbol_owner.getTypeURI() == SBOL_DOCUMENT:
+                            del obj.doc.SBOLObjects[uri]
+                        # Erase nested, hidden TopLevel objects from Document
+                        if obj.doc is not None and obj.doc.find(uri) is not None:
+                            obj.doc = None # TODO not sure what this actually does
+                        return obj
+
+    def clear(self):
+        if self._sbol_owner is not None:
+            if self._rdf_type in self._sbol_owner.owned_objects:
+                object_store = self._sbol_owner.owned_objects[self._rdf_type]
+                for obj in object_store:
+                    if obj.is_top_level() and obj.doc is not None:
+                        obj.doc.SBOLObjects.remove(obj.identity)
+                object_store.clear()

@@ -32,3 +32,14 @@ class TopLevel(Identified):
 
     def initialize(self, uri):
         raise NotImplementedError("Not yet implemented")
+
+    def update_uri(self):
+        """
+        Recursively generates SBOL compliant ids for an object and all
+        its owned objects, then checks to make sure that these ids are unique.
+        :return: None
+        """
+        return
+
+    def is_top_level(self):
+        return True

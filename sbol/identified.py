@@ -96,3 +96,41 @@ class Identified(SBOLObject):
 
     def generate(self):
         raise NotImplementedError("Not yet implemented")
+
+    def update_uri(self):
+        """
+        Recursively generates SBOL compliant ids for an object and all
+        its owned objects, then checks to make sure that these ids are unique.
+        :return: None
+        """
+        if self.parent is None:
+            raise Exception('update_uri: Parent cannot be None')
+        parent = self.parent
+        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS) is True:
+            # Form compliant URI for child object
+            persistent_id = parent.properties[SBOL_PERSISTENT_IDENTITY][0]
+            persistent_id = os.path.join(persistent_id, self.displayId)
+            if len(parent.properties[SBOL_VERSION]) > 0:
+                version = parent.properties[SBOL_VERSION][0]
+            else:
+                version = VERSION_STRING
+            obj_id = os.path.join(persistent_id, version)
+            # Reset SBOLCompliant properties
+            self._identity.set(obj_id)
+            self._persistentIdentity.set(persistent_id)
+            # Check for uniqueness of URI in local object properties
+            matches = parent.find_property_value(SBOL_IDENTIFIED, obj_id)
+            if len(matches) > 0:
+                raise SBOLError("Cannot update SBOL-compliant URI. The URI " + self.identity + " is not unique",
+                                SBOLErrorCode.SBOL_ERROR_URI_NOT_UNIQUE)
+            for rdf_type, store in self.owned_objects:
+                if rdf_type not in self._hidden_properties:
+                    for nested_obj in store:
+                        nested_obj.update_uri()
+        # Check for uniqueness of URI in Document
+        if parent.doc:
+            matches = parent.doc.find_property_value(SBOL_IDENTITY, self.identity)
+            if len(matches) > 0:
+                raise SBOLError("Cannot update SBOL-compliant URI. "
+                                "An object with URI " + self.identity + " is already in the Document",
+                                SBOLErrorCode.SBOL_ERROR_URI_NOT_UNIQUE)

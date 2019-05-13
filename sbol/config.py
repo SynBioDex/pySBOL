@@ -279,3 +279,7 @@ def parseNamespace(uri):
 
 def parseURLDomain(url):
     return url.split('://')[1].split('/')[0]
+
+
+def parsePropertyName(uri):
+    return parseClassName(uri)
