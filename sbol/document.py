@@ -182,7 +182,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param filename: The full name of the file you want to write (including file extension).
         :return: A string with the validation results, or empty string if validation is disabled.
         """
-        raise NotImplementedError("Not yet implemented")
+        self.doc_serialize_rdf2xml(filename, output_format=ConfigOptions.SERIALIZATION_FORMAT.value)
 
     def read(self, filename):
         """
@@ -281,13 +281,23 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
     # /// Generates rdf/xml
     # void generate(raptor_world** world, raptor_serializer** sbol_serializer, char** sbol_buffer, size_t* sbol_buffer_len, raptor_iostream** ios, raptor_uri** base_uri);
 
-    def serialize_rdfxml(self, out):
+    def doc_serialize_rdf2xml(self, out, output_format=ConfigOptions.SERIALIZATION_FORMAT.value):
         """
         Serialize RDF XML.
         :param out: output stream
+        :param output_format: output format
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        graph = rdflib.Graph()
+        # TODO Add default namespace if there is one
+        # Add namespaces
+        for name, ns in self._namespaces:
+            graph.bind(name, ns)
+        # Add top-level objects
+        for rdf_type, obj in self.SBOLObjects:
+            graph.add((self.identity, rdf_type, obj.identity))
+            obj.serialize_rdf2xml(graph)
+        graph.serialize(out)
 
     def validate(self):
         """
@@ -328,13 +338,19 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         raise NotImplementedError("Not yet implemented")
 
     def referenceNamespace(self, uri):
-        """
-
+        """Replaces the namespace with a reference and removes the default namespace, shortening the URI.
         :param uri:
         :return: str
         """
-        # TODO better docstring
-        raise NotImplementedError("Not yet implemented")
+        if self._default_namespace is not None and len(self._default_namespace) > 0:
+            if self._default_namespace in uri:
+                uri.replace(self._default_namespace, '')
+                return uri
+        for abbrev, ns in self._namespaces.items():
+            if ns in uri:
+                # Assume only one namespace per URI
+                uri.replace(ns, abbrev)
+                return uri
 
     def summary(self):
         """

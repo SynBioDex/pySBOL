@@ -3,6 +3,7 @@ from constants import *
 from property import *
 from validation import *
 from config import *
+import rdflib
 
 
 class SBOLObject(metaclass=ABCMeta):
@@ -226,7 +227,6 @@ class SBOLObject(metaclass=ABCMeta):
         owned_objects_uris = [p for p in self.owned_objects.keys()]
         return property_uris + owned_objects_uris
 
-
     def setPropertyValue(self, property_uri, val):
         """Set and overwrite the value for a user-defined annotation property.
 
@@ -281,14 +281,45 @@ class SBOLObject(metaclass=ABCMeta):
         """
         raise NotImplementedError("Implemented by child classes")
 
-    def serialize_rdf2xml(self, os, indentLevel):
+    def serialize_rdf2xml(self, graph):
         """Serialize the SBOLObject.
 
         :param os: Output stream.
         :param indentLevel:
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        # Serialize properties
+        for rdf_type, vals in self.properties.items():
+            if rdf_type == 'http://sbols.org/v2#identity':
+                # This property is not serialized
+                continue
+            if len(vals) == 1 and (vals[0] == '""' or vals[0] == '<>'):
+                #  No properties of this type
+                continue
+            predicate = self.doc.reference_namespace(rdf_type)
+            for val in vals:
+                if val[0] == '<':
+                    # URI
+                    obj = rdflib.URIRef(val.strip('<>'))
+                    graph.add(self.identity, predicate, rdflib.URIRef(obj))
+                else:
+                    # Literal
+                    obj = rdflib.Literal(val).strip('""')
+                    graph.add(self.identity, predicate, obj)
+        # Serialize owned objects
+        for name, object_store in self.owned_objects:
+            if len(object_store) == 0:
+                continue
+            # predicate = self.doc.reference_namespace(name)
+            for obj in object_store:
+                # NOTE: couldn't we just use 'name'? (Would probably work the same, but wanted
+                # to follow the original implementation as closely as possible.)
+                typeURI = obj.getTypeURI()
+                if typeURI in self._hidden_properties:
+                    continue
+                rdfType = self.doc.reference_namespace(typeURI)
+                graph.add(self.identity, rdfType, obj.identity)
+                obj.serialize_rdf2xml(graph) # recursive
 
     def __str__(self):
         return self.identity

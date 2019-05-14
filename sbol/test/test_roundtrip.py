@@ -1,5 +1,4 @@
 import unittest
-import os
 import tempfile, shutil
 import sys
 from ..document import *
