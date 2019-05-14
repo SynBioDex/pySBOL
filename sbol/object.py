@@ -59,6 +59,7 @@ class SBOLObject(metaclass=ABCMeta):
     def __init__(self, _rdf_type=UNDEFINED, uri="example"):
         """Open-world constructor."""
         self.rdf_type = _rdf_type
+        self._namespaces = {}
         self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
         if hasHomespace():
             self._identity.set(os.path.join(getHomespace(), uri))
@@ -164,7 +165,27 @@ class SBOLObject(metaclass=ABCMeta):
         :param comparand: The object being compared to this one.
         :return: True if the objects are identical, False if they are different.
         """
-        return self == comparand
+        # TODO This may work differently than the original method...
+        if type(comparand) != type(self):
+            return False
+        is_equal = True
+        if self.rdf_type != comparand.rdf_type:
+            print(self.identity + ' does not match type of ' + comparand.rdf_type)
+            return 0
+        if self.rdf_type == SBOL_DOCUMENT:
+            ns_set = set(())
+            comparand_ns_set = set(())
+            for val in self._namespaces.values():
+                ns_set.add(val)
+            for val in comparand._namespaces.values():
+                comparand_ns_set.add(val)
+            if ns_set != comparand_ns_set:
+                is_equal = False
+        if self.properties != comparand.properties:
+            is_equal = False
+        if self.owned_objects != comparand.owned_objects:
+            is_equal = False
+        return is_equal
 
     def __eq__(self, other):
         """Compare two SBOL objects or Documents. The behavior is currently undefined for objects
@@ -177,7 +198,7 @@ class SBOLObject(metaclass=ABCMeta):
         #     return False
         # if self.rdf_type != other.rdf_type:
         #     print(self.identity.get() + ' does not match type of ' + other.type())
-        raise NotImplementedError("Not yet implemented")
+        return self.compare(other)
 
     def getPropertyValue(self, property_uri):
         """Get the value of a custom annotation property by its URI.
@@ -270,7 +291,7 @@ class SBOLObject(metaclass=ABCMeta):
         raise NotImplementedError("Not yet implemented")
 
     def __str__(self):
-        return self._identity.get()
+        return self.identity
 
     def is_top_level(self):
         return False

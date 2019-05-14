@@ -58,17 +58,14 @@ class Property():
 
     @property
     def value(self):
-        return self.get()
-
-    @value.setter
-    def value(self, new_value):
-        self.set(new_value)
-
-    def get(self):
         if len(self.values) == 0:
             return None
         else:
             return self.values[len(self.values) - 1]
+
+    @value.setter
+    def value(self, new_value):
+        self.set(new_value)
 
     def set(self, new_value):
         # TODO perform validation prior to setting the value
@@ -81,13 +78,30 @@ class Property():
         """Appends the new value to a list of values, for properties that allow it."""
         raise NotImplementedError("Not yet implemented")
 
-    def remove(self, index=0):
-        """Remove a property value."""
-        raise NotImplementedError("Not yet implemented")
+    def remove(self, index):
+        """Remove a property value. By default, we assume this is a literal located
+        at index 0.
+        """
+        if self._sbol_owner is not None:
+            if self._rdf_type in self._sbol_owner.properties:
+                properties = self._sbol_owner.properties[self._rdf_type]
+                if index >= len(properties):
+                    raise SBOLError('Index out of range', SBOLErrorCode.SBOL_ERROR_INVALID_ARGUMENT)
+                if len(properties) == 1:
+                    self.clear()
+                else:
+                    properties.remove(index)
 
     def clear(self):
         """Clear all property values."""
-        raise NotImplementedError("Not yet implemented")
+        properties = self._sbol_owner.properties[self._rdf_type]
+        current_value = properties[0]
+        properties.clear()
+        if current_value[0] == '<':
+            # this property is a uri
+            properties.append('<>')
+        elif current_value[0] == '"':
+            properties.append('""')
 
     def write(self):
         """Write property values."""
@@ -162,15 +176,29 @@ class OwnedObject(Property):
             # Run validation rules
             # TODO
 
-    def __getitem__(self, uri):
-        if Config.getOption(ConfigOptions.VERBOSE) is True:
-            print('SBOL compliant URIs are set to ' + Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS))
-            print('SBOL typed URIs are set to ' + Config.getOption(ConfigOptions.SBOL_TYPED_URIS))
-            print('Searching for ' + uri)
+    def __getitem__(self, id):
+        if type(id) is int:
+            return self.get_int(id)
+        elif type(id) is str:
+            return self.get_str(id)
+        else:
+            raise TypeError('id must be str or int')
+
+    def get_int(self, id):
+        object_store = self._sbol_owner.owned_objects[self._rdf_type]
+        if id >= len(object_store):
+            raise SBOLError('Index out of range', SBOLErrorCode.SBOL_ERROR_NOT_FOUND)
+        return object_store[id]
+
+    def get_str(self, id):
+        if Config.getOption(ConfigOptions.VERBOSE.value) is True:
+            print('SBOL compliant URIs are set to ' + Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value))
+            print('SBOL typed URIs are set to ' + Config.getOption(ConfigOptions.SBOL_TYPED_URIS.value))
+            print('Searching for ' + id)
         # Search this property's object store for the uri
         object_store = self._sbol_owner.owned_objects[self._rdf_type]
         for obj in object_store:
-            if uri == obj.identity:
+            if id == obj.identity:
                 return obj
         # If searching by the full URI fails, assume the user is searching
         # for an SBOL-compliant URI using the displayId only
@@ -182,15 +210,15 @@ class OwnedObject(Property):
             for ns in parent_obj.doc.resource_namespaces:
                 resource_namespaces.append(ns)
         # Check for regular, SBOL-compliant URIs
-        obj = self.find_resource(uri, resource_namespaces, object_store, parent_obj, typedURI=False)
+        obj = self.find_resource(id, resource_namespaces, object_store, parent_obj, typedURI=False)
         if obj is not None:
             return obj
         else:
-            obj = self.find_resource(uri, resource_namespaces, object_store, parent_obj, typedURI=True)
+            obj = self.find_resource(id, resource_namespaces, object_store, parent_obj, typedURI=True)
             if obj is not None:
                 return obj
             else:
-                raise SBOLError('Object ' + uri + ' not found', SBOLErrorCode.NOT_FOUND_ERROR)
+                raise SBOLError('Object ' + id + ' not found', SBOLErrorCode.NOT_FOUND_ERROR)
 
     def find_resource(self, uri, resource_namespaces, object_store, parent_obj, typedURI=False):
         persistentIdentity = ''
@@ -221,13 +249,13 @@ class OwnedObject(Property):
                 compliant_uri = os.path.join(persistentIdentity, uri, version)
             else:
                 compliant_uri = os.path.join(persistentIdentity, uri)
-            if Config.getOption(ConfigOptions.VERBOSE) is True:
+            if Config.getOption(ConfigOptions.VERBOSE.value) is True:
                 print('Searching for non-TopLevel: ' + compliant_uri)
             for obj in object_store:
                 if obj.identity == compliant_uri:
                     return obj
 
-    def getOwnedObject(self, uri):
+    def get(self, uri):
         # TODO: original getter contains a size check when the uri is a constant string
         if uri == '':
             return self._sbol_owner.owned_objects[self._rdf_type][0]
@@ -285,7 +313,7 @@ class OwnedObject(Property):
         # Run validation rules
         # TODO
 
-    def removeOwnedObject(self, id):
+    def remove(self, id):
         """id can be either an integer index or a string URI"""
         if type(id) is int:
             self.removeOwnedObject_int(id)

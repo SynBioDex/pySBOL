@@ -219,14 +219,14 @@ def getFileFormat():
 
 
 def constructCompliantURI(sbol_type, display_id, version):
-    if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS) is True:
+    if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
         return getHomespace() + os.sep + parseClassName(sbol_type) + os.sep + display_id + os.sep + version
     else:
         return ''
 
 
 def constructCompliantURI_parentChild(parent_type, child_type, display_id, version):
-    if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS) is True:
+    if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
         return getHomespace() + os.sep + parseClassName(parent_type) + os.sep + parseClassName(child_type) + \
             os.sep + display_id + os.sep + version
     else:

@@ -48,16 +48,35 @@ class Document(Identified):
         self.graph = None
         self.keywords = Property(self, PURL_URI + "elements/1.1/subject", '0', '*', None)
 
-    def add(self, sbol_objs):
+    def add(self, sbol_obj):
         """
         Register an object in the Document.
 
-        :param sbol_objs: The SBOL object(s) you want to serialize. Either a single object or a list of objects.
+        :param sbol_obj: The SBOL object(s) you want to serialize. Either a single object or a list of objects.
         :return: None
         """
+        # Check for uniqueness of URI
+        if sbol_obj.identity in self.SBOLObjects:
+            raise SBOLError('Cannot add ' + sbol_obj.identity + ' to Document. An object with this identity '
+                            'is already contained in the Document', SBOLErrorCode.SBOL_ERROR_URI_NOT_UNIQUE)
+        else:
+            # If TopLevel add to Document.
+            if sbol_obj.is_top_level():
+                self.SBOLObjects[sbol_obj.identity] = sbol_obj
+            if sbol_obj.getTypeURI() in self.owned_objects:
+                sbol_obj.parent = self  # Set back-pointer to parent object
+                # Add the object to the Document's property store, eg, componentDefinitions, moduleDefinitions, etc.
+                self.owned_objects[sbol_obj.getTypeURI()].append(sbol_obj)
+            sbol_obj.doc = self
+            # Recurse into child objects and set their back-pointer to this Document
+            for key, obj_store in self.owned_objects.items():
+                for child_obj in obj_store:
+                    if child_obj.doc != self:
+                        self.add(child_obj)
+
+    def add_list(self, sbol_objs):
         for obj in sbol_objs:
-            self.objectCache[obj.identity] = obj
-        # TODO finish this implementation (see document.h).
+            self.add(obj)
 
     def addNamespace(self, ns, prefix):
         """Add a new namespace to the Document.
@@ -75,7 +94,7 @@ class Document(Identified):
         :param sbol_obj: component definition
         :return: None
         """
-        self.componentDefinitions[sbol_obj.identity] = sbol_obj
+        self.add(sbol_obj)
 
     def addModuleDefinition(self, sbol_obj):
         """
@@ -84,7 +103,7 @@ class Document(Identified):
         :param sbol_obj: module definition
         :return: None
         """
-        self.moduleDefinitions[sbol_obj.identity] = sbol_obj
+        self.add(sbol_obj)
 
     def addSequence(self, sbol_obj):
         """
@@ -93,7 +112,7 @@ class Document(Identified):
         :param sbol_obj: sequence
         :return: None
         """
-        self.add([sbol_obj])
+        self.add(sbol_obj)
 
     def addModel(self, sbol_obj):
         """
@@ -102,7 +121,7 @@ class Document(Identified):
         :param sbol_obj: model
         :return: None
         """
-        self.add([sbol_obj])
+        self.add(sbol_obj)
 
     def create(self, uri):
         """
@@ -119,7 +138,6 @@ class Document(Identified):
             #obj.identity = os.path.join(getHomespace(), )
         raise NotImplementedError("Not yet implemented")
 
-
     def get(self, uri):
         """
         Retrieve an object from the Document.
@@ -131,7 +149,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         # First, search the object's property store for the uri
         if uri in self.objectCache:
             return self.objectCache[uri]
-        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS) is True:
+        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
             return
 
     def getAll(self):
@@ -143,10 +161,12 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         raise NotImplementedError("Not yet implemented")
 
     def getComponentDefinition(self, uri):
-        raise NotImplementedError("Not yet implemented")
+        # NOTE: I couldn't find this in the original libSBOL source, but they are
+        # heavily used in all the unit tests.
+        return self.componentDefinitions.get(uri)
 
     def getModuleDefinition(self, uri):
-        raise NotImplementedError("Not yet implemented")
+        return self.moduleDefinitions.get(uri)
 
     def getSequence(self, uri):
         raise NotImplementedError("Not yet implemented")
@@ -303,13 +323,6 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         """
         return self.summary()
 
-    def __eq__(self, other):
-        raise NotImplementedError("Not yet implemented")
-        # if self.graph is None:
-        #     return other.graph is None
-        # else:
-        #     return rdflib.compare.isomorphic(self.graph, other.graph)
-
     def cacheObjectsDocument(self):
         # TODO docstring
         raise NotImplementedError("Not yet implemented")
@@ -332,7 +345,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         summary = ''
         col_size = 30
         total_core_objects = 0
-        for rdf_type, obj_store in self.owned_objects:
+        for rdf_type, obj_store in self.owned_objects.items():
             property_name = parsePropertyName(rdf_type)
             obj_count = len(obj_store)
             total_core_objects += obj_count
@@ -346,6 +359,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         summary += 'Total: '
         summary += '.' * (col_size-5)
         summary += str(self.size()) + '\n'
+        return summary
 
     # TODO Port iterator, which loops over top-level items of Document
 

@@ -319,6 +319,7 @@ class ComponentDefinition(TopLevel):
 
         :return: A ComponentDefinition.
         """
+        raise NotImplementedError("Not yet implemented")
 
     def participate(self, species):
         """A convenience method that assigns a component to participate in a biochemical reaction.

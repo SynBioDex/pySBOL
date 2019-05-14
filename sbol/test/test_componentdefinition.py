@@ -18,17 +18,6 @@ class TestComponentDefinitions(unittest.TestCase):
         target_promoter = ComponentDefinition('target_promoter')
         self.assertEqual(BIOPAX_DNA, target_promoter.types)
 
-    def testAddComponentDefinition_nonCompliant(self):
-        setHomespace('http://sbols.org/CRISPR_Example')
-        Config.setOption('sbol_compliant_uris', False)
-        Config.setOption('sbol_typed_uris', False)
-        test_CD = ComponentDefinition("BB0001")
-        doc = Document()
-        doc.addComponentDefinition(test_CD)
-        self.assertIsNotNone(doc.componentDefinitions.get("BB0001"))
-        identity = doc.componentDefinitions[0].identity
-        self.assertEqual(identity, "BB0001")
-
     def testAddComponentDefinition(self):
         setHomespace('http://sbols.org/CRISPR_Example')
         Config.setOption('sbol_compliant_uris', True)
@@ -45,7 +34,8 @@ class TestComponentDefinitions(unittest.TestCase):
         doc = Document()
         doc.addComponentDefinition(test_CD)
         doc.componentDefinitions.remove(0)
-        self.assertRaises(RuntimeError, lambda: doc.componentDefinitions.get("BB0001"))
+        # NOTE: changed the test to expect the 'sbol error type' as opposed to a RuntimeError.
+        self.assertRaises(SBOLError, lambda: doc.componentDefinitions.get("BB0001"))
 
     def testCDDisplayId(self):
         listCD_read = []
