@@ -192,16 +192,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param filename: The full name of the file you want to read (including file extension).
         :return: None
         """
-        with open(filename, 'r') as f:
-            graph = rdflib.Graph()
-            graph.parse(f, format="application/rdf+xml")
-            # top_query = "PREFIX : <http://example.org/ns#> " \
-            #     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
-            #     "PREFIX sbol: <http://sbols.org/v2#> " \
-            #     "SELECT ?s ?o " \
-            #     "{ ?s a ?o }"
-            # top_level_results = graph.query(top_query)
-
+        self.clear()
+        self.append(filename)
 
     def readString(self, sbol_str):
         """
@@ -228,7 +220,25 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param filename: The full name of the file you want to read (including file extension).
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        with open(filename, 'r') as f:
+            graph = rdflib.Graph()
+            graph.parse(f, format="application/rdf+xml")
+            # Parse namespaces
+            for ns in graph.namespaces():
+                self._namespaces[ns[0]] = str('<' + ns[1] + '>')
+            # Find top-level objects
+            top_level_query = "PREFIX : <http://example.org/ns#> " \
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
+                "PREFIX sbol: <http://sbols.org/v2#> " \
+                "SELECT ?s ?o " \
+                "{ ?s a ?o }"
+            sparql_results = graph.query(top_level_query)
+            for result in sparql_results:
+                subject = str(result.s)
+                obj = str(result.o)
+                # TODO do something with top level
+                # TODO see parse_properties_inner
+
 
     # Online validation #
     def request_validation(self, sbol_str):
@@ -252,7 +262,18 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
 
         :return: None
         """
-        raise NotImplementedError("Not yet implemented")
+        self.SBOLObjects.clear()
+        for name, vals in self.properties.items():
+            if vals[0] == '<':
+                reinitialized_property = '<>'
+            else:
+                reinitialized_property = '""'
+            vals.clear()
+            vals.append(reinitialized_property)
+        for object_store in self.owned_objects.values():
+            object_store.clear()
+        self._namespaces.clear()
+        self.graph = rdflib.Graph()  # create a new graph
 
     def query_repository(self, command):
         """

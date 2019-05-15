@@ -139,7 +139,7 @@ class SBOLObject(metaclass=ABCMeta):
         :return: A vector containing all objects found that contain a member property with the specified RDF type
         """
         matches = []
-        for rdf_type, store  in self.owned_objects.items():
+        for rdf_type, store in self.owned_objects.items():
             # Skip hidden and aliased properties
             if rdf_type in self._hidden_properties:
                 continue
