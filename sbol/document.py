@@ -5,6 +5,20 @@ from sequenceannotation import SequenceAnnotation
 from sequence import Sequence
 from component import Component, FunctionalComponent
 from moduledefinition import ModuleDefinition
+from module import Module
+from interaction import Interaction
+from participation import Participation
+from model import Model
+from sequenceconstraint import SequenceConstraint
+from location import Range, Cut, GenericLocation
+from mapsto import MapsTo
+from collection import Collection
+from provo import Plan, Activity, Agent, Usage, Association
+from attachment import Attachment
+from combinatorialderivation import CombinatorialDerivation
+from implementation import Implementation
+from dbtl import Design, Analysis, SampleRoster
+from experiment import Experiment, ExperimentalData
 from object import SBOLObject
 import rdflib
 import os
@@ -28,7 +42,30 @@ class Document(Identified):
         SBOL_SEQUENCE: Sequence,
         SBOL_COMPONENT: Component,
         SBOL_FUNCTIONAL_COMPONENT: FunctionalComponent,
-        SBOL_MODULE_DEFINITION: ModuleDefinition
+        SBOL_MODULE_DEFINITION: ModuleDefinition,
+        SBOL_MODULE: Module,
+        SBOL_INTERACTION: Interaction,
+        SBOL_PARTICIPATION: Participation,
+        SBOL_MODEL: Model,
+        SBOL_SEQUENCE_CONSTRAINT: SequenceConstraint,
+        SBOL_RANGE: Range,
+        SBOL_MAPS_TO: MapsTo,
+        SBOL_CUT: Cut,
+        SBOL_COLLECTION: Collection,
+        SBOL_GENERIC_LOCATION: GenericLocation,
+        PROVO_PLAN: Plan,
+        PROVO_ACTIVITY: Activity,
+        PROVO_AGENT: Agent,
+        PROVO_USAGE: Usage,
+        PROVO_ASSOCIATION: Association,
+        SBOL_ATTACHMENT: Attachment,
+        SBOL_COMBINATORIAL_DERIVATION: CombinatorialDerivation,
+        SBOL_IMPLEMENTATION: Implementation,
+        SYSBIO_DESIGN: Design,
+        SYSBIO_ANALYSIS: Analysis,
+        SYSBIO_SAMPLE_ROSTER: SampleRoster,
+        SBOL_EXPERIMENT: Experiment,
+        SBOL_EXPERIMENTAL_DATA: ExperimentalData
     }
 
     def __init__(self, filename=None):

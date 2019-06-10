@@ -1,0 +1,2 @@
+class Implementation:
+    pass

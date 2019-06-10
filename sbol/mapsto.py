@@ -1,0 +1,2 @@
+class MapsTo:
+    pass

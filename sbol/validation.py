@@ -100,6 +100,10 @@ def libsbol_rule_16(sbol_obj, arg):
     raise NotImplementedError("Not yet implemented")
 
 
+def libsbol_rule_18(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
 def libsbol_rule_20(sbol_obj, arg):
     raise NotImplementedError("Not yet implemented")
 
