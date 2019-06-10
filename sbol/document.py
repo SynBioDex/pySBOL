@@ -1,7 +1,9 @@
 from identified import *
 from config import *
 from componentdefinition import ComponentDefinition
+from sequenceannotation import SequenceAnnotation
 from sequence import Sequence
+from component import Component, FunctionalComponent
 from moduledefinition import ModuleDefinition
 from object import SBOLObject
 import rdflib
@@ -22,7 +24,10 @@ class Document(Identified):
         UNDEFINED: SBOLObject,
         SBOL_IDENTIFIED: Identified,
         SBOL_COMPONENT_DEFINITION: ComponentDefinition,
+        SBOL_SEQUENCE_ANNOTATION: SequenceAnnotation,
         SBOL_SEQUENCE: Sequence,
+        SBOL_COMPONENT: Component,
+        SBOL_FUNCTIONAL_COMPONENT: FunctionalComponent,
         SBOL_MODULE_DEFINITION: ModuleDefinition
     }
 
