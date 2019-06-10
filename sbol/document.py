@@ -1,5 +1,9 @@
 from identified import *
 from config import *
+from componentdefinition import ComponentDefinition
+from sequence import Sequence
+from moduledefinition import ModuleDefinition
+from object import SBOLObject
 import rdflib
 import os
 
@@ -14,6 +18,14 @@ class Document(Identified):
     to populate it with SBOL objects representing design elements.
     """
 
+    SBOL_DATA_MODEL_REGISTER = {
+        UNDEFINED: SBOLObject,
+        SBOL_IDENTIFIED: Identified,
+        SBOL_COMPONENT_DEFINITION: ComponentDefinition,
+        SBOL_SEQUENCE: Sequence,
+        SBOL_MODULE_DEFINITION: ModuleDefinition
+    }
+
     def __init__(self, filename=None):
         """
         Construct a document.
@@ -22,8 +34,8 @@ class Document(Identified):
         """
         super().__init__(SBOL_DOCUMENT, "", VERSION_STRING)
         # The Document's register of objects
-        self.objectCache = {} # Needed?
-        self.SBOLObjects = {} # Needed?
+        self.objectCache = {}  # Needed?
+        self.SBOLObjects = {}  # Needed?
         self.resource_namespaces = None
         self.designs = OwnedObject(self, SYSBIO_DESIGN, '0', '*', [libsbol_rule_11])
         self.builds = OwnedObject(self, SYSBIO_BUILD, '0', '*', [libsbol_rule_12])
@@ -94,7 +106,11 @@ class Document(Identified):
         :param sbol_obj: component definition
         :return: None
         """
-        self.add(sbol_obj)
+        if isinstance(sbol_obj, list):
+            for obj in sbol_obj:
+                self.add(obj)
+        else:
+            self.add(sbol_obj)
 
     def addModuleDefinition(self, sbol_obj):
         """
@@ -236,9 +252,123 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             for result in sparql_results:
                 subject = str(result.s)
                 obj = str(result.o)
-                # TODO do something with top level
-                # TODO see parse_properties_inner
+                self.parse_objects_inner(subject, obj)
+            # Find everything in the triple store
+            all_query = "PREFIX : <http://example.org/ns#> " \
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
+                "PREFIX sbol: <http://sbols.org/v2#> " \
+                "SELECT ?s ?p ?o " \
+                "{ ?s ?p ?o }"
+            all_results = graph.query(all_query)
+            # Find the graph base uri.  This is the location of the sbol
+            # file, and begins with the "file://" scheme.  Any URI in the
+            # file without a scheme will appear relative to this URI, after
+            # the file is parsed.  Therefore, if the any URI property value
+            # begins with the graph base uri, the base part of the URI is removed.
+            graphBaseURIStr = "file://" + os.getcwd() # Not sure if this is correct...
+            # Remove the filename from the path
+            pos = graphBaseURIStr.rfind('/')
+            if pos != -1:
+                pos += 1
+            rdf_type = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            for result in all_results:
+                predicate = str(result.p)
+                # Look for properties
+                if predicate != rdf_type:
+                    subject = str(result.s)
+                    obj = result.o
+                    lval = str(obj)
+                    if isinstance(result.o, URIRef) and pos != -1:
+                        if lval[:pos] == graphBaseURIStr:
+                            # This was a URI without a scheme.  Remove URI base
+                            lval = lval[pos:]
+                    # If the literal value is a URI, wrap it in < and >, otherwise wrap it in quotes
+                    if isinstance(result.o, URIRef):
+                        padStart = '<'
+                        padEnd = '>'
+                    else:
+                        padStart = '"'
+                        padEnd = '"'
+                    obj_str = padStart + lval + padEnd
+                    self.parse_properties_inner(subject, predicate, obj_str)
+            # TODO parse annotation objects
+            # TODO dress document
 
+    def parse_objects_inner(self, subject_str, obj_str):
+        if subject_str not in self.SBOLObjects and obj_str in self.SBOL_DATA_MODEL_REGISTER:
+            # Call constructor for the appropriate SBOLObject
+            new_obj = self.SBOL_DATA_MODEL_REGISTER[obj_str]()
+            # Wipe default property values passed from default
+            # constructor. New property values will be added as properties
+            # are parsed from the input file
+            for prop_name, values in new_obj.properties.items():
+                token = values[0]
+                if token[0] == '<':
+                    values.clear()
+                    values.ppend('<>')
+                elif token[0] == '"':
+                    values.clear()
+                    values.append('""')
+            new_obj.identity.set(subject_str)
+            # Update document
+            self.SBOLObjects[new_obj.identity.get()] = new_obj
+            new_obj.doc = self
+            # For now, set the parent to the Document. This may get overwritten later for child objects.
+            new_obj.parent = self
+            # If the new object is TopLevel, add to the Document's property store
+            if new_obj.is_top_level():
+                self.owned_objects[new_obj.rdf_type].append(new_obj)
+        elif subject_str not in self.SBOLObjects and obj_str not in self.SBOL_DATA_MODEL_REGISTER:
+            # Generic TopLevels
+            new_obj = SBOLObject()
+            new_obj.identity.set(subject_str)
+            new_obj.rdf_type = obj_str
+            self.SBOLObjects[new_obj.identity.get()] = new_obj
+            new_obj.doc = self
+
+    def parse_properties_inner(self, subject, predicate, obj):
+        id = subject
+        property_uri = predicate
+        property_value = self.convert_ntriples_encoding_to_ascii(obj)
+        found = property_uri.rfind('#')
+        if found == -1:
+            found = property_uri.rfind('/')
+        if found != -1:
+            property_ns, property_name = property_uri.split[found]
+            # Checks if the object to which this property belongs already exists
+            if id in self.SBOLObjects:
+                sbol_obj = self.SBOLObjects[id]
+                # Decide if this triple corresponds to a simple property,
+                # a list property, an owned property or a referenced property
+                if property_uri in sbol_obj.properties:
+                    # triple is a property
+                    if sbol_obj.properties[property_uri] == '<>' or \
+                            sbol_obj.properties[property_uri] == '""':
+                        sbol_obj.properties[property_uri].clear()
+                    sbol_obj.properties[property_uri].append(property_value)
+                elif property_uri in sbol_obj.owned_objects:
+                    # triple is an owned object
+                    # Strip off the angle brackets from the URI value.
+                    # Note that a Document's object_store and
+                    # correspondingly, an SBOLObject's property_store
+                    # uses stripped URIs as keys, while libSBOL uses as a
+                    # convention angle brackets or quotes for Literal values
+                    owned_obj_id = property_value[1:-1]
+                    owned_obj_lookup = self.SBOLObjects[owned_obj_id]
+                    if owned_obj_lookup is not None:
+                        owned_obj = owned_obj_lookup
+                        sbol_obj.owned_objects[property_uri].append(owned_obj)
+                        owned_obj.parent = sbol_obj
+                        del self.SBOLObjects[owned_obj_id]
+                    pass
+                else:
+                    # Extension data
+                    sbol_obj.properties[property_uri].append(property_value)
+
+    def convert_ntriples_encoding_to_ascii(self, s):
+        s.replace("\\\"", "\"")
+        s.replace("\\\\", "\\")
+        return s
 
     # Online validation #
     def request_validation(self, sbol_str):
