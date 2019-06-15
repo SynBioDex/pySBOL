@@ -9,6 +9,20 @@ def sort_version(obj):
     return obj.version
 
 
+def strip_uri_brackets(uri_property):
+    if type(uri_property) is str and uri_property.startswith('<') and uri_property.endswith('>'):
+        return uri_property[1:-1]
+    else:
+        return uri_property
+
+
+def strip_quotes(string_property):
+    if type(string_property) is str and string_property.startswith('"') and string_property.endswith('"'):
+        return string_property[1:-1]
+    else:
+        return string_property
+
+
 class Property():
     """Member properties of all SBOL objects are defined using a Property object.
 

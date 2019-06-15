@@ -271,6 +271,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         raise NotImplementedError("Not yet implemented")
 
     def append(self, filename):
+        print("Appending data from file: " + filename)
         """
         Read an RDF/XML file and attach the SBOL objects to this Document.
 
@@ -283,7 +284,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             graph.parse(f, format="application/rdf+xml")
             # Parse namespaces
             for ns in graph.namespaces():
-                self._namespaces[ns[0]] = str('<' + ns[1] + '>')
+                self._namespaces[ns[0]] = URIRef(ns[1])
             # Find top-level objects
             top_level_query = "PREFIX : <http://example.org/ns#> " \
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
@@ -340,6 +341,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         if subject_str not in self.SBOLObjects and obj_str in self.SBOL_DATA_MODEL_REGISTER:
             # Call constructor for the appropriate SBOLObject
             new_obj = self.SBOL_DATA_MODEL_REGISTER[obj_str]()
+            print("New object type: " + str(type(new_obj)))
+            print("New object attrs: " + str(vars(new_obj)))
             # Wipe default property values passed from default
             # constructor. New property values will be added as properties
             # are parsed from the input file
@@ -347,13 +350,13 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                 token = values[0]
                 if token[0] == '<':
                     values.clear()
-                    values.ppend('<>')
+                    values.append('<>')
                 elif token[0] == '"':
                     values.clear()
                     values.append('""')
-            new_obj.identity.set(subject_str)
+            new_obj.identity = subject_str
             # Update document
-            self.SBOLObjects[new_obj.identity.get()] = new_obj
+            self.SBOLObjects[new_obj.identity] = new_obj
             new_obj.doc = self
             # For now, set the parent to the Document. This may get overwritten later for child objects.
             new_obj.parent = self
@@ -363,23 +366,23 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         elif subject_str not in self.SBOLObjects and obj_str not in self.SBOL_DATA_MODEL_REGISTER:
             # Generic TopLevels
             new_obj = SBOLObject()
-            new_obj.identity.set(subject_str)
+            new_obj.identity = subject_str
             new_obj.rdf_type = obj_str
-            self.SBOLObjects[new_obj.identity.get()] = new_obj
+            self.SBOLObjects[new_obj.identity] = new_obj
             new_obj.doc = self
 
     def parse_properties_inner(self, subject, predicate, obj):
-        id = subject
+        print("Adding: (" + str(subject) + ", " + str(predicate) + ", " + str(obj) + ")")
         property_uri = predicate
         property_value = self.convert_ntriples_encoding_to_ascii(obj)
         found = property_uri.rfind('#')
         if found == -1:
             found = property_uri.rfind('/')
         if found != -1:
-            property_ns, property_name = property_uri.split[found]
+            # property_ns, property_name = property_uri.split[:found]  # <-- this line didn't appear to have any purpose
             # Checks if the object to which this property belongs already exists
-            if id in self.SBOLObjects:
-                sbol_obj = self.SBOLObjects[id]
+            if subject in self.SBOLObjects:
+                sbol_obj = self.SBOLObjects[subject]
                 # Decide if this triple corresponds to a simple property,
                 # a list property, an owned property or a referenced property
                 if property_uri in sbol_obj.properties:
@@ -402,10 +405,13 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                         sbol_obj.owned_objects[property_uri].append(owned_obj)
                         owned_obj.parent = sbol_obj
                         del self.SBOLObjects[owned_obj_id]
-                    pass
                 else:
                     # Extension data
-                    sbol_obj.properties[property_uri].append(property_value)
+                    if property_uri not in sbol_obj.properties:
+                        sbol_obj.properties[property_uri] = []
+                        sbol_obj.properties[property_uri].append(property_value)
+                    else:
+                        sbol_obj.properties[property_uri].append(property_value)
 
     def convert_ntriples_encoding_to_ascii(self, s):
         s.replace("\\\"", "\"")
@@ -484,10 +490,12 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         graph = rdflib.Graph()
         # TODO Add default namespace if there is one
         # Add namespaces
-        for name, ns in self._namespaces:
+        for name, ns in self._namespaces.items():
+            # ns = strip_quotes(strip_uri_brackets(ns))
             graph.bind(name, ns)
         # Add top-level objects
-        for rdf_type, obj in self.SBOLObjects:
+        for rdf_type, obj in self.SBOLObjects.items():
+            rdf_type = strip_quotes(strip_uri_brackets(rdf_type))
             graph.add((self.identity, rdf_type, obj.identity))
             obj.serialize_rdf2xml(graph)
         graph.serialize(out)
