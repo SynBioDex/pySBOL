@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:sys-bio="http://sys-bio.org#">
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_build_generation/1.0.0">
+    <sbol:displayId>Activity_build_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://sys-bio.org/Activity_build_generation/build_generation_association/1.0.0">
+        <sbol:displayId>build_generation_association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation/build_generation_association"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:agent rdf:resource="http://www.async.ece.utah.edu/unknown"/>
+        <prov:hadPlan rdf:resource="http://sys-bio.org/Plan_gibson_assembly/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </prov:Activity>
+</rdf:RDF>

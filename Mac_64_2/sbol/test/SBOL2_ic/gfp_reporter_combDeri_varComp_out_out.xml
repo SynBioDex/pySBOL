@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sbol="http://sbols.org/v2#" xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sbol:CombinatorialDerivation rdf:about="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample/1">
+    <sbol:displayId>GFP_Reporter_Template_CombinatorialDerivation_Sample</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample"/>
+    <sbol:strategy rdf:resource="http://sbols.org/v2#sample"/>
+    <sbol:template rdf:resource="http://michael.zhang/GFP_Reporter_Template/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:variableComponent>
+      <sbol:VariableComponent rdf:about="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample/Pro_Component_VariableComponent/1">
+        <sbol:displayId>Pro_Component_VariableComponent</sbol:displayId>
+        <sbol:operator rdf:resource="http://sbols.org/v2#zeroOrOne"/>
+        <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample/Pro_Component_VariableComponent"/>
+        <sbol:variable rdf:resource="http://michael.zhang/GFP_Reporter_Template/Pro_Component/1"/>
+        <sbol:variant rdf:resource="https://synbiohub.org/public/igem/BBa_K1545001/1"/>
+        <sbol:variant rdf:resource="https://synbiohub.org/public/igem/BBa_K1545000/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:VariableComponent>
+    </sbol:variableComponent>
+  </sbol:CombinatorialDerivation>
+</rdf:RDF>

@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sys-bio="http://sys-bio.org#" xmlns:sbol="http://sbols.org/v2#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_build_generation/1.0.0">
+    <sbol:displayId>Activity_build_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://sys-bio.org/Activity_build_generation/build_generation_association/1.0.0">
+        <sbol:displayId>build_generation_association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation/build_generation_association"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:agent rdf:resource="https://synbiohub.org/jdoe/1.0.0"/>
+        <prov:hadPlan rdf:resource="http://sys-bio.org/Plan_gibson_assembly/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity_build_generation/design_usage/1.0.0">
+        <sbol:displayId>design_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation/design_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/ModuleDefinition_design/1.0.0"/>
+        <prov:hadPlan rdf:resource="http://sys-bio.org/Plan_model_fitting/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#design"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_fit_model_generation/1.0.0">
+    <sbol:displayId>Activity_fit_model_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_fit_model_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity_fit_model_generation/raw_data_usage/1.0.0">
+        <sbol:displayId>raw_data_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_fit_model_generation/raw_data_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Attachment_raw_data/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#test"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_raw_data_generation/1.0.0">
+    <sbol:displayId>Activity_raw_data_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_raw_data_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity_raw_data_generation/build_usage/1.0.0">
+        <sbol:displayId>build_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_raw_data_generation/build_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Implementation_build/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_design_generation/1.0.0">
+    <sbol:displayId>Activity_design_generation</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_design_generation"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://sys-bio.org/Activity_design_generation/predicted_usage/1.0.0">
+        <sbol:displayId>predicted_usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_design_generation/predicted_usage"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="http://sys-bio.org/Model_predicted/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#learn"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+</rdf:RDF>

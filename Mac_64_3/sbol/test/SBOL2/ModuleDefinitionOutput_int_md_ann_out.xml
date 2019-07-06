@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sbol="http://sbols.org/v2#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <sbol:ModuleDefinition rdf:about="http://sbolstandard.org/example/tetr_inverter">
+    <sbol:displayId>tetr_inverter</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/tetr_inverter"/>
+    <sbol:role rdf:resource="http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=inverter"/>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://sbolstandard.org/example/tetr_inverter/LacI_pLacI">
+        <sbol:displayId>LacI_pLacI</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/tetr_inverter/LacI_pLacI"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+      </sbol:Interaction>
+    </sbol:interaction>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://sbolstandard.org/example/toggle_switch">
+    <dcterms:created>2003-12-04T12:00:00Z</dcterms:created>
+    <sbol:displayId>toggle_switch</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/toggle_switch"/>
+    <sbol:role rdf:resource="http://sbolstandard.org/example/module_role/toggle_switch"/>
+  </sbol:ModuleDefinition>
+</rdf:RDF>

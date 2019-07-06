@@ -4,7 +4,7 @@
     <sbol:persistentIdentity rdf:resource="http://myapp.com/codon_optimized"/>
     <sbol:displayId>codon_optimized</sbol:displayId>
     <prov:wasDerivedFrom rdf:resource="http://myapp.com/non_codon_optimized"/>
-    <prov:wasGeneratedBy rdf:resource="http://myapp.com/non_codon_optimized"/>
+    <prov:wasGeneratedBy rdf:resource="http://myapp.com/codon_optimization_activity"/>
     <dcterms:title>Codon optimised CDS</dcterms:title>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
@@ -19,6 +19,7 @@
   <prov:Activity rdf:about="http://myapp.com/codon_optimization_activity">
     <sbol:persistentIdentity rdf:resource="http://myapp.com/codon_optimization_activity"/>
     <sbol:displayId>codon_optimization_activity</sbol:displayId>
+    <sbol:role>codon_optimization_activity</sbol:role>
     <dcterms:title>Codon Optimization Activity</dcterms:title>
     <prov:qualifiedAssociation>
       <prov:Association rdf:about="http://myapp.com/codon_optimization_activity/association">
@@ -36,7 +37,6 @@
         <prov:entity rdf:resource="http://myapp.com/non_codon_optimized"/>
       </prov:Usage>
     </prov:qualifiedUsage>
-    <sbol:type></sbol:type>
   </prov:Activity>
   <prov:Agent rdf:about="http://myapp.com/codon_optimization_software">
     <sbol:persistentIdentity rdf:resource="http://myapp.com/codon_optimization_software"/>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ComponentDefinition/hBax/1">
+    <sbol:displayId>hBax</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ComponentDefinition/hBax"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ComponentDefinition/lacI/1">
+    <sbol:displayId>lacI</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ComponentDefinition/lacI"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ComponentDefinition/tissue_marker/1">
+    <sbol:displayId>tissue_marker</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ComponentDefinition/tissue_marker"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ComponentDefinition/tumor_marker/1">
+    <sbol:displayId>tumor_marker</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ComponentDefinition/tumor_marker"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#RnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/ModuleDefinition/nand_gate/1">
+    <sbol:displayId>nand_gate</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/nand_gate/hBax/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/hBax/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#out"/>
+        <sbol:displayId>hBax</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/nand_gate/hBax"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/nand_gate/lacI/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/lacI/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#out"/>
+        <sbol:displayId>lacI</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/nand_gate/lacI"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/nand_gate/tissue_marker/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/tissue_marker/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+        <sbol:displayId>tissue_marker</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/nand_gate/tissue_marker"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/nand_gate/tumor_marker/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/tumor_marker/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+        <sbol:displayId>tumor_marker</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/nand_gate/tumor_marker"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/nand_gate"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/ModuleDefinition/not_gate/1">
+    <sbol:displayId>not_gate</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/not_gate/lacI/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/lacI/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+        <sbol:displayId>lacI</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/not_gate/lacI"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/not_gate"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/ModuleDefinition/tumor_killer/1">
+    <sbol:displayId>tumor_killer</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ModuleDefinition/tumor_killer/lacI/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ComponentDefinition/lacI/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>lacI</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/lacI"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/ModuleDefinition/tumor_killer/nand_gate/1">
+        <sbol:definition rdf:resource="http://examples.org/ModuleDefinition/nand_gate/1"/>
+        <sbol:displayId>nand_gate</sbol:displayId>
+        <sbol:mapsTo>
+          <sbol:MapsTo rdf:about="http://examples.org/ModuleDefinition/tumor_killer/nand_gate/lacI/1">
+            <sbol:displayId>lacI</sbol:displayId>
+            <sbol:local rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/lacI/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/nand_gate/lacI"/>
+            <sbol:refinement rdf:resource="http://sbols.org/v2#verifyIdentical"/>
+            <sbol:remote rdf:resource="http://examples.org/ModuleDefinition/nand_gate/lacI/1"/>
+            <sbol:version>1</sbol:version>
+          </sbol:MapsTo>
+        </sbol:mapsTo>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/nand_gate"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/ModuleDefinition/tumor_killer/not_gate/1">
+        <sbol:definition rdf:resource="http://examples.org/ModuleDefinition/not_gate/1"/>
+        <sbol:displayId>not_gate</sbol:displayId>
+        <sbol:mapsTo>
+          <sbol:MapsTo rdf:about="http://examples.org/ModuleDefinition/tumor_killer/not_gate/lacI/1">
+            <sbol:displayId>lacI</sbol:displayId>
+            <sbol:local rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/lacI/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/not_gate/lacI"/>
+            <sbol:refinement rdf:resource="http://sbols.org/v2#verifyIdentical"/>
+            <sbol:remote rdf:resource="http://examples.org/ModuleDefinition/not_gate/lacI/1"/>
+            <sbol:version>1</sbol:version>
+          </sbol:MapsTo>
+        </sbol:mapsTo>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer/not_gate"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ModuleDefinition/tumor_killer"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+</rdf:RDF>

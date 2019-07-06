@@ -1,0 +1,94 @@
+LOCUS       Exported File           2527 bp ds-DNA    circular SYN 12-MAR-2014
+DEFINITION  .
+ACCESSION   .
+VERSION     .
+KEYWORDS    pICH71421 (2)
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
+REFERENCE   1  (bases 1 to 2527)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 12, 2014 from SnapGene Viewer 1.1.2
+            http://www.snapgene.com
+COMMENT     This file is created by Vector NTI
+            http://www.invitrogen.com/
+FEATURES             Location/Qualifiers
+     source          1..2527
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+     CDS             231..1241
+                     /codon_start=1
+                     /label="Sm/Sp no DraIII"
+                     /note="Sm/Sp no DraIII"
+                     /note="color: #ff9966"
+                     /translation="MRSRNWSRTLTERSGGNGAVAVFMACYDCFFGVQSMPRASKQQAR
+                     YAVGRCLMLWSSNDVTQQGSRPKTKLNIMREAVIAEVSTQLSEVVGVIERHLEPTLLAV
+                     HLYGSAVDGGLKPHSDIDLLVTVTVRLDETTRRALINDLLETSASPGESEILRAVEVTI
+                     VVHDDIIPWRYPAKRELQFGEWQRNDILAGIFEPATIDIDLAILLTKAREHSVALVGPA
+                     AEELFDPVPEQDLFEALNETLTLWNSPPDWAGDERNVVLTLSRIWYSAVTGKIAPKDVA
+                     ADWAMERLPAQYQPVILEARQAYLGQEEDRLASRADQLEEFVHYVKGEITKVVGK"
+     variation       1208
+                     /note="G to A"
+                     /note="color: #3366cc"
+     misc_feature    1401..2015
+                     /label="rep (pMB1)"
+                     /note="rep (pMB1)"
+                     /note="color: #66cc99; direction: RIGHT"
+     rep_origin      2000
+                     /label="ORI"
+                     /note="ORI"
+                     /note="RNaseH cleavage point"
+                     /note="color: #3366cc"
+     terminator      2252..2527
+                     /label="tom H4 term"
+                     /note="tom H4 term"
+                     /note="color: #3366cc"
+     misc_feature    2395
+                     /label="polyA"
+                     /note="polyA"
+                     /note="color: #3366cc"
+ORIGIN
+        1 cgcttgagac cacgaagtgg ctcttcagtg gacgaaaggg cctcgtgata cgcctatttt
+       61 tataggttaa tgtcatgata ataatggttt cttagacgtc aggtggcact tttcggggaa
+      121 atgtgcgcgg aacccctatt tgtttatttt tctaaataca ttcaaatatg tatccgctca
+      181 tgagacaata accctgataa atgcttcaat aatattgaaa aaggaagagt atgcgctcac
+      241 gcaactggtc cagaaccttg accgaacgca gcggtggtaa cggcgcagtg gcggttttca
+      301 tggcttgtta tgactgtttt tttggggtac agtctatgcc tcgggcatcc aagcagcaag
+      361 cgcgttacgc cgtgggtcga tgtttgatgt tatggagcag caacgatgtt acgcagcagg
+      421 gcagtcgccc taaaacaaag ttaaacatca tgagggaagc ggtgatcgcc gaagtatcga
+      481 ctcaactatc agaggtagtt ggcgtcatcg agcgccatct cgaaccgacg ttgctggccg
+      541 tacatttgta cggctccgca gtggatggcg gcctgaagcc acacagcgat attgatttgc
+      601 tggttacggt gaccgtaagg cttgatgaaa caacgcggcg agctttgatc aacgaccttt
+      661 tggaaacttc ggcttcccct ggagagagcg agattctccg cgctgtagaa gtcaccattg
+      721 ttgtgcacga cgacatcatt ccgtggcgtt atccagctaa gcgcgaactg caatttggag
+      781 aatggcagcg caatgacatt cttgcaggta tcttcgagcc agccacgatc gacattgatc
+      841 tggctatctt gctgacaaaa gcaagagaac atagcgttgc cttggtaggt ccagcggcgg
+      901 aggaactctt tgatccggtt cctgaacagg atctatttga ggcgctaaat gaaaccttaa
+      961 cgctatggaa ctcgccgccc gactgggctg gcgatgagcg aaatgtagtg cttacgttgt
+     1021 cccgcatttg gtacagcgca gtaaccggca aaatcgcgcc gaaggatgtc gctgccgact
+     1081 gggcaatgga gcgcctgccg gcccagtatc agcccgtcat acttgaagct agacaggctt
+     1141 atcttggaca agaagaagat cgcttggcct cgcgcgcaga tcagttggaa gaatttgtcc
+     1201 attacgtaaa aggcgagatc accaaggtag tcggcaaata actgtcagac caagtttact
+     1261 catatatact ttagattgat ttaaaacttc atttttaatt taaaaggatc taggtgaaga
+     1321 tcctttttga taatctcatg accaaaatcc cttaacgtga gttttcgttc cactgagcgt
+     1381 cagaccccgt agaaaagatc aaaggatctt cttgagatcc tttttttctg cgcgtaatct
+     1441 gctgcttgca aacaaaaaaa ccaccgctac cagcggtggt ttgtttgccg gatcaagagc
+     1501 taccaactct ttttccgaag gtaactggct tcagcagagc gcagatacca aatactgtcc
+     1561 ttctagtgta gccgtagtta ggccaccact tcaagaactc tgtagcaccg cctacatacc
+     1621 tcgctctgct aatcctgtta ccagtggctg ctgccagtgg cgataagtcg tgtcttaccg
+     1681 ggttggactc aagacgatag ttaccggata aggcgcagcg gtcgggctga acggggggtt
+     1741 cgtgcacaca gcccagcttg gagcgaacga cctacaccga actgagatac ctacagcgtg
+     1801 agctatgaga aagcgccacg cttcccgaag ggagaaaggc ggacaggtat ccggtaagcg
+     1861 gcagggtcgg aacaggagag cgcacgaggg agcttccagg gggaaacgcc tggtatcttt
+     1921 atagtcctgt cgggtttcgc cacctctgac ttgagcgtcg atttttgtga tgctcgtcag
+     1981 gggggcggag cctatggaaa aacgccagca acgcggcctt tttacggttc ctggcctttt
+     2041 gctggccttt tgctcacatg ttctttcctg cgttatcccc tgattctgtg gataaccgta
+     2101 ttaccgcctt tgagtgagct gataccgctc gccgcagccg aacgaccgag cgcagcgagt
+     2161 cagtgagcga ggaagcggaa gagcgcccaa tacgcaaacc gcctctcccc gcgcgttggc
+     2221 cgattcatta atcactctgt ggtctcagct tttatgttgg tgatatggtg gtaaatgtag
+     2281 ggatttagtt tacaattgcg tatgtctgtg ttggatatct gtagtgctgt tcttatggct
+     2341 tagatcttgt aatttctcat tacagtatca atgaatagat atcagtttct agtgatgaca
+     2401 ttggttcgtc ttttagctgt tgattaattt ttcttaattg attcatccta ttgcaattct
+     2461 tctgaattta aattgtatac tgtgaaatta agaaaattct tgaaattaat gagaatttga
+     2521 gtaatag
+//

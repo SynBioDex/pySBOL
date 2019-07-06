@@ -1,0 +1,910 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:gbConv="http://sbols.org/genBankConversion#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:genbank="http://www.ncbi.nlm.nih.gov/genbank#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/pICH42222">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222"/>
+    <sbol:displayId>pICH42222</sbol:displayId>
+    <genbank:locus>pICH42222</genbank:locus>
+    <genbank:molecule>DNA</genbank:molecule>
+    <genbank:date>29-APR-2009</genbank:date>
+    <genbank:source></genbank:source>
+    <genbank:organism></genbank:organism>
+    <genbank:comment>This file is created by Vector NTI http://www.invitrogen.com/
+ VNTDATE|516816006|
+ VNTDBDATE|516816006|
+ LSOWNER|
+ VNTNAME|pICH42222|
+ VNTAUTHORNAME|Ernst|
+ VNTOAUTHORNAME|Carola Engler|
+ VNTOAUTHOREML|engler@icongenetics.de|
+ Vector_NTI_Display_Data_(Do_Not_Edit!)
+ (SXF
+  (CGexDoc "pICH42222" 0 3407
+   (CDBMol 0 0 1 1 1 0 0 0 0 "" "" 0 0 0 0 (CObList) (CObList) (CObList)
+    (CObList) -1 "")
+   (CDocSetData 1 1 0 0 0 0 "MAIN" 1 1 1 1 0 0 1 1 0 1 10 10 4294967295 50 0
+    1 0 (CHomObj 0 0 0 3 75) (CWordArray) (CWordArray)
+    (CStringList "ApaLI" "AvaI" "BamHI" "ClaI" "EcoRI" "HindIII" "NcoI"
+     "PstI" "SmaI" "XmaI") (CStringList "atg" "gtg")
+    (CStringList "taa" "tga" "tag") (CObList) 1 "{(0,1),2}" 0 0 "" 0
+    4294967295 0 1 0 0 0 0 0 "MAIN" 0 0 30 0
+    (CProteinMotifSearchObject 70 20 1 1 1 1 0 0 1 0 0 0 0 0))
+   (CMolPar 0 0 0 0 0 1 3407 0 0 0 0 0 0 0 0) (CStringList) (CStringList)
+   (CObList) (COAPar 25 250 50 0 6 4 3 7) (COAPar 25 250 50 0 6 4 3 7)
+   (COAPar 25 250 50 0 6 4 3 7)
+   (CObList
+    #0=(CRSite (CStringList) "ApaLI" "gtgcac" 2 0 3 625 0 1644 0 3158 0 0 "")
+    #1=(CRSite (CStringList) "AvaI" "cycgrg" 2 0 2 242 0 2755 0 0 "")
+    #2=(CRSite (CStringList) "BamHI" "ggatcc" 2 0 1 2347 0 0 "")
+    #3=(CRSite (CStringList) "ClaI" "atcgat" 3 0 0 0 "")
+    #4=(CRSite (CStringList) "EcoRI" "gaattc" 2 0 1 2939 0 0 "")
+    #5=(CRSite (CStringList) "HindIII" "aagctt" 2 0 1 2317 0 0 "")
+    #6=(CRSite (CStringList) "NcoI" "ccatgg" 2 0 0 0 "")
+    #7=(CRSite (CStringList) "PstI" "ctgcag" 6 0 1 2333 0 0 "")
+    #8=(CRSite (CStringList) "SmaI" "cccggg" 4 0 0 0 "")
+    #9=(CRSite (CStringList) "XmaI" "cccggg" 2 0 0 0 ""))
+   (CObList
+    #10=(CFSignal (CObList) "G to A" 62 0 0 1109 1109 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #11=(CFSignal (CObList) "ORI" 33 0 1 1901 1901 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #12=(CFSignal (CObList) "rep (pMB1)" 21 0 0 1302 1916 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #13=(CFSignal (CObList) "Sm/Sp no DraIII" 4 0 0 132 1142 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #14=(CFSignal (CObList) "G to A (Esp3I removed)" 62 0 0 3284 3284 0
+         (CStringList) (CStringList) 1 1 1 1 "")
+    #15=(CFSignal (CObList) "A to T (Esp3I removed)" 62 0 0 3340 3340 0
+         (CStringList) (CStringList) 1 1 1 1 "")
+    #16=(CFSignal (CObList) "P(LAC)" 30 0 0 2261 2261 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #17=(CFSignal (CObList) "P lac prom" 30 0 0 2169 2292 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #18=(CFSignal (CObList) "pUC seqF" 28 0 0 2245 2266 0 (CStringList)
+         (CStringList) 1 1 1 1 "")
+    #19=(CFSignal (CObList) "Bar" 4 0 0 2354 2924 0 (CStringList)
+         (CStringList) 1 1 1 1 "")) (CObList) (CObList) (CObList) (CObList)
+   (CObList) (CObList)
+   (CTextView 0
+    #20=(CGroupPar (CParagraph 0 (0 0) 1 2 0 0 180)
+         (CObjectList
+          #21=(CRefLinePar
+               (CLinePar (CParagraph 0 (0 0) 0 2 0 1 233) "pICH42222" 2) 5
+               "" 0 4)
+          #22=(CFolderPar
+               (CGroupPar (CParagraph 1 (0 0) 1 1 0 0 178)
+                (CObjectList
+                 #23=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "DNA 'pICH42222'" 1)
+                 #24=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "Foreign object. Author: Ernst. Original author: Carola Engler"
+                      1)
+                 #25=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "Created: 04/29/09 04:00" 1)
+                 #26=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "Last Modified: 04/29/09 04:00" 1)
+                 #27=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "length: 3407 bp" 1)
+                 #28=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "storage type: Basic" 1)
+                 #29=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "form: Circular" 1))) "General Description")
+          #30=(CFolderPar
+               (CGroupPar (CParagraph 2 (0 0) 1 1 0 0 178) (CObjectList))
+               "Standard Fields")
+          #31=(CFolderPar
+               (CGroupPar (CParagraph 4 (0 0) 1 1 0 0 178)
+                (CObjectList
+                 #32=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180) "Ernst" 1)))
+               "Author")
+          #33=(CFolderPar
+               (CGroupPar (CParagraph 5 (0 0) 1 1 0 0 178)
+                (CObjectList
+                 #34=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "Carola Engler" 1)
+                 #35=(CLinePar (CParagraph 0 (0 0) 1 2 1 0 180)
+                      "EMAIL: &lt;a href=\"mailto:engler@icongenetics.de\"&gt;engler@icongenetics.de&lt;/a&gt;"
+                      1))) "Original Author")
+          #36=(CRefLinePar
+               (CLinePar (CParagraph 0 (0 0) 0 2 0 0 233) "Comments" 2) 1 ""
+               0 0)
+          #37=(CFolderPar
+               (CGroupPar (CParagraph 8 (0 0) 1 2 0 0 178) (CObjectList))
+               "Annotations")
+          #38=(CFolderPar
+               (CGroupPar (CParagraph 12 (6 0) 1 1 0 0 178)
+                (CObjectList
+                 #39=(CFolderPar
+                      (CGroupPar (CParagraph 4 (7 4 0) 1 1 1 0 178)
+                       (CObjectList
+                        #40=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 132 (3 #13# 0) 1 2 2 0 327)
+                              (CObjectList
+                               #41=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 132   End: 1142" 1)))
+                             "Sm/Sp no DraIII")
+                        #42=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 2354 (3 #19# 0) 1 2 2 0 327)
+                              (CObjectList
+                               #43=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 2354  End: 2924" 1))) "Bar")))
+                      "CDS (2 total)")
+                 #44=(CFolderPar
+                      (CGroupPar (CParagraph 21 (7 21 0) 1 1 1 0 178)
+                       (CObjectList
+                        #45=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 1302 (3 #12# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #46=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 1302  End: 1916" 1)))
+                             "rep (pMB1)"))) "Misc. Feature (1 total)")
+                 #47=(CFolderPar
+                      (CGroupPar (CParagraph 28 (7 28 0) 1 1 1 0 178)
+                       (CObjectList
+                        #48=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 2245 (3 #18# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #49=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 2245  End: 2266" 1))) "pUC seqF")))
+                      "Primer Binding Site (1 total)")
+                 #50=(CFolderPar
+                      (CGroupPar (CParagraph 30 (7 30 0) 1 1 1 0 178)
+                       (CObjectList
+                        #51=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 2169 (3 #17# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #52=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 2169  End: 2292" 1)))
+                             "P lac prom")
+                        #53=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 2261 (3 #16# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #54=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 2261  End: 2261" 1)
+                               #55=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    " lac promoter " 1))) "P(LAC)")))
+                      "Promoter Prokaryotic (2 total)")
+                 #56=(CFolderPar
+                      (CGroupPar (CParagraph 33 (7 33 0) 1 1 1 0 178)
+                       (CObjectList
+                        #57=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 1901 (3 #11# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #58=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 1901  End: 1901 (Complementary)"
+                                    1)
+                               #59=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    " RNaseH cleavage point " 1))) "ORI")))
+                      "Replication Origin (1 total)")
+                 #60=(CFolderPar
+                      (CGroupPar (CParagraph 62 (7 62 0) 1 1 1 0 178)
+                       (CObjectList
+                        #61=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 1109 (3 #10# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #62=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 1109  End: 1109" 1))) "G to A")
+                        #63=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 3284 (3 #14# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #64=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 3284  End: 3284" 1)))
+                             "G to A (Esp3I removed)")
+                        #65=(CFolderPar
+                             (CGroupPar
+                              (CParagraph 3340 (3 #15# 0) 1 2 2 0 194)
+                              (CObjectList
+                               #66=(CLinePar
+                                    (CParagraph 0 (0 0) 1 2 3 0 180)
+                                    "Start: 3340  End: 3340" 1)))
+                             "A to T (Esp3I removed)")))
+                      "Mutation (3 total)"))) "Feature Map")
+          #67=(CFolderPar
+               (CGroupPar (CParagraph 13 (0 0) 1 1 0 0 178)
+                (CObjectList
+                 #68=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66641240 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #69=(CGroupPar
+                              (CParagraph 0 (10 #0# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #70=(CLinePar
+                                    (CParagraph 0 (1 #0# 1) 1 2 2 0 191)
+                                    " N1: 625 " 1)
+                               #71=(CLinePar
+                                    (CParagraph 0 (1 #0# 2) 1 2 2 0 191)
+                                    " N2: 1644 " 1)
+                               #72=(CLinePar
+                                    (CParagraph 0 (1 #0# 3) 1 2 2 0 191)
+                                    " N3: 3158 " 1))))) "ApaLI: 3 sites") 1
+                      5 "GTGCAC" "CACGTG")
+                 #73=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66626584 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #74=(CGroupPar
+                              (CParagraph 0 (10 #1# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #75=(CLinePar
+                                    (CParagraph 0 (1 #1# 1) 1 2 2 0 191)
+                                    " N1: 242 " 1)
+                               #76=(CLinePar
+                                    (CParagraph 0 (1 #1# 2) 1 2 2 0 191)
+                                    " N2: 2755 " 1))))) "AvaI: 2 sites") 1 5
+                      "CYCGRG" "GRGCYC")
+                 #77=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66644536 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #78=(CGroupPar
+                              (CParagraph 0 (10 #2# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #79=(CLinePar
+                                    (CParagraph 0 (1 #2# 1) 1 2 2 0 191)
+                                    " N1: 2347 " 1))))) "BamHI: 1 site") 1 5
+                      "GGATCC" "CCTAGG")
+                 #80=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66618680 (8 0) 1 1 1 0 178)
+                        (CObjectList)) "ClaI: 0 sites") 2 4 "ATCGAT"
+                      "TAGCTA")
+                 #81=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66636088 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #82=(CGroupPar
+                              (CParagraph 0 (10 #4# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #83=(CLinePar
+                                    (CParagraph 0 (1 #4# 1) 1 2 2 0 191)
+                                    " N1: 2939 " 1))))) "EcoRI: 1 site") 1 5
+                      "GAATTC" "CTTAAG")
+                 #84=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66616024 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #85=(CGroupPar
+                              (CParagraph 0 (10 #5# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #86=(CLinePar
+                                    (CParagraph 0 (1 #5# 1) 1 2 2 0 191)
+                                    " N1: 2317 " 1))))) "HindIII: 1 site") 1
+                      5 "AAGCTT" "TTCGAA")
+                 #87=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66634712 (8 0) 1 1 1 0 178)
+                        (CObjectList)) "NcoI: 0 sites") 1 5 "CCATGG"
+                      "GGTACC")
+                 #88=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66642264 (8 0) 1 1 1 0 178)
+                        (CObjectList
+                         #89=(CGroupPar
+                              (CParagraph 0 (10 #7# 0) 1 2 2 0 180)
+                              (CObjectList
+                               #90=(CLinePar
+                                    (CParagraph 0 (1 #7# 1) 1 2 2 0 191)
+                                    " N1: 2333 " 1))))) "PstI: 1 site") 5 1
+                      "CTGCAG" "GACGTC")
+                 #91=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66620024 (8 0) 1 1 1 0 178)
+                        (CObjectList)) "SmaI: 0 sites") 3 3 "CCCGGG"
+                      "GGGCCC")
+                 #92=(CRSFolderPar
+                      (CFolderPar
+                       (CGroupPar (CParagraph 66627096 (8 0) 1 1 1 0 178)
+                        (CObjectList)) "XmaI: 0 sites") 1 5 "CCCGGG"
+                      "GGGCCC"))) "Restriction/Methylation Map"))))
+   (CGraphView
+    (CWStyleSheet
+     (CObjectList
+      #93=(CWidgetStyle "RSite Label" 1 (LOGPEN 0 0 13408563) 1 0 1
+           (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Georgia") 0.555556 0 1 5
+           "@N (@S)" 0)
+      #94=(CWidgetStyle "Signal Label" 1 (LOGPEN 0 0 0) 1 0 1
+           (LOGFONT 0 0 0 0 700 0 0 0 0 3 2 1 34 "Arial") 0.666667 0 1 1
+           "@N" 0)
+      #95=(CWidgetStyle "Molecule Label 2" 0 0 1
+           (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Georgia") 0.555556 0 1 16
+           "@L bp" 0)
+      #96=(CWidgetStyle "Molecule Label 1" 0 0 1
+           (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Verdana") 0.833333 0 1 1
+           "@N" 0)
+      #97=(CWidgetStyle "Shape 3" 1 (LOGPEN 0 0 3355545) 1 1
+           (LOGBRUSH 0 6724095 0) 0 0 1 (LOGSHAPE 9 1 0.8 1.8 0))
+      #98=(CWidgetStyle "Shape 1" 1 (LOGPEN 0 0 6723840) 1 1
+           (LOGBRUSH 0 10079334 0) 0 0 1 (LOGSHAPE 9 1 0.8 1.8 0))
+      #99=(CWidgetStyle "Axis" 1 (LOGPEN 0 0 10079436) 2 1
+           (LOGBRUSH 0 13434879 0) 0 0 1 (LOGSHAPE 10 1 0 0 0))
+      #100=(CWidgetStyle "Line 2" 1 (LOGPEN 0 0 6723840) 8 0 0 0 1
+            (LOGSHAPE 1 1.9 0 0 0))
+      #101=(CWidgetStyle "RSite" 1 (LOGPEN 0 0 10053171) 8 0 0 0 1
+            (LOGSHAPE 1 1.9 0 0 0))
+      #102=(CWidgetStyle "Short Signal" 1 (LOGPEN 0 0 13395507) 10 0 0 0 1
+            (LOGSHAPE 1 1.9 0 0 0))
+      #103=(CWidgetStyle "Uniq RSite Label" 1 (LOGPEN 0 0 153) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Georgia") 0.555556 128 1
+            5 "@N (@S)" 0)
+      #104=(CWidgetStyle "Vanilla" 1 (LOGPEN 0 0 0) 1 1
+            (LOGBRUSH 0 16777215 0) 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 7 48 2 18 "Times New Roman") 0.8 0
+            1 2 "?" 0)
+      #105=(CWidgetStyle "Mark 1" 0 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 2 7 48 2 2 "Windings") 0.7 0 1 2 "?"
+            0)
+      #106=(CWidgetStyle "Motif Label" 1 (LOGPEN 0 0 16744512) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Arial") 0.611111 8388608
+            1 65535 "@N (@H)" 0)
+      #107=(CWidgetStyle "Fragment Label 2" 1 (LOGPEN 0 0 0) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 49 "Courier New") 1.05 0 1 48
+            "@F bp (molecule @L bp)" 0)
+      #108=(CWidgetStyle "Fragment Label 1" 1 (LOGPEN 0 0 0) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Arial") 0.91 0 1 1
+            "Fragment of @N" 0)
+      #109=(CWidgetStyle "Shape 4" 1 (LOGPEN 0 0 0) 1 1
+            (LOGBRUSH 2 8388608 5) 0 0 0)
+      #110=(CWidgetStyle "Shape 2" 1 (LOGPEN 0 0 0) 1 1 (LOGBRUSH 0 128 0) 0
+            0 0)
+      #111=(CWidgetStyle "Shape 0" 1 (LOGPEN 0 0 0) 1 1 (LOGBRUSH 0 0 0) 0 0
+            0)
+      #112=(CWidgetStyle "ORF" 1 (LOGPEN 0 0 16384) 8 0 0 0 1
+            (LOGSHAPE 7 0.2 3.41182 2.86186 0.609808))
+      #113=(CWidgetStyle "Line 4" 1 (LOGPEN 0 0 32768) 8 0 0 0 0)
+      #114=(CWidgetStyle "Line 3" 1 (LOGPEN 0 0 16711680) 8 0 0 0 0)
+      #115=(CWidgetStyle "Line 1" 1 (LOGPEN 0 0 16711680) 1 0 0 0 0)
+      #116=(CWidgetStyle "Short Promoter" 1 (LOGPEN 0 0 128) 6 0 0 0 0)
+      #117=(CWidgetStyle "Motif" 1 (LOGPEN 0 0 0) 1 0 0 0 0)
+      #118=(CWidgetStyle "Line 0" 1 (LOGPEN 0 0 0) 8 0 0 0 0)
+      #119=(CWidgetStyle "Void" 0 0 0 0 0)
+      #120=(CWidgetStyle "General Label" 1 (LOGPEN 0 0 0) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Times New Roman") 0.91 0
+            1 3 "@T @N " 0)
+      #121=(CWidgetStyle "Position" 1 (LOGPEN 0 0 0) 1 0 0 0 0)
+      #122=(CWidgetStyle "Annotation" 0 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Times New Roman") 0.91 0
+            0 0)
+      #123=(CWidgetStyle "Position Label" 1 (LOGPEN 0 0 8388608) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 1 0 0 3 2 1 34 "Arial") 0.63 8388608 1 1
+            "@N" 0)
+      #124=(CWidgetStyle "Range" 1 (LOGPEN 0 0 0) 1 1
+            (LOGBRUSH 0 16777215 0) 0 0 0)
+      #125=(CWidgetStyle "Range Label" 1 (LOGPEN 0 0 8388608) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 1 0 0 3 2 1 34 "Arial") 0.63 8388608 1 1
+            "@N" 0)
+      #126=(CWidgetStyle "ORF Label" 1 (LOGPEN 0 0 49216) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 18 "Times New Roman")
+            0.611111 0 1 65535 "@N" 0)
+      #127=(CWidgetStyle "CDS Label" 1 (LOGPEN 0 0 4227264) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Arial") 0.555556 255 1 1
+            "@N" 0)
+      #128=(CWidgetStyle "Shape 5" 1 (LOGPEN 0 0 0) 3 1
+            (LOGBRUSH 0 16777113 0) 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 7 48 2 50 "Arial") 0.9 0 0 1
+            (LOGSHAPE 9 1 0.8 1.8 0))
+      #129=(CWidgetStyle "CDS" 1 (LOGPEN 0 0 0) 1 1 (LOGBRUSH 2 39423 3) 0 0
+            1 (LOGSHAPE 9 1 0.8 1.8 0))
+      #130=(CWidgetStyle "Label 2" 1 (LOGPEN 0 0 4227264) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Arial") 0.944444 8388608
+            1 1 "@N" 0)
+      #131=(CWidgetStyle "Label 3" 1 (LOGPEN 0 0 8421376) 1 0 1
+            (LOGFONT 0 0 0 0 700 255 0 0 0 3 2 1 34 "Arial") 0.833333 255 1
+            5 "@N (@S)" 0)
+      #132=(CWidgetStyle "Label 4" 1 (LOGPEN 0 0 8437824) 1 0 1
+            (LOGFONT 0 0 0 0 400 0 0 0 0 3 2 1 34 "Arial") 0.722222 0 1 5
+            "@N (@S)" 0)) 0.164644 1.74233 0.164644 2.53336
+     (70 (CShapeMapEntry 0 "Unique RSite" 1 "Uniq RSite Label") 67
+      (CShapeMapEntry 0 "ORF" 0 "ORF Label")) 40.0378 40.0378 39 39 0.1 -365)
+    1 1 0 1 1
+    (mapper: 20.2913 -17.9585 40.0378 40.0378 0.01 10 -1 3407 3407 1 0 0)
+    #133=(CGroupWidget (CWidget 0 (0 0) 1 2 0 0 Nil -381 100)
+          (CObjectList
+           #134=(CGroupWidget (CWidget 1 (0 0) 1 2 0 0 Nil -1009 100)
+                 (CObjectList
+                  #135=(CAxis
+                        (CWideLine (CWidget 0 (0 0) 1 2 0 0 #99# 65371972 0)
+                         (LOGPEN 0 0 10079436) 2 (LOGBRUSH 0 13434879 0) 1
+                         6.27603 6.27403 1 0.0214037) 0.184126)
+                  #136=(CLabel
+                        (CWidget 1001 (0 0) 1 2 0 0 #96# 2081903016 100)
+                        (LOGPEN 0 0 0) 10
+                        (LOGFONT 58 22 0 0 400 0 0 0 0 3 2 1 34 "Verdana")
+                        1.74233 0.833333 0 "pICH42222" "@N" 1 0 0.871165 0
+                        -10 6.344 1.39868 Nil)
+                  #137=(CLabel (CWidget 1002 (0 0) 1 2 0 0 #95# 2 100)
+                        (LOGPEN 4294967294 68355600 0) 8
+                        (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18 "Georgia")
+                        1.74233 0.555556 0 "3407 bp" "@L bp" 16 0 -0.871165
+                        0 -10.8 2.59755 0.799245 Nil)) (CObjectList))
+           #138=(CGroupWidget (CWidget 10 (6 0) 1 2 0 0 Nil -591 100)
+                 (CObjectList
+                  #139=(CGroupWidget
+                        (CWidget 4 (7 4 0) 1 2 0 0 Nil -805 100)
+                        (CObjectList
+                         #140=(CWideArrow
+                               (CWideLine
+                                (CWidget 0 (3 #13# 0) 1 2 0 0 #97# 538976288
+                                 100) (LOGPEN 0 0 3355545) 1
+                                (LOGBRUSH 0 6724095 0) 1 4.17046 6.03198 1
+                                0.082322) 0.8 1.8 0)
+                         #141=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 2081903016 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0
+                               "Sm/Sp no DraIII" "@N" 1 16.3868 3.48466 0
+                               -10 6.79358 1.04901 #140#)
+                         #142=(CWideArrow
+                               (CWideLine
+                                (CWidget 0 (3 #19# 0) 1 2 0 0 #97# 538976288
+                                 100) (LOGPEN 0 0 3355545) 1
+                                (LOGBRUSH 0 6724095 0) 1 0.88933 1.94069 1
+                                0.082322) 0.8 1.8 0)
+                         #143=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 1809780064 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "Bar" "@N" 1
+                               -14.157 1.74233 0 -10 1.59849 1.04901 #142#))
+                        (CObjectList))
+                  #144=(CGroupWidget
+                        (CWidget 21 (7 21 0) 1 2 0 0 Nil -1014 100)
+                        (CObjectList
+                         #145=(CWideArrow
+                               (CWideLine
+                                (CWidget 0 (3 #12# 0) 1 2 0 0 #98# 0 100)
+                                (LOGPEN 0 0 6723840) 1
+                                (LOGBRUSH 0 10079334 0) 1 2.74532 3.8777 1
+                                0.082322) 0.8 1.8 0)
+                         #146=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 67959768 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "rep (pMB1)"
+                               "@N" 1 5.45224 -13.9386 0 -10 4.77049 1.04901
+                               #145#)) (CObjectList))
+                  #147=(CGroupWidget
+                        (CWidget 28 (7 28 0) 1 2 0 0 Nil -247 100)
+                        (CObjectList
+                         #148=(CScratch
+                               (CWidget 0 (3 #18# 0) 1 2 0 0 #115# 0 100)
+                               (LOGPEN 0 0 16711680) 1 1 2.14139 1.9
+                               0.082322 1)
+                         #149=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 1809780044 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "pUC seqF" "@N"
+                               1 -13.8446 -8.71165 0 -10 4.24599 1.04901
+                               #148#)) (CObjectList))
+                  #150=(CGroupWidget
+                        (CWidget 30 (7 30 0) 1 2 0 0 Nil -1084 100)
+                        (CObjectList
+                         #151=(CPromoterArrow
+                               (CLine
+                                (CWidget 0 (3 #16# 0) 1 2 0 0 #116# 0 100)
+                                (LOGPEN 0 4 128) 6 1.16464 2.02466 2.11193)
+                               0.4 0.082322 1.08464 1.8 1.8 0)
+                         #152=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 892352561 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "P(LAC)" "@N" 1
+                               -13.633 -6.96932 0 -10 2.99717 1.04901 #151#)
+                         #153=(CWideArrow
+                               (CWideLine
+                                (CWidget 0 (3 #17# 0) 1 2 0 0 #110# 0 100)
+                                (LOGPEN 0 0 0) 1 (LOGBRUSH 0 128 0) 0.835356
+                                2.05301 2.28133 1 0.082322) 0.8 1.8 0)
+                         #154=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 1809779368 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "P lac prom"
+                               "@N" 1 -14.0042 -10.454 0 -10 4.77049 1.04901
+                               #153#)) (CObjectList))
+                  #155=(CGroupWidget
+                        (CWidget 33 (7 33 0) 1 2 0 0 Nil -242 100)
+                        (CObjectList
+                         #156=(CScratch
+                               (CWidget 0 (3 #11# 0) 1 2 0 0 #102# 0 100)
+                               (LOGPEN 0 8 13395507) 10 1 2.77478 1.9
+                               0.082322 1)
+                         #157=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 2081903016 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "ORI" "@N" 1
+                               -7.17923 -12.1963 0 -10 1.6984 1.04901 #156#))
+                        (CObjectList))
+                  #158=(CGroupWidget
+                        (CWidget 62 (7 62 0) 1 2 0 0 Nil -102 100)
+                        (CObjectList
+                         #159=(CScratch
+                               (CWidget 0 (3 #10# 0) 1 2 0 0 #102# 0 100)
+                               (LOGPEN 0 8 13395507) 10 1 4.23307 1.9
+                               0.082322 1)
+                         #160=(CLabel (CWidget 0 (0 0) 1 2 0 0 #94# 108 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0 "G to A" "@N" 1
+                               13.5997 -6.96932 0 -10 2.7474 1.04901 #159#)
+                         #161=(CScratch
+                               (CWidget 0 (3 #14# 0) 1 2 0 0 #102# 0 100)
+                               (LOGPEN 0 8 13395507) 10 1 0.228317 1.9
+                               0.082322 1)
+                         #162=(CLabel (CWidget 0 (0 0) 1 2 0 0 #94# 2 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0
+                               "G to A (Esp3I removed)" "@N" 1 -8.80112
+                               13.9386 0 -10 10.1404 1.04901 #161#)
+                         #163=(CScratch
+                               (CWidget 0 (3 #15# 0) 1 2 0 0 #102# 0 100)
+                               (LOGPEN 0 8 13395507) 10 1 0.125206 1.9
+                               0.082322 1)
+                         #164=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #94# 53857704 100)
+                               (LOGPEN 0 0 0) 1
+                               (LOGFONT 46 17 0 0 700 0 0 0 0 3 2 1 34
+                                "Arial") 1.74233 0.666667 0
+                               "A to T (Esp3I removed)" "@N" 1 -7.47653
+                               15.681 0 -10 9.89065 1.04901 #163#))
+                        (CObjectList))) (CObjectList))
+           #165=(CGroupWidget (CWidget 11 (8 0) 1 2 0 0 Nil -665 100)
+                 (CObjectList
+                  #166=(CGroupWidget
+                        (CWidget 1 (10 #2# 0) 1 2 0 0 Nil 1936618053 100)
+                        (CObjectList
+                         #167=(CScratch
+                               (CWidget 1 (1 #2# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 1.95358 1.9
+                               0.082322 1)
+                         #168=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #103# 1809780104 100)
+                               (LOGPEN 0 0 153) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 128
+                               "{\\i Bam}HI (2347)" "@N (@S)" 5 -16.2042
+                               -1.74233 0 -10 4.67059 0.799245 #167#))
+                        (CObjectList))
+                  #169=(CGroupWidget
+                        (CWidget 1 (10 #4# 0) 1 2 0 0 Nil -700 100)
+                        (CObjectList
+                         #170=(CScratch
+                               (CWidget 1 (1 #4# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 0.863553 1.9
+                               0.082322 1)
+                         #171=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #103# 1809353812 100)
+                               (LOGPEN 0 0 153) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 128
+                               "{\\i Eco}RI (2939)" "@N (@S)" 5 -13.2903
+                               8.71165 0 -10 4.32092 0.799245 #170#))
+                        (CObjectList))
+                  #172=(CGroupWidget
+                        (CWidget 1 (10 #5# 0) 1 2 0 0 Nil -740 100)
+                        (CObjectList
+                         #173=(CScratch
+                               (CWidget 1 (1 #5# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 2.00882 1.9
+                               0.082322 1)
+                         #174=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #103# 1852140576 100)
+                               (LOGPEN 0 0 153) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 128
+                               "{\\i Hin}dIII (2317)" "@N (@S)" 5 -15.4961
+                               -5.22699 0 -10 4.59566 0.799245 #173#))
+                        (CObjectList))
+                  #175=(CGroupWidget
+                        (CWidget 1 (10 #7# 0) 1 2 0 0 Nil -112 100)
+                        (CObjectList
+                         #176=(CScratch
+                               (CWidget 1 (1 #7# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 1.97936 1.9
+                               0.082322 1)
+                         #177=(CLabel (CWidget 0 (0 0) 1 2 0 0 #103# 16 100)
+                               (LOGPEN 0 0 153) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 128
+                               "{\\i Pst}I (2333)" "@N (@S)" 5 -15.2978
+                               -3.48466 0 -10 3.44674 0.799245 #176#))
+                        (CObjectList))
+                  #178=(CGroupWidget
+                        (CWidget 2 (10 #1# 0) 1 2 0 0 Nil -568 100)
+                        (CObjectList
+                         #179=(CScratch
+                               (CWidget 1 (1 #1# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 5.82944 1.9
+                               0.082322 1)
+                         #180=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #93# 1809780208 100)
+                               (LOGPEN 0 0 13408563) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 0
+                               "{\\i Ava}I (242)" "@N (@S)" 5 8.76642
+                               12.1963 0 -10 3.44674 0.799245 #179#)
+                         #181=(CScratch
+                               (CWidget 2 (1 #1# 2) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 1.20235 1.9
+                               0.082322 1)
+                         #182=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #93# 1809780116 100)
+                               (LOGPEN 0 0 13408563) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 0
+                               "{\\i Ava}I (2755)" "@N (@S)" 5 -15.1878
+                               5.22699 0 -10 3.69651 0.799245 #181#))
+                        (CObjectList))
+                  #183=(CGroupWidget
+                        (CWidget 3 (10 #0# 0) 1 2 0 0 Nil -626 100)
+                        (CObjectList
+                         #184=(CScratch
+                               (CWidget 1 (1 #0# 1) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 5.12424 1.9
+                               0.082322 1)
+                         #185=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #93# 1809779972 100)
+                               (LOGPEN 0 0 13408563) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 0
+                               "{\\i Apa}LI (625)" "@N (@S)" 5 15.0082
+                               5.22699 0 -10 3.97125 0.799245 #184#)
+                         #186=(CScratch
+                               (CWidget 2 (1 #0# 2) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 3.24799 1.9
+                               0.082322 1)
+                         #187=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #93# 1809780024 100)
+                               (LOGPEN 0 0 13408563) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 0
+                               "{\\i Apa}LI (1644)" "@N (@S)" 5 4.97749
+                               -15.681 0 -10 4.42082 0.799245 #186#)
+                         #188=(CScratch
+                               (CWidget 3 (1 #0# 3) 1 2 0 0 #101# 0 100)
+                               (LOGPEN 0 6 10053171) 8 1 0.460316 1.9
+                               0.082322 1)
+                         #189=(CLabel
+                               (CWidget 0 (0 0) 1 2 0 0 #93# 1809780188 100)
+                               (LOGPEN 0 0 13408563) 1
+                               (LOGFONT 38 14 0 0 400 0 0 0 0 3 2 1 18
+                                "Georgia") 1.74233 0.555556 0
+                               "{\\i Apa}LI (3158)" "@N (@S)" 5 -9.3075
+                               12.1963 0 -10 4.24599 0.799245 #188#))
+                        (CObjectList))) (CObjectList))
+           #190=(CGroupWidget (CWidget 14 (16 0) 1 2 0 0 Nil -322 100)
+                 (CObjectList) (CObjectList))
+           #191=(CGroupWidget (CWidget 12 (0 0) 1 2 0 0 Nil -1159 100)
+                 (CObjectList) (CObjectList))) (CObjectList)))
+   (CSeqView 10 10 (CObjectList) (CObList) 1 (CObList)) (CObList)
+   -2147483527 (CStringList) 2147483648 268697654 (CObList)))</genbank:comment>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation8">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation8"/>
+        <sbol:displayId>annotation8</sbol:displayId>
+        <dcterms:title>pUC\seqF</dcterms:title>
+        <gbConv:vntifkey>28</gbConv:vntifkey>
+        <gbConv:label>pUC\seqF</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0005850"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation8/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation8/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>2245</sbol:start>
+            <sbol:end>2266</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation1">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation1"/>
+        <sbol:displayId>annotation1</sbol:displayId>
+        <dcterms:title>ORI</dcterms:title>
+        <gbConv:vntifkey>33</gbConv:vntifkey>
+        <gbConv:label>ORI</gbConv:label>
+        <gbConv:note> RNaseH cleavage point </gbConv:note>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000296"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation1/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation1/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>1901</sbol:start>
+            <sbol:end>1901</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#reverseComplement"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation4">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation4"/>
+        <sbol:displayId>annotation4</sbol:displayId>
+        <dcterms:title>G\to\A\(Esp3I\removed)</dcterms:title>
+        <gbConv:featureType>mutation</gbConv:featureType>
+        <gbConv:vntifkey>62</gbConv:vntifkey>
+        <gbConv:label>G\to\A\(Esp3I\removed)</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000110"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation4/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation4/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>3284</sbol:start>
+            <sbol:end>3284</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation0">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation0"/>
+        <sbol:displayId>annotation0</sbol:displayId>
+        <dcterms:title>G\to\A</dcterms:title>
+        <gbConv:featureType>mutation</gbConv:featureType>
+        <gbConv:vntifkey>62</gbConv:vntifkey>
+        <gbConv:label>G\to\A</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000110"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation0/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation0/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>1109</sbol:start>
+            <sbol:end>1109</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation2">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation2"/>
+        <sbol:displayId>annotation2</sbol:displayId>
+        <dcterms:title>rep\(pMB1)</dcterms:title>
+        <gbConv:vntifkey>21</gbConv:vntifkey>
+        <gbConv:label>rep\(pMB1)</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation2/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation2/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>1302</sbol:start>
+            <sbol:end>1916</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation9">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation9"/>
+        <sbol:displayId>annotation9</sbol:displayId>
+        <dcterms:title>Bar</dcterms:title>
+        <gbConv:vntifkey>4</gbConv:vntifkey>
+        <gbConv:label>Bar</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation9/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation9/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>2354</sbol:start>
+            <sbol:end>2924</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation5">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation5"/>
+        <sbol:displayId>annotation5</sbol:displayId>
+        <dcterms:title>A\to\T\(Esp3I\removed)</dcterms:title>
+        <gbConv:featureType>mutation</gbConv:featureType>
+        <gbConv:vntifkey>62</gbConv:vntifkey>
+        <gbConv:label>A\to\T\(Esp3I\removed)</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000110"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation5/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation5/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>3340</sbol:start>
+            <sbol:end>3340</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation6">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation6"/>
+        <sbol:displayId>annotation6</sbol:displayId>
+        <dcterms:title>P(LAC)</dcterms:title>
+        <gbConv:vntifkey>30</gbConv:vntifkey>
+        <gbConv:label>P(LAC)</gbConv:label>
+        <gbConv:note> lac promoter </gbConv:note>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation6/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation6/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>2261</sbol:start>
+            <sbol:end>2261</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation7">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation7"/>
+        <sbol:displayId>annotation7</sbol:displayId>
+        <dcterms:title>P\lac\prom</dcterms:title>
+        <gbConv:vntifkey>30</gbConv:vntifkey>
+        <gbConv:label>P\lac\prom</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation7/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation7/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>2169</sbol:start>
+            <sbol:end>2292</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation3">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation3"/>
+        <sbol:displayId>annotation3</sbol:displayId>
+        <dcterms:title>Sm/Sp\no\DraIII</dcterms:title>
+        <gbConv:vntifkey>4</gbConv:vntifkey>
+        <gbConv:label>Sm/Sp\no\DraIII</gbConv:label>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/pICH42222/annotation3/range">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222/annotation3/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>132</sbol:start>
+            <sbol:end>1142</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/pICH42222_seq"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/pICH42222_seq">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/pICH42222_seq"/>
+    <sbol:displayId>pICH42222_seq</sbol:displayId>
+    <sbol:elements>caggtggcacttttcggggaaatgtgcgcggaacccctatttgtttatttttctaaatacattcaaatatgtatccgctcatgagacaataaccctgataaatgcttcaataatattgaaaaaggaagagtatgcgctcacgcaactggtccagaaccttgaccgaacgcagcggtggtaacggcgcagtggcggttttcatggcttgttatgactgtttttttggggtacagtctatgcctcgggcatccaagcagcaagcgcgttacgccgtgggtcgatgtttgatgttatggagcagcaacgatgttacgcagcagggcagtcgccctaaaacaaagttaaacatcatgagggaagcggtgatcgccgaagtatcgactcaactatcagaggtagttggcgtcatcgagcgccatctcgaaccgacgttgctggccgtacatttgtacggctccgcagtggatggcggcctgaagccacacagcgatattgatttgctggttacggtgaccgtaaggcttgatgaaacaacgcggcgagctttgatcaacgaccttttggaaacttcggcttcccctggagagagcgagattctccgcgctgtagaagtcaccattgttgtgcacgacgacatcattccgtggcgttatccagctaagcgcgaactgcaatttggagaatggcagcgcaatgacattcttgcaggtatcttcgagccagccacgatcgacattgatctggctatcttgctgacaaaagcaagagaacatagcgttgccttggtaggtccagcggcggaggaactctttgatccggttcctgaacaggatctatttgaggcgctaaatgaaaccttaacgctatggaactcgccgcccgactgggctggcgatgagcgaaatgtagtgcttacgttgtcccgcatttggtacagcgcagtaaccggcaaaatcgcgccgaaggatgtcgctgccgactgggcaatggagcgcctgccggcccagtatcagcccgtcatacttgaagctagacaggcttatcttggacaagaagaagatcgcttggcctcgcgcgcagatcagttggaagaatttgtccattacgtaaaaggcgagatcaccaaggtagtcggcaaataactgtcagaccaagtttactcatatatactttagattgatttaaaacttcatttttaatttaaaaggatctaggtgaagatcctttttgataatctcatgaccaaaatcccttaacgtgagttttcgttccactgagcgtcagaccccgtagaaaagatcaaaggatcttcttgagatcctttttttctgcgcgtaatctgctgcttgcaaacaaaaaaaccaccgctaccagcggtggtttgtttgccggatcaagagctaccaactctttttccgaaggtaactggcttcagcagagcgcagataccaaatactgtccttctagtgtagccgtagttaggccaccacttcaagaactctgtagcaccgcctacatacctcgctctgctaatcctgttaccagtggctgctgccagtggcgataagtcgtgtcttaccgggttggactcaagacgatagttaccggataaggcgcagcggtcgggctgaacggggggttcgtgcacacagcccagcttggagcgaacgacctacaccgaactgagatacctacagcgtgagctatgagaaagcgccacgcttcccgaagggagaaaggcggacaggtatccggtaagcggcagggtcggaacaggagagcgcacgagggagcttccagggggaaacgcctggtatctttatagtcctgtcgggtttcgccacctctgacttgagcgtcgatttttgtgatgctcgtcaggggggcggagcctatggaaaaacgccagcaacgcggcctttttacggttcctggccttttgctggccttttgctcacatgttctttcctgcgttatcccctgattctgtggataaccgtattaccgcctttgagtgagctgataccgctcgccgcagccgaacgaccgagcgcagcgagtcagtgagcgaggaagcggaagagcgcccaatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcgtatgttgtgtggaattgtgagcggataacaatttcacacaggaaacagctatgaccatgattacgccaagcttgcatgcctgcaggtcgactctagaggatccccggtctcaaatgagcccagaacgacgcccggccgacatccgccgtgccaccgaggcggacatgccggcggtctgcaccatcgtcaaccactacatcgagacaagcacggtcaacttccgtaccgagccgcaggaaccgcaggagtggacggacgacctcgtccgtctgcgggagcgctatccctggctcgtcgccgaggtggacggcgaggtcgccggcatcgcctacgcgggcccctggaaggcacgcaacgcctacgactggacggccgagtcaaccgtgtacgtatccccccgccaccagcggacgggactgggctccacgctctacacccacctgctgaagtccctggaggcacagggcttcaagagcgtggtcgctgtcatcgggctgcccaacgacccgagcgtgcgcatgcacgaggcgctcggatatgccccccgcggcatgctgcgggcggccggcttcaagcacgggaactggcatgacgtgggtttctggcagctggacttcagcctgccggtaccgccccgtccggtcctgcccgtcaccgagatttgagctttgagaccgggtaccgagctcgaattcactggccgtcgttttacaacgtcgtgactgggaaaaccctggcgttacccaacttaatcgccttgcagcacatccccctttcgccagctggcgtaatagcgaagaggcccgcaccgatcgcccttcccaacagttgcgcagcctgaatggcgaatggcgcctgatgcggtattttctccttacgcatctgtgcggtatttcacaccgcatatggtgcactctcagtacaatctgctctgatgccgcatagttaagccagccccgacacccgccaacacccgctgacgcgccctgacgggcttgtctgctcccggcatccgcttacagacaagctgtgaccatctccgggagctgcatgtgtcagaggttttcaccgtcatcaccgaaacgcgcgagtcgaaagggcctcgtgatacgcctatttttataggttaatgtcatgataataatggtttcttagacgt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+</rdf:RDF>

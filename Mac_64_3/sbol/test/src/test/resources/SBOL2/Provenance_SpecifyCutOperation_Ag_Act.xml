@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#">
+  <prov:Activity rdf:about="http://www.async.ece.utah.edu/generic_activity">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/generic_activity"/>
+    <sbol:displayId>generic_activity</sbol:displayId>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://www.async.ece.utah.edu/generic_activity/act_assoc">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/generic_activity/act_assoc"/>
+        <sbol:displayId>act_assoc</sbol:displayId>
+        <prov:agent rdf:resource="http://www.async.ece.utah.edu/unknown"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sbolstandard.org/build/cut_vector_with_restriction_enzyme">
+    <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/build/cut_vector_with_restriction_enzyme"/>
+    <sbol:displayId>cut_vector_with_restriction_enzyme</sbol:displayId>
+    <dcterms:title>cut(vector, restriction_enzyme)</dcterms:title>
+  </prov:Activity>
+  <prov:Agent rdf:about="http://www.async.ece.utah.edu/unknown">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/unknown"/>
+    <sbol:displayId>unknown</sbol:displayId>
+  </prov:Agent>
+</rdf:RDF>

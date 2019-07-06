@@ -1,0 +1,232 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sbol="http://sbols.org/v2#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_P_element_5__end_seq">
+    <sbol:displayId>Part_P_element_5__end_seq</sbol:displayId>
+    <sbol:elements>gctgctgctctaaacgacgcatttcgtactccaaagtacgaattttttccctcaagctcttattttcattaaacaatgaacaggacctaacgcacagtcacgttattgtttacataaatgattttttttactattcaaacttactctgtttgtgtactcccactggtatagccttcttttatcttttctggttcaggctctatcactttactaggtacggcatctgcgttgagtcgcctccttttaaatgtctgaccttttgcaggtgcagccttccactgcgaatcattaaagtgggtatcacaaatttgggagttttcaccaaggctgcacccaaggctctgctcccacaattttctcttaatagcacacttcggcacgtgaattaattttactccagtcacagctttgcagcaaaatttgcaatatttcatttttttttattccacgtaagggttaatgttttcaaaaaaaaattcgtccgcacacaacctttcctctcaacaagcaaacgtgcactgaatttaagtgtatacttcggtaagcttcggctatcgacgggaccaccttatgttatttcatcatg</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_P_element_5__end_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:P_element_5'_end#seq"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/ori_009">
+    <dcterms:description>high-copy-number ColE1/pMB1/pBR322/pUC origin of replication</dcterms:description>
+    <dcterms:title>ori-009</dcterms:title>
+    <sbol:displayId>ori_009</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/ori_009"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000296"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_ori_009_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:ori-009"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_Hsp70_TATA_box_seq">
+    <sbol:displayId>Part_Hsp70_TATA_box_seq</sbol:displayId>
+    <sbol:elements>gagcgccggagtataaatagaggcgcttcgtctacggagcgacaattcaattcaaacaagcaaagtgaacacgtcgctaagcgaaagctaagcaaataaacaagcgcagctgaacaagctaaacaatctgcagtaaagtgcaagttaaagtgaatcaattaaaagtaaccagcaaccaagtaaatcaactgcaactactgaaatctgccaagaagtaattattgaatacaagaagagaactctgaat</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_Hsp70_TATA_box_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:Hsp70_TATA_box#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_AmpR_016_seq">
+    <sbol:displayId>Part_AmpR_016_seq</sbol:displayId>
+    <sbol:elements>atgagtattcaacatttccgtgtcgcccttattcccttttttgcggcattttgccttcctgtttttgctcacccagaaacgctggtgaaagtaaaagatgctgaagatcagttgggtgcacgagtgggttacatcgaactggatctcaacagcggtaagatccttgagagttttcgccccgaagaacgttttccaatgatgagcacttttaaagttctgctatgtggcgcggtattatcccgtgttgacgccgggcaagagcaactcggtcgccgcatacactattctcagaatgacttggttgagtactcaccagtcacagaaaagcatcttacggatggcatgacagtaagagaattatgcagtgctgccataaccatgagtgataacactgcggccaacttacttctgacaacgatcggaggaccgaaggagctaaccgcttttttgcacaacatgggggatcatgtaactcgccttgatcgttgggaaccggagctgaatgaagccataccaaacgacgagcgtgacaccacgatgcctgtagcaatggcaacaacgttgcgcaaactattaactggcgaactacttactctagcttcccggcaacaattaatagactggatggaggcggataaagttgcaggaccacttctgcgctcggcccttccggctggctggtttattgctgataaatctggagccggtgagcgtgggtctcgcggtatcattgcagcactggggccagatggtaagccctcccgtatcgtagttatctacacgacggggagtcaggcaactatggatgaacgaaatagacagatcgctgagataggtgcctcactgattaagcattggtaa</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_AmpR_016_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:AmpR-016#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_white_linker_sequence_002_seq">
+    <sbol:displayId>Part_white_linker_sequence_002_seq</sbol:displayId>
+    <sbol:elements>ccgaatcgcgcggaactaacgacagtcgctccaaggtcgtcgaacaaaaggtgaatgtgttgcggagagcgggtgggagacagcgaaagagcaactacgaaacgtggtgtggtggaggtgaattatgaagagggcgcgcgatttgaaaagtatgtatataaaaaatatatcccggtgttttatgtagcgataaacgagtttttgatgtaaggtatgcaggtgtgtaagtcttttggttagaagacaaatccaaagtctacttgtggggatgttcgaaggggaaatacttgtattctataggtcatatcttgtttttattggcacaaatataattacattagctttttgagggggcaataaacagtaaacacgatggtaataatggtaaaaaaaaaaacaagcagttatttcggatatatgtcggctactccttgcgtcgggcccgaagtcttagagccagatatgcgagcacccggaagctcacgatgagaatggccagac</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_white_linker_sequence_002_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:white_linker_sequence-002#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_SV40_poly_A__signal_004_seq">
+    <sbol:displayId>Part_SV40_poly_A__signal_004_seq</sbol:displayId>
+    <sbol:elements>aacttgtttattgcagcttataatggttacaaataaagcaatagcatcacaaatttcacaaataaagcatttttttcactgcattctagttgtggtttgtccaaactcatcaatgtatcttatcatgtctggatc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_SV40_poly_A__signal_004_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:SV40_poly(A)_signal-004#seq"/>
+  </sbol:Sequence>
+  <sbol:Collection rdf:about="http://www.async.ece.utah.edu/Drosophila_melanogaster">
+    <dcterms:description>This is a collection of features that have been associated with Drosophila melanogaster plasmids downloaded from the SnapGene Resources repository (http://www.snapgene.com).</dcterms:description>
+    <dcterms:title>Collection of Drosophila melanogaster features</dcterms:title>
+    <sbol:displayId>Drosophila_melanogaster</sbol:displayId>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/Hsp70_TATA_box"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/MCS_010"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/SV40_poly_A__signal_004"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/AmpR_promoter_009"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/P_element_3__end"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/AmpR_016"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/white_linker_sequence_001"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/P_element_5__end"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/white_linker_sequence_002"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/Gal4_UAS_001"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/ori_009"/>
+    <sbol:member rdf:resource="http://www.async.ece.utah.edu/small_t_intron_001"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Drosophila_melanogaster"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Collection:Drosophila_melanogaster"/>
+  </sbol:Collection>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_P_element_3__end_seq">
+    <sbol:displayId>Part_P_element_3__end_seq</sbol:displayId>
+    <sbol:elements>catgatgaaataacataaggtggtcccgtcggcaagagacatccacttaacgtatgcttgcaataagtgcgagtgaaaggaatagtattctgagtgtcgtattgagtctgagtgagacagcgatatgattgttgattaacccttagcatgtccgtggggtttgaattaactcataatattaattagacgaaattatttttaaagttttatttttaataatttgcgagtacgca</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_P_element_3__end_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:P_element_3'_end#seq"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/AmpR_016">
+    <dcterms:description>confers resistance to ampicillin, carbenicillin, and related antibiotics</dcterms:description>
+    <dcterms:title>AmpR-016</dcterms:title>
+    <sbol:displayId>AmpR_016</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/AmpR_016"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_AmpR_016_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:AmpR-016"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/Hsp70_TATA_box">
+    <dcterms:description>TATA element from the Drosophila Hsp70Bb promoter</dcterms:description>
+    <dcterms:title>Hsp70 TATA box</dcterms:title>
+    <sbol:displayId>Hsp70_TATA_box</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Hsp70_TATA_box"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000174"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_Hsp70_TATA_box_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:Hsp70_TATA_box"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/Gal4_UAS_001">
+    <dcterms:title>Gal4 UAS-001</dcterms:title>
+    <sbol:displayId>Gal4_UAS_001</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Gal4_UAS_001"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000410"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_Gal4_UAS_001_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:Gal4_UAS-001"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_Gal4_UAS_001_seq">
+    <sbol:displayId>Part_Gal4_UAS_001_seq</sbol:displayId>
+    <sbol:elements>cggagtactgtcctccg</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_Gal4_UAS_001_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:Gal4_UAS-001#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_white_linker_sequence_001_seq">
+    <sbol:displayId>Part_white_linker_sequence_001_seq</sbol:displayId>
+    <sbol:elements>ggccagacccacgtagtccagcggcagatcggcggcggagaagttaagcgtctccaggatgaccttgcccgaactggggcacgtggtgttcgacgatgtgcagctaatttcgcccggctccacgtccgcccattggttaatcagcagaccctcgttggcgtaacggaaccatgagaggtacgacaaccatttgaggtatactggcaccgagcccgagttcaagaagaag</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_white_linker_sequence_001_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:white_linker_sequence-001#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_ori_009_seq">
+    <sbol:displayId>Part_ori_009_seq</sbol:displayId>
+    <sbol:elements>ttgagatcctttttttctgcgcgtaatctgctgcttgcaaacaaaaaaaccaccgctaccagcggtggtttgtttgccggatcaagagctaccaactctttttccgaaggtaactggcttcagcagagcgcagataccaaatactgtccttctagtgtagccgtagttaggccaccacttcaagaactctgtagcaccgcctacatacctcgctctgctaatcctgttaccagtggctgctgccagtggcgataagtcgtgtcttaccgggttggactcaagacgatagttaccggataaggcgcagcggtcgggctgaacggggggttcgtgcacacagcccagcttggagcgaacgacctacaccgaactgagatacctacagcgtgagcattgagaaagcgccacgcttcccgaagggagaaaggcggacaggtatccggtaagcggcagggtcggaacaggagagcgcacgagggagcttccagggggaaacgcctggtatctttatagtcctgtcgggtttcgccacctctgacttgagcgtcgatttttgtgatgctcgtcaggggggcggagcctatggaaa</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_ori_009_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:ori-009#seq"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/small_t_intron_001">
+    <dcterms:description>simian virus 40 (SV40) small t antigen intron</dcterms:description>
+    <dcterms:title>small t intron-001</dcterms:title>
+    <sbol:displayId>small_t_intron_001</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/small_t_intron_001"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000188"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_small_t_intron_001_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:small_t_intron-001"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/MCS_010">
+    <dcterms:description>multiple cloning site</dcterms:description>
+    <dcterms:title>MCS-010</dcterms:title>
+    <sbol:displayId>MCS_010</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/MCS_010"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_MCS_010_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:MCS-010"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/P_element_5__end">
+    <dcterms:title>P element 5' end</dcterms:title>
+    <sbol:displayId>P_element_5__end</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/P_element_5__end"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_P_element_5__end_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:P_element_5'_end"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/SV40_poly_A__signal_004">
+    <dcterms:description>SV40 polyadenylation signal</dcterms:description>
+    <dcterms:title>SV40 poly(A) signal-004</dcterms:title>
+    <sbol:displayId>SV40_poly_A__signal_004</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/SV40_poly_A__signal_004"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000551"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_SV40_poly_A__signal_004_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:SV40_poly(A)_signal-004"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_small_t_intron_001_seq">
+    <sbol:displayId>Part_small_t_intron_001_seq</sbol:displayId>
+    <sbol:elements>ctaaaatacacaaacaattagaatcagtagtttaacacattatacacttaaaaattttatattta</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_small_t_intron_001_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:small_t_intron-001#seq"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_AmpR_promoter_009_seq">
+    <sbol:displayId>Part_AmpR_promoter_009_seq</sbol:displayId>
+    <sbol:elements>cgcggaacccctatttgtttatttttctaaatacattcaaatatgtatccgctcatgagacaataaccctgataaatgcttcaataatattgaaaaaggaagagt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_AmpR_promoter_009_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:AmpR_promoter-009#seq"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/P_element_3__end">
+    <dcterms:title>P element 3' end</dcterms:title>
+    <sbol:displayId>P_element_3__end</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/P_element_3__end"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_P_element_3__end_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:P_element_3'_end"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/white_linker_sequence_002">
+    <dcterms:title>white linker sequence-002</dcterms:title>
+    <sbol:displayId>white_linker_sequence_002</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/white_linker_sequence_002"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_white_linker_sequence_002_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:white_linker_sequence-002"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/Part_MCS_010_seq">
+    <sbol:displayId>Part_MCS_010_seq</sbol:displayId>
+    <sbol:elements>gaattcgttaacagatctgcggccgcggctcgagggtacctctaga</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/Part_MCS_010_seq"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:MCS-010#seq"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/white_linker_sequence_001">
+    <dcterms:title>white linker sequence-001</dcterms:title>
+    <sbol:displayId>white_linker_sequence_001</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/white_linker_sequence_001"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000001"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_white_linker_sequence_001_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:white_linker_sequence-001"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/AmpR_promoter_009">
+    <dcterms:title>AmpR promoter-009</dcterms:title>
+    <sbol:displayId>AmpR_promoter_009</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/AmpR_promoter_009"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/Part_AmpR_promoter_009_seq"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <prov:wasDerivedFrom rdf:resource="http://genocad.org/SBOL/doi:10.6084/m9.figshare.1159038/Part:AmpR_promoter-009"/>
+  </sbol:ComponentDefinition>
+</rdf:RDF>

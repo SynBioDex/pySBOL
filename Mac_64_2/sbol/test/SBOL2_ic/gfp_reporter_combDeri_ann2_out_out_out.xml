@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <sbol:CombinatorialDerivation rdf:about="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample/1">
+    <dcterms:created>2003-12-04T12:00:00Z</dcterms:created>
+    <sbol:displayId>GFP_Reporter_Template_CombinatorialDerivation_Sample</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample"/>
+    <sbol:strategy rdf:resource="http://sbols.org/v2#sample"/>
+    <sbol:template rdf:resource="http://michael.zhang/GFP_Reporter_Template/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:CombinatorialDerivation>
+</rdf:RDF>

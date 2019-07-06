@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <sbol:ComponentDefinition rdf:about="https://synbiohub.org/public/igem/BBa_E0422/1">
+    <sbol:displayId>BBa_E0422</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422"/>
+    <sbol:role rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#partType/Reporter"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/1">
+        <sbol:displayId>annotation942815</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/annotation942815"/>
+        <sbol:version>1</sbol:version>
+        <sbol:location>
+          <sbol:GenericLocation rdf:about="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/gl942815/1">
+            <sbol:displayId>gl942815</sbol:displayId>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/gl942815"/>
+            <sbol:version>1</sbol:version>
+          </sbol:GenericLocation>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://michael.zhang/Pro_GeneratedInstance82/1">
+    <sbol:displayId>Pro_GeneratedInstance82</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/Pro_GeneratedInstance82"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+</rdf:RDF>

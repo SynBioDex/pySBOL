@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#">
+  <sbol:ComponentDefinition rdf:about="http://partsregistry.org/cd/BBa_J23119">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119"/>
+    <sbol:displayId>BBa_J23119</sbol:displayId>
+    <prov:wasDerivedFrom rdf:resource="http://partsregistry.org/Part:BBa_J23119"/>
+    <dcterms:title>J23119 promoter</dcterms:title>
+    <dcterms:description>Constitutive promoter</dcterms:description>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://partsregistry.org/cd/BBa_J23119/rangeAt12">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119/rangeAt12"/>
+        <sbol:displayId>rangeAt12</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/BBa_J23119/rangeAt12/location3">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119/rangeAt12/location3"/>
+            <sbol:displayId>location3</sbol:displayId>
+            <rdf:type rdf:resource="http://sbols.org/v2#Range"/>
+            <sbol:start>69</sbol:start>
+            <sbol:end>1197</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+  </sbol:ComponentDefinition>
+</rdf:RDF>

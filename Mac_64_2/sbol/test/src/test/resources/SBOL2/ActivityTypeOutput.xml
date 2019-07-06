@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <prov:Activity rdf:about="http://www.partsregistry.org/act/activityId">
+    <sbol:persistentIdentity rdf:resource="http://www.partsregistry.org/act/activityId"/>
+    <sbol:displayId>activityId</sbol:displayId>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23924"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000415"/>
+  </prov:Activity>
+</rdf:RDF>

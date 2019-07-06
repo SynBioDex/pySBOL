@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <prov:Activity rdf:about="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity/1">
+    <dc:creator>Michael Zhang</dc:creator>
+    <sbol:displayId>GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity"/>
+    <sbol:version>1</sbol:version>
+    <prov:endedAtTime>2018-01-22T17:15:46.461-07:00</prov:endedAtTime>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity/Association/1">
+        <sbol:displayId>Association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity/Association"/>
+        <sbol:version>1</sbol:version>
+        <prov:agent rdf:resource="https://synbiohub.org/public/SBOL_Software/SBOLDesigner/2.2"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#sequenceEditor"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity/GFP_Reporter_Template_CombinatorialDerivation_Sample_Usage/1">
+        <sbol:displayId>GFP_Reporter_Template_CombinatorialDerivation_Sample_Usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_GeneratedInstance2_SBOLDesignerActivity/GFP_Reporter_Template_CombinatorialDerivation_Sample_Usage"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="http://michael.zhang/GFP_Reporter_Template_CombinatorialDerivation_Sample/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#sequenceEditor"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://synbiohub.org/public/igem/igem2sbol/1">
+    <dc:creator>Chris J. Myers</dc:creator>
+    <dc:creator>James Alastair McLaughlin</dc:creator>
+    <dcterms:description>Conversion of the iGEM parts registry to SBOL2.1</dcterms:description>
+    <dcterms:title>iGEM to SBOL conversion</dcterms:title>
+    <sbol:displayId>igem2sbol</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/igem2sbol"/>
+    <sbol:version>1</sbol:version>
+    <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+    <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+    <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+    <prov:endedAtTime>2017-03-06T08:00:00.000-07:00</prov:endedAtTime>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://michael.zhang/GFP_Reporter_Template_SBOLDesignerActivity/1">
+    <dc:creator>Michael Zhang</dc:creator>
+    <sbol:displayId>GFP_Reporter_Template_SBOLDesignerActivity</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_SBOLDesignerActivity"/>
+    <sbol:version>1</sbol:version>
+    <prov:endedAtTime>2018-01-22T17:15:40.442-07:00</prov:endedAtTime>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://michael.zhang/GFP_Reporter_Template_SBOLDesignerActivity/Association/1">
+        <sbol:displayId>Association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://michael.zhang/GFP_Reporter_Template_SBOLDesignerActivity/Association"/>
+        <sbol:version>1</sbol:version>
+        <prov:agent rdf:resource="https://synbiohub.org/public/SBOL_Software/SBOLDesigner/2.2"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#sequenceEditor"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </prov:Activity>
+</rdf:RDF>

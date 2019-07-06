@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:myapp="http://myapp.com/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sbol="http://sbols.org/v2#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <prov:Agent rdf:about="http://myapp.com/x_ray">
+    <dcterms:title>X-ray</dcterms:title>
+    <sbol:displayId>x_ray</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://myapp.com/x_ray"/>
+  </prov:Agent>
+  <prov:Activity rdf:about="http://myapp.com/xraymutagenesis">
+    <dcterms:title>X-ray mutagenesis</dcterms:title>
+    <sbol:displayId>xraymutagenesis</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://myapp.com/xraymutagenesis"/>
+    <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://myapp.com/xraymutagenesis/association">
+        <sbol:displayId>association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://myapp.com/xraymutagenesis/association"/>
+        <prov:agent rdf:resource="http://myapp.com/x_ray"/>
+        <prov:hadRole rdf:resource="http://myapp.com/mutagen"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="http://myapp.com/xraymutagenesis/usage">
+        <sbol:displayId>usage</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://myapp.com/xraymutagenesis/usage"/>
+        <prov:entity rdf:resource="http://myapp.com/bsubtilisncimb3610"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#source"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sbol:ComponentDefinition rdf:about="http://myapp.com/bsubtilis168">
+    <dcterms:title>Bacillus subtilis 168</dcterms:title>
+    <sbol:displayId>bsubtilis168</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://myapp.com/bsubtilis168"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <prov:wasDerivedFrom rdf:resource="http://myapp.com/bsubtilisncimb3610"/>
+    <prov:wasGeneratedBy rdf:resource="http://myapp.com/xraymutagenesis"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://myapp.com/bsubtilisncimb3610">
+    <dcterms:title>Bacillus subtilis NCIMB 3610</dcterms:title>
+    <sbol:displayId>bsubtilisncimb3610</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://myapp.com/bsubtilisncimb3610"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+</rdf:RDF>

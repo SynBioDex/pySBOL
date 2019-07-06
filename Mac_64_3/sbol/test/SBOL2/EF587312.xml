@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:gbConv="http://sbols.org/genBankConversion#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:genbank="http://www.ncbi.nlm.nih.gov/genbank#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/EF587312/1">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312"/>
+    <sbol:displayId>EF587312</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <dcterms:description>Yeast expression vector pNIA-Cb, complete sequence.</dcterms:description>
+    <genbank:locus>EF587312</genbank:locus>
+    <genbank:molecule>DNA</genbank:molecule>
+    <genbank:division>SYN</genbank:division>
+    <genbank:date>07-DEC-2007</genbank:date>
+    <genbank:region>complement(1379..2083)</genbank:region>
+    <genbank:keywords>.</genbank:keywords>
+    <genbank:source>Yeast expression vector pNIA-Cb</genbank:source>
+    <genbank:organism>Yeast expression vector pNIA-Cb other sequences; artificial sequences; vectors.</genbank:organism>
+    <genbank:reference>
+      <genbank:Reference rdf:about="http://www.async.ece.utah.edu/EF587312/reference0">
+        <genbank:label>1  (bases 1 to 705)</genbank:label>
+        <genbank:authors>Zaltsman,A., Yi,B.Y., Krichevsky,A., Gafni,Y. and Citovsky,V.</genbank:authors>
+        <genbank:title>Yeast-plant coupled vector system for identification of nuclear proteins</genbank:title>
+        <genbank:journal>Plant Physiol. 145 (4), 1264-1271 (2007)</genbank:journal>
+        <genbank:pubmed>17704231</genbank:pubmed>
+      </genbank:Reference>
+    </genbank:reference>
+    <obo:OBI_0001617>17704231</obo:OBI_0001617>
+    <genbank:reference>
+      <genbank:Reference rdf:about="http://www.async.ece.utah.edu/EF587312/reference1">
+        <genbank:label>2  (bases 1 to 705)</genbank:label>
+        <genbank:authors>Zaltsman,A.A. and Citovsky,V.</genbank:authors>
+        <genbank:title>Direct Submission</genbank:title>
+        <genbank:journal>Submitted (27-APR-2007) Biochemistry and Cell Bio, State University of New York, Stony Brook, NY 11777, USA</genbank:journal>
+      </genbank:Reference>
+    </genbank:reference>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/EF587312/annotation0/1">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312/annotation0"/>
+        <sbol:displayId>annotation0</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <dcterms:title>Yeast expression vector pNIA-Cb</dcterms:title>
+        <gbConv:organism>Yeast expression vector pNIA-Cb</gbConv:organism>
+        <gbConv:mol_type>other DNA</gbConv:mol_type>
+        <gbConv:db_xref>taxon:443237</gbConv:db_xref>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000149"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/EF587312/annotation0/range/1">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312/annotation0/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:start>1</sbol:start>
+            <sbol:end>705</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://www.async.ece.utah.edu/EF587312/annotation1/1">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312/annotation1"/>
+        <sbol:displayId>annotation1</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <dcterms:title>TRP1</dcterms:title>
+        <gbConv:codon_start>1</gbConv:codon_start>
+        <gbConv:transl_table>11</gbConv:transl_table>
+        <gbConv:product>TRP1</gbConv:product>
+        <gbConv:protein_id>ABQ43169.1</gbConv:protein_id>
+        <gbConv:translation>MIKHTKAAWSMSVINFTGSSGPLVKVCGLQSTEAAECALDSDADLLGIICVPNRKRTIDPVIARKISSLVKAYKNSSGTPKYLVGVFRNQPKEDVLALVNDYGIDIVQLHGDESWQEYQEFLGLPVIKRLVFPKDCNILLSAASQKPHSFIPLFDSEAGGTGELLDWNSISDWVGRQESPESLHFMLAGGLTPENVGDALRLNGVIGVDVSGGVETNGVKDSNKIANFVKNAKK</gbConv:translation>
+        <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://www.async.ece.utah.edu/EF587312/annotation1/range/1">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312/annotation1/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:start>1</sbol:start>
+            <sbol:end>705</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequence rdf:resource="http://www.async.ece.utah.edu/EF587312_seq/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://www.async.ece.utah.edu/EF587312_seq/1">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/EF587312_seq"/>
+    <sbol:displayId>EF587312_seq</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>gtgattaagcacacaaaggcagcttggagtatgtctgttattaatttcacaggtagttctggtccattggtgaaagtttgcggcttgcagagcacagaggccgcagaatgtgctctagattccgatgctgacttgctgggtattatatgtgtgcccaatagaaagagaacaattgacccggttattgcaaggaaaatttcaagtcttgtaaaagcatataaaaatagttcaggcactccgaaatacttggttggcgtgtttcgtaatcaacctaaggaggatgttttggctctggtcaatgattacggcattgatatcgtccaactgcatggagatgagtcgtggcaagaataccaagagttcctcggtttgccagttattaaaagactcgtatttccaaaagactgcaacatactactcagtgcagcttcacagaaacctcattcgtttattcccttgtttgattcagaagcaggtgggacaggtgaacttttggattggaactcgatttctgactgggttggaaggcaagagagccccgaaagcttacattttatgttagctggtggactgacgccagaaaatgttggtgatgcgcttagattaaatggcgttattggtgttgatgtaagcggaggtgtggagacaaatggtgtaaaagactctaacaaaatagcaaatttcgtcaaaaatgctaagaaatag</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+</rdf:RDF>
