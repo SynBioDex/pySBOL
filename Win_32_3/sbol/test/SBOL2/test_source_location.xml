@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:pr="http://partsregistry.org/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <sbol:ComponentDefinition rdf:about="http://partsregistry.org/cd/cd_base_1">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_base_1"/>
+    <sbol:displayId>cd_base_1</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequence rdf:resource="http://partsregistry.org/seq/seq_base1"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://partsregistry.org/cd/cd_base_2">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_base_2"/>
+    <sbol:displayId>cd_base_2</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequence rdf:resource="http://partsregistry.org/seq/seq_base2"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://partsregistry.org/cd/cd_comp">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp"/>
+    <sbol:displayId>cd_comp</sbol:displayId>
+    <dcterms:title>cd_comp</dcterms:title>
+    <dcterms:description>Constitutive promoter</dcterms:description>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:component>
+      <sbol:Component rdf:about="http://partsregistry.org/cd/cd_comp/base2">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base2"/>
+        <sbol:displayId>base2</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://partsregistry.org/cd/cd_base_2"/>
+        <sbol:sourceLocation>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/cd_comp/base2/seq_base2">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base2/seq_base2"/>
+            <sbol:displayId>seq_base2</sbol:displayId>
+            <sbol:start>4</sbol:start>
+            <sbol:end>14</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:sourceLocation>
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="http://partsregistry.org/cd/cd_comp/base1">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base1"/>
+        <sbol:displayId>base1</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://partsregistry.org/cd/cd_base_1"/>
+        <sbol:sourceLocation>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/cd_comp/base1/seq_base1">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base1/seq_base1"/>
+            <sbol:displayId>seq_base1</sbol:displayId>
+            <sbol:start>4</sbol:start>
+            <sbol:end>14</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Range>
+        </sbol:sourceLocation>
+      </sbol:Component>
+    </sbol:component>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://partsregistry.org/cd/cd_comp/base_s1">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base_s1"/>
+        <sbol:displayId>base_s1</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/cd_comp/base_s1/base_c1">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base_s1/base_c1"/>
+            <sbol:displayId>base_c1</sbol:displayId>
+            <sbol:start>1</sbol:start>
+            <sbol:end>11</sbol:end>
+            <sbol:sequence rdf:resource="http://partsregistry.org/seq/seq_comp"/>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:component rdf:resource="http://partsregistry.org/cd/cd_comp/base1"/>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://partsregistry.org/cd/cd_comp/base_s2">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base_s2"/>
+        <sbol:displayId>base_s2</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/cd_comp/base_s2/base_c2">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/cd_comp/base_s2/base_c2"/>
+            <sbol:displayId>base_c2</sbol:displayId>
+            <sbol:start>12</sbol:start>
+            <sbol:end>22</sbol:end>
+            <sbol:sequence rdf:resource="http://partsregistry.org/seq/seq_comp"/>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:component rdf:resource="http://partsregistry.org/cd/cd_comp/base2"/>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequence rdf:resource="http://partsregistry.org/seq/seq_comp"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://partsregistry.org/seq/seq_base1">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/seq/seq_base1"/>
+    <sbol:displayId>seq_base1</sbol:displayId>
+    <sbol:elements>ttgacagctagctcagtcctaggtataatgctagc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://partsregistry.org/seq/seq_base2">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/seq/seq_base2"/>
+    <sbol:displayId>seq_base2</sbol:displayId>
+    <sbol:elements>ttgacagctagctcagtcctaggtataatgctagttagcgc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://partsregistry.org/seq/seq_comp">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/seq/seq_comp"/>
+    <sbol:displayId>seq_comp</sbol:displayId>
+    <sbol:elements>acagctagctcacagctagctc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+</rdf:RDF>

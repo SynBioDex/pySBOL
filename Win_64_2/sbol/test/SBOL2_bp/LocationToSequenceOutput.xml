@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:pr="http://partsregistry.org/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <sbol:ComponentDefinition rdf:about="http://partsregistry.org/cd/BBa_J23119">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119"/>
+    <sbol:displayId>BBa_J23119</sbol:displayId>
+    <dcterms:title>J23119</dcterms:title>
+    <dcterms:description>Constitutive promoter</dcterms:description>
+    <pr:group>iGEM2006_Berkeley</pr:group>
+    <pr:experience rdf:resource="http://parts.igem.org/cgi/partsdb/part_info.cgi?part_name=BBa_J23119"/>
+    <pr:information>
+      <pr:Information rdf:about="http://partsregistry.org/cd/BBa_J23119/anno/information">
+        <pr:sigmafactor>//rnap/prokaryote/ecoli/sigma70</pr:sigmafactor>
+        <pr:regulation>//regulation/constitutive</pr:regulation>
+      </pr:Information>
+    </pr:information>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation">
+        <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation"/>
+        <sbol:displayId>someSequenceAnnotation</sbol:displayId>
+        <sbol:location>
+          <sbol:GenericLocation rdf:about="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation/generic_location">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation/generic_location"/>
+            <sbol:displayId>generic_location</sbol:displayId>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:GenericLocation>
+        </sbol:location>
+        <sbol:location>
+          <sbol:Range rdf:about="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation/range">
+            <sbol:persistentIdentity rdf:resource="http://partsregistry.org/cd/BBa_J23119/someSequenceAnnotation/range"/>
+            <sbol:displayId>range</sbol:displayId>
+            <sbol:start>1</sbol:start>
+            <sbol:end>10</sbol:end>
+            <sbol:sequence rdf:resource="http://partsregistry.org/seq/BBa_J23120"/>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequence rdf:resource="http://partsregistry.org/seq/BBa_J23121"/>
+    <sbol:sequence rdf:resource="http://partsregistry.org/seq/BBa_J23120"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://partsregistry.org/seq/BBa_J23120">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/seq/BBa_J23120"/>
+    <sbol:displayId>BBa_J23120</sbol:displayId>
+    <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_J23120:Design"/>
+    <sbol:elements>ttgacagctagctcagtcctaggtataatgctagc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://partsregistry.org/seq/BBa_J23121">
+    <sbol:persistentIdentity rdf:resource="http://partsregistry.org/seq/BBa_J23121"/>
+    <sbol:displayId>BBa_J23121</sbol:displayId>
+    <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_J23121:Design"/>
+    <sbol:elements>ttgacagctagctcagtcctaggtataatgctagttagcgc</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+</rdf:RDF>

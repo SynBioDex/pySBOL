@@ -53,21 +53,21 @@ if config[0] == 'Win':
     chdir(path.join(here,package_dir))
     package_data={
     'sbol': ['examples/*'],
-    'sbol.test': ['*.*', 'SBOL2/*.*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*', 'SBOL2_bp/*.*', 'SBOL2_ic/*.*', 'SBOL2_nc/*.*'],
     'sbol': ['_libsbol.pyd', 'libsbol.py', 'crispr_example.xml']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
     package_data={
       'sbol': ['examples/*'],
-      'sbol.test': ['*.*', 'SBOL2/*.*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*', 'SBOL2_bp/*.*', 'SBOL2_ic/*.*', 'SBOL2_nc/*.*'],
       'sbol': ['_libsbol.so', 'libsbol.py', 'crispr_example.xml']
     }
 else:
     chdir(path.join(here, package_dir))
     package_data={
       'sbol': ['examples/*'],
-      'sbol.test': ['*.*', 'SBOL2/*.*'],
+      'sbol.test': ['*.*', 'SBOL2/*.*', 'SBOL2_bp/*.*', 'SBOL2_ic/*.*', 'SBOL2_nc/*.*'],
       'sbol': ['_libsbol.so', 'libsbol.py', 'crispr_example.xml']
     }
 	
@@ -77,7 +77,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.3.2.post0',
+    version='2.3.2.post4',
 
     description='A module for reading, writing, and constructing genetic designs according to the standardized specifications of the Synthetic Biology Open Language (SBOL).',
     long_description=long_description,

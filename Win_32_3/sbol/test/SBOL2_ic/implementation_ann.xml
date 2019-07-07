@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sbol:Implementation rdf:about="http://examples.org/Implementation/build/1.0.0">
+    <sbol:built rdf:resource="http://examples.org/ComponentDefinition/mutant/1.0.0"/>
+    <sbol:displayId>build</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Implementation/build"/>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://examples.org/ComponentDefinition/design/1.0.0"/>
+	<dcterms:created>2003-12-04T12:00:00Z</dcterms:created>
+  </sbol:Implementation>
+</rdf:RDF>

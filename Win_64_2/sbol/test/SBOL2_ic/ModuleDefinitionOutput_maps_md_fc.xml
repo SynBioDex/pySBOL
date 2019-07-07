@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#">
+  <sbol:ModuleDefinition rdf:about="http://sbolstandard.org/example/toggle_switch">
+    <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/toggle_switch"/>
+    <sbol:displayId>toggle_switch</sbol:displayId>
+    <sbol:role rdf:resource="http://sbolstandard.org/example/module_role/toggle_switch"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://sbolstandard.org/example/toggle_switch/TetR">
+        <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/toggle_switch/TetR"/>
+        <sbol:displayId>TetR</sbol:displayId>
+        <sbol:definition rdf:resource="http://identifiers.org/uniprot/Q6QR72"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#inout"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://sbolstandard.org/example/toggle_switch/LacI">
+        <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/toggle_switch/LacI"/>
+        <sbol:displayId>LacI</sbol:displayId>
+        <sbol:definition rdf:resource="http://identifiers.org/uniprot/P03023"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#inout"/>
+		 <sbol:mapsTo>
+          <sbol:MapsTo rdf:about="http://sbolstandard.org/example/toggle_switch/LacI/LacI_mapping">
+            <sbol:persistentIdentity rdf:resource="http://sbolstandard.org/example/toggle_switch/LacI/LacI_mapping"/>
+            <sbol:displayId>LacI_mapping</sbol:displayId>
+            <sbol:refinement rdf:resource="http://sbols.org/v2#useRemote"/>
+            <sbol:remote rdf:resource="http://sbolstandard.org/example/toggle_switch/TetR"/>
+            <sbol:local rdf:resource="http://sbolstandard.org/example/toggle_switch/LacI"/>
+          </sbol:MapsTo>
+        </sbol:mapsTo>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+</rdf:RDF>

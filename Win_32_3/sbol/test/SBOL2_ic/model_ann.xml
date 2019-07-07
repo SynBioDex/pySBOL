@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sys-bio="http://sys-bio.org#" xmlns:prov="http://www.w3.org/ns/prov#">
+    <sbol:Model rdf:about="http://sys-bio.org/Model_predicted/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Model_predicted"/>
+    <sbol:displayId>Model_predicted</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+	<dcterms:created>2003-12-04T12:00:00Z</dcterms:created>
+    <sbol:source rdf:resource="file://server.sys-bio.org/circuit_simulation.xml"/>
+    <sbol:language rdf:resource="http://identifiers.org/edam/format_2585"/>
+    <sbol:framework rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000062"/>
+  </sbol:Model>
+  <sbol:Model rdf:about="http://sys-bio.org/Model_fit_model/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Model_fit_model"/>
+    <sbol:displayId>Model_fit_model</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://sys-bio.org/Attachment_raw_data/1.0.0"/>
+    <prov:wasGeneratedBy rdf:resource="http://sys-bio.org/Activity_fit_model_generation/1.0.0"/>
+    <sbol:source rdf:resource="file://server.sys-bio.org/models/model_fit.xml"/>
+    <sbol:language rdf:resource="http://identifiers.org/edam/format_2585"/>
+    <sbol:framework rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000062"/>
+  </sbol:Model>
+</rdf:RDF>

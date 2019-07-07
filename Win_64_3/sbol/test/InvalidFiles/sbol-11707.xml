@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <sbol:ModuleDefinition rdf:about="http://www.async.ece.utah.edu/md">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md"/>
+    <sbol:displayId>md</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.async.ece.utah.edu/md/fc">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/fc"/>
+        <sbol:displayId>fc</sbol:displayId>
+        <sbol:measure>
+          <om:Measure rdf:about="http://www.async.ece.utah.edu/md/fc/fc_measure">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/fc/fc_measure"/>
+            <sbol:displayId>fc_measure</sbol:displayId>
+            <om:hasNumericalValue>0.04</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://purl.obolibrary.org/obo/UO_0000021"/>
+          </om:Measure>
+        </sbol:measure>
+        <sbol:definition rdf:resource="http://www.async.ece.utah.edu/cd"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#inout"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://www.async.ece.utah.edu/md/i">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/i"/>
+        <sbol:displayId>i</sbol:displayId>
+        <sbol:measure>
+          <om:Measure rdf:about="http://www.async.ece.utah.edu/md/i/i_measure">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/i/i_measure"/>
+            <sbol:displayId>i_measure</sbol:displayId>
+            <om:hasNumericalValue>0.04</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://purl.obolibrary.org/obo/UO_0000077"/>
+          </om:Measure>
+        </sbol:measure>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000177"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.async.ece.utah.edu/md/i/p">
+            <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/i/p"/>
+            <sbol:displayId>p</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:participant rdf:resource="http://www.async.ece.utah.edu/md/fc"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:module>
+      <sbol:Module rdf:about="http://www.async.ece.utah.edu/md/m">
+        <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/md/m"/>
+        <sbol:displayId>m</sbol:displayId>
+        <sbol:measure>
+        	<!--  put anything other than om:Measure here -->
+		  <sbol:Sequence rdf:about="https://synbiohub.org/public/igem/BBa_I13603_sequence/1">
+		    <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_I13603_sequence"/>
+		    <sbol:displayId>BBa_I13603_sequence</sbol:displayId>
+		    <sbol:version>1</sbol:version>
+		    <sbol:elements>aattgtgagcggataacaattgacattgtgagcggataacaagatactgagcacatactagagaaagaggagaaatactagatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtgaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctggggcgtgcagtgcttcagccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacatcagccacaacgtctatatcaccgccgacaagcagaagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaagaggcctgctgcaaacgacgaaaactacgctttagtagcttaataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+		    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+		  </sbol:Sequence>
+        </sbol:measure>
+        <sbol:definition rdf:resource="http://www.async.ece.utah.edu/empty_md"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://www.async.ece.utah.edu/empty_md">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/empty_md"/>
+    <sbol:displayId>empty_md</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://www.async.ece.utah.edu/empty_md2">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/empty_md2"/>
+    <sbol:displayId>empty_md2</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.async.ece.utah.edu/cd">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/cd"/>
+    <sbol:displayId>cd</sbol:displayId>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17634"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+  </sbol:ComponentDefinition>
+</rdf:RDF>

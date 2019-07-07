@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sys-bio="http://sys-bio.org#" xmlns:prov="http://www.w3.org/ns/prov#">
+  <prov:Plan rdf:about="http://sys-bio.org/Plan_model_fitting/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Plan_model_fitting"/>
+    <sbol:displayId>Plan_model_fitting</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <sbol:attachment rdf:resource="http://sys-bio.org/Attachment_model_fitting_script/1.0.0"/>
+  </prov:Plan>
+</rdf:RDF>
