@@ -1,4 +1,5 @@
 from object import *
+from constants import *
 import validation
 
 
@@ -46,7 +47,7 @@ class Identified(SBOLObject):
     # This property is intended to contain a more thorough text description of an Identified object.
     _description = None
 
-    def __init__(self, type_uri=SBOL_IDENTIFIED, uri='example', version=VERSION_STRING):
+    def __init__(self, type_uri=SBOL_IDENTIFIED, uri=URIRef('example'), version=VERSION_STRING):
         super().__init__(type_uri, uri)
         self._persistentIdentity = Property(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, uri)
         self._displayId = Property(self, SBOL_DISPLAY_ID, '0', '1', [validation.sbol_rule_10204])

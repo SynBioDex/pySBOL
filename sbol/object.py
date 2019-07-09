@@ -57,11 +57,15 @@ class SBOLObject(metaclass=ABCMeta):
     # [SBOL specification document](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
     _identity = None
 
-    def __init__(self, _rdf_type=UNDEFINED, uri="example"):
+    def __init__(self, _rdf_type=UNDEFINED, uri=URIRef("example")):
         """Open-world constructor."""
         self.rdf_type = _rdf_type
         self._namespaces = {}
-        self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
+        if not isinstance(uri, URIRef):
+            print("Property was not a URIRef: '" + str(uri) + "', " + str(type(uri)))
+            self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], URIRef(uri))
+        else:
+            self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
         if hasHomespace():
             self._identity.set(os.path.join(getHomespace(), uri))
         self.owned_objects = {}  # map<rdf_type, vector<SBOLObject>>
@@ -168,11 +172,12 @@ class SBOLObject(metaclass=ABCMeta):
         """
         # TODO This may work differently than the original method...
         if type(comparand) != type(self):
+            print("TYPES ARE NOT EQUAL!!!")
             return False
         is_equal = True
         if self.rdf_type != comparand.rdf_type:
             print(self.identity + ' does not match type of ' + comparand.rdf_type)
-            return 0
+            return False
         if self.rdf_type == SBOL_DOCUMENT:
             ns_set = set(())
             comparand_ns_set = set(())
@@ -181,10 +186,17 @@ class SBOLObject(metaclass=ABCMeta):
             for val in comparand._namespaces.values():
                 comparand_ns_set.add(val)
             if ns_set != comparand_ns_set:
+                print("NAMESPACES ARE NOT EQUAL!!!")
                 is_equal = False
+        print("Here are my properties: " + str(self.properties))
+        print("Here are their properties: " + str(comparand.properties))
         if self.properties != comparand.properties:
+            print("PROPERTIES ARE NOT EQUAL!!!")
             is_equal = False
+        print("Here are my owned objects: " + str(self.owned_objects))
+        print("Here are their owned objects: " + str(comparand.owned_objects))
         if self.owned_objects != comparand.owned_objects:
+            print("OWNED OBJECTS ARE NOT EQUAL!!!")
             is_equal = False
         return is_equal
 
@@ -293,32 +305,26 @@ class SBOLObject(metaclass=ABCMeta):
             if rdf_type == 'http://sbols.org/v2#identity':
                 # This property is not serialized
                 continue
-            if len(vals) == 1 and (vals[0] == '""' or vals[0] == '<>'):
+            #if len(vals) == 1 and (vals[0] == '""' or vals[0] == '<>'):
+            if len(vals) == 0:
                 #  No properties of this type
                 continue
-            predicate = self.doc.reference_namespace(rdf_type)
+            predicate = self.doc.referenceNamespace(rdf_type)
             for val in vals:
-                if val[0] == '<':
-                    # URI
-                    obj = rdflib.URIRef(val.strip('<>'))
-                    graph.add(self.identity, predicate, rdflib.URIRef(obj))
-                else:
-                    # Literal
-                    obj = rdflib.Literal(val).strip('""')
-                    graph.add(self.identity, predicate, obj)
+                graph.add((self.identity, predicate, val))
         # Serialize owned objects
         for name, object_store in self.owned_objects:
             if len(object_store) == 0:
                 continue
-            # predicate = self.doc.reference_namespace(name)
+            # predicate = self.doc.referenceNamespace(name)
             for obj in object_store:
                 # NOTE: couldn't we just use 'name'? (Would probably work the same, but wanted
                 # to follow the original implementation as closely as possible.)
                 typeURI = obj.getTypeURI()
                 if typeURI in self._hidden_properties:
                     continue
-                rdfType = self.doc.reference_namespace(typeURI)
-                graph.add(self.identity, rdfType, obj.identity)
+                rdfType = self.doc.referenceNamespace(typeURI)
+                graph.add((self.identity, rdfType, obj.identity))
                 obj.serialize_rdf2xml(graph) # recursive
 
     def __str__(self):

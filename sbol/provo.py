@@ -108,7 +108,7 @@ class Activity(TopLevel):
     # A Plan object may be specified here, and it will be synced with the Association::plan property.
     plan = None
 
-    def __init__(self, uri="example", action_type="", version=VERSION_STRING, rdf_type=PROVO_ACTIVITY):
+    def __init__(self, uri=URIRef("example"), action_type="", version=VERSION_STRING, rdf_type=PROVO_ACTIVITY):
         """Constructor
 
         :param uri: A full URI including a scheme, namespace, and identifier.

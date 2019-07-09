@@ -1,4 +1,4 @@
-from rdflib import URIRef, Literal
+from rdflib import URIRef, Literal, XSD
 from sbolerror import *
 from config import Config, ConfigOptions, getHomespace, parseClassName, parsePropertyName
 from constants import *
@@ -48,7 +48,12 @@ class Property():
         :param initial_value: The initial value of the Property (int, str, float supported)
         """
         self._sbol_owner = property_owner
-        self._rdf_type = type_uri
+        if isinstance(type_uri, URIRef):
+            self._rdf_type = type_uri
+        elif isinstance(type_uri, str):
+            self._rdf_type = URIRef(type_uri)
+        else:
+            raise ValueError("RDF type must be URIRef or str")
         self._lowerBound = lower_bound
         self._upperBound = upper_bound
         self._validation_rules = []
@@ -109,13 +114,13 @@ class Property():
     def clear(self):
         """Clear all property values."""
         properties = self._sbol_owner.properties[self._rdf_type]
-        current_value = properties[0]
+        # current_value = properties[0]
         properties.clear()
-        if current_value[0] == '<':
-            # this property is a uri
-            properties.append('<>')
-        elif current_value[0] == '"':
-            properties.append('""')
+        # if isinstance(current_value[0], URIRef):
+        #     # this property is a uri
+        #     properties.append('<>')
+        # elif isinstance(current_value[0], Literal) and current_value[0].datatype == XSD.str:
+        #     properties.append('""')
 
     def write(self):
         """Write property values."""

@@ -1,5 +1,6 @@
 from identified import *
 from config import *
+from constants import *
 from componentdefinition import ComponentDefinition
 from sequenceannotation import SequenceAnnotation
 from sequence import Sequence
@@ -21,7 +22,10 @@ from dbtl import Design, Analysis, SampleRoster
 from experiment import Experiment, ExperimentalData
 from object import SBOLObject
 import rdflib
+from rdflib import URIRef
 import os
+import SBOL2Serialize
+import pprint  # for debugging
 
 
 class Document(Identified):
@@ -35,37 +39,37 @@ class Document(Identified):
     """
 
     SBOL_DATA_MODEL_REGISTER = {
-        UNDEFINED: SBOLObject,
-        SBOL_IDENTIFIED: Identified,
-        SBOL_COMPONENT_DEFINITION: ComponentDefinition,
-        SBOL_SEQUENCE_ANNOTATION: SequenceAnnotation,
-        SBOL_SEQUENCE: Sequence,
-        SBOL_COMPONENT: Component,
-        SBOL_FUNCTIONAL_COMPONENT: FunctionalComponent,
-        SBOL_MODULE_DEFINITION: ModuleDefinition,
-        SBOL_MODULE: Module,
-        SBOL_INTERACTION: Interaction,
-        SBOL_PARTICIPATION: Participation,
-        SBOL_MODEL: Model,
-        SBOL_SEQUENCE_CONSTRAINT: SequenceConstraint,
-        SBOL_RANGE: Range,
-        SBOL_MAPS_TO: MapsTo,
-        SBOL_CUT: Cut,
-        SBOL_COLLECTION: Collection,
-        SBOL_GENERIC_LOCATION: GenericLocation,
-        PROVO_PLAN: Plan,
-        PROVO_ACTIVITY: Activity,
-        PROVO_AGENT: Agent,
-        PROVO_USAGE: Usage,
-        PROVO_ASSOCIATION: Association,
-        SBOL_ATTACHMENT: Attachment,
-        SBOL_COMBINATORIAL_DERIVATION: CombinatorialDerivation,
-        SBOL_IMPLEMENTATION: Implementation,
-        SYSBIO_DESIGN: Design,
-        SYSBIO_ANALYSIS: Analysis,
-        SYSBIO_SAMPLE_ROSTER: SampleRoster,
-        SBOL_EXPERIMENT: Experiment,
-        SBOL_EXPERIMENTAL_DATA: ExperimentalData
+        URIRef(UNDEFINED): SBOLObject,
+        URIRef(SBOL_IDENTIFIED): Identified,
+        URIRef(SBOL_COMPONENT_DEFINITION): ComponentDefinition,
+        URIRef(SBOL_SEQUENCE_ANNOTATION): SequenceAnnotation,
+        URIRef(SBOL_SEQUENCE): Sequence,
+        URIRef(SBOL_COMPONENT): Component,
+        URIRef(SBOL_FUNCTIONAL_COMPONENT): FunctionalComponent,
+        URIRef(SBOL_MODULE_DEFINITION): ModuleDefinition,
+        URIRef(SBOL_MODULE): Module,
+        URIRef(SBOL_INTERACTION): Interaction,
+        URIRef(SBOL_PARTICIPATION): Participation,
+        URIRef(SBOL_MODEL): Model,
+        URIRef(SBOL_SEQUENCE_CONSTRAINT): SequenceConstraint,
+        URIRef(SBOL_RANGE): Range,
+        URIRef(SBOL_MAPS_TO): MapsTo,
+        URIRef(SBOL_CUT): Cut,
+        URIRef(SBOL_COLLECTION): Collection,
+        URIRef(SBOL_GENERIC_LOCATION): GenericLocation,
+        URIRef(PROVO_PLAN): Plan,
+        URIRef(PROVO_ACTIVITY): Activity,
+        URIRef(PROVO_AGENT): Agent,
+        URIRef(PROVO_USAGE): Usage,
+        URIRef(PROVO_ASSOCIATION): Association,
+        URIRef(SBOL_ATTACHMENT): Attachment,
+        URIRef(SBOL_COMBINATORIAL_DERIVATION): CombinatorialDerivation,
+        URIRef(SBOL_IMPLEMENTATION): Implementation,
+        URIRef(SYSBIO_DESIGN): Design,
+        URIRef(SYSBIO_ANALYSIS): Analysis,
+        URIRef(SYSBIO_SAMPLE_ROSTER): SampleRoster,
+        URIRef(SBOL_EXPERIMENT): Experiment,
+        URIRef(SBOL_EXPERIMENTAL_DATA): ExperimentalData
     }
 
     def __init__(self, filename=None):
@@ -74,7 +78,11 @@ class Document(Identified):
 
         :param filename: (optional) a file to initialize the Document.
         """
-        super().__init__(SBOL_DOCUMENT, "", VERSION_STRING)
+        super().__init__(SBOL_DOCUMENT, URIRef(""), VERSION_STRING)
+        # A RDFLib representation of the triples.
+        # Initialized when parsing a graph.
+        # Updated when writing a graph.
+        self.graph = None
         # The Document's register of objects
         self.objectCache = {}  # Needed?
         self.SBOLObjects = {}  # Needed?
@@ -240,7 +248,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param filename: The full name of the file you want to write (including file extension).
         :return: A string with the validation results, or empty string if validation is disabled.
         """
-        self.doc_serialize_rdf2xml(filename, output_format=ConfigOptions.SERIALIZATION_FORMAT.value)
+        self.doc_serialize_rdf2xml(filename)
 
     def read(self, filename):
         """
@@ -280,29 +288,34 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :return: None
         """
         with open(filename, 'r') as f:
-            graph = rdflib.Graph()
-            graph.parse(f, format="application/rdf+xml")
+            self.graph = rdflib.Graph()
+            self.graph.parse(f, format="application/rdf+xml")
             # Parse namespaces
-            for ns in graph.namespaces():
-                self._namespaces[ns[0]] = URIRef(ns[1])
+            print("*** Reading in namespaces (graph): ")
+            for ns in self.graph.namespaces():
+                print(ns)
+                self._namespaces[ns[0]] = ns[1]
+            print("*** Internal namespaces data structure: ")
+            for ns in self._namespaces:
+                print(ns)
             # Find top-level objects
             top_level_query = "PREFIX : <http://example.org/ns#> " \
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
                 "PREFIX sbol: <http://sbols.org/v2#> " \
                 "SELECT ?s ?o " \
                 "{ ?s a ?o }"
-            sparql_results = graph.query(top_level_query)
+            sparql_results = self.graph.query(top_level_query)
             for result in sparql_results:
-                subject = str(result.s)
-                obj = str(result.o)
-                self.parse_objects_inner(subject, obj)
+                print("Type of s: " + str(type(result.s)))  # DEBUG
+                print("Type of o: " + str(type(result.o)))  # DEBUG
+                self.parse_objects_inner(result.s, result.o)
             # Find everything in the triple store
             all_query = "PREFIX : <http://example.org/ns#> " \
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
                 "PREFIX sbol: <http://sbols.org/v2#> " \
                 "SELECT ?s ?p ?o " \
                 "{ ?s ?p ?o }"
-            all_results = graph.query(all_query)
+            all_results = self.graph.query(all_query)
             # Find the graph base uri.  This is the location of the sbol
             # file, and begins with the "file://" scheme.  Any URI in the
             # file without a scheme will appear relative to this URI, after
@@ -315,46 +328,32 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                 pos += 1
             rdf_type = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
             for result in all_results:
-                predicate = str(result.p)
                 # Look for properties
-                if predicate != rdf_type:
-                    subject = str(result.s)
+                if str(result.p) != rdf_type:
                     obj = result.o
                     lval = str(obj)
                     if isinstance(result.o, URIRef) and pos != -1:
                         if lval[:pos] == graphBaseURIStr:
                             # This was a URI without a scheme.  Remove URI base
                             lval = lval[pos:]
-                    # If the literal value is a URI, wrap it in < and >, otherwise wrap it in quotes
-                    if isinstance(result.o, URIRef):
-                        padStart = '<'
-                        padEnd = '>'
-                    else:
-                        padStart = '"'
-                        padEnd = '"'
-                    obj_str = padStart + lval + padEnd
-                    self.parse_properties_inner(subject, predicate, obj_str)
+                            obj = URIRef(lval)
+                    self.parse_properties_inner(result.s, result.p, obj)
             # TODO parse annotation objects
             # TODO dress document
 
-    def parse_objects_inner(self, subject_str, obj_str):
-        if subject_str not in self.SBOLObjects and obj_str in self.SBOL_DATA_MODEL_REGISTER:
+    def parse_objects_inner(self, subject, obj):
+        # Construct the top-level object if we haven't already done so and its type is something we know about.
+        if subject not in self.SBOLObjects and obj in self.SBOL_DATA_MODEL_REGISTER:
             # Call constructor for the appropriate SBOLObject
-            new_obj = self.SBOL_DATA_MODEL_REGISTER[obj_str]()
+            new_obj = self.SBOL_DATA_MODEL_REGISTER[obj]()
             print("New object type: " + str(type(new_obj)))
             print("New object attrs: " + str(vars(new_obj)))
             # Wipe default property values passed from default
             # constructor. New property values will be added as properties
             # are parsed from the input file
             for prop_name, values in new_obj.properties.items():
-                token = values[0]
-                if token[0] == '<':
-                    values.clear()
-                    values.append('<>')
-                elif token[0] == '"':
-                    values.clear()
-                    values.append('""')
-            new_obj.identity = subject_str
+                values.clear()
+            new_obj.identity = subject
             # Update document
             self.SBOLObjects[new_obj.identity] = new_obj
             new_obj.doc = self
@@ -363,55 +362,43 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             # If the new object is TopLevel, add to the Document's property store
             if new_obj.is_top_level():
                 self.owned_objects[new_obj.rdf_type].append(new_obj)
-        elif subject_str not in self.SBOLObjects and obj_str not in self.SBOL_DATA_MODEL_REGISTER:
+        elif subject not in self.SBOLObjects and obj not in self.SBOL_DATA_MODEL_REGISTER:
             # Generic TopLevels
             new_obj = SBOLObject()
-            new_obj.identity = subject_str
-            new_obj.rdf_type = obj_str
+            new_obj.identity = subject
+            new_obj.rdf_type = obj
             self.SBOLObjects[new_obj.identity] = new_obj
             new_obj.doc = self
 
     def parse_properties_inner(self, subject, predicate, obj):
-        print("Adding: (" + str(subject) + ", " + str(predicate) + ", " + str(obj) + ")")
-        property_uri = predicate
-        property_value = self.convert_ntriples_encoding_to_ascii(obj)
-        found = property_uri.rfind('#')
+        print("Adding: (" + str(subject) + " - " + str(type(subject)) + ", " + str(predicate) + " - " + str(type(predicate)) + ", " + str(obj) + " - " + str(type(obj)) + ")")
+        found = predicate.rfind('#')
         if found == -1:
-            found = property_uri.rfind('/')
+            found = predicate.rfind('/')
         if found != -1:
             # property_ns, property_name = property_uri.split[:found]  # <-- this line didn't appear to have any purpose
             # Checks if the object to which this property belongs already exists
             if subject in self.SBOLObjects:
-                sbol_obj = self.SBOLObjects[subject]
+                parent = self.SBOLObjects[subject]
                 # Decide if this triple corresponds to a simple property,
                 # a list property, an owned property or a referenced property
-                if property_uri in sbol_obj.properties:
+                if predicate in parent.properties:
                     # triple is a property
-                    if sbol_obj.properties[property_uri] == '<>' or \
-                            sbol_obj.properties[property_uri] == '""':
-                        sbol_obj.properties[property_uri].clear()
-                    sbol_obj.properties[property_uri].append(property_value)
-                elif property_uri in sbol_obj.owned_objects:
+                    parent.properties[predicate].append(obj)
+                elif predicate in parent.owned_objects:
                     # triple is an owned object
-                    # Strip off the angle brackets from the URI value.
-                    # Note that a Document's object_store and
-                    # correspondingly, an SBOLObject's property_store
-                    # uses stripped URIs as keys, while libSBOL uses as a
-                    # convention angle brackets or quotes for Literal values
-                    owned_obj_id = property_value[1:-1]
-                    owned_obj_lookup = self.SBOLObjects[owned_obj_id]
-                    if owned_obj_lookup is not None:
-                        owned_obj = owned_obj_lookup
-                        sbol_obj.owned_objects[property_uri].append(owned_obj)
-                        owned_obj.parent = sbol_obj
-                        del self.SBOLObjects[owned_obj_id]
+                    owned_obj = self.SBOLObjects[obj]
+                    if owned_obj is not None:
+                        parent.owned_objects[predicate].append(owned_obj)
+                        owned_obj.parent = parent
+                        del self.SBOLObjects[obj]
                 else:
                     # Extension data
-                    if property_uri not in sbol_obj.properties:
-                        sbol_obj.properties[property_uri] = []
-                        sbol_obj.properties[property_uri].append(property_value)
+                    if predicate not in parent.properties:
+                        parent.properties[predicate] = []
+                        parent.properties[predicate].append(obj)
                     else:
-                        sbol_obj.properties[property_uri].append(property_value)
+                        parent.properties[predicate].append(obj)
 
     def convert_ntriples_encoding_to_ascii(self, s):
         s.replace("\\\"", "\"")
@@ -474,31 +461,27 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         # TODO better docstring
         raise NotImplementedError("Not yet implemented")
 
-    # TODO The commented-out methods below are important, but they rely heavily on raptor
-    # static std::string string_from_raptor_term(raptor_term *term, bool addWrapper=false);
-    #
-    # /// Generates rdf/xml
-    # void generate(raptor_world** world, raptor_serializer** sbol_serializer, char** sbol_buffer, size_t* sbol_buffer_len, raptor_iostream** ios, raptor_uri** base_uri);
-
-    def doc_serialize_rdf2xml(self, out, output_format=ConfigOptions.SERIALIZATION_FORMAT.value):
+    def doc_serialize_rdf2xml(self, outfile):
         """
         Serialize RDF XML.
-        :param out: output stream
-        :param output_format: output format
+        :param outfile: output file
         :return: None
         """
-        graph = rdflib.Graph()
-        # TODO Add default namespace if there is one
-        # Add namespaces
-        for name, ns in self._namespaces.items():
-            # ns = strip_quotes(strip_uri_brackets(ns))
-            graph.bind(name, ns)
-        # Add top-level objects
-        for rdf_type, obj in self.SBOLObjects.items():
-            rdf_type = strip_quotes(strip_uri_brackets(rdf_type))
-            graph.add((self.identity, rdf_type, obj.identity))
-            obj.serialize_rdf2xml(graph)
-        graph.serialize(out)
+        if self.graph is None:
+            self.graph = rdflib.Graph()
+        self.update_graph()
+        rdf = SBOL2Serialize.serialize_sboll2(self.graph).decode('utf-8')
+        print("RDF: "+ rdf)
+        print("TYPE: " + str(type(rdf)))
+        with open(outfile, 'w') as out:
+            out.write(rdf)
+            out.flush()
+
+    def update_graph(self):
+        """
+        Update the RDF triples representation of data.
+        :return:
+        """
 
     def validate(self):
         """

@@ -33,7 +33,7 @@ class TestRoundTripSBOL2(unittest.TestCase):
 
         self.doc2 = Document()  # Document to compare for equality
         self.doc2.read(os.path.join(self.temp_out_dir, split_path[0] + '_out' + split_path[1]))
-        self.assertEqual(self.doc.compare(self.doc2), 1)
+        self.assertTrue(self.doc.compare(self.doc2))
 
     def test_case000(self):
         self.run_round_trip(str(TEST_FILES_SBOL2[0]))
