@@ -9,7 +9,7 @@ class TopLevel(Identified):
 
     attachments = None
 
-    def __init__(self, type_uri=SBOL_TOP_LEVEL, uri="example", version=VERSION_STRING):
+    def __init__(self, type_uri=SBOL_TOP_LEVEL, uri=URIRef("example"), version=VERSION_STRING):
         super().__init__(type_uri, uri, version)
         if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
             self._displayId.set(uri)
