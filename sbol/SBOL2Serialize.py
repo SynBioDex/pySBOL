@@ -60,7 +60,7 @@ def is_ownership_relation(g, triple):
     # SequenceAnnotation).
     #
     if predicate == sbolNS + 'component':
-        if (triple[0], RDF.type, URIRef(sbolNS + 'SequenceAnnotation')) in g.g:
+        if (triple[0], RDF.type, URIRef(sbolNS + 'SequenceAnnotation')) in g:
             return False
         else:
             return True
