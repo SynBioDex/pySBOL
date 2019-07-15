@@ -10,6 +10,7 @@ class SBOLObject(metaclass=ABCMeta):
     """An SBOLObject converts a Python data structure into an RDF triple store
      and contains methods for serializing and parsing RDF triples.
     """
+
     # 'Protected' members
     _namespaces = None
     _default_namespace = None
@@ -190,15 +191,29 @@ class SBOLObject(metaclass=ABCMeta):
                 is_equal = False
         print("Here are my properties: " + str(self.properties))
         print("Here are their properties: " + str(comparand.properties))
-        if self.properties != comparand.properties:
+        if self.compare_unordered_lists(self.properties, comparand.properties) is False:
             print("PROPERTIES ARE NOT EQUAL!!!")
             is_equal = False
         print("Here are my owned objects: " + str(self.owned_objects))
         print("Here are their owned objects: " + str(comparand.owned_objects))
-        if self.owned_objects != comparand.owned_objects:
+        if self.compare_unordered_lists(self.owned_objects, comparand.owned_objects) is False:
             print("OWNED OBJECTS ARE NOT EQUAL!!!")
             is_equal = False
         return is_equal
+
+    def compare_unordered_lists(self, mine, theirs):
+        """This is a very inefficient hack for comparing two unordered mutable lists.
+
+        We could make some small improvements to this approach, or consider alternatives."""
+        for my_obj in mine:
+            found = False
+            for their_obj in theirs:
+                if my_obj == their_obj:
+                    found = True
+                    break
+            if found is False:
+                return False
+        return True
 
     def __eq__(self, other):
         """Compare two SBOL objects or Documents. The behavior is currently undefined for objects
@@ -284,7 +299,6 @@ class SBOLObject(metaclass=ABCMeta):
         """
         raise NotImplementedError("Not yet implemented")
 
-    @abstractmethod
     def update_uri(self):
         """
         Recursively generates SBOL compliant ids for an object and all
