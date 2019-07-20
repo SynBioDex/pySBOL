@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sys-bio="http://sys-bio.org#" xmlns:prov="http://www.w3.org/ns/prov#">
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_fit_model_generation/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_fit_model_generation"/>
+    <sbol:displayId>Activity_fit_model_generation</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_design_generation/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_design_generation"/>
+    <sbol:displayId>Activity_design_generation</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_raw_data_generation/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_raw_data_generation"/>
+    <sbol:displayId>Activity_raw_data_generation</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+  </prov:Activity>
+  <prov:Activity rdf:about="http://sys-bio.org/Activity_build_generation/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation"/>
+    <sbol:displayId>Activity_build_generation</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+	  <prov:qualifiedAssociation>
+      <prov:Association rdf:about="http://sys-bio.org/Activity_build_generation/build_generation_association/1.0.0">
+        <sbol:displayId>build_generation_association</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Activity_build_generation/build_generation_association"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:agent rdf:resource="https://synbiohub.org/jdoe/1.0.0"/>
+        <prov:hadPlan rdf:resource="http://sys-bio.org/Plan_gibson_assembly/1.0.0"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Association>
+    </prov:qualifiedAssociation>
+  </prov:Activity>
+  <prov:Plan rdf:about="http://sys-bio.org/Plan_model_fitting/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Plan_model_fitting"/>
+    <sbol:displayId>Plan_model_fitting</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <sbol:attachment rdf:resource="http://sys-bio.org/Attachment_model_fitting_script/1.0.0"/>
+  </prov:Plan>
+  <prov:Plan rdf:about="http://sys-bio.org/Plan_conversion/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Plan_conversion"/>
+    <sbol:displayId>Plan_conversion</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <dcterms:description>SBML to SBOL conversion</dcterms:description>
+  </prov:Plan>
+  <prov:Plan rdf:about="http://sys-bio.org/Plan_gibson_assembly/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Plan_gibson_assembly"/>
+    <sbol:displayId>Plan_gibson_assembly</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <dcterms:description>DNA assembly</dcterms:description>
+  </prov:Plan>
+  <prov:Plan rdf:about="http://sys-bio.org/Plan_characterization_protocol/1.0.0">
+    <sbol:persistentIdentity rdf:resource="http://sys-bio.org/Plan_characterization_protocol"/>
+    <sbol:displayId>Plan_characterization_protocol</sbol:displayId>
+    <sbol:version>1.0.0</sbol:version>
+    <sbol:attachment rdf:resource="http://sys-bio.org/Attachment_characterization_protocol/1.0.0"/>
+  </prov:Plan>
+</rdf:RDF>

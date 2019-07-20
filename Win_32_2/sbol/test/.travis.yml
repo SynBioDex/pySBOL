@@ -1,2 +1,5 @@
-script: ./run-tests.sh
-
+language: java
+sudo: false
+jdk:
+  - oraclejdk9
+  
