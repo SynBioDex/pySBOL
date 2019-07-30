@@ -577,4 +577,4 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         return None
 
     def getTypeURI(self):
-        return SBOL_DOCUMENT
+        return URIRef(SBOL_DOCUMENT)

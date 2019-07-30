@@ -49,18 +49,27 @@ class Identified(SBOLObject):
 
     def __init__(self, type_uri=SBOL_IDENTIFIED, uri=URIRef('example'), version=VERSION_STRING):
         super().__init__(type_uri, uri)
-        self._persistentIdentity = Property(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, uri)
+        self._persistentIdentity = Property(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, URIRef(uri))
         self._displayId = Property(self, SBOL_DISPLAY_ID, '0', '1', [validation.sbol_rule_10204])
         self._version = Property(self, SBOL_VERSION, '0', '1', None, version)
         self._name = Property(self, SBOL_NAME, '0', '1', None)
         self._description = Property(self, SBOL_DESCRIPTION, '0', '1', None)
         if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
             self._displayId.set(uri)
-            self._identity.set(os.path.join(getHomespace(), uri, version))
-            self._persistentIdentity.set(os.path.join(getHomespace(), uri))
+            self._persistentIdentity.set(URIRef(os.path.join(getHomespace(), uri)))
+            if Config.getOption(ConfigOptions.SBOL_TYPED_URIS.value) is True:
+                if version != '':
+                    self._identity.set(URIRef(os.path.join(getHomespace(), self.getClassName(type_uri), uri, version)))
+                else:
+                    self._identity.set(URIRef(os.path.join(getHomespace(), self.getClassName(type_uri), uri)))
+            else:
+                if version != '':
+                    self._identity.set(URIRef(os.path.join(getHomespace(), uri, version)))
+                else:
+                    self._identity.set(URIRef(os.path.join(getHomespace(), uri)))
         elif hasHomespace():
-            self._identity.set(os.path.join(getHomespace(), uri))
-            self._persistentIdentity.set(os.path.join(getHomespace(), uri))
+            self._identity.set(URIRef(os.path.join(getHomespace(), uri)))
+            self._persistentIdentity.set(URIRef(os.path.join(getHomespace(), uri)))
         # self._identity.validate() # TODO
 
     @property

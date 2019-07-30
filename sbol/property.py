@@ -198,8 +198,10 @@ class OwnedObject(Property):
     def __getitem__(self, id):
         if type(id) is int:
             return self.get_int(id)
+        elif type(id) is URIRef:
+            return self.get_uri(id.n3())
         elif type(id) is str:
-            return self.get_str(id)
+            return self.get_uri(id)
         else:
             raise TypeError('id must be str or int')
 
@@ -209,7 +211,7 @@ class OwnedObject(Property):
             raise SBOLError('Index out of range', SBOLErrorCode.SBOL_ERROR_NOT_FOUND)
         return object_store[id]
 
-    def get_str(self, id):
+    def get_uri(self, id):
         if Config.getOption(ConfigOptions.VERBOSE.value) is True:
             print('SBOL compliant URIs are set to ' + Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value))
             print('SBOL typed URIs are set to ' + Config.getOption(ConfigOptions.SBOL_TYPED_URIS.value))
@@ -248,6 +250,7 @@ class OwnedObject(Property):
             else:
                 compliant_uri = os.path.join(ns, uri)
             compliant_uri += os.sep
+            compliant_uri = URIRef(compliant_uri)
             persistent_id_matches = []
             if Config.getOption('verbose') is True:
                 print('Searching for TopLevel: ' + compliant_uri)
@@ -265,9 +268,9 @@ class OwnedObject(Property):
                 persistentIdentity = parent_obj.properties[SBOL_PERSISTENT_IDENTITY][0]
             if SBOL_VERSION in parent_obj.properties:
                 version = parent_obj.properties[SBOL_VERSION[0]]
-                compliant_uri = os.path.join(persistentIdentity, uri, version)
+                compliant_uri = URIRef(os.path.join(persistentIdentity, uri, version))
             else:
-                compliant_uri = os.path.join(persistentIdentity, uri)
+                compliant_uri = URIRef(os.path.join(persistentIdentity, uri))
             if Config.getOption(ConfigOptions.VERBOSE.value) is True:
                 print('Searching for non-TopLevel: ' + compliant_uri)
             for obj in object_store:

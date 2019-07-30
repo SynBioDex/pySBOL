@@ -58,9 +58,12 @@ class SBOLObject(metaclass=ABCMeta):
     # [SBOL specification document](http://sbolstandard.org/wp-content/uploads/2015/08/SBOLv2.0.1.pdf).
     _identity = None
 
-    def __init__(self, _rdf_type=UNDEFINED, uri=URIRef("example")):
+    def __init__(self, _rdf_type=URIRef(UNDEFINED), uri=URIRef("example")):
         """Open-world constructor."""
-        self.rdf_type = _rdf_type
+        if type(_rdf_type) is str:
+            self.rdf_type = URIRef(_rdf_type)
+        else:
+            self.rdf_type = _rdf_type
         self._namespaces = {}
         if not isinstance(uri, URIRef):
             print("Property was not a URIRef: '" + str(uri) + "', " + str(type(uri)))
@@ -342,7 +345,7 @@ class SBOLObject(metaclass=ABCMeta):
                 obj.serialize_rdf2xml(graph) # recursive
 
     def __str__(self):
-        return self.identity
+        return self.identity.n3()  # identity should be a URIRef``
 
     def is_top_level(self):
         return False

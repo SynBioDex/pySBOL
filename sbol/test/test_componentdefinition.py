@@ -18,6 +18,15 @@ class TestComponentDefinitions(unittest.TestCase):
         target_promoter = ComponentDefinition('target_promoter')
         self.assertEqual(BIOPAX_DNA, target_promoter.types)
 
+    def test_multipleRoles(self):
+        """pysbol2 - 'Getting, Setting, and Editing Attributes"""
+        plasmid = ComponentDefinition('pBB1', BIOPAX_DNA, '1.0.0')
+        plasmid.roles = [SO_PLASMID]
+        plasmid.roles.append(SO_CIRCULAR)
+        self.assertEqual(len(plasmid.roles), 2)
+        self.assertTrue(SO_PLASMID in plasmid.roles)
+        self.assertTrue(SO_CIRCULAR in plasmid.roles)
+
     def testAddComponentDefinition(self):
         setHomespace('http://sbols.org/CRISPR_Example')
         Config.setOption('sbol_compliant_uris', True)

@@ -45,7 +45,7 @@ class ModuleDefinition(TopLevel):
     # a different way or at a different level of detail.
     models = None
 
-    def __init__(self, uri="example", version=VERSION_STRING, sbol_type_uri=SBOL_MODULE_DEFINITION):
+    def __init__(self, uri=URIRef("example"), version=VERSION_STRING, sbol_type_uri=SBOL_MODULE_DEFINITION):
         """Construct a ModuleDefinition
 
         :param uri: A full URI including a scheme, namespace, and identifier.

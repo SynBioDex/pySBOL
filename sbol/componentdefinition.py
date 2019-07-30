@@ -64,7 +64,7 @@ class ComponentDefinition(TopLevel):
 
     sequenceConstraints = None  # OwnedObject<SequenceConstraint>
 
-    def __init__(self, uri="example", component_type=BIOPAX_DNA,
+    def __init__(self, uri=URIRef("example"), component_type=BIOPAX_DNA,
                             version=VERSION_STRING, rdf_type=SBOL_COMPONENT_DEFINITION):
         """Construct a ComponentDefinition.
 

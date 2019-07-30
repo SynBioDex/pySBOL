@@ -194,7 +194,7 @@ class Config:
             return options[option]
         else:
             raise SBOLError(SBOLErrorCode.SBOL_ERROR_INVALID_ARGUMENT,
-                            option + ' not a valid configuration option for libSBOL')
+                            str(option) + ' not a valid configuration option for libSBOL')
 
 
 # Global methods

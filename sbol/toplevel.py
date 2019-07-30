@@ -11,14 +11,10 @@ class TopLevel(Identified):
 
     def __init__(self, type_uri=SBOL_TOP_LEVEL, uri=URIRef("example"), version=VERSION_STRING):
         super().__init__(type_uri, uri, version)
+        # TODO could this be moved into 'identified' constructor?
         if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
-            self._displayId.set(uri)
             if Config.getOption(ConfigOptions.SBOL_TYPED_URIS.value) is True:
-                self._identity.set(os.path.join(getHomespace(), self.getClassName(type_uri), self.displayId, self.version))
                 self._persistentIdentity.set(os.path.join(getHomespace(), self.getClassName(type_uri), self.displayId))
-            else:
-                self._identity.set(os.path.join(getHomespace(), self.displayId, self.version))
-                self._persistentIdentity.set(os.path.join(getHomespace(), self.displayId))
 
     def addToDocument(self, document):
         raise NotImplementedError("Not yet implemented")
