@@ -383,3 +383,36 @@ class OwnedObject(Property):
                     if obj.is_top_level() and obj.doc is not None:
                         obj.doc.SBOLObjects.remove(obj.identity)
                 object_store.clear()
+
+
+class ReferencedObject(Property):
+    def __init__(self, property_owner, type_uri, reference_type_uri, lower_bound, upper_bound, validation_rules, initial_value=None):
+        super().__init__(property_owner, type_uri, lower_bound, upper_bound, validation_rules, initial_value)
+        self.reference_type_uri = reference_type_uri
+        if self._sbol_owner is not None:
+            property_store = []
+            self._sbol_owner.properties[type_uri] = property_store
+
+    def get(self, item):
+        """Return reference object at this index.
+        :param item (int) the index
+        """
+        reference_store = self._sbol_owner.properties[self._rdf_type]
+        return reference_store[item]
+
+    def set(self, uri):
+        if self._sbol_owner is not None:
+            self._sbol_owner.properties[self._rdf_type][0] = uri
+        else:
+            # NOTE: we could raise an exception here, but the original code is not doing anything in this case.
+            print('Unable to set item. SBOL owner was None.')
+
+    def add(self, uri):
+        if self._sbol_owner is not None:
+            self._sbol_owner.properties[self._rdf_type].append(uri)
+        else:
+            # NOTE: we could raise an exception here, but the original code is not doing anything in this case.
+            print('Unable to set item. SBOL owner was None.')
+
+    def addReference(self, uri):
+        self._sbol_owner.properties[self._rdf_type].append(uri)

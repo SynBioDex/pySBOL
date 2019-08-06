@@ -48,7 +48,7 @@ class TestSequences(unittest.TestCase):
         setHomespace('http://sbols.org/CRISPR_Example')
         Config.setOption('sbol_typed_uris', False)
         doc = Document()
-        doc.read(os.path.join(MODULE_LOCATION, 'crispr_example.xml'))
+        doc.read(os.path.join(MODULE_LOCATION, 'resources/crispr_example.xml'))
         # Sequence to test against
         seq = ('GCTCCGAATTTCTCGACAGATCTCATGTGATTACGCCAAGCTACGGGCGGAGTACTGTCCTC'
                'CGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGCGGAGTACTGTCCTCCGAGC'

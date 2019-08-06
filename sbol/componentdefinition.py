@@ -80,11 +80,11 @@ class ComponentDefinition(TopLevel):
         super().__init__(rdf_type, uri, version)
         self._types = Property(self, SBOL_TYPES, '1', '*', None, component_type)
         self._roles = Property(self, SBOL_ROLES, '0', '*', None)
-        self.sequence = Property(self, SBOL_SEQUENCE, '0', '1', [validation.libsbol_rule_20])
-        self.sequences = Property(self, SBOL_SEQUENCE_PROPERTY, SBOL_SEQUENCE, '0' '*', [validation.libsbol_rule_21])
-        self.sequenceAnnotations = Property(self, SBOL_SEQUENCE_ANNOTATIONS, '0', '*', None)
-        self.components = Property(self, SBOL_COMPONENTS, '0', '*', None)
-        self.sequenceConstraints = Property(self, SBOL_SEQUENCE_CONSTRAINTS, '0', '*', None)
+        self.sequence = OwnedObject(self, SBOL_SEQUENCE, '0', '1', [validation.libsbol_rule_20])
+        self.sequences = ReferencedObject(self, SBOL_SEQUENCE_PROPERTY, SBOL_SEQUENCE, '0', '*', [validation.libsbol_rule_21])
+        self.sequenceAnnotations = OwnedObject(self, SBOL_SEQUENCE_ANNOTATIONS, '0', '*', None)
+        self.components = OwnedObject(self, SBOL_COMPONENTS, '0', '*', None)
+        self.sequenceConstraints = OwnedObject(self, SBOL_SEQUENCE_CONSTRAINTS, '0', '*', None)
 
     @property
     def types(self):
