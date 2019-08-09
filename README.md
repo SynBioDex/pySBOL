@@ -6,7 +6,10 @@ and [pySBOL](https://github.com/SynBioDex/pySBOL).
 
 ## INSTALLATION
 
-To be updated.
+This library is currently under development. To test it out, follow these steps:
+1) Clone this repository.
+2) (From top-level directory) `pip install -e .`
+3) Open a python3 interpreter, and import sbol3.
 
 ## DOCUMENTATION
 
