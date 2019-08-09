@@ -25,10 +25,9 @@ import rdflib
 from rdflib import URIRef
 import os
 from . import SBOL2Serialize
-import pprint  # for debugging
+import logging
+from logging.config import fileConfig
 
-
-DEBUG = False
 
 class Document(Identified):
     """
@@ -81,6 +80,14 @@ class Document(Identified):
         :param filename: (optional) a file to initialize the Document.
         """
         super().__init__(SBOL_DOCUMENT, URIRef(""), VERSION_STRING)
+        if os.path.exists(LOGGING_CONFIG):
+            fileConfig(LOGGING_CONFIG)
+        self.logger = logging.getLogger(__name__)
+        if not os.path.exists(LOGGING_CONFIG):
+            self.logger.setLevel(logging.INFO)
+
+        self.logger = logging.getLogger(__name__)
+
         # A RDFLib representation of the triples.
         # Initialized when parsing a graph.
         # Updated when writing a graph.
@@ -281,7 +288,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         raise NotImplementedError("Not yet implemented")
 
     def append(self, filename):
-        print("Appending data from file: " + filename)
+        self.logger.debug("Appending data from file: " + filename)
         """
         Read an RDF/XML file and attach the SBOL objects to this Document.
 
@@ -293,13 +300,14 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             self.graph = rdflib.Graph()
             self.graph.parse(f, format="application/rdf+xml")
             # Parse namespaces
-            print("*** Reading in namespaces (graph): ")
+            self.logger.debug("*** Reading in namespaces (graph): ")
             for ns in self.graph.namespaces():
-                print(ns)
+                self.logger.debug(ns)
                 self._namespaces[ns[0]] = ns[1]
-            print("*** Internal namespaces data structure: ")
-            for ns in self._namespaces:
-                print(ns)
+            if self.logger.isEnabledFor(logging.DEBUG):
+                self.logger.debug("*** Internal namespaces data structure: ")
+                for ns in self._namespaces:
+                    self.logger.debug(ns)
             # Find top-level objects
             top_level_query = "PREFIX : <http://example.org/ns#> " \
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " \
@@ -308,9 +316,9 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                 "{ ?s a ?o }"
             sparql_results = self.graph.query(top_level_query)
             for result in sparql_results:
-                if DEBUG:
-                    print("Type of s: " + str(type(result.s)))  # DEBUG
-                    print("Type of o: " + str(type(result.o)))  # DEBUG
+                if self.logger.isEnabledFor(logging.DEBUG):
+                    self.logger.debug("Type of s: " + str(type(result.s)))  # DEBUG
+                    self.logger.debug("Type of o: " + str(type(result.o)))  # DEBUG
                 self.parse_objects_inner(result.s, result.o)
             # Find everything in the triple store
             all_query = "PREFIX : <http://example.org/ns#> " \
@@ -349,9 +357,9 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         if subject not in self.SBOLObjects and obj in self.SBOL_DATA_MODEL_REGISTER:
             # Call constructor for the appropriate SBOLObject
             new_obj = self.SBOL_DATA_MODEL_REGISTER[obj]()
-            if DEBUG:
-                print("New object type: " + str(type(new_obj)))
-                print("New object attrs: " + str(vars(new_obj)))
+            if self.logger.isEnabledFor(logging.DEBUG):
+                self.logger.debug("New object type: " + str(type(new_obj)))
+                self.logger.debug("New object attrs: " + str(vars(new_obj)))
             # Wipe default property values passed from default
             # constructor. New property values will be added as properties
             # are parsed from the input file
@@ -375,8 +383,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             new_obj.doc = self
 
     def parse_properties_inner(self, subject, predicate, obj):
-        if DEBUG:
-            print("Adding: (" + str(subject) + " - " + str(type(subject)) + ", " + str(predicate) + " - " + str(type(predicate)) + ", " + str(obj) + " - " + str(type(obj)) + ")")
+        if self.logger.isEnabledFor(logging.DEBUG):
+            self.logger.debug("Adding: (" + str(subject) + " - " + str(type(subject)) + ", " + str(predicate) + " - " + str(type(predicate)) + ", " + str(obj) + " - " + str(type(obj)) + ")")
         found = predicate.rfind('#')
         if found == -1:
             found = predicate.rfind('/')
@@ -474,8 +482,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         """
         self.update_graph()
         rdf = SBOL2Serialize.serialize_sboll2(self.graph).decode('utf-8')
-        print("RDF: "+ rdf)
-        print("TYPE: " + str(type(rdf)))
+        self.logger.debug("RDF: "+ rdf)
+        self.logger.debug("TYPE: " + str(type(rdf)))
         with open(outfile, 'w') as out:
             out.write(rdf)
             out.flush()
@@ -492,8 +500,9 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         for typeURI, objlist in self.owned_objects.items():
             for owned_obj in objlist:
                 owned_obj.build_graph(self.graph)
-        for s,p,o in self.graph:
-             print((s,p,o))
+        if self.logger.isEnabledFor(logging.DEBUG):
+            for s,p,o in self.graph:
+                self.logger.debug((s,p,o))
 
     def validate(self):
         """

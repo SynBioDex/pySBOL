@@ -10,3 +10,5 @@
 
 # Other
 *.swp
+.idea/
+.pytest_cache/

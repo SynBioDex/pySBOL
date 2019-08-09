@@ -3,6 +3,8 @@ from .property import *
 from .validation import *
 from .config import *
 from rdflib import RDF
+import logging
+from logging.config import fileConfig
 
 
 class SBOLObject:
@@ -59,6 +61,11 @@ class SBOLObject:
 
     def __init__(self, _rdf_type=URIRef(UNDEFINED), uri=URIRef("example")):
         """Open-world constructor."""
+        if os.path.exists(LOGGING_CONFIG):
+            fileConfig(LOGGING_CONFIG)
+        self.logger = logging.getLogger(__name__)
+        if not os.path.exists(LOGGING_CONFIG):
+            self.logger.setLevel(logging.INFO)
         self.owned_objects = {}  # map<rdf_type, vector<SBOLObject>>
         self.properties = {}  # map<rdf_type, vector<SBOLObject>>
         if type(_rdf_type) is str:
@@ -67,7 +74,7 @@ class SBOLObject:
             self.rdf_type = _rdf_type
         self._namespaces = {}
         if not isinstance(uri, URIRef):
-            print("Property was not a URIRef: '" + str(uri) + "', " + str(type(uri)))
+            self.logger.debug("Property was not a URIRef: '" + str(uri) + "', " + str(type(uri)))
             self._identity = URIProperty(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], URIRef(uri))
         else:
             self._identity = URIProperty(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
@@ -176,11 +183,11 @@ class SBOLObject:
         """
         # TODO This may work differently than the original method...
         if type(comparand) != type(self):
-            print("TYPES ARE NOT EQUAL!!!")
+            self.logger.warning("TYPES ARE NOT EQUAL!!!")
             return False
         is_equal = True
         if self.rdf_type != comparand.rdf_type:
-            print(self.identity + ' does not match type of ' + comparand.rdf_type)
+            self.logger.warning(self.identity + ' does not match type of ' + comparand.rdf_type)
             return False
         if self.rdf_type == SBOL_DOCUMENT:
             ns_set = set(())
@@ -190,17 +197,17 @@ class SBOLObject:
             for val in comparand._namespaces.values():
                 comparand_ns_set.add(val)
             if ns_set != comparand_ns_set:
-                print("NAMESPACES ARE NOT EQUAL!!!")
+                self.logger.warning("NAMESPACES ARE NOT EQUAL!!!")
                 is_equal = False
-        print("Here are my properties: " + str(self.properties))
-        print("Here are their properties: " + str(comparand.properties))
+        self.logger.debug("Here are my properties: " + str(self.properties))
+        self.logger.debug("Here are their properties: " + str(comparand.properties))
         if self.compare_unordered_lists(self.properties, comparand.properties) is False:
-            print("PROPERTIES ARE NOT EQUAL!!!")
+            self.logger.warning("PROPERTIES ARE NOT EQUAL!!!")
             is_equal = False
-        print("Here are my owned objects: " + str(self.owned_objects))
-        print("Here are their owned objects: " + str(comparand.owned_objects))
+        self.logger.debug("Here are my owned objects: " + str(self.owned_objects))
+        self.logger.debug("Here are their owned objects: " + str(comparand.owned_objects))
         if self.compare_unordered_lists(self.owned_objects, comparand.owned_objects) is False:
-            print("OWNED OBJECTS ARE NOT EQUAL!!!")
+            self.logger.warning("OWNED OBJECTS ARE NOT EQUAL!!!")
             is_equal = False
         return is_equal
 

@@ -1,5 +1,7 @@
 from rdflib import URIRef
 
+LOGGING_CONFIG = 'logging_config.ini'
+
 # All SBOL objects will be created in the default namespace, unless otherwise specified
 DEFAULT_NS = URIRef("http://examples.org/")
 

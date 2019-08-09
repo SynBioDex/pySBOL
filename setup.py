@@ -29,4 +29,7 @@ setup(name='sbol3',
       # What does your project relate to?
       keywords='synthetic biology',
       packages=['sbol3'],
+      install_requires=[
+          'rdflib'
+      ],
       zip_safe=False)

@@ -58,6 +58,9 @@ class TestDocument(unittest.TestCase):
         self.assertEqual(crispr_template, crispr_template_2)
         self.assertEqual(cas9, cas9_2)
 
+    def test_document(self):
+        doc = Document()
+
 
 if __name__ == '__main__':
     unittest.main()
