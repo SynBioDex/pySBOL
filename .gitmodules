@@ -2,3 +2,6 @@
 	path = sbol/test/SBOLTestSuite
 	url = https://github.com/SynBioDex/SBOLTestSuite
 	branch = master
+[submodule "sbol3/test/SBOLTestSuite"]
+	path = sbol3/test/SBOLTestSuite
+	url = https://github.com/SynBioDex/SBOLTestSuite.git

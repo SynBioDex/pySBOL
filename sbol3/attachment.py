@@ -3,6 +3,7 @@ from constants import *
 from rdflib import URIRef
 from property import URIProperty, LiteralProperty
 
+
 class Attachment(TopLevel):
 
     def __init__(self, type_uri=SBOL_ATTACHMENT, uri=URIRef("example"), version=VERSION_STRING, source=''):

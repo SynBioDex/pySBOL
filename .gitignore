@@ -1,0 +1,12 @@
+# From: https://python-packaging.readthedocs.io/en/latest/minimal.html
+# Compiled python modules
+*.pyc
+
+# Setuptools distribution folder
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools
+/*.egg-info
+
+# Other
+*.swp
