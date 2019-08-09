@@ -486,6 +486,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :return:
         """
         self.graph = rdflib.Graph()
+        for prefix, ns in self._namespaces.items():
+            self.graph.bind(prefix, ns)
         # # # ASSUMPTION: Document does not have properties. Is this a valid assumption?
         for typeURI, objlist in self.owned_objects.items():
             for owned_obj in objlist:

@@ -13,7 +13,7 @@ class Association(Identified):
     # The plan property is OPTIONAL and contains a URI that refers to a Plan.
     plan = None
 
-    def __init__(self, uri="example", agent="", role="", version=VERSION_STRING, rdf_type=PROVO_ASSOCIATION):
+    def __init__(self, uri=URIRef("example"), agent=URIRef(""), role=URIRef(""), version=VERSION_STRING, rdf_type=PROVO_ASSOCIATION):
         """Constructor.
 
         :param uri: A full URI including a scheme, namespace, and identifier.
@@ -25,6 +25,9 @@ class Association(Identified):
         :param rdf_type: The RDF type for an extension class derived from this one.
         """
         super().__init__(rdf_type, uri, version)
+        self.agent = ReferencedObject(self, PROVO_AGENT_PROPERTY, PROVO_AGENT, '1', '1', [], agent)
+        self.roles = URIProperty(self, PROVO_HAD_ROLE, '1', '*', [], role)
+        self.plan = ReferencedObject(self, PROVO_HAD_PLAN, PROVO_PLAN, '0', '1', [])
 
 
 class Usage(Identified):
@@ -35,7 +38,7 @@ class Usage(Identified):
     # the usage of an entity referenced by the entity property.
     roles = None
 
-    def __init__(self, uri="example", entity="", role="", version=VERSION_STRING, rdf_type=PROVO_USAGE):
+    def __init__(self, uri=URIRef("example"), entity=URIRef(""), role=URIRef(""), version=VERSION_STRING, rdf_type=PROVO_USAGE):
         """Constructor.
 
         :param uri: A full URI including a scheme, namespace, and identifier.
@@ -47,6 +50,8 @@ class Usage(Identified):
         :param type: The RDF type for an extension class derived from this one.
         """
         super().__init__(rdf_type, uri, version)
+        self.entity = URIProperty(self, PROVO_ENTITY, '1', '1', [], entity)
+        self.roles = URIProperty(self, PROVO_HAD_ROLE, '1', '*', [], role)
 
 
 class Agent(TopLevel):
@@ -54,7 +59,7 @@ class Agent(TopLevel):
     These agents should be annotated with additional information, such as software version
     needed to be able to run the same software again.
     """
-    def __init__(self, uri="example", version=VERSION_STRING, rdf_type=PROVO_AGENT):
+    def __init__(self, uri=URIRef("example"), version=VERSION_STRING, rdf_type=PROVO_AGENT):
         """Constructor.
 
         :param uri: A full URI including a scheme, namespace, and identifier.
@@ -66,7 +71,7 @@ class Agent(TopLevel):
 
 
 class Plan(TopLevel):
-    def __init__(self, uri="example", version=VERSION_STRING, rdf_type=PROVO_PLAN):
+    def __init__(self, uri=URIRef("example"), version=VERSION_STRING, rdf_type=PROVO_PLAN):
         """Constructor.
 
         :param uri: A full URI including a scheme, namespace, and identifier.
@@ -119,3 +124,11 @@ class Activity(TopLevel):
         :param rdf_type: The RDF type for an extension class derived from this one.
         """
         super().__init__(rdf_type, uri, version)
+        self.plan = OwnedObject(self, PROVO_PLAN, '0', '1', [libsbol_rule_22])
+        self.agent = OwnedObject(self, PROVO_AGENT, '0', '1', [libsbol_rule_22])
+        self.types = URIProperty(self, SBOL_TYPES, '0', '1', [])
+        self.startedAtTime = LiteralProperty(self, PROVO_STARTED_AT_TIME, '0', '1', [])
+        self.endedAtTime = LiteralProperty(self, PROVO_ENDED_AT_TIME, '0', '1', [])
+        self.wasInformedBy = ReferencedObject(self, PROVO_WAS_INFORMED_BY, PROVO_ACTIVITY, '0', '*', [])
+        self.usages = OwnedObject(self, PROVO_QUALIFIED_USAGE, '0', '*', [])
+        self.associations = OwnedObject(self, PROVO_QUALIFIED_ASSOCIATION, '0', '*', [])

@@ -1,6 +1,6 @@
 from identified import Identified
 from constants import *
-from property import URIProperty, ReferencedObject
+from property import URIProperty, ReferencedObject, LiteralProperty
 from rdflib import URIRef
 
 class Location(Identified):
@@ -60,9 +60,18 @@ class Range(Location):
     def length(self):
         return self.end + 1 - self.start
 
+
 class Cut(Location):
-    pass
+    """The Cut class specifies a location between two coordinates of a Sequence's elements."""
+    def _init__(self, rdf_type, uri, at):
+        super().__init__(rdf_type, uri)
+        self.at = LiteralProperty(self, SBOL_AT, '1', '1', [], at)
 
 
 class GenericLocation(Location):
-    pass
+    """the GenericLocation class is included as a starting point for specifying regions on Sequence objects with
+    encoding properties other than IUPAC and potentially nonlinear structure. This class can also be used to set
+    the orientation of a SequenceAnnotation and any associated Component when their parent ComponentDefinition is
+    a partial design that lacks a Sequence."""
+    def __init__(self, uri=URIRef('example')):
+        super().__init__(SBOL_GENERIC_LOCATION, uri)
