@@ -1,6 +1,6 @@
 import unittest
-from config import *
-from moduledefinition import *
+from sbol3.config import *
+from sbol3.moduledefinition import *
 
 
 class TestIdentified(unittest.TestCase):

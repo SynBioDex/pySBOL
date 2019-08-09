@@ -1,6 +1,6 @@
 import unittest
-from document import *
-from componentdefinition import *
+from sbol3.document import *
+from sbol3.componentdefinition import *
 import os, sys
 
 MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))

@@ -1,8 +1,8 @@
 import unittest
-from config import *
-from moduledefinition import *
-from componentdefinition import *
-from sbolerror import *
+from sbol3.config import *
+from sbol3.moduledefinition import *
+from sbol3.componentdefinition import *
+from sbol3.sbolerror import *
 
 
 class TestConfig(unittest.TestCase):

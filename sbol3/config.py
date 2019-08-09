@@ -1,5 +1,5 @@
 from enum import Enum
-from sbolerror import *
+from .sbolerror import *
 import os
 import random
 

@@ -1,6 +1,6 @@
-from identified import Identified
-from property import URIProperty, OwnedObject, ReferencedObject
-from constants import *
+from .identified import Identified
+from .property import URIProperty, OwnedObject, ReferencedObject
+from .constants import *
 
 
 class ComponentInstance(Identified):

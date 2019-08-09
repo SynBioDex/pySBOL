@@ -1,8 +1,8 @@
 import unittest
-from document import *
-from config import *
-from moduledefinition import *
-from componentdefinition import *
+from sbol3.document import *
+from sbol3.config import *
+from sbol3.moduledefinition import *
+from sbol3.componentdefinition import *
 from constants import *
 
 

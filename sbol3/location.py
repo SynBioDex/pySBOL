@@ -1,6 +1,6 @@
-from identified import Identified
-from constants import *
-from property import URIProperty, ReferencedObject, LiteralProperty
+from .identified import Identified
+from .constants import *
+from .property import URIProperty, ReferencedObject, LiteralProperty
 from rdflib import URIRef
 
 class Location(Identified):

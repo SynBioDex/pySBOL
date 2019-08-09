@@ -1,7 +1,7 @@
-from toplevel import TopLevel
-from constants import *
+from .toplevel import TopLevel
+from .constants import *
 from rdflib import URIRef
-from property import URIProperty, LiteralProperty
+from .property import URIProperty, LiteralProperty
 
 
 class Attachment(TopLevel):

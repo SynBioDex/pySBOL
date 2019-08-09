@@ -1,6 +1,6 @@
-from identified import Identified
-from constants import *
-from property import OwnedObject, ReferencedObject
+from .identified import Identified
+from .constants import *
+from .property import OwnedObject, ReferencedObject
 
 
 class Module(Identified):

@@ -1,6 +1,6 @@
 import re
-from sbolerror import SBOLError, SBOLErrorCode
-from identified import *
+from .sbolerror import SBOLError, SBOLErrorCode
+from .identified import *
 
 def is_alphanumeric_or_underscore(c):
     i = ord(c)

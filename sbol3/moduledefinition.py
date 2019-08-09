@@ -1,6 +1,6 @@
-from constants import *
-from toplevel import *
-from property import *
+from .constants import *
+from .toplevel import *
+from .property import *
 
 
 class ModuleDefinition(TopLevel):

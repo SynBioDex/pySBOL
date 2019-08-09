@@ -1,7 +1,7 @@
-from constants import *
-from identified import *
+from .constants import *
+from .identified import *
 import os
-from config import *
+from .config import *
 
 
 class TopLevel(Identified):

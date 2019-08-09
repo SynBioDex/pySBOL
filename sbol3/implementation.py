@@ -1,7 +1,7 @@
-from toplevel import TopLevel
+from .toplevel import TopLevel
 from rdflib import URIRef
-from constants import *
-from property import URIProperty
+from .constants import *
+from .property import URIProperty
 
 
 class Implementation(TopLevel):

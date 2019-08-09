@@ -1,6 +1,6 @@
-from object import *
-from constants import *
-import validation
+from .object import *
+from .constants import *
+from . import validation
 
 
 class Identified(SBOLObject):

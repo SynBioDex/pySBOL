@@ -1,7 +1,7 @@
 import unittest
 import tempfile, shutil
 import sys
-from document import *
+from sbol3.document import *
 
 MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
 TEST_LOC_SBOL2 = os.path.join(MODULE_LOCATION, 'SBOLTestSuite', 'SBOL2')
@@ -429,4 +429,5 @@ def runRoundTripTests():
 
 
 if __name__ == '__main__':
+    print(sys.path)
     runRoundTripTests()

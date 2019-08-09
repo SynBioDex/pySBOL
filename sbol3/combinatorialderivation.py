@@ -1,8 +1,8 @@
-from identified import Identified
-from toplevel import TopLevel
-from constants import *
+from .identified import Identified
+from .toplevel import TopLevel
+from .constants import *
 from rdflib import URIRef
-from property import ReferencedObject, URIProperty, OwnedObject
+from .property import ReferencedObject, URIProperty, OwnedObject
 
 
 class VariableComponent(Identified):

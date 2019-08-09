@@ -1,7 +1,7 @@
-from constants import *
-from toplevel import *
+from .constants import *
+from .toplevel import *
 from deprecated import deprecated
-from property import Property
+from .property import Property
 
 class Sequence(TopLevel):
     """The primary structure (eg, nucleotide or amino acid sequence) of a ComponentDefinition object."""

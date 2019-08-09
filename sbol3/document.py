@@ -1,30 +1,30 @@
-from identified import *
-from config import *
-from constants import *
-from componentdefinition import ComponentDefinition
-from sequenceannotation import SequenceAnnotation
-from sequence import Sequence
-from component import Component, FunctionalComponent
-from moduledefinition import ModuleDefinition
-from module import Module
-from interaction import Interaction
-from participation import Participation
-from model import Model
-from sequenceconstraint import SequenceConstraint
-from location import Range, Cut, GenericLocation
-from mapsto import MapsTo
-from collection import Collection
-from provo import Plan, Activity, Agent, Usage, Association
-from attachment import Attachment
-from combinatorialderivation import CombinatorialDerivation
-from implementation import Implementation
-from dbtl import Design, Analysis, SampleRoster
-from experiment import Experiment, ExperimentalData
-from object import SBOLObject
+from .identified import *
+from .config import *
+from .constants import *
+from .componentdefinition import ComponentDefinition
+from .sequenceannotation import SequenceAnnotation
+from .sequence import Sequence
+from .component import Component, FunctionalComponent
+from .moduledefinition import ModuleDefinition
+from .module import Module
+from .interaction import Interaction
+from .participation import Participation
+from .model import Model
+from .sequenceconstraint import SequenceConstraint
+from .location import Range, Cut, GenericLocation
+from .mapsto import MapsTo
+from .collection import Collection
+from .provo import Plan, Activity, Agent, Usage, Association
+from .attachment import Attachment
+from .combinatorialderivation import CombinatorialDerivation
+from .implementation import Implementation
+from .dbtl import Design, Analysis, SampleRoster
+from .experiment import Experiment, ExperimentalData
+from .object import SBOLObject
 import rdflib
 from rdflib import URIRef
 import os
-import SBOL2Serialize
+from . import SBOL2Serialize
 import pprint  # for debugging
 
 

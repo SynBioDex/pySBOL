@@ -1,6 +1,6 @@
-from identified import Identified
-from constants import *
-from property import OwnedObject, URIProperty
+from .identified import Identified
+from .constants import *
+from .property import OwnedObject, URIProperty
 
 
 class SequenceAnnotation(Identified):

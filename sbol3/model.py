@@ -1,6 +1,6 @@
-from toplevel import TopLevel
-from property import Property, URIProperty
-from constants import *
+from .toplevel import TopLevel
+from .property import Property, URIProperty
+from .constants import *
 
 
 class Model(TopLevel):

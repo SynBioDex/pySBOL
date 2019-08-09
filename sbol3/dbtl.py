@@ -1,8 +1,8 @@
-from toplevel import *
-from constants import *
-from implementation import Implementation
-from experiment import ExperimentalData
-from collection import Collection
+from .toplevel import *
+from .constants import *
+from .implementation import Implementation
+from .experiment import ExperimentalData
+from .collection import Collection
 
 
 class Design(TopLevel):

@@ -1,7 +1,7 @@
 from rdflib import URIRef, Literal, XSD
-from sbolerror import *
-from config import Config, ConfigOptions, getHomespace, parseClassName, parsePropertyName
-from constants import *
+from .sbolerror import *
+from .config import Config, ConfigOptions, getHomespace, parseClassName, parsePropertyName
+from .constants import *
 import os
 
 

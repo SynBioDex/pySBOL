@@ -1,7 +1,7 @@
-from constants import *
-from identified import Identified
+from .constants import *
+from .identified import Identified
 from rdflib import URIRef
-from property import Property
+from .property import Property
 
 class SequenceConstraint(Identified):
 

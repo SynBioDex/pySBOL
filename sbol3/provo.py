@@ -1,6 +1,6 @@
-from identified import *
-from constants import *
-from toplevel import *
+from .identified import *
+from .constants import *
+from .toplevel import *
 
 class Association(Identified):
     # The agent property is REQUIRED and MUST contain a URI that refers to an Agent object.

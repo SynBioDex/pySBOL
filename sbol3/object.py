@@ -1,12 +1,11 @@
-from abc import ABCMeta, abstractmethod  # Note: Python 3 defines a helper class ABC.
-from constants import *
-from property import *
-from validation import *
-from config import *
+from .constants import *
+from .property import *
+from .validation import *
+from .config import *
 from rdflib import RDF
 
 
-class SBOLObject(metaclass=ABCMeta):
+class SBOLObject:
     """An SBOLObject converts a Python data structure into an RDF triple store
      and contains methods for serializing and parsing RDF triples.
     """

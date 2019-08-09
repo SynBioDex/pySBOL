@@ -1,7 +1,7 @@
-from constants import *
-from toplevel import *
-import validation
-from property import URIProperty
+from .constants import *
+from .toplevel import *
+from . import validation
+from .property import URIProperty
 
 class ComponentDefinition(TopLevel):
     """
@@ -50,8 +50,8 @@ class ComponentDefinition(TopLevel):
     # hierarchy of Component and ComponentDefinition objects. If a ComponentDefinition in such a hierarchy refers to
     # one or more Sequence objects, and there exist ComponentDefinition objects lower in the hierarchy that refer to
     # Sequence objects with the same encoding, then the elements properties of these Sequence objects SHOULD be
-    # consistent with each other, such that well-defined mappings exist from the “lower level” elements to the
-    # “higher level” elements. This mapping is also subject to any restrictions on the positions of the Component
+    # consistent with each other, such that well-defined mappings exist from the "lower level" elements to the
+    # "higher level" elements. This mapping is also subject to any restrictions on the positions of the Component
     # objects in the hierarchy that are imposed by the SequenceAnnotation or SequenceConstraint objects contained
     # by the ComponentDefinition objects in the hierarchy.  The set of relations between Component and
     # ComponentDefinition objects is strictly acyclic.

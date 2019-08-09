@@ -1,7 +1,7 @@
-from identified import Identified
-from constants import *
+from .identified import Identified
+from .constants import *
 from rdflib import URIRef
-from property import URIProperty, ReferencedObject, OwnedObject
+from .property import URIProperty, ReferencedObject, OwnedObject
 
 
 class Participation(Identified):
