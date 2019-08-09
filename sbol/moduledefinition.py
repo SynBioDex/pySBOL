@@ -56,7 +56,11 @@ class ModuleDefinition(TopLevel):
         :param sbol_type_uri: The RDF type for an extension class derived from this one (optional)
         """
         super().__init__(sbol_type_uri, uri, version)
-        roles = Property(self, SBOL_ROLES, '0', '*', None)
+        self.roles = URIProperty(self, SBOL_ROLES, '0', '*', None)
+        self.models = ReferencedObject(self, SBOL_MODELS, SBOL_MODEL, '0', '*', [])
+        self.functionalComponents = OwnedObject(self, SBOL_FUNCTIONAL_COMPONENTS, '0', '*', [])
+        self.modules = OwnedObject(self, SBOL_MODULES, '0', '*', [])
+        self.interactions = OwnedObject(self, SBOL_INTERACTIONS, '0', '*', [libsbol_rule_17])
 
     def setOutput(self, output):
         """Defines an output for a sub-Module. Useful for top-down assembly of Modules and sub-Modules.

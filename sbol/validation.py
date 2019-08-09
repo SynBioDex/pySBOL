@@ -80,6 +80,34 @@ def libsbol_rule_2(sbol_obj, arg):
                         "For example 2016-03-16T20:12:00Z")
 
 
+def libsbol_rule_3(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_4(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_5(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_6(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_8(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_9(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_10(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
 def libsbol_rule_11(sbol_obj, arg):
     raise NotImplementedError("Not yet implemented")
 
@@ -96,7 +124,15 @@ def libsbol_rule_14(sbol_obj, arg):
     raise NotImplementedError("Not yet implemented")
 
 
+def libsbol_rule_15(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
 def libsbol_rule_16(sbol_obj, arg):
+    raise NotImplementedError("Not yet implemented")
+
+
+def libsbol_rule_17(sbol_obj, arg):
     raise NotImplementedError("Not yet implemented")
 
 

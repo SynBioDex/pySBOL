@@ -77,6 +77,7 @@ def serialize_sboll2(g):
     owned_elements = set()
 
     for triple in g.triples((None, RDF.type, None)):
+        # print(triple)
         subject = triple[0].toPython()
         the_type = triple[2].toPython()
         if subject in subject_to_element:

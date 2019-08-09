@@ -49,11 +49,11 @@ class Identified(SBOLObject):
 
     def __init__(self, type_uri=SBOL_IDENTIFIED, uri=URIRef('example'), version=VERSION_STRING):
         super().__init__(type_uri, uri)
-        self._persistentIdentity = Property(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, URIRef(uri))
-        self._displayId = Property(self, SBOL_DISPLAY_ID, '0', '1', [validation.sbol_rule_10204])
-        self._version = Property(self, SBOL_VERSION, '0', '1', None, version)
-        self._name = Property(self, SBOL_NAME, '0', '1', None)
-        self._description = Property(self, SBOL_DESCRIPTION, '0', '1', None)
+        self._persistentIdentity = URIProperty(self, SBOL_PERSISTENT_IDENTITY, '0', '1', None, URIRef(uri))
+        self._displayId = LiteralProperty(self, SBOL_DISPLAY_ID, '0', '1', [validation.sbol_rule_10204])
+        self._version = LiteralProperty(self, SBOL_VERSION, '0', '1', None, version)
+        self._name = LiteralProperty(self, SBOL_NAME, '0', '1', None)
+        self._description = LiteralProperty(self, SBOL_DESCRIPTION, '0', '1', None)
         if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
             self._displayId.set(uri)
             self._persistentIdentity.set(URIRef(os.path.join(getHomespace(), uri)))

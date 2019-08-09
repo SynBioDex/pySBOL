@@ -3,6 +3,7 @@ from sequence import *
 from document import *
 from config import *
 import os, sys
+import shutil
 
 MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
 
@@ -57,6 +58,36 @@ class TestSequences(unittest.TestCase):
                'TACCTCATCAGGAACATGTTGGATCCAATTCGACC')
 
         seq_read = doc.sequences.get('CRP_b_seq').elements
+        self.assertEquals(seq_read, seq)
+
+    def testUpdateSequenceElement(self):
+        setHomespace('http://sbols.org/CRISPR_Example')
+        Config.setOption('sbol_typed_uris', False)
+        doc = Document()
+        doc.read(os.path.join(MODULE_LOCATION, 'resources/crispr_example.xml'))
+        # Sequence to test against
+        seq = 'AAAAA'
+        doc.sequences.get('CRP_b_seq').elements = seq
+        seq_read = doc.sequences.get('CRP_b_seq').elements
+        self.assertEquals(seq_read, seq)
+
+    # File I/O Tests
+    def testUpdateWrite(self):
+        setHomespace('http://sbols.org/CRISPR_Example')
+        Config.setOption('sbol_typed_uris', False)
+        doc = Document()
+        doc.read(os.path.join(MODULE_LOCATION, 'resources/crispr_example.xml'))
+        # Sequence to test against
+        seq = 'AAAAA'
+        doc.sequences.get('CRP_b_seq').elements = seq
+        # Write to disk
+        print('WRITING MODIFIED FILE TO DISK')
+        doc.write('test.xml')
+        # Compare
+        print('READING MODIFIED FILE FROM DISK')
+        doc2 = Document()  # Document to compare for equality
+        doc2.read('test.xml')
+        seq_read = doc2.sequences.get('CRP_b_seq').elements
         self.assertEquals(seq_read, seq)
 
 

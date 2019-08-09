@@ -1,6 +1,6 @@
 from identified import Identified
 from constants import *
-from property import OwnedObject, Property
+from property import OwnedObject, URIProperty
 
 
 class SequenceAnnotation(Identified):
@@ -16,7 +16,7 @@ class SequenceAnnotation(Identified):
         super().__init__(SBOL_SEQUENCE_ANNOTATION, uri, version)
         self.component = None #  TODO support ReferencedObject
         self.locations = OwnedObject(self, SBOL_LOCATIONS, '0', '*', [])
-        self.roles = Property(self, SBOL_ROLES, '0', '*', [])
+        self.roles = URIProperty(self, SBOL_ROLES, '0', '*', [])
 
     def precedes(self, comparand):
         """Tests if the comparand SequenceAnnotation precedes this one according to base coordinates

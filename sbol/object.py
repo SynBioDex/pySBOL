@@ -3,7 +3,7 @@ from constants import *
 from property import *
 from validation import *
 from config import *
-import rdflib
+from rdflib import RDF
 
 
 class SBOLObject(metaclass=ABCMeta):
@@ -60,6 +60,8 @@ class SBOLObject(metaclass=ABCMeta):
 
     def __init__(self, _rdf_type=URIRef(UNDEFINED), uri=URIRef("example")):
         """Open-world constructor."""
+        self.owned_objects = {}  # map<rdf_type, vector<SBOLObject>>
+        self.properties = {}  # map<rdf_type, vector<SBOLObject>>
         if type(_rdf_type) is str:
             self.rdf_type = URIRef(_rdf_type)
         else:
@@ -67,13 +69,12 @@ class SBOLObject(metaclass=ABCMeta):
         self._namespaces = {}
         if not isinstance(uri, URIRef):
             print("Property was not a URIRef: '" + str(uri) + "', " + str(type(uri)))
-            self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], URIRef(uri))
+            self._identity = URIProperty(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], URIRef(uri))
         else:
-            self._identity = Property(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
+            self._identity = URIProperty(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
         if hasHomespace():
-            self._identity.set(os.path.join(getHomespace(), uri))
-        self.owned_objects = {}  # map<rdf_type, vector<SBOLObject>>
-        self.properties = {}  # map<rdf_type, vector<SBOLObject>>
+            uri = os.path.join(getHomespace(), uri)
+            self._identity = URIProperty(self, SBOL_IDENTITY, '0', '1', [sbol_rule_10202], uri)
 
     @property
     def identity(self):
@@ -82,7 +83,7 @@ class SBOLObject(metaclass=ABCMeta):
 
     @identity.setter
     def identity(self, new_identity):
-        self._identity.set(new_identity)
+        self._identity.value = new_identity
 
     def getTypeURI(self):
         """
@@ -309,6 +310,16 @@ class SBOLObject(metaclass=ABCMeta):
         :return: None
         """
         raise NotImplementedError("Implemented by child classes")
+
+    def build_graph(self, graph):
+        graph.add((self.identity, RDF.type, self.rdf_type))
+        for typeURI, proplist in self.properties.items():
+            for prop in proplist:
+                graph.add((self.identity, typeURI, prop))
+        for typeURI, objlist in self.owned_objects.items():
+            for owned_obj in objlist:
+                graph.add((self.identity, typeURI, owned_obj.identity))
+                owned_obj.build_graph(graph)
 
     def serialize_rdf2xml(self, graph):
         """Serialize the SBOLObject.

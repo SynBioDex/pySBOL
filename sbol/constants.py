@@ -104,6 +104,7 @@ SBOL_VARIANT_DERIVATIONS = URIRef(SBOL_URI + "#variantDeriviations")
 SBOL_STRATEGY = URIRef(SBOL_URI + "#strategy")
 SBOL_TEMPLATE = URIRef(SBOL_URI + "#template")
 SBOL_ATTACHMENTS = URIRef(SBOL_URI + "#attachment")
+SBOL_MEASUREMENTS = URIRef(SBOL_URI + "#measure")
 
 # SBOL internal ontologies
 SBOL_ACCESS_PRIVATE = URIRef(SBOL_URI + "#private")  # < Option for Component::access or FunctionalComponent::access property

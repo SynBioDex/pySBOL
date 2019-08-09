@@ -28,6 +28,8 @@ import SBOL2Serialize
 import pprint  # for debugging
 
 
+DEBUG = False
+
 class Document(Identified):
     """
     The Document is a container for all SBOL data objects.
@@ -306,8 +308,9 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                 "{ ?s a ?o }"
             sparql_results = self.graph.query(top_level_query)
             for result in sparql_results:
-                print("Type of s: " + str(type(result.s)))  # DEBUG
-                print("Type of o: " + str(type(result.o)))  # DEBUG
+                if DEBUG:
+                    print("Type of s: " + str(type(result.s)))  # DEBUG
+                    print("Type of o: " + str(type(result.o)))  # DEBUG
                 self.parse_objects_inner(result.s, result.o)
             # Find everything in the triple store
             all_query = "PREFIX : <http://example.org/ns#> " \
@@ -346,8 +349,9 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         if subject not in self.SBOLObjects and obj in self.SBOL_DATA_MODEL_REGISTER:
             # Call constructor for the appropriate SBOLObject
             new_obj = self.SBOL_DATA_MODEL_REGISTER[obj]()
-            print("New object type: " + str(type(new_obj)))
-            print("New object attrs: " + str(vars(new_obj)))
+            if DEBUG:
+                print("New object type: " + str(type(new_obj)))
+                print("New object attrs: " + str(vars(new_obj)))
             # Wipe default property values passed from default
             # constructor. New property values will be added as properties
             # are parsed from the input file
@@ -371,7 +375,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             new_obj.doc = self
 
     def parse_properties_inner(self, subject, predicate, obj):
-        print("Adding: (" + str(subject) + " - " + str(type(subject)) + ", " + str(predicate) + " - " + str(type(predicate)) + ", " + str(obj) + " - " + str(type(obj)) + ")")
+        if DEBUG:
+            print("Adding: (" + str(subject) + " - " + str(type(subject)) + ", " + str(predicate) + " - " + str(type(predicate)) + ", " + str(obj) + " - " + str(type(obj)) + ")")
         found = predicate.rfind('#')
         if found == -1:
             found = predicate.rfind('/')
@@ -467,8 +472,6 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :param outfile: output file
         :return: None
         """
-        if self.graph is None:
-            self.graph = rdflib.Graph()
         self.update_graph()
         rdf = SBOL2Serialize.serialize_sboll2(self.graph).decode('utf-8')
         print("RDF: "+ rdf)
@@ -482,6 +485,13 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         Update the RDF triples representation of data.
         :return:
         """
+        self.graph = rdflib.Graph()
+        # # # ASSUMPTION: Document does not have properties. Is this a valid assumption?
+        for typeURI, objlist in self.owned_objects.items():
+            for owned_obj in objlist:
+                owned_obj.build_graph(self.graph)
+        for s,p,o in self.graph:
+             print((s,p,o))
 
     def validate(self):
         """

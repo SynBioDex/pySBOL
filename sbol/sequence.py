@@ -6,27 +6,6 @@ from property import Property
 class Sequence(TopLevel):
     """The primary structure (eg, nucleotide or amino acid sequence) of a ComponentDefinition object."""
 
-    # The elements property is a REQUIRED String of characters that represents the constituents of a biological
-    # or chemical molecule. For example, these characters could represent the nucleotide bases of a molecule of DNA,
-    # the amino acid residues of a protein, or the atoms and chemical bonds of a small molecule.
-    _elements = None
-
-    # The encoding property is REQUIRED and has a data type of URI. This property MUST indicate how the elements
-    # property of a Sequence MUST be formed and interpreted. For example, the elements property of a Sequence with an
-    # IUPAC DNA encoding property MUST contain characters that represent nucleotide bases, such as a, t, c, and g.
-    # The elements property of a Sequence with a Simplified Molecular-Input Line-Entry System (SMILES) encoding,
-    # on the other hand, MUST contain characters that represent atoms and chemical bonds, such as C, N, O, and =.
-    #
-    # It is RECOMMENDED that the encoding property contains a URI from the table below. The terms in the table are
-    # organized by the type of ComponentDefinition that typically refer to a Sequence with such an encoding.
-    # When the encoding of a Sequence is well described by one of the URIs in the table, it MUST contain that URI.
-    # | ComponentDefinition type  | Encoding       | libSBOL Symbol              | URI                                              |
-    # | :------------------------ | :--------------| :-------------------------- | :----------------------------------------------- |
-    # | DNA, RNA                  | IUPAC DNA, RNA | SBOL_ENCODING_IUPAC         | http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html |
-    # | Protein                   | IUPAC Protein  | SBOL_ENCODING_IUPAC_PROTEIN | http://www.chem.qmul.ac.uk/iupac/AminoAcid/      |
-    # | Small Molecule            | SMILES         | SBOL_ENCODING_SMILES        | http://www.opensmiles.org/opensmiles.html        |
-    encoding = None
-
     def __init__(self, uri=URIRef("example"), elements="", encoding=SBOL_ENCODING_IUPAC,
                  version=VERSION_STRING, type_uri=SBOL_SEQUENCE):
         """Construct a Sequence.
@@ -43,19 +22,41 @@ class Sequence(TopLevel):
         :param type_uri: The RDF type for an extension class derived from this one.
         """
         super().__init__(type_uri, uri, version)
-        self._elements = Property(self, SBOL_ELEMENTS, '1', '1', [], elements)
-        self.encoding = Property(self, SBOL_ENCODING, '1', '1', [], encoding)
+        self._elements = LiteralProperty(self, SBOL_ELEMENTS, '1', '1', [], elements)
+        self._encoding = LiteralProperty(self, SBOL_ENCODING, '1', '1', [], encoding)
 
+    # The elements property is a REQUIRED String of characters that represents the constituents of a biological
+    # or chemical molecule. For example, these characters could represent the nucleotide bases of a molecule of DNA,
+    # the amino acid residues of a protein, or the atoms and chemical bonds of a small molecule.
     @property
     def elements(self):
-        if self._elements is None:
-            return None
-        else:
-            return self._elements.value
+        return str(self._elements.value)
 
     @elements.setter
     def elements(self, new_elements):
-        self.elements.value = new_elements
+        self._elements.value = new_elements
+
+    # The encoding property is REQUIRED and has a data type of URI. This property MUST indicate how the elements
+    # property of a Sequence MUST be formed and interpreted. For example, the elements property of a Sequence with an
+    # IUPAC DNA encoding property MUST contain characters that represent nucleotide bases, such as a, t, c, and g.
+    # The elements property of a Sequence with a Simplified Molecular-Input Line-Entry System (SMILES) encoding,
+    # on the other hand, MUST contain characters that represent atoms and chemical bonds, such as C, N, O, and =.
+    #
+    # It is RECOMMENDED that the encoding property contains a URI from the table below. The terms in the table are
+    # organized by the type of ComponentDefinition that typically refer to a Sequence with such an encoding.
+    # When the encoding of a Sequence is well described by one of the URIs in the table, it MUST contain that URI.
+    # | ComponentDefinition type  | Encoding       | libSBOL Symbol              | URI                                              |
+    # | :------------------------ | :--------------| :-------------------------- | :----------------------------------------------- |
+    # | DNA, RNA                  | IUPAC DNA, RNA | SBOL_ENCODING_IUPAC         | http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html |
+    # | Protein                   | IUPAC Protein  | SBOL_ENCODING_IUPAC_PROTEIN | http://www.chem.qmul.ac.uk/iupac/AminoAcid/      |
+    # | Small Molecule            | SMILES         | SBOL_ENCODING_SMILES        | http://www.opensmiles.org/opensmiles.html        |
+    @property
+    def encoding(self):
+        return str(self._encoding.value)
+
+    @encoding.setter
+    def encoding(self, new_encoding):
+        self._encoding.value = new_encoding
 
     def assemble(self, composite_sequence=""):
         """Calculates the complete sequence of a high-level Component from the sequence of its subcomponents.
@@ -100,14 +101,14 @@ class Sequence(TopLevel):
         :return:
         """
         self.assemble()
-        return self._elements.value
+        return self.elements
 
     def __len__(self):
         """
 
         :return: The length of the primary sequence in the elements property.
         """
-        return len(self._elements.value)
+        return len(self.elements)
 
     @deprecated(version='3.0.0', reason='Use len(sequence) instead')
     def length(self):

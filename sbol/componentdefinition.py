@@ -1,6 +1,7 @@
 from constants import *
 from toplevel import *
 import validation
+from property import URIProperty
 
 class ComponentDefinition(TopLevel):
     """
@@ -78,8 +79,8 @@ class ComponentDefinition(TopLevel):
         :param rdf_type: The RDF type for an extension class derived from this one
         """
         super().__init__(rdf_type, uri, version)
-        self._types = Property(self, SBOL_TYPES, '1', '*', None, component_type)
-        self._roles = Property(self, SBOL_ROLES, '0', '*', None)
+        self._types = URIProperty(self, SBOL_TYPES, '1', '*', None, component_type)
+        self._roles = URIProperty(self, SBOL_ROLES, '0', '*', None)
         self.sequence = OwnedObject(self, SBOL_SEQUENCE, '0', '1', [validation.libsbol_rule_20])
         self.sequences = ReferencedObject(self, SBOL_SEQUENCE_PROPERTY, SBOL_SEQUENCE, '0', '*', [validation.libsbol_rule_21])
         self.sequenceAnnotations = OwnedObject(self, SBOL_SEQUENCE_ANNOTATIONS, '0', '*', None)

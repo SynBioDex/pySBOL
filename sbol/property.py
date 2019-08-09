@@ -9,21 +9,7 @@ def sort_version(obj):
     return obj.version
 
 
-def strip_uri_brackets(uri_property):
-    if type(uri_property) is str and uri_property.startswith('<') and uri_property.endswith('>'):
-        return uri_property[1:-1]
-    else:
-        return uri_property
-
-
-def strip_quotes(string_property):
-    if type(string_property) is str and string_property.startswith('"') and string_property.endswith('"'):
-        return string_property[1:-1]
-    else:
-        return string_property
-
-
-class Property():
+class Property:
     """Member properties of all SBOL objects are defined using a Property object.
 
     The Property class provides a generic interface for accessing SBOL objects.
@@ -58,8 +44,7 @@ class Property():
         self._upperBound = upper_bound
         self._validation_rules = []
         self._validation_rules = validation_rules
-        self.values = []
-        self.values.append(initial_value)
+        self.value = initial_value
 
     def getTypeURI(self):
         """
@@ -77,21 +62,26 @@ class Property():
 
     @property
     def value(self):
-        if len(self.values) == 0:
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
             return None
         else:
-            return self.values[len(self.values) - 1]
+            return self._sbol_owner.properties[self._rdf_type][-1]
 
     @value.setter
     def value(self, new_value):
-        self.set(new_value)
+        if new_value is not None:
+            self.set(new_value)
 
     def set(self, new_value):
         # TODO perform validation prior to setting the value
-        if len(self.values) == 0:
-            self.values.append(new_value)
+        if self._rdf_type not in self._sbol_owner.properties:
+            self._sbol_owner.properties[self._rdf_type] = []
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            self._sbol_owner.properties[self._rdf_type].append(new_value)
         else:
-            self.values[len(self.values) - 1] = new_value
+            self._sbol_owner.properties[self._rdf_type][-1] = new_value
 
     def add(self, new_value):
         """Appends the new value to a list of values, for properties that allow it."""
@@ -126,10 +116,7 @@ class Property():
         """Write property values."""
         subject = self._sbol_owner.identity.get()
         predicate = self._rdf_type
-        if len(self.values) > 0:
-            obj = self.values[0]
-        else:
-            obj = None
+        obj = self.value
         print('Subject: ' + subject)
         print('Predicate: ' + predicate)
         print('Object: ' + obj)
@@ -161,7 +148,55 @@ class Property():
         return self._rdf_type in self._sbol_owner.hidden_properties
 
 
-class OwnedObject(Property):
+class URIProperty(Property):
+    @property
+    def value(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            return None
+        else:
+            return self._sbol_owner.properties[self._rdf_type][-1]
+
+    @value.setter
+    def value(self, new_value):
+        if new_value is not None:
+            self.set(new_value)
+
+    def set(self, new_value):
+        if self._rdf_type not in self._sbol_owner.properties:
+            self._sbol_owner.properties[self._rdf_type] = []
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            self._sbol_owner.properties[self._rdf_type].append(URIRef(new_value))
+        else:
+            self._sbol_owner.properties[self._rdf_type][-1] = URIRef(new_value)
+
+
+class LiteralProperty(Property):
+    @property
+    def value(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            return None
+        else:
+            return self._sbol_owner.properties[self._rdf_type][-1]
+
+    @value.setter
+    def value(self, new_value):
+        if new_value is not None:
+            self.set(new_value)
+
+    def set(self, new_value):
+        if self._rdf_type not in self._sbol_owner.properties:
+            self._sbol_owner.properties[self._rdf_type] = []
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            self._sbol_owner.properties[self._rdf_type].append(Literal(new_value))
+        else:
+            self._sbol_owner.properties[self._rdf_type][-1] = Literal(new_value)
+
+
+class OwnedObject(URIProperty):
     def __init__(self, property_owner, sbol_uri, lower_bound, upper_bound, validation_rules=None, first_object=None):
         """Initialize a container and optionally put the first object in it.
         If validation rules are specified, they will be checked upon initialization.
@@ -322,6 +357,8 @@ class OwnedObject(Property):
 
     def set_notoplevelcheck(self, sbol_obj):
         # Add to parent object
+        if self._rdf_type not in self._sbol_owner.owned_objects:
+            self._sbol_owner.owned_objects[self._rdf_type] = []
         if len(self._sbol_owner.owned_objects[self._rdf_type]) == 0:
             self._sbol_owner.owned_objects[self._rdf_type].append(sbol_obj)
         else:
@@ -402,7 +439,11 @@ class ReferencedObject(Property):
 
     def set(self, uri):
         if self._sbol_owner is not None:
-            self._sbol_owner.properties[self._rdf_type][0] = uri
+            if not self._rdf_type in self._sbol_owner.properties:
+                self._sbol_owner.properties[self._rdf_type] = []
+                self._sbol_owner.properties[self._rdf_type].append(uri)
+            else:
+                self._sbol_owner.properties[self._rdf_type][0] = uri
         else:
             # NOTE: we could raise an exception here, but the original code is not doing anything in this case.
             print('Unable to set item. SBOL owner was None.')
