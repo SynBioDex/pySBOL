@@ -51,7 +51,7 @@ SBOL_ATTACHMENT = URIRef(SBOL_URI + "#Attachment")
 SBOL_IMPLEMENTATION = URIRef(SBOL_URI + "#Implementation")
 SBOL_EXPERIMENT = URIRef(SBOL_URI + "#Experiment")
 SBOL_EXPERIMENTAL_DATA = URIRef(SBOL_URI + "#ExperimentalData")
-
+SBOL_MEASURE = URIRef(SBOL_URI + "#Measure")
 UNDEFINED = URIRef(SBOL_URI + "#Undefined")
 
 # URIs for SBOL Properties
@@ -107,6 +107,8 @@ SBOL_STRATEGY = URIRef(SBOL_URI + "#strategy")
 SBOL_TEMPLATE = URIRef(SBOL_URI + "#template")
 SBOL_ATTACHMENTS = URIRef(SBOL_URI + "#attachment")
 SBOL_MEASUREMENTS = URIRef(SBOL_URI + "#measure")
+SBOL_UNIT = URIRef(SBOL_URI + "#unit")
+SBOL_VALUE = URIRef(SBOL_URI + "#hasNumericalValue")
 
 # SBOL internal ontologies
 SBOL_ACCESS_PRIVATE = URIRef(SBOL_URI + "#private")  # < Option for Component::access or FunctionalComponent::access property

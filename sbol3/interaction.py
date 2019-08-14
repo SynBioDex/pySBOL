@@ -10,4 +10,5 @@ class Interaction(Identified):
         self.functionalComponents = OwnedObject(self, SBOL_FUNCTIONAL_COMPONENTS, '0', '*', [libsbol_rule_18])
         self.types = URIProperty(self, SBOL_TYPES, '1', '*', [], interaction_type)
         self.participations = OwnedObject(self, SBOL_PARTICIPATIONS, '0', '*', [])
+        self.measurements = OwnedObject(self, SBOL_MEASUREMENTS, '0', '*', [])
         # TODO hidden properties

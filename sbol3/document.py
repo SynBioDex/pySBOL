@@ -349,6 +349,19 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                             lval = lval[pos:]
                             obj = URIRef(lval)
                     self.parse_properties_inner(result.s, result.p, obj)
+
+            # Additional step - python version, only. Remove anything that isn't meant to be at
+            # the top level.
+            for result in all_results:
+                if str(result.p) != rdf_type:
+                    obj = result.o
+                    lval = str(obj)
+                    if isinstance(result.o, URIRef) and pos != -1:
+                        if lval[:pos] == graphBaseURIStr:
+                            # This was a URI without a scheme.  Remove URI base
+                            lval = lval[pos:]
+                            obj = URIRef(lval)
+                    self.remove_descendants()
             # TODO parse annotation objects
             # TODO dress document
 
@@ -404,7 +417,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                     if owned_obj is not None:
                         parent.owned_objects[predicate].append(owned_obj)
                         owned_obj.parent = parent
-                        del self.SBOLObjects[obj]
+                        # del self.SBOLObjects[obj]
                 else:
                     # Extension data
                     if predicate not in parent.properties:
@@ -412,6 +425,14 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
                         parent.properties[predicate].append(obj)
                     else:
                         parent.properties[predicate].append(obj)
+
+    def remove_descendants(self):
+        to_delete = []
+        for name, obj in self.SBOLObjects.items():
+            if not obj.is_top_level():
+                to_delete.append(name)
+        for name in to_delete:
+            del self.SBOLObjects[name]
 
     def convert_ntriples_encoding_to_ascii(self, s):
         s.replace("\\\"", "\"")
@@ -442,12 +463,7 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         """
         self.SBOLObjects.clear()
         for name, vals in self.properties.items():
-            if vals[0] == '<':
-                reinitialized_property = '<>'
-            else:
-                reinitialized_property = '""'
             vals.clear()
-            vals.append(reinitialized_property)
         for object_store in self.owned_objects.values():
             object_store.clear()
         self._namespaces.clear()
@@ -501,8 +517,8 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
             for owned_obj in objlist:
                 owned_obj.build_graph(self.graph)
         if self.logger.isEnabledFor(logging.DEBUG):
-            for s,p,o in self.graph:
-                self.logger.debug((s,p,o))
+            for s, p, o in self.graph:
+                self.logger.debug((s, p, o))
 
     def validate(self):
         """
@@ -537,6 +553,30 @@ cas9 = ComponentDefinition('Cas9', BIOPAX_PROTEIN)
         :return: A string representation of the Document.
         """
         return self.summary()
+
+    # def __iter__(self):
+    #     self.current_obj = 0
+    #     self.owned_objects_list = []
+    #     for objlist in self.owned_objects.values():
+    #         for obj in objlist:
+    #             self.owned_objects_list.append(obj)
+    #     return self
+    #
+
+    def __iter__(self):
+        self.current_obj = 0
+        self.owned_objects_list = []
+        for obj in self.SBOLObjects.values():
+            self.owned_objects_list.append(obj)
+        return self
+
+    def __next__(self):
+        if self.current_obj > len(self.owned_objects_list)-1:
+            raise StopIteration
+        else:
+            ret = self.owned_objects_list[self.current_obj]
+            self.current_obj += 1
+            return ret
 
     def cacheObjectsDocument(self):
         # TODO docstring

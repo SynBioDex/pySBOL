@@ -58,6 +58,15 @@ class TestDocument(unittest.TestCase):
         self.assertEqual(crispr_template, crispr_template_2)
         self.assertEqual(cas9, cas9_2)
 
+    def test_iteration(self):
+        doc = Document()
+        doc.read('resources/crispr_example.xml')
+        i = 0
+        for obj in doc:
+            i += 1
+            print(obj)
+        self.assertEqual(len(doc), 31)
+        print(doc)
 
 if __name__ == '__main__':
     unittest.main()

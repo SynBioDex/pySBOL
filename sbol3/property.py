@@ -71,13 +71,14 @@ class Property:
 
     @value.setter
     def value(self, new_value):
-        if new_value is not None:
-            self.set(new_value)
+        self.set(new_value)
 
     def set(self, new_value):
         # TODO perform validation prior to setting the value
         if self._rdf_type not in self._sbol_owner.properties:
             self._sbol_owner.properties[self._rdf_type] = []
+        if new_value is None:
+            return
         if len(self._sbol_owner.properties[self._rdf_type]) == 0:
             self._sbol_owner.properties[self._rdf_type].append(new_value)
         else:
@@ -160,13 +161,14 @@ class URIProperty(Property):
 
     @value.setter
     def value(self, new_value):
-        if new_value is not None:
-            self.set(new_value)
+        self.set(new_value)
 
     def set(self, new_value):
         if self._rdf_type not in self._sbol_owner.properties:
             self._sbol_owner.properties[self._rdf_type] = []
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+        if new_value is None:
+            return
+        elif len(self._sbol_owner.properties[self._rdf_type]) == 0:
             self._sbol_owner.properties[self._rdf_type].append(URIRef(new_value))
         else:
             self._sbol_owner.properties[self._rdf_type][-1] = URIRef(new_value)
@@ -184,13 +186,14 @@ class LiteralProperty(Property):
 
     @value.setter
     def value(self, new_value):
-        if new_value is not None:
-            self.set(new_value)
+        self.set(new_value)
 
     def set(self, new_value):
         if self._rdf_type not in self._sbol_owner.properties:
             self._sbol_owner.properties[self._rdf_type] = []
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+        if new_value is None:
+            return
+        elif len(self._sbol_owner.properties[self._rdf_type]) == 0:
             self._sbol_owner.properties[self._rdf_type].append(Literal(new_value))
         else:
             self._sbol_owner.properties[self._rdf_type][-1] = Literal(new_value)
@@ -243,7 +246,8 @@ class OwnedObject(URIProperty):
     def get_int(self, id):
         object_store = self._sbol_owner.owned_objects[self._rdf_type]
         if id >= len(object_store):
-            raise SBOLError('Index out of range', SBOLErrorCode.SBOL_ERROR_NOT_FOUND)
+            # Note: for loops expect an IndexError to be raised to properly detect end of sequence
+            raise IndexError
         return object_store[id]
 
     def get_uri(self, id):
@@ -342,6 +346,20 @@ class OwnedObject(URIProperty):
 
         # Run validation rules
         # TODO
+
+    @property
+    def value(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+            return None
+        else:
+            return self._sbol_owner.properties[self._rdf_type][-1]
+
+    @value.setter
+    def value(self, new_value):
+        if new_value is not None:
+            self.set(new_value)
 
     def set(self, sbol_obj):
         """Sets the first object in the container"""
