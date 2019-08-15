@@ -3,6 +3,7 @@ from sbol3.constants import *
 from sbol3.property import LiteralProperty, URIProperty
 from rdflib import URIRef
 
+
 class Measurement(Identified):
     """The purpose of the Measure class is to link a numerical value to a unit of measure."""
 
