@@ -539,6 +539,13 @@ class OwnedObject(URIProperty):
                         obj.doc.SBOLObjects.remove(obj.identity)
                 object_store.clear()
 
+    def __len__(self):
+        if self._rdf_type not in self._sbol_owner.owned_objects:
+            return 0
+        else:
+            object_store = self._sbol_owner.owned_objects[self._rdf_type]
+            return len(object_store)
+
 
 class ReferencedObject(Property):
     def __init__(self, property_owner, type_uri, reference_type_uri, lower_bound, upper_bound, validation_rules, initial_value=None):
