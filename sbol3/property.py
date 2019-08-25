@@ -68,6 +68,27 @@ class Property(ABC):
         """
         return self._sbol_owner
 
+    def getRawValue(self):
+        if self._upperBound == '1':
+            if self._rdf_type not in self._sbol_owner.properties:
+                return None
+            properties = self._sbol_owner.properties[self._rdf_type]
+            if len(properties) == 0:
+                return None
+            else:
+                # Just return the object by itself (not a list)
+                p = self._sbol_owner.properties[self._rdf_type][-1]
+                return p
+        else:
+            if self._rdf_type not in self._sbol_owner.properties:
+                return None
+            properties = self._sbol_owner.properties[self._rdf_type]
+            if len(properties) == 0:
+                return []
+            else:
+                # Return the whole list
+                return self._sbol_owner.properties[self._rdf_type]
+
     @property
     def value(self):
         raise NotImplementedError("getter is only implemented by subclasses")

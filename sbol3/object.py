@@ -318,13 +318,13 @@ class SBOLObject:
         raise NotImplementedError("Implemented by child classes")
 
     def build_graph(self, graph):
-        graph.add((self.identity, RDF.type, self.rdf_type))
+        graph.add((self._identity.getRawValue(), RDF.type, self.rdf_type))
         for typeURI, proplist in self.properties.items():
             for prop in proplist:
-                graph.add((self.identity, typeURI, prop))
+                graph.add((self._identity.getRawValue(), typeURI, prop))
         for typeURI, objlist in self.owned_objects.items():
             for owned_obj in objlist:
-                graph.add((self.identity, typeURI, owned_obj.identity))
+                graph.add((self._identity.getRawValue(), typeURI, owned_obj.identity))
                 owned_obj.build_graph(graph)
 
     def serialize_rdf2xml(self, graph):
@@ -345,7 +345,7 @@ class SBOLObject:
                 continue
             predicate = self.doc.referenceNamespace(rdf_type)
             for val in vals:
-                graph.add((self.identity, predicate, val))
+                graph.add((self._identity.getRawValue(), predicate, val))
         # Serialize owned objects
         for name, object_store in self.owned_objects:
             if len(object_store) == 0:
@@ -358,11 +358,11 @@ class SBOLObject:
                 if typeURI in self._hidden_properties:
                     continue
                 rdfType = self.doc.referenceNamespace(typeURI)
-                graph.add((self.identity, rdfType, obj.identity))
+                graph.add((self._identity.getRawValue(), rdfType, obj.identity))
                 obj.serialize_rdf2xml(graph) # recursive
 
     def __str__(self):
-        return self.identity.n3()  # identity should be a URIRef``
+        return self.identity  # identity should be a URIRef``
 
     def is_top_level(self):
         return False

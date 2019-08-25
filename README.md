@@ -11,6 +11,20 @@ This library is currently under development. To test it out, follow these steps:
 2) (From top-level directory) `pip install -e .`
 3) Open a python3 interpreter, and import sbol3.
 
+## TESTING
+
+SBOL comes with a testing function to check the integrity of the library. To run the unit tests, simply execute the following command.
+```python
+import sbol3
+sbol3.testSBOL()
+```
+SBOL also comes with a suite of 'round-trip' tests to verify that serialization and deserialization of SBOL files works correctly.
+To run the round-trip tests, execute the following command.
+```python
+import sbol3
+sbol3.testRoundTrip()
+```
+
 ## DOCUMENTATION
 
 To be updated.

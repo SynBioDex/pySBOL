@@ -2,6 +2,10 @@ import unittest
 from sbol3.componentdefinition import ComponentDefinition
 from sbol3.document import Document
 from sbol3.constants import *
+import os
+
+MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
+TEST_LOCATION = os.path.join(MODULE_LOCATION, 'resources', 'crispr_example.xml')
 
 
 class TestProperty(unittest.TestCase):
@@ -29,7 +33,7 @@ class TestProperty(unittest.TestCase):
 
     def test_lenOwnedObject(self):
         d = Document()
-        d.read('resources/crispr_example.xml')
+        d.read(TEST_LOCATION)
         self.assertEqual(25, len(d.componentDefinitions))
         self.assertEqual(2, len(d.moduleDefinitions))
         self.assertEqual(4, len(d.sequences))

@@ -5,6 +5,7 @@ import os, sys
 
 MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
 
+
 class TestComponentDefinitions(unittest.TestCase):
 
     def setUp(self):

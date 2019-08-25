@@ -3,14 +3,18 @@ from sbol3.document import *
 from sbol3.config import *
 from sbol3.moduledefinition import *
 from sbol3.componentdefinition import *
-from constants import *
+from sbol3.constants import *
+
+
+MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
+TEST_LOCATION = os.path.join(MODULE_LOCATION, 'resources', 'crispr_example.xml')
 
 
 class TestDocument(unittest.TestCase):
 
     def test_empty_len0(self):
         doc = Document()
-        print(doc)
+        # print(doc)
         self.assertEqual(0, len(doc), "Length of document should be 0")
 
     def test_addGetTopLevel_uri(self):
@@ -60,13 +64,13 @@ class TestDocument(unittest.TestCase):
 
     def test_iteration(self):
         doc = Document()
-        doc.read('resources/crispr_example.xml')
+        doc.read(TEST_LOCATION)
         i = 0
         for obj in doc:
             i += 1
             print(obj)
         self.assertEqual(len(doc), 31)
-        print(doc)
+        # print(doc)
 
 if __name__ == '__main__':
     unittest.main()
