@@ -456,7 +456,7 @@ class OwnedObject(URIProperty):
             if SBOL_PERSISTENT_IDENTITY in parent_obj.properties:
                 persistentIdentity = parent_obj.properties[SBOL_PERSISTENT_IDENTITY][0]
             if SBOL_VERSION in parent_obj.properties:
-                version = parent_obj.properties[SBOL_VERSION[0]]
+                version = parent_obj.properties[SBOL_VERSION][0]
                 compliant_uri = URIRef(os.path.join(persistentIdentity, uri, version))
             else:
                 compliant_uri = URIRef(os.path.join(persistentIdentity, uri))

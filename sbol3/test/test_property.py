@@ -2,6 +2,7 @@ import unittest
 from sbol3.componentdefinition import ComponentDefinition
 from sbol3.document import Document
 from sbol3.constants import *
+from sbol3.config import *
 import os
 
 MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
@@ -37,6 +38,14 @@ class TestProperty(unittest.TestCase):
         self.assertEqual(25, len(d.componentDefinitions))
         self.assertEqual(2, len(d.moduleDefinitions))
         self.assertEqual(4, len(d.sequences))
+
+    def test_getitem(self):
+        setHomespace('http://sbols.org/CRISPR_Example/')
+        d = Document()
+        d.read(TEST_LOCATION)
+        s1 = d.sequences['CRa_U6_seq']
+        self.assertEqual('http://sbols.org/CRISPR_Example/CRa_U6_seq/1.0.0', str(s1))
+
 
 if __name__ == '__main__':
     unittest.main()
