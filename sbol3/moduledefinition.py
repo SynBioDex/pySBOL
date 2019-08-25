@@ -11,7 +11,7 @@ class ModuleDefinition(TopLevel):
     # but they can also identify identify "logical" roles, such as "inverter" or "AND gate", or other abstract roles
     # for describing the function of design. Interpretation of the meaning of such roles currently depends
     # on the software tools that read and write them.
-    roles = None
+    _roles = None
 
     # The modules property is OPTIONAL and MAY specify a set of Module objects contained by the ModuleDefinition.
     # While the ModuleDefinition class is analogous to a specification sheet for a system of interacting biological
@@ -56,11 +56,25 @@ class ModuleDefinition(TopLevel):
         :param sbol_type_uri: The RDF type for an extension class derived from this one (optional)
         """
         super().__init__(sbol_type_uri, uri, version)
-        self.roles = URIProperty(self, SBOL_ROLES, '0', '*', None)
+        self._roles = URIProperty(self, SBOL_ROLES, '0', '*', None)
         self.models = ReferencedObject(self, SBOL_MODELS, SBOL_MODEL, '0', '*', [])
         self.functionalComponents = OwnedObject(self, SBOL_FUNCTIONAL_COMPONENTS, '0', '*', [])
         self.modules = OwnedObject(self, SBOL_MODULES, '0', '*', [])
         self.interactions = OwnedObject(self, SBOL_INTERACTIONS, '0', '*', [libsbol_rule_17])
+
+    @property
+    def roles(self):
+        return self._roles.value
+
+    @roles.setter
+    def roles(self, new_roles):
+        self._roles.set(new_roles)
+
+    def addRole(self, new_role):
+        self._roles.add(new_role)
+
+    def removeRole(self, index=0):
+        self._roles.remove(index)
 
     def setOutput(self, output):
         """Defines an output for a sub-Module. Useful for top-down assembly of Modules and sub-Modules.

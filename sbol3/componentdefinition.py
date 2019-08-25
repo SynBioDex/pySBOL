@@ -65,7 +65,7 @@ class ComponentDefinition(TopLevel):
 
     sequenceConstraints = None  # OwnedObject<SequenceConstraint>
 
-    def __init__(self, uri=URIRef("example"), component_type=BIOPAX_DNA,
+    def __init__(self, uri=URIRef("example"), component_type=URIRef(BIOPAX_DNA),
                             version=VERSION_STRING, rdf_type=SBOL_COMPONENT_DEFINITION):
         """Construct a ComponentDefinition.
 
@@ -95,6 +95,12 @@ class ComponentDefinition(TopLevel):
     def types(self, new_types):
         self._types.set(new_types) # perform validation prior to setting the value of the types property
 
+    def addType(self, new_types):
+        self._types.add(new_types)
+
+    def removeType(self, index=0):
+        self._types.remove(index)
+
     @property
     def roles(self):
         return self._roles.value
@@ -102,6 +108,12 @@ class ComponentDefinition(TopLevel):
     @roles.setter
     def roles(self, new_roles):
         self._roles.set(new_roles)
+
+    def addRole(self, new_role):
+        self._roles.add(new_role)
+
+    def removeRole(self, index=0):
+        self._roles.remove(index)
 
     def assemble(self, components, assembly_standard="", doc=None):
         """Assembles ComponentDefinitions into an abstraction hierarchy.

@@ -1,7 +1,7 @@
 from .constants import *
 from .identified import Identified
 from rdflib import URIRef
-from .property import Property, URIProperty, ReferencedObject
+from .property import URIProperty, ReferencedObject
 
 class SequenceConstraint(Identified):
 
@@ -9,4 +9,12 @@ class SequenceConstraint(Identified):
         super().__init__(type_uri, uri, version)
         self.subject = ReferencedObject(self, SBOL_SUBJECT, SBOL_COMPONENT, '1', '1', [], subject)
         self.object = ReferencedObject(self, SBOL_OBJECT, SBOL_COMPONENT, '1', '1', [], object)
-        self.restriction = URIProperty(self, SBOL_RESTRICTION, '1', '1', [], restriction)
+        self._restriction = URIProperty(self, SBOL_RESTRICTION, '1', '1', [], restriction)
+
+    @property
+    def restriction(self):
+        return self._restriction.value
+
+    @restriction.setter
+    def restriction(self, new_restriction):
+        self._restriction.set(new_restriction)

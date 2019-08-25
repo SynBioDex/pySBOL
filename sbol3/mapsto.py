@@ -10,4 +10,12 @@ class MapsTo(Identified):
         super().__init__(type_uri, uri, version)
         self.local = ReferencedObject(self, SBOL_LOCAL, SBOL_COMPONENT, '1', '1', [], local)
         self.remote = ReferencedObject(self, SBOL_REMOTE, SBOL_COMPONENT, '1', '1', [], remote)
-        self.refinement = URIProperty(self, SBOL_REFINEMENT, '1', '1', [], refinement)
+        self._refinement = URIProperty(self, SBOL_REFINEMENT, '1', '1', [], refinement)
+
+    @property
+    def refinement(self):
+        return self._refinement.value
+
+    @refinement.setter
+    def refinement(self, new_refinement):
+        self._refinement.set(new_refinement)

@@ -21,6 +21,7 @@ from .implementation import Implementation
 from .dbtl import Design, Analysis, SampleRoster
 from .experiment import Experiment, ExperimentalData
 from .object import SBOLObject
+from .property import OwnedObject, URIProperty
 import rdflib
 from rdflib import URIRef
 import os
@@ -82,10 +83,8 @@ class Document(Identified):
         super().__init__(SBOL_DOCUMENT, URIRef(""), VERSION_STRING)
         if os.path.exists(LOGGING_CONFIG):
             fileConfig(LOGGING_CONFIG)
-        self.logger = logging.getLogger(__name__)
-        if not os.path.exists(LOGGING_CONFIG):
+        else:
             self.logger.setLevel(logging.INFO)
-
         self.logger = logging.getLogger(__name__)
 
         # A RDFLib representation of the triples.
@@ -114,10 +113,36 @@ class Document(Identified):
         self.sampleRosters = OwnedObject(self, SYSBIO_SAMPLE_ROSTER, '0', '*', [validation.libsbol_rule_16])
         self.experiments = OwnedObject(self, SBOL_EXPERIMENT, '0', '*', None)
         self.experimentalData = OwnedObject(self, SBOL_EXPERIMENTAL_DATA, '0', '*', None)
+        self._citations = URIProperty(self, PURL_URI + "bibliographicCitation", '0', '*', None)
+        self._keywords = URIProperty(self, PURL_URI + "elements/1.1/subject", '0', '*', None)
 
-        self.citations = Property(self, PURL_URI + "bibliographicCitation", '0', '*', None)
-        self.graph = None
-        self.keywords = Property(self, PURL_URI + "elements/1.1/subject", '0', '*', None)
+    @property
+    def citations(self):
+        return self._citations.value
+
+    @citations.setter
+    def citations(self, new_citations):
+        self._citations.set(new_citations)
+
+    def addCitation(self, new_citation):
+        self._citations.add(new_citation)
+
+    def removeCitation(self, index=0):
+        self._citations.remove(index)
+
+    @property
+    def keywords(self):
+        return self._keywords.value
+
+    @keywords.setter
+    def keywords(self, new_keywords):
+        self._keywords.set(new_keywords)
+
+    def addKeyword(self, new_keyword):
+        self._keywords.add(new_keyword)
+
+    def removeKeyword(self, index=0):
+        self._keywords.remove(index)
 
     def add(self, sbol_obj):
         """

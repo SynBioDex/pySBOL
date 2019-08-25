@@ -7,8 +7,16 @@ class Location(Identified):
     """The Location class specifies the strand orientation of a Component."""
     def __init__(self, type_uri=SBOL_LOCATION, uri=URIRef('example'), orientation=SBOL_ORIENTATION_INLINE):
         super().__init__(type_uri, uri)
-        self.orientation = URIProperty(self, SBOL_ORIENTATION, '1', '1', [], orientation)
+        self._orientation = URIProperty(self, SBOL_ORIENTATION, '1', '1', [], orientation)
         self.sequence = ReferencedObject(self, SBOL_SEQUENCE_PROPERTY, SBOL_SEQUENCE, '0', '1', [])
+
+    @property
+    def orientation(self):
+        return self._orientation.value
+
+    @orientation.setter
+    def orientation(self, new_orientation):
+        self._orientation.set(new_orientation)
 
 
 class Range(Location):
@@ -65,7 +73,15 @@ class Cut(Location):
     """The Cut class specifies a location between two coordinates of a Sequence's elements."""
     def _init__(self, rdf_type, uri, at):
         super().__init__(rdf_type, uri)
-        self.at = LiteralProperty(self, SBOL_AT, '1', '1', [], at)
+        self._at = LiteralProperty(self, SBOL_AT, '1', '1', [], at)
+
+    @property
+    def at(self):
+        return self._at.value
+
+    @at.setter
+    def at(self, new_at):
+        self._at.set(new_at)
 
 
 class GenericLocation(Location):

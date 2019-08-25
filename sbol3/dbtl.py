@@ -45,7 +45,15 @@ class Build(Implementation):
         self.behavior = OwnedObject(self, SBOL_MODULE_DEFINITION, '1', '1', [libsbol_rule_6], behavior)
         self._structure = ReferencedObject(self, SYSBIO_URI + "#_structure", SBOL_MODULE_DEFINITION, '1', '1', [], structure.identity)
         self._behavior = ReferencedObject(self, SBOL_URI + "#built", SBOL_MODULE_DEFINITION, '1', '1', [], behavior.identity)
-        self.sysbio_type = URIProperty(self, SYSBIO_URI + "#type", '1', '1', [], SYSBIO_BUILD)
+        self._sysbio_type = URIProperty(self, SYSBIO_URI + "#type", '1', '1', [], SYSBIO_BUILD)
+
+    @property
+    def sysbio_type(self):
+        return self._sysbio_type.value
+
+    @sysbio_type.setter
+    def sysbio_type(self, new_sysbio_type):
+        self._sysbio_type.set(new_sysbio_type)
 
 
 class Test(ExperimentalData):
@@ -90,10 +98,18 @@ class SampleRoster(Collection):
     def __init__(self, uri=URIRef('example'), version=VERSION_STRING):
         super().__init__(uri, version)
         self.samples = ReferencedObject(self, SBOL_MEMBERS, SBOL_IMPLEMENTATION, '0', '*', [libsbol_rule_15])
-        self.sysbio_type = URIProperty(self, SYSBIO_URI + "#type", '1', '1', [], SYSBIO_URI + "#SampleRoster")
+        self._sysbio_type = URIProperty(self, SYSBIO_URI + "#type", '1', '1', [], SYSBIO_URI + "#SampleRoster")
         if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
             self.identity = URIRef(Config.getHomespace() + '/SampleRoster/' + self.displayId + '/' + version)
             self.persistentIdentity = URIRef(Config.getHomespace() + '/SampleRoster/' + self.displayId)
+
+    @property
+    def sysbio_type(self):
+        return self._sysbio_type.value
+
+    @sysbio_type.setter
+    def sysbio_type(self, new_sysbio_type):
+        self._sysbio_type.set(new_sysbio_type)
 
 
 class AliasedProperty:

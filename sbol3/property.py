@@ -1,15 +1,18 @@
-from rdflib import URIRef, Literal, XSD
+from rdflib import Literal
 from .sbolerror import *
 from .config import Config, ConfigOptions, getHomespace, parseClassName, parsePropertyName
 from .constants import *
 import os
+import logging
+from logging.config import fileConfig
+from abc import ABC, abstractmethod
 
 
 def sort_version(obj):
     return obj.version
 
 
-class Property:
+class Property(ABC):
     """Member properties of all SBOL objects are defined using a Property object.
 
     The Property class provides a generic interface for accessing SBOL objects.
@@ -33,6 +36,11 @@ class Property:
         or adder method is called and when Documents are read and written.
         :param initial_value: The initial value of the Property (int, str, float supported)
         """
+        self.logger = logging.getLogger(__name__)
+        if os.path.exists(LOGGING_CONFIG):
+            fileConfig(LOGGING_CONFIG)
+        else:
+            self.logger.setLevel(logging.INFO)
         self._sbol_owner = property_owner
         if isinstance(type_uri, URIRef):
             self._rdf_type = type_uri
@@ -62,31 +70,43 @@ class Property:
 
     @property
     def value(self):
+        if self._upperBound == '1':
+            return self.getSinglePropertyValue()
+        else:
+            return self.getPropertyValueList()
+
+    def getSinglePropertyValue(self):
         if self._rdf_type not in self._sbol_owner.properties:
             return None
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
             return None
         else:
+            # Just return the object by itself (not a list)
             return self._sbol_owner.properties[self._rdf_type][-1]
+
+    def getPropertyValueList(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
+            return []
+        else:
+            # Return the whole list
+            return self._sbol_owner.properties[self._rdf_type]
 
     @value.setter
     def value(self, new_value):
         self.set(new_value)
 
+    @abstractmethod
     def set(self, new_value):
-        # TODO perform validation prior to setting the value
-        if self._rdf_type not in self._sbol_owner.properties:
-            self._sbol_owner.properties[self._rdf_type] = []
-        if new_value is None:
-            return
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
-            self._sbol_owner.properties[self._rdf_type].append(new_value)
-        else:
-            self._sbol_owner.properties[self._rdf_type][-1] = new_value
+        raise NotImplementedError("set() is only implemented by subclasses")
 
+    @abstractmethod
     def add(self, new_value):
         """Appends the new value to a list of values, for properties that allow it."""
-        raise NotImplementedError("Not yet implemented")
+        raise NotImplementedError("add() is only implemented by subclasses")
 
     def remove(self, index):
         """Remove a property value. By default, we assume this is a literal located
@@ -100,7 +120,9 @@ class Property:
                 if len(properties) == 1:
                     self.clear()
                 else:
-                    properties.remove(index)
+                    del properties[index]
+        else:
+            self.logger.error("Unable to update property: SBOL owner not set.")
 
     def clear(self):
         """Clear all property values."""
@@ -148,22 +170,41 @@ class Property:
     def _isHidden(self):
         return self._rdf_type in self._sbol_owner.hidden_properties
 
+    def __len__(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return 0
+        else:
+            properties = self._sbol_owner.properties[self._rdf_type]
+            return len(properties)
+
+    def __str__(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return ""
+        else:
+            return str(self._sbol_owner.properties[self._rdf_type])
+
 
 class URIProperty(Property):
     @property
     def value(self):
-        if self._rdf_type not in self._sbol_owner.properties:
-            return None
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
-            return None
+        if self._upperBound == '1':
+            return self.getSinglePropertyValue()
         else:
-            return self._sbol_owner.properties[self._rdf_type][-1]
+            return self.getPropertyValueList()
 
     @value.setter
     def value(self, new_value):
         self.set(new_value)
 
     def set(self, new_value):
+        if self.getUpperBound() == '1':
+            self.setSinglePropertyValue(new_value)
+        else:
+            self.setPropertyValueList(new_value)
+
+    def setSinglePropertyValue(self, new_value):
+        if type(new_value) is list:
+            raise TypeError('The ' + self.getTypeURI() + ' property does not accept list arguments.')
         if self._rdf_type not in self._sbol_owner.properties:
             self._sbol_owner.properties[self._rdf_type] = []
         if new_value is None:
@@ -173,22 +214,56 @@ class URIProperty(Property):
         else:
             self._sbol_owner.properties[self._rdf_type][-1] = URIRef(new_value)
 
+    def setPropertyValueList(self, new_value_list):
+        if self._rdf_type not in self._sbol_owner.properties:
+            self._sbol_owner.properties[self._rdf_type] = []
+        if new_value_list is None:
+            return
+        else:
+            if type(new_value_list) is list:
+                for value in new_value_list:
+                    if not isinstance(value, URIRef):
+                        self.logger.warning('Value "' + str(value) + ' assigned to URIProperty ' +
+                                        ' is of type ' + str(type(value)) + '. Wrapping it in: ' + str(URIRef))
+                        value = URIRef(value)
+                    self._sbol_owner.properties[self._rdf_type].append(value)
+            else:
+                # the list is actually not a list, but a single element, even
+                # though lists are supported.
+                self._sbol_owner.properties[self._rdf_type].append(URIRef(new_value_list))
+
+    def add(self, new_value):
+        """Appends the new value to a list of values, for properties that allow it."""
+        if self._sbol_owner is not None:
+            if self._rdf_type not in self._sbol_owner.properties:
+                self._sbol_owner.properties[self._rdf_type] = []
+            properties = self._sbol_owner.properties[self._rdf_type]
+            properties.append(URIRef(new_value))
+        else:
+            self.logger.error("Unable to update property: SBOL owner not set.")
+
 
 class LiteralProperty(Property):
     @property
     def value(self):
-        if self._rdf_type not in self._sbol_owner.properties:
-            return None
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
-            return None
+        if self._upperBound == '1':
+            return self.getSinglePropertyValue()
         else:
-            return self._sbol_owner.properties[self._rdf_type][-1]
+            return self.getPropertyValueList()
 
     @value.setter
     def value(self, new_value):
         self.set(new_value)
 
     def set(self, new_value):
+        if self.getUpperBound() == '1':
+            self.setSinglePropertyValue(new_value)
+        else:
+            self.setPropertyValueList(new_value)
+
+    def setSinglePropertyValue(self, new_value):
+        if type(new_value) is list:
+            raise TypeError('The ' + self.getTypeURI() + ' property does not accept list arguments.')
         if self._rdf_type not in self._sbol_owner.properties:
             self._sbol_owner.properties[self._rdf_type] = []
         if new_value is None:
@@ -197,6 +272,33 @@ class LiteralProperty(Property):
             self._sbol_owner.properties[self._rdf_type].append(Literal(new_value))
         else:
             self._sbol_owner.properties[self._rdf_type][-1] = Literal(new_value)
+
+    def setPropertyValueList(self, new_value_list):
+        if self._rdf_type not in self._sbol_owner.properties:
+            self._sbol_owner.properties[self._rdf_type] = []
+        if new_value_list is None:
+            return
+        else:
+            if type(new_value_list) is list:
+                for value in new_value_list:
+                    if not isinstance(value, Literal):
+                        self.logger.warning('Value "' + str(value) + ' assigned to LiteralProperty ' +
+                                            ' is of type ' + str(type(value)) + '. Wrapping it in: ' + str(Literal))
+                        value = Literal(value)
+                    self._sbol_owner.properties[self._rdf_type].append(value)
+            else:
+                # the list is actually not a list, but a single element, even
+                # though lists are supported.
+                self._sbol_owner.properties[self._rdf_type].append(URIRef(new_value_list))
+
+    def add(self, new_value):
+        if self._sbol_owner is not None:
+            if self._rdf_type not in self._sbol_owner.properties:
+                self._sbol_owner.properties[self._rdf_type] = []
+            properties = self._sbol_owner.properties[self._rdf_type]
+            properties.append(Literal(new_value))
+        else:
+            self.logger.error("Unable to update property: SBOL owner not set.")
 
 
 class OwnedObject(URIProperty):
@@ -349,12 +451,10 @@ class OwnedObject(URIProperty):
 
     @property
     def value(self):
-        if self._rdf_type not in self._sbol_owner.properties:
-            return None
-        if len(self._sbol_owner.properties[self._rdf_type]) == 0:
-            return None
+        if self._upperBound == '1':
+            return self.getSinglePropertyValue()
         else:
-            return self._sbol_owner.properties[self._rdf_type][-1]
+            return self.getPropertyValueList()
 
     @value.setter
     def value(self, new_value):
