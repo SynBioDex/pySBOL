@@ -70,30 +70,7 @@ class Property(ABC):
 
     @property
     def value(self):
-        if self._upperBound == '1':
-            return self.getSinglePropertyValue()
-        else:
-            return self.getPropertyValueList()
-
-    def getSinglePropertyValue(self):
-        if self._rdf_type not in self._sbol_owner.properties:
-            return None
-        properties = self._sbol_owner.properties[self._rdf_type]
-        if len(properties) == 0:
-            return None
-        else:
-            # Just return the object by itself (not a list)
-            return self._sbol_owner.properties[self._rdf_type][-1]
-
-    def getPropertyValueList(self):
-        if self._rdf_type not in self._sbol_owner.properties:
-            return None
-        properties = self._sbol_owner.properties[self._rdf_type]
-        if len(properties) == 0:
-            return []
-        else:
-            # Return the whole list
-            return self._sbol_owner.properties[self._rdf_type]
+        raise NotImplementedError("getter is only implemented by subclasses")
 
     @value.setter
     def value(self, new_value):
@@ -192,6 +169,31 @@ class URIProperty(Property):
         else:
             return self.getPropertyValueList()
 
+    def getSinglePropertyValue(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
+            return None
+        else:
+            # Just return the object by itself (not a list)
+            p = self._sbol_owner.properties[self._rdf_type][-1]
+            return p.n3()[1:-1]
+
+    def getPropertyValueList(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
+            return []
+        else:
+            # Return the whole list
+            plist = self._sbol_owner.properties[self._rdf_type]
+            new_plist = []
+            for p in plist:
+                new_plist.append(p.n3()[1:-1])
+            return new_plist
+
     @value.setter
     def value(self, new_value):
         self.set(new_value)
@@ -250,6 +252,31 @@ class LiteralProperty(Property):
             return self.getSinglePropertyValue()
         else:
             return self.getPropertyValueList()
+
+    def getSinglePropertyValue(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
+            return None
+        else:
+            # Just return the object by itself (not a list)
+            p = self._sbol_owner.properties[self._rdf_type][-1]
+            return p.value
+
+    def getPropertyValueList(self):
+        if self._rdf_type not in self._sbol_owner.properties:
+            return None
+        properties = self._sbol_owner.properties[self._rdf_type]
+        if len(properties) == 0:
+            return []
+        else:
+            # Return the whole list
+            plist = self._sbol_owner.properties[self._rdf_type]
+            new_plist = []
+            for p in plist:
+                new_plist.append(p.value)
+            return new_plist
 
     @value.setter
     def value(self, new_value):
