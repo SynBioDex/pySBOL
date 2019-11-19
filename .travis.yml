@@ -6,6 +6,7 @@ python:
 # command to install dependencies
 install:
     - pip install .
+
 # tests to run
 script:
     - python3 -c "import sbol; sbol.testSBOL()"
