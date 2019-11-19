@@ -1,8 +1,11 @@
-os: osx
 language: python
+matrix:
+  include:
+    - os: osx
+      language: generic
+      env: PYTHON=36
+
 # command to install dependencies
-python:
-    - "3.7"
 install:
     - python3 setup.py install
 
