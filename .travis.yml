@@ -1,9 +1,5 @@
 os: osx
 language: python
-# in parallel, run tests in these environments
-python:
-    - "3.6"
-    - "3.7"
 # command to install dependencies
 install:
     - python3 setup.py install
