@@ -1,0 +1,15 @@
+language: python
+matrix:
+  include:
+    - os: osx
+      language: generic
+      env: PYTHON=36
+
+# command to install dependencies
+install:
+    - python3 setup.py install
+
+# tests to run
+script:
+    - python3 -c "import sbol; sbol.testSBOL()"
+    - python3 -c "import sbol; sbol.testRoundTrip()"

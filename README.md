@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SynBioDex/pySBOL.svg?branch=master)](https://travis-ci.org/SynBioDex/pySBOL)
+
 # pySBOL 2.3.0
 
 **pySBOL** is a SWIG-Python wrapper around [libSBOL](https://github.com/SynBioDex/libSBOL), a module for reading, writing, and constructing genetic designs according to the standardized specifications of the [Synthetic Biology Open Language (SBOL)](http://www.sbolstandard.org/).  
