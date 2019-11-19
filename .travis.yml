@@ -1,3 +1,4 @@
+os: osx
 language: python
 # in parallel, run tests in these environments
 python:
