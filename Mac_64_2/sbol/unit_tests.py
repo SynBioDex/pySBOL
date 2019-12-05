@@ -4,28 +4,16 @@ import random
 import string
 import os, sys
 import tempfile, shutil
+import inspect
+from urllib3.exceptions import HTTPError
 
-#####################
-# utility functions
-#####################
+
+############################################
+# Utility functions for generating test data
+############################################
 
 URIS_USED = set()
 RANDOM_CHARS = string.ascii_letters
-MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
-TEST_LOCATION = os.path.join(MODULE_LOCATION, 'test')
-TEST_LOC_SBOL2 = os.path.join(TEST_LOCATION, 'SBOL2')
-TEST_LOC_SBOL2_bp = os.path.join(TEST_LOCATION, 'SBOL2_bp')
-TEST_LOC_SBOL2_ic = os.path.join(TEST_LOCATION, 'SBOL2_ic')
-TEST_LOC_SBOL2_nc = os.path.join(TEST_LOCATION, 'SBOL2_nc')
-
-#TEST_LOC_SBOL1 = os.path.join(TEST_LOCATION, 'SBOL1')
-#TEST_LOC_RDF = os.path.join(TEST_LOCATION, 'RDF')
-#TEST_LOC_Invalid = os.path.join(TEST_LOCATION, 'InvalidFiles')
-#TEST_LOC_GB = os.path.join(TEST_LOCATION, 'GenBank')
-
-TEST_FILES_SBOL2 = []
-
-
 
 def random_string(limit=10):
     length = random.randint(0, limit)
@@ -49,8 +37,49 @@ def random_invalid_position(limit=1000):
         position = -1 * random_valid_position(limit)
     return position
 
+
+#################################################
+# Commandline parameters for Synbiohub test instance
+#################################################
+
+# username = None
+# password = None
+# resource = None
+# spoofed_resource = None
+# if 'TestPartShop.RESOURCE' in os.environ:
+#     TestPartShop.RESOURCE = os.environ['TestPartShop.RESOURCE']
+# else:
+#     raise ValueError('Must specify TestPartShop.RESOURCE environment variable with the URL for the repository')
+# if 'USER' in os.environ:
+#     USER = os.environ['USER']
+# else:
+#     raise ValueError('Must specify USER environment variable with the repository login')
+# if 'PASS' in os.environ:
+#     PASSWORD = os.environ['PASS']
+# else:
+#     raise ValueError('Must specify PASS environment variable with the user password')
+# if 'SPOOF' in os.environ:
+#     SPOOF_TestPartShop.RESOURCE = os.environ['SPOOF']
+
+
+#####################
+# Paths to test files
+#####################
+
+MODULE_LOCATION = os.path.dirname(os.path.abspath(__file__))
+TEST_LOCATION = os.path.join(MODULE_LOCATION, 'test')
+TEST_LOC_SBOL2 = os.path.join(TEST_LOCATION, 'SBOL2')
+TEST_LOC_SBOL2_bp = os.path.join(TEST_LOCATION, 'SBOL2_bp')
+TEST_LOC_SBOL2_ic = os.path.join(TEST_LOCATION, 'SBOL2_ic')
+TEST_LOC_SBOL2_nc = os.path.join(TEST_LOCATION, 'SBOL2_nc')
+
+#TEST_LOC_SBOL1 = os.path.join(TEST_LOCATION, 'SBOL1')
+#TEST_LOC_RDF = os.path.join(TEST_LOCATION, 'RDF')
+#TEST_LOC_Invalid = os.path.join(TEST_LOCATION, 'InvalidFiles')
+#TEST_LOC_GB = os.path.join(TEST_LOCATION, 'GenBank')
+
 ##############
-# unit tests
+# Unit tests
 ##############
 
 #class TestParse(unittest.TestCase):
@@ -257,6 +286,39 @@ class TestAssemblyRoutines(unittest.TestCase):
     def setUp(self):
         pass
 
+    def testAssemble(self):
+        doc = Document()
+        gene = ComponentDefinition("BB0001")
+        promoter = ComponentDefinition("R0010")
+        RBS = ComponentDefinition("B0032")
+        CDS = ComponentDefinition("E0040")
+        terminator = ComponentDefinition("B0012")
+
+        promoter.sequence = Sequence('R0010')
+        RBS.sequence = Sequence('B0032')
+        CDS.sequence = Sequence('E0040')
+        terminator.sequence = Sequence('B0012')
+
+        promoter.sequence.elements = 'a'
+        RBS.sequence.elements = 't'
+        CDS.sequence.elements = 'c'
+        terminator.sequence.elements = 'g'
+
+        promoter.roles = SO_PROMOTER
+        RBS.roles = SO_RBS
+        CDS.roles = SO_CDS
+        terminator.roles = SO_TERMINATOR
+
+        doc.addComponentDefinition([ gene, promoter, RBS, CDS, terminator ])
+        gene.assemblePrimaryStructure([ 'R0010', 'B0032', 'E0040', 'B0012' ])
+        primary_structure = gene.getPrimaryStructure()
+        primary_structure = [c.identity for c in primary_structure]
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(primary_structure, [promoter.identity, RBS.identity, CDS.identity, terminator.identity])
+        else:
+            self.assertCountEqual(primary_structure, [promoter.identity, RBS.identity, CDS.identity, terminator.identity])
+
     def testCompileSequence(self):
         doc = Document()
         Config.setOption('sbol_typed_uris', True)
@@ -374,10 +436,20 @@ class TestAssemblyRoutines(unittest.TestCase):
         terminator.roles = SO_TERMINATOR
 
         doc.addComponentDefinition([ gene, promoter, RBS, CDS, terminator ])
-        gene.assemblePrimaryStructure([ 'R0010', 'B0032', 'E0040', 'B0012' ], IGEM_STANDARD_ASSEMBLY)
+        gene.assemblePrimaryStructure([ 'R0010', 'B0032', 'E0040', 'B0012' ])
+        primary_structure = gene.getPrimaryStructure()
+        primary_structure = [c.identity for c in primary_structure]
+
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(primary_structure, [promoter.identity, RBS.identity, CDS.identity, terminator.identity])
+        else:
+            self.assertCountEqual(primary_structure, [promoter.identity, RBS.identity, CDS.identity, terminator.identity])
+
+
         target_seq = gene.compile()
 
-        self.assertEquals(target_seq, 'atactagagttactagctactagagg')
+        self.assertEquals(target_seq, 'atcg')
 
     def testApplyCallbackRecursively(self):
         # Assemble module hierarchy
@@ -801,29 +873,447 @@ class TestURIAutoConstruction(unittest.TestCase):
         cd.sequenceAnnotations.add(sa)
         self.assertEquals(sa.identity, getHomespace() + '/ComponentDefinition/cd/sa/' + VERSION_STRING)
 
-
     def tearDown(self):
         Config.setOption('sbol_compliant_uris', True)
         Config.setOption('sbol_typed_uris', True)
 
-def runTests(test_list = [TestComponentDefinitions, TestSequences, TestMemory, TestIterators, TestCopy, TestDBTL, TestAssemblyRoutines, TestExtensionClass, TestURIAutoConstruction ]):
+class TestInsert(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        setHomespace('https://example.com')      
+
+    def makeInsert(self, dst_seq, insert_seq, insert_loc):
+        doc = Document()
+        cd0 = ComponentDefinition('wt_cd')
+        cd0.sequence = Sequence('wt_seq', dst_seq)
+        doc.addComponentDefinition(cd0)
+
+        insert_cd = ComponentDefinition('insert_cd')
+        insert_cd.sequence = Sequence('insert_seq', insert_seq)
+        doc.addComponentDefinition(insert_cd)
+
+        cd = cd0.insert(insert_cd, insert_loc, 'new_cd')
+
+        # Return the doc and URI because we get a Segmentation Fault
+        # if we return the cd itself and then try to reference it in
+        # any way.
+        return doc, cd.identity
+
+    def testSourceLocation(self):
+        # Test insertion splits the targt ComponentDefinition
+        # into 2 Components each with a SourceLocation
+        doc = Document()
+        cd0 = ComponentDefinition('wt_cd')
+        cd0.sequence = Sequence('wt_seq', 'atcg')
+        doc.addComponentDefinition(cd0)
+
+        insert_cd = ComponentDefinition('insert_cd')
+        insert_cd.sequence = Sequence('insert_seq', 'gg')
+        doc.addComponentDefinition(insert_cd)
+
+        cd = cd0.insert(insert_cd, 3, 'new_cd')
+        components = [c for c in cd.components if c.definition == cd0.identity]
+        self.assertEqual(len(components), 2)
+        self.assertEqual(len(components[0].sourceLocations), 1)
+        self.assertEqual(len(components[1].sourceLocations), 1)
+        l0 = components[0].sourceLocations.getRange()
+        l1 = components[1].sourceLocations.getRange()
+        self.assertEqual(l0.start, 1)
+        self.assertEqual(l0.end, 2)
+        self.assertEqual(l1.start, 3)
+        self.assertEqual(l1.end, 4)
+
+    def testInsertPrimaryStructure(self):
+        doc = Document()
+        cd0 = ComponentDefinition('wt_cd')
+        cd0.sequence = Sequence('wt_seq', 'atcg')
+        doc.addComponentDefinition(cd0)
+
+        insert_cd = ComponentDefinition('insert_cd')
+        insert_cd.sequence = Sequence('insert_seq', 'gg')
+        doc.addComponentDefinition(insert_cd)
+
+        cd = cd0.insert(insert_cd, 3, 'new_cd')
+        primary_structure = cd.getPrimaryStructure()
+        primary_structure = [c.identity for c in primary_structure]
+
+        # Python 3 compatability
+        if sys.version_info[0] < 3:
+            self.assertItemsEqual(primary_structure, [cd0.identity, insert_cd.identity, cd0.identity])
+        else:
+            self.assertCountEqual(primary_structure, [cd0.identity, insert_cd.identity, cd0.identity])        
+
+    def testInsertNegative(self):
+        # An exception should be raised if user tries to insert
+        # at a negative base coordinate 
+        with self.assertRaises(ValueError):
+            doc, uri = self.makeInsert('atcg', 'gg', -3)
+
+    def testInsert0(self):
+        # An exception should be raised if user tries to insert
+        # at 0 base coordinate. Base coordinates are indexed from 1
+        with self.assertRaises(ValueError):
+            doc, uri = self.makeInsert('atcg', 'gg', 0)
+
+    def testInsert1(self):
+        # Test inserting at the beginning of the sequence. Prepending.
+        doc, uri = self.makeInsert('atcg', 'gg', 1)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'ggatcg')
+
+    def testInsert2(self):
+        # Test inserting within the sequence.
+        doc, uri = self.makeInsert('atcg', 'gg', 2)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'aggtcg')
+
+    def testInsert3(self):
+        # Test inserting within the sequence.
+        doc, uri = self.makeInsert('atcg', 'aa', 3)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'ataacg')
+
+    def testInsert4(self):
+        # Test inserting one base before the end of the sequence.
+        doc, uri = self.makeInsert('atcg', 'aa', 4)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'atcaag')
+
+    def testInsertN(self):
+        # Test appending at the end of the initial sequence.
+        doc, uri = self.makeInsert('atcg', 'gg', 5)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'atcggg')
+
+    def testInsertPositive(self):
+        # An exception should be raised if the user attempts to
+        # appending at a location beyond the end of the initial
+        # sequence.
+        with self.assertRaises(ValueError):
+            doc, uri = self.makeInsert('atcg', 'gg', 8)
+
+    def testMissingDocument(self):
+        # Test that compile fails with a raised exception when
+        # this CD or the insert is not associated with a Document
+        doc = Document()
+        cd = ComponentDefinition('cd')
+        insert_cd = doc.componentDefinitions.create('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        insert_cd = ComponentDefinition('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+    def testDifferentDocuments(self):
+        # Test that compile fails with a raised exception when
+        # this CD and the insert belong to different Documents
+        doc0 = Document()
+        doc1 = Document()
+        cd = doc0.componentDefinitions.create('cd')
+        insert_cd = doc1.componentDefinitions.create('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+    def testCDwithoutSequence(self):
+        # Test that compile fails with a raised exception when
+        # the CD doesn't have a Sequence
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        insert_cd = doc.componentDefinitions.create('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+    def testCDwithoutSequenceElements(self):
+        # Test that compile fails with a raised exception when
+        # the Sequence doesn't have valid elements
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        cd.sequence = Sequence('cd_seq')
+        insert_cd = doc.componentDefinitions.create('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+    def testInsertwithoutSequence(self):
+        # Test that compile fails with a raised exception when
+        # the insert CD doesn't have a Sequence
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        cd.sequence = Sequence('cd_seq', 'tttttt')
+        insert_cd = doc.componentDefinitions.create('insert_cd')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+    def testInsertwithoutSequenceElements(self):
+        # Test that compile fails with a raised exception when
+        # the insert Sequence doesn't have valid elements
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        cd.sequence = Sequence('cd_seq', 'tttttt')
+        insert_cd = doc.componentDefinitions.create('insert_cd')
+        insert_cd.sequence = Sequence('insert_seq')
+        with self.assertRaises(ValueError):
+            cd = cd.insert(insert_cd, 4, 'new_cd')
+
+
+    def testDoubleInsertion(self):
+        # 
+        doc, uri = self.makeInsert('atcg', 'aa', 3)
+        cd = doc.getComponentDefinition(uri)
+        cd.compile()
+        insert_cd = ComponentDefinition('insert2_cd')
+        insert_cd.sequence = Sequence('insert2_seq', 'gcta')
+        doc.addComponentDefinition(insert_cd)
+        cd = cd.insert(insert_cd, 4, 'new_new_cd')
+        cd.compile()
+        self.assertEqual(cd.sequence.elements, 'atagctaacg')
+        ranges = []
+        for sa in cd.sequenceAnnotations:
+            r = sa.locations.getRange()
+            ranges.append((r.start, r.end))
+        ranges.sort()
+        self.assertEqual(len(ranges), 3)
+        self.assertEqual(ranges[0], (1, 3))
+        self.assertEqual(ranges[1], (4, 7))
+        self.assertEqual(ranges[2], (8, 10))
+
+class TestCombinatorial(unittest.TestCase):
+
+    def testCombinatorial(self):
+        doc = Document()
+
+        # Create template
+        pathway_template = doc.componentDefinitions.create('pathway_template')
+        pathway_genes = []
+        for i_gene in range(3):
+            gene = pathway_template.components.create('gene_%d' %i_gene)
+            gene.definition = ComponentDefinition('gene_%d' %i_gene)
+            pathway_genes.append(gene)
+
+        vioA = doc.componentDefinitions.create('vioA')
+        vioB = doc.componentDefinitions.create('vioB')
+        vioC = doc.componentDefinitions.create('vioC')
+
+        # Create combinatorial design
+        combinatorial_pathway = doc.combinatorialDerivations.create('combinatorial_pathway')
+        combinatorial_pathway.masterTemplate = pathway_template
+        for i_gene in range(3):
+            variable_component = combinatorial_pathway.variableComponents.create('variable_component_%d' %i_gene)
+            variable_component.variable = pathway_genes[i_gene]
+            variable_component.variants = [vioA, vioB, vioC]
+            variable_component.variantCollections = Collection('c')
+            variable_component.repeat = 'http://sbols.org/v2#one'
+
+class TestPartShop(unittest.TestCase):
+
+    # These parameters for the Synbiohub test instance are set externally by the test runner
+    USER = None
+    PASSWORD = None
+    RESOURCE = None
+    SPOOFED_RESOURCE = None
+
+    @classmethod
+    def setUpClass(cls):
+        TestPartShop.PART_SHOP = PartShop(TestPartShop.RESOURCE)
+        if TestPartShop.SPOOFED_RESOURCE:
+            TestPartShop.PART_SHOP.spoof(TestPartShop.SPOOFED_RESOURCE)
+        TestPartShop.TEST_COLLECTION = 'pySBOL_test'
+        TestPartShop.TEST_COLLECTION_URI = TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + '/' + TestPartShop.TEST_COLLECTION + '/' + TestPartShop.TEST_COLLECTION + '_collection/1'
+        Config.setOption('sbol_typed_uris', False)
+
+    def testLoginFailure(self):
+        with self.assertRaises(Exception):
+            TestPartShop.PART_SHOP.login('foo', 'bar')
+
+    def testLogin(self):
+        response = TestPartShop.PART_SHOP.login(TestPartShop.USER, TestPartShop.PASSWORD)
+        self.assertEqual(response, None)  # None is returned if the login succeeded
+
+    def testSubmit(self):
+        '''
+        '0' prevent, '1' overwrite, '2' merge and prevent, '3' merge and overwrite
+        '''
+        doc = Document()
+        doc.displayId = TestPartShop.TEST_COLLECTION
+        doc.name = 'pySBOL test'
+        doc.description = 'A temporary collection used for running pySBOL integration tests'
+        doc.componentDefinitions.create('foo')
+        TestPartShop.PART_SHOP.submit(doc)
+        self.assertTrue(TestPartShop.PART_SHOP.exists(TestPartShop.TEST_COLLECTION_URI))
+        self.assertTrue(TestPartShop.PART_SHOP.exists(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + \
+            '/' + TestPartShop.TEST_COLLECTION + '/foo/1'))
+
+    def testPull(self):
+        doc = Document()
+        TestPartShop.PART_SHOP.pull(TestPartShop.TEST_COLLECTION_URI, doc)
+        self.assertTrue(len(doc.componentDefinitions) == 1)
+
+    def testSubmitPrevent(self):
+        doc = Document()
+        doc.displayId = TestPartShop.TEST_COLLECTION
+        doc.name = 'pySBOL test'
+        doc.description = 'A temporary collection used for running pySBOL integration tests'
+        doc.componentDefinitions.create('foo')
+        with self.assertRaises(HTTPError):
+            TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 0)
+
+    def testSubmitOverwrite(self):
+        doc = Document()
+        doc.displayId = TestPartShop.TEST_COLLECTION
+        doc.name = 'pySBOL test'
+        doc.description = 'A temporary collection used for running pySBOL integration tests'
+        bar = doc.componentDefinitions.create('bar')
+        bar.roles = SO_PROMOTER
+        TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 1)
+        
+        # Check that foo object created in test_submit has been deleted and replaced with bar
+        self.assertFalse(TestPartShop.PART_SHOP.exists(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + \
+            '/' + TestPartShop.TEST_COLLECTION + '/foo/1'))
+        self.assertTrue(TestPartShop.PART_SHOP.exists(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + \
+            '/' + TestPartShop.TEST_COLLECTION + '/bar/1'))
+
+    def testSubmitMergeAndPrevent(self):
+        doc = Document()
+        doc.displayId = TestPartShop.TEST_COLLECTION
+        doc.name = 'pySBOL test'
+        doc.description = 'A temporary collection used for running pySBOL integration tests'
+        bar = doc.componentDefinitions.create('bar')
+
+        # Change bar's roles field from what it was set to in test_submit_overwrite
+        bar.roles = SO_CDS
+        with self.assertRaises(HTTPError):
+            TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 2)
+        
+    def testSubmitMergeAndOverwrite(self):
+        doc = Document()
+        doc.displayId = TestPartShop.TEST_COLLECTION
+        doc.name = 'pySBOL test'
+        doc.description = 'A temporary collection used for running pySBOL integration tests'
+        bar = doc.componentDefinitions.create('bar')
+
+        # Change bar's description field from what it was set to in test_submit_overwrite
+        bar.roles = SO_CDS
+        TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 3)            
+
+    def testPreventDuplicateCollections(self):
+        # Synbiohub is janky when trying to merge a Collection that already exists
+        # on Synbiohub and also exists in the submission Document. This can result
+        # in a duplicate Collection.
+        DUPLICATE_COLLECTION_URI = TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + '/' + \
+                                   TestPartShop.TEST_COLLECTION + '/user_' + TestPartShop.USER + '_' + \
+                                   TestPartShop.TEST_COLLECTION + '_' + TestPartShop.TEST_COLLECTION + '_collection/1'
+
+        doc = Document()
+        TestPartShop.PART_SHOP.pull(TestPartShop.TEST_COLLECTION_URI, doc)
+        self.assertTrue(TestPartShop.TEST_COLLECTION_URI in doc.collections)
+        TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 3)    
+        self.assertTrue(TestPartShop.TEST_COLLECTION_URI in doc.collections)
+        self.assertFalse(TestPartShop.PART_SHOP.exists(DUPLICATE_COLLECTION_URI))
+
+    def testPullAndMerge(self):
+        # Synbiohub is janky when trying to merge Documents that are already
+        # populated with objects in the PartShop's namespace. Therefore,
+        # a succesful merge operation requires this workaround
+        DUPLICATE_COLLECTION_URI = TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + '/' + \
+                                   TestPartShop.TEST_COLLECTION + '/user_' + TestPartShop.USER + '_' + \
+                                   TestPartShop.TEST_COLLECTION + '_' + TestPartShop.TEST_COLLECTION + '_collection/1'
+
+        doc = Document()
+        TestPartShop.PART_SHOP.pull(TestPartShop.TEST_COLLECTION_URI, doc)
+        doc = doc.copy(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER)
+        for obj in doc:
+            obj.wasDerivedFrom = None
+        foo = doc.componentDefinitions.create('foo')
+        TestPartShop.PART_SHOP.submit(doc, TestPartShop.TEST_COLLECTION_URI, 3)    
+
+        # Check that foo object created in test_submit has been deleted and replaced with bar
+        self.assertTrue(TestPartShop.PART_SHOP.exists(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + \
+            '/' + TestPartShop.TEST_COLLECTION + '/foo/1'))
+        self.assertTrue(TestPartShop.PART_SHOP.exists(TestPartShop.RESOURCE + '/user/' + TestPartShop.USER + \
+            '/' + TestPartShop.TEST_COLLECTION + '/bar/1'))
+        self.assertFalse(TestPartShop.PART_SHOP.exists(DUPLICATE_COLLECTION_URI))
+
+    def testRemove(self):
+        TestPartShop.PART_SHOP.remove(TestPartShop.TEST_COLLECTION_URI)
+        self.assertFalse(TestPartShop.PART_SHOP.exists(TestPartShop.TEST_COLLECTION_URI))
+
+##############
+# Test runners
+##############
+
+def runTests(test_list = [TestComponentDefinitions, TestSequences, TestMemory, TestIterators, TestCopy, TestDBTL, TestAssemblyRoutines, TestExtensionClass, TestURIAutoConstruction, TestInsert, TestCombinatorial], username = None, password = None, resource = None, spoofed_resource = None):
+    
+    # Test methods will be executed in the order in which they are declared in this file
+    # (Necessary for testing HTTP interface with Synbiohub which relies on database state)
+
+    def get_decl_line_no(method_name, method_map):
+        '''
+        Get line number on which a method is declared
+        '''
+        try:
+            method = method_map[method_name]
+        except:
+            print(__name__)
+            print(method_map.keys())
+        return inspect.getsourcelines(method)[1]
+
+    def compare_method_line_nos(m, n, method_map):
+        '''
+        Callback used to sort methods by order they appear in this file
+        '''
+        if get_decl_line_no(m, method_map) < get_decl_line_no(n, method_map):
+            return -1
+        else:
+            return 1
+
+    # Map callable methods from each Test class to their respective method name
+    method_map = {}
+    for name, obj in inspect.getmembers(sys.modules[__name__]):
+        if inspect.isclass(obj) and obj.__module__ == __name__:
+            for fx_name, fx in inspect.getmembers(obj, inspect.isroutine):
+                if fx.__name__ in obj.__dict__:
+                    method_map[fx_name] = fx
+
+    if username and password and resource:
+        test_list.append(TestPartShop)
+        TestPartShop.USER = username
+        TestPartShop.PASSWORD = password
+        TestPartShop.RESOURCE = resource
+        if spoofed_resource:
+            TestPartShop.SPOOFED_RESOURCE = spoofed_resource
+    elif username or password or resource:
+        raise ValueError('Cannot run PartShop tests. A username, password, and resource must be specified as keyword arguments.')
+
     VALIDATE = Config.getOption('validate')
     Config.setOption('validate', False)
 
-    #exec(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "CRISPR_example.py")).read())
-    suite_list = []
+    test_suite = []
     loader = unittest.TestLoader()
-    for test_class in test_list:
-        suite = loader.loadTestsFromTestCase(test_class)
-        suite_list.append(suite)
+    loader.sortTestMethodsUsing = lambda m, n: compare_method_line_nos(m, n, method_map)  # Sort test methods based on declaration line in this file 
 
-    full_test_suite = unittest.TestSuite(suite_list)
-    unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(full_test_suite)
+    for test_class in test_list:
+        test_suite.append(loader.loadTestsFromTestCase(test_class))
+    unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(unittest.TestSuite(test_suite))
     Config.setOption('validate', VALIDATE)
 
 def runRoundTripTests(test_list = [TestRoundTripSBOL2, TestRoundTripSBOL2BestPractices, TestRoundTripSBOL2IncompleteDocuments, TestRoundTripSBOL2NoncompliantURIs
 , TestRoundTripFailSBOL2]):
-    runTests(test_list)
+    VALIDATE = Config.getOption('validate')
+    Config.setOption('validate', False)
+
+    test_suite = []
+    loader = unittest.TestLoader()
+    for test_class in test_list:
+        test_suite.append(loader.loadTestsFromTestCase(test_class))
+    unittest.TextTestRunner(verbosity=2,stream=sys.stderr).run(unittest.TestSuite(test_suite))
+    Config.setOption('validate', VALIDATE)
 
 if __name__ == '__main__':
     runTests()

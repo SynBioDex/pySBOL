@@ -7,6 +7,8 @@
 
 from __future__ import absolute_import
 import json
+import requests
+from urllib3.exceptions import HTTPError
 
 
 
@@ -4560,6 +4562,70 @@ class GenericLocation(Location):
             self.this = this
     __swig_destroy__ = _libsbol.delete_GenericLocation
     __del__ = lambda self: None
+
+
+    def __getattribute__(self,name):
+        sbol_attribute = None
+        if is_swig_property(self, name):
+            sbol_attribute = object.__getattribute__(self, name)
+        elif is_extension_property(self, name):
+            sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+        if sbol_attribute != None:
+            if not 'Owned' in sbol_attribute.__class__.__name__:
+                if sbol_attribute.getUpperBound() != '1':
+                    return sbol_attribute.getAll()
+                else:
+                    try:
+                        return sbol_attribute.get()
+                    except LookupError:
+                        return None
+                return None
+            elif sbol_attribute.getUpperBound() == '1':
+                try:
+                    return sbol_attribute.get()
+                except:
+                    return None
+        return object.__getattribute__(self, name)
+
+    __setattribute__ = __setattr__
+
+    def __setattr__(self,name, value):
+        sbol_attribute = None
+        if is_swig_property(self, name):
+            sbol_attribute = object.__getattribute__(self, name)
+        elif is_extension_property(self, name):
+            sbol_attribute = object.__getattribute__(self, '__dict__')[name]
+        if sbol_attribute != None:
+            if not 'Owned' in sbol_attribute.__class__.__name__:
+                if value == None:
+                    sbol_attribute.clear()
+                elif type(value) == list:
+                    if sbol_attribute.getUpperBound() == '1':
+                        raise TypeError('The ' + sbol_attribute.getTypeURI() + ' property does not accept list arguments')
+                    sbol_attribute.clear()
+                    for val in value:
+                        sbol_attribute.add(val)
+                else:
+                    sbol_attribute.set(value)
+            elif sbol_attribute.getUpperBound() == '1':
+                if len(sbol_attribute) > 0:
+                    sbol_obj = sbol_attribute.get()
+                    doc = sbol_obj.doc
+                    sbol_attribute.remove()
+                    if not doc:
+                        sbol_obj.thisown = True
+                    elif not doc.find(sbol_obj.identity):
+                        sbol_obj.thisown = True
+                if not value == None:
+                    sbol_attribute.set(value)
+                    value.thisown = False
+        else:
+            self.__class__.__setattribute__(self, name, value)
+
+    def __repr__(self):
+        return self.__class__.__name__
+
+
 GenericLocation_swigregister = _libsbol.GenericLocation_swigregister
 GenericLocation_swigregister(GenericLocation)
 
@@ -6432,19 +6498,6 @@ class ComponentDefinition(TopLevel):
     if _newclass:
         sequenceConstraints = _swig_property(_libsbol.ComponentDefinition_sequenceConstraints_get, _libsbol.ComponentDefinition_sequenceConstraints_set)
 
-    def compile(self):
-        """
-
-        `compile() -> std::string`  
-
-        Compiles an abstraction hierarchy of ComponentDefinitions into a nucleotide
-        sequence. If no Sequence object is associated with this ComponentDefinition, one
-        will be automatically instantiated.  
-
-        """
-        return _libsbol.ComponentDefinition_compile(self)
-
-
     def updateSequence(self, *args):
         """
 
@@ -6464,22 +6517,6 @@ class ComponentDefinition(TopLevel):
 
         """
         return _libsbol.ComponentDefinition_updateSequence(self, *args)
-
-
-    def getInSequentialOrder(self):
-        """
-
-        `getInSequentialOrder() -> std::vector< Component * >`  
-
-        Orders this ComponentDefinition's member Components into a linear arrangement
-        based on Sequence Constraints.  
-
-        Returns
-        -------
-        Primary sequence structure  
-
-        """
-        return _libsbol.ComponentDefinition_getInSequentialOrder(self)
 
 
     def hasUpstreamComponent(self, current_component):
@@ -6941,6 +6978,365 @@ class ComponentDefinition(TopLevel):
         """
         return _libsbol.ComponentDefinition_isRegular(self, *args)
 
+
+
+    def getPrimaryStructureComponents(self):
+        subcomponents = []
+        if len(self.components) == 1:
+            subcomponents.append(self.components[0])
+        else:
+    # Check if this is a complete primary structure (note this isn't a perfect test)
+            if len(self.sequenceConstraints) != (len(self.components) - 1):
+                raise ValueError('ComponentDefinition <%s> does not appear to describe a complete primary structure ' \
+                                 'It appears to be missing SequenceConstraints.' %self.identity)
+
+            c_first = self.getFirstComponent()
+            subcomponents.append(c_first)
+            c_next = c_first;
+            while self.hasDownstreamComponent(c_next):
+                c_next = self.getDownstreamComponent(c_next)
+                subcomponents.append(c_next)
+        return subcomponents
+
+    def assemble(self, component_list, assembly_method=None, doc=None):
+        '''
+        Due to the recursive nature of this routine, it is hard to completely validate that all the necessary
+        preconditions for successful execution are met prior to execution.  That means if a call fails, it may result
+        in a modified and incomplete data structure that will be difficult to fix when the user is working interactively
+        in the interpreter
+        '''
+        if not Config.getOption('sbol_compliant_uris'):
+            raise EnvironmentError('Assemble method requires SBOL-compliance enabled')
+
+    # Validate doc
+        if not self.doc and not doc:
+            raise ValueError('Missing doc argument. If the ComponentDefinition does not belong to a Document, ' \
+                             'a target Document must be specified using the doc keyword argument.')
+        if doc and self.doc != doc:
+            raise ValueError('Invalid doc argument. Do not use the doc keyword argument if the ComponentDefinition ' \
+                             'already belongs to a Document')
+
+    # Validate component_list
+        doc = doc if doc else self.doc
+        if isinstance(component_list, list) and all(isinstance(c, ComponentDefinition) \
+                                                    for c in component_list):
+            for cdef in component_list:
+                if cdef.doc and cdef.doc.this != doc.this:
+                    raise ValueError('Invalid component_list specified. Assembly subcomponents cannot ' \
+                                     'belong to a different Document than the calling object.')
+        elif isinstance(component_list, list) and all(isinstance(c, str) \
+                                                      for c in component_list):
+            component_identities = component_list[:]
+            component_list = []
+            for c_id in component_identities:
+                if not c_id in doc.componentDefinitions:
+                    raise ValueError('Invalid component_list specified. ComponentDefinition <%s> not found.' \
+                                     %c_id)
+                cdef = doc.componentDefinitions[c_id]
+                component_list.append(cdef)
+        else:
+            raise TypeError('Invalid component_list specified. Please provide a list of ' \
+                            'ComponentDefinitions or, alternatively, a list of ComponentDefinition' \
+                            'displayIds')
+
+        if not self.doc:
+            doc.addComponentDefinition(self)
+        for cdef in component_list:
+            if not cdef.doc:
+                self.doc.addComponentDefinition(cdef)
+
+        if assembly_method:
+            component_list = assembly_method(component_list)
+            if not all(type(c) is ComponentDefinition for c in component_list):
+                raise TypeError('Invalid callback specified for assembly_method. The callback must return a list ' \
+                                'of ComponentDefinitions')
+
+    # Instantiate a Component for each ComponentDefinition in the list
+        instance_list = []
+        for cdef in component_list:
+
+    # Generate URI of new Component.  Check if an object with that URI is already instantiated.
+            instance_count = 0
+            component_id = self.persistentIdentity + "/" + cdef.displayId + "_" + str(instance_count) + \
+                           "/" + self.version
+            while self.find(component_id):
+    # Find the last instance assigned
+                instance_count += 1
+                component_id = self.persistentIdentity + "/" + cdef.displayId + "_" + str(instance_count) + \
+                               "/" + self.version
+
+            c = self.components.create(cdef.displayId + "_" + str(instance_count))
+            c.definition = cdef.identity
+            instance_list.append(c)
+        return component_list
+
+    def assemblePrimaryStructure(self, primary_structure, assembly_method=None, doc=None):
+
+        primary_structure = self.assemble(primary_structure, assembly_method, doc)
+
+    # If user specifies a list of IDs rather than ComponentDefinitions, convert to list of ComponentDefinitions
+    # (Some parameter validation is done by the preceding call to ComponentDefinition.assemble)
+        doc = doc if doc else self.doc
+        if all(isinstance(c, str) for c in primary_structure):
+            component_identities = primary_structure[:]
+            primary_structure = []
+            for c_id in component_identities:
+                cdef = doc.componentDefinitions[c_id]
+                primary_structure.append(cdef)
+
+        self.types += [SO_LINEAR]
+
+
+        component_map = {}
+        for c in self.components:
+            if not c.definition in component_map:
+                component_map[c.definition] = [c]
+            else:
+                component_map[c.definition].append(c)
+        primary_structure_components = []
+        for cd in primary_structure:
+            primary_structure_components.append(component_map[cd.identity].pop())
+
+    # Iterate pairwise through the primary_structure, and place SequenceConstraints between adjacent
+    # ComponentDefinitions.
+        if len(self.sequenceConstraints):
+            self.sequenceConstraints.clear()
+        for upstream, downstream in zip(primary_structure_components[:-1], primary_structure_components[1:]):
+            instance_count = 0
+            constraint_id = 'constraint_%d' %instance_count
+            while constraint_id in self.sequenceConstraints:
+                instance_count += 1
+                constraint_id = 'constraint_%d' %instance_count
+            sc = self.sequenceConstraints.create(constraint_id)
+            sc.subject = upstream
+            sc.object = downstream
+            sc.restriction = SBOL_RESTRICTION_PRECEDES
+
+    def compile(self, assembly_method = None):
+        if not self.doc:
+            raise ValueError('Cannot compile <%s>. The ComponentDefinition must belong to a Document ' \
+                             'in order to compile.' %self.identity)
+
+        if not self.sequence:
+            if Config.getOption('sbol_compliant_uris'):
+                display_id = self.displayId
+                if not Config.getOption('sbol_typed_uris'):
+                    display_id += '_seq'
+                seq = self.doc.sequences.create(display_id)
+                self.sequence = seq
+                self.sequences = seq.identity
+            else:
+                seq = self.sequences.create(self.identity + '_seq')
+                self.sequence = seq
+                self.sequences = seq.identity
+
+        return self.sequence.compile(assembly_method = assembly_method)
+
+
+
+    def insert(self, cd_to_insert, insert_point, display_id):
+        """
+        Construct SBOL representing a genetic insert. Inserts cd_to_insert
+        into self at insert_point.
+
+        This method constructs a new ComponentDefinition that is annotated
+        with the original sequence and the inserted sequence such that the
+        new DNA sequence can be generated. This method does not generate
+        the new sequence itself.
+
+        The new sequence is not generated to avoid duplicating very long
+        sequences in memory when they are not needed.
+
+        """
+
+        def autoconstruct_id(sbol_owned_object_property, display_id):
+            instance_count = 0
+            auto_id = '%s_%d' %(display_id, instance_count)
+            while sbol_owned_object_property.find(auto_id):
+                instance_count += 1
+                auto_id = '%s_%d' %(display_id, instance_count)
+                return auto_id
+
+        if not self.doc:
+            raise ValueError('Insert failed. ComponentDefinition <%s> must be added to a Document before proceeding.' \
+                             %self.identity)
+        if not cd_to_insert.doc:
+            raise ValueError('Insert failed. ComponentDefinition <%s> must be added to a Document before proceeding.' \
+                             %cd_to_insert.identity)
+        if self.doc.this != cd_to_insert.doc.this:
+            raise ValueError('Insert failed. ComponentDefinition <%s> and ComponentDefinition <%s> must belong to ' \
+                             'the same Document.' %(self.identity, cd_to_insert.identity))
+        if not self.sequence:
+            raise ValueError('Insert failed. ComponentDefinition <%s> is not associated with a Sequence. ' \
+                             'The sequence property should point to a valid Sequence before proceeding.' %self.identity)
+        if not self.sequence.elements:
+            raise ValueError('Insert failed. The elements property of Sequence <%s> must be set before proceeding.' \
+                             'The sequence property should point to a valid Sequence before proceeding.'
+                             %self.sequence.identity)
+        if not cd_to_insert.sequence:
+            raise ValueError('Insert failed. ComponentDefinition <%s> is not associated with a Sequence. ' \
+                             'The sequence property must point to a valid Sequence before proceeding.' \
+                             %cd_to_insert.identity)
+        if not cd_to_insert.sequence.elements:
+            raise ValueError('Insert failed. The elements property of Sequence <%s> must be set before proceeding.' \
+                             'The sequence property should point to a valid Sequence before proceeding.'
+                             %cd_to_insert.sequence.identity)
+
+        orig_len = len(self.sequence.elements)
+        insert_len = len(cd_to_insert.sequence.elements)
+
+    # Keep insert_point in bounds
+        if insert_point < 1:
+            raise ValueError('Insert failed. The insert_point must be a base coordinate equal to or greater than 1')
+        if insert_point > orig_len + 1:
+            raise ValueError('Insert failed. The insert_point exceeds the length of the target sequence.')
+
+        cd = ComponentDefinition(display_id)
+
+    #sa = cd.sequenceAnnotations.create('%s_sa' %self.displayId)
+    #if insert_point > 1:
+    #    # If insert point is not at the beginning, construct a range
+    #    # that precedes the insert point.
+    #    range1 = sa.locations.createRange('%s_r1' %self.displayId)
+    #    range1.start = 1
+    #    range1.end = insert_point - 1
+    #range2 = sa.locations.createRange('%s_r2' %self.displayId)
+    #range2.start = insert_point + insert_len
+    #range2.end = orig_len + insert_len
+
+        self_comp_0 = None
+        if insert_point > 1:
+    # Now link myself into the structure of the new
+    # ComponentDefinition
+            self_comp_0 = cd.components.create('%s_comp_0' %self.displayId)
+            self_comp_0.definition = self
+            source_loc_0 = self_comp_0.sourceLocations.createRange('%s_r0' %self.displayId)
+            source_loc_0.start = 1
+            source_loc_0.end = insert_point - 1
+
+    # Now link the insert to the new cd
+        insert_comp = cd.components.create('%s_comp' %cd_to_insert.displayId)
+        insert_comp.definition = cd_to_insert
+    #insert_sa = cd.sequenceAnnotations.create('%s_sa' %cd_to_insert.displayId)
+
+    # Add the range to the insert_sa
+    #insert_range = insert_sa.locations.createRange('%s_r1' %cd_to_insert.displayId)
+    #insert_range.start = insert_point
+    #insert_range.end = insert_point + insert_len - 1
+
+        self_comp_1 = None
+        if insert_point <= orig_len:
+            self_comp_1 = cd.components.create('%s_comp_1' %self.displayId)
+            self_comp_1.definition = self
+            source_loc_1 = self_comp_1.sourceLocations.createRange('%s_r1' %self.displayId)
+            source_loc_1.start = insert_point
+            source_loc_1.end = orig_len
+
+        if self_comp_0:
+            sc0 = cd.sequenceConstraints.create('%s_constraint_0' %cd.displayId)
+            sc0.subject = self_comp_0
+            sc0.object = insert_comp
+            sc0.restriction = SBOL_RESTRICTION_PRECEDES
+
+        if self_comp_1:
+            sc1 = cd.sequenceConstraints.create('%s_constraint_1' %cd.displayId)
+            sc1.subject = insert_comp
+            sc1.object = self_comp_1
+            sc1.restriction = SBOL_RESTRICTION_PRECEDES
+
+        self.doc.addComponentDefinition(cd)
+        return cd
+
+    def compileInsert(self):
+        """Compiles a genetic insert by parsing the SBOL and constructing the
+        sequence.
+
+        The layout of self is expected to match the SBOL generated by
+        ComponentDefinition.insert().
+        """
+
+        def pairwise(ranges):
+            pairs = []
+            for pair in zip(ranges[:-1], ranges[1:]):
+                pairs.append(pair)
+            return pairs
+
+        def getComponentDefinition(sequence_annotation):
+            parent_cd = sequence_annotation.parent.cast(ComponentDefinition)
+            component = parent_cd.components[sequence_annotation.component]
+            definition_cd = sequence_annotation.doc.getComponentDefinition(component.definition)
+            return definition_cd
+
+        def getRanges(sequence_annotation):
+            for loc in sequence_annotation.locations:
+                r = sequence_annotation.locations[loc.identity]
+                if isinstance(r, Range):
+                    yield r
+
+    #  Self must not already have a sequence
+    #     We could also allow self to have a sequence and simply
+    #     return so we don't overwrite the sequence.
+        if self.sequence is not None:
+            raise InsertionError('A sequence already exists.')
+
+    #  There must be at least two annotations
+        if len(self.sequenceAnnotations) < 2:
+            raise InsertionError('Not enough sequence annotations, need at least 2.')
+
+    #  Two annotations must have a component and have at least one location
+        annotations = [a for a in self.sequenceAnnotations
+                       if a.component is not None and len(a.locations) > 0]
+        if len(annotations) < 2:
+            raise InsertionError('Not enough annotations, need at least 2 with a component and a location.')
+
+    # There must be two annotations that have CDs that have non-empty sequences
+        annotations = [a for a in annotations if getComponentDefinition(a).sequence
+                       and getComponentDefinition(a).sequence.elements]
+        if len(annotations) < 2:
+            raise InsertionError('Not enough linked ComponentDefinitions have sequences.')
+
+    # Build a list of tuples. Each tuple is (Range, string), with the
+    # string containing a substring of the CD's original
+    # sequence. These strings are later joined to create the final
+    # sequence with insertion.
+        ranges = []
+        for a in annotations:
+            seq = getComponentDefinition(a).sequence.elements
+            aranges = list(getRanges(a))
+
+    # We really need to do some work here....
+    # We need to verify that the ranges cover the entire sequence,
+            if sum([r.length() for r in aranges]) != len(seq):
+                msg = 'Insufficient ranges for sequence {}: {}'
+                raise InsertionError(msg.format(seq, ['Range({}, {})'.format(r.start, r.end) for r in aranges]))
+
+    # and we should break up the sequence now, while we have the information, to match
+    # the ranges. Then all we have to do later is append the strings.
+            for r in aranges:
+                ranges.append((r, seq[:r.length()]))
+                seq = seq[r.length():]
+
+    # Sort the list of tuples by Range start, then end
+        ranges.sort(key=lambda tup: (tup[0].start, tup[0].end))
+
+    # Verify that the ranges are in proper order, have not gaps and no overlaps.
+        for rs1, rs2 in pairwise(ranges):
+            r1 = rs1[0]
+            r2 = rs2[0]
+    # print('R({}, {}) <==> R({}, {})'.format(r1.start, r1.end, r2.start, r2.end))
+            if not r1.adjoins(r2):
+                raise InsertionError('Ranges are not contiguous')
+            if not r1.precedes(r2):
+                raise InsertionError('Sorting ranges has failed')
+            if r1.overlaps(r2):
+                raise InsertionError('Ranges overlap')
+
+    # Everything looks good, create the final sequence
+        new_seq = ''.join([tup[1] for tup in ranges])
+
+    # Now construct the SBOL object(s) to represent this sequence
+        self.sequence = Sequence('%s_seq' %self.displayId, new_seq)
+
 ComponentDefinition_swigregister = _libsbol.ComponentDefinition_swigregister
 ComponentDefinition_swigregister(ComponentDefinition)
 
@@ -7248,6 +7644,111 @@ class Sequence(TopLevel):
     def __repr__(self):
         return self.__class__.__name__
 
+
+
+    def compile(self, composite_sequence = '', assembly_method = None):
+        if not self.doc:
+            raise ValueError('Cannot compile Sequence <%s>. The Sequence must belong to a Document ' \
+                             'in order to compile.' %self.identity)
+
+    # Search for the parent ComponentDefinition to which this Sequence belongs
+        parent_cdef = None
+        for cd in self.doc.componentDefinitions:
+            if cd.sequence and cd.sequence.identity == self.identity:
+                parent_cdef = cd
+                break
+
+        if not parent_cdef:
+            raise ValueError('Cannot compile Sequence <%s>. The Sequence must be associated ' \
+                             'with a ComponentDefinition in order to compile.' %self.identity)
+
+        if len(parent_cdef.components) == 0:
+            if parent_cdef.sequence.elements:
+                return parent_cdef.sequence.elements
+            else:
+                return ''  # Maybe this should raise an Exception ?
+
+        elif len(parent_cdef.components) > 0:
+    # Recurse into subcomponents and assemble their sequence
+            composite_sequence_initial_size = len(composite_sequence)
+
+            subcomponents = parent_cdef.getPrimaryStructureComponents()
+            for c in subcomponents:
+                cdef = self.doc.getComponentDefinition(c.definition)
+                if not cdef.sequence:
+                    if Config.getOption('sbol_compliant_uris'):
+                        seq = self.doc.sequences.create(cdef.displayId)
+                        cdef.sequence = seq
+                        cdef.sequences = seq.identity
+                    else:
+                        seq = self.doc.sequences.create(cdef.identity+ '_seq')
+                        cdef.sequence = seq
+                        cdef.sequences = seq.identity
+                seq = cdef.sequence
+
+    # Check for regularity -- only one SequenceAnnotation per Component is allowed
+                sequence_annotations = parent_cdef.find_property_value(SBOL_COMPONENT_PROPERTY, c.identity)
+                sequence_annotations = [o.cast(SequenceAnnotation) for o in sequence_annotations]
+                if len(sequence_annotations) > 1:
+                    raise ValueError('Cannot compile Sequence. Component <%s> is irregular. ' \
+                                     'More than one SequenceAnnotation is associated with ' \
+                                     'this Component' %c.identity)
+
+    # Auto-construct a SequenceAnnotation for this Component if one doesn't already exist
+                if len(sequence_annotations) == 0:
+                    sa_instance = 0
+                    sa_id = cdef.displayId if Config.getOption('sbol_compliant_uris') else cdef.identity
+                    sa_id += '_annotation'
+                    sa_uri = '%s/%s_%d/%s' %(parent_cdef.persistentIdentity, sa_id, sa_instance, cdef.version)
+                    while sa_uri in parent_cdef.sequenceAnnotations:
+                        sa_instance += 1
+                        sa_uri = '%s/%s_%d/%s' %(parent_cdef.persistentIdentity, sa_id, sa_instance, cdef.version)
+                    sa = parent_cdef.sequenceAnnotations.create('%s_%d' %(sa_id, sa_instance))
+                    sa.component = c
+                    sequence_annotations.append(sa)
+
+                sa = sequence_annotations[0]
+
+    # Check for regularity -- only one Range per SequenceAnnotation is allowed
+                ranges = []
+                if len(sa.locations):
+    # Look for an existing Range that can be re-used
+                    for l in sa.locations:
+                        if l.type == SBOL_RANGE:
+                            ranges.append(l.cast(Range))
+                else:
+    # Auto-construct a Range
+                    range_id = sa.displayId if Config.getOption('sbol_compliant_uris') else sa.identity
+                    r = sa.locations.createRange(range_id + '_range')
+                    ranges.append(r)
+                if len(ranges) > 1:
+                    raise ValueError('Cannot compile Sequence <%s> because SequenceAnnotation <%s> has ' \
+                                     'more than one Range.' %(self.identity, sa.identity))
+
+                r = ranges[0]
+
+    #if len(parent_cdef.components) == 1:
+    #    r.start = len(composite_sequence) + 1
+    #   r.end = len(composite_sequence) + len(seq.elements)
+    #    #return seq.elements
+                r.start = len(composite_sequence) + 1
+                subsequence = seq.compile(composite_sequence)  # Recursive call
+                if assembly_method:
+                    subsequence = assembly_method(subsequence)
+                    if not type(subsequence) is str:
+                        raise TypeError('Invalid callback specified for assembly_method. The callback must return' \
+                                        ' a string.')
+
+    # If sourceLocation is specified, don't use the entire sequence for the subcomponent
+                if len(c.sourceLocations) == 1:
+                    source_loc = c.sourceLocations.getRange()
+                    subsequence = subsequence[(source_loc.start - 1):(source_loc.end)]
+                composite_sequence = composite_sequence + subsequence
+                r.end = len(composite_sequence)
+
+            subsequence = composite_sequence[composite_sequence_initial_size:(composite_sequence_initial_size+len(composite_sequence))]
+            self.elements = subsequence
+            return subsequence;
 
 Sequence_swigregister = _libsbol.Sequence_swigregister
 Sequence_swigregister(Sequence)
@@ -14278,27 +14779,6 @@ class PartShop(_object):
         return _libsbol.PartShop_searchCount(self, *args)
 
 
-    def submit(self, *args):
-        """
-
-        `submit(doc, collection="", overwrite=0) -> std::string`  
-
-        Submit an SBOL Document to SynBioHub.  
-
-        Parameters
-        ----------
-        * `doc` :  
-            The Document to submit  
-        * `collection` :  
-            The URI of an SBOL Collection to which the Document contents will be
-            uploaded  
-        * `overwrite` :  
-            An integer code: 0(default) - do not overwrite, 1 - overwrite, 2 - merge  
-
-        """
-        return _libsbol.PartShop_submit(self, *args)
-
-
     def login(self, *args):
         """
 
@@ -14379,14 +14859,11 @@ class PartShop(_object):
         return _libsbol.PartShop_downloadAttachment(self, *args)
 
 
-    def addSynBioHubAnnotations(self, doc):
-        """
+    def addSynbiohubAnnotations(self, doc):
+        return _libsbol.PartShop_addSynbiohubAnnotations(self, doc)
 
-        `addSynBioHubAnnotations(doc)`  
-
-        """
-        return _libsbol.PartShop_addSynBioHubAnnotations(self, doc)
-
+    def stripSynbiohubAnnotations(self, doc):
+        return _libsbol.PartShop_stripSynbiohubAnnotations(self, doc)
 
     def exists(self, uri):
         return _libsbol.PartShop_exists(self, uri)
@@ -14448,6 +14925,86 @@ class PartShop(_object):
 
         """
         return _libsbol.PartShop_countCollection(self)
+
+
+    def submit(self, doc, collection='', overwrite=0):
+        """
+        Submit a SBOL Document to SynBioHub
+        :param doc: The Document to submit
+        :param collection: The URI of a SBOL Collection to which the Document
+        contents will be uploaded
+        :param overwrite: An integer code: '0' prevent, '1' overwrite,
+            '2' merge and prevent, '3' merge and overwrite
+        :return: the HTTP response object
+        """
+        if collection == '':
+    # If a Document is submitted as a new collection,
+    # then Document metadata must be specified
+            if not (doc.displayId and doc.name and doc.description):
+                raise ValueError('Cannot submit Document. The Document must be '
+                                 'assigned a displayId, name, and ' +
+                                 'description for upload.')
+        else:
+            if self.getSpoofedURL() != '' and self.getURL() in collection:
+    # Correct collection URI in case a spoofed resource is being used
+                collection = collection.replace(self.getURL(),
+                                                self.getSpoofedURL())
+                if Config.getOption('verbose') is True:
+                    self.logger.info('Submitting Document to an existing collection: ' + collection)
+    # if Config.getOption(ConfigOptions.SERIALIZATION_FORMAT.value) == 'rdfxml':
+    #     self.addSynBioHubAnnotations(doc)
+        files = {}
+        if doc.displayId:
+            files['id'] = (None, doc.displayId)
+        if doc.version:
+            files['version'] = (None, doc.version)
+        if doc.name:
+            files['name'] = (None, doc.name)
+        if doc.description:
+            files['description'] = (None, doc.description)
+        citations = ''
+        for citation in doc.citations:
+            citations += citation + ','
+        citations = citations[0:-1]  # chop off final comma
+        files['citations'] = (None, citations)
+        keywords = ''
+        for kw in doc.keywords:
+            keywords += kw + ','
+        keywords = keywords[0:-1]
+        files['keywords'] = (None, keywords)
+        files['overwrite_merge'] = (None, str(overwrite))
+        files['user'] = (None, self.getKey())
+        files['file'] = ('file', doc.writeString(), 'text/xml')
+
+
+        collection_instance = None
+        if collection != '':
+            files['rootCollections'] = (None, collection)
+
+    # When uploading to a Collection, if the same Collection
+    # exists in the submission Document, it can result in duplicate Collections.
+    # Removing the Collection first will prevent that
+            if collection in doc.collections:
+                collection_instance = doc.collections.remove(collection)
+
+    # Send POST request
+        response = requests.post(self.getURL() + '/submit',
+                                 files=files,
+                                 headers={'Accept': 'text/plain',
+                                     'X-authorization': self.getKey()})
+
+        if collection_instance:
+            doc.collections.add(collection_instance)
+
+        if response:
+            return response
+        elif response.status_code == 401:
+            raise HTTPError('You must login with valid credentials '
+                            'before submitting')
+        else:
+            raise HTTPError('HTTP post request failed with: ' +
+                            str(response.status_code) +
+                            ' - ' + str(response.content))
 
     __swig_destroy__ = _libsbol.delete_PartShop
     __del__ = lambda self: None
@@ -14659,10 +15216,10 @@ class Document(Identified):
     __swig_getmethods__["attachments"] = _libsbol.Document_attachments_get
     if _newclass:
         attachments = _swig_property(_libsbol.Document_attachments_get, _libsbol.Document_attachments_set)
-    __swig_setmethods__["combinatorialderivations"] = _libsbol.Document_combinatorialderivations_set
-    __swig_getmethods__["combinatorialderivations"] = _libsbol.Document_combinatorialderivations_get
+    __swig_setmethods__["combinatorialDerivations"] = _libsbol.Document_combinatorialDerivations_set
+    __swig_getmethods__["combinatorialDerivations"] = _libsbol.Document_combinatorialDerivations_get
     if _newclass:
-        combinatorialderivations = _swig_property(_libsbol.Document_combinatorialderivations_get, _libsbol.Document_combinatorialderivations_set)
+        combinatorialDerivations = _swig_property(_libsbol.Document_combinatorialDerivations_get, _libsbol.Document_combinatorialDerivations_set)
     __swig_setmethods__["implementations"] = _libsbol.Document_implementations_set
     __swig_getmethods__["implementations"] = _libsbol.Document_implementations_get
     if _newclass:
@@ -15903,6 +16460,119 @@ class OwnedPythonObject(_object):
     __del__ = lambda self: None
 OwnedPythonObject_swigregister = _libsbol.OwnedPythonObject_swigregister
 OwnedPythonObject_swigregister(OwnedPythonObject)
+
+class ComponentVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ComponentVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ComponentVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _libsbol.ComponentVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _libsbol.ComponentVector___nonzero__(self)
+
+    def __bool__(self):
+        return _libsbol.ComponentVector___bool__(self)
+
+    def __len__(self):
+        return _libsbol.ComponentVector___len__(self)
+
+    def __getslice__(self, i, j):
+        return _libsbol.ComponentVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _libsbol.ComponentVector___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _libsbol.ComponentVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _libsbol.ComponentVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _libsbol.ComponentVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _libsbol.ComponentVector___setitem__(self, *args)
+
+    def pop(self):
+        return _libsbol.ComponentVector_pop(self)
+
+    def append(self, x):
+        return _libsbol.ComponentVector_append(self, x)
+
+    def empty(self):
+        return _libsbol.ComponentVector_empty(self)
+
+    def size(self):
+        return _libsbol.ComponentVector_size(self)
+
+    def swap(self, v):
+        return _libsbol.ComponentVector_swap(self, v)
+
+    def begin(self):
+        return _libsbol.ComponentVector_begin(self)
+
+    def end(self):
+        return _libsbol.ComponentVector_end(self)
+
+    def rbegin(self):
+        return _libsbol.ComponentVector_rbegin(self)
+
+    def rend(self):
+        return _libsbol.ComponentVector_rend(self)
+
+    def clear(self):
+        return _libsbol.ComponentVector_clear(self)
+
+    def get_allocator(self):
+        return _libsbol.ComponentVector_get_allocator(self)
+
+    def pop_back(self):
+        return _libsbol.ComponentVector_pop_back(self)
+
+    def erase(self, *args):
+        return _libsbol.ComponentVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _libsbol.new_ComponentVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x):
+        return _libsbol.ComponentVector_push_back(self, x)
+
+    def front(self):
+        return _libsbol.ComponentVector_front(self)
+
+    def back(self):
+        return _libsbol.ComponentVector_back(self)
+
+    def assign(self, n, x):
+        return _libsbol.ComponentVector_assign(self, n, x)
+
+    def resize(self, *args):
+        return _libsbol.ComponentVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _libsbol.ComponentVector_insert(self, *args)
+
+    def reserve(self, n):
+        return _libsbol.ComponentVector_reserve(self, n)
+
+    def capacity(self):
+        return _libsbol.ComponentVector_capacity(self)
+    __swig_destroy__ = _libsbol.delete_ComponentVector
+    __del__ = lambda self: None
+ComponentVector_swigregister = _libsbol.ComponentVector_swigregister
+ComponentVector_swigregister(ComponentVector)
 
 class MeasurementVector(_object):
     __swig_setmethods__ = {}
@@ -19623,119 +20293,6 @@ class OwnedSequenceAnnotation(SequenceAnnotationProperty):
     __del__ = lambda self: None
 OwnedSequenceAnnotation_swigregister = _libsbol.OwnedSequenceAnnotation_swigregister
 OwnedSequenceAnnotation_swigregister(OwnedSequenceAnnotation)
-
-class ComponentVector(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ComponentVector, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ComponentVector, name)
-    __repr__ = _swig_repr
-
-    def iterator(self):
-        return _libsbol.ComponentVector_iterator(self)
-    def __iter__(self):
-        return self.iterator()
-
-    def __nonzero__(self):
-        return _libsbol.ComponentVector___nonzero__(self)
-
-    def __bool__(self):
-        return _libsbol.ComponentVector___bool__(self)
-
-    def __len__(self):
-        return _libsbol.ComponentVector___len__(self)
-
-    def __getslice__(self, i, j):
-        return _libsbol.ComponentVector___getslice__(self, i, j)
-
-    def __setslice__(self, *args):
-        return _libsbol.ComponentVector___setslice__(self, *args)
-
-    def __delslice__(self, i, j):
-        return _libsbol.ComponentVector___delslice__(self, i, j)
-
-    def __delitem__(self, *args):
-        return _libsbol.ComponentVector___delitem__(self, *args)
-
-    def __getitem__(self, *args):
-        return _libsbol.ComponentVector___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        return _libsbol.ComponentVector___setitem__(self, *args)
-
-    def pop(self):
-        return _libsbol.ComponentVector_pop(self)
-
-    def append(self, x):
-        return _libsbol.ComponentVector_append(self, x)
-
-    def empty(self):
-        return _libsbol.ComponentVector_empty(self)
-
-    def size(self):
-        return _libsbol.ComponentVector_size(self)
-
-    def swap(self, v):
-        return _libsbol.ComponentVector_swap(self, v)
-
-    def begin(self):
-        return _libsbol.ComponentVector_begin(self)
-
-    def end(self):
-        return _libsbol.ComponentVector_end(self)
-
-    def rbegin(self):
-        return _libsbol.ComponentVector_rbegin(self)
-
-    def rend(self):
-        return _libsbol.ComponentVector_rend(self)
-
-    def clear(self):
-        return _libsbol.ComponentVector_clear(self)
-
-    def get_allocator(self):
-        return _libsbol.ComponentVector_get_allocator(self)
-
-    def pop_back(self):
-        return _libsbol.ComponentVector_pop_back(self)
-
-    def erase(self, *args):
-        return _libsbol.ComponentVector_erase(self, *args)
-
-    def __init__(self, *args):
-        this = _libsbol.new_ComponentVector(*args)
-        try:
-            self.this.append(this)
-        except __builtin__.Exception:
-            self.this = this
-
-    def push_back(self, x):
-        return _libsbol.ComponentVector_push_back(self, x)
-
-    def front(self):
-        return _libsbol.ComponentVector_front(self)
-
-    def back(self):
-        return _libsbol.ComponentVector_back(self)
-
-    def assign(self, n, x):
-        return _libsbol.ComponentVector_assign(self, n, x)
-
-    def resize(self, *args):
-        return _libsbol.ComponentVector_resize(self, *args)
-
-    def insert(self, *args):
-        return _libsbol.ComponentVector_insert(self, *args)
-
-    def reserve(self, n):
-        return _libsbol.ComponentVector_reserve(self, n)
-
-    def capacity(self):
-        return _libsbol.ComponentVector_capacity(self)
-    __swig_destroy__ = _libsbol.delete_ComponentVector
-    __del__ = lambda self: None
-ComponentVector_swigregister = _libsbol.ComponentVector_swigregister
-ComponentVector_swigregister(ComponentVector)
 
 class ComponentProperty(_object):
     """
@@ -39110,6 +39667,153 @@ AliasedOwnedFunctionalComponent_swigregister = _libsbol.AliasedOwnedFunctionalCo
 AliasedOwnedFunctionalComponent_swigregister(AliasedOwnedFunctionalComponent)
 
 
+class InsertionError(Exception):
+    pass
+
+def IGEM_STANDARD_ASSEMBLY(parts_list):
+    if not all(type(part) is ComponentDefinition for part in parts_list):
+        raise TypeError()
+    doc = parts_list[0].doc
+    G0000_uri = 'https://synbiohub.org/public/igem/BBa_G0000/1'
+    G0000_seq_uri = 'https://synbiohub.org/public/igem/BBa_G0000_sequence/1'
+    G0002_uri = 'https://synbiohub.org/public/igem/BBa_G0002/1'
+    G0002_seq_uri = 'https://synbiohub.org/public/igem/BBa_G0002_sequence/1'
+    if not (G0000_uri in doc.componentDefinitions and G0002_uri in doc.componentDefinitions and G0000_seq_uri \
+            in doc.sequences and G0002_seq_uri in doc.sequences):
+        doc.readString('''<?xml version="1.0" encoding="utf-8"?>
+                   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/"
+                   xmlns:dcterms="http://purl.org/dc/terms/"
+                   xmlns:gbconv="http://sbols.org/genBankConversion#"
+                   xmlns:genbank="http://www.ncbi.nlm.nih.gov/genbank#"
+                   xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#"
+                   xmlns:ncbi="http://www.ncbi.nlm.nih.gov#"
+                   xmlns:obo="http://purl.obolibrary.org/obo/"
+                   xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/"
+                   xmlns:prov="http://www.w3.org/ns/prov#"
+                   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                   xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#"
+                   xmlns:sbol="http://sbols.org/v2#"
+                   xmlns:sybio="http://www.sybio.ncl.ac.uk#"
+                   xmlns:synbiohub="http://synbiohub.org#"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema#dateTime/">
+                   <sbol:ComponentDefinition rdf:about="https://synbiohub.org/public/igem/BBa_G0000/1">
+                   <dc:creator>Reshma Shetty</dc:creator>
+                   <dcterms:created>2007-07-22T11:00:00Z</dcterms:created>
+                   <dcterms:description>SpeI/XbaI scar for RBS-CDS junctions</dcterms:description>
+                   <dcterms:modified>2015-08-31T04:07:27Z</dcterms:modified>
+                   <dcterms:title>scar</dcterms:title>
+                   <sbol:displayId>BBa_G0000</sbol:displayId>
+                   <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_G0000"/>
+                   <sbol:role rdf:resource="http://identifiers.org/so/SO:0000110"/>
+                   <sbol:role rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#partType/DNA"/>
+                   <sbol:sequence rdf:resource="https://synbiohub.org/public/igem/BBa_G0000_sequence/1"/>
+                   <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+                   <sbol:version>1</sbol:version>
+                   <igem:discontinued>false</igem:discontinued>
+                   <igem:dominant>true</igem:dominant>
+                   <igem:experience rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#experience/None"/>
+                   <igem:group_u_list>_41_</igem:group_u_list>
+                   <igem:m_user_id>0</igem:m_user_id>
+                   <igem:owner_id>126</igem:owner_id>
+                   <igem:owning_group_id>162</igem:owning_group_id>
+                   <igem:sampleStatus>Not in stock</igem:sampleStatus>
+                   <igem:status rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#status/Unavailable"/>
+                   <sbh:bookmark>false</sbh:bookmark>
+                   <sbh:mutableDescription>This is the sequence of the SpeI/XbaI scar for RBS-CDS junctions in BioBricks standard assembly.</sbh:mutableDescription>
+                   <sbh:mutableNotes>This is a shorter scar to ensure proper spacing between the RBS and CDS.</sbh:mutableNotes>
+                   <sbh:mutableProvenance>SpeI/XbaI scar</sbh:mutableProvenance>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+                   <sbh:star>false</sbh:star>
+                   <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_G0000/1"/>
+                   <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_G0000"/>
+                   <prov:wasGeneratedBy rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+                   </sbol:ComponentDefinition>
+                   <sbol:Sequence rdf:about="https://synbiohub.org/public/igem/BBa_G0000_sequence/1">
+                   <sbol:displayId>BBa_G0000_sequence</sbol:displayId>
+                   <sbol:elements>tactag</sbol:elements>
+                   <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+                   <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_G0000_sequence"/>
+                   <sbol:version>1</sbol:version>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+                   <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_G0000_sequence/1"/>
+                   <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_G0000"/>
+                   <prov:wasGeneratedBy rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+                   </sbol:Sequence>
+                   <sbol:ComponentDefinition rdf:about="https://synbiohub.org/public/igem/BBa_G0002/1">
+                   <dc:creator>Reshma Shetty</dc:creator>
+                   <dcterms:created>2007-02-26T12:00:00Z</dcterms:created>
+                   <dcterms:description>SpeI/XbaI mixed site</dcterms:description>
+                   <dcterms:modified>2015-08-31T04:07:27Z</dcterms:modified>
+                   <dcterms:title>SX scar</dcterms:title>
+                   <sbol:displayId>BBa_G0002</sbol:displayId>
+                   <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_G0002"/>
+                   <sbol:role rdf:resource="http://identifiers.org/so/SO:0000110"/>
+                   <sbol:role rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#partType/DNA"/>
+                   <sbol:sequence rdf:resource="https://synbiohub.org/public/igem/BBa_G0002_sequence/1"/>
+                   <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+                   <sbol:version>1</sbol:version>
+                   <igem:discontinued>false</igem:discontinued>
+                   <igem:dominant>true</igem:dominant>
+                   <igem:experience rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#experience/None"/>
+                   <igem:group_u_list>_41_</igem:group_u_list>
+                   <igem:m_user_id>0</igem:m_user_id>
+                   <igem:owner_id>126</igem:owner_id>
+                   <igem:owning_group_id>70</igem:owning_group_id>
+                   <igem:sampleStatus>Not in stock</igem:sampleStatus>
+                   <igem:status rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#status/Unavailable"/>
+                   <sbh:bookmark>false</sbh:bookmark>
+                   <sbh:mutableDescription>XbaI/SpeI mixed site.  Simply used to aid in entry of parts into the registry.</sbh:mutableDescription>
+                   <sbh:mutableNotes>None.</sbh:mutableNotes>
+                   <sbh:mutableProvenance>XbaI and SpeI sites</sbh:mutableProvenance>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+                   <sbh:star>false</sbh:star>
+                   <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_G0002/1"/>
+                   <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_G0002"/>
+                   <prov:wasGeneratedBy rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+                   </sbol:ComponentDefinition>
+                   <sbol:Sequence rdf:about="https://synbiohub.org/public/igem/BBa_G0002_sequence/1">
+                   <sbol:displayId>BBa_G0002_sequence</sbol:displayId>
+                   <sbol:elements>tactagag</sbol:elements>
+                   <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+                   <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_G0002_sequence"/>
+                   <sbol:version>1</sbol:version>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+                   <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_G0002_sequence/1"/>
+                   <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_G0002"/>
+                   <prov:wasGeneratedBy rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+                   </sbol:Sequence>
+                   <prov:Activity rdf:about="https://synbiohub.org/public/igem/igem2sbol/1">
+                   <dc:creator>Chris J. Myers</dc:creator>
+                   <dc:creator>James Alastair McLaughlin</dc:creator>
+                   <dcterms:description>Conversion of the iGEM parts registry to SBOL2.1</dcterms:description>
+                   <dcterms:title>iGEM to SBOL conversion</dcterms:title>
+                   <sbol:displayId>igem2sbol</sbol:displayId>
+                   <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/igem2sbol"/>
+                   <sbol:version>1</sbol:version>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+                   <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+                   <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+                   <prov:endedAtTime>2017-03-06T15:00:00.000Z</prov:endedAtTime>
+                   </prov:Activity>
+                   </rdf:RDF>''')
+
+    G0000 = doc.componentDefinitions[G0000_uri]
+    G0002 = doc.componentDefinitions[G0002_uri]
+    new_parts_list = []
+    for upstream, downstream in zip(parts_list[:-1], parts_list[1:]):
+        new_parts_list.append(upstream)
+        if SO_RBS in upstream.roles and SO_CDS in downstream.roles:
+            new_parts_list.append(G0000)
+        else:
+            new_parts_list.append(G0002)
+    new_parts_list.append(downstream)
+    return new_parts_list
+
 def applyToComponentHierarchy(self, callback_fn, user_data):
 # Assumes parent_component is an SBOL data structure of the general form ComponentDefinition(->Component->ComponentDefinition)n where n+1 is an integer describing how many hierarchical levels are in the SBOL structure
 # Look at each of the ComponentDef's SequenceAnnotations, is the target base there?
@@ -39165,12 +39869,12 @@ def applyToModuleHierarchy(self, callback_fn, user_data):
 
 ModuleDefinition.applyToModuleHierarchy = applyToModuleHierarchy
 
-def testSBOL():
+def testSBOL(username = None, password = None, resource = None, spoofed_resource = None):
     """
     Function to test pySBOL API
     """
     import sbol.unit_tests as unit_tests
-    unit_tests.runTests()
+    unit_tests.runTests(username=username, password=password, resource=resource, spoofed_resource=spoofed_resource)
 
 def testRoundTrip():
     """
@@ -39178,7 +39882,6 @@ def testRoundTrip():
     """
     import sbol.unit_tests as unit_tests
     unit_tests.runRoundTripTests()
-
 
 def is_extension_property(obj, name):
     attribute_dict = object.__getattribute__(obj, '__dict__')
