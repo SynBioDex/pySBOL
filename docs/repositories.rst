@@ -17,7 +17,7 @@ The interface with the SynBioHub repository is represented by a ``PartShop`` obj
 .. code:: python
 
     >>> igem = PartShop('https://synbiohub.org')
-    >>> igem.pull('http://synbiohub.org/public/igem/BBa_R0010/1', doc)
+    >>> igem.pull('https://synbiohub.org/public/igem/BBa_R0010/1', doc)
 
 
 .. end

@@ -23,7 +23,7 @@ An advantage of the SBOL data format over GenBank is the ability to represent DN
 Hierarchical DNA Assembly
 -------------------------------
 
-PySBOL also includes methods for assembling biological components into **abstraction hierarchies**. This is important rom a biological perspective, because DNA sequences and biological structures in general exhibit hierarchical organization, from the genome, to operons, to genes, to lower level genetic operators. The following code assembles an abstraction hierarchy that describes a gene cassete. Note that subcomponents must belong to a `Document` in order to be assembled, so a `Document` is passed as a parameter.
+PySBOL also includes methods for assembling biological components (also referred to as biological parts in the synthetic biology literature) into **abstraction hierarchies**. Abstraction hierarchies are important from an engineering perspective because they allow engineers to assemble complicated systems from more basic components. Abstraction hierarchies are also important from a biological perspective, because DNA sequences and biological structures in general exhibit hierarchical organization, from the genome, to operons, to genes, to lower level genetic operators. The following code assembles an abstraction hierarchy that describes a gene cassette. Note that subcomponents must belong to a `Document` in order to be assembled, so a `Document` is passed as a parameter.
 
 The gene cassette below is composed of genetic subcomponents including a promoter, ribosome binding site (RBS), coding sequence (CDS), and transcriptional terminator, expressed in SBOL Visual schematic glyphs. The next example demonstrates how an abstract design for this gene is assembled from its subcomponents.
 
@@ -40,12 +40,36 @@ After creating an abstraction hierarchy, it is then possible to iterate through 
         print (component_definition.identity)
 .. end
 
-This returns a list of `ComponentDefinitions` arranged in their primary sequence. *Caution!* It is also possible to iterate through components as follows, but this way is *not* guaranteed to return components in sequential order. This is because SBOL supports a variety of structural descriptions, not just primary structure.
+This returns a list of `ComponentDefinitions` arranged in their primary sequence. Occasionally it is also helpful to get `Components` arranged in their primary sequence as well. Note that the example below produces the same output as the example above, and may be helpful for understanding the relationship between `Components` and `ComponentDefinitions`.
+
+.. code:: python
+    for component in gene.getPrimaryStructureComponents():
+        print (component.definition)
+.. end
+
+ *Caution!* It is also possible to iterate through components as follows, but this way is *not* guaranteed to return `Components` in order of primary sequence. This is because member `Components` in an abstraction hierarchy are not always guaranteed to be composed into a primary sequence.
 
 .. code:: python
 
     for component in gene.components:
         print (component.definition)
+.. end
+
+----------------------------
+Editing a Primary Structure
+----------------------------
+
+Given an abstract representation of a primary structure as above, it is possible to modify it by inserting and deleting `Components`. The following example deletes the R0010 promoter and replaces it with the R0011 promoter
+
+.. code:: python
+
+    primary_structure = gene.getPrimaryStructureComponents()
+    b0032_component = primary_structure[1]
+    gene.deleteUpstreamComponent(b0032_component) 
+
+    r0011 = ComponentDefinition('r0011')
+    r0011.roles = SO_CDS
+    gene.insertUpstreamComponent(b0032_component, r0011)
 .. end
 
 -------------------------------
@@ -62,38 +86,19 @@ A **complete design** adds explicit sequence information to the components in a 
 The `compile` method returns the target sequence as a string. In addition, it creates a new `Sequence` object and assigns the target sequence to its `elements` property
  
 --------------------------------------------------------------
-Iterating through a Primary Sequence of Components
+Genome Integration
 --------------------------------------------------------------
-
-Sometimes it is desired to iterate through individual components inside a sequence of components. One application of this is to check the order of a sequence of components. To do so, one can simply implement typical forloop used in Python. The example below shows how one would iterate through a primary sequence of components to validate the correct order.
-
-.. code:: python
-
-    doc = Document()
-
-    gene = ComponentDefinition('BB0001')
-    promoter = ComponentDefinition('R0010')
-    CDS = ComponentDefinition('B0032')
-    RBS = ComponentDefinition('E0040')
-    terminator = ComponentDefinition('B0012')
-
-    doc.addComponentDefinition([gene, promoter, CDS, RBS, terminator])
-
-    gene.assemble([ promoter, RBS, CDS, terminator ])
-    primary_sequence = gene.getPrimaryStructure()
-    for component in primary_sequence:
-        print(component.displayId)
-
-.. end
-
-The output is shown below, which captures the correct order.
+In some cases, it may be useful to represent integration of vectors / transposons into genomes. The `integrateAtBaseCoordinate` method supports integration operations and produces a parsimonious representation of primary structure that is useful for manipulating large constructs. The following example demonstrates integration of the `gene` construct from the examples above into a `wild_type_genome`, thus generating the `integrated_genome`.
 
 .. code:: python
 
-    R0010
-    E0040
-    B0032
-    B0012
+    integrated_genome = ComponentDefinition('integrated_genome')
+    integrated_genome.sequence = Sequence('integrated_genome_sequence')
+    wild_type_genome = ComponentDefinition('wild_type_genome')
+    wild_type_genome.sequence = Sequence('wild_type_genome_sequence')
+    wild_type_genome.sequence.elements = 'gggggggggg'
+    integrated_genome.integrateAtBaseCoordinate(wild_type_genome, gene, 5)
+    integrated_genome.compile()  # Calculate sequence of the integrated genome
 
 .. end
     
@@ -111,30 +116,30 @@ Full example code is provided below, which will create a file called "gene_casse
     doc = Document()
 
     gene = ComponentDefinition('gene_example')
-    promoter = ComponentDefinition('R0010')
-    CDS = ComponentDefinition('B0032')
-    RBS = ComponentDefinition('E0040')
-    terminator = ComponentDefinition('B0012')
+    r0010 = ComponentDefinition('R0010')
+    b0032 = ComponentDefinition('B0032')
+    e0040 = ComponentDefinition('E0040')
+    b0012 = ComponentDefinition('B0012')
 
-    promoter.roles = SO_PROMOTER
-    CDS.roles = SO_CDS
-    RBS.roles = SO_RBS
-    terminator.roles = SO_TERMINATOR
+    r0010.roles = SO_PROMOTER
+    b0032.roles = SO_CDS
+    e0040.roles = SO_RBS
+    b0012.roles = SO_TERMINATOR
 
     doc.addComponentDefinition(gene)
-    doc.addComponentDefinition([ promoter, CDS, RBS, terminator ])
+    doc.addComponentDefinition([ r0010, b0032, e0040, b0012 ])
 
-    gene.assemblePrimaryStructure([ promoter, RBS, CDS, terminator ])
+    gene.assemblePrimaryStructure([ r0010, b0032, e0040, b0012 ])
 
     first = gene.getFirstComponent()
     print(first.identity)
     last = gene.getLastComponent()
     print(last.identity)
 
-    promoter.sequence = Sequence('R0010', 'ggctgca')
-    CDS.sequence = Sequence('B0032', 'aattatataaa')
-    RBS.sequence = Sequence('E0040', "atgtaa")
-    terminator.sequence = Sequence('B0012', 'attcga')
+    r0010.sequence = Sequence('R0010', 'ggctgca')
+    b0032.sequence = Sequence('B0032', 'aattatataaa')
+    e0040.sequence = Sequence('E0040', "atgtaa")
+    b0012.sequence = Sequence('B0012', 'attcga')
 
     target_sequence = gene.compile()
     print(gene.sequence.elements)
