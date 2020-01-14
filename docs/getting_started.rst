@@ -463,6 +463,19 @@ In the examples above, the ``copy`` method returns a new ``Document``. However, 
 
 .. end
 
+---------------------------------------------
+Converting To and From Other Sequence Formats
+---------------------------------------------
+
+It is possible to convert SBOL to and from other common sequence formats. Conversion is performed by calling the `online converter tool  <https://validator.sbolstandard.org/>`_ , so an internet connection is required. Currently the supported formats are `SBOL2`, `SBOL1`, `FASTA`, `GenBank`, and `GFF3`. The following example illustrates how to import and export to these different formats. Note that conversion can be lossy.
+
+.. code:: python
+
+  >>> doc.exportToFormat('GenBank', 'crispr_example_out.gb')
+  >>> doc.importFromFormat('GenBank', 'crispr_example_out.gb')
+
+.. end
+
 ----------------------------------
 Creating Biological Designs
 ----------------------------------
