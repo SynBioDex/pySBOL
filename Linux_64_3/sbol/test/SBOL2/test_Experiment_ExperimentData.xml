@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:grn="urn:bbn.com:tasbe:grn/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:annot="http://myannotation.org/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/">
+  <grn:RegulatoryReaction rdf:about="http://www.async.ece.utah.edu/GenericTopLevel/1.0">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/GenericTopLevel"/>
+    <sbol:displayId>GenericTopLevel</sbol:displayId>
+    <sbol:version>1.0</sbol:version>
+  </grn:RegulatoryReaction>
+  <sbol:Experiment rdf:about="http://www.async.ece.utah.edu/experiment/1.0">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/experiment"/>
+    <sbol:displayId>experiment</sbol:displayId>
+    <sbol:version>1.0</sbol:version>
+    <sbol:experimentalData rdf:resource="http://www.async.ece.utah.edu/experimental_data1/1.0"/>
+    <sbol:experimentalData rdf:resource="http://www.async.ece.utah.edu/experimental_data2/1.0"/>
+  </sbol:Experiment>
+  <sbol:ExperimentalData rdf:about="http://www.async.ece.utah.edu/experimental_data1/1.0">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/experimental_data1"/>
+    <sbol:displayId>experimental_data1</sbol:displayId>
+    <sbol:version>1.0</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://www.async.ece.utah.edu/experimental_data2/1.0">
+    <sbol:persistentIdentity rdf:resource="http://www.async.ece.utah.edu/experimental_data2"/>
+    <sbol:displayId>experimental_data2</sbol:displayId>
+    <sbol:version>1.0</sbol:version>
+  </sbol:ExperimentalData>
+</rdf:RDF>

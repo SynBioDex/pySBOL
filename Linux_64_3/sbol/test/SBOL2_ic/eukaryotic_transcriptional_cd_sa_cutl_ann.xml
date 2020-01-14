@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:igem="http://wiki.synbiohub.org/wiki/Terms/igem#" xmlns:sbh="http://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sbol:ComponentDefinition rdf:about="http://michael.zhang/Pro_GeneratedInstance82/1">
+    <sbol:persistentIdentity rdf:resource="http://michael.zhang/Pro_GeneratedInstance82"/>
+    <sbol:displayId>Pro_GeneratedInstance82</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://michael.zhang/Pro/1"/>
+    <prov:wasGeneratedBy rdf:resource="http://michael.zhang/Eukaryotic_Transcriptional_Unit_SBOLDesignerActivity/1"/>
+    <prov:wasGeneratedBy rdf:resource="http://michael.zhang/Eukaryotic_Transcriptional_Unit_GeneratedInstance21_SBOLDesignerActivity/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="https://synbiohub.org/public/igem/BBa_E0422/1">
+    <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422"/>
+    <sbol:displayId>BBa_E0422</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_E0422"/>
+    <prov:wasGeneratedBy rdf:resource="https://synbiohub.org/public/igem/igem2sbol/1"/>
+    <dcterms:title>BBa_E0422</dcterms:title>
+    <dcterms:description>ECFP (RBS+ LVA+ TERM) (B0034.E0022.B0015)</dcterms:description>
+    <dcterms:created>2003-12-04T12:00:00Z</dcterms:created>
+    <dcterms:modified>2015-08-31T04:07:26Z</dcterms:modified>
+    <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/1"/>
+    <sbh:ownedBy rdf:resource="https://synbiohub.org/user/james"/>
+    <sbh:ownedBy rdf:resource="https://synbiohub.org/user/myers"/>
+    <igem:partStatus>Released HQ 2013</igem:partStatus>
+    <sbh:mutableDescription>-- No description --</sbh:mutableDescription>
+    <igem:discontinued>false</igem:discontinued>
+    <igem:dominant>true</igem:dominant>
+    <igem:group_u_list>_1_</igem:group_u_list>
+    <igem:m_user_id>0</igem:m_user_id>
+    <igem:owner_id>24</igem:owner_id>
+    <igem:owning_group_id>7</igem:owning_group_id>
+    <igem:sampleStatus>In stock</igem:sampleStatus>
+    <igem:status rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#status/Available"/>
+    <sbh:bookmark>false</sbh:bookmark>
+    <sbh:star>true</sbh:star>
+    <dc:creator>Caitlin Conboy and Jennifer Braff</dc:creator>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://wiki.synbiohub.org/wiki/Terms/igem#partType/Reporter"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/1">
+        <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/annotation942815"/>
+        <sbol:displayId>annotation942815</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <dcterms:title>BBa_E0022</dcterms:title>
+        <sbh:topLevel rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/1"/>
+        <sbol:location>
+          <sbol:Cut rdf:about="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/cut942815/1">
+            <sbol:persistentIdentity rdf:resource="https://synbiohub.org/public/igem/BBa_E0422/annotation942815/cut942815"/>
+            <sbol:displayId>cut942815</sbol:displayId>
+            <sbol:version>1</sbol:version>
+			<sbol:at>12</sbol:at>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+          </sbol:Cut>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+	  </sbol:ComponentDefinition>
+
+</rdf:RDF>
