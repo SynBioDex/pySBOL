@@ -656,6 +656,19 @@ class TestExtensionClass(unittest.TestCase):
         self.assertEquals(md.x_coordinate, '10')
         self.assertEquals(md.y_coordinate, 5)
 
+    def testAnnotations(self):
+        doc = Document()
+        cd = doc.componentDefinitions.create('cd')
+        cd.foo = URIProperty(cd, 'http://examples.org#foo_property', '0', '1', 'bar')
+        doc2 = doc.copy()
+        cd = doc2.componentDefinitions['cd']
+        cd.foo = URIProperty(cd, 'http://examples.org#foo_property', '0', '1')
+        self.assertEquals(cd.foo, 'bar')
+        cd.addAnnotation('http://examples.org#foo_property', 'bar')
+        annotations = list(cd.getAnnotations('http://examples.org#foo_property'))
+        self.assertListEqual(annotations, ['bar', 'bar'])
+
+
 class TestIterators(unittest.TestCase):
 
     def setUp(self):

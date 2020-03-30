@@ -2913,6 +2913,12 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_addPropertyValue(self, property_uri, val)
 
 
+    def createLiteralAnnotation(self, property_uri):
+        return _libsbol.SBOLObject_createLiteralAnnotation(self, property_uri)
+
+    def createURIAnnotation(self, property_uri):
+        return _libsbol.SBOLObject_createURIAnnotation(self, property_uri)
+
     def setAnnotation(self, property_uri, val):
         """
 
@@ -2948,6 +2954,12 @@ class SBOLObject(_object):
         """
         return _libsbol.SBOLObject_getAnnotation(self, property_uri)
 
+
+    def addAnnotation(self, property_uri, val):
+        return _libsbol.SBOLObject_addAnnotation(self, property_uri, val)
+
+    def getAnnotations(self, property_uri):
+        return _libsbol.SBOLObject_getAnnotations(self, property_uri)
 
     def apply(self, callback_fn, user_data):
         """
