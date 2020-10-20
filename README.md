@@ -1,3 +1,8 @@
+
+**pySBOL has been deprecated. Please use [pySBOL2](https://github.com/synbiodex/pysbol2) instead.**
+
+----------
+
 [![Build Status](https://travis-ci.org/SynBioDex/pySBOL.svg?branch=master)](https://travis-ci.org/SynBioDex/pySBOL)
 
 # pySBOL 2.3.3
