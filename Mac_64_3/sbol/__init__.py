@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 
 __version__ = '2.3.3'
-__commit__ = '1294ac9126cee3a9ae316764f63cb46fe5666ccd'
+__commit__ = '75b053d1497097797755e2d403ac04b8cbf77464'
 
 from sbol.sbol import *
 import sbol.unit_tests

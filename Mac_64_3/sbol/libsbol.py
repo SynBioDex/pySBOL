@@ -9,6 +9,7 @@ from __future__ import absolute_import
 import json
 import requests
 from urllib3.exceptions import HTTPError
+import platform
 
 
 
@@ -2912,6 +2913,12 @@ class SBOLObject(_object):
         return _libsbol.SBOLObject_addPropertyValue(self, property_uri, val)
 
 
+    def createLiteralAnnotation(self, property_uri):
+        return _libsbol.SBOLObject_createLiteralAnnotation(self, property_uri)
+
+    def createURIAnnotation(self, property_uri):
+        return _libsbol.SBOLObject_createURIAnnotation(self, property_uri)
+
     def setAnnotation(self, property_uri, val):
         """
 
@@ -2947,6 +2954,12 @@ class SBOLObject(_object):
         """
         return _libsbol.SBOLObject_getAnnotation(self, property_uri)
 
+
+    def addAnnotation(self, property_uri, val):
+        return _libsbol.SBOLObject_addAnnotation(self, property_uri, val)
+
+    def getAnnotations(self, property_uri):
+        return _libsbol.SBOLObject_getAnnotations(self, property_uri)
 
     def apply(self, callback_fn, user_data):
         """
@@ -6666,45 +6679,11 @@ class ComponentDefinition(TopLevel):
         return _libsbol.ComponentDefinition_getPrimaryStructure(self)
 
 
-    def insertDownstream(self, target, insert):
-        """
+    def insertDownstreamComponent(self, target, insert):
+        return _libsbol.ComponentDefinition_insertDownstreamComponent(self, target, insert)
 
-        `insertDownstream(target, insert)`  
-
-        Insert a Component downstream of another in a primary sequence, shifting any
-        adjacent Components dowstream as well.  
-
-        Parameters
-        ----------
-        * `target` :  
-            The target Component will be upstream of the insert Component after this
-            operation.  
-        * `insert` :  
-            The insert Component is inserted downstream of the target Component.  
-
-        """
-        return _libsbol.ComponentDefinition_insertDownstream(self, target, insert)
-
-
-    def insertUpstream(self, target, insert):
-        """
-
-        `insertUpstream(target, insert)`  
-
-        Insert a Component upstream of another in a primary sequence, shifting any
-        adjacent Components upstream as well.  
-
-        Parameters
-        ----------
-        * `target` :  
-            The target Component will be downstream of the insert Component after this
-            operation.  
-        * `insert` :  
-            The insert Component is inserted upstream of the target Component.  
-
-        """
-        return _libsbol.ComponentDefinition_insertUpstream(self, target, insert)
-
+    def insertUpstreamComponent(self, target, insert):
+        return _libsbol.ComponentDefinition_insertUpstreamComponent(self, target, insert)
 
     def addUpstreamFlank(self, target, elements):
         """
@@ -7134,10 +7113,63 @@ class ComponentDefinition(TopLevel):
 
 
 
-    def insert(self, cd_to_insert, insert_point, display_id):
+    def deleteUpstreamComponent(self, downstream_component):
+        if Config.getOption('sbol_compliant_uris') == False:
+            raise ValueError('SBOL-compliant URIs must be enabled to use this method')
+        if not downstream_component.identity in self.components:
+            raise ValueError('Deletion failed. No Components were found upstream of %s' %downstream_component.identity)
+        primary_structure = self.getPrimaryStructureComponents()
+        if downstream_component.identity == primary_structure[0].identity:
+            raise ValueError('Deletion failed. Component %s does not have an upstream component' %downstream_component.identity)
+        upstream_component = None
+        upstream_sequence_constraint = None
+        downstream_sequence_constraint = None
+        for c_upstream, c_downstream in zip(primary_structure[:-1], primary_structure[1:]):
+            for sc in self.sequenceConstraints:
+                if sc.subject == c_upstream.identity and sc.object == c_downstream.identity and sc.restriction == SBOL_RESTRICTION_PRECEDES:
+                    upstream_sequence_constraint = downstream_sequence_constraint
+                    downstream_sequence_constraint = sc
+            if c_downstream.identity == downstream_component.identity:
+                upstream_component = c_upstream
+                break
+        if upstream_component:
+            self.components.remove(upstream_component.identity)
+            self.sequenceConstraints.remove(downstream_sequence_constraint.identity)
+            if upstream_sequence_constraint:
+                upstream_sequence_constraint.object = downstream_sequence_constraint.object
+
+    def deleteDownstreamComponent(self, upstream_component):
+        if Config.getOption('sbol_compliant_uris') == False:
+            raise ValueError('SBOL-compliant URIs must be enabled to use this method')
+        if not upstream_component.identity in self.components:
+            raise ValueError('Deletion failed. ComponentDefinition %s has no child component %s' %(self.identity, upstream_component.identity))
+        primary_structure = self.getPrimaryStructureComponents()
+        if upstream_component.identity == primary_structure[-1].identity:
+            raise ValueError('Deletion failed. No Components were found downstream of %s' %upstream_component.identity)
+        downstream_component = None
+        upstream_sequence_constraint = None
+        downstream_sequence_constraint = None
+        for c_upstream, c_downstream in zip(primary_structure[:-1], primary_structure[1:]):
+            for sc in self.sequenceConstraints:
+                if sc.subject == c_upstream.identity and sc.object == c_downstream.identity and sc.restriction == SBOL_RESTRICTION_PRECEDES:
+                    upstream_sequence_constraint = downstream_sequence_constraint
+                    downstream_sequence_constraint = sc
+            if downstream_component:
+                break
+            if c_upstream.identity == upstream_component.identity:
+                downstream_component = c_downstream
+        if downstream_component:
+            self.components.remove(downstream_component.identity)
+            self.sequenceConstraints.remove(downstream_sequence_constraint.identity)
+    # The following condition is False when the downstream component is the last
+    # component
+            if downstream_sequence_constraint.subject == downstream_component.identity:
+                upstream_sequence_constraint.object = downstream_sequence_constraint.object
+
+    def integrateAtBaseCoordinate(self, target_cd, insert_cd, base_coordinate):
         """
-        Construct SBOL representing a genetic insert. Inserts cd_to_insert
-        into self at insert_point.
+        Construct SBOL representing a genetic insert. Inserts insert_cd
+        into self at base_coordinate.
 
         This method constructs a new ComponentDefinition that is annotated
         with the original sequence and the inserted sequence such that the
@@ -7155,187 +7187,93 @@ class ComponentDefinition(TopLevel):
             while sbol_owned_object_property.find(auto_id):
                 instance_count += 1
                 auto_id = '%s_%d' %(display_id, instance_count)
-                return auto_id
+            return auto_id
 
         if not self.doc:
-            raise ValueError('Insert failed. ComponentDefinition <%s> must be added to a Document before proceeding.' \
+            raise ValueError('Integration failed. ComponentDefinition <%s> must be added to a Document in order to proceed with integration.' \
                              %self.identity)
-        if not cd_to_insert.doc:
-            raise ValueError('Insert failed. ComponentDefinition <%s> must be added to a Document before proceeding.' \
-                             %cd_to_insert.identity)
-        if self.doc.this != cd_to_insert.doc.this:
-            raise ValueError('Insert failed. ComponentDefinition <%s> and ComponentDefinition <%s> must belong to ' \
-                             'the same Document.' %(self.identity, cd_to_insert.identity))
-        if not self.sequence:
-            raise ValueError('Insert failed. ComponentDefinition <%s> is not associated with a Sequence. ' \
+        if not target_cd.doc or target_cd.doc.this != self.doc.this:
+            raise ValueError('Integration failed. The target_cd <%s> must be added to the same Document as self before proceeding.' \
+                             %target_cd.identity)
+        if not insert_cd.doc or insert_cd.doc.this != self.doc.this:
+            raise ValueError('Integration failed. The insert_cd <%s> must be added to the same Document as self before proceeding.' \
+                             %insert_cd.identity)
+        if not target_cd.sequence:
+            raise ValueError('Integration failed. The target_cd <%s> is not associated with a Sequence. ' \
                              'The sequence property should point to a valid Sequence before proceeding.' %self.identity)
-        if not self.sequence.elements:
-            raise ValueError('Insert failed. The elements property of Sequence <%s> must be set before proceeding.' \
+        if not target_cd.sequence.elements:
+            raise ValueError('Integration failed. The elements property of Sequence <%s> must be set before proceeding.' \
                              'The sequence property should point to a valid Sequence before proceeding.'
                              %self.sequence.identity)
-        if not cd_to_insert.sequence:
-            raise ValueError('Insert failed. ComponentDefinition <%s> is not associated with a Sequence. ' \
+        if not insert_cd.sequence:
+            raise ValueError('Integration failed. The insert_cd <%s> is not associated with a Sequence. ' \
                              'The sequence property must point to a valid Sequence before proceeding.' \
-                             %cd_to_insert.identity)
-        if not cd_to_insert.sequence.elements:
-            raise ValueError('Insert failed. The elements property of Sequence <%s> must be set before proceeding.' \
+                             %insert_cd.identity)
+        if not insert_cd.sequence.elements:
+            raise ValueError('Integration failed. The elements property of Sequence <%s> must be set before proceeding.' \
                              'The sequence property should point to a valid Sequence before proceeding.'
-                             %cd_to_insert.sequence.identity)
+                             %insert_cd.sequence.identity)
 
-        orig_len = len(self.sequence.elements)
-        insert_len = len(cd_to_insert.sequence.elements)
+        target_cd_comp = None
+        insert_cd_comp = None
+        for c in self.components:
+            if c.definition == target_cd.identity:
+                if not target_cd_comp:
+                    target_cd_comp = c
+                else:
+                    raise ValueError('Integration failed. Self contains more than one instance of %s' %target_cd.identity) 
+            if c.definition == insert_cd.identity:
+                if not insert_cd_comp:
+                    insert_cd_comp = c
+                else:
+                    raise ValueError('Integration failed. Self contains more than one instance of %s' %insert_cd.identity)
 
-    # Keep insert_point in bounds
-        if insert_point < 1:
-            raise ValueError('Insert failed. The insert_point must be a base coordinate equal to or greater than 1')
-        if insert_point > orig_len + 1:
-            raise ValueError('Insert failed. The insert_point exceeds the length of the target sequence.')
+        orig_len = len(target_cd.sequence.elements)
+        insert_len = len(insert_cd.sequence.elements)
 
-        cd = ComponentDefinition(display_id)
+    # Keep base_coordinate in bounds
+        if base_coordinate < 1:
+            raise ValueError('Insert failed. The base_coordinate must be a base coordinate equal to or greater than 1')
+        if base_coordinate > orig_len + 1:
+            raise ValueError('Insert failed. The base_coordinate exceeds the length of the target sequence.')
 
-    #sa = cd.sequenceAnnotations.create('%s_sa' %self.displayId)
-    #if insert_point > 1:
-    #    # If insert point is not at the beginning, construct a range
-    #    # that precedes the insert point.
-    #    range1 = sa.locations.createRange('%s_r1' %self.displayId)
-    #    range1.start = 1
-    #    range1.end = insert_point - 1
-    #range2 = sa.locations.createRange('%s_r2' %self.displayId)
-    #range2.start = insert_point + insert_len
-    #range2.end = orig_len + insert_len
-
-        self_comp_0 = None
-        if insert_point > 1:
-    # Now link myself into the structure of the new
+        target_cd_comp = None
+        if base_coordinate > 1:
+    # Now link target_cd into the structure of the new
     # ComponentDefinition
-            self_comp_0 = cd.components.create('%s_comp_0' %self.displayId)
-            self_comp_0.definition = self
-            source_loc_0 = self_comp_0.sourceLocations.createRange('%s_r0' %self.displayId)
-            source_loc_0.start = 1
-            source_loc_0.end = insert_point - 1
+            if not target_cd_comp:
+                target_cd_comp = self.components.create(autoconstruct_id(self.components, target_cd.displayId))
+                target_cd_comp.definition = target_cd
+            source_loc = target_cd_comp.sourceLocations.createRange(autoconstruct_id(target_cd_comp.sourceLocations, target_cd.displayId))
+            source_loc.start = 1
+            source_loc.end = base_coordinate - 1
 
     # Now link the insert to the new cd
-        insert_comp = cd.components.create('%s_comp' %cd_to_insert.displayId)
-        insert_comp.definition = cd_to_insert
-    #insert_sa = cd.sequenceAnnotations.create('%s_sa' %cd_to_insert.displayId)
+        if not insert_cd_comp:
+            insert_cd_comp = self.components.create(autoconstruct_id(self.components, insert_cd.displayId))
+            insert_cd_comp.definition = insert_cd
 
-    # Add the range to the insert_sa
-    #insert_range = insert_sa.locations.createRange('%s_r1' %cd_to_insert.displayId)
-    #insert_range.start = insert_point
-    #insert_range.end = insert_point + insert_len - 1
-
-        self_comp_1 = None
-        if insert_point <= orig_len:
-            self_comp_1 = cd.components.create('%s_comp_1' %self.displayId)
-            self_comp_1.definition = self
-            source_loc_1 = self_comp_1.sourceLocations.createRange('%s_r1' %self.displayId)
-            source_loc_1.start = insert_point
+        target_cd_comp_1 = None
+        if base_coordinate <= orig_len:
+            target_cd_comp_1 = self.components.create(autoconstruct_id(self.components, target_cd.displayId))
+            target_cd_comp_1.definition = target_cd
+            source_loc_1 = target_cd_comp_1.sourceLocations.createRange(autoconstruct_id(target_cd_comp_1.sourceLocations, target_cd.displayId))
+            source_loc_1.start = base_coordinate
             source_loc_1.end = orig_len
 
-        if self_comp_0:
-            sc0 = cd.sequenceConstraints.create('%s_constraint_0' %cd.displayId)
-            sc0.subject = self_comp_0
-            sc0.object = insert_comp
+        if target_cd_comp:
+            sc0 = self.sequenceConstraints.create(autoconstruct_id(self.sequenceConstraints, self.displayId))
+            sc0.subject = target_cd_comp
+            sc0.object = insert_cd_comp
             sc0.restriction = SBOL_RESTRICTION_PRECEDES
 
-        if self_comp_1:
-            sc1 = cd.sequenceConstraints.create('%s_constraint_1' %cd.displayId)
-            sc1.subject = insert_comp
-            sc1.object = self_comp_1
+        if target_cd_comp_1:
+            sc1 = self.sequenceConstraints.create(autoconstruct_id(self.sequenceConstraints, self.displayId))
+            sc1.subject = insert_cd_comp
+            sc1.object = target_cd_comp_1
             sc1.restriction = SBOL_RESTRICTION_PRECEDES
 
-        self.doc.addComponentDefinition(cd)
-        return cd
 
-    def compileInsert(self):
-        """Compiles a genetic insert by parsing the SBOL and constructing the
-        sequence.
-
-        The layout of self is expected to match the SBOL generated by
-        ComponentDefinition.insert().
-        """
-
-        def pairwise(ranges):
-            pairs = []
-            for pair in zip(ranges[:-1], ranges[1:]):
-                pairs.append(pair)
-            return pairs
-
-        def getComponentDefinition(sequence_annotation):
-            parent_cd = sequence_annotation.parent.cast(ComponentDefinition)
-            component = parent_cd.components[sequence_annotation.component]
-            definition_cd = sequence_annotation.doc.getComponentDefinition(component.definition)
-            return definition_cd
-
-        def getRanges(sequence_annotation):
-            for loc in sequence_annotation.locations:
-                r = sequence_annotation.locations[loc.identity]
-                if isinstance(r, Range):
-                    yield r
-
-    #  Self must not already have a sequence
-    #     We could also allow self to have a sequence and simply
-    #     return so we don't overwrite the sequence.
-        if self.sequence is not None:
-            raise InsertionError('A sequence already exists.')
-
-    #  There must be at least two annotations
-        if len(self.sequenceAnnotations) < 2:
-            raise InsertionError('Not enough sequence annotations, need at least 2.')
-
-    #  Two annotations must have a component and have at least one location
-        annotations = [a for a in self.sequenceAnnotations
-                       if a.component is not None and len(a.locations) > 0]
-        if len(annotations) < 2:
-            raise InsertionError('Not enough annotations, need at least 2 with a component and a location.')
-
-    # There must be two annotations that have CDs that have non-empty sequences
-        annotations = [a for a in annotations if getComponentDefinition(a).sequence
-                       and getComponentDefinition(a).sequence.elements]
-        if len(annotations) < 2:
-            raise InsertionError('Not enough linked ComponentDefinitions have sequences.')
-
-    # Build a list of tuples. Each tuple is (Range, string), with the
-    # string containing a substring of the CD's original
-    # sequence. These strings are later joined to create the final
-    # sequence with insertion.
-        ranges = []
-        for a in annotations:
-            seq = getComponentDefinition(a).sequence.elements
-            aranges = list(getRanges(a))
-
-    # We really need to do some work here....
-    # We need to verify that the ranges cover the entire sequence,
-            if sum([r.length() for r in aranges]) != len(seq):
-                msg = 'Insufficient ranges for sequence {}: {}'
-                raise InsertionError(msg.format(seq, ['Range({}, {})'.format(r.start, r.end) for r in aranges]))
-
-    # and we should break up the sequence now, while we have the information, to match
-    # the ranges. Then all we have to do later is append the strings.
-            for r in aranges:
-                ranges.append((r, seq[:r.length()]))
-                seq = seq[r.length():]
-
-    # Sort the list of tuples by Range start, then end
-        ranges.sort(key=lambda tup: (tup[0].start, tup[0].end))
-
-    # Verify that the ranges are in proper order, have not gaps and no overlaps.
-        for rs1, rs2 in pairwise(ranges):
-            r1 = rs1[0]
-            r2 = rs2[0]
-    # print('R({}, {}) <==> R({}, {})'.format(r1.start, r1.end, r2.start, r2.end))
-            if not r1.adjoins(r2):
-                raise InsertionError('Ranges are not contiguous')
-            if not r1.precedes(r2):
-                raise InsertionError('Sorting ranges has failed')
-            if r1.overlaps(r2):
-                raise InsertionError('Ranges overlap')
-
-    # Everything looks good, create the final sequence
-        new_seq = ''.join([tup[1] for tup in ranges])
-
-    # Now construct the SBOL object(s) to represent this sequence
-        self.sequence = Sequence('%s_seq' %self.displayId, new_seq)
 
 ComponentDefinition_swigregister = _libsbol.ComponentDefinition_swigregister
 ComponentDefinition_swigregister(ComponentDefinition)
@@ -15389,8 +15327,11 @@ class Document(Identified):
         return _libsbol.Document_validate(self)
 
 
-    def convert(self, *args):
-        return _libsbol.Document_convert(self, *args)
+    def exportToFormat(self, *args):
+        return _libsbol.Document_exportToFormat(self, *args)
+
+    def importFromFormat(self, language, input_path):
+        return _libsbol.Document_importFromFormat(self, language, input_path)
 
     def copy(self, *args):
         """
@@ -39956,6 +39897,22 @@ class PythonicInterface(object):
 
         def __repr__(self):
             return self.__class__.__name__
+
+
+# Set default certificate path for HTTPS requests on Linux distros
+if platform.system() == 'Linux':
+    import warnings
+    warnings.filterwarnings('ignore')
+    current_platform = platform.linux_distribution()[0]  # deprecated on Python >3.5, discontinued 3.8
+    warnings.resetwarnings()
+    if 'Ubuntu' in current_platform:
+        Config.setOption('ca-path', '/etc/ssl/certs/ca-certificates.crt')
+    elif 'debian' in current_platform:
+# Stock Python does not detect Ubuntu and instead returns debian.
+# Or at least it does in some build environments like Travis CI
+        Config.setOption('ca-path', '/etc/ssl/certs/ca-certificates.crt')
+    elif 'OpenSuse' in current_platform:
+        Config.setOption('ca-path', '/var/lib/ca-certificates/ca-bundle.pem')
 
 # This file is compatible with both classic and new-style classes.
 
